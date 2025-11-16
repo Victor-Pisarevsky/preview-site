@@ -1,2204 +1,1074 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ДИВО - Разработка интеллектуальных систем</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Alumni+Sans:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=KS+Bistra:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-          /* Primitive Color Tokens */
-          --color-white: rgba(255, 255, 255, 1);
-          --color-black: rgba(0, 0, 0, 1);
-          --color-cream-50: rgba(252, 252, 249, 1);
-          --color-cream-100: rgba(255, 255, 253, 1);
-          --color-gray-200: rgba(245, 245, 245, 1);
-          --color-gray-300: rgba(167, 169, 169, 1);
-          --color-gray-400: rgba(119, 124, 124, 1);
-          --color-slate-500: rgba(98, 108, 113, 1);
-          --color-brown-600: rgba(94, 82, 64, 1);
-          --color-charcoal-700: rgba(31, 33, 33, 1);
-          --color-charcoal-800: rgba(38, 40, 40, 1);
-          --color-slate-900: rgba(19, 52, 59, 1);
-          --color-teal-300: rgba(50, 184, 198, 1);
-          --color-teal-400: rgba(45, 166, 178, 1);
-          --color-teal-500: rgba(33, 128, 141, 1);
-          --color-teal-600: rgba(29, 116, 128, 1);
-          --color-teal-700: rgba(26, 104, 115, 1);
-          --color-teal-800: rgba(41, 150, 161, 1);
-          --color-red-400: rgba(255, 84, 89, 1);
-          --color-red-500: rgba(192, 21, 47, 1);
-          --color-orange-400: rgba(230, 129, 97, 1);
-          --color-orange-500: rgba(168, 75, 47, 1);
-
-          /* RGB versions for opacity control */
-          --color-brown-600-rgb: 94, 82, 64;
-          --color-teal-500-rgb: 33, 128, 141;
-          --color-slate-900-rgb: 19, 52, 59;
-          --color-slate-500-rgb: 98, 108, 113;
-          --color-red-500-rgb: 192, 21, 47;
-          --color-red-400-rgb: 255, 84, 89;
-          --color-orange-500-rgb: 168, 75, 47;
-          --color-orange-400-rgb: 230, 129, 97;
-
-          /* Background color tokens (Light Mode) */
-          --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
-          --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
-          --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
-          --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
-          --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
-          --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
-          --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
-          --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
-
-          /* Semantic Color Tokens (Light Mode) */
-          --color-background: var(--color-cream-50);
-          --color-surface: var(--color-cream-100);
-          --color-text: var(--color-slate-900);
-          --color-text-secondary: var(--color-slate-500);
-          --color-primary: var(--color-teal-500);
-          --color-primary-hover: var(--color-teal-600);
-          --color-primary-active: var(--color-teal-700);
-          --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-          --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-          --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-          --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-          --color-btn-primary-text: var(--color-cream-50);
-          --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-          --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-          --color-error: var(--color-red-500);
-          --color-success: var(--color-teal-500);
-          --color-warning: var(--color-orange-500);
-          --color-info: var(--color-slate-500);
-          --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-          --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
-
-          /* Common style patterns */
-          --focus-ring: 0 0 0 3px var(--color-focus-ring);
-          --focus-outline: 2px solid var(--color-primary);
-          --status-bg-opacity: 0.15;
-          --status-border-opacity: 0.25;
-          --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-          --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-          /* RGB versions for opacity control */
-          --color-success-rgb: 33, 128, 141;
-          --color-error-rgb: 192, 21, 47;
-          --color-warning-rgb: 168, 75, 47;
-          --color-info-rgb: 98, 108, 113;
-
-          /* Typography */
-          --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
-            BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
-            Monaco, Consolas, monospace;
-          --font-size-xs: 11px;
-          --font-size-sm: 12px;
-          --font-size-base: 14px;
-          --font-size-md: 14px;
-          --font-size-lg: 16px;
-          --font-size-xl: 18px;
-          --font-size-2xl: 20px;
-          --font-size-3xl: 24px;
-          --font-size-4xl: 30px;
-          --font-weight-normal: 400;
-          --font-weight-medium: 500;
-          --font-weight-semibold: 550;
-          --font-weight-bold: 600;
-          --line-height-tight: 1.2;
-          --line-height-normal: 1.5;
-          --letter-spacing-tight: -0.01em;
-
-          /* Spacing */
-          --space-0: 0;
-          --space-1: 1px;
-          --space-2: 2px;
-          --space-4: 4px;
-          --space-6: 6px;
-          --space-8: 8px;
-          --space-10: 10px;
-          --space-12: 12px;
-          --space-16: 16px;
-          --space-20: 20px;
-          --space-24: 24px;
-          --space-32: 32px;
-
-          /* Border Radius */
-          --radius-sm: 6px;
-          --radius-base: 8px;
-          --radius-md: 10px;
-          --radius-lg: 12px;
-          --radius-full: 9999px;
-
-          /* Shadows */
-          --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
-          --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-          --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
-            0 2px 4px -1px rgba(0, 0, 0, 0.02);
-          --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
-            0 4px 6px -2px rgba(0, 0, 0, 0.02);
-          --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.03);
-
-          /* Animation */
-          --duration-fast: 150ms;
-          --duration-normal: 250ms;
-          --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
-
-          /* Layout */
-          --container-sm: 640px;
-          --container-md: 768px;
-          --container-lg: 1024px;
-          --container-xl: 1280px;
-        }
-
-        /* Dark mode colors */
-        @media (prefers-color-scheme: dark) {
-          :root {
-            /* RGB versions for opacity control (Dark Mode) */
-            --color-gray-400-rgb: 119, 124, 124;
-            --color-teal-300-rgb: 50, 184, 198;
-            --color-gray-300-rgb: 167, 169, 169;
-            --color-gray-200-rgb: 245, 245, 245;
-
-            /* Background color tokens (Dark Mode) */
-            --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-            --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-            --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-            --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-            --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-            --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-            --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-            --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
-
-            /* Semantic Color Tokens (Dark Mode) */
-            --color-background: var(--color-charcoal-700);
-            --color-surface: var(--color-charcoal-800);
-            --color-text: var(--color-gray-200);
-            --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-            --color-primary: var(--color-teal-300);
-            --color-primary-hover: var(--color-teal-400);
-            --color-primary-active: var(--color-teal-800);
-            --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-            --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-            --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-            --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-            --color-error: var(--color-red-400);
-            --color-success: var(--color-teal-300);
-            --color-warning: var(--color-orange-400);
-            --color-info: var(--color-gray-300);
-            --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
-            --color-btn-primary-text: var(--color-slate-900);
-            --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
-            --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
-            --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-              inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-            --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-            --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-            --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
-
-            /* Common style patterns - updated for dark mode */
-            --focus-ring: 0 0 0 3px var(--color-focus-ring);
-            --focus-outline: 2px solid var(--color-primary);
-            --status-bg-opacity: 0.15;
-            --status-border-opacity: 0.25;
-            --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-            /* RGB versions for dark mode */
-            --color-success-rgb: var(--color-teal-300-rgb);
-            --color-error-rgb: var(--color-red-400-rgb);
-            --color-warning-rgb: var(--color-orange-400-rgb);
-            --color-info-rgb: var(--color-gray-300-rgb);
-          }
-        }
-
-        /* Data attribute for manual theme switching */
-        [data-color-scheme="dark"] {
-          /* RGB versions for opacity control (dark mode) */
-          --color-gray-400-rgb: 119, 124, 124;
-          --color-teal-300-rgb: 50, 184, 198;
-          --color-gray-300-rgb: 167, 169, 169;
-          --color-gray-200-rgb: 245, 245, 245;
-
-          /* Colorful background palette - Dark Mode */
-          --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-          --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-          --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-          --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-          --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-          --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-          --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-          --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
-
-          /* Semantic Color Tokens (Dark Mode) */
-          --color-background: var(--color-charcoal-700);
-          --color-surface: var(--color-charcoal-800);
-          --color-text: var(--color-gray-200);
-          --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-          --color-primary: var(--color-teal-300);
-          --color-primary-hover: var(--color-teal-400);
-          --color-primary-active: var(--color-teal-800);
-          --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-          --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-          --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-          --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-          --color-error: var(--color-red-400);
-          --color-success: var(--color-teal-300);
-          --color-warning: var(--color-orange-400);
-          --color-info: var(--color-gray-300);
-          --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
-          --color-btn-primary-text: var(--color-slate-900);
-          --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
-          --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
-          --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-          --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-          --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
-
-          /* Common style patterns - updated for dark mode */
-          --focus-ring: 0 0 0 3px var(--color-focus-ring);
-          --focus-outline: 2px solid var(--color-primary);
-          --status-bg-opacity: 0.15;
-          --status-border-opacity: 0.25;
-          --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-          --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-          /* RGB versions for dark mode */
-          --color-success-rgb: var(--color-teal-300-rgb);
-          --color-error-rgb: var(--color-red-400-rgb);
-          --color-warning-rgb: var(--color-orange-400-rgb);
-          --color-info-rgb: var(--color-gray-300-rgb);
-        }
-
-        [data-color-scheme="light"] {
-          /* RGB versions for opacity control (light mode) */
-          --color-brown-600-rgb: 94, 82, 64;
-          --color-teal-500-rgb: 33, 128, 141;
-          --color-slate-900-rgb: 19, 52, 59;
-
-          /* Semantic Color Tokens (Light Mode) */
-          --color-background: var(--color-cream-50);
-          --color-surface: var(--color-cream-100);
-          --color-text: var(--color-slate-900);
-          --color-text-secondary: var(--color-slate-500);
-          --color-primary: var(--color-teal-500);
-          --color-primary-hover: var(--color-teal-600);
-          --color-primary-active: var(--color-teal-700);
-          --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-          --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-          --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-          --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-          --color-btn-primary-text: var(--color-cream-50);
-          --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-          --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-          --color-error: var(--color-red-500);
-          --color-success: var(--color-teal-500);
-          --color-warning: var(--color-orange-500);
-          --color-info: var(--color-slate-500);
-          --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-
-          /* RGB versions for light mode */
-          --color-success-rgb: var(--color-teal-500-rgb);
-          --color-error-rgb: var(--color-red-500-rgb);
-          --color-warning-rgb: var(--color-orange-500-rgb);
-          --color-info-rgb: var(--color-slate-500-rgb);
-        }
-
-        /* Base styles */
-        html {
-          font-size: var(--font-size-base);
-          font-family: var(--font-family-base);
-          line-height: var(--line-height-normal);
-          color: var(--color-text);
-          background-color: var(--color-background);
-          -webkit-font-smoothing: antialiased;
-          box-sizing: border-box;
-        }
-
-        body {
-          margin: 0;
-          padding: 0;
-        }
-
-        *,
-        *::before,
-        *::after {
-          box-sizing: inherit;
-        }
-
-        /* Typography */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          margin: 0;
-          font-weight: var(--font-weight-semibold);
-          line-height: var(--line-height-tight);
-          color: var(--color-text);
-          letter-spacing: var(--letter-spacing-tight);
-        }
-
-        h1 {
-          font-size: var(--font-size-4xl);
-        }
-        h2 {
-          font-size: var(--font-size-3xl);
-        }
-        h3 {
-          font-size: var(--font-size-2xl);
-        }
-        h4 {
-          font-size: var(--font-size-xl);
-        }
-        h5 {
-          font-size: var(--font-size-lg);
-        }
-        h6 {
-          font-size: var(--font-size-md);
-        }
-
-        p {
-          margin: 0 0 var(--space-16) 0;
-        }
-
-        a {
-          color: var(--color-primary);
-          text-decoration: none;
-          transition: color var(--duration-fast) var(--ease-standard);
-        }
-
-        a:hover {
-          color: var(--color-primary-hover);
-        }
-
-        code,
-        pre {
-          font-family: var(--font-family-mono);
-          font-size: calc(var(--font-size-base) * 0.95);
-          background-color: var(--color-secondary);
-          border-radius: var(--radius-sm);
-        }
-
-        code {
-          padding: var(--space-1) var(--space-4);
-        }
-
-        pre {
-          padding: var(--space-16);
-          margin: var(--space-16) 0;
-          overflow: auto;
-          border: 1px solid var(--color-border);
-        }
-
-        pre code {
-          background: none;
-          padding: 0;
-        }
-
-        /* Buttons */
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: var(--space-8) var(--space-16);
-          border-radius: var(--radius-base);
-          font-size: var(--font-size-base);
-          font-weight: 500;
-          line-height: 1.5;
-          cursor: pointer;
-          transition: all var(--duration-normal) var(--ease-standard);
-          border: none;
-          text-decoration: none;
-          position: relative;
-        }
-
-        .btn:focus-visible {
-          outline: none;
-          box-shadow: var(--focus-ring);
-        }
-
-        .btn--primary {
-          background: var(--color-primary);
-          color: var(--color-btn-primary-text);
-        }
-
-        .btn--primary:hover {
-          background: var(--color-primary-hover);
-        }
-
-        .btn--primary:active {
-          background: var(--color-primary-active);
-        }
-
-        .btn--secondary {
-          background: var(--color-secondary);
-          color: var(--color-text);
-        }
-
-        .btn--secondary:hover {
-          background: var(--color-secondary-hover);
-        }
-
-        .btn--secondary:active {
-          background: var(--color-secondary-active);
-        }
-
-        .btn--outline {
-          background: transparent;
-          border: 1px solid var(--color-border);
-          color: var(--color-text);
-        }
-
-        .btn--outline:hover {
-          background: var(--color-secondary);
-        }
-
-        .btn--sm {
-          padding: var(--space-4) var(--space-12);
-          font-size: var(--font-size-sm);
-          border-radius: var(--radius-sm);
-        }
-
-        .btn--lg {
-          padding: var(--space-10) var(--space-20);
-          font-size: var(--font-size-lg);
-          border-radius: var(--radius-md);
-        }
-
-        .btn--full-width {
-          width: 100%;
-        }
-
-        .btn:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-
-        /* Form elements */
-        .form-control {
-          display: block;
-          width: 100%;
-          padding: var(--space-8) var(--space-12);
-          font-size: var(--font-size-md);
-          line-height: 1.5;
-          color: var(--color-text);
-          background-color: var(--color-surface);
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-base);
-          transition: border-color var(--duration-fast) var(--ease-standard),
-            box-shadow var(--duration-fast) var(--ease-standard);
-        }
-
-        textarea.form-control {
-          font-family: var(--font-family-base);
-          font-size: var(--font-size-base);
-        }
-
-        select.form-control {
-          padding: var(--space-8) var(--space-12);
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          background-image: var(--select-caret-light);
-          background-repeat: no-repeat;
-          background-position: right var(--space-12) center;
-          background-size: 16px;
-          padding-right: var(--space-32);
-        }
-
-        /* Add a dark mode specific caret */
-        @media (prefers-color-scheme: dark) {
-          select.form-control {
-            background-image: var(--select-caret-dark);
-          }
-        }
-
-        /* Also handle data-color-scheme */
-        [data-color-scheme="dark"] select.form-control {
-          background-image: var(--select-caret-dark);
-        }
-
-        [data-color-scheme="light"] select.form-control {
-          background-image: var(--select-caret-light);
-        }
-
-        .form-control:focus {
-          border-color: var(--color-primary);
-          outline: var(--focus-outline);
-        }
-
-        .form-label {
-          display: block;
-          margin-bottom: var(--space-8);
-          font-weight: var(--font-weight-medium);
-          font-size: var(--font-size-sm);
-        }
-
-        .form-group {
-          margin-bottom: var(--space-16);
-        }
-
-        /* Card component */
-        .card {
-          background-color: var(--color-surface);
-          border-radius: var(--radius-lg);
-          border: 1px solid var(--color-card-border);
-          box-shadow: var(--shadow-sm);
-          overflow: hidden;
-          transition: box-shadow var(--duration-normal) var(--ease-standard);
-        }
-
-        .card:hover {
-          box-shadow: var(--shadow-md);
-        }
-
-        .card__body {
-          padding: var(--space-16);
-        }
-
-        .card__header,
-        .card__footer {
-          padding: var(--space-16);
-          border-bottom: 1px solid var(--color-card-border-inner);
-        }
-
-        /* Status indicators - simplified with CSS variables */
-        .status {
-          display: inline-flex;
-          align-items: center;
-          padding: var(--space-6) var(--space-12);
-          border-radius: var(--radius-full);
-          font-weight: var(--font-weight-medium);
-          font-size: var(--font-size-sm);
-        }
-
-        .status--success {
-          background-color: rgba(
-            var(--color-success-rgb, 33, 128, 141),
-            var(--status-bg-opacity)
-          );
-          color: var(--color-success);
-          border: 1px solid
-            rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
-        }
-
-        .status--error {
-          background-color: rgba(
-            var(--color-error-rgb, 192, 21, 47),
-            var(--status-bg-opacity)
-          );
-          color: var(--color-error);
-          border: 1px solid
-            rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
-        }
-
-        .status--warning {
-          background-color: rgba(
-            var(--color-warning-rgb, 168, 75, 47),
-            var(--status-bg-opacity)
-          );
-          color: var(--color-warning);
-          border: 1px solid
-            rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
-        }
-
-        .status--info {
-          background-color: rgba(
-            var(--color-info-rgb, 98, 108, 113),
-            var(--status-bg-opacity)
-          );
-          color: var(--color-info);
-          border: 1px solid
-            rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
-        }
-
-        /* Container layout */
-        .container {
-          width: 100%;
-          margin-right: auto;
-          margin-left: auto;
-          padding-right: var(--space-16);
-          padding-left: var(--space-16);
-        }
-
-        @media (min-width: 640px) {
-          .container {
-            max-width: var(--container-sm);
-          }
-        }
-        @media (min-width: 768px) {
-          .container {
-            max-width: var(--container-md);
-          }
-        }
-        @media (min-width: 1024px) {
-          .container {
-            max-width: var(--container-lg);
-          }
-        }
-        @media (min-width: 1280px) {
-          .container {
-            max-width: var(--container-xl);
-          }
-        }
-
-        /* Utility classes */
-        .flex {
-          display: flex;
-        }
-        .flex-col {
-          flex-direction: column;
-        }
-        .items-center {
-          align-items: center;
-        }
-        .justify-center {
-          justify-content: center;
-        }
-        .justify-between {
-          justify-content: space-between;
-        }
-        .gap-4 {
-          gap: var(--space-4);
-        }
-        .gap-8 {
-          gap: var(--space-8);
-        }
-        .gap-16 {
-          gap: var(--space-16);
-        }
-
-        .m-0 {
-          margin: 0;
-        }
-        .mt-8 {
-          margin-top: var(--space-8);
-        }
-        .mb-8 {
-          margin-bottom: var(--space-8);
-        }
-        .mx-8 {
-          margin-left: var(--space-8);
-          margin-right: var(--space-8);
-        }
-        .my-8 {
-          margin-top: var(--space-8);
-          margin-bottom: var(--space-8);
-        }
-
-        .p-0 {
-          padding: 0;
-        }
-        .py-8 {
-          padding-top: var(--space-8);
-          padding-bottom: var(--space-8);
-        }
-        .px-8 {
-          padding-left: var(--space-8);
-          padding-right: var(--space-8);
-        }
-        .py-16 {
-          padding-top: var(--space-16);
-          padding-bottom: var(--space-16);
-        }
-        .px-16 {
-          padding-left: var(--space-16);
-          padding-right: var(--space-16);
-        }
-
-        .block {
-          display: block;
-        }
-        .hidden {
-          display: none;
-        }
-
-        /* Accessibility */
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border-width: 0;
-        }
-
-        :focus-visible {
-          outline: var(--focus-outline);
-          outline-offset: 2px;
-        }
-
-        /* Dark mode specifics */
-        [data-color-scheme="dark"] .btn--outline {
-          border: 1px solid var(--color-border-secondary);
-        }
-
+    
+    <!-- Иконка из образца --><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+    <!-- Новые мета-данные для Главной страницы --><title data-lang="meta-title">DIVO — AI-системы, которые приносят деньги</title>
+    <meta name="description" data-lang="meta-description" content="Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой.">
+
+    <!-- Стили и скрипты из образца (for-sales.html) --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      Полностью скопированный блок <style> из for-sales.html
+      Он содержит все переменные, стили кнопок, карточек, баннеров и т.д.
+    --><style>
         @font-face {
-          font-family: 'FKGroteskNeue';
-          src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-            format('woff2');
+            font-family: 'Eugusto';
+            src: url('EugustoFreePersonalUse-Regular.otf') format('otf');
+            font-weight: 800;
+            font-style: normal;
         }
 
-        /* END PERPLEXITY DESIGN SYSTEM */
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Alumni Sans', sans-serif;
+            --font-decorative: 'Eugusto', 'KS Bistra', sans-serif;
+
+            --color-primary: rgb(203, 2, 19);
+            --color-primary-dark: rgb(180, 2, 19);
+            --color-bg-light: rgb(241, 241, 241);
+            --color-text-main: rgb(30, 30, 30);
+            --color-text-secondary: rgb(60, 60, 60);
+            --color-card-bg: #ffffff;
+            --color-footer-bg: rgb(30, 30, 30);
+
+            --color-bg-1: rgba(203, 2, 19, 0.1);
+            --color-bg-2: rgba(0, 240, 255, 0.1);
+            --color-bg-3: rgba(60, 60, 60, 0.08);
+            --color-bg-4: rgba(203, 2, 19, 0.1);
+            --color-bg-5: rgba(0, 240, 255, 0.1);
+            --color-bg-6: rgba(60, 60, 60, 0.08);
+
+            /* Новые переменные для ивент-стиля */
+            --color-event-primary: #00A0B0; /* Лазурный */
+            --color-event-background: #03101a; /* Темно-синий/черный */
+            --color-event-text: #E0E0E0;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-weight: 300; 
             line-height: 1.6;
-            color: rgb(0, 0, 0);
-            background-color: rgb(241, 241, 241);
-            overflow-x: hidden;
         }
 
-        /* CRITICAL FIX: Typography with KS Bistra for main headings */
-        h1, h2.section-title {
-            font-family: 'KS Bistra', 'Montserrat', sans-serif;
+        h1[data-lang], h2[data-lang], h3[data-lang], h4[data-lang], h5[data-lang], h6[data-lang] {
+            font-family: var(--font-heading);
             font-weight: 700;
+            color: var(--color-text-main);
             line-height: 1.2;
             margin-bottom: 1rem;
         }
 
-        h3, h4, h5, h6 {
-            font-family: 'Alumni Sans', 'Montserrat', sans-serif;
-            font-weight: 700; /* This corresponds to Bold for Alumni Sans */
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        /* Стиль H1 для Hero */
+        h1[data-lang] {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            font-size: clamp(3.5rem, 3rem + 2vw, 5rem);
+            letter-spacing: -1px;
         }
-
-        h1 {
-            font-size: clamp(4rem, 8vw, 8rem);
-            font-weight: 900;
-        }
-
-        h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+        h2[data-lang] {
+            font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
             font-weight: 800;
         }
-
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+                
+        h3[data-lang] {
+            font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+            font-weight: 700;
+        }
+        
+        h4[data-lang] {
+            font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
             font-weight: 700;
         }
 
-        h4 {
-            font-size: clamp(1.25rem, 2.5vw, 2rem);
-            font-weight: 600;
+        p, ul {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem; 
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        ul {
+            list-style-position: inside;
+            list-style-type: disc;
+            padding-left: 0.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem; 
+        }
+        
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-bottom: 1.25rem;
+            color: var(--color-text-main);
+            font-weight: 500;
+            line-height: 1.5;
+            font-size: 1.125rem !important;
         }
 
-        p {
-            margin-bottom: 1rem;
+        h5[data-lang] {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-text-main);
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
         }
-
-        .accent {
-            color: rgb(203, 2, 19);
+        
+        @media (max-width: 640px) {
+            h5[data-lang] {
+                font-size: 1.5rem !important;
+            }
         }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            h5[data-lang] {
+                font-size: 1.5rem !important;
+            }
         }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: rgb(203, 2, 19);
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
+        
+        @media (min-width: 1025px) {
+            h5[data-lang] {
+                font-size: 2rem !important;
+            }
+        }
+        
+        .header-logo {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            color: var(--color-primary);
+            font-size: 2.25rem;
+            line-height: 1;
+        }
+        
+        .header-nav-link {
+            font-family: var(--font-heading);
             font-weight: 600;
             font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            color: var(--color-text-secondary);
+            transition: color 0.2s ease;
+            text-transform: uppercase;
+        }
+        .header-nav-link:hover {
+            color: var(--color-primary);
+        }
+                
+        #mobile-menu {
+            transition: all 0.3s ease-out;
+            z-index: 40;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin: 0.5rem;
-        }
-
-        .btn:hover {
-            background: rgb(197, 42, 14);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(203, 2, 19, 0.3);
-        }
-
-        .btn-primary {
-            background: rgb(203, 2, 19);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid rgb(203, 2, 19);
-            color: rgb(203, 2, 19);
-        }
-
-        .btn-secondary:hover {
-            background: rgb(203, 2, 19);
-            color: white;
-        }
-
-        .btn-large {
-            padding: 1.25rem 3rem;
-            font-size: 1.25rem;
-        }
-
-        /* CRITICAL FIX: Section titles with KS Bistra font */
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            color: rgb(0, 0, 0);
-            position: relative;
-            font-family: 'KS Bistra', 'Montserrat', sans-serif;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: rgb(203, 2, 19);
-            margin: 1rem auto;
-        }
-
-        /* CRITICAL FIX: Enterprise text styling */
-        .enterprise-text {
-            font-family: 'Alumni Sans', sans-serif;
-            font-size: 0.6em;
-            color: rgb(203, 2, 19);
-            font-weight: 700;
-        }
-
-        /* CRITICAL FIX: Hero Section with proper logo */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: rgb(241, 241, 241);
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        /* CRITICAL FIX: Logo image instead of star */
-        .logo {
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-image {
-            max-width: 60px; /* EDITED: Was 120px */
-            height: auto;
-            /* filter: drop-shadow(0 2px 4px rgba(203, 2, 19, 0.3)); EDITED: Removed shadow */
-        }
-
-        .hero-title {
-            margin-bottom: 1rem;
-            color: rgb(0, 0, 0);
-            letter-spacing: -2px;
-            font-family: 'KS Bistra', 'Montserrat', sans-serif;
-            font-weight: 900;
-        }
-
-        .hero-subtitle {
-            /* EDITED: Styles changed to match team member name */
-            font-family: 'Alumni Sans', 'Montserrat', sans-serif;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: rgb(60, 60, 60);
-        }
-
-        .hero-tagline {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
-            font-weight: 300;
-            margin-bottom: 3rem;
-            line-height: 1.4;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-cta {
-            margin-top: 3rem;
-        }
-
-        /* Approach Section */
-        .approach {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .approach-card {
-            background: rgb(248, 248, 248);
-            padding: 2rem;
-            border-radius: 12px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
+            margin: 0.25rem;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            border: 2px solid var(--color-primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(203, 2, 19, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-azure {
+            background-color: #00A0B0;
+            color: white;
+            border: 2px solid #00A0B0;
+        }
+        .btn-azure:hover {
+            background-color: #007A86;
+            border-color: #007A86;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 160, 176, 0.3);
+        }
+        
+        .btn-tag {
+            background-color: rgba(0, 0, 0, 0.05); 
+            color: var(--color-text-secondary);
+            border: 2px solid transparent; 
+            font-weight: 700; 
+            text-transform: none; 
+            padding: 0.5rem 1.25rem;
+            font-size: 1rem;
+            margin: 0.25rem; 
+            white-space: nowrap;
+            display: inline-block;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-tag:hover {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
         }
 
-        .approach-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: rgb(203, 2, 19);
-            transform: scaleX(0);
+        .link-arrow {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .link-arrow:hover {
+            color: var(--color-primary-dark);
+            transform: translateX(4px); 
+        }
+        .link-arrow::after {
+            content: ' →';
             transition: transform 0.3s ease;
         }
 
-        .approach-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .approach-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: rgba(203, 2, 19, 0.2);
-        }
-
-        .approach-card h3 {
-            margin-bottom: 1rem;
-            color: rgb(203, 2, 19);
-            font-family: 'Alumni Sans', sans-serif;
-            font-weight: 700;
-        }
-
-        .approach-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Solutions Section */
-        .solutions {
-            padding: 6rem 0;
-            background: rgb(248, 248, 248);
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-
-        .solution-card {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(203, 2, 19, 0.1);
-        }
-
-        .solution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border-color: rgb(203, 2, 19);
-        }
-
-        .solution-card h3 {
-            color: rgb(203, 2, 19);
-            margin-bottom: 1.5rem;
-            font-family: 'Alumni Sans', sans-serif;
-            font-weight: 700;
-        }
-
-        .solution-description {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .solution-example {
-            font-size: 0.95rem;
-            color: rgb(100, 100, 100);
-            font-style: italic;
-            border-top: 1px solid rgb(240, 240, 240);
-            padding-top: 1rem;
-        }
-
-        /* Team Section with Real Photos */
-        .team {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 4rem;
-            justify-items: center;
-        }
-
-        .team-member {
-            text-align: center;
-            max-width: 450px;
-        }
-
-        .member-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 2rem;
-            border: 4px solid rgb(203, 2, 19);
-            box-shadow: 0 10px 30px rgba(203, 2, 19, 0.2);
-        }
-
-        .member-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        /* CRITICAL FIX: Crop Viktor's photo to show only adult */
-        .member-image.cropped {
-            object-position: center top;
-            transform: scale(1.2);
-        }
-
-        .member-info h3 {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            margin-bottom: 0.5rem;
-            color: rgb(0, 0, 0);
-            font-family: 'Alumni Sans', sans-serif;
-        }
-
-        .member-role {
-            display: block;
-            font-family: 'Alumni Sans', sans-serif;
-            /* EDITED: Size and weight changed to match project name */
-            font-size: 1.5rem; 
-            font-weight: 700;
-            color: rgb(203, 2, 19);
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        .member-description {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: rgb(60, 60, 60);
-        }
-
-        /* EDITED: Combined Client Sections */
-        .clients {
-            padding: 6rem 0;
-            background: rgb(248, 248, 248);
-        }
-
-        .clients-grid-2x2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .client-card {
-            background: white;
+        /* Это стиль для нижнего баннера */
+        .event-banner {
+            background-color: var(--color-event-background);
+            color: var(--color-event-text);
             padding: 2.5rem;
-            border-radius: 16px;
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+                
+        .event-banner h2[data-lang],
+        .event-banner h4[data-lang],
+        .event-banner h3[data-lang] {
+            color: white;
+        }
+
+        .highlight-text {
+            color: var(--color-event-primary);
+            font-weight: 600; 
+        }
+                
+        .event-banner p {
+            color: var(--color-event-text); 
+        }
+
+        /* Эта кнопка будет использоваться в баннерах */
+        .btn-event {
+            background-color: var(--color-event-primary);
+            color: white;
+            border: none;
+        }
+        .btn-event:hover {
+            background-color: #007A86; /* Более темный лазурный */
+            transform: translateY(-2px);
+        }
+
+        .cta-banner {
+            background-color: #03101a;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            background-image: linear-gradient(90deg, rgba(3, 16, 26, 0.9) 0%, rgba(5, 26, 46, 0.8) 100%), url('https://placehold.co/1200x600/051a2e/FFFFFF?text=Discuss+Your+Challenge');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        .cta-banner h2[data-lang],
+        .cta-banner h3[data-lang] {
+            color: white;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(203, 2, 19, 0.1);
-            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
         }
-
-        .client-card:hover {
+        .card-no-hover:hover {
+            transform: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .card:not(.card-no-hover):hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+                
+        .card-poster__header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px 12px 0 0;
+        }
+        .card-poster__header h4[data-lang] {
+            margin-bottom: 0;
+        }
+        .bg-custom-1 { background-color: var(--color-bg-1); }
+        .bg-custom-2 { background-color: var(--color-bg-2); }
+        .bg-custom-3 { background-color: var(--color-bg-3); }
+        .bg-custom-4 { background-color: var(--color-bg-4); }
 
-        .client-header {
+        .lang-switcher-inline {
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 0.25rem;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
         }
-
-        .client-name {
-            color: rgb(203, 2, 19);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin: 0;
-            font-family: 'Alumni Sans', sans-serif;
-        }
-
-        .client-result {
-            background: rgb(203, 2, 19);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-family: 'Alumni Sans', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            white-space: nowrap;
-        }
-
-        .project-name {
-            /* EDITED: Size changed to match team member name */
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            margin-bottom: 1rem;
-            color: rgb(0, 0, 0);
-            font-family: 'Alumni Sans', sans-serif;
-            font-weight: 700;
-        }
-
-        .project-description {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: rgb(60, 60, 60);
-        }
-
-        /* CRITICAL FIX: CTA Section with proper text formatting */
-        .cta {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, rgb(203, 2, 19) 0%, rgb(197, 42, 14) 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            color: white;
-            margin-bottom: 1rem;
-            font-family: 'KS Bistra', 'Montserrat', sans-serif;
-        }
-
-        .cta-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+        .lang-switcher-inline button {
+            padding: 0.5rem 0.75rem;
+            font-family: var(--font-heading);
             font-weight: 600;
-            font-family: 'Alumni Sans', sans-serif;
+            color: var(--color-text-secondary);
+            background-color: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-switcher-inline button.active {
+            color: var(--color-primary);
+            background-color: var(--color-card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .lang-switcher-inline button:hover:not(.active) {
+            background-color: rgba(0,0,0,0.03);
         }
 
-        .cta-description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
+        .footer {
+            background-color: var(--color-footer-bg);
+            color: #CFCFCF; 
+            display: block;
         }
-
-        .cta-details {
-            margin-bottom: 3rem;
+        .footer-logo {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            color: white;
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-bottom: 1rem;
         }
-        
-        .cta-result {
-            font-family: 'Alumni Sans', 'Montserrat', sans-serif;
+        .footer-title {
+            font-family: var(--font-heading);
             font-weight: 700;
-            /* EDITED: Font size reduced to fit on one line on desktop */
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        p[data-lang="footer-mission"] {
             color: white;
         }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .footer-link {
+            color: #CFCFCF;
+            font-family: var(--font-sans);
+            font-weight: 400; 
+            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
-
-        .cta-buttons .btn {
-            background: white;
-            color: rgb(203, 2, 19);
+        .footer-link:hover {
+            color: white;
+        }
+        
+        /* Стили для ценовой карточки (используем для блока "Что мы делаем") */
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .feature-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+        .feature-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--color-primary);
             font-weight: 700;
-        }
-
-        .cta-buttons .btn:hover {
-            background: rgb(248, 248, 248);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
         }
         
-        .footer-integrated {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        /* Новый стиль для верхнего sticky-баннера */
+        #top-sticky-banner {
+            background-color: var(--color-event-background); /* Черный/темно-синий для ивента */
+            color: var(--color-event-text);
+            padding: 0.75rem 1rem;
+            transition: transform 0.3s ease-out;
+            border-bottom: 1px solid var(--color-event-primary); /* Лазурный бордер */
+        }
+        #top-sticky-banner .btn-event-inline {
+            background-color: var(--color-event-primary);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        #top-sticky-banner .btn-event-inline:hover {
+            background-color: #007A86;
+            transform: translateY(-1px);
+        }
+
+        /* Новый стиль для формы */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(203, 2, 19, 0.2);
+        }
+        .form-label {
+            display: block;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-text-main);
+            margin-bottom: 0.5rem;
         }
         
-        .footer-integrated p {
-            font-size: 0.9rem;
-            margin: 0;
-            opacity: 0.8;
+        /* Стиль для плашки с P.S. */
+        .conference-note-card {
+            background-color: var(--color-event-background);
+            color: var(--color-event-text);
+            border-left: 4px solid var(--color-event-primary);
+            border-radius: 0 8px 8px 0; /* Только правые закругления */
+            padding: 1rem;
         }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .conference-note-card b {
+            color: white; /* Жирный текст внутри плашки белый */
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero {
-                min-height: 100vh;
-                padding: 2rem 0;
-            }
-            
-            .logo-image {
-                max-width: 50px;
-            }
-            
-            .approach-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .solutions-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .clients-grid-2x2 {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                gap: 1.5rem;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .team-member {
-                max-width: 100%;
-            }
-            
-            .approach,
-            .solutions,
-            .team,
-            .clients,
-            .cta {
-                padding: 4rem 0;
-            }
-            
-            .section-title {
-                margin-bottom: 3rem;
-            }
-            
-            .approach-card,
-            .solution-card,
-            .client-card {
-                padding: 1.5rem;
-            }
-            
-            .client-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .client-result {
-                align-self: flex-start;
-            }
-            
-            .hero-tagline {
-                margin-bottom: 2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .enterprise-text {
-                display: block;
-                margin-top: 0.5rem;
-            }
+        .conference-note-card .contact-icon {
+            color: var(--color-event-primary);
+            transition: color 0.2s ease;
         }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-            
-            .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 1rem;
-            }
-            
-            .btn-large {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
-            }
-            
-            .approach-card,
-            .solution-card,
-            .client-card {
-                padding: 1rem;
-            }
-            
-            .solution-card {
-                padding: 2rem 1rem;
-            }
-            
-            .logo-image {
-                max-width: 40px;
-            }
+        .conference-note-card .contact-icon:hover {
+            color: #007A86; /* Темнее лазурный при наведении */
         }
-
-        /* Focus states for accessibility */
-        .btn:focus,
-        button:focus {
-            outline: 3px solid rgba(203, 2, 19, 0.5);
-            outline-offset: 2px;
-        }
+            
     </style>
 </head>
-<body>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="logo">
-                <img src='data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 8.95"><defs><style>.cls-1{fill:%23cb0213;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><path class="cls-1" d="M5.55,4.29A4,4,0,0,1,5,3.94a4,4,0,0,1-.41-.31A5,5,0,0,1,4,3a4.1,4.1,0,0,1-.47-.86A6.69,6.69,0,0,1,3.24,1a9.26,9.26,0,0,1-.1-1H2.86a5.9,5.9,0,0,1-.1,1,6.69,6.69,0,0,1-.32,1.16A4.6,4.6,0,0,1,2,3a5,5,0,0,1-.53.63A4,4,0,0,1,1,3.94a4,4,0,0,1-.59.35A2.53,2.53,0,0,1,0,4.48H0a2.49,2.49,0,0,1,.45.18A4,4,0,0,1,1,5a4,4,0,0,1,.41.31A5.85,5.85,0,0,1,2,6a4.6,4.6,0,0,1,.46.86A6.69,6.69,0,0,1,2.76,8a5.9,5.9,0,0,1,.1,1h.28a9.26,9.26,0,0,1,.1-1,6.69,6.69,0,0,1,.32-1.16A4.1,4.1,0,0,1,4,6a5.82,5.82,0,0,1,.52-.63A4,4,0,0,1,5,5a4,4,0,0,1,.59-.35A2.82,2.82,0,0,1,6,4.48H6A2.88,2.88,0,0,1,5.55,4.29Z"/></g></g></svg>' alt="ДИВО Logo" class="logo-image">
-                <div class="logo-fallback" style="display: none;">♦</div>
-            </div>
-            <h1 class="hero-title">ДИВО</h1>
-            <p class="hero-subtitle">Разработка интеллектуальных систем</p>
-            <p class="hero-tagline">Создаем решения, которые объединяют<br><span class="accent">возможности AI + надежность автоматизации</span></p>
-            <div class="hero-cta">
-                <button class="btn btn-primary" onclick="scrollToSection('cta')">Получить консультацию</button>
-            </div>
-        </div>
-    </section>
+<body class="antialiased">
 
-    <section class="approach" id="approach">
-        <div class="container">
-            <h2 class="section-title">Наш подход</h2>
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <h3>Полистек разработки</h3>
-                    <p>Команда работает с любым стеком. Java для высоконагруженных систем, Python для AI-интеграций, JavaScript для интерфейсов, Scala для уникальных задач.</p>
+    <!-- 
+      НОВЫЙ БЛОК: Top Sticky Banner
+      Для трафика с выставки - обновленные стили
+    --><div id="top-sticky-banner" class="sticky top-0 z-[51]">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center gap-4">
+                <div class="text-sm md:text-base font-medium text-center flex-grow flex items-center justify-center gap-2">
+                    <span data-lang="sticky-banner-text">👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount</span>
+                    <a href="#final-cta" data-lang="sticky-banner-cta" class="btn-event-inline whitespace-nowrap">Book now</a>
                 </div>
-                <div class="approach-card">
-                    <h3>Прагматичный подход к AI</h3>
-                    <p>Берем лучшие AI-технологии, чтобы встроить их в надежную, масштабируемую архитектуру, которая решает ваши бизнес-задачи.</p>
-                </div>
-                <div class="approach-card">
-                    <h3>Гибкая безопасность данных</h3>
-                    <p>Соответствуем корпоративным стандартам ИБ. Адаптируемся под ваши требования: от API-интеграций через деперсонализацию до полностью изолированных on-premise решений.</p>
-                </div>
-                <div class="approach-card">
-                    <h3>Экспертиза в интеграциях</h3>
-                    <p>Строим архитектуры, которые гладко встраиваются в существующую инфраструктуру. Опыт интеграций с 1С, AmoCRM, Telegram, LinkedIn, SAP, внешним API и сервисам без API.</p>
-                </div>
+                <button id="close-sticky-banner" class="text-white text-2xl font-light hover:opacity-80" aria-label="Close banner">&times;</button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="solutions" id="solutions">
-        <div class="container">
-            <h2 class="section-title">Решения</h2>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3>Умные системы</h3>
-                    <p class="solution-description">Решения для анализа данных, автоматизированных рекомендательных систем, интеграции и системы управления процессами в компании.</p>
-                    <p class="solution-example">Например: системы аналитики для закупок и продаж, платформы обработки внутренних данных.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Корпоративные ассистенты</h3>
-                    <p class="solution-description">Цифровые помощники для сотрудников и отделов, которые ускоряют рутинные процессы и помогают принимать решения на основе данных.</p>
-                    <p class="solution-example">Например: ассистент коммерческого директора, AI арт директор, помощник отдела продаж.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Безопасные решения</h3>
-                    <p class="solution-description">Инструменты, работающие в изолированных корпоративных контурах, с поддержкой стандартов безопасности и деперсонализацией данных на выход во вне.</p>
-                    <p class="solution-example">Например: on-premise аудит звонков, деперсонализация для выполнения закона 152-ФЗ.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="team" id="team">
-        <div class="container">
-            <h2 class="section-title">Команда</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="Daria.JPG" alt="Дарья Камышина" class="member-image" loading="eager">
-                        <div class="member-placeholder" style="display: none;">Д</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Дарья Камышина</h3>
-                        <span class="member-role">CEO</span>
-                        <p class="member-description">Продуктовая стратегия и развитие бизнеса<br>Яндекс, стартапы: от идеи до $200К выручки за 4 месяца</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="Victor.jpeg" alt="Виктор Писаревский" class="member-image cropped" loading="eager">
-                        <div class="member-placeholder" style="display: none;">В</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Виктор Писаревский</h3>
-                        <span class="member-role">CTO</span>
-                        <p class="member-description">Enterprise-архитектор, СБЕР<br>Системы на $18,4+ млрд оборота</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="clients" id="clients">
-        <div class="container">
-            <h2 class="section-title">Клиенты</h2>
-            <div class="clients-grid-2x2">
-                <div class="client-card">
-                    <h4 class="project-name">Ассистент арт-директора</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">РАЙФФАЙЗЕНБАНК</h3>
-                    </div>
-                    <p class="project-description">Инструмент автоматически проверяет дизайн-макеты на соответствие стандартам качества и дизайн-системе, освобождая живых арт-директоров для творческих и стратегических задач</p>
-                </div>
-
-                <div class="client-card">
-                    <h4 class="project-name">Гибридная платформа для AI интеграций</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">X5 ГРУПП</h3>
-                    </div>
-                    <p class="project-description">Единый пульт управления для креативного и аналитического AI позволяет централизованно и безопасно работать с любыми моделями, будь то языковые LLM или графические генераторы, с учетом сложностей параллельного импорта и корпоративной безопасности.</p>
-                </div>
-
-                <div class="client-card">
-                    <h4 class="project-name">Витрина данных</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">СБЕР</h3>
-                    </div>
-                    <p class="project-description">Поток для данных, который безопасно и быстро доставляет информацию из критически важных систем в любые аналитические инструменты, позволяя бизнесу получать инсайты, не рискуя стабильностью основной инфраструктуры.</p>
-                </div>
-
-                <div class="client-card">
-                    <h4 class="project-name">AI исследование для редизайна</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">АВИТО</h3>
-                        <span class="client-result">в 3 раза быстрее</span>
-                    </div>
-                    <p class="project-description">Выступили внешней фокус группой и провели с помощью AI UX-исследования и собрав требования от всех команд и рынка в рабочий прототип в 3 раза быстрее стандартного процесса, позволив создавать продукты, которые нравятся пользователям и не вызывают внутренних конфликтов.</p>
-                </div>
-
-                <div class="client-card">
-                    <h4 class="project-name">AI подготовка документов</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">ПРОЕКТНЫЕ УСЛУГИ</h3>
-                        <span class="client-result">80% экономия времени</span>
-                    </div>
-                    <p class="project-description">Умный конвейер документов за минуты собирает персонализированные договоры и отчеты из шаблонов и данных CRM, сокращая время на бумажную работу на 80% и позволяя быстро запускать новые проекты.</p>
-                </div>
-
-                <div class="client-card">
-                    <h4 class="project-name">On-prem аудит звонков</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">ТЕЛЕКОМ, БРОКЕРЫ</h3>
-                    </div>
-                    <p class="project-description">Аудитор отдела продаж, который проводит анализ всех звонков, обеспечивая полный контроль над данными внутри вашего корпоративного контура и соответствие стандартам безопасности.</p>
-                </div>
-
-                <div class="client-card">
-                    <h4 class="project-name">Telegram-бот поиска в базе знаний</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">РИТЕЙЛ</h3>
-                    </div>
-                    <p class="project-description">Бот интегрирован с базой данных компании и позволяет сотрудникам получать быстрые и точные ответы на любые вопросы, связанные с товарным ассортиментом, процессами обслуживания и внутренней документацией.</p>
-                </div>
-
-                <div class="client-card">
-                    <h4 class="project-name">Агент лидогенерации в LinkedIn</h4>
-                    <div class="client-header">
-                        <h3 class="client-name">Б2Б УСЛУГИ</h3>
-                    </div>
-                    <p class="project-description">Цифровой двойник вашего сейлз-менеджера, который неотличимо от человека находит и квалифицирует B2B-клиентов в LinkedIn, освобождая вашу команду для общения только с заинтересованными лидами.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <section class="cta" id="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Начало работы</h2>
-                <p class="cta-description">Предлагаем техническую консультацию по вашим процессам. Обсудим, где AI даст измеримый эффект, а где достаточно классической автоматизации.</p>
-                <div class="cta-details">
-                    <p class="cta-description">За 40 минут вы получите:</p>
-                    <h3 class="cta-result">Техническое заключение с рекомендациями и примерной оценкой проекта</h3>
-                </div>
-                <div class="cta-buttons">
-                    <a href="https://t.me/darikamouse" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Связаться с нами</a>
-                    <a href="https://calendar.app.google/zXJQAHoAFtcwB7147" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">Запланировать встречу</a>
-                </div>
+    <!-- 
+      HEADER (ШАПКА)
+      Скопировано 1-в-1 из for-sales.html
+      Изменен z-index с z-50 на z-40, чтобы быть ПОД sticky-баннером
+    --><header class="sticky top-0 lg:top-[49px] w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
                 
-                <div class="footer-integrated">
-                    <p>&copy; 2025 ДИВО. Разработка интеллектуальных систем</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
 
-    <script>
-        // Smooth scroll to section
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Initialize animations on DOM load
-        document.addEventListener('DOMContentLoaded', function() {
-            // CRITICAL FIX: Initialize logo and image loading first
-            initializeLogoLoading();
-            initializePhotoLoading();
-
-            // Animate cards on scroll
-            const animatedElements = document.querySelectorAll(
-                '.approach-card, .solution-card, .team-member, .client-card'
-            );
-            
-            animatedElements.forEach((el, index) => {
-                // Set initial state
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                el.style.transitionDelay = `${index * 0.1}s`;
-                
-                // Observe for intersection
-                observer.observe(el);
-            });
-
-            // Add hover effects to buttons (but don't interfere with CTA buttons)
-            const buttons = document.querySelectorAll('.btn:not(.cta-buttons .btn)');
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-2px)';
-                });
-                
-                button.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-
-            // Handle hero CTA button - scroll to CTA section
-            const heroButton = document.querySelector('.hero .btn');
-            if (heroButton) {
-                heroButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    scrollToSection('cta');
-                });
-            }
-
-            // Add parallax effect to hero section
-            const hero = document.querySelector('.hero');
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.3;
-                
-                if (hero && scrolled < hero.offsetHeight) {
-                    hero.style.transform = `translateY(${rate}px)`;
-                }
-            });
-
-            // Add active states to cards
-            const cards = document.querySelectorAll('.approach-card, .solution-card, .client-card');
-            cards.forEach(card => {
-                card.addEventListener('click', function(event) {
-                    // Remove active class from all cards of the same type
-                    const sameTypeCards = this.parentElement.querySelectorAll('.' + this.className.split(' ')[0]);
-                    sameTypeCards.forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class to clicked card
-                    this.classList.add('active');
-                    
-                    // Add ripple effect
-                    createRipple(this, event);
-                });
-            });
-
-            // Animate counters in results
-            animateCounters();
-
-            // Initialize mobile menu if needed
-            initializeMobileInteractions();
-
-            // CRITICAL FIX: Ensure CTA buttons work properly
-            initializeCTAButtons();
-        });
-
-        // CRITICAL FIX: Initialize logo loading with proper fallback
-        function initializeLogoLoading() {
-            const logoImage = document.querySelector('.logo-image');
-            const logoFallback = document.querySelector('.logo-fallback');
-            
-            if (logoImage && logoFallback) {
-                // Style the fallback
-                logoFallback.style.cssText = `
-                    font-size: 4rem;
-                    color: rgb(203, 2, 19);
-                    transform: scaleY(1.8) scaleX(0.8);
-                    display: none;
-                    font-weight: bold;
-                    text-shadow: 0 2px 4px rgba(203, 2, 19, 0.3);
-                    animation: logoFallbackPulse 3s ease-in-out infinite;
-                `;
-                
-                // Handle image load error
-                logoImage.addEventListener('error', function() {
-                    console.log('Logo image failed to load, showing fallback');
-                    this.style.display = 'none';
-                    logoFallback.style.display = 'inline-block';
-                });
-                
-                // Handle successful image load
-                logoImage.addEventListener('load', function() {
-                    console.log('Logo image loaded successfully');
-                    this.style.display = 'block';
-                    logoFallback.style.display = 'none';
-                });
-                
-                // Check if image is already loaded (cached)
-                if (logoImage.complete) {
-                    if (logoImage.naturalWidth === 0) {
-                        // Image failed to load
-                        logoImage.style.display = 'none';
-                        logoFallback.style.display = 'inline-block';
-                    } else {
-                        // Image loaded successfully
-                        logoImage.style.display = 'block';
-                        logoFallback.style.display = 'none';
-                    }
-                }
-            }
-        }
-
-        // CRITICAL FIX: Initialize team photo loading with proper fallbacks
-        function initializePhotoLoading() {
-            const memberImages = document.querySelectorAll('.member-image');
-            
-            memberImages.forEach(img => {
-                const placeholder = img.parentNode.querySelector('.member-placeholder');
-                
-                if (placeholder) {
-                    // Style the placeholder
-                    placeholder.style.cssText = `
-                        width: 100%;
-                        height: 100%;
-                        background: linear-gradient(135deg, rgb(203, 2, 19), rgb(197, 42, 14));
-                        display: none;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        font-size: 3rem;
-                        font-weight: bold;
-                        font-family: 'Alumni Sans', sans-serif;
-                    `;
-                }
-                
-                // Handle image load error
-                img.addEventListener('error', function() {
-                    console.log(`Team image failed to load: ${this.src}`);
-                    this.style.display = 'none';
-                    if (placeholder) {
-                        placeholder.style.display = 'flex';
-                    }
-                });
-                
-                // Handle successful image load
-                img.addEventListener('load', function() {
-                    console.log(`Team image loaded successfully: ${this.src}`);
-                    this.style.display = 'block';
-                    if (placeholder) {
-                        placeholder.style.display = 'none';
-                    }
-                });
-                
-                // Check if image is already loaded (cached)
-                if (img.complete) {
-                    if (img.naturalWidth === 0) {
-                        // Image failed to load
-                        img.style.display = 'none';
-                        if (placeholder) {
-                            placeholder.style.display = 'flex';
-                        }
-                    } else {
-                        // Image loaded successfully
-                        img.style.display = 'block';
-                        if (placeholder) {
-                            placeholder.style.display = 'none';
-                        }
-                    }
-                }
-            });
-        }
-
-        // CRITICAL FIX: Initialize CTA buttons functionality
-        function initializeCTAButtons() {
-            const ctaButtons = document.querySelectorAll('.cta-buttons .btn');
-            
-            ctaButtons.forEach(button => {
-                // Ensure buttons have proper attributes
-                if (button.tagName === 'A' && button.href) {
-                    // Make sure target="_blank" is set
-                    button.setAttribute('target', '_blank');
-                    button.setAttribute('rel', 'noopener noreferrer');
-                    
-                    // Add click tracking without preventing default behavior
-                    button.addEventListener('click', function(e) {
-                        const buttonText = this.textContent.trim();
-                        const buttonUrl = this.href;
+                <div class="hidden lg:flex items-center gap-6">
+                    <nav class="flex gap-8 items-center">
+                        <div class="relative group">
+                            <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
+                                Решения
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
+                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
+                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
+                                </div>
+                            </div>
+                        </div>
                         
-                        console.log(`CTA Button clicked: ${buttonText} -> ${buttonUrl}`);
-                        
-                        // Track button clicks for analytics
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'cta_click', {
-                                event_category: 'conversion',
-                                event_label: buttonText,
-                                value: buttonUrl
-                            });
-                        }
-                        
-                        // Don't prevent default - let the browser handle the navigation
-                    });
-                    
-                    // Add hover effects specifically for CTA buttons
-                    button.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-3px)';
-                        this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
-                    });
-                    
-                    button.addEventListener('mouseleave', function() {
-                        this.style.transform = 'translateY(0)';
-                        this.style.boxShadow = '';
-                    });
-                }
-            });
-        }
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+                    </nav>
 
-        // Create ripple effect
-        function createRipple(element, event) {
-            const circle = document.createElement('span');
-            const diameter = Math.max(element.clientWidth, element.clientHeight);
-            const radius = diameter / 2;
+                    <div class="flex items-center gap-4">
+                        <a href="#final-cta" class="btn btn-primary btn-sm" data-lang="header-cta">Получить консультацию</a>
+                        <div class="lang-switcher-inline">
+                            <button id="btn-ru" class="" aria-pressed="false">RU</button>
+                            <button id="btn-en" class="active" aria-pressed="true">EN</button>
+                        </div>
+                    </div>
+                </div>
 
-            const rect = element.getBoundingClientRect();
-            circle.style.width = circle.style.height = `${diameter}px`;
-            circle.style.left = `${event.clientX - rect.left - radius}px`;
-            circle.style.top = `${event.clientY - rect.top - radius}px`;
-            circle.classList.add('ripple');
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="#final-cta" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap" data-lang="header-cta-mobile">Консультация</a>
+                    <div class="lang-switcher-inline">
+                        <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                        <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
+                    </div>
+                    <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-            // Add ripple styles
-            circle.style.position = 'absolute';
-            circle.style.borderRadius = '50%';
-            circle.style.background = 'rgba(203, 2, 19, 0.1)';
-            circle.style.transform = 'scale(0)';
-            circle.style.animation = 'ripple 0.6s linear';
-            circle.style.pointerEvents = 'none';
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+                <nav class="flex flex-col gap-4">
+                    <div>
+                        <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
+                        <div class="pl-4 flex flex-col gap-2">
+                            <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
+                            <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
+                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
+                        </div>
+                    </div>
+                    <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                    <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-            const existingRipple = element.querySelector('.ripple');
-            if (existingRipple) {
-                existingRipple.remove();
-            }
+    <!-- 
+      НАЧАЛО НОВОГО КОНТЕНТА ДЛЯ ГЛАВНОЙ СТРАНИЦЫ
+    --><div class="container max-w-6xl mx-auto px-4">
 
-            element.style.position = 'relative';
-            element.style.overflow = 'hidden';
-            element.appendChild(circle);
-
-            // Remove ripple after animation
-            setTimeout(() => {
-                circle.remove();
-            }, 600);
-        }
-
-        // Animate counters
-        function animateCounters() {
-            const results = document.querySelectorAll('.client-result');
-            
-            results.forEach(result => {
-                const text = result.textContent;
-                const hasNumber = /\d+/.test(text);
+        <!-- 1. Hero Section --><section id="hero" class="py-12 md:py-16 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 data-lang="hero-h1">AI systems that make money</h1>
+                <p data-lang="hero-sub" class="text-xl md:text-2xl !text-text-secondary mt-4 mb-8">We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure</p>
                 
-                if (hasNumber && !result.dataset.animated) {
-                    observer.observe(result);
+                <!-- Видео-плейсхолдер --><div class="w-full aspect-video bg-gray-900 rounded-lg flex items-center justify-center border border-gray-700 my-8">
+                    <div class="text-center text-gray-400">
+                        <svg class="w-16 h-16 text-gray-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                        <p class="mt-2 font-semibold">Abstract visualization of architecture</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+                    <a href="#final-cta" class="btn btn-primary" data-lang="hero-cta1">Get a free technical audit</a>
+                    <a href="/case-studies" class="btn btn-secondary" data-lang="hero-cta2">View our case studies</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Social Proof --><section id="social-proof" class="py-12">
+            <h2 data-lang="social-h2" class="text-center text-2xl !font-semibold !text-text-secondary !font-heading uppercase tracking-widest">Trusted by industry leaders</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-8">
+                <img src="https://placehold.co/160x60/f1f1f1/303030?text=SBER&font=inter&font-size=30px" alt="Sber logo" class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <img src="https://placehold.co/160x60/f1f1f1/303030?text=Avito&font=inter&font-size=30px" alt="Avito logo" class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <img src="https://placehold.co/160x60/f1f1f1/303030?text=Yandex&font=inter&font-size=30px" alt="Yandex logo" class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+            </div>
+        </section>
+
+        <!-- 3. Why Us (Founders) --><section id="why-us" class="py-12 md:py-16">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 data-lang="why-h2">Growth × Scale = Profit</h2>
+            </div>
+            
+            <!-- ИЗМЕНЕННАЯ СТРУКТURA: 
+                 Теперь 2-колоночная сетка содержит и карточки, и P.S. блок, и ссылку 
+            -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                
+                <!-- Колонка 1: Дарья + P.S. -->
+                <div class="flex flex-col gap-8">
+                    <!-- Daria's Card -->
+                    <div class="card p-6 text-center md:text-left">
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <img src="https://placehold.co/150x150/efefef/303030?text=Daria" alt="Daria Kamyshina" class="w-32 h-32 rounded-full border-4 border-white/80 shadow-lg flex-shrink-0">
+                            <div>
+                                <h4 class="!mb-1">Daria Kamyshina</h4>
+                                <p class="!text-text-secondary !font-semibold !mb-3">CEO & Co-Founder</p>
+                                <blockquote data-lang="why-daria" class="!text-lg">Grew MRR by 10x in 4 months. I know how to turn technology into revenue</blockquote>
+                            </div>
+                        </div>
+                    </div>
                     
-                    // Create intersection observer specifically for counter animation
-                    const counterObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting && !entry.target.dataset.animated) {
-                                entry.target.dataset.animated = 'true';
-                                
-                                // Extract number and animate it
-                                const number = text.match(/\d+/)[0];
-                                const prefix = text.split(number)[0];
-                                const suffix = text.split(number)[1];
-                                
-                                animateNumber(entry.target, 0, parseInt(number), prefix, suffix);
-                                counterObserver.unobserve(entry.target);
+                    <!-- P.S. Block -->
+                    <div data-lang="why-daria-note">
+                        <!-- Контент будет вставлен JS-ом. -->
+                    </div>
+                </div> <!-- Конец Колонки 1 -->
+                
+                <!-- Колонка 2: Виктор + Ссылка -->
+                <div class="flex flex-col gap-8">
+                    <!-- Viktor's Card -->
+                    <div class="card p-6 text-center md:text-left">
+                         <div class="flex flex-col md:flex-row items-center gap-6">
+                            <img src="https://placehold.co/150x150/efefef/303030?text=Viktor" alt="Viktor Pisarevskiy" class="w-32 h-32 rounded-full border-4 border-white/80 shadow-lg flex-shrink-0">
+                            <div>
+                                <h4 class="!mb-1">Viktor Pisarevskiy</h4>
+                                <p class="!text-text-secondary !font-semibold !mb-3">CTO & Co-Founder</p>
+                                <blockquote data-lang="why-viktor" class="!text-lg">Designed Russia's #1 platform serving 10M users. I build systems that don't fail</blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- "Meet the team" Link -->
+                    <div class="text-center md:text-left pt-4">
+                        <a href="/about-us" class="link-arrow" data-lang="why-cta">Meet the team</a>
+                    </div>
+                </div> <!-- Конец Колонки 2 -->
+            
+            </div>
+            <!-- КОНЕЦ ИЗМЕНЕННОЙ СТРУКТУРЫ -->
+
+        </section>
+
+        <!-- 4. What We Do --><section id="what-we-do" class="py-12 md:py-16 bg-white rounded-lg shadow-inner">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 data-lang="what-h2">Two ways to work with us</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Enterprise AI Engineering --><div class="card card-no-hover p-6 md:p-8 feature-card flex flex-col">
+                    <h3 data-lang="what-enterprise-h">Enterprise AI Engineering</h3>
+                    <ul>
+                        <li data-lang="what-enterprise-f1">Full-cycle turnkey development</li>
+                        <li data-lang="what-enterprise-f2">Integration with SAP, 1C, and legacy systems</li>
+                        <li data-lang="what-enterprise-f3">On-premise solutions for banks and government companies</li>
+                    </ul>
+                    <div class="mt-auto pt-4">
+                        <a href="/custom-ai" class="btn btn-primary w-full text-center" data-lang="what-enterprise-cta">Discuss your project</a>
+                    </div>
+                </div>
+                <!-- AI Products (SaaS) --><div class="card card-no-hover p-6 md:p-8 feature-card flex flex-col">
+                    <h3 data-lang="what-saas-h">AI Products (SaaS)</h3>
+                    
+                    <!-- Измененная структура. Удален UL и общая кнопка. --><div class="flex-grow flex flex-col justify-around gap-6 mt-4">
+                        <!-- Product 1: Françoise --><div>
+                            <h4 class="!mb-1">Françoise</h4>
+                            <p data-lang="what-saas-f1" class="!mb-4">Design QA for Enterprise brands</p>
+                            <a href="httpsS://francoise.ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-lang="what-saas-cta1">Learn more about Françoise</a>
+                        </div>
+                        
+                        <!-- Product 2: Klio --><div>
+                            <h4 class="!mb-1">Klio</h4>
+                            <p data-lang="what-saas-f2" class="!mb-4">B2B sales automation</p>
+                            <a href="httpsS://klio.ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-lang="what-saas-cta2">Learn more about Klio</a>
+                        </div>
+                    </div>
+                    <!-- Конец измененной структуры --></div>
+            </div>
+        </section>
+
+        <!-- 5. Proof (Mini Cases) --><section id="proof" class="py-12 md:py-16">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 data-lang="results-h2">Results</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-6 text-center">
+                    <h2 data-lang="results-h-num1" class="!text-primary !text-6xl md:!text-7xl !mb-2">10M</h2>
+                    <p data-lang="results-c1" class="!text-lg">users served by the platform designed by our CTO</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <h2 data-lang="results-h-num2" class="!text-primary !text-6xl md:!text-7xl !mb-2">10x</h2>
+                    <p data-lang="results-c2" class="!text-lg">MRR growth in 4 months on the latest CEO project</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <h2 data-lang="results-h-num3" class="!text-primary !text-6xl md:!text-7xl !mb-2">100%</h2>
+                    <p data-lang="results-c3" class="!text-lg">brand consistency guaranteed by Françoise</p>
+                </div>
+            </div>
+             <div class="text-center mt-12">
+                <a href="/case-studies" class="link-arrow" data-lang="results-cta">All case studies</a>
+            </div>
+        </section>
+
+        <!-- 6. Final CTA (Form) --><section id="final-cta" class="py-12 md:py-16">
+            <div class="card card-no-hover max-w-3xl mx-auto p-6 md:p-10">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 data-lang="final-cta-h2">Let's start with a free audit of your AI strategy</h2>
+                    <p data-lang="final-cta-sub" class="!text-lg !text-text-secondary mt-2 mb-8">40 minutes with experts who built systems for 10M+ users</p>
+                </div>
+                
+                <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <label for="name" class="form-label" data-lang="final-cta-form-name">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div>
+                        <label for="email" class="form-label" data-lang="final-cta-form-email">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="phone" class="form-label" data-lang="final-cta-form-phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="task-description" class="form-label" data-lang="final-cta-form-task">Brief task description</label>
+                        <textarea id="task-description" name="task-description" rows="4" class="form-input"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="btn btn-primary w-full" data-lang="final-cta-form-cta">Book an audit</button>
+                        <p data-lang="final-cta-form-note" class="text-sm text-center !text-text-secondary mt-4 mb-0">No sales pitch on the first call. Just an honest assessment of your situation.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 
+          НОВЫЙ БЛОК: Bottom Banner
+          Стиль .event-banner взят из for-sales.html
+          Уменьшен отступ my -> mt
+        --><section id="bottom-event-banner" class="mt-12 md:mt-16">
+            <div class="event-banner p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2">
+                        <h2 data-lang="bottom-banner-h2" class="!text-white">Don't miss exclusive offers for event guests</h2>
+                        <p data-lang="bottom-banner-sub" class="text-lg mb-4">Special packages, private CTO consultations, and bonuses exclusively for event attendees</p>
+                    </div>
+                    <div class="md:text-right flex items-center md:items-start md:justify-end">
+                        <a href="/function1-offers" data-lang="bottom-banner-cta" class="btn btn-event btn-lg whitespace-nowrap">View all offers</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- /end container --><!-- 
+      FOOTER (ПОДВАЛ)
+      Скопировано 1-в-1 из for-sales.html
+    --><footer class="footer pt-16 pb-8 md:pb-12">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
+                
+                <div>
+                    <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
+                    <p class="text-sm mb-2" data-lang="footer-mission">
+                        Мы превращаем технологии в двигатель роста вашего бизнеса.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
+                        <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
+                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
+                        <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+                        <li><a href="httpsS://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
+                        <li><a href="httpsS://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
+                    </ul>
+                    <div class="mt-3">
+                        <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
+                        <ul class="space-y-2">
+                            <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
+                            <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
+                <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+      JAVASCRIPT
+      Логика из for-sales.html + новый объект translations
+    --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Логика мобильного меню (из образца)
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const isExpanded = !mobileMenu.classList.contains('hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+            
+            // Новая логика: Закрытие sticky-баннера
+            const closeStickyBannerBtn = document.getElementById('close-sticky-banner');
+            const stickyBanner = document.getElementById('top-sticky-banner');
+            const header = document.querySelector('header'); // Шапка
+            
+            if (closeStickyBannerBtn && stickyBanner && header) {
+                closeStickyBannerBtn.addEventListener('click', () => {
+                    stickyBanner.remove(); // Удаляем баннер
+                    header.style.top = '0'; // Сдвигаем шапку вверх
+                });
+                
+                // Проверяем, есть ли баннер, и сдвигаем шапку
+                if (document.body.contains(stickyBanner)) {
+                    // Высота баннера 49px (p-3 + text-sm/base)
+                    // Устанавливаем top для шапки на lg+ экранах
+                    if (window.innerWidth >= 1024) {
+                         header.style.top = '49px';
+                    }
+                    // Слушатель на ресайз, если вдруг
+                     window.addEventListener('resize', () => {
+                         if (document.body.contains(stickyBanner)) {
+                            if (window.innerWidth >= 1024) {
+                                header.style.top = '49px';
+                            } else {
+                                header.style.top = '0'; // На мобилке шапка просто скроллится
                             }
-                        });
-                    }, { threshold: 0.5 });
+                         }
+                     });
+                }
+            }
+
+
+            // РАСШИРЕННЫЙ ОБЪЕКТ ПЕРЕВОДОВ
+            const translations = {
+                'ru': {
+                    // --- МЕТА ---
+                    'meta-title': 'DIVO — AI-системы, которые приносят деньги',
+                    'meta-description': 'Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой.',
+
+                    // --- Общие (Шапка, Подвал) ---
+                    'logo': 'DIVO',
+                    'nav-sales': 'Для Продаж',
+                    'nav-design': 'Для Дизайна',
+                    'nav-about': 'О нас',
+                    'header-cta': 'Получить консультацию',
+                    'header-cta-mobile': 'Консультация',
+                    'nav-solutions': 'Решения',
+                    'nav-custom-dev': 'Кастомная разработка',
+                    'nav-portfolio': 'Портфолио',
+                    'footer-mission': 'Мы превращаем технологии в двигатель роста вашего бизнеса.',
+                    'footer-solutions-title': 'Решения',
+                    'footer-company-title': 'Компания',
+                    'footer-portfolio': 'Портфолио и Кейсы',
+                    'footer-contact-title': 'Контакты',
+                    'footer-legal-title': 'Документы',
+                    'footer-privacy': 'Политика конфиденциальности',
+                    'footer-terms': 'Условия использования',
+
+                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
                     
-                    counterObserver.observe(result);
-                }
-            });
-        }
-
-        // Animate number counting
-        function animateNumber(element, start, end, prefix = '', suffix = '') {
-            const duration = 2000;
-            const startTime = Date.now();
-            
-            function update() {
-                const elapsed = Date.now() - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const current = Math.floor(start + (end - start) * easeOutCubic(progress));
-                
-                element.textContent = prefix + current + suffix;
-                
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            }
-            
-            update();
-        }
-
-        // Easing function
-        function easeOutCubic(t) {
-            return 1 - Math.pow(1 - t, 3);
-        }
-
-        // Initialize mobile-specific interactions
-        function initializeMobileInteractions() {
-            // Add touch feedback for mobile
-            if ('ontouchstart' in window) {
-                const touchElements = document.querySelectorAll('.btn:not(.cta-buttons .btn), .approach-card, .solution-card, .client-card');
-                
-                touchElements.forEach(element => {
-                    element.addEventListener('touchstart', function() {
-                        this.classList.add('touching');
-                    });
+                    // Top Sticky Banner
+                    'sticky-banner-text': '👋 Привет с выставки! Специальное предложение действует 48 часов → Бесплатный аудит + скидка 15%',
+                    'sticky-banner-cta': 'Забронировать',
                     
-                    element.addEventListener('touchend', function() {
-                        setTimeout(() => {
-                            this.classList.remove('touching');
-                        }, 150);
-                    });
-                });
-            }
+                    // 1. Hero
+                    'hero-h1': 'AI-системы, которые приносят деньги',
+                    'hero-sub': 'Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой',
+                    'hero-cta1': 'Получить бесплатный технический аудит',
+                    'hero-cta2': 'Посмотреть наши кейсы',
+                    
+                    // 2. Social Proof
+                    'social-h2': 'Нам доверяют',
+                    
+                    // 3. Why Us
+                    'why-h2': 'Рост × Масштаб = Прибыль',
+                    'why-daria': 'Увеличила MRR в 10x за 4 месяца. Знаю, как превратить технологию в revenue',
+                    'why-viktor': 'Спроектировал платформу №1 в России для 10M пользователей. Строю системы, которые не падают',
+                    'why-cta': 'Познакомиться с командой',
+                    'why-daria-note': '<div class="conference-note-card"><p class="!text-sm !text-white !font-normal !mb-2"><span><b>P.S.</b> Я сейчас на конференции!</span></p><div class="flex items-center gap-4"><span class="!text-sm !text-white !font-normal !mb-0">Напишите мне:</span><a href="httpsS://t.me/darikamouse" target="_blank" class="contact-icon" aria-label="Чат в Telegram"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 11.9c-.88-.27-.88-1.37.2-1.64l16.4-6.05c.75-.27 1.45.16 1.18 1.08l-3.0 14.17c-.2 1.02-1.03 1.28-1.88.8l-5.1-3.72-2.45 2.35c-.27.27-.67.43-1.08.19z"></path></svg></a><a href="httpsS://wa.me/79035176391" target="_blank" class="contact-icon" aria-label="Чат в WhatsApp"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.49 1.29 4.99L2 22l5.25-1.38c1.45.77 3.09 1.19 4.79 1.19h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.13c-1.57 0-3.07-.4-4.4-1.1L7.5 19.1l-3.32.87.89-3.23-.7-1.17c-.8-1.4-1.22-3.03-1.22-4.7C3.15 7.01 7.15 3 12.04 3s8.89 4.01 8.89 8.91c0 4.9-3.99 8.91-8.89 8.91zm4.71-5.38c-.27-.13-1.59-.78-1.84-.87-.25-.09-.43-.13-.61.13-.18.27-.7.87-.86 1.04-.16.18-.32.19-.59.06-.27-.13-1.15-.42-2.19-1.34-.81-.72-1.37-1.61-1.53-1.88-.16-.27-.02-.42.11-.55.12-.12.27-.3.4-.46.13-.16.18-.27.27-.46.09-.18.04-.36-.02-.49-.07-.13-.61-1.47-.84-2.01-.22-.54-.45-.47-.61-.47h-.5c-.18 0-.46.07-.7.34-.24.27-.92.9-1.13 2.17-.21 1.27.1 2.44.23 2.61.13.18.9 1.41 2.19 3.09 1.29 1.68 2.3 2.23 3.1 2.52.8.29 1.5.23 2.05.14.62-.1 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.13-.24-.2-.51-.34z"></path></svg></a></div></div>',
+                    
+                    // 4. What We Do
+                    'what-h2': 'Два способа работы с нами',
+                    'what-enterprise-h': 'Enterprise AI Engineering',
+                    'what-enterprise-f1': 'Полный цикл разработки под ключ',
+                    'what-enterprise-f2': 'Интеграция с SAP, 1C, legacy-системами',
+                    'what-enterprise-f3': 'On-premise решения для банков и госкомпаний',
+                    'what-enterprise-cta': 'Обсудить проект',
+                    'what-saas-h': 'AI-Продукты (SaaS)',
+                    'what-saas-f1': 'Design QA для Enterprise-брендов',
+                    'what-saas-f2': 'Автоматизация B2B-продаж',
+                    'what-saas-cta1': 'Узнать больше о Françoise',
+                    'what-saas-cta2': 'Узнать больше о Klio',
+                    
+                    // 5. Proof
+                    'results-h2': 'Результаты',
+                    'results-c1': '10M пользователей обслуживает платформа, спроектированная нашим CTO',
+                    'results-c2': '10x рост MRR за 4 месяца на последнем проекте CEO',
+                    'results-c3': '100% консистентность бренда гарантирует Françoise',
+                    'results-cta': 'Все кейсы',
+                    
+                    // 6. Final CTA
+                    'final-cta-h2': 'Начнем с бесплатного аудита вашей AI-стратегии',
+                    'final-cta-sub': '40 минут с экспертами, которые построили системы для 10M+ пользователей',
+                    'final-cta-form-name': 'Имя',
+                    'final-cta-form-email': 'Email',
+                    'final-cta-form-phone': 'Телефон',
+                    'final-cta-form-task': 'Краткое описание задачи',
+                    'final-cta-form-note': 'Без продаж на первой встрече. Только честная оценка вашей ситуации.',
+                    'final-cta-form-cta': 'Записаться на аудит',
+                    
+                    // Bottom Banner
+                    'bottom-banner-h2': 'Не пропустите эксклюзивные предложения для гостей выставки',
+                    'bottom-banner-sub': 'Специальные пакеты, закрытые консультации с CTO и бонусы только для участников ивента',
+                    'bottom-banner-cta': 'Смотреть все предложения'
+                },
+                'en': {
+                    // --- МЕТА ---
+                    'meta-title': 'DIVO — AI systems that make money',
+                    'meta-description': 'We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure.',
 
-            // Optimize scroll performance on mobile
-            let ticking = false;
-            
-            function updateScrollEffects() {
-                // Throttle scroll events for better performance
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        // Update any scroll-based animations here
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }
-            
-            window.addEventListener('scroll', updateScrollEffects, { passive: true });
-        }
+                    // --- Общие (Шапка, Подвал) ---
+                    'logo': 'DIVO',
+                    'nav-sales': 'For Sales',
+                    'nav-design': 'For Design',
+                    'nav-about': 'About Us',
+                    'header-cta': 'Get a Consultation',
+                    'header-cta-mobile': 'Consultation',
+                    'nav-solutions': 'Solutions',
+                    'nav-custom-dev': 'Custom Development',
+                    'nav-portfolio': 'Portfolio',
+                    'footer-mission': 'We turn technology into a growth engine for your business.',
+                    'footer-solutions-title': 'Solutions',
+                    'footer-company-title': 'Company',
+                    'footer-portfolio': 'Portfolio & Cases',
+                    'footer-contact-title': 'Contact & Legal',
+                    'footer-legal-title': 'Legal',
+                    'footer-privacy': 'Privacy Policy',
+                    'footer-terms': 'Terms of Service',
 
-        // Add CSS animations via JavaScript
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
+                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
+                    
+                    // Top Sticky Banner
+                    'sticky-banner-text': '👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount',
+                    'sticky-banner-cta': 'Book now',
+                    
+                    // 1. Hero
+                    'hero-h1': 'AI systems that make money',
+                    'hero-sub': 'We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure',
+                    'hero-cta1': 'Get a free technical audit',
+                    'hero-cta2': 'View our case studies',
+                    
+                    // 2. Social Proof
+                    'social-h2': 'Trusted by industry leaders',
+                    
+                    // 3. Why Us
+                    'why-h2': 'Growth × Scale = Profit',
+                    'why-daria': 'Grew MRR by 10x in 4 months. I know how to turn technology into revenue',
+                    'why-viktor': 'Designed Russia\'s #1 platform serving 10M users. I build systems that don\'t fail',
+                    'why-cta': 'Meet the team',
+                    'why-daria-note': '<div class="conference-note-card"><p class="!text-sm !text-white !font-normal !mb-2"><span><b>P.S.</b> I\'m at the conference right now!</span></p><div class="flex items-center gap-4"><span class="!text-sm !text-white !font-normal !mb-0">Message me:</span><a href="httpsS://t.me/darikamouse" target="_blank" class="contact-icon" aria-label="Chat on Telegram"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 11.9c-.88-.27-.88-1.37.2-1.64l16.4-6.05c.75-.27 1.45.16 1.18 1.08l-3.0 14.17c-.2 1.02-1.03 1.28-1.88.8l-5.1-3.72-2.45 2.35c-.27.27-.67.43-1.08.19z"></path></svg></a><a href="httpsS://wa.me/79035176391" target="_blank" class="contact-icon" aria-label="Chat on WhatsApp"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.49 1.29 4.99L2 22l5.25-1.38c1.45.77 3.09 1.19 4.79 1.19h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.13c-1.57 0-3.07-.4-4.4-1.1L7.5 19.1l-3.32.87.89-3.23-.7-1.17c-.8-1.4-1.22-3.03-1.22-4.7C3.15 7.01 7.15 3 12.04 3s8.89 4.01 8.89 8.91c0 4.9-3.99 8.91-8.89 8.91zm4.71-5.38c-.27-.13-1.59-.78-1.84-.87-.25-.09-.43-.13-.61.13-.18.27-.7.87-.86 1.04-.16.18-.32.19-.59.06-.27-.13-1.15-.42-2.19-1.34-.81-.72-1.37-1.61-1.53-1.88-.16-.27-.02-.42.11-.55.12-.12.27-.3.4-.46.13-.16.18-.27.27-.46.09-.18.04-.36-.02-.49-.07-.13-.61-1.47-.84-2.01-.22-.54-.45-.47-.61-.47h-.5c-.18 0-.46.07-.7.34-.24.27-.92.9-1.13 2.17-.21 1.27.1 2.44.23 2.61.13.18.9 1.41 2.19 3.09 1.29 1.68 2.3 2.23 3.1 2.52.8.29 1.5.23 2.05.14.62-.1 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.13-.24-.2-.51-.34z"></path></svg></a></div></div>',
                 }
-            }
-            
-            .touching {
-                transform: scale(0.95);
-                transition: transform 0.1s ease;
-            }
-            
-            .active {
-                transform: translateY(-5px) !important;
-                box-shadow: 0 15px 35px rgba(203, 2, 19, 0.2) !important;
-                border-color: rgb(203, 2, 19) !important;
-            }
-            
-            .member-placeholder {
-                border-radius: 0;
-            }
-            
-            .logo-fallback {
-                animation: logoFallbackPulse 3s ease-in-out infinite;
-            }
-            
-            @keyframes logoFallbackPulse {
-                0%, 100% {
-                    transform: scaleY(1.8) scaleX(0.8);
-                }
-                50% {
-                    transform: scaleY(1.9) scaleX(0.85);
-                }
-            }
-            
-            /* Enhanced hover effects */
-            .approach-card:hover,
-            .solution-card:hover,
-            .client-card:hover {
-                border-color: rgba(203, 2, 19, 0.3);
-            }
-            
-            /* Team photo hover effects */
-            .member-photo:hover {
-                transform: scale(1.05);
-                transition: transform 0.3s ease;
-            }
-            
-            /* Client grid hover effect */
-            .clients-grid-2x2:hover .client-card:not(:hover) {
-                opacity: 0.7;
-                transform: scale(0.98);
-            }
-            
-            .clients-grid-2x2 .client-card {
-                transition: all 0.3s ease;
-            }
-            
-            /* CTA buttons enhanced styling */
-            .cta-buttons .btn-secondary {
-                background: transparent;
-                border: 2px solid white;
-                color: white;
-            }
-            
-            .cta-buttons .btn-secondary:hover {
-                background: white;
-                color: rgb(203, 2, 19);
-            }
-            
-            /* Ensure CTA buttons are clickable */
-            .cta-buttons .btn {
-                pointer-events: auto;
-                cursor: pointer;
-                position: relative;
-                z-index: 10;
-            }
-            
-            /* Logo hover effect */
-            .logo-image:hover {
-                transform: scale(1.1);
-                transition: transform 0.3s ease;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Performance optimization: Debounce resize events
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
             };
-        }
 
-        // Handle window resize
-        const handleResize = debounce(() => {
-            // Recalculate any size-dependent animations
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = 'translateY(0)';
-            }
-        }, 250);
-
-        window.addEventListener('resize', handleResize);
-
-        // Preload critical resources and optimize performance
-        function preloadResources() {
-            // Preload team photos
-            const criticalImages = [
-              'https://drive.google.com/uc?export=view&id=15fkyqVQcMwkIvZXWL5tJXdAXINq-5Cgj', 
-              'https://drive.google.com/uc?export=view&id=1DxBZof3Mf5tglsX0Tb-Jn3psnRgdD28J'
-            ];
-            
-            criticalImages.forEach(src => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'image';
-                link.href = src;
-                document.head.appendChild(link);
-            });
-        }
-
-        // Initialize everything when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', preloadResources);
-        } else {
-            preloadResources();
-        }
-
-        // Export functions for potential external use
-        window.DIVO = {
-            scrollToSection
-        };
-
-        // Add enhanced scroll tracking for analytics
-        function initializeScrollTracking() {
-            const sections = document.querySelectorAll('section[id]');
-            const sectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Track section view for analytics
-                        const sectionName = entry.target.id || entry.target.className;
-                        console.log(`Section viewed: ${sectionName}`);
+            // --- Логика переключения языка (из образца) ---
+            const btnRuDesktop = document.getElementById('btn-ru');
+            const btnEnDesktop = document.getElementById('btn-en');
+            const btnRuMobile = document.getElementById('btn-ru-mobile');
+            const btnEnMobile = document.getElementById('btn-en-mobile');
                         
-                        // You can add Google Analytics or other tracking here
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'section_view', {
-                                event_category: 'engagement',
-                                event_label: sectionName
-                            });
+            const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+            function updateContent(lang) {
+                document.documentElement.lang = lang;
+
+                const isRu = lang === 'ru';
+                if(btnRuDesktop) btnRuDesktop.classList.toggle('active', isRu);
+                if(btnEnDesktop) btnEnDesktop.classList.toggle('active', !isRu);
+                if(btnRuMobile) btnRuMobile.classList.toggle('active', isRu);
+                if(btnEnMobile) btnEnMobile.classList.toggle('active', !isRu);
+
+                if(btnRuDesktop) btnRuDesktop.setAttribute('aria-pressed', isRu);
+                if(btnEnDesktop) btnEnDesktop.setAttribute('aria-pressed', !isRu);
+                if(btnRuMobile) btnRuMobile.setAttribute('aria-pressed', isRu);
+                if(btnEnMobile) btnEnMobile.setAttribute('aria-pressed', !isRu);
+
+                const langTranslations = translations[lang];
+
+                elementsToTranslate.forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    if (langTranslations[key]) {
+                        if (key === 'meta-title') {
+                            el.innerHTML = langTranslations[key];
+                        } else if (key === 'meta-description') {
+                            el.setAttribute('content', langTranslations[key]);
+                        } else {
+                            // Простая защита от XSS (хотя в данном случае ключи контролируем мы)
+                            // Для вставки HTML (как в 'why-daria-note') нам нужно использовать innerHTML
+                            // В остальных случаях - textContent
+                            // Но для простоты, т.к. мы доверяем контенту, используем innerHTML
+                            el.innerHTML = langTranslations[key];
                         }
                     }
                 });
-            }, { threshold: 0.3 });
-            
-            sections.forEach(section => {
-                sectionObserver.observe(section);
-            });
-        }
+            }
 
-        // Initialize scroll tracking after page load
-        window.addEventListener('load', function() {
-            initializeScrollTracking();
-            
-            // Add final performance optimizations
-            setTimeout(() => {
-                // Enable smooth scrolling after initial load
-                document.documentElement.style.scrollBehavior = 'smooth';
-                
-                // Lazy load non-critical animations
-                const nonCriticalElements = document.querySelectorAll('.footer, .clients');
-                nonCriticalElements.forEach(el => {
-                    observer.observe(el);
-                });
-            }, 1000);
+            if(btnRuDesktop) btnRuDesktop.addEventListener('click', () => updateContent('ru'));
+            if(btnEnDesktop) btnEnDesktop.addEventListener('click', () => updateContent('en'));
+            if(btnRuMobile) btnRuMobile.addEventListener('click', () => updateContent('ru'));
+            if(btnEnMobile) btnEnMobile.addEventListener('click', () => updateContent('en'));
+
+            // Устанавливаем язык по умолчанию (EN), как в образце
+            updateContent('en');
         });
-
-        // Handle navigation and improve UX - BUT DON'T INTERFERE WITH CTA BUTTONS
-        document.addEventListener('click', function(e) {
-            // Handle internal navigation (but skip CTA buttons)
-            if (e.target.matches('a[href^="#"]') && !e.target.closest('.cta-buttons')) {
-                e.preventDefault();
-                const targetId = e.target.getAttribute('href').substring(1);
-                scrollToSection(targetId);
-            }
             
-            // Add click tracking for buttons (but don't prevent CTA button defaults)
-            if ((e.target.matches('.btn') || e.target.closest('.btn')) && !e.target.closest('.cta-buttons')) {
-                const button = e.target.matches('.btn') ? e.target : e.target.closest('.btn');
-                const buttonText = button.textContent.trim();
-                
-                console.log(`Button clicked: ${buttonText}`);
-                
-                // Track button clicks
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'button_click', {
-                        event_category: 'engagement',
-                        event_label: buttonText
-                    });
-                }
-            }
-        });
-
-        // Special handling for font loading optimization
-        function optimizeFontLoading() {
-            // Ensure fallbacks are properly handled
-            if ('fonts' in document) {
-                Promise.all([
-                    document.fonts.load('700 1em "KS Bistra"'),
-                    document.fonts.load('700 1em "Alumni Sans"'),
-                    document.fonts.load('300 1em "Roboto"')
-                ]).then(() => {
-                    console.log('All fonts loaded successfully');
-                    document.body.classList.add('fonts-loaded');
-                }).catch(() => {
-                    console.warn('Some fonts failed to load, using fallbacks');
-                    document.body.classList.add('fonts-fallback');
-                });
-            }
-        }
-
-        // Initialize font optimization
-        document.addEventListener('DOMContentLoaded', optimizeFontLoading);
     </script>
 </body>
 </html>

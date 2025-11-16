@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<!-- ИЗМЕНЕНО: lang="en" по умолчанию, JS переключит на 'ru', если нужно -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ИЗМЕНЕНО: Добавлен Favicon (встроенный SVG в виде буквы D) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+    <!-- Мета-теги (будут управляться через JS) -->
+    <!-- ИЗМЕНЕНО: Контент для Виктора -->
+    <title data-lang="meta-title">Виктор Писаревский — CTO DIVO | Enterprise AI Architect</title>
+    <meta name="description" data-lang="meta-description" content="Виктор Писаревский, CTO DIVO, проектирует high-load системы, которые выдерживают миллионы пользователей и миллиарды в транзакциях. Enterprise-архитектура для AI-решений.">
+
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Eugusto';
+             src: url('EugustoFreePersonalUse-Regular.otf') format('otf');
+            font-weight: 800; /* Укажи правильный вес, если знаешь */
+            font-style: normal;
+        }
+
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Alumni Sans', sans-serif;
+            --font-decorative: 'Eugusto', 'KS Bistra', sans-serif;
+
+            /* Цвета */
+            --color-primary: rgb(203, 2, 19);
+            --color-primary-dark: rgb(180, 2, 19);
+            --color-bg-light: rgb(241, 241, 241);
+            --color-text-main: rgb(30, 30, 30);
+            --color-text-secondary: rgb(60, 60, 60);
+            --color-card-bg: #ffffff;
+            --color-footer-bg: rgb(30, 30, 30);
+
+            /* Цвета для карточек воркшопов */
+            --color-bg-1: rgba(203, 2, 19, 0.1);    /* Red tint */
+            --color-bg-2: rgba(0, 240, 255, 0.1);   /* Azure tint */
+            --color-bg-3: rgba(60, 60, 60, 0.08);   /* Gray tint */
+            --color-bg-4: rgba(203, 2, 19, 0.1);    /* Red tint */
+            --color-bg-5: rgba(0, 240, 255, 0.1);   /* Azure tint */
+            --color-bg-6: rgba(60, 60, 60, 0.08);   /* Gray tint */
+        }
+
+        /* Базовые стили */
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-weight: 300; 
+            line-height: 1.6;
+        }
+
+        /* Заголовки */
+        h1[data-lang], h2[data-lang], h3[data-lang], h4[data-lang], h5[data-lang], h6[data-lang] {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-text-main);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1[data-lang] {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            font-size: clamp(3.5rem, 3rem + 2vw, 5rem);
+            letter-spacing: -1px;
+        }
+        h2[data-lang] {
+            font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
+            font-weight: 800;
+        }
+                
+        h3[data-lang] {
+            font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+            font-weight: 700;
+        }
+        
+        h4[data-lang] {
+            font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
+            font-weight: 700;
+        }
+
+        p, blockquote {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            font-weight: 400; /* Regular для Inter */
+        }
+        
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1rem;
+            margin-left: 0;
+            font-size: 1.25rem;
+            color: var(--color-text-main);
+        }
+                
+        /* Стили Шапки (Header) */
+        .header-logo {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            color: var(--color-primary);
+            font-size: 2.25rem; /* 36px */
+            line-height: 1;
+        }
+        
+        .header-nav-link {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            transition: color 0.2s ease;
+            text-transform: uppercase;
+        }
+        .header-nav-link:hover {
+            color: var(--color-primary);
+        }
+                
+        /* Мобильное меню */
+        #mobile-menu {
+            transition: all 0.3s ease-out;
+            z-index: 40;
+        }
+
+        /* Стили кнопок */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.25rem;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            border: 2px solid var(--color-primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(203, 2, 19, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-tag {
+            background-color: rgba(0, 0, 0, 0.05); 
+            color: var(--color-text-secondary);
+            border: 2px solid transparent; 
+            font-weight: 700; 
+            text-transform: none; 
+            padding: 0.5rem 1.25rem;
+            font-size: 1rem;
+            margin: 0.25rem; 
+            white-space: nowrap;
+            display: inline-block;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-tag:hover {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Стили для Блока 6 (Ивент) */
+        .event-banner {
+            background-color: #03101a;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+                
+        .event-banner h2[data-lang],
+        .event-banner h4[data-lang] {
+            color: white;
+        }
+
+        .highlight-text {
+            color: #00A0B0; 
+            font-weight: 600; 
+        }
+                
+        .event-banner p {
+            color: #e0e0e0; 
+        }
+
+        .btn-event {
+            background-color: #D90429; 
+            color: white;
+            border: none;
+        }
+        .btn-event:hover {
+            background-color: #EF233C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.4);
+        }
+
+        /* Стили для карточек */
+        .card {
+            background-color: var(--color-card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+                
+        /* Стили для карточек-постеров (Блок 5) */
+        .card-poster__header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px 12px 0 0;
+        }
+        .card-poster__header h4[data-lang] {
+            margin-bottom: 0;
+        }
+        .bg-custom-1 { background-color: var(--color-bg-1); }
+        .bg-custom-2 { background-color: var(--color-bg-2); }
+        .bg-custom-3 { background-color: var(--color-bg-3); }
+        .bg-custom-4 { background-color: var(--color-bg-4); }
+        .bg-custom-5 { background-color: var(--color-bg-5); }
+        .bg-custom-6 { background-color: var(--color-bg-6); }
+
+        /* Стили для переключателя языка (встроенного) */
+        .lang-switcher-inline {
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 0.25rem;
+            display: flex;
+        }
+        .lang-switcher-inline button {
+            padding: 0.5rem 0.75rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            background-color: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-switcher-inline button.active {
+            color: var(--color-primary);
+            background-color: var(--color-card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .lang-switcher-inline button:hover:not(.active) {
+            background-color: rgba(0,0,0,0.03);
+        }
+
+        /* Стили для Подвала (Footer) */
+        .footer {
+            background-color: var(--color-footer-bg);
+            color: #CFCFCF; 
+            display: block;
+        }
+        .footer-logo {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            color: white;
+            font-size: 2.5rem; /* 40px */
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .footer-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        p[data-lang="footer-mission"] {
+            color: white;
+        }
+        .footer-link {
+            color: #CFCFCF;
+            font-family: var(--font-sans);
+            font-weight: 400; 
+            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: white;
+        }
+        
+        /* Приклеивание блока контактов к футеру */
+        .card-glued-footer {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+            
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Шапка (Header) -->
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Логотип -->
+                <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+
+                <!-- Навигация + CTA (Desktop) -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <!-- Навигация -->
+                    <nav class="flex gap-8 items-center">
+                        <!-- Dropdown: Решения -->
+                        <div class="relative group">
+                            <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
+                                Решения
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <!-- Dropdown меню -->
+                            <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
+                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
+                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Портфолио -->
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                        <!-- О нас -->
+                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+                    </nav>
+
+                    <!-- CTA + Язык -->
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="btn btn-primary btn-sm popup-trigger" data-popup="consult" data-lang="header-cta">Получить консультацию</a>
+                        <div class="lang-switcher-inline">
+                            <button id="btn-ru" class="" aria-pressed="false">RU</button>
+                            <button id="btn-en" class="active" aria-pressed="true">EN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Мобильное меню -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="#" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="header-cta-mobile">Консультация</a>
+                    <div class="lang-switcher-inline">
+                        <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                        <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
+                    </div>
+                    <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Мобильное меню (выпадающее) -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+                <nav class="flex flex-col gap-4">
+                    <div>
+                        <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
+                        <div class="pl-4 flex flex-col gap-2">
+                            <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
+                            <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
+                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
+                        </div>
+                    </div>
+                    <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                    <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Общий контейнер -->
+    <div class="container max-w-6xl mx-auto px-4 pt-12 sm:pt-16">
+                
+        <!-- ИЗМЕНЕНО: Блок 6: Баннер /function1 -->
+        <section id="function1-hero" class="mb-12 md:mb-16">
+            <div class="event-banner">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <!-- ИЗМЕНЕНО: Текст для Виктора -->
+                    <div class="md:col-span-2">
+                        <h2 data-lang="function1-top-title" class="highlight-text mb-4">Специальные предложения для участников /function1</h2>
+                        <p data-lang="function1-top-text" class="text-lg mb-4">Посмотрите специальные предложения на продукты DIVO для участников конференции в Дубае 18-19 ноября.</p>
+                        <!-- ИЗМЕНЕНО: Удален список UL, т.к. у Виктора только 1 параграф -->
+                    </div>
+                    <div class="md:text-right flex items-center md:items-start md:justify-end">
+                        <a href="/function1-offers" data-lang="function1-top-cta" class="btn btn-event btn-lg whitespace-nowrap">Смотреть предложения</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ИЗМЕНЕНО: Блок 1: Hero (Главный экран) -->
+        <section id="hero" class="mb-16 md:mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <!-- Текстовый контент -->
+                <div class="order-2 md:order-1">
+                    <h1 data-lang="hero-h1">Виктор Писаревский</h1>
+                    <h3 data-lang="hero-h3" class="text-text-secondary">CTO & Co-Founder | The Architect of Enterprise-Grade AI</h3>
+                    <p data-lang="hero-p" class="text-lg">Я создаю AI-архитектуры, которые работают в реальном enterprise-масштабе. Я проектировал high-load системы, обслуживающие 10+ миллионов пользователей. Если вам нужен AI, который не сломается под нагрузкой, а станет частью вашей core-инфраструктуры — я ваш архитектор.</p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <!-- ИЗМЕНЕНО: Ссылка на #contact -->
+                        <a href="/#final-cta" data-lang="hero-cta1" class="btn btn-primary">Обсудить архитектуру</a>
+                        <!-- ИЗМЕНЕНО: Ссылка на LinkedIn Виктора -->
+                        <a href="https://www.linkedin.com/in/victor-kamyshin-pisarevskii-19115034a/" target="_blank" rel="noopener noreferrer" data-lang="hero-cta2" class="btn btn-secondary">Связаться в LinkedIn</a>
+                    </div>
+                </div>
+                <!-- Фото -->
+                <div class="order-1 md:order-2">
+                    <!-- ИЗМЕНЕНО: Плейсхолдер для Виктора -->
+                    <img src="Victor.jpeg" alt="Victor Pisarevsky" class="w-full h-auto max-w-md mx-auto rounded-lg shadow-xl object-cover aspect-square">
+                </div>
+            </div>
+        </section>
+
+        <!-- ИЗМЕНЕНО: Блок 2: Философия -->
+        <section id="philosophy" class="mb-16 md:mb-24 text-center max-w-4xl mx-auto">
+            <h2 data-lang="philosophy-h2">AI стоит на фундаменте enterprise-архитектуры</h2>
+            <blockquote data-lang="philosophy-quote" class="mt-8">
+                AI — это хайповая технология, но она не отменяет базовых правил. Настоящую пользу приносят только те AI-решения, которые стоят на прочном enterprise-фундаменте. Моя работа — заложить этот фундамент, чтобы AI-сервис был таким же надёжным, как и ваша core-система.
+            </blockquote>
+        </section>
+
+        <!-- ИЗМЕНЕНО: Блок 3: Опыт и результаты -->
+        <section id="experience" class="mb-16 md:mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Левая колонка: Текст -->
+                <div>
+                    <h2 data-lang="experience-h2">Опыт: $18.4B+ в транзакциях и 10M+ MAU</h2>
+                    <p data-lang="experience-p1">Я CTO DIVO. 15+ лет я проектирую и создаю enterprise-системы. Работая в одной из крупнейших tech-корпораций региона, я руководил архитектурой core-систем для DomClick — региональной платформы недвижимости №1. Я спроектировал эскроу-сервис, через который проходят транзакции на сумму более $18.4B+.</p>
+                    <p data-lang="experience-p2">Я прошёл путь от монолитов до отказоустойчивых микросервисов и знаю, как заставить Python (AI) и Java (Enterprise) работать вместе под высокой нагрузкой. 3 мои production-системы на этом проекте имеют 99% автоматизации операций.</p>
+                </div>
+                <!-- Правая колонка: Метрики (ИЗМЕНЕНО: Структура под 4 метрики Виктора) -->
+                <div class="card flex flex-col gap-6 p-8">
+                    <!-- Метрика 1 -->
+                    <div class="text-center md:text-left">
+                        <span class="block text-4xl md:text-5xl font-bold" style="font-family: var(--font-decorative); color: var(--color-primary);" data-lang="experience-metric1-val">10M+ MAU</span>
+                        <span class="block text-lg font-semibold" data-lang="experience-metric1-desc">Платформа (DomClick)</span>
+                    </div>
+                    <hr>
+                    <!-- Метрика 2 -->
+                    <div class="text-center md:text-left">
+                        <span class="block text-4xl md:text-5xl font-bold" style="font-family: var(--font-decorative); color: var(--color-primary);" data-lang="experience-metric2-val">$18.4B+</span>
+                        <span class="block text-lg font-semibold" data-lang="experience-metric2-desc">В обработанных транзакциях</span>
+                    </div>
+                    <hr>
+                    <!-- Метрика 3 -->
+                    <div class="text-center md:text-left">
+                        <span class="block text-4xl md:text-5xl font-bold" style="font-family: var(--font-decorative); color: var(--color-primary);" data-lang="experience-metric3-val">15+ лет</span>
+                        <span class="block text-lg font-semibold" data-lang="experience-metric3-desc">В Enterprise-архитектуре</span>
+                    </div>
+                    <hr>
+                    <!-- Метрика 4 -->
+                    <div class="text-center md:text-left">
+                        <!-- ИЗМЕНЕНО: Уменьшен шрифт для длинного текста -->
+                        <span class="block text-2xl md:text-3xl font-bold" style="font-family: var(--font-decorative); color: var(--color-primary);" data-lang="experience-metric4-val">Java + Python + Scala</span>
+                        <span class="block text-lg font-semibold" data-lang="experience-metric4-desc">High-Load + AI экспертиза</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ИЗМЕНЕНО: Блок 4: Флагманские решения (Кейсы) -->
+        <section id="cases" class="mb-16 md:mb-24">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 data-lang="cases-h2">Флагманские проекты</h2>
+                <p data-lang="cases-sub" class="text-lg">Примеры архитектурных решений, реализованных для enterprise-клиентов.</p>
+            </div>
+                        
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <!-- Кейс 1 -->
+                <div class="card">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-custom-1 rounded-lg flex items-center justify-center text-[var(--color-primary)]">
+                            <!-- Иконка из примера (E-commerce) -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h4 class="m-0" data-lang="case1-client">Major Banking & Fintech Group</h4>
+                    </div>
+                    <p data-lang="case1-solution"><strong>Конвейер данных для enterprise-аналитики:</strong> отказоустойчивый микросервис, доставляющий данные из ядра бизнеса в BI-инструменты без риска для стабильности.</p>
+                </div>
+                <!-- Кейс 2 -->
+                <div class="card">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-custom-2 rounded-lg flex items-center justify-center text-[#007A86]">
+                            <!-- Иконка из примера (Tech) -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H4v5M15 3h5v5M9 21H4v-5M15 21h5v-5M3 9h18v6H3V9zM9 9v0a3 3 0 003 3h0a3 3 0 003-3v0"></path></svg>
+                        </div>
+                        <h4 class="m-0" data-lang="case2-client">Major Banking & Fintech Group</h4>
+                    </div>
+                    <p data-lang="case2-solution"><strong>Движок контекстной валидации:</strong> система, находящая ошибки в реальном времени в сложных формах, повышающая точность обработки данных.</p>
+                </div>
+                <!-- Кейс 3 -->
+                <div class="card">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-custom-3 rounded-lg flex items-center justify-center text-[var(--color-text-secondary)]">
+                            <!-- Иконка из примера (Bank) -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-7 0H3m3 0v-4M7 3v2M17 3v2M12 3v2M12 17v4M12 21h-4v-4h4v4zm0 0h4v-4h-4v4z"></path></svg>
+                        </div>
+                        <h4 class="m-0" data-lang="case3-client">Major Banking & Fintech Group</h4>
+                    </div>
+                    <p data-lang="case3-solution"><strong>Автоматизация изменений аккредитива:</strong> модуль, управляющий всем циклом изменений сделок с 99% автоматизацией операций.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <!-- ИЗМЕНЕНО: Ссылка на /custom-development -->
+                <a href="/custom-development" data-lang="cases-cta" class="btn btn-secondary">Смотреть все кейсы</a>
+            </div>
+        </section>
+
+        <!-- ИЗМЕНЕНО: Блок 5: Темы для CTO -->
+        <section id="topics" class="mb-12 md:mb-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 data-lang="topics-h2">Темы вебинаров для CTO и техлидов</h2>
+                <p data-lang="topics-sub" class="text-lg">Я верю, что в хайповой AI-индустрии критически важно делиться реальным enterprise-опытом. Я помогаю CTO и техлидам принимать взвешенные архитектурные решения и строить системы, которые действительно работают.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                                
+                <!-- Тема 1 -->
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-1">
+                        <h4 data-lang="topic1-h">Безопасность "на вайбе": коллекция анти-паттернов от AI-энтузиастов</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="topic1-p">Технический доклад (с иронией) о типичных ошибках: RAG, подключённый к прод-базе; API-ключи в GitHub. На контрасте — важность инженерной культуры и enterprise-практик.</p>
+                    </div>
+                </div>
+
+                <!-- Тема 2 -->
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-2">
+                        <h4 data-lang="topic2-h">Security-чеклист для вашего первого AI-проекта</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="topic2-p">Конструктивный гайд для разработчиков без опыта в enterprise-безопасности. Базовые принципы: никогда не доверяй LLM полностью, санируй данные, используй read-only реплики.</p>
+                    </div>
+                </div>
+
+                <!-- Тема 3 -->
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-3">
+                        <h4 data-lang="topic3-h">Fine-tuning — ловушка для 90% компаний. Почему RAG + API-оркестрация эффективнее</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="topic3-p">Опираясь на опыт создания high-load систем, докажу, что контроль над данными важнее уникальности модели. Сравнение подходов с точки зрения стоимости, безопасности и скорости внедрения.</p>
+                    </div>
+                </div>
+
+                <!-- Тема 4 -->
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-4">
+                        <h4 data-lang="topic4-h">Разработчик-полиглот: как использовать LLM для переключения между языками</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="topic4-p">На своём полиглотном опыте (Java, Scala, Python) покажу, как AI помогает разобраться в чужом коде, переписать сервис (Python → Java) и генерировать тесты.</p>
+                    </div>
+                </div>
+
+                <!-- Тема 5 -->
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-5">
+                        <h4 data-lang="topic5-h">Архитектура Enterprise AI: паттерны безопасной интеграции LLM</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="topic5-p">Высокоуровневый архитектурный доклад. Сравнение паттернов: безопасный шлюз к внешним LLM, приватное облако и полное развёртывание на серверах клиента (On-Premise).</p>
+                    </div>
+                </div>
+
+                <!-- Тема 6 -->
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-6">
+                        <h4 data-lang="topic6-h">AI в условиях ограничений: фреймворк решений от прокси до полного суверенитета</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="topic6-p">Когда глобальные AI-сервисы (OpenAI, Claude) недоступны из-за гео-блоков или NDA. Фреймворк решений: Уровень 1 (Обходные пути), Уровень 2 (Локальные провайдеры), Уровень 3 (Полный суверенитет / On-Premise).</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ИЗМЕНЕНО: Добавлен CTA для спикера -->
+            <div class="text-center mt-12">
+                <a href="#contact" data-lang="topics-cta" class="btn btn-primary">Пригласить спикером</a>
+            </div>
+        </section>
+
+    </div> <!-- Конец .container -->
+
+    <!-- ИЗМЕНЕНО: Блок 7: Контакты -->
+    <section id="contact" class="container max-w-6xl mx-auto px-4">
+        <div class="card max-w-4xl mx-auto p-8 md:p-12 text-center card-glued-footer">
+            
+            <h2 data-lang="contact-h2" class="mb-4">Свяжитесь со мной</h2>
+                            
+            <p data-lang="contact-p" class="text-lg mb-4">Запишитесь на бесплатную 40-минутную техническую консультацию по архитектуре вашей системы.</p>
+                
+            <p class="text-base m-0 text-text-secondary font-bold mb-4" data-lang="contact-special">
+                <span class="highlight-text">Специальное предложение (18-19 ноября):</span> Получите скидку 60% на полный "Technical Audit" ($1,999 вместо $5,000).
+            </p>
+
+            <div class="mb-6">
+                <!-- ИЗМЕНЕНО: Ссылка-якорь заменена на popup-trigger -->
+                <a href="/#final-cta" data-lang="contact-cta" class="btn btn-primary btn-lg popup-trigger" data-popup="consult">Получить консультацию</a>
+            </div>
+
+            <p data-lang="contact-alt" class="text-base mb-4">Или свяжитесь напрямую:</p>
+                
+            <!-- ИЗМЕНЕНО: Альтернативные ссылки для Виктора -->
+            <div class="flex justify-center gap-4 md:gap-8 flex-wrap text-base">
+                <a href="mailto:cto@divo.solutions" class="btn-tag">cto@divo.solutions</a>
+                <a href="https://www.linkedin.com/in/victor-kamyshin-pisarevskii-19115034a/" target="_blank" rel="noopener noreferrer" class="btn-tag">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал (Footer) -->
+    <footer class="footer pt-16 pb-8 md:pb-12">
+        <div class="container max-w-7xl mx-auto px-4">
+            <!-- Сетка 4 колонки -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
+                
+                <!-- Колонка 1: О DIVO -->
+                <div>
+                    <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
+                    <p class="text-sm mb-2" data-lang="footer-mission">
+                        Мы превращаем технологии в двигатель роста вашего бизнеса.
+                    </p>
+                </div>
+
+                <!-- Колонка 2: Решения -->
+                <div>
+                    <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
+                        <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
+                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 3: Компания -->
+                <div>
+                    <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
+                        <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 4: Контакты и Документы -->
+                <div>
+                    <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+                        <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
+                        <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
+                    </ul>
+                    <div class="mt-3">
+                        <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
+                        <ul class="space-y-2">
+                            <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
+                            <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Копирайт -->
+            <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
+                <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ИЗМЕНЕНО: Полностью замененный объект translations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- ЛОГИКА МОБИЛЬНОГО МЕНЮ ---
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const isExpanded = !mobileMenu.classList.contains('hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+            
+            // --- ИЗМЕНЕНО: БАЗА ДАННЫХ ПЕРЕВОДОВ ДЛЯ ВИКТОРА ---
+            const translations = {
+                // Русский
+                'ru': {
+                    // Мета
+                    'meta-title': 'Виктор Писаревский — CTO DIVO | Enterprise AI Architect',
+                    'meta-description': 'Виктор Писаревский, CTO DIVO, проектирует high-load системы, которые выдерживают миллионы пользователей и миллиарды в транзакциях. Enterprise-архитектура для AI-решений.',
+                    
+                    // Шапка (общие)
+                    'logo': 'DIVO',
+                    'nav-sales': 'Для Продаж',
+                    'nav-design': 'Для Дизайна',
+                    'nav-about': 'О нас',
+                    'header-cta': 'Получить консультацию',
+                    'header-cta-mobile': 'Консультация',
+                    'nav-solutions': 'Решения',
+                    'nav-custom-dev': 'Кастомная разработка',
+                    'nav-portfolio': 'Портфолио',
+
+                    // Блок 1: Hero
+                    'hero-h1': 'Виктор Писаревский',
+                    'hero-h3': 'CTO & Co-Founder | The Architect of Enterprise-Grade AI', // H3 на английском, как в ТЗ
+                    'hero-p': 'Я создаю AI-архитектуры, которые работают в реальном enterprise-масштабе. Я проектировал high-load системы, обслуживающие 10+ миллионов пользователей. Если вам нужен AI, который не сломается под нагрузкой, а станет частью вашей core-инфраструктуры — я ваш архитектор.',
+                    'hero-cta1': 'Обсудить архитектуру',
+                    'hero-cta2': 'Связаться в LinkedIn',
+                    
+                    // Блок 2: Философия
+                    'philosophy-h2': 'AI стоит на фундаменте enterprise-архитектуры',
+                    'philosophy-quote': 'AI — это хайповая технология, но она не отменяет базовых правил. Настоящую пользу приносят только те AI-решения, которые стоят на прочном enterprise-фундаменте. Моя работа — заложить этот фундамент, чтобы AI-сервис был таким же надёжным, как и ваша core-система.',
+                    
+                    // Блок 3: Опыт
+                    'experience-h2': 'Опыт: $18.4B+ в транзакциях и 10M+ MAU',
+                    'experience-p1': 'Я CTO DIVO. 15+ лет я проектирую и создаю enterprise-системы. Работая в одной из крупнейших tech-корпораций региона, я руководил архитектурой core-систем для DomClick — региональной платформы недвижимости №1. Я спроектировал эскроу-сервис, через который проходят транзакции на сумму более $18.4B+.',
+                    'experience-p2': 'Я прошёл путь от монолитов до отказоустойчивых микросервисов и знаю, как заставить Python (AI) и Java (Enterprise) работать вместе под высокой нагрузкой. 3 мои production-системы на этом проекте имеют 99% автоматизации операций.',
+                    'experience-metric1-val': '10M+ MAU',
+                    'experience-metric1-desc': 'Платформа (DomClick)',
+                    'experience-metric2-val': '$18.4B+',
+                    'experience-metric2-desc': 'В обработанных транзакциях',
+                    'experience-metric3-val': '15+ лет',
+                    'experience-metric3-desc': 'В Enterprise-архитектуре',
+                    'experience-metric4-val': 'Java + Python + Scala',
+                    'experience-metric4-desc': 'High-Load + AI экспертиза',
+
+                    // Блок 4: Проекты
+                    'cases-h2': 'Флагманские проекты',
+                    'cases-sub': 'Примеры архитектурных решений, реализованных для enterprise-клиентов.',
+                    'case1-client': 'Major Banking & Fintech Group',
+                    'case1-solution': '<strong>Конвейер данных для enterprise-аналитики:</strong> отказоустойчивый микросервис, доставляющий данные из ядра бизнеса в BI-инструменты без риска для стабильности.',
+                    'case2-client': 'Major Banking & Fintech Group',
+                    'case2-solution': '<strong>Движок контекстной валидации:</strong> система, находящая ошибки в реальном времени в сложных формах, повышающая точность обработки данных.',
+                    'case3-client': 'Major Banking & Fintech Group',
+                    'case3-solution': '<strong>Автоматизация изменений аккредитива:</strong> модуль, управляющий всем циклом изменений сделок с 99% автоматизацией операций.',
+                    'cases-cta': 'Смотреть все кейсы',
+
+                    // Блок 5: Темы
+                    'topics-h2': 'Темы вебинаров для CTO и техлидов',
+                    'topics-sub': 'Я верю, что в хайповой AI-индустрии критически важно делиться реальным enterprise-опытом. Я помогаю CTO и техлидам принимать взвешенные архитектурные решения и строить системы, которые действительно работают.',
+                    'topic1-h': 'Безопасность "на вайбе": коллекция анти-паттернов от AI-энтузиастов',
+                    'topic1-p': 'Технический доклад (с иронией) о типичных ошибках: RAG, подключённый к прод-базе; API-ключи в GitHub. На контрасте — важность инженерной культуры и enterprise-практик.',
+                    'topic2-h': 'Security-чеклист для вашего первого AI-проекта',
+                    'topic2-p': 'Конструктивный гайд для разработчиков без опыта в enterprise-безопасности. Базовые принципы: никогда не доверяй LLM полностью, санируй данные, используй read-only реплики.',
+                    'topic3-h': 'Fine-tuning — ловушка для 90% компаний. Почему RAG + API-оркестрация эффективнее',
+                    'topic3-p': 'Опираясь на опыт создания high-load систем, докажу, что контроль над данными важнее уникальности модели. Сравнение подходов с точки зрения стоимости, безопасности и скорости внедрения.',
+                    'topic4-h': 'Разработчик-полиглот: как использовать LLM для переключения между языками',
+                    'topic4-p': 'На своём полиглотном опыте (Java, Scala, Python) покажу, как AI помогает разобраться в чужом коде, переписать сервис (Python → Java) и генерировать тесты.',
+                    'topic5-h': 'Архитектура Enterprise AI: паттерны безопасной интеграции LLM',
+                    'topic5-p': 'Высокоуровневый архитектурный доклад. Сравнение паттернов: безопасный шлюз к внешним LLM, приватное облако и полное развёртывание на серверах клиента (On-Premise).',
+                    'topic6-h': 'AI в условиях ограничений: фреймворк решений от прокси до полного суверенитета',
+                    'topic6-p': 'Когда глобальные AI-сервисы (OpenAI, Claude) недоступны из-за гео-блоков или NDA. Фреймворк решений: Уровень 1 (Обходные пути), Уровень 2 (Локальные провайдеры), Уровень 3 (Полный суверенитет / On-Premise).',
+                    'topics-cta': 'Пригласить спикером',
+
+                    // Блок 6: Баннер
+                    'function1-top-title': 'Специальные предложения для участников /function1',
+                    'function1-top-text': 'Посмотрите специальные предложения на продукты DIVO для участников конференции в Дубае 18-19 ноября.',
+                    'function1-top-cta': 'Смотреть предложения',
+                    
+                    // Блок 7: Контакты
+                    'contact-h2': 'Свяжитесь со мной',
+                    'contact-p': 'Запишитесь на бесплатную 40-минутную техническую консультацию по архитектуре вашей системы.',
+                    'contact-special': '<span class="highlight-text">Специальное предложение (18-19 ноября):</span><br> Получите скидку 60% на полный "Technical Audit" ($1,999 вместо $5,000).',
+                    'contact-cta': 'Получить консультацию',
+                    'contact-alt': 'Или свяжитесь напрямую:',
+
+                    // Футер (общие)
+                    'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
+                    'footer-solutions-title': 'Решения',
+                    'footer-company-title': 'Компания',
+                    'footer-portfolio': 'Портфолио и Кейсы',
+                    'footer-contact-title': 'Контакты',
+                    'footer-legal-title': 'Документы',
+                    'footer-privacy': 'Политика конфиденциальности',
+                    'footer-terms': 'Условия использования'
+                },
+                
+                // Английский
+                'en': {
+                    // Мета
+                    'meta-title': 'Victor Pisarevsky — CTO DIVO | Enterprise AI Architect',
+                    'meta-description': 'Victor Pisarevsky, CTO of DIVO, architects high-load systems that handle millions of users and billions in transactions. Enterprise architecture for AI solutions.',
+
+                    // Шапка (общие)
+                    'logo': 'DIVO',
+                    'nav-sales': 'For Sales',
+                    'nav-design': 'For Design',
+                    'nav-about': 'About Us',
+                    'header-cta': 'Get a Consultation',
+                    'header-cta-mobile': 'Consultation',
+                    'nav-solutions': 'Solutions',
+                    'nav-custom-dev': 'Custom Development',
+                    'nav-portfolio': 'Portfolio',
+
+                    // Блок 1: Hero
+                    'hero-h1': 'Victor Pisarevsky',
+                    'hero-h3': 'CTO & Co-Founder | The Architect of Enterprise-Grade AI',
+                    'hero-p': 'I build AI architectures that truly work at enterprise scale. I\'ve engineered high-load systems for 10M+ users. If you need AI that won\'t break under pressure but will become part of your core infrastructure, I\'m your architect.',
+                    'hero-cta1': 'Discuss Architecture',
+                    'hero-cta2': 'Connect on LinkedIn',
+
+                    // Блок 2: Философия
+                    'philosophy-h2': 'AI Stands on Enterprise Architecture Foundation',
+                    'philosophy-quote': 'AI is a hyped technology, but it doesn\'t change the fundamental rules. Only AI solutions built on a solid enterprise foundation deliver real value. My job is to lay that foundation, ensuring the AI service is just as reliable as your core system.',
+
+                    // Блок 3: Опыт
+                    'experience-h2': 'Experience: $18.4B+ in Transactions and 10M+ MAU',
+                    'experience-p1': 'I am the CTO of DIVO. For 15+ years, I have been designing and building enterprise systems. While at one of the region\'s largest tech corporations, I led the architecture of core systems for DomClick — the region\'s #1 real estate platform. I designed an escrow service that processes $18.4B+ in transactions.',
+                    'experience-p2': 'I\'ve evolved from monoliths to fault-tolerant microservices and know how to make Python (AI) and Java (Enterprise) work together under high load. My 3 production systems on that project run with 99% operation automation.',
+                    'experience-metric1-val': '10M+ MAU',
+                    'experience-metric1-desc': 'Platform Experience',
+                    'experience-metric2-val': '$18.4B+',
+                    'experience-metric2-desc': 'In Processed Transactions',
+                    'experience-metric3-val': '15+ years',
+                    'experience-metric3-desc': 'In Enterprise Architecture',
+                    'experience-metric4-val': 'Java + Python + Scala',
+                    'experience-metric4-desc': 'High-Load + AI Expertise',
+
+                    // Блок 4: Проекты
+                    'cases-h2': 'Flagship Projects',
+                    'cases-sub': 'Examples of architectural solutions implemented for enterprise clients.',
+                    'case1-client': 'Major Banking & Fintech Group',
+                    'case1-solution': '<strong>Data pipeline for enterprise analytics:</strong> a fault-tolerant microservice delivering data from the business core to BI tools without risking stability.',
+                    'case2-client': 'Major Banking & Fintech Group',
+                    'case2-solution': '<strong>Contextual validation engine:</strong> a system that finds real-time errors in complex forms, improving data processing accuracy.',
+                    'case3-client': 'Major Banking & Fintech Group',
+                    'case3-solution': '<strong>Letter of credit automation:</strong> a module managing the entire lifecycle of deal changes with 99% operation automation.',
+                    'cases-cta': 'See All Cases',
+
+                    // Блок 5: Темы
+                    'topics-h2': 'Webinar Topics for CTOs and Tech Leads',
+                    'topics-sub': 'I believe it\'s critical to share real enterprise experience in the over-hyped AI industry. I help CTOs and Tech Leads make sound architectural decisions and build systems that truly work.',
+                    'topic1-h': '"Vibe-Based Security": An Anti-Pattern Collection from AI Enthusiasts',
+                    'topic1-p': 'A technical (and ironic) talk about common mistakes: RAG connected to a production DB; API keys in GitHub. By contrast, showing the importance of engineering culture and enterprise practices.',
+                    'topic2-h': 'A Security Checklist for Your First AI Project',
+                    'topic2-p': 'A constructive guide for developers without enterprise security experience. Basic principles: never fully trust an LLM, sanitize your data, use read-only replicas.',
+                    'topic3-h': 'Fine-Tuning is a Trap for 90% of Companies. Why RAG + API Orchestration is More Effective',
+                    'topic3-p': 'Drawing on experience building high-load systems, I\'ll prove that data control is more important than model uniqueness. A comparison of approaches by cost, security, and implementation speed.',
+                    'topic4-h': 'The Polyglot Developer: Using LLMs to Switch Between Languages',
+                    'topic4-p': 'Using my polyglot experience (Java, Scala, Python), I show how AI helps understand foreign code, rewrite services (Python → Java), and generate tests.',
+                    'topic5-h': 'Enterprise AI Architecture: Patterns for Secure LLM Integration',
+                    'topic5-p': 'A high-level architectural talk. Comparing patterns: a secure gateway to external LLMs, private cloud, and full on-premise deployment.',
+                    'topic6-h': 'AI Under Constraints: A Framework from Proxy to Full Sovereignty',
+                    'topic6-p': 'When global AI services (OpenAI, Claude) are unavailable due to geo-blocks or NDAs. A framework of solutions: Level 1 (Workarounds), Level 2 (Local Providers), Level 3 (Full Sovereignty / On-Premise).',
+                    'topics-cta': 'Invite as Speaker',
+
+                    // Блок 6: Баннер
+                    'function1-top-title': 'Special Offers for /function1 Attendees',
+                    'function1-top-text': 'Check out special offers on DIVO products for conference attendees in Dubai, November 18-19.',
+                    'function1-top-cta': 'See Offers',
+
+                    // Блок 7: Контакты
+                    'contact-h2': 'Get in Touch',
+                    'contact-p': 'Book a free 40-minute technical consultation on your system architecture.',
+                    'contact-special': '<span class="highlight-text">Special Offer (Nov 18-19):</span><br> Get 60% off our full "Technical Audit" ($1,999 instead of $5,000).',
+                    'contact-cta': 'Get Consultation',
+                    'contact-alt': 'Or contact me directly:',
+                    
+                    // Футер (общие)
+                    'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
+                    'footer-solutions-title': 'Solutions',
+                    'footer-company-title': 'Company',
+                    'footer-portfolio': 'Portfolio & Cases',
+                    'footer-contact-title': 'Contact & Legal',
+                    'footer-legal-title': 'Legal',
+                    'footer-privacy': 'Privacy Policy',
+                    'footer-terms': 'Terms of Service'
+                }
+            };
+
+            // --- ЛОГИКА ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА ---
+            
+            const btnRuDesktop = document.getElementById('btn-ru');
+            const btnEnDesktop = document.getElementById('btn-en');
+            const btnRuMobile = document.getElementById('btn-ru-mobile');
+            const btnEnMobile = document.getElementById('btn-en-mobile');
+                        
+            const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+            function updateContent(lang) {
+                document.documentElement.lang = lang;
+
+                const isRu = lang === 'ru';
+                btnRuDesktop.classList.toggle('active', isRu);
+                btnEnDesktop.classList.toggle('active', !isRu);
+                btnRuMobile.classList.toggle('active', isRu);
+                btnEnMobile.classList.toggle('active', !isRu);
+
+                btnRuDesktop.setAttribute('aria-pressed', isRu);
+                btnEnDesktop.setAttribute('aria-pressed', !isRu);
+                btnRuMobile.setAttribute('aria-pressed', isRu);
+                btnEnMobile.setAttribute('aria-pressed', !isRu);
+
+                const langTranslations = translations[lang];
+
+                elementsToTranslate.forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    if (langTranslations[key]) {
+                        if (key === 'meta-title') {
+                            el.innerHTML = langTranslations[key];
+                        } else if (key === 'meta-description') {
+                            el.setAttribute('content', langTranslations[key]);
+                        } 
+                        else {
+                            // Позволяем HTML внутри ключей (для <strong> в кейсах)
+                            el.innerHTML = langTranslations[key];
+                        }
+                    }
+                });
+            }
+
+            btnRuDesktop.addEventListener('click', () => updateContent('ru'));
+            btnEnDesktop.addEventListener('click', () => updateContent('en'));
+            btnRuMobile.addEventListener('click', () => updateContent('ru'));
+            btnEnMobile.addEventListener('click', () => updateContent('en'));
+
+            // Инициализация. Начинаем с русского.
+            updateContent('en');
+        });
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,3828 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Иконка из образца -->
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+
+
+    <!-- Новые мета-данные для Françoise -->
+
+    <title data-lang="meta-title">Françoise by DIVO | Design QA Automation</title>
+
+    <meta name="description" data-lang="meta-description" content="Design quality and design system compliance checking. Save up to $150,000/year on quality control. From typography to RTL adaptation.">
+
+
+
+    <!-- Стили и скрипты из образца (Клио.html) -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Шрифты из Клио.html -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;8800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    
+
+    <!-- Полностью скопированный блок <style> из Клио.html -->
+
+    <style>
+
+        @font-face {
+
+            font-family: 'Eugusto';
+
+            src: url('EugustoFreePersonalUse-Regular.otf') format('otf');
+
+            font-weight: 800;
+
+            font-style: normal;
+
+        }
+
+
+
+        :root {
+
+            --font-sans: 'Inter', sans-serif;
+
+            --font-heading: 'Alumni Sans', sans-serif;
+
+            /* Используем Eugusto (декоративный) для H1, как в Клио */
+
+            --font-decorative: 'Eugusto', 'KS Bistra', sans-serif;
+
+
+
+            --color-primary: rgb(203, 2, 19);
+
+            --color-primary-dark: rgb(180, 2, 19);
+
+            --color-bg-light: rgb(241, 241, 241);
+
+            --color-text-main: rgb(30, 30, 30);
+
+            --color-text-secondary: rgb(60, 60, 60);
+
+            --color-card-bg: #ffffff;
+
+            --color-footer-bg: rgb(30, 30, 30);
+
+
+
+            --color-bg-1: rgba(203, 2, 19, 0.1);
+
+            --color-bg-2: rgba(0, 240, 255, 0.1);
+
+            --color-bg-3: rgba(60, 60, 60, 0.08);
+
+            --color-bg-4: rgba(203, 2, 19, 0.1);
+
+            --color-bg-5: rgba(0, 240, 255, 0.1);
+
+            --color-bg-6: rgba(60, 60, 60, 0.08);
+
+        }
+
+
+
+        body {
+
+            font-family: var(--font-sans);
+
+            background-color: var(--color-bg-light);
+
+            color: var(--color-text-main);
+
+            font-weight: 300; 
+
+            line-height: 1.6;
+
+            scroll-behavior: smooth;
+
+        }
+
+
+
+        /* Адаптируем H1, H2, H3 под стили из Клио */
+
+        h1[data-lang], h2[data-lang], h3[data-lang], h4[data-lang], h5[data-lang], h6[data-lang] {
+
+            font-family: var(--font-heading);
+
+            font-weight: 700;
+
+            color: var(--color-text-main);
+
+            line-height: 1.2;
+
+            margin-bottom: 1rem;
+
+        }
+
+
+
+        h1[data-lang] {
+
+            font-family: var(--font-decorative);
+
+            font-weight: 800;
+
+            font-size: clamp(3.5rem, 3rem + 2vw, 5rem);
+
+            letter-spacing: -1px;
+
+        }
+
+        h2[data-lang] {
+
+            font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
+
+            font-weight: 800;
+
+        }
+
+                
+
+        h3[data-lang] {
+
+            font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+
+            font-weight: 700;
+
+        }
+
+        
+
+        h4[data-lang] {
+
+            font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
+
+            font-weight: 700;
+
+        }
+
+
+
+        p, ul {
+
+            color: var(--color-text-secondary);
+
+            margin-bottom: 1.25rem;
+
+            font-size: 0.95rem; 
+
+            font-weight: 400;
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        ul {
+
+            list-style-position: inside;
+
+            list-style-type: disc;
+
+            padding-left: 0.5rem;
+
+        }
+
+        li {
+
+            margin-bottom: 0.5rem;
+
+            font-size: 0.95rem; 
+
+        }
+
+        
+
+        blockquote {
+
+            font-style: italic;
+
+            border-left: 4px solid var(--color-primary);
+
+            padding-left: 1rem;
+
+            margin-left: 0;
+
+            margin-bottom: 1.25rem;
+
+            color: var(--color-text-main);
+
+            font-weight: 500;
+
+            line-height: 1.5;
+
+            font-size: 1.125rem !important;
+
+        }
+
+
+
+        h5[data-lang] {
+
+            font-family: var(--font-heading);
+
+            font-weight: 700;
+
+            color: var(--color-text-main);
+
+            font-size: 2rem;
+
+            margin-top: 1rem;
+
+            margin-bottom: 0.75rem;
+
+        }
+
+        
+
+        @media (max-width: 640px) {
+
+            h5[data-lang] {
+
+                font-size: 1.5rem !important;
+
+            }
+
+        }
+
+        
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+
+            h5[data-lang] {
+
+                font-size: 1.5rem !important;
+
+            }
+
+        }
+
+        
+
+        @media (min-width: 1025px) {
+
+            h5[data-lang] {
+
+                font-size: 2rem !important;
+
+            }
+
+        }
+
+        
+
+        .header-logo {
+
+            font-family: var(--font-decorative);
+
+            font-weight: 800;
+
+            color: var(--color-primary);
+
+            font-size: 2.25rem;
+
+            line-height: 1;
+
+        }
+
+        
+
+        .header-nav-link {
+
+            font-family: var(--font-heading);
+
+            font-weight: 600;
+
+            font-size: 1.1rem;
+
+            color: var(--color-text-secondary);
+
+            transition: color 0.2s ease;
+
+            text-transform: uppercase;
+
+        }
+
+        .header-nav-link:hover {
+
+            color: var(--color-primary);
+
+        }
+
+                
+
+        #mobile-menu {
+
+            transition: all 0.3s ease-out;
+
+            z-index: 40;
+
+        }
+
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 0.75rem 1.75rem;
+
+            border-radius: 8px;
+
+            font-family: var(--font-heading);
+
+            font-weight: 600;
+
+            font-size: 1.1rem;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            margin: 0.25rem;
+
+            /* white-space: nowrap; */ /* Убрано для адаптации кнопок */
+
+        }
+
+        .btn-primary {
+
+            background-color: var(--color-primary);
+
+            color: white;
+
+            border: 2px solid var(--color-primary);
+
+        }
+
+        .btn-primary:hover {
+
+            background-color: var(--color-primary-dark);
+
+            border-color: var(--color-primary-dark);
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 4px 15px rgba(203, 2, 19, 0.3);
+
+        }
+
+        .btn-secondary {
+
+            background-color: transparent;
+
+            color: var(--color-primary);
+
+            border: 2px solid var(--color-primary);
+
+        }
+
+        .btn-secondary:hover {
+
+            background-color: var(--color-primary);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+        
+
+        .btn-azure {
+
+            background-color: #00A0B0;
+
+            color: white;
+
+            border: 2px solid #00A0B0;
+
+        }
+
+        .btn-azure:hover {
+
+            background-color: #007A86;
+
+            border-color: #007A86;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 4px 15px rgba(0, 160, 176, 0.3);
+
+        }
+
+        
+
+        .btn-tag {
+
+            background-color: rgba(0, 0, 0, 0.05); 
+
+            color: var(--color-text-secondary);
+
+            border: 2px solid transparent; 
+
+            font-weight: 700; 
+
+            text-transform: none; 
+
+            padding: 0.5rem 1.25rem;
+
+            font-size: 1rem;
+
+            margin: 0.25rem; 
+
+            white-space: nowrap;
+
+            display: inline-block;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+        }
+
+        .btn-tag:hover {
+
+            background-color: var(--color-primary);
+
+            color: white;
+
+            border-color: var(--color-primary);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        .link-arrow {
+
+            display: inline-block;
+
+            font-family: var(--font-heading);
+
+            font-weight: 600;
+
+            font-size: 1.1rem;
+
+            color: var(--color-primary);
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            transition: transform 0.3s ease, color 0.3s ease;
+
+        }
+
+        .link-arrow:hover {
+
+            color: var(--color-primary-dark);
+
+            transform: translateX(4px); 
+
+        }
+
+
+
+        /* Стиль .event-banner из Клио - идеально для CTA */
+
+        .event-banner {
+
+            background-color: #03101a;
+
+            color: white;
+
+            padding: 2.5rem;
+
+            border-radius: 12px;
+
+            background-image: url('background.png');
+
+            background-size: cover;
+
+            background-position: center;
+
+            border: 1px solid rgba(0, 240, 255, 0.3);
+
+        }
+
+                
+
+        .event-banner h2[data-lang],
+
+        .event-banner h4[data-lang],
+
+        .event-banner h3[data-lang] {
+
+            color: white;
+
+        }
+
+
+
+        .highlight-text {
+
+            color: #00A0B0;
+
+            font-weight: 600; 
+
+        }
+
+                
+
+        .event-banner p {
+
+            color: #e0e0e0; 
+
+        }
+
+
+
+        /* Кнопка .btn-event из Клио */
+
+        .btn-event {
+
+            background-color: #D90429; /* Красный */
+
+            color: white;
+
+            border: 2px solid #D90429;
+
+            display: inline-block;
+
+            padding: 0.75rem 1.75rem;
+
+            border-radius: 8px;
+
+            font-family: var(--font-heading);
+
+            font-weight: 600;
+
+            font-size: 1.1rem;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            margin: 0.25rem;
+
+        }
+
+        .btn-event:hover {
+
+            background-color: #EF233C;
+
+            border-color: #EF233C;
+
+            transform: translateY(-2px);
+
+        }
+
+        
+
+        .btn-outline-white {
+
+            background-color: transparent;
+
+            color: white;
+
+            border: 2px solid white;
+
+        }
+
+        .btn-outline-white:hover {
+
+            background-color: white;
+
+            color: var(--color-footer-bg); /* dark text */
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        .cta-banner {
+
+            background-color: #03101a;
+
+            color: white;
+
+            padding: 2.5rem;
+
+            border-radius: 12px;
+
+            background-image: linear-gradient(90deg, rgba(3, 16, 26, 0.9) 0%, rgba(5, 26, 46, 0.8) 100%), url('https://placehold.co/1200x600/051a2e/FFFFFF?text=Discuss+Your+Challenge');
+
+            background-size: cover;
+
+            background-position: center;
+
+            border: 1px solid rgba(0, 240, 255, 0.3);
+
+        }
+
+        .cta-banner h2[data-lang],
+
+        .cta-banner h3[data-lang] {
+
+            color: white;
+
+        }
+
+
+
+        .card {
+
+            background-color: var(--color-card-bg);
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+            border: 1px solid rgba(0, 0, 0, 0.08);
+
+            padding: 1.5rem;
+
+            transition: all 0.3s ease;
+
+            height: 100%;
+
+        }
+
+        .card-no-hover:hover {
+
+            transform: none;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+        }
+
+        .enterprise-illustration{
+            background-image: url('entIll.png'); /* Путь к изображению */
+
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+
+            background-repeat: no-repeat;
+            background-position: center top;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .expert-illustration{
+            background-image: url('ExpIll.png'); /* Путь к изображению */
+
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+
+            background-repeat: no-repeat;
+            background-position: center top;
+
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .basic-illustration{
+            background-image: url('BasicIll.png'); /* Путь к изображению */
+
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+
+            background-repeat: no-repeat;
+            background-position: center top;
+
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .card:not(.card-no-hover):hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        }
+
+                
+
+        .card-poster__header {
+
+            padding: 1.5rem;
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+            border-radius: 12px 12px 0 0;
+
+        }
+
+        .card-poster__header h4[data-lang] {
+
+            margin-bottom: 0;
+
+        }
+
+        .bg-custom-1 { background-color: var(--color-bg-1); }
+
+        .bg-custom-2 { background-color: var(--color-bg-2); }
+
+        .bg-custom-3 { background-color: var(--color-bg-3); }
+
+        .bg-custom-4 { background-color: var(--color-bg-4); }
+
+
+
+        .lang-switcher-inline {
+
+            background-color: rgba(0,0,0,0.05);
+
+            border-radius: 8px;
+
+            padding: 0.25rem;
+
+            display: flex;
+
+        }
+
+        .lang-switcher-inline button {
+
+            padding: 0.5rem 0.75rem;
+
+            font-family: var(--font-heading);
+
+            font-weight: 600;
+
+            color: var(--color-text-secondary);
+
+            background-color: transparent;
+
+            border: none;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            transition: all 0.2s ease;
+
+        }
+
+        .lang-switcher-inline button.active {
+
+            color: var(--color-primary);
+
+            background-color: var(--color-card-bg);
+
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+        }
+
+        .lang-switcher-inline button:hover:not(.active) {
+
+            background-color: rgba(0,0,0,0.03);
+
+        }
+
+
+
+        .footer {
+
+            background-color: var(--color-footer-bg);
+
+            color: #CFCFCF; 
+
+            display: block;
+
+        }
+
+        .footer-logo {
+
+            font-family: var(--font-decorative);
+
+            font-weight: 800;
+
+            color: white;
+
+            font-size: 2.5rem;
+
+            line-height: 1;
+
+            margin-bottom: 1rem;
+
+        }
+
+        .footer-title {
+
+            font-family: var(--font-heading);
+
+            font-weight: 700;
+
+            color: white;
+
+            font-size: 1.25rem;
+
+            margin-bottom: 1rem;
+
+            text-transform: uppercase;
+
+        }
+
+        p[data-lang="footer-mission"] {
+
+            color: white;
+
+        }
+
+        .footer-link {
+
+            color: #CFCFCF;
+
+            font-family: var(--font-sans);
+
+            font-weight: 400; 
+
+            font-size: 1rem;
+
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+
+        }
+
+        .footer-link:hover {
+
+            color: white;
+
+        }
+
+
+
+        /* Стили для таблицы (из Клио) */
+
+        table {
+
+            border-collapse: collapse;
+
+            width: 100%;
+
+        }
+
+        th, td {
+
+            border: 1px solid rgba(0, 0, 0, 0.1);
+
+            padding: 0.75rem 1rem;
+
+            text-align: left;
+
+            font-size: 0.9rem;
+
+        }
+
+        th {
+
+            background-color: rgba(0, 0, 0, 0.03);
+
+            font-family: var(--font-heading);
+
+            font-weight: 700;
+
+            font-size: 1rem;
+
+            color: var(--color-text-main);
+
+        }
+
+        td {
+
+            color: var(--color-text-secondary);
+
+        }
+
+        tr:nth-child(even) td {
+
+            background-color: rgba(0, 0, 0, 0.01);
+
+        }
+
+        
+
+        /* Стили для ценовой карточки (из Клио) */
+
+        .price-card {
+
+            background-color: var(--color-card-bg);
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+            border: 1px solid rgba(0, 0, 0, 0.08);
+
+            padding: 2rem;
+
+            transition: all 0.3s ease;
+
+            height: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+        .price-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .price-card-popular {
+
+            border: 2px solid var(--color-primary);
+
+        }
+
+        .price-card ul {
+
+            list-style: none;
+
+            padding-left: 0;
+
+            margin-bottom: 1.5rem;
+
+            flex-grow: 1;
+
+        }
+
+        .price-card li {
+
+            position: relative;
+
+            padding-left: 1.75rem;
+
+            margin-bottom: 0.75rem;
+
+            font-size: 0.95rem;
+
+            color: var(--color-text-secondary);
+
+        }
+
+        .price-card li::before {
+
+            content: '✓';
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            color: var(--color-primary);
+
+            font-weight: 700;
+
+            font-size: 1rem;
+
+        }
+
+
+
+        /* Стили для горизонтального таймлайна (из Клио, адаптируем для 5 шагов) */
+
+        .timeline-container {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1rem;
+
+        }
+
+        .timeline-step {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            position: relative;
+
+            padding-bottom: 2rem;
+
+            flex: 1; /* Добавлено для 5 шагов */
+
+        }
+
+        .timeline-step:not(:last-child)::after {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: 0;
+
+            height: 2rem;
+
+            width: 2px;
+
+            background-color: var(--color-primary);
+
+            opacity: 0.3;
+
+        }
+
+        .timeline-circle {
+
+            width: 3rem;
+
+            height: 3rem;
+
+            border-radius: 50%;
+
+            background-color: var(--color-card-bg);
+
+            border: 3px solid var(--color-primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: 700;
+
+            font-size: 1.25rem;
+
+            color: var(--color-primary);
+
+            z-index: 10;
+
+        }
+
+        .timeline-content {
+
+            text-align: center;
+
+            margin-top: 1rem;
+
+            padding: 0 1rem;
+
+        }
+
+        .timeline-content h4 {
+
+            margin-bottom: 0.5rem;
+
+        }
+
+        
+
+        /* Desktop-версия таймлайна (из Клио) */
+
+        @media (min-width: 768px) {
+
+            .timeline-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 0;
+
+            }
+
+            .timeline-step {
+
+                flex: 1;
+
+                padding-bottom: 0;
+
+                padding-top: 1.5rem; /* Сдвиг для круга */
+
+            }
+
+            .timeline-step:not(:last-child)::after {
+
+                height: 2px;
+
+                width: 100%;
+
+                top: 1.5rem; /* Позиция круга */
+
+                left: 50%;
+
+                bottom: auto;
+
+                transform: translateY(-50%);
+
+            }
+
+            .timeline-circle {
+
+                position: absolute;
+
+                top: 0;
+
+                left: 50%;
+
+                transform: translateX(-50%);
+
+            }
+
+            .timeline-content {
+
+                margin-top: 4rem; /* Место под круг */
+
+                padding: 0;
+
+            }
+
+        }
+
+
+
+        /* Стили для FAQ (из Клио) */
+
+        .faq-item {
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            padding-bottom: 1rem;
+
+            margin-bottom: 1rem;
+
+        }
+
+        .faq-item:last-child {
+
+            border-bottom: none;
+
+            margin-bottom: 0;
+
+        }
+
+        .faq-toggle {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            width: 100%;
+
+            background: none;
+
+            border: none;
+
+            cursor: pointer;
+
+            padding: 0.5rem 0;
+
+        }
+
+        .faq-toggle h4 {
+
+            font-family: var(--font-sans);
+
+            font-weight: 700;
+
+            font-size: 1.1rem;
+
+            color: var(--color-text-main);
+
+            margin-bottom: 0;
+
+            text-align: left;
+
+        }
+
+        .faq-icon {
+
+            font-size: 1.5rem;
+
+            font-weight: 700;
+
+            color: var(--color-primary);
+
+            transition: transform 0.2s ease-out;
+
+            margin-left: 1rem;
+
+        }
+
+        .faq-answer {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.3s ease-out;
+
+        }
+
+        .faq-answer p {
+
+            padding-top: 0.5rem;
+
+            margin-bottom: 0;
+
+        }
+
+        .faq-item.faq-open .faq-answer {
+
+            max-height: 200px; /* Достаточно для параграфа */
+
+        }
+
+        .faq-item.faq-open .faq-icon {
+
+            transform: rotate(45deg);
+
+        }
+
+        
+
+        /* Новая анимация для Hero Badge */
+
+        @keyframes pulse-bg {
+
+            0%, 100% { background-color: var(--color-primary); }
+
+            50% { background-color: var(--color-primary-dark); }
+
+        }
+
+        /* .animate-pulse-bg {
+
+             animation: pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+        } */
+
+ 
+
+        /* Новые стили для ROI калькулятора */
+
+        .form-input {
+
+            width: 100%;
+
+            border: 1px solid rgba(0, 0, 0, 0.2);
+
+            border-radius: 8px;
+
+            padding: 0.75rem 1rem;
+
+            font-family: var(--font-sans);
+
+            font-size: 1rem;
+
+            transition: border-color 0.2s, box-shadow 0.2s;
+
+        }
+
+        .form-input:focus {
+
+            outline: none;
+
+            border-color: var(--color-primary);
+
+            box-shadow: 0 0 0 3px rgba(203, 2, 19, 0.2);
+
+        }
+
+            
+
+    </style>
+
+</head>
+
+<body class="antialiased">
+
+
+
+    <!-- 
+
+      HEADER (ШАПКА)
+
+      Скопировано 1-в-1 из Клио.html
+
+    -->
+
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+
+        <div class="container max-w-7xl mx-auto px-4">
+
+            <div class="flex justify-between items-center h-20">
+
+                
+
+                <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+
+
+
+                <div class="hidden lg:flex items-center gap-6">
+
+                    <nav class="flex gap-8 items-center">
+
+                        <div class="relative group">
+
+                            <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
+
+                                Решения
+
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+
+                                </svg>
+
+                            </button>
+
+                            <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+
+                                <div class="py-2">
+
+                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
+
+                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
+
+                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+
+                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+
+                    </nav>
+
+
+
+                    <div class="flex items-center gap-4">
+
+                        <a href="/#final-cta" class="btn btn-primary btn-sm" href="#section-6-cta" data-lang="header-cta-special">Получить консультацию</a>
+
+                        <div class="lang-switcher-inline">
+
+                            <button id="btn-ru" class="" aria-pressed="false">RU</button>
+
+                            <button id="btn-en" class="active" aria-pressed="true">EN</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="lg:hidden flex items-center gap-2">
+
+                    <a href="/#final-cta" class="btn btn-primary text-sm px-4 py-2 whitespace-nowrap" data-lang="header-cta-special">Консультация</a>
+
+                    <div class="lang-switcher-inline">
+
+                        <button id="btn-ru-mobile" class="text-sm px-3 py-2" aria-pressed="false">RU</button>
+
+                        <button id="btn-en-mobile" class="active text-sm px-3 py-2" aria-pressed="true">EN</button>
+
+                    </div>
+
+                    <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
+
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+
+                <nav class="flex flex-col gap-4">
+
+                    <div>
+
+                        <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
+
+                        <div class="pl-4 flex flex-col gap-2">
+
+                            <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
+
+                            <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
+
+                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
+
+                        </div>
+
+                    </div>
+
+                    <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+
+                    <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- 
+
+      EVENT BANNER (взят из Клио.html по запросу)
+
+    -->
+
+    <div class="container max-w-6xl mx-auto px-4 pt-12 sm:pt-16">        
+
+        <section id="function1-banner" class="mb-12 md:mb-16">
+
+            <div class="event-banner">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+
+                    <div class="md:col-span-2">
+
+                        <h3 data-lang="banner-h3" class="mb-2">🔥 <span data-lang="banner-h3-span">Специальное предложение для участников /function1</span></h3>
+
+                        <h4 data-lang="banner-h4" class="highlight-text mb-4">(18-19 ноября 2025, Дубай)</h4>
+
+                        <p data-lang="banner-p" class="text-lg mb-4">Встречаемся в Дубае на крупнейшей AI-конференции года! Бесплатная техническая консультация + специальные условия для участников конференции.</p>
+
+                        <p data-lang="banner-meta" class="text-sm opacity-80">Действует: 18-19 ноября 2025 | Festival Arena, Dubai</p>
+
+                    </div>
+
+                    <div class="md:text-right flex items-center md:items-start md:justify-end">
+
+                        <a href="/#final-cta" data-lang="banner-cta" class="btn btn-event btn-lg whitespace-nowrap">Получить предложение</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- 
+
+      НАЧАЛО НОВОГО КОНТЕНТА ДЛЯ "FRANÇOISE"
+
+    -->
+
+
+
+    <!-- SECTION 1: HERO -->
+
+    <section id="section-1-hero" class="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center py-20 px-4">
+
+        <div class="container max-w-4xl mx-auto">
+
+ 
+
+            <!-- H1 -->
+
+            <h1 data-lang="hero-h1" class="mb-6">Françoise — Your AI Art Director for Design Quality Control</h1>
+
+            
+
+            <!-- Subheading -->
+
+            <h2 data-lang="hero-sub" class="text-lg md:text-xl font-normal text-text-secondary max-w-3xl mx-auto mb-10 !font-sans !font-light !leading-relaxed">
+
+                We automate routine checks of typography, spacing, composition, and RTL adaptation with mathematical precision. Your team returns to creativity — consistency is maintained 24/7.
+
+            </h2>
+
+
+
+            <!-- Key Metrics -->
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10">
+
+                <div class="card card-no-hover p-6">
+
+                    <h3 data-lang="hero-metric1-h" class="mb-1 text-primary">20x faster</h3>
+
+                    <p data-lang="hero-metric1-p" class="mb-0">From 5 days to 2 hours checking spacing, colors, typography</p>
+
+                </div>
+
+                <div class="card card-no-hover p-6">
+
+                    <h3 data-lang="hero-metric2-h" class="mb-1 text-primary">100% accuracy</h3>
+
+                    <p data-lang="hero-metric2-p" class="mb-0">100% accuracy checking spacing, colors, typography</p>
+
+                </div>
+
+                <div class="card card-no-hover p-6">
+
+                    <h3 data-lang="hero-metric3-h" class="mb-1 text-primary">310M+ users</h3>
+
+                    <p data-lang="hero-metric3-p" class="mb-0">RTL support for Arabic markets</p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Social Proof -->
+
+            <p data-lang="hero-social" class="text-lg font-semibold text-text-main mb-8">
+
+                Trusted by: E-commerce | Fintech | SaaS | Healthtech
+
+            </p>
+
+
+
+            <!-- CTA Block -->
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+
+                <a href="/#final-cta" class="btn btn-primary" data-lang="hero-cta1">Book Free Consultation</a>
+
+                <a href="#" class="btn btn-secondary" data-lang="hero-cta2">Get $99 Demo</a>
+
+            </div>
+
+            <p data-lang="hero-cta-fineprint" class="text-sm text-text-secondary mt-4">
+
+                Offers valid only November 18-19, 2025
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 2: PROBLEM → SOLUTION -->
+
+    <section id="section-2-problem" class="py-16 md:py-24 bg-white">
+
+        <div class="container max-w-6xl mx-auto px-4">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+
+                <h2 data-lang="problem-h2">When Françoise Solves Your Problems</h2>
+
+            </div>
+
+            
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Card 1 -->
+
+                <div class="card p-6">
+
+                    <h3 data-lang="problem1-h3">Routine control eats up time</h3>
+
+                    <p data-lang="problem1-p1" class="font-semibold text-text-main">Art directors spend 20-30 hours per week checking spacing, colors, and fonts instead of strategic work and team development.</p>
+
+                    <p data-lang="problem1-p2" class="mb-4">Françoise automates typography, spacing, and alignment with 100% accuracy.</p>
+
+                    <span data-lang="problem1-badge" class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase">BASIC TIER → 15-20h/week saved</span>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="card p-6">
+
+                    <h3 data-lang="problem2-h3">Consistency suffers during scaling</h3>
+
+                    <p data-lang="problem2-p1" class="font-semibold text-text-main">Newcomers and contractors don't keep the entire design system in mind — errors multiply, brand dilutes.</p>
+
+                    <p data-lang="problem2-p2" class="mb-4">AI checks composition, visual hierarchy, and business effectiveness of interfaces — every layout meets standards.</p>
+
+                    <span data-lang="problem2-badge" class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full uppercase">ADVANCED TIER → 80-85% reviews automated</span>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="card p-6">
+
+                    <h3 data-lang="problem3-h3">International expansion requires RTL adaptation</h3>
+
+                    <p data-lang="problem3-p1" class="font-semibold text-text-main">Mirroring layouts for Arabic markets means 40+ hours of manual work per week with high risk of errors.</p>
+
+                    <p data-lang="problem3-p2" class="mb-4">Automatic RTL ↔ LTR adaptation verification for 310+ million Arabic-speaking users without errors.</p>
+
+                    <span data-lang="problem3-badge" class="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full uppercase">ENTERPRISE TIER → 40-50h/week freed</span>
+
+                </div>
+
+                <!-- Card 4 -->
+
+                <div class="card p-6">
+
+                    <h3 data-lang="problem4-h3">Design-to-dev handoff is full of flaws</h3>
+
+                    <p data-lang="problem4-p1" class="font-semibold text-text-main">Developers receive layouts with errors, leading to rework, delays, and lost time on explanations.</p>
+
+                    <p data-lang="problem4-p2" class="mb-4">Auto-generation of CSS specifications, design tokens in JSON/YAML, WCAG compliance — handoff without questions.</p>
+
+                    <span data-lang="problem4-badge" class="inline-block bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full uppercase">ENTERPRISE TIER → $300k+ hiring saved</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 4: WHY FRANÇOISE (ПЕРЕМЕЩЕН) -->
+
+    <section id="section-4-why" class="py-16 md:py-24 bg-white">
+
+        <div class="container max-w-6xl mx-auto px-4">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+
+                <h2 data-lang="why-h2">Why Françoise</h2>
+
+                <p data-lang="why-sub" class="text-xl text-text-secondary">What Sets Us Apart from Other AI Design Tools</p>
+
+            </div>
+
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+
+                <div class="card p-6">
+
+                    <h3 data-lang="why1-h3">Mathematical Precision</h3>
+
+                    <p data-lang="why1-p" class="mb-0">We analyze Figma JSON directly, not just visually — 100% accuracy of numerical parameters. No "approximately 8px" — only exact values from your design system.</p>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="card p-6">
+
+                    <h3 data-lang="why2-h3">Full Customization</h3>
+
+                    <p data-lang="why2-p" class="mb-0">White-glove service for each client's unique design system. Françoise learns your rules, doesn't impose standards — your brand, your standards.</p>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="card p-6">
+
+                    <h3 data-lang="why3-h3">RTL-First Approach</h3>
+
+                    <p data-lang="why3-p" class="mb-0">The only AI tool with automatic RTL verification for Arabic market expansion. 310+ million users await your product — we make localization error-free.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 3: FEATURES & PRICING -->
+
+    <section id="section-3-features" class="py-16 md:py-24 relative">
+
+        <div class="container max-w-6xl mx-auto px-4">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+
+                <h2 data-lang="features-h2">Key Benefits and Features</h2>
+
+                <p data-lang="features-sub" class="text-xl">Three automation levels for your needs</p>
+
+            </div>
+
+
+
+            <!-- NAVIGATION CARDS (Not Sticky) -->
+
+            <div class="mb-12">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Nav Card 1: Basic -->
+
+                    <div class="card card-no-hover p-4 text-center border-2 border-blue-200">
+
+                        <h4 data-lang="features-nav-basic-h" class="mb-1">BASIC</h4>
+
+                        <p data-lang="features-nav-basic-p1" class="!font-sans !font-semibold !text-sm !text-text-main mb-2">Typography Autopilot</p>
+
+                        <p data-lang="features-nav-basic-p2" class="!font-sans !font-bold !text-lg !text-primary mb-2">$6,000/year</p>
+
+                        <p data-lang="features-nav-basic-p3" class="!font-sans !text-xs mb-2">$4k setup</p>
+
+                        <p data-lang="features-nav-basic-p4" class="!font-sans !text-xs mb-4">For: startups, growing teams</p>
+
+                        <a href="#tier-basic" class="link-arrow text-sm" data-lang="features-nav-learn">Learn More ↓</a>
+
+                    </div>
+
+                    <!-- Nav Card 2: Advanced -->
+
+                    <div class="card card-no-hover p-4 text-center border-2 border-indigo-200">
+
+                        <h4 data-lang="features-nav-adv-h" class="mb-1">ADVANCED</h4>
+
+                        <p data-lang="features-nav-adv-p1" class="!font-sans !font-semibold !text-sm !text-text-main mb-2">Complete Design QA</p>
+
+                        <p data-lang="features-nav-adv-p2" class="!font-sans !font-bold !text-lg !text-primary mb-2">$10,000/year</p>
+
+                        <p data-lang="features-nav-adv-p3" class="!font-sans !text-xs mb-2">+ $7k setup</p>
+
+                        <p data-lang="features-nav-adv-p4" class="!font-sans !text-xs mb-4">For: e-commerce, SaaS, marketplaces</p>
+
+                        <a href="#tier-advanced" class="link-arrow text-sm" data-lang="features-nav-learn">Learn More ↓</a>
+
+                    </div>
+
+                    <!-- Nav Card 3: Enterprise -->
+
+                    <div class="card card-no-hover p-4 text-center border-2 border-purple-200">
+
+                        <h4 data-lang="features-nav-ent-h" class="mb-1">ENTERPRISE</h4>
+
+                        <p data-lang="features-nav-ent-p1" class="!font-sans !font-semibold !text-sm !text-text-main mb-2">Global Scale</p>
+
+                        <p data-lang="features-nav-ent-p2" class="!font-sans !font-bold !text-lg !text-primary mb-2">$18,000/year</p>
+
+                        <p data-lang="features-nav-ent-p3" class="!font-sans !text-xs mb-2">+ $12k setup</p>
+
+                        <p data-lang="features-nav-ent-p4" class="!font-sans !text-xs mb-4">For: international expansion, fintech</p>
+
+                        <a href="#tier-enterprise" class="link-arrow text-sm" data-lang="features-nav-learn">Learn More ↓</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TIER 1: BASIC -->
+
+            <div id="tier-basic" class="max-w-6xl mx-auto mb-16 pt-16 -mt-16"> <!-- pt for anchor offset -->
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                    <div class="order-2 md:order-1">
+
+                        <span data-lang="tier1-badge" class="inline-block bg-blue-100 text-blue-800 text-sm font-bold px-4 py-1 rounded-full uppercase mb-4">BASIC · TYPOGRAPHY AUTOPILOT</span>
+
+                        <h3 data-lang="tier1-h3">Automate Routine Checks</h3>
+
+                        <p data-lang="tier1-for" class="text-lg mb-8">For whom: Startups, growing product teams, small agencies with basic quality control needs.</p>
+
+                        
+
+                        <h4 data-lang="tier1-included" class="text-xl font-bold mb-4">What's Included</h4>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier1-feat1-h" class="mb-1">Typography</h4>
+
+                                <p data-lang="tier1-feat1-p" class="mb-0 !text-sm">Font-size, line-height, letter-spacing</p>
+
+                            </div>
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier1-feat2-h" class="mb-1">Spacing</h4>
+
+                                <p data-lang="tier1-feat2-p" class="mb-0 !text-sm">Padding/margin only on approved grid (4/8/12/16px)</p>
+
+                            </div>
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier1-feat3-h" class="mb-1">Alignment</h4>
+
+                                <p data-lang="tier1-feat3-p" class="mb-0 !text-sm">Grid snap, no random pixels</p>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <div class="card bg-blue-50 border-blue-200 p-6 text-center">
+
+                            <div data-lang="tier1-results" class="!font-sans !font-semibold !text-blue-900 !text-base mb-0 text-left md:text-center leading-relaxed">
+
+                                <b>15-20+ h/week</b> saved<br>
+
+                                <b>40%</b> technical reviews automated<br>
+
+                                <b>$6k/year</b> instead of $50-100k QA hire
+
+                            </div>
+
+                        </div>
+
+                        <div class="text-center mt-8">
+
+                            <a href="#section-6-cta" class="btn btn-primary" data-lang="tier1-cta">Get Started with Basic →</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-1 md:order-2">
+
+                         <div class="flex items-center justify-center aspect-video md:aspect-square rounded-lg basic-illustration">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TIER 2: ADVANCED -->
+
+            <div id="tier-advanced" class="max-w-6xl mx-auto mb-16 pt-16 -mt-16">
+
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                    <div class="order-1 md:order-2">
+
+                        <span data-lang="tier2-badge" class="inline-block bg-indigo-100 text-indigo-800 text-sm font-bold px-4 py-1 rounded-full uppercase mb-4">ADVANCED · COMPLETE DESIGN QA</span>
+
+                        <h3 data-lang="tier2-h3">Everything from Basic + Expert Analysis</h3>
+
+                        <p data-lang="tier2-for" class="text-lg mb-8">For whom: E-commerce, SaaS platforms, marketplaces where business effectiveness of interfaces matters.</p>
+
+                        
+
+                        <div class="text-center my-6">
+
+                            <span data-lang="tier2-separator" class="text-sm font-semibold text-gray-500 uppercase">━━━ Everything in Basic + ━━━</span>
+
+                        </div>
+
+                        
+
+                        <h4 data-lang="tier2-included" class="text-xl font-bold mb-4">New Features</h4>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier2-feat1-h" class="mb-1">Composition</h4>
+
+                                <p data-lang="tier2-feat1-p" class="mb-0 !text-sm">Hierarchy, balance, F/Z-patterns</p>
+
+                            </div>
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier2-feat2-h" class="mb-1">Business</h4>
+
+                                <p data-lang="tier2-feat2-p" class="mb-0 !text-sm">Screen task assessment: checkout, onboarding, etc</p>
+
+                            </div>
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier2-feat3-h" class="mb-1">References</h4>
+
+                                <p data-lang="tier2-feat3-p" class="mb-0 !text-sm">3-5 examples from successful products</p>
+
+                            </div>
+
+                             <div class="card p-4">
+
+                                <h4 data-lang="tier2-feat4-h" class="mb-1">Colors & Components</h4>
+
+                                <p data-lang="tier2-feat4-p" class="mb-0 !text-sm">WCAG AA (4.5:1) contrast</p>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <div class="card bg-indigo-50 border-indigo-200 p-6 text-center">
+
+                            <div data-lang="tier2-results" class="!font-sans !font-semibold !text-indigo-900 !text-base mb-0 text-left md:text-center leading-relaxed">
+
+                                <b>20-25+ h/week</b> freed<br>
+
+                                <b>80-85%</b> technical reviews automated<br>
+
+                                <b>Higher conversion</b> (via UX analysis)
+
+                            </div>
+
+                        </div>
+
+                        <div class="text-center mt-8">
+
+                            <a href="#section-6-cta" class="btn btn-primary" data-lang="tier2-cta">Get Started with Advanced →</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-2 md:order-1">
+
+                         <div class="flex items-center justify-center aspect-video md:aspect-square rounded-lg expert-illustration">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TIER 3: ENTERPRISE -->
+
+            <div id="tier-enterprise" class="max-w-6xl mx-auto mb-16 pt-16 -mt-16">
+
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                    <div class="order-2 md:order-1">
+
+                        <span data-lang="tier3-badge" class="inline-block bg-purple-100 text-purple-800 text-sm font-bold px-4 py-1 rounded-full uppercase mb-4">ENTERPRISE · GLOBAL SCALE</span>
+
+                        <h3 data-lang="tier3-h3">Everything from Advanced + Global Capabilities</h3>
+
+                        <p data-lang="tier3-for" class="text-lg mb-8">For whom: Companies with international expansion, Arabic market entry, fintech/healthtech with compliance requirements.</p>
+
+                        
+
+                        <div class="text-center my-6">
+
+                            <span data-lang="tier3-separator" class="text-sm font-semibold text-gray-500 uppercase">━━━ Everything in Advanced + ━━━</span>
+
+                        </div>
+
+                        
+
+                        <h4 data-lang="tier3-included" class="text-xl font-bold mb-4">New Features</h4>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier3-feat1-h" class="mb-1">RTL ↔ LTR</h4>
+
+                                <p data-lang="tier3-feat1-p" class="mb-0 !text-sm">Automatic mirroring verification for 310M+ users</p>
+
+                            </div>
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier3-feat2-h" class="mb-1">WCAG a11y</h4>
+
+                                <p data-lang="tier3-feat2-p" class="mb-0 !text-sm">Contrast, touch targets, screen readers</p>
+
+                            </div>
+
+                            <div class="card p-4">
+
+                                <h4 data-lang="tier3-feat3-h" class="mb-1">Design Tokens</h4>
+
+                                <p data-lang="tier3-feat3-p" class="mb-0 !text-sm">Auto-generation CSS, JSON/YAML for dev handoff</p>
+
+                            </div>
+
+                             <div class="card p-4">
+
+                                <h4 data-lang="tier3-feat4-h" class="mb-1">24/7 Support</h4>
+
+                                <p data-lang="tier3-feat4-p" class="mb-0 !text-sm">2-4 hour SLA, Personal CSM, quarterly calls</p>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <div class="card bg-purple-50 border-purple-200 p-6 text-center">
+
+                            <div data-lang="tier3-results" class="!font-sans !font-semibold !text-purple-900 !text-base mb-0 text-left md:text-center leading-relaxed">
+
+                                <b>40-50+ h/week</b> for art director<br>
+
+                                <b>$300k+/year</b> saved (QA + RTL + a11y)<br>
+
+                                <b>95%+</b> technical reviews automated<br>
+
+                                <b>RTL-ready</b> for MENA region
+
+                            </div>
+
+                        </div>
+
+                        <div class="text-center mt-8">
+
+                            <a href="#section-6-cta" class="btn btn-primary" data-lang="tier3-cta">Request Enterprise Demo →</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-1 md:order-2">
+
+                         <div class="card card-no-hover flex items-center justify-center bg-gray-200 aspect-video md:aspect-square rounded-lg enterprise-illustration">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <!-- ROI CALCULATOR -->
+
+            <div class="max-w-3xl mx-auto pt-16 -mt-16">
+
+                <div class="card card-no-hover p-6 md:p-8">
+
+                    <h3 data-lang="roi-h3" class="text-center">Calculate Your Savings</h3>
+
+                    <div class="space-y-4">
+
+                        <div>
+
+                            <label for="roi-designers" class="block text-sm font-medium text-gray-700 mb-1" data-lang="roi-label1">How many designers on the team?</label>
+
+                            <input type="number" id="roi-designers" class="form-input" value="5">
+
+                        </div>
+
+                        <div>
+
+                            <label for="roi-layouts" class="block text-sm font-medium text-gray-700 mb-1" data-lang="roi-label2">How many layouts do you check per month?</label>
+
+                            <input type="number" id="roi-layouts" class="form-input" value="50">
+
+                        </div>
+
+                        <div>
+
+                            <label for="roi-hours" class="block text-sm font-medium text-gray-700 mb-1" data-lang="roi-label3">How many hours does art director spend on reviews per week?</label>
+
+                            <input type="number" id="roi-hours" class="form-input" value="20">
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="mt-6 bg-gray-50 p-6 rounded-lg border">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                            <div>
+
+                                <p data-lang="roi-res1" class="text-sm text-gray-500 uppercase">Your current cost:</p>
+
+                                <p id="roi-output-current" class="text-2xl font-bold text-text-main">$104,000/year</p>
+
+                            </div>
+
+                            <div>
+
+                                <p data-lang="roi-res2" class="text-sm text-gray-500 uppercase">With Françoise (Advanced):</p>
+
+                                <p id="roi-output-francoise" class="text-2xl font-bold text-text-main">$17,000/year</p>
+
+                            </div>
+
+                            <div class="sm:col-span-2">
+
+                                <p data-lang="roi-res3" class="text-sm text-gray-500 uppercase">Total Savings:</p>
+
+                                <p id="roi-output-savings" class="text-3xl font-extrabold text-primary">$87,000/year (84%)</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="text-center mt-8">
+
+                        <a href="/#final-cta" class="btn btn-secondary" data-lang="roi-cta">Get Personalized Calculation →</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- SECTION 5: HOW IT WORKS -->
+
+    <section id="section-5-how" class="py-16 md:py-24">
+
+        <div class="container max-w-6xl mx-auto px-4">
+
+            <div class="text-center max-w-3xl mx-auto mb-16">
+
+                <h2 data-lang="how-h2">How Françoise Works</h2>
+
+                <p data-lang="how-sub" class="text-xl">Simple process from upload to handoff</p>
+
+            </div>
+
+            
+
+            <!-- Горизонтальный таймлайн (из Клио, 5 шагов) -->
+
+            <div class="timeline-container max-w-6xl mx-auto mb-16">
+
+                <!-- Шаг 1 -->
+
+                <div class="timeline-step">
+
+                    <div class="timeline-circle">1</div>
+
+                    <div class="timeline-content">
+
+                        <h4 data-lang="how-step1-h">Upload layout</h4>
+
+                        <p data-lang="how-step1-p" class="mb-0 !text-sm">Figma integration or JPEG + JSON</p>
+
+                    </div>
+
+                </div>
+
+                <!-- Шаг 2 -->
+
+                <div class="timeline-step">
+
+                    <div class="timeline-circle">2</div>
+
+                    <div class="timeline-content">
+
+                        <h4 data-lang="how-step2-h">AI analysis</h4>
+
+                        <p data-lang="how-step2-p" class="mb-0 !text-sm">3-15 minutes depending on agent level</p>
+
+                    </div>
+
+                </div>
+
+                <!-- Шаг 3 -->
+
+                <div class="timeline-step">
+
+                    <div class="timeline-circle">3</div>
+
+                    <div class="timeline-content">
+
+                        <h4 data-lang="how-step3-h">Detailed report</h4>
+
+                        <p data-lang="how-step3-p" class="mb-0 !text-sm">Design system deviations, composition, business task, references</p>
+
+                    </div>
+
+                </div>
+
+                <!-- Шаг 4 -->
+
+                <div class="timeline-step">
+
+                    <div class="timeline-circle">4</div>
+
+                    <div class="timeline-content">
+
+                        <h4 data-lang="how-step4-h">Corrections</h4>
+
+                        <p data-lang="how-step4-p" class="mb-0 !text-sm">Designer makes fixes and re-checks</p>
+
+                    </div>
+
+                </div>
+
+                <!-- Шаг 5 -->
+
+                <div class="timeline-step">
+
+                    <div class="timeline-circle">5</div>
+
+                    <div class="timeline-content">
+
+                        <h4 data-lang="how-step5-h">Handoff</h4>
+
+                        <p data-lang="how-step5-p" class="mb-0 !text-sm">Auto-generation of CSS specifications (Enterprise)</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- What gets checked -->
+
+            <div class="max-w-xl mx-auto">
+
+                <h3 data-lang="how-checked-h3" class="text-center">What Gets Checked</h3>
+
+                <ul class="!list-none !p-0 space-y-2">
+
+                    <li data-lang="how-checked-li1" class="card mb-0 p-4 !text-text-main !font-medium">✓ Typography, spacing, colors, components</li>
+
+                    <li data-lang="how-checked-li2" class="card mb-0 p-4 !text-text-main !font-medium">✓ Visual hierarchy and composition</li>
+
+                    <li data-lang="how-checked-li3" class="card mb-0 p-4 !text-text-main !font-medium">✓ Interface business effectiveness</li>
+
+                    <li data-lang="how-checked-li4" class="card mb-0 p-4 !text-text-main !font-medium">✓ RTL adaptation and accessibility</li>
+
+                    <li data-lang="how-checked-li5" class="card mb-0 p-4 !text-text-main !font-medium">✓ Development handoff readiness</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FAQ (перед последним CTA) -->
+
+    <section id="section-faq" class="py-16 md:py-24 bg-white">
+
+        <div class="container max-w-4xl mx-auto px-4">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+
+                <h2 data-lang="faq-h2">FAQ</h2>
+
+            </div>
+
+            
+
+            <!-- Структура FAQ из Клио -->
+
+            <div class="card card-no-hover p-6 md:p-8">
+
+                <!-- FAQ Item 1 -->
+
+                <div class="faq-item">
+
+                    <button class="faq-toggle">
+
+                        <h4 data-lang="faq1-q">How does Françoise integrate with our design system?</h4>
+
+                        <span class="faq-icon">+</span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p data-lang="faq1-a">White-glove service: we configure for your unique rules. Setup: 1-2 weeks (Basic) to 6-8 weeks (Enterprise).</p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- FAQ Item 2 -->
+
+                <div class="faq-item">
+
+                    <button class="faq-toggle">
+
+                        <h4 data-lang="faq2-q">Do you support RTL languages?</h4>
+
+                        <span class="faq-icon">+</span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p data-lang="faq2-a">Yes, the only AI tool with automatic RTL ↔ LTR verification. Critical for Arabic markets (310M+ users).</p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- FAQ Item 3 -->
+
+                <div class="faq-item">
+
+                    <button class="faq-toggle">
+
+                        <h4 data-lang="faq3-q">What does each tier check?</h4>
+
+                        <span class="faq-icon">+</span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p data-lang="faq3-a">Basic: typography, spacing, alignment (40% reviews).<br>Advanced: + composition, business task, references (80-85%).<br>Enterprise: + RTL, a11y WCAG, CSS specifications (95%+).</p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- FAQ Item 4 -->
+
+                <div class="faq-item">
+
+                    <button class="faq-toggle">
+
+                        <h4 data-lang="faq4-q">Will Françoise replace the art director?</h4>
+
+                        <span class="faq-icon">+</span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p data-lang="faq4-a">No. We handle routine work so art director can focus on strategy, UX hypotheses, team development.</p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <!-- FAQ Item 5 -->
+
+                <div class="faq-item">
+
+                    <button class="faq-toggle">
+
+                        <h4 data-lang="faq5-q">Is the $99 demo valid after Function1?</h4>
+
+                        <span class="faq-icon">+</span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p data-lang="faq5-a">No, special offers only November 18-19, 2025 for conference attendees.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 6: FINAL CTA -->
+
+    <section id="section-6-cta" class="py-16 md:py-24">
+
+        <div class="container max-w-6xl mx-auto px-4">
+            <h2 data-lang="final-h2" class="text-center mb-3">Your Conference Fast Track</h2>
+            <p data-lang="final-p" class="text-center text-text-secondary mb-12 max-w-3xl mx-auto">This exclusive bundle is available ONLY to Function1 Conference attendees, November 18-19, 2025.</p>
+
+            <!-- Single Merged Offer -->
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-lg border-2 border-primary flex flex-col shadow-lg">
+                    <span data-lang="final-offer-badge" class="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 self-start">ATTENDEES ONLY — SPECIAL BUNDLE</span>
+                    <h3 data-lang="final-offer-h3" class="mb-4">Your $99 Starter Pack</h3>
+                    <p data-lang="final-offer-p1" class="text-text-secondary mb-4">Everything you need to experience Françoise:</p>
+                    <ul class="text-text-secondary list-none pl-0 space-y-3 flex-grow mb-6">
+                        <li data-lang="final-offer-li1" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span>Expert audit of 2 layouts in 24 hours (Enterprise level with RTL)</span></li>
+                        <li data-lang="final-offer-li2" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span>Detailed report: composition, business task, RTL adaptation + references</span></li>
+                        <li data-lang="final-offer-li3" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS:</strong> Free 15-min consultation to review your audit results</span></li>
+                        <li data-lang="final-offer-li4" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS:</strong> 15% discount unlocked for any annual plan</span></li>
+                        <li data-lang="final-offer-li5" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS:</strong> Priority implementation start in December 2025</span></li>
+                    </ul>
+                    <p data-lang="final-offer-p2" class="text-primary font-bold text-base mt-4 mb-6 text-center">⚠️ Exclusive offer valid ONLY November 18-19, 2025</p>
+                    <a href="#" class="btn btn-primary btn-lg w-full text-center text-lg popup-trigger" data-popup="demo" data-lang="final-offer-cta">Get Your $99 Starter Pack →</a>
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="max-w-3xl mx-auto mt-10">
+                <ul class="list-none p-0 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    <li data-lang="final-ben1" class="text-text-main font-semibold text-sm mb-0">✓ $99 Starter Pack — all-in-one bundle only Nov 18-19</li>
+                    <li data-lang="final-ben2" class="text-text-main font-semibold text-sm mb-0">✓ Enterprise-level audit + free consultation included</li>
+                    <li data-lang="final-ben3" class="text-text-main font-semibold text-sm mb-0">✓ 15% discount + priority start automatically unlocked</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- 
+
+      FOOTER (ПОДВАЛ)
+
+      Скопировано 1-в-1 из Клио.html
+
+    -->
+
+    <footer class="footer pt-16 pb-8 md:pb-12">
+
+        <div class="container max-w-7xl mx-auto px-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
+
+                
+
+                <div>
+
+                    <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
+
+                    <p class="text-sm mb-2" data-lang="footer-mission">
+
+                        Мы превращаем технологии в двигатель роста вашего бизнеса.
+
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
+
+                    <ul class="space-y-2">
+
+                        <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
+
+                        <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
+
+                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
+
+                    <ul class="space-y-2">
+
+                        <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
+
+                        <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
+
+                    <ul class="space-y-2">
+
+                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+
+                        <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
+
+                        <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
+
+                    </ul>
+
+                    <div class="mt-3">
+
+                        <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
+
+                        <ul class="space-y-2">
+
+                            <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
+
+                            <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
+
+                <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- 
+
+      JAVASCRIPT
+
+      Логика из Клио.html + новый объект translations + новая логика
+
+    -->
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+
+
+            // --- Логика из Клио.html ---
+
+
+
+            // Логика мобильного меню
+
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+
+                mobileMenuToggle.addEventListener('click', () => {
+
+                    mobileMenu.classList.toggle('hidden');
+
+                    const isExpanded = !mobileMenu.classList.contains('hidden');
+
+                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+
+                });
+
+            }
+
+
+
+            // Логика для FAQ-аккордеона
+
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+
+                const toggle = item.querySelector('.faq-toggle');
+
+                const icon = item.querySelector('.faq-icon');
+
+                
+
+                toggle.addEventListener('click', () => {
+
+                    const isOpen = item.classList.contains('faq-open');
+
+                    
+
+                    if (isOpen) {
+
+                        item.classList.remove('faq-open');
+
+                        if (icon) icon.textContent = '+';
+
+                    } else {
+
+                        item.classList.add('faq-open');
+
+                        if (icon) icon.textContent = '–'; // Используем '–' (минус)
+
+                    }
+
+                });
+
+            });
+
+            
+
+            // --- Новая логика для Françoise ---
+
+
+
+            // Логика ROI Калькулятора
+
+            const roiDesigners = document.getElementById('roi-designers');
+
+            const roiLayouts = document.getElementById('roi-layouts');
+
+            const roiHours = document.getElementById('roi-hours');
+
+            const outCurrent = document.getElementById('roi-output-current');
+
+            const outFrancoise = document.getElementById('roi-output-francoise');
+
+            const outSavings = document.getElementById('roi-output-savings');
+
+            const artDirectorHourlyRate = 100; // $100/час
+
+            const tiers = {
+
+                basic: { cost: 6000, setup: 4000 },
+
+                advanced: { cost: 10000, setup: 7000 },
+
+                enterprise: { cost: 18000, setup: 12000 }
+
+            };
+
+
+
+            function formatCurrency(num) {
+
+                return '$' + num.toLocaleString('en-US', { maximumFractionDigits: 0 });
+
+            }
+
+
+
+            function updateFranROI() {
+
+                if (!roiDesigners) return; // Убедиться, что мы на нужной странице
+
+
+
+                try {
+
+                    const designers = parseInt(roiDesigners.value) || 0;
+
+                    const layouts = parseInt(roiLayouts.value) || 0;
+
+                    const hoursPerWeek = parseInt(roiHours.value) || 0;
+
+
+
+                    // 1. Рассчитать текущие затраты
+
+                    // Затраты на ревью = часы в неделю * 52 недели * ставка
+
+                    const currentCost = hoursPerWeek * 52 * artDirectorHourlyRate;
+
+
+
+                    // 2. Рассчитать стоимость Françoise (на основе 'Advanced' как в примере)
+
+                    let francoiseCost = tiers.advanced.cost + tiers.advanced.setup;
+
+                    
+
+                    // 3. Рассчитать экономию
+
+                    const savings = currentCost - francoiseCost;
+
+                    const savingsPercent = (currentCost > 0) ? Math.round((savings / currentCost) * 100) : 0;
+
+
+
+                    // 4. Обновить UI
+
+                    outCurrent.textContent = `${formatCurrency(currentCost)}/year`;
+
+                    outFrancoise.textContent = `${formatCurrency(francoiseCost)}/year`;
+
+                    outSavings.textContent = `${formatCurrency(savings)}/year (${savingsPercent}%)`;
+
+
+
+                } catch (e) {
+
+                    console.error("ROI Calc Error:", e);
+
+                }
+
+            }
+
+
+
+            if (roiDesigners && roiLayouts && roiHours) {
+
+                [roiDesigners, roiLayouts, roiHours].forEach(input => {
+
+                    input.addEventListener('input', updateFranROI);
+
+                });
+
+                updateFranROI(); // Первый расчет при загрузке
+
+            }
+
+
+
+            // --- ОБЪЕКТ ПЕРЕВОДОВ (НОВЫЙ + ИЗ КЛИО) ---
+
+            const translations = {
+
+                'ru': {
+
+                    // --- Переводы из "Клио.html" (Шапка, Подвал, Баннер) ---
+
+                    'logo': 'DIVO',
+
+                    'nav-sales': 'Для Продаж',
+
+                    'nav-design': 'Для Дизайна',
+
+                    'nav-about': 'О нас',
+
+                    'header-cta': 'Получить консультацию',
+
+                    'header-cta-mobile': 'Консультация',
+
+                    'nav-solutions': 'Решения',
+
+                    'nav-custom-dev': 'Кастомная разработка',
+
+                    'nav-portfolio': 'Портфолио',
+
+                    'banner-h3': '🔥 <span data-lang="banner-h3-span">Специальное предложение для участников /function1</span>',
+
+                    'banner-h3-span': 'Специальное предложение для участников /function1',
+
+                    'banner-h4': '(18-19 ноября 2025, Дубай)',
+
+                    'banner-p': 'Встречаемся в Дубае на крупнейшей AI-конференции года! Бесплатная техническая консультация + специальные условия для участников конференции.',
+
+                    'banner-meta': 'Действует: 18-19 ноября 2025 | Festival Arena, Dubai',
+
+                    'banner-cta': 'Получить предложение',
+
+                    'footer-mission': 'Мы превращаем технологии в двигатель роста вашего бизнеса.',
+
+                    'footer-solutions-title': 'Решения',
+
+                    'footer-company-title': 'Компания',
+
+                    'footer-portfolio': 'Портфолио и Кейсы',
+
+                    'footer-contact-title': 'Контакты',
+
+                    'footer-legal-title': 'Документы',
+
+                    'footer-privacy': 'Политика конфиденциальности',
+
+                    'footer-terms': 'Условия использования',
+
+
+
+                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Françoise" ---
+
+                    'meta-title': 'Françoise by DIVO | Автоматизация дизайн-контроля',
+
+                    'meta-description': 'Проверка качества дизайна и соответствия дизайн-системе. Экономия до $150,000/год на контроле качества. От типографики до RTL-адаптации.',
+
+
+
+                    // Section 1: Hero
+
+                    'hero-h1': 'Françoise — ваш AI арт-директор для контроля качества дизайна',
+
+                    'hero-sub': 'Автоматизируем рутинные проверки типографики, spacing, композиции и RTL-адаптации с математической точностью. Ваша команда возвращается к творчеству — консистентность поддерживается 24/7.',
+
+                    'hero-metric1-h': 'В 20 раз быстрее',
+
+                    'hero-metric1-p': 'От 5 дней до 2ч проверки spacing, цветов, типографики',
+
+                    'hero-metric2-h': '100% точность',
+
+                    'hero-metric2-p': '100% точность проверки spacing, цветов, типографики',
+
+                    'hero-metric3-h': '310M+ юзеров',
+
+                    'hero-metric3-p': 'RTL-поддержка арабских рынков',
+
+                    'hero-social': 'Доверяют: E-commerce | Fintech | SaaS | Healthtech',
+
+                    'hero-cta1': 'Бесплатная консультация',
+
+                    'hero-cta2': 'Демо за $99',
+
+                    'hero-cta-fineprint': 'Офферы действуют только 18-19 ноября 2025',
+                    'header-cta-special': 'Получить $99 Audit',
+                    'final-offer-badge': 'ТОЛЬКО ДЛЯ УЧАСТНИКОВ — СПЕЦПАКЕТ',
+                    'final-offer-h3': 'Ваш $99 Стартовый Пакет',
+                    'final-offer-p1': 'Всё необходимое для знакомства с Françoise:',
+                    'final-offer-li1': 'Экспертный аудит 2 макетов за 24 часа (уровень Enterprise с RTL)',
+                    'final-offer-li2': 'Детальный отчёт: композиция, бизнес-задача, RTL-адаптация + референсы',
+                    'final-offer-li3': '<strong>БОНУС:</strong> Бесплатная 15-мин консультация для разбора результатов',
+                    'final-offer-li4': '<strong>БОНУС:</strong> Скидка 15% на любой годовой тариф',
+                    'final-offer-li5': '<strong>БОНУС:</strong> Приоритетный запуск в декабре 2025',
+                    'final-offer-p2': '⚠️ Эксклюзивное предложение действует ТОЛЬКО 18-19 ноября 2025',
+                    'final-offer-cta': 'Получить $99 Стартовый Пакет →',
+                    'final-ben1': '✓ $99 Стартовый Пакет — всё в одном, только 18-19 ноя',
+                    'final-ben2': '✓ Аудит уровня Enterprise + бесплатная консультация',
+                    'final-ben3': '✓ Скидка 15% + приоритетный запуск автоматически',
+
+
+
+                    // Section 2: Problem
+
+                    'problem-h2': 'Когда Françoise решает ваши задачи',
+
+                    'problem1-h3': 'Рутинный контроль съедает время',
+
+                    'problem1-p1': 'Арт-директора тратят 20-30 часов в неделю на проверку spacing, цветов и шрифтов вместо стратегической работы и развития команды.',
+
+                    'problem1-p2': 'Françoise автоматизирует типографику, spacing и выравнивание с 100% точностью.',
+
+                    'problem1-badge': 'BASIC TIER → 15-20h/week saved',
+
+                    'problem2-h3': 'Консистентность страдает при масштабировании',
+
+                    'problem2-p1': 'Новички и контракторы не держат всю дизайн-систему в голове — ошибки множатся, бренд размывается.',
+
+                    'problem2-p2': 'AI проверяет композицию, визуальную иерархию и бизнес-эффективность интерфейса — каждый макет соответствует стандартам.',
+
+                    'problem2-badge': 'ADVANCED TIER → 80-85% reviews automated',
+
+                    'problem3-h3': 'Выход на международные рынки требует RTL-адаптации',
+
+                    'problem3-p1': 'Зеркалирование макетов для арабских рынков — это 40+ часов ручной работы в неделю с высоким риском ошибок.',
+
+                    'problem3-p2': 'Автоматическая проверка RTL ↔ LTR адаптации для 310+ млн арабоязычных пользователей без ошибок.',
+
+                    'problem3-badge': 'ENTERPRISE TIER → 40-50h/week freed',
+
+                    'problem4-h3': 'Design-to-dev handoff полон недочетов',
+
+                    'problem4-p1': 'Разработчики получают макеты с ошибками, что ведет к переделкам, задержкам и потерянному времени на объяснения.',
+
+                    'problem4-p2': 'Автогенерация CSS-спецификаций, design tokens в JSON/YAML, WCAG compliance — handoff без вопросов.',
+
+                    'problem4-badge': 'ENTERPRISE TIER → $300k+ hiring saved',
+
+ 
+
+                    // Section 3: Features & Pricing
+
+                    'features-h2': 'Ключевые преимущества и функции',
+
+                    'features-sub': 'Три уровня автоматизации под ваши задачи',
+
+                    'features-nav-basic-h': 'BASIC',
+
+                    'features-nav-basic-p1': 'Typography Autopilot',
+
+                    'features-nav-basic-p2': '$6,000/год',
+
+                    'features-nav-basic-p3': '$4k setup',
+
+                    'features-nav-basic-p4': 'Для: стартапы, растущие команды',
+
+                    'features-nav-learn': 'Узнать больше ↓',
+
+                    'features-nav-adv-h': 'ADVANCED',
+
+                    'features-nav-adv-p1': 'Complete Design QA',
+
+                    'features-nav-adv-p2': '$10,000/год',
+
+                    'features-nav-adv-p3': '+ $7k setup',
+
+                    'features-nav-adv-p4': 'Для: e-commerce, SaaS, маркетплейсы',
+
+                    'features-nav-ent-h': 'ENTERPRISE',
+
+                    'features-nav-ent-p1': 'Global Scale',
+
+                    'features-nav-ent-p2': '$18,000/год',
+
+                    'features-nav-ent-p3': '+ $12k setup',
+
+                    'features-nav-ent-p4': 'Для: международная экспансия, fintech',
+
+                    'features-nav-toggle1': 'Переключить: [Отдельные детали] | [Сравнить бок о бок →]',
+
+                    
+
+                    // Tier 1
+
+                    'tier1-badge': 'BASIC · TYPOGRAPHY AUTOPILOT',
+
+                    'tier1-h3': 'Автоматизация рутинных проверок',
+
+                    'tier1-for': 'Для кого: Стартапы, растущие продуктовые команды, небольшие агентства с базовыми потребностями в контроле качества.',
+
+                    'tier1-included': 'Что включено',
+
+                    'tier1-feat1-h': 'Typography',
+
+                    'tier1-feat1-p': 'Font-size, line-height, letter-spacing',
+
+                    'tier1-feat2-h': 'Spacing',
+
+                    'tier1-feat2-p': 'Padding/margin только по сетке (4/8/12/16px)',
+
+                    'tier1-feat3-h': 'Alignment',
+
+                    'tier1-feat3-p': 'Grid snap, отсутствие случайных пикс.',
+
+                    'tier1-results': '<b>15-20+ ч/нед.</b> экономии времени<br><b>40%</b> тех. ревью автоматизировано<br><b>$6k/год</b> вместо $50-100k на QA',
+
+                    'tier1-cta': 'Начать с Basic →',
+
+                    'tier1-img-placeholder': 'Заглушка для иллюстрации Basic',
+
+                    
+
+                    // Tier 2
+
+                    'tier2-badge': 'ADVANCED · COMPLETE DESIGN QA',
+
+                    'tier2-h3': 'Всё из Базового + экспертный анализ',
+
+                    'tier2-for': 'Для кого: E-commerce, SaaS-платформы, маркетплейсы, где важна бизнес-эффективность интерфейсов.',
+
+                    'tier2-separator': '━━━ Всё из Basic + ━━━',
+
+                    'tier2-included': 'Новые функции',
+
+                    'tier2-feat1-h': 'Composition',
+
+                    'tier2-feat1-p': 'Иерархия, баланс, F/Z-паттерны',
+
+                    'tier2-feat2-h': 'Business',
+
+                    'tier2-feat2-p': 'Оценка задачи экрана: checkout, onboarding, etc',
+
+                    'tier2-feat3-h': 'References',
+
+                    'tier2-feat3-p': '3-5 примеров из успешных продуктов',
+
+                    'tier2-feat4-h': 'Colors & Components',
+
+                    'tier2-feat4-p': 'WCAG AA (4.5:1) контрастность',
+
+                    'tier2-results': '<b>20-25+ ч/нед.</b> высвобождено<br><b>80-85%</b> тех. ревью автоматизировано<br><b>Рост конверсии</b> (через UX-анализ)',
+
+                    'tier2-cta': 'Начать с Advanced →',
+
+                    'tier2-img-placeholder': 'Заглушка для иллюстрации Advanced',
+
+ 
+
+                    // Tier 3
+
+                    'tier3-badge': 'ENTERPRISE · GLOBAL SCALE',
+
+                    'tier3-h3': 'Всё из Продвинутого + глобальные возможности',
+
+                    'tier3-for': 'Для кого: Компании с международной экспансией, выход на арабские рынки, fintech/healthtech с требованиями compliance.',
+
+                    'tier3-separator': '━━━ Всё из Advanced + ━━━',
+
+                    'tier3-included': 'Новые функции',
+
+                    'tier3-feat1-h': 'RTL ↔ LTR',
+
+                    'tier3-feat1-p': 'Автопроверка зеркалирования для 310M+ юзеров',
+
+                    'tier3-feat2-h': 'WCAG a11y',
+
+                    'tier3-feat2-p': 'Контрастность, touch targets, screen readers',
+
+                    'tier3-feat3-h': 'Design Tokens',
+
+                    'tier3-feat3-p': 'Автогенерация CSS, JSON/YAML для dev handoff',
+
+                    'tier3-feat4-h': '24/7 Support',
+
+                    'tier3-feat4-p': 'SLA 2-4 часа, Personal CSM, quarterly calls',
+
+                    'tier3-results': '<b>40-50+ ч/нед.</b> для арт-директора<br><b>$300k+/год</b> экономии (QA + RTL + a11y)<br><b>95%+</b> тех. ревью автоматизировано<br><b>RTL-ready</b> для MENA региона',
+
+                    'tier3-cta': 'Запросить демо Enterprise →',
+
+                    'tier3-img-placeholder': 'Заглушка для иллюстрации Enterprise',
+
+ 
+
+                    // ROI Calculator
+
+                    'roi-h3': 'Рассчитайте свою экономию',
+
+                    'roi-label1': 'Сколько дизайнеров в команде?',
+
+                    'roi-label2': 'Сколько макетов проверяете в месяц?',
+
+                    'roi-label3': 'Сколько часов арт-директор тратит на ревью в неделю?',
+
+                    'roi-res1': 'Ваша текущая стоимость:',
+
+                    'roi-res2': 'С Françoise (Advanced):',
+
+                    'roi-res3': 'Экономия:',
+
+                    'roi-cta': 'Получить персональный расчет →',
+
+                    
+
+                    // Section 4: Why
+
+                    'why-h2': 'Почему Françoise',
+
+                    'why-sub': 'Что отличает нас от других AI-инструментов для дизайна',
+
+                    'why1-h3': 'Математическая точность',
+
+                    'why1-p': 'Анализируем JSON Figma напрямую, а не только визуально — 100% точность численных параметров. Никаких "примерно 8px" — только точные значения из вашей дизайн-системы.',
+
+                    'why2-h3': 'Полная кастомизация',
+
+                    'why2-p': 'White-glove service под уникальную дизайн-систему каждого клиента. Françoise учится вашим правилам, а не навязывает стандарты — ваш бренд, ваши стандарты.',
+
+                    'why3-h3': 'RTL-first подход',
+
+                    'why3-p': 'Единственный AI-инструмент с автоматической RTL-проверкой для выхода на арабские рынки. 310+ млн пользователей ждут ваш продукт — мы делаем локализацию безошибочной.',
+
+                    
+
+                    // Section 5: How
+
+                    'how-h2': 'Как работает Françoise',
+
+                    'how-sub': 'Простой процесс от загрузки до handoff',
+
+                    'how-step1-h': '1. Загрузка макета',
+
+                    'how-step1-p': 'Интеграция с Figma или JPEG + JSON',
+
+                    'how-step2-h': '2. AI-анализ',
+
+                    'how-step2-p': '3-15 минут в зависимости от уровня агента',
+
+                    'how-step3-h': '3. Детальный отчет',
+
+                    'how-step3-p': 'Отклонения от ДС, композиция, бизнес-задача, референсы',
+
+                    'how-step4-h': '4. Исправление',
+
+                    'how-step4-p': 'Дизайнер вносит правки и перепроверяет',
+
+                    'how-step5-h': '5. Handoff',
+
+                    'how-step5-p': 'Автогенерация CSS-спецификаций (Enterprise)',
+
+                    'how-checked-h3': 'Что проверяется',
+
+                    'how-checked-li1': '✓ Типографика, spacing, цвета, компоненты',
+
+                    'how-checked-li2': '✓ Визуальная иерархия и композиция',
+
+                    'how-checked-li3': '✓ Бизнес-эффективность интерфейса',
+
+                    'how-checked-li4': '✓ RTL-адаптация и accessibility',
+
+                    'how-checked-li5': '✓ Готовность к передаче в разработку',
+
+
+
+                    // FAQ
+
+                    'faq-h2': 'FAQ',
+
+                    'faq1-q': 'Как Françoise интегрируется с нашей дизайн-системой?',
+
+                    'faq1-a': 'White-glove service: настраиваем под ваши уникальные правила. Setup: 1-2 недели (Basic) до 6-8 недель (Enterprise).',
+
+                    'faq2-q': 'Поддерживаете ли вы RTL-языки?',
+
+                    'faq2-a': 'Да, единственный AI-инструмент с автоматической проверкой RTL ↔ LTR. Критично для арабских рынков (310M+ юзеров).',
+
+                    'faq3-q': 'Что проверяет каждый тариф?',
+
+                    'faq3-a': 'Basic: типографика, spacing, выравнивание (40% ревью).<br>Advanced: + композиция, бизнес-задача, референсы (80-85%).<br>Enterprise: + RTL, a11y WCAG, CSS-спецификации (95%+).',
+
+                    'faq4-q': 'Заменит ли Françoise арт-директора?',
+
+                    'faq4-a': 'Нет. Берем рутину, чтобы арт-директор фокусировался на стратегии, UX-гипотезах, развитии команды.',
+
+                    'faq5-q': 'Действует ли демо $99 после Function1?',
+
+                    'faq5-a': 'Нет, спецпредложения только 18-19 ноября 2025 для участников конференции.',
+
+
+
+                    // Section 6: Final CTA
+
+                    'final-cta-h2': 'Встречаемся на Function1 — эксклюзивные предложения',
+
+                    'final-cta-sub': 'Дубай, 18-19 ноября 2025',
+
+                    'final-offer1-badge': 'ТОЛЬКО ДЛЯ УЧАСТНИКОВ',
+
+                    'final-offer1-h3': 'Демо за $99',
+
+                    'final-offer1-p1': 'Что входит:',
+
+                    'final-offer1-li1': 'Загрузите 2 JPEG-скриншота макетов',
+
+                    'final-offer1-li2': 'Экспертный аудит за 24 часа (уровень Enterprise с RTL)',
+
+                    'final-offer1-li3': 'Композиция, бизнес-задача, RTL-адаптация, рекомендации + референсы',
+
+                    'final-offer1-p2': 'Важно: Предложение действует только 18-19 ноября 2025',
+
+                    'final-offer1-cta': 'Заказать демо за $99 →',
+
+                    'final-offer2-badge': 'БОНУС ПРИ ЗАПИСИ',
+
+                    'final-offer2-h3': 'Консультация + скидка 15%',
+
+                    'final-offer2-p1': 'Что входит:',
+
+                    'final-offer2-li1': 'Индивидуальная консультация: обсудим дизайн-систему, цели, рассчитаем ROI',
+
+                    'final-offer2-li2': 'Бонус: скидка 15% на годовую подписку любого уровня',
+
+                    'final-offer2-li3': 'Приоритетный старт внедрения в декабре 2025',
+
+                    'final-offer2-p2': 'Только для участников Function1, записавшихся 18-19 ноября',
+
+                    'final-offer2-cta': 'Записаться на консультацию →',
+
+                    'final-ben1': '✓ Демо за $99 — эксклюзивная цена только 18-19 ноября',
+
+                    'final-ben2': '✓ Скидка 15% на годовую подписку при записи на консультацию',
+
+                    'final-ben3': '✓ Встретимся лично на стенде Function1 в Дубае',
+
+                    'final-contact': 'Форма заявки | Email: hello@divo.ai | Telegram | Стенд на Function1',
+
+                },
+
+                'en': {
+
+                    // --- Переводы из "Клио.html" (Шапка, Подвал, Баннер) ---
+
+                    'logo': 'DIVO',
+
+                    'nav-sales': 'For Sales',
+
+                    'nav-design': 'For Design',
+
+                    'nav-about': 'About Us',
+
+                    'header-cta': 'Get a Consultation',
+
+                    'header-cta-mobile': 'Consultation',
+
+                    'nav-solutions': 'Solutions',
+
+                    'nav-custom-dev': 'Custom Development',
+
+                    'nav-portfolio': 'Portfolio',
+
+                    'banner-h3': '🔥 <span data-lang="banner-h3-span">Special Offer for /function1 Attendees</span>',
+
+                    'banner-h3-span': 'Special Offer for /function1 Attendees',
+
+                    'banner-h4': '(November 18-19, 2025, Dubai)',
+
+                    'banner-p': 'Meet us in Dubai at the largest AI conference of the year! Free technical consultation + special conditions for conference participants.',
+
+                    'banner-meta': 'Valid: November 18-19, 2025 | Festival Arena, Dubai',
+
+                    'banner-cta': 'Claim Your Offer',
+
+                    'footer-mission': 'We turn technology into a growth engine for your business.',
+
+                    'footer-solutions-title': 'Solutions',
+
+                    'footer-company-title': 'Company',
+
+                    'footer-portfolio': 'Portfolio & Cases',
+
+                    'footer-contact-title': 'Contact & Legal',
+
+                    'footer-legal-title': 'Legal',
+
+                    'footer-privacy': 'Privacy Policy',
+
+                    'footer-terms': 'Terms of Service',
+
+
+
+                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Françoise" ---
+
+                    'meta-title': 'Françoise by DIVO | Design QA Automation',
+
+                    'meta-description': 'Design quality and design system compliance checking. Save up to $150,000/year on quality control. From typography to RTL adaptation.',
+
+
+
+                    // Section 1: Hero
+
+                    'hero-h1': 'Françoise — Your AI Art Director for Design Quality Control',
+
+                    'hero-sub': 'We automate routine checks of typography, spacing, composition, and RTL adaptation with mathematical precision. Your team returns to creativity — consistency is maintained 24/7.',
+
+                    'hero-metric1-h': '20x faster',
+
+                    'hero-metric1-p': 'From 5 days to 2 hours checking spacing, colors, typography',
+
+                    'hero-metric2-h': '100% accuracy',
+
+                    'hero-metric2-p': '100% accuracy checking spacing, colors, typography',
+
+                    'hero-metric3-h': '310M+ users',
+
+                    'hero-metric3-p': 'RTL support for Arabic markets',
+
+                    'hero-social': 'Trusted by: E-commerce | Fintech | SaaS | Healthtech',
+
+                    'hero-cta1': 'Book Free Consultation',
+
+                    'hero-cta2': 'Get $99 Demo',
+
+                    'hero-cta-fineprint': 'Offers valid only November 18-19, 2025',
+                    'header-cta-special': 'Get $99 Audit',
+                    'final-offer-badge': 'ATTENDEES ONLY — SPECIAL BUNDLE',
+                    'final-offer-h3': 'Your $99 Starter Pack',
+                    'final-offer-p1': 'Everything you need to experience Françoise:',
+                    'final-offer-li1': 'Expert audit of 2 layouts in 24 hours (Enterprise level with RTL)',
+                    'final-offer-li2': 'Detailed report: composition, business task, RTL adaptation + references',
+                    'final-offer-li3': '<strong>BONUS:</strong> Free 15-min consultation to review your audit results',
+                    'final-offer-li4': '<strong>BONUS:</strong> 15% discount unlocked for any annual plan',
+                    'final-offer-li5': '<strong>BONUS:</strong> Priority implementation start in December 2025',
+                    'final-offer-p2': '⚠️ Exclusive offer valid ONLY November 18-19, 2025',
+                    'final-offer-cta': 'Get Your $99 Starter Pack →',
+                    'final-ben1': '✓ $99 Starter Pack — all-in-one bundle only Nov 18-19',
+                    'final-ben2': '✓ Enterprise-level audit + free consultation included',
+                    'final-ben3': '✓ 15% discount + priority start automatically unlocked',
+
+
+
+                    // Section 2: Problem
+
+                    'problem-h2': 'When Françoise Solves Your Problems',
+
+                    'problem1-h3': 'Routine control eats up time',
+
+                    'problem1-p1': 'Art directors spend 20-30 hours per week checking spacing, colors, and fonts instead of strategic work and team development.',
+
+                    'problem1-p2': 'Françoise automates typography, spacing, and alignment with 100% accuracy.',
+
+                    'problem1-badge': 'BASIC TIER → 15-20h/week saved',
+
+                    'problem2-h3': 'Consistency suffers during scaling',
+
+                    'problem2-p1': 'Newcomers and contractors don\'t keep the entire design system in mind — errors multiply, brand dilutes.',
+
+                    'problem2-p2': 'AI checks composition, visual hierarchy, and business effectiveness of interfaces — every layout meets standards.',
+
+                    'problem2-badge': 'ADVANCED TIER → 80-85% reviews automated',
+
+                    'problem3-h3': 'International expansion requires RTL adaptation',
+
+                    'problem3-p1': 'Mirroring layouts for Arabic markets means 40+ hours of manual work per week with high risk of errors.',
+
+                    'problem3-p2': 'Automatic RTL ↔ LTR adaptation verification for 310+ million Arabic-speaking users without errors.',
+
+                    'problem3-badge': 'ENTERPRISE TIER → 40-50h/week freed',
+
+                    'problem4-h3': 'Design-to-dev handoff is full of flaws',
+
+                    'problem4-p1': 'Developers receive layouts with errors, leading to rework, delays, and lost time on explanations.',
+
+                    'problem4-p2': 'Auto-generation of CSS specifications, design tokens in JSON/YAML, WCAG compliance — handoff without questions.',
+
+                    'problem4-badge': 'ENTERPRISE TIER → $300k+ hiring saved',
+
+ 
+
+                    // Section 3: Features & Pricing
+
+                    'features-h2': 'Key Benefits and Features',
+
+                    'features-sub': 'Three automation levels for your needs',
+
+                    'features-nav-basic-h': 'BASIC',
+
+                    'features-nav-basic-p1': 'Typography Autopilot',
+
+                    'features-nav-basic-p2': '$6,000/year',
+
+                    'features-nav-basic-p3': '$4k setup',
+
+                    'features-nav-basic-p4': 'For: startups, growing teams',
+
+                    'features-nav-learn': 'Learn More ↓',
+
+                    'features-nav-adv-h': 'ADVANCED',
+
+                    'features-nav-adv-p1': 'Complete Design QA',
+
+                    'features-nav-adv-p2': '$10,000/year',
+
+                    'features-nav-adv-p3': '+ $7k setup',
+
+                    'features-nav-adv-p4': 'For: e-commerce, SaaS, marketplaces',
+
+                    'features-nav-ent-h': 'ENTERPRISE',
+
+                    'features-nav-ent-p1': 'Global Scale',
+
+                    'features-nav-ent-p2': '$18,000/year',
+
+                    'features-nav-ent-p3': '+ $12k setup',
+
+                    'features-nav-ent-p4': 'For: international expansion, fintech',
+
+                    'features-nav-toggle1': 'Toggle: [Separate Details] | [Compare Side-by-Side →]',
+
+
+
+                    // Tier 1
+
+                    'tier1-badge': 'BASIC · TYPOGRAPHY AUTOPILOT',
+
+                    'tier1-h3': 'Automate Routine Checks',
+
+                    'tier1-for': 'For whom: Startups, growing product teams, small agencies with basic quality control needs.',
+
+                    'tier1-included': 'What\'s Included',
+
+                    'tier1-feat1-h': 'Typography',
+
+                    'tier1-feat1-p': 'Font-size, line-height, letter-spacing',
+
+                    'tier1-feat2-h': 'Spacing',
+
+                    'tier1-feat2-p': 'Padding/margin only on approved grid (4/8/12/16px)',
+
+                    'tier1-feat3-h': 'Alignment',
+
+                    'tier1-feat3-p': 'Grid snap, no random pixels',
+
+                    'tier1-results': '<b>15-20+ h/week</b> saved<br><b>40%</b> technical reviews automated<br><b>$6k/year</b> instead of $50-100k QA hire',
+
+                    'tier1-cta': 'Get Started with Basic →',
+
+                    'tier1-img-placeholder': 'Basic Illustration Placeholder',
+
+ 
+
+                    // Tier 2
+
+                    'tier2-badge': 'ADVANCED · COMPLETE DESIGN QA',
+
+                    'tier2-h3': 'Everything from Basic + Expert Analysis',
+
+                    'tier2-for': 'For whom: E-commerce, SaaS platforms, marketplaces where business effectiveness of interfaces matters.',
+
+                    'tier2-separator': '━━━ Everything in Basic + ━━━',
+
+                    'tier2-included': 'New Features',
+
+                    'tier2-feat1-h': 'Composition',
+
+                    'tier2-feat1-p': 'Hierarchy, balance, F/Z-patterns',
+
+                    'tier2-feat2-h': 'Business',
+
+                    'tier2-feat2-p': 'Screen task assessment: checkout, onboarding, etc',
+
+                    'tier2-feat3-h': 'References',
+
+                    'tier2-feat3-p': '3-5 examples from successful products',
+
+                    'tier2-feat4-h': 'Colors & Components',
+
+                    'tier2-feat4-p': 'WCAG AA (4.5:1) contrast',
+
+                    'tier2-results': '<b>20-25+ h/week</b> freed<br><b>80-85%</b> technical reviews automated<br><b>Higher conversion</b> (via UX analysis)',
+
+                    'tier2-cta': 'Get Started with Advanced →',
+
+                    'tier2-img-placeholder': 'Advanced Illustration Placeholder',
+
+ 
+
+                    // Tier 3
+
+                    'tier3-badge': 'ENTERPRISE · GLOBAL SCALE',
+
+                    'tier3-h3': 'Everything from Advanced + Global Capabilities',
+
+                    'tier3-for': 'For whom: Companies with international expansion, Arabic market entry, fintech/healthtech with compliance requirements.',
+
+                    'tier3-separator': '━━━ Everything in Advanced + ━━━',
+
+                    'tier3-included': 'New Features',
+
+                    'tier3-feat1-h': 'RTL ↔ LTR',
+
+                    'tier3-feat1-p': 'Automatic mirroring verification for 310M users',
+
+                    'tier3-feat2-h': 'WCAG a11y',
+
+                    'tier3-feat2-p': 'Contrast, touch targets, screen readers',
+
+                    'tier3-feat3-h': 'Design Tokens',
+
+                    'tier3-feat3-p': 'Auto-generation CSS, JSON/YAML for dev handoff',
+
+                    'tier3-feat4-h': '24/7 Support',
+
+                    'tier3-feat4-p': '2-4 hour SLA, Personal CSM, quarterly calls',
+
+                    'tier3-results': '<b>40-50+ h/week</b> for art director<br><b>$300k+/year</b> saved (QA + RTL + a11y)<br><b>95%+</b> technical reviews automated<br><b>RTL-ready</b> for MENA region',
+
+                    'tier3-cta': 'Request Enterprise Demo →',
+
+                    'tier3-img-placeholder': 'Enterprise Illustration Placeholder',
+
+ 
+
+                    // ROI Calculator
+
+                    'roi-h3': 'Calculate Your Savings',
+
+                    'roi-label1': 'How many designers on the team?',
+
+                    'roi-label2': 'How many layouts do you check per month?',
+
+                    'roi-label3': 'How many hours does art director spend on reviews per week?',
+
+                    'roi-res1': 'Your current cost:',
+
+                    'roi-res2': 'With Françoise (Advanced):',
+
+                    'roi-res3': 'Savings:',
+
+                    'roi-cta': 'Get Personalized Calculation →',
+
+
+
+                    // Section 4: Why
+
+                    'why-h2': 'Why Françoise',
+
+                    'why-sub': 'What Sets Us Apart from Other AI Design Tools',
+
+                    'why1-h3': 'Mathematical Precision',
+
+                    'why1-p': 'We analyze Figma JSON directly, not just visually — 100% accuracy of numerical parameters. No "approximately 8px" — only exact values from your design system.',
+
+                    'why2-h3': 'Full Customization',
+
+                    'why2-p': 'White-glove service for each client\'s unique design system. Françoise learns your rules, doesn\'t impose standards — your brand, your standards.',
+
+                    'why3-h3': 'RTL-First Approach',
+
+                    'why3-p': 'The only AI tool with automatic RTL verification for Arabic market expansion. 310+ million users await your product — we make localization error-free.',
+
+                    
+
+                    // Section 5: How
+
+                    'how-h2': 'How Françoise Works',
+
+                    'how-sub': 'Simple process from upload to handoff',
+
+                    'how-step1-h': '1. Upload layout',
+
+                    'how-step1-p': 'Figma integration or JPEG + JSON',
+
+                    'how-step2-h': '2. AI analysis',
+
+                    'how-step2-p': '3-15 minutes depending on agent level',
+
+                    'how-step3-h': '3. Detailed report',
+
+                    'how-step3-p': 'Design system deviations, composition, business task, references',
+
+                    'how-step4-h': '4. Corrections',
+
+                    'how-step4-p': 'Designer makes fixes and re-checks',
+
+                    'how-step5-h': '5. Handoff',
+
+                    'how-step5-p': 'Auto-generation of CSS specifications (Enterprise)',
+
+                    'how-checked-h3': 'What Gets Checked',
+
+                    'how-checked-li1': '✓ Typography, spacing, colors, components',
+
+                    'how-checked-li2': '✓ Visual hierarchy and composition',
+
+                    'how-checked-li3': '✓ Interface business effectiveness',
+
+                    'how-checked-li4': '✓ RTL adaptation and accessibility',
+
+                    'how-checked-li5': '✓ Development handoff readiness',
+
+
+
+                    // FAQ
+
+                    'faq-h2': 'FAQ',
+
+                    'faq1-q': 'How does Françoise integrate with our design system?',
+
+                    'faq1-a': 'White-glove service: we configure for your unique rules. Setup: 1-2 weeks (Basic) to 6-8 weeks (Enterprise).',
+
+                    'faq2-q': 'Do you support RTL languages?',
+
+                    'faq2-a': 'Yes, the only AI tool with automatic RTL ↔ LTR verification. Critical for Arabic markets (310M+ users).',
+
+                    'faq3-q': 'What does each tier check?',
+
+                    'faq3-a': 'Basic: typography, spacing, alignment (40% reviews).<br>Advanced: + composition, business task, references (80-85%).<br>Enterprise: + RTL, a11y WCAG, CSS specifications (95%+).',
+
+                    'faq4-q': 'Will Françoise replace the art director?',
+
+                    'faq4-a': 'No. We handle routine work so art director can focus on strategy, UX hypotheses, team development.',
+
+                    'faq5-q': 'Is the $99 demo valid after Function1?',
+
+                    'faq5-a': 'No, special offers only November 18-19, 2025 for conference attendees.',
+
+
+
+                    // Section 6: Final CTA
+
+                    'final-cta-h2': 'Meet Us at Function1 — Exclusive Offers',
+
+                    'final-cta-sub': 'Dubai, November 18-19, 2025',
+
+                    'final-offer1-badge': 'ATTENDEES ONLY',
+
+                    'final-offer1-h3': 'Demo for $99',
+
+                    'final-offer1-p1': 'What\'s included:',
+
+                    'final-offer1-li1': 'Upload 2 JPEG screenshots of layouts',
+
+                    'final-offer1-li2': 'Expert audit in 24 hours (Enterprise level with RTL)',
+
+                    'final-offer1-li3': 'Composition, business task, RTL adaptation, recommendations + references',
+
+                    'final-offer1-p2': 'Important: Offer valid only November 18-19, 2025',
+
+                    'final-offer1-cta': 'Order Demo for $99 →',
+
+                    'final-offer2-badge': 'BONUS WITH BOOKING',
+
+                    'final-offer2-h3': 'Consultation + 15% discount',
+
+                    'final-offer2-p1': 'What\'s included:',
+
+                    'final-offer2-li1': 'Individual consultation: discuss design system, goals, calculate ROI',
+
+                    'final-offer2-li2': 'Bonus: 15% discount on annual subscription at any level',
+
+                    'final-offer2-li3': 'Priority implementation start in December 2025',
+
+                    'final-offer2-p2': 'Only for Function1 attendees who book on November 18-19',
+
+                    'final-offer2-cta': 'Book Consultation →',
+
+                    'final-ben1': '✓ Demo for $99 — exclusive price only November 18-19',
+
+                    'final-ben2': '✓ 15% discount on annual subscription when booking consultation',
+
+                    'final-ben3': '✓ Meet us in person at Function1 booth in Dubai',
+
+                    'final-contact': 'Request Form | Email: hello@divo.ai | Telegram | Function1 Booth',
+
+                }
+
+            };
+
+
+
+            // --- Логика переключения языка (из Клио.html) ---
+
+            const btnRuDesktop = document.getElementById('btn-ru');
+
+            const btnEnDesktop = document.getElementById('btn-en');
+
+            const btnRuMobile = document.getElementById('btn-ru-mobile');
+
+            const btnEnMobile = document.getElementById('btn-en-mobile');
+
+                        
+
+            const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+
+
+            function updateContent(lang) {
+
+                // Сохраняем язык в localStorage
+
+                localStorage.setItem('divo-lang', lang);
+
+
+
+                document.documentElement.lang = lang;
+
+
+
+                const isRu = lang === 'ru';
+
+                if(btnRuDesktop) btnRuDesktop.classList.toggle('active', isRu);
+
+                if(btnEnDesktop) btnEnDesktop.classList.toggle('active', !isRu);
+
+                if(btnRuMobile) btnRuMobile.classList.toggle('active', isRu);
+
+                if(btnEnMobile) btnEnMobile.classList.toggle('active', !isRu);
+
+
+
+                if(btnRuDesktop) btnRuDesktop.setAttribute('aria-pressed', isRu);
+
+                if(btnEnDesktop) btnEnDesktop.setAttribute('aria-pressed', !isRu);
+
+                if(btnRuMobile) btnRuMobile.setAttribute('aria-pressed', isRu);
+
+                if(btnEnMobile) btnEnMobile.setAttribute('aria-pressed', !isRu);
+
+
+
+                const langTranslations = translations[lang];
+
+
+
+                elementsToTranslate.forEach(el => {
+
+                    const key = el.getAttribute('data-lang');
+
+                    if (langTranslations && langTranslations[key]) {
+
+                        if (key === 'meta-title') {
+
+                            el.innerHTML = langTranslations[key];
+
+                        } else if (key === 'meta-description') {
+
+                            el.setAttribute('content', langTranslations[key]);
+
+                        } else {
+
+                            el.innerHTML = langTranslations[key];
+
+                        }
+
+                    } else if (langTranslations) {
+
+                        // console.warn(`Translation key not found for lang '${lang}': ${key}`);
+
+                    }
+
+                });
+
+            }
+
+
+
+            if(btnRuDesktop) btnRuDesktop.addEventListener('click', () => updateContent('ru'));
+
+            if(btnEnDesktop) btnEnDesktop.addEventListener('click', () => updateContent('en'));
+
+            if(btnRuMobile) btnRuMobile.addEventListener('click', () => updateContent('ru'));
+
+            if(btnEnMobile) btnEnMobile.addEventListener('click', () => updateContent('en'));
+
+
+
+            // Устанавливаем язык при загрузке
+
+            // Проверяем URL (например, /fr/...) или localStorage, или default
+
+            const savedLang = localStorage.getItem('divo-lang') || 'en'; // Default 'en'
+
+            updateContent(savedLang);
+
+        });
+
+            
+
+    </script>
+
+</body>
+
+</html>
+

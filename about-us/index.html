@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+    <title data-lang="meta-title">О нас — DIVO | AI-системы и Enterprise-архитектура</title>
+    <meta name="description" data-lang="meta-description" content="DIVO — студия-гибрид, объединяющая AI-экспертизу и enterprise-архитектуру. Мы создаём стабильные, масштабируемые AI-системы с измеримым ROI.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Eugusto';
+            src: url('EugustoFreePersonalUse-Regular.otf') format('otf');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Alumni Sans', sans-serif;
+            --font-decorative: 'Eugusto', 'KS Bistra', sans-serif;
+
+            --color-primary: rgb(203, 2, 19);
+            --color-primary-dark: rgb(180, 2, 19);
+            --color-bg-light: rgb(241, 241, 241);
+            --color-text-main: rgb(30, 30, 30);
+            --color-text-secondary: rgb(60, 60, 60);
+            --color-card-bg: #ffffff;
+            --color-footer-bg: rgb(30, 30, 30);
+
+            --color-bg-1: rgba(203, 2, 19, 0.1);
+            --color-bg-2: rgba(0, 240, 255, 0.1);
+            --color-bg-3: rgba(60, 60, 60, 0.08);
+            --color-bg-4: rgba(203, 2, 19, 0.1);
+            --color-bg-5: rgba(0, 240, 255, 0.1);
+            --color-bg-6: rgba(60, 60, 60, 0.08);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-weight: 300; 
+            line-height: 1.6;
+        }
+
+        h1[data-lang], h2[data-lang], h3[data-lang], h4[data-lang], h5[data-lang], h6[data-lang] {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-text-main);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1[data-lang] {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            font-size: clamp(3.5rem, 3rem + 2vw, 5rem);
+            letter-spacing: -1px;
+        }
+        h2[data-lang] {
+            font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
+            font-weight: 800;
+        }
+                
+        h3[data-lang] {
+            font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+            font-weight: 700;
+        }
+        
+        h4[data-lang] {
+            font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
+            font-weight: 700;
+        }
+
+        /* ИСПРАВЛЕНО: Уменьшены базовые размеры параграфов и списков */
+        p, ul {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem; /* Было 1.1rem */
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        ul {
+            list-style-position: inside;
+            list-style-type: disc;
+            padding-left: 0.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem; /* Было 1.1rem */
+        }
+        
+        /* ИСПРАВЛЕНО: Увеличены размеры цитат */
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-bottom: 1.25rem;
+            color: var(--color-text-main);
+            font-weight: 500;
+            line-height: 1.5;
+            font-size: 1.125rem !important; /* Было 0.875-1.125rem */
+        }
+
+                /* ИСПРАВЛЕНО: Увеличен размер h5 для "Key Achievements" */
+        h5[data-lang] {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-text-main);
+            font-size: 2rem; /* Было 1.1rem */
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Для мобильных устройств */
+        @media (max-width: 640px) {
+            h5[data-lang] {
+                font-size: 1.5rem !important; /* Было 1rem */
+            }
+        }
+        
+        /* Для планшетов */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            h5[data-lang] {
+                font-size: 1.5rem !important; /* Было 1.05rem */
+            }
+        }
+        
+        /* Для десктопов */
+        @media (min-width: 1025px) {
+            h5[data-lang] {
+                font-size: 2rem !important; /* Было 1.1rem */
+            }
+        }
+
+                
+        .header-logo {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            color: var(--color-primary);
+            font-size: 2.25rem;
+            line-height: 1;
+        }
+        
+        .header-nav-link {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            transition: color 0.2s ease;
+            text-transform: uppercase;
+        }
+        .header-nav-link:hover {
+            color: var(--color-primary);
+        }
+                
+        #mobile-menu {
+            transition: all 0.3s ease-out;
+            z-index: 40;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.25rem;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            border: 2px solid var(--color-primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(203, 2, 19, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-azure {
+            background-color: #00A0B0;
+            color: white;
+            border: 2px solid #00A0B0;
+        }
+        .btn-azure:hover {
+            background-color: #007A86;
+            border-color: #007A86;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 160, 176, 0.3);
+        }
+        
+        .btn-tag {
+            background-color: rgba(0, 0, 0, 0.05); 
+            color: var(--color-text-secondary);
+            border: 2px solid transparent; 
+            font-weight: 700; 
+            text-transform: none; 
+            padding: 0.5rem 1.25rem;
+            font-size: 1rem;
+            margin: 0.25rem; 
+            white-space: nowrap;
+            display: inline-block;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-tag:hover {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .link-arrow {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .link-arrow:hover {
+            color: var(--color-primary-dark);
+            transform: translateX(4px); 
+        }
+
+        .event-banner {
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+                
+        .event-banner h2[data-lang],
+        .event-banner h4[data-lang],
+        .event-banner h3[data-lang] {
+            color: white;
+        }
+
+        .highlight-text {
+            color: #00A0B0;
+            font-weight: 600; 
+        }
+                
+        .event-banner p {
+            color: #e0e0e0; 
+        }
+
+        .btn-event {
+            background-color: #D90429;
+            color: white;
+            border: none;
+        }
+        .btn-event:hover {
+            background-color: #EF233C;
+            transform: translateY(-2px);
+        }
+
+        .cta-banner {
+            background-color: #03101a;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            background-image: url('background-v.png');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        .cta-banner h2[data-lang],
+        .cta-banner h3[data-lang] {
+            color: white;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .card-no-hover:hover {
+            transform: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .card:not(.card-no-hover):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+                
+        .card-poster__header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px 12px 0 0;
+        }
+        .card-poster__header h4[data-lang] {
+            margin-bottom: 0;
+        }
+        .bg-custom-1 { background-color: var(--color-bg-1); }
+        .bg-custom-2 { background-color: var(--color-bg-2); }
+        .bg-custom-3 { background-color: var(--color-bg-3); }
+        .bg-custom-4 { background-color: var(--color-bg-4); }
+
+        .lang-switcher-inline {
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 0.25rem;
+            display: flex;
+        }
+        .lang-switcher-inline button {
+            padding: 0.5rem 0.75rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            background-color: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-switcher-inline button.active {
+            color: var(--color-primary);
+            background-color: var(--color-card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .lang-switcher-inline button:hover:not(.active) {
+            background-color: rgba(0,0,0,0.03);
+        }
+
+        .footer {
+            background-color: var(--color-footer-bg);
+            color: #CFCFCF; 
+            display: block;
+        }
+        .footer-logo {
+            font-family: var(--font-decorative);
+            font-weight: 800;
+            color: white;
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .footer-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        p[data-lang="footer-mission"] {
+            color: white;
+        }
+        .footer-link {
+            color: #CFCFCF;
+            font-family: var(--font-sans);
+            font-weight: 400; 
+            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: white;
+        }
+            
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                
+                <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+
+                <div class="hidden lg:flex items-center gap-6">
+                    <nav class="flex gap-8 items-center">
+                        <div class="relative group">
+                            <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
+                                Решения
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
+                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
+                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+                    </nav>
+
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="btn btn-primary btn-sm popup-trigger" data-popup="consult" data-lang="header-cta">Получить консультацию</a>
+                        <div class="lang-switcher-inline">
+                            <button id="btn-ru" class="" aria-pressed="false">RU</button>
+                            <button id="btn-en" class="active" aria-pressed="true">EN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="#" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="header-cta-mobile">Консультация</a>
+                    <div class="lang-switcher-inline">
+                        <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                        <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
+                    </div>
+                    <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+                <nav class="flex flex-col gap-4">
+                    <div>
+                        <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
+                        <div class="pl-4 flex flex-col gap-2">
+                            <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
+                            <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
+                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
+                        </div>
+                    </div>
+                    <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                    <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container max-w-6xl mx-auto px-4 pt-12 sm:pt-16">
+                
+        <section id="function1-banner" class="mb-12 md:mb-16">
+            <div class="event-banner">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2">
+                        <h3 data-lang="banner-h3" class="mb-2">🔥 <span data-lang="banner-h3-span">Специальное предложение для участников /function1</span></h3>
+                        <h4 data-lang="banner-h4" class="highlight-text mb-4">(18-19 ноября 2025, Дубай)</h4>
+                        <p data-lang="banner-p" class="text-lg mb-4">Встречаемся в Дубае на крупнейшей AI-конференции года! Бесплатная техническая консультация + специальные условия для участников конференции.</p>
+                        <p data-lang="banner-meta" class="text-sm opacity-80">Действует: 18-19 ноября 2025 | Festival Arena, Dubai</p>
+                    </div>
+                    <div class="md:text-right flex items-center md:items-start md:justify-end">
+                        <a href="/function1-offers" data-lang="banner-cta" class="btn btn-event btn-lg whitespace-nowrap">Получить предложение</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hero" class="mb-16 md:mb-24 text-center max-w-4xl mx-auto">
+            <h1 data-lang="hero-h1">AI-системы, которые приносят больше денег, чем стоят</h1>
+            <h3 data-lang="hero-h3" class="text-text-secondary">DIVO — это студия-гибрид, объединяющая AI-экспертизу и enterprise-архитектуру. Мы создаём стабильные, масштабируемые системы с измеримым ROI.</h3>
+            <p data-lang="hero-p" class="text-lg">Мы ликвидируем разрыв между красивыми AI-демонстрациями и работающими enterprise-системами. Наши решения выдерживают реальную нагрузку, глубоко интегрируются в существующую инфраструктуру и приносят измеримую прибыль.</p>
+        </section>
+
+        <section id="special" class="mb-16 md:mb-24">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 data-lang="special-h2">Экспертиза + Подход + Результат</h2>
+                <p data-lang="special-p1">Мы объединяем две редкие компетенции: глубокую enterprise-архитектуру и продуктовое мышление.</p>
+                <p data-lang="special-p2" class="mb-8">Клиенты получают целостное решение, которое работает технически и окупается коммерчески.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card flex flex-col gap-4 p-8">
+                    <div>
+                        <h4 data-lang="special-feat1-h" class="text-primary" style="color: var(--color-primary);">Продуктовая экспертиза</h4>
+                        <p data-lang="special-feat1-p" class="!mb-0">Мы знаем, как найти product-market fit, упаковать технологию в масштабируемый продукт и построить машину роста. 10x рост выручки за 4 месяца — это результат правильной продуктовой стратегии.</p>
+                    </div>
+                </div>
+                <div class="card flex flex-col gap-4 p-8">
+                    <div>
+                        <h4 data-lang="special-feat2-h" class="text-primary" style="color: var(--color-primary);">Enterprise-архитектура</h4>
+                        <p data-lang="special-feat2-p" class="!mb-0">Мы проектируем системы, которые не упадут под нагрузкой. 10+ млн пользователей, $18.4B+ в транзакциях — системы, которые работают в реальном масштабе.</p>
+                    </div>
+                </div>
+                <div class="card flex flex-col gap-4 p-8">
+                    <div>
+                        <h4 data-lang="special-feat3-h" class="text-primary" style="color: var(--color-primary);">Клиентский сервис</h4>
+                        <p data-lang="special-feat3-p" class="!mb-0">Мы не бросаем проект после запуска. Мы адаптируемся под ваши требования безопасности, интегрируемся с любой инфраструктурой и гарантируем поддержку на enterprise-уровне.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="/function1-offers" data-lang="special-cta" class="btn btn-azure">Посмотреть специальные предложения</a>
+            </div>
+        </section>
+
+        <!-- ИСПРАВЛЕННЫЙ РАЗДЕЛ С КОФАУНДЕРАМИ -->
+        <section id="founders" class="mb-16 md:mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-8">
+                    <img src="daria.jpg" alt="Daria Kamyshina" class="w-32 h-32 rounded-full mb-6 mx-auto md:mx-0 object-cover">
+                    <h3 data-lang="daria-h3">Дарья Камышина</h3>
+                    <p data-lang="daria-title" class="!font-semibold !text-lg !-mt-4 !mb-4">CEO & Co-Founder</p>
+                    <blockquote data-lang="daria-quote">The 10x Growth Product Leader</blockquote>
+                    <p data-lang="daria-p">Отвечаю за то, чтобы технологии превращались в деньги и масштабируемый рост. Я выросла в продуктовой культуре Yandex, а затем как Product Lead EdTech-стартапа увеличила выручку с $5,000 до $50,000 MRR за 4 месяца.</p>
+                    <h5 data-lang="daria-ach-title" class="!font-bold !text-text-main">Ключевые достижения:</h5>
+                    <ul data-lang="daria-ach-list">
+                        <li data-lang="daria-ach1">Рост monthly revenue в 10 раз за 4 месяца</li>
+                        <li data-lang="daria-ach2">Увеличение Retention Rate на 30% и конверсии в trial на 15%</li>
+                        <li data-lang="daria-ach3">Управление командой из 15 core-сотрудников и 150+ part-time специалистов</li>
+                        <li data-lang="daria-ach4">Разработка GTM-стратегии для выхода на рынок США</li>
+                    </ul>
+                    <a href="/team/daria" data-lang="daria-cta" class="link-arrow mt-4">Узнать больше о Дарье</a>
+                </div>
+                
+                <div class="card p-8">
+                    <img src="Victor.jpeg" alt="Victor Pisarevsky" class="w-32 h-32 rounded-full mb-6 mx-auto md:mx-0 object-cover">
+                    <h3 data-lang="victor-h3">Виктор Писаревский</h3>
+                    <p data-lang="victor-title" class="!font-semibold !text-lg !-mt-4 !mb-4">CTO & Co-Founder</p>
+                    <blockquote data-lang="victor-quote">The Architect of Enterprise-Grade AI</blockquote>
+                    <p data-lang="victor-p">Я создаю AI-архитектуры, которые действительно работают в масштабе. 15+ лет в enterprise-разработке, я был Enterprise Architect в одной из крупнейших tech-корпораций региона, где спроектировал core-системы для DomClick — региональной платформы недвижимости №1.</p>
+                    <h5 data-lang="victor-ach-title" class="!font-bold !text-text-main">Ключевые достижения:</h5>
+                    <ul data-lang="victor-ach-list">
+                        <li data-lang="victor-ach1">Платформа, обслуживающая 10+ млн активных пользователей в месяц</li>
+                        <li data-lang="victor-ach2">Эскроу-сервис с транзакциями на сумму более $18.4B+</li>
+                        <li data-lang="victor-ach3">3 production-системы: 99% автоматизация операций</li>
+                        <li data-lang="victor-ach4">Экспертиза в Java для high-load, Python для AI, Scala для complex tasks</li>
+                    </ul>
+                    <a href="/team/victor" data-lang="victor-cta" class="link-arrow mt-4">Узнать больше о Викторе</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="approach" class="mb-16 md:mb-24">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 data-lang="approach-h2">Как мы работаем</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-1">
+                        <h4 data-lang="approach1-h">Полистек разработки</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="approach1-p">Мы не привязаны к одному стеку. Java для высоконагруженных систем, Python для AI-интеграций, JavaScript для интерфейсов, Scala для уникальных задач. Мы выбираем инструмент под вашу задачу.</p>
+                    </div>
+                </div>
+
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-2">
+                        <h4 data-lang="approach2-h">Экспертиза в интеграциях</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="approach2-p">Мы строим архитектуры, которые гладко встраиваются в существующую инфраструктуру. У нас есть опыт интеграций с 1С, AmoCRM, Telegram, LinkedIn, SAP, а также с внешними API и сервисами без API.</p>
+                    </div>
+                </div>
+
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-3">
+                        <h4 data-lang="approach3-h">Гибкая безопасность данных</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="approach3-p">Мы адаптируемся под требования ИБ клиента. От API-интеграций через деперсонализацию данных до полностью изолированных on-premise решений.</p>
+                    </div>
+                </div>
+
+                <div class="card h-full overflow-hidden p-0">
+                    <div class="card-poster__header bg-custom-4">
+                        <h4 data-lang="approach4-h">Прагматичный подход к AI</h4>
+                    </div>
+                    <div class="p-6">
+                        <p data-lang="approach4-p">Мы берём лучшие AI-технологии (RAG, LLM, ASR) и встраиваем их в надёжную, масштабируемую архитектуру, которая решает конкретные бизнес-задачи.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cases" class="mb-16 md:mb-24">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 data-lang="solutions-h2">Системы, которые работают в production</h2>
+                <p data-lang="solutions-sub" class="text-lg">Примеры архитектурных решений, внедрённых для enterprise-клиентов.</p>
+            </div>
+                        
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="card">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-custom-1 rounded-lg flex items-center justify-center text-[var(--color-primary)]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-7 0H3m3 0v-4M7 3v2M17 3v2M12 3v2M12 17v4M12 21h-4v-4h4v4zm0 0h4v-4h-4v4z"></path></svg>
+                        </div>
+                        <h4 class="m-0" data-lang="solution1-client">Major Banking & Fintech Group</h4>
+                    </div>
+                    <ul data-lang="solution1-list">
+                        <li data-lang="solution1-feat1">Отказоустойчивый конвейер данных для enterprise-аналитики</li>
+                        <li data-lang="solution1-feat2">Движок контекстной валидации для сложных форм</li>
+                        <li data-lang="solution1-feat3">Автоматизация изменений аккредитива: 99% операций проходят автоматически</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-custom-2 rounded-lg flex items-center justify-center text-[#007A86]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h4 class="m-0" data-lang="solution2-client">Leading E-commerce Platform</h4>
+                    </div>
+                    <ul data-lang="solution2-list">
+                        <li data-lang="solution2-feat1">AI-ассистент арт-директора: снял до 80% рутины с проверки макетов</li>
+                        <li data-lang="solution2-feat2">AI-исследование для редизайна: сократили время с 3 месяцев до 1 месяца</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="flex-shrink-0 w-12 h-12 bg-custom-3 rounded-lg flex items-center justify-center text-[var(--color-text-secondary)]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0c-1.11 0-2.08-.402-2.599-1M12 16v1m0-1c.69 0 1.343-.28 1.813-.75M12 16c-.69 0-1.343.28-1.813.75m3.626 0A9 9 0 1112 3a9 9 0 013.626 13.75z"></path></svg>
+                        </div>
+                        <h4 class="m-0" data-lang="solution3-client">B2B Sales Tech</h4>
+                    </div>
+                    <ul data-lang="solution3-list">
+                        <li data-lang="solution3-feat1">Агент лидогенерации в LinkedIn и Telegram: автоматизация поиска и персонализированных коммуникаций</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="/custom-development" data-lang="solutions-cta" class="btn btn-secondary">Посмотреть остальные решения</a>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-12 md:mb-16">
+            <div class="card card-no-hover max-w-5xl mx-auto p-8 md:p-12 text-center text-white cta-banner">
+                
+                <h2 data-lang="cta-h2" class="!text-white">Обсудим вашу задачу</h2>
+                <p data-lang="cta-special" class="text-2xl highlight-text mb-8">🎁 Специальные условия для участников /function1</p>
+                    
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white/10 p-6 rounded-lg border border-white/20 flex flex-col">
+                        <div class="flex-grow">
+                            <h3 data-lang="cta-opt1-h" class="!text-white">ОПЦИЯ 1: Бесплатная консультация</h3>
+                            <p data-lang="cta-opt1-p" class="!text-gray-300 mb-4">(для тех, кто хочет разобраться)</p>
+                            <p data-lang="cta-opt1-desc" class="!text-gray-300">Запишитесь на бесплатную 40-минутную техническую консультацию 18-19 ноября и получите:</p>
+                            <ul class="!text-gray-300">
+                                <li data-lang="cta-opt1-feat1">Письменное техническое заключение по вашей задаче</li>
+                                <li data-lang="cta-opt1-feat2"><strong>Бонус:</strong> Скидка 60% на Technical Audit ($1,999 вместо $5,000)</li>
+                                <li data-lang="cta-opt1-feat3" class="!text-sm !opacity-80">Скидка действует 30 дней после консультации</li>
+                            </ul>
+                        </div>
+                        <a href="/#final-cta" data-lang="cta-opt1-cta" class="btn btn-secondary mt-6 w-full text-center block">Записаться на консультацию</a>
+                    </div>
+                    
+                    <div class="bg-white/10 p-6 rounded-lg border border-white/20 flex flex-col">
+                        <div class="flex-grow">
+                            <h3 data-lang="cta-opt2-h" class="!text-white">ОПЦИЯ 2: Technical Audit со скидкой</h3>
+                            <p data-lang="cta-opt2-p" class="!text-gray-300 mb-4">(для тех, кто готов к действию)</p>
+                            <p data-lang="cta-opt2-desc" class="!text-gray-300">Оплатите Technical Audit по специальной цене $1,999 (вместо $5,000) в даты ивента 18-19 ноября и получите:</p>
+                            <ul class="!text-gray-300">
+                                <li data-lang="cta-opt2-feat1">Полный 2-недельный аудит вашей системы/задачи</li>
+                                <li data-lang="cta-opt2-feat2">Детальный отчёт с рекомендациями и техническим заданием</li>
+                                <li data-lang="cta-opt2-bonus1"><strong>Бонус 1:</strong> Приоритетный старт проекта в декабре 2025</li>
+                                <li data-lang="cta-opt2-bonus2"><strong>Бонус 2:</strong> Скидка 15% на реализацию проекта (до $15,000 экономии)</li>
+                            </ul>
+                        </div>
+                        <a href="https://nowpayments.io/payment/?iid=6209737262" data-lang="cta-opt2-cta" class="btn btn-primary mt-6 w-full text-center block">Оплатить Technical Audit</a>
+                    </div>
+                </div>
+                
+                <p data-lang="cta-final-p" class="!text-gray-300 text-lg mt-8 max-w-2xl mx-auto">Мы обсудим, где AI даст реальный эффект, а где хватит классической автоматизации.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer pt-16 pb-8 md:pb-12">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
+                
+                <div>
+                    <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
+                    <p class="text-sm mb-2" data-lang="footer-mission">
+                        Мы превращаем технологии в двигатель роста вашего бизнеса.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
+                        <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
+                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
+                        <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+                        <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
+                        <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
+                    </ul>
+                    <div class="mt-3">
+                        <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
+                        <ul class="space-y-2">
+                            <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
+                            <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
+                <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const isExpanded = !mobileMenu.classList.contains('hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+            
+            const translations = {
+                'ru': {
+                    'meta-title': 'О нас — DIVO | AI-системы и Enterprise-архитектура',
+                    'meta-description': 'DIVO — студия-гибрид, объединяющая AI-экспертизу и enterprise-архитектуру. Мы создаём стабильные, масштабируемые AI-системы с измеримым ROI.',
+                    'logo': 'DIVO',
+                    'nav-sales': 'Для Продаж',
+                    'nav-design': 'Для Дизайна',
+                    'nav-about': 'О нас',
+                    'header-cta': 'Получить консультацию',
+                    'header-cta-mobile': 'Консультация',
+                    'nav-solutions': 'Решения',
+                    'nav-custom-dev': 'Кастомная разработка',
+                    'nav-portfolio': 'Портфолио',
+                    'banner-h3': 'Специальное предложение для участников /function1',
+                    'banner-h3-span': 'Специальное предложение для участников /function1',
+                    'banner-h4': '(18-19 ноября 2025, Дубай)',
+                    'banner-p': 'Встречаемся в Дубае на крупнейшей AI-конференции года! Бесплатная техническая консультация + специальные условия для участников конференции.',
+                    'banner-meta': 'Действует: 18-19 ноября 2025 | Festival Arena, Dubai',
+                    'banner-cta': 'Получить предложение',
+                    'hero-h1': 'AI-системы, которые приносят больше денег, чем стоят',
+                    'hero-h3': 'DIVO — это студия-гибрид, объединяющая AI-экспертизу и enterprise-архитектуру. Мы создаём стабильные, масштабируемые системы с измеримым ROI.',
+                    'hero-p': 'Мы ликвидируем разрыв между красивыми AI-демонстрациями и работающими enterprise-системами. Наши решения выдерживают реальную нагрузку, глубоко интегрируются в существующую инфраструктуру и приносят измеримую прибыль.',
+                    'special-h2': 'Экспертиза + Подход + Результат',
+                    'special-p1': 'Мы объединяем две редкие компетенции: глубокую enterprise-архитектуру и продуктовое мышление.',
+                    'special-p2': 'Клиенты получают целостное решение, которое работает технически и окупается коммерчески.',
+                    'special-cta': 'Посмотреть специальные предложения',
+                    'special-feat1-h': 'Продуктовая экспертиза',
+                    'special-feat1-p': 'Мы знаем, как найти product-market fit, упаковать технологию в масштабируемый продукт и построить машину роста. 10x рост выручки за 4 месяца — это результат правильной продуктовой стратегии.',
+                    'special-feat2-h': 'Enterprise-архитектура',
+                    'special-feat2-p': 'Мы проектируем системы, которые не упадут под нагрузкой. 10+ млн пользователей, $18.4B+ в транзакциях — системы, которые работают в реальном масштабе.',
+                    'special-feat3-h': 'Клиентский сервис',
+                    'special-feat3-p': 'Мы не бросаем проект после запуска. Мы адаптируемся под ваши требования безопасности, интегрируемся с любой инфраструктурой и гарантируем поддержку на enterprise-уровне.',
+                    'daria-h3': 'Дарья Камышина',
+                    'daria-title': 'CEO & Co-Founder',
+                    'daria-quote': 'The 10x Growth Product Leader',
+                    'daria-p': 'Отвечаю за то, чтобы технологии превращались в деньги и масштабируемый рост. Я выросла в продуктовой культуре Yandex, а затем как Product Lead EdTech-стартапа увеличила выручку с $5,000 до $50,000 MRR за 4 месяца.',
+                    'daria-ach-title': 'Ключевые достижения:',
+                    'daria-ach1': 'Рост monthly revenue в 10 раз за 4 месяца',
+                    'daria-ach2': 'Увеличение Retention Rate на 30% и конверсии в trial на 15%',
+                    'daria-ach3': 'Управление командой из 15 core-сотрудников и 150+ part-time специалистов',
+                    'daria-ach4': 'Разработка GTM-стратегии для выхода на рынок США',
+                    'daria-cta': 'Узнать больше о Дарье &rarr;',
+                    'victor-h3': 'Виктор Писаревский',
+                    'victor-title': 'CTO & Co-Founder',
+                    'victor-quote': 'The Architect of Enterprise-Grade AI',
+                    'victor-p': 'Я создаю AI-архитектуры, которые действительно работают в масштабе. 15+ лет в enterprise-разработке, я был Enterprise Architect в одной из крупнейших tech-корпораций региона, где спроектировал core-системы для DomClick — региональной платформы недвижимости №1.',
+                    'victor-ach-title': 'Ключевые достижения:',
+                    'victor-ach1': 'Платформа, обслуживающая 10+ млн активных пользователей в месяц',
+                    'victor-ach2': 'Эскроу-сервис с транзакциями на сумму более $18.4B+',
+                    'victor-ach3': '3 production-системы: 99% автоматизация операций',
+                    'victor-ach4': 'Экспертиза в Java для high-load, Python для AI, Scala для complex tasks',
+                    'victor-cta': 'Узнать больше о Викторе &rarr;',
+                    'approach-h2': 'Как мы работаем',
+                    'approach1-h': 'Полистек разработки',
+                    'approach1-p': 'Мы не привязаны к одному стеку. Java для высоконагруженных систем, Python для AI-интеграций, JavaScript для интерфейсов, Scala для уникальных задач. Мы выбираем инструмент под вашу задачу.',
+                    'approach2-h': 'Экспертиза в интеграциях',
+                    'approach2-p': 'Мы строим архитектуры, которые гладко встраиваются в существующую инфраструктуру. У нас есть опыт интеграций с 1С, AmoCRM, Telegram, LinkedIn, SAP, а также с внешними API и сервисами без API.',
+                    'approach3-h': 'Гибкая безопасность данных',
+                    'approach3-p': 'Мы адаптируемся под требования ИБ клиента. От API-интеграций через деперсонализацию данных до полностью изолированных on-premise решений.',
+                    'approach4-h': 'Прагматичный подход к AI',
+                    'approach4-p': 'Мы берём лучшие AI-технологии (RAG, LLM, ASR) и встраиваем их в надёжную, масштабируемую архитектуру, которая решает конкретные бизнес-задачи.',
+                    'solutions-h2': 'Системы, которые работают в production',
+                    'solutions-sub': 'Примеры архитектурных решений, внедрённых для enterprise-клиентов.',
+                    'solution1-client': 'Major Banking & Fintech Group',
+                    'solution1-feat1': 'Отказоустойчивый конвейер данных для enterprise-аналитики',
+                    'solution1-feat2': 'Движок контекстной валидации для сложных форм',
+                    'solution1-feat3': 'Автоматизация изменений аккредитива: 99% операций проходят автоматически',
+                    'solution2-client': 'Leading E-commerce Platform',
+                    'solution2-feat1': 'AI-ассистент арт-директора: снял до 80% рутины с проверки макетов',
+                    'solution2-feat2': 'AI-исследование для редизайна: сократили время с 3 месяцев до 1 месяца',
+                    'solution3-client': 'B2B Sales Tech',
+                    'solution3-feat1': 'Агент лидогенерации в LinkedIn и Telegram: автоматизация поиска и персонализированных коммуникаций',
+                    'solutions-cta': 'Посмотреть остальные решения',
+                    'cta-h2': 'Обсудим вашу задачу',
+                    'cta-special': 'Специальные условия для участников /function1',
+                    'cta-opt1-h': 'ОПЦИЯ 1: Бесплатная консультация',
+                    'cta-opt1-p': '(для тех, кто хочет разобраться)',
+                    'cta-opt1-desc': 'Запишитесь на бесплатную 40-минутную техническую консультацию 18-19 ноября и получите:',
+                    'cta-opt1-feat1': 'Письменное техническое заключение по вашей задаче',
+                    'cta-opt1-feat2': '<strong>Бонус:</strong> Скидка 60% на Technical Audit ($1,999 вместо $5,000)',
+                    'cta-opt1-feat3': 'Скидка действует 30 дней после консультации',
+                    'cta-opt1-cta': 'Записаться на консультацию',
+                    'cta-opt2-h': 'ОПЦИЯ 2: Technical Audit со скидкой',
+                    'cta-opt2-p': '(для тех, кто готов к действию)',
+                    'cta-opt2-desc': 'Оплатите Technical Audit по специальной цене $1,999 (вместо $5,000) в даты ивента 18-19 ноября и получите:',
+                    'cta-opt2-feat1': 'Полный 2-недельный аудит вашей системы/задачи',
+                    'cta-opt2-feat2': 'Детальный отчёт с рекомендациями и техническим заданием',
+                    'cta-opt2-bonus1': '<strong>Бонус 1:</strong> Приоритетный старт проекта в декабре 2025',
+                    'cta-opt2-bonus2': '<strong>Бонус 2:</strong> Скидка 15% на реализацию проекта (до $15,000 экономии)',
+                    'cta-opt2-cta': 'Оплатить Technical Audit',
+                    'cta-final-p': 'Мы обсудим, где AI даст реальный эффект, а где хватит классической автоматизации.',
+                    'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
+                    'footer-solutions-title': 'Решения',
+                    'footer-company-title': 'Компания',
+                    'footer-portfolio': 'Портфолио и Кейсы',
+                    'footer-contact-title': 'Контакты',
+                    'footer-legal-title': 'Документы',
+                    'footer-privacy': 'Политика конфиденциальности',
+                    'footer-terms': 'Условия использования'
+                },
+                'en': {
+                    'meta-title': 'About Us — DIVO | AI Systems & Enterprise Architecture',
+                    'meta-description': 'DIVO is a hybrid studio combining AI expertise and enterprise architecture. We build stable, scalable AI systems with measurable ROI.',
+                    'logo': 'DIVO',
+                    'nav-sales': 'For Sales',
+                    'nav-design': 'For Design',
+                    'nav-about': 'About Us',
+                    'header-cta': 'Get a Consultation',
+                    'header-cta-mobile': 'Consultation',
+                    'nav-solutions': 'Solutions',
+                    'nav-custom-dev': 'Custom Development',
+                    'nav-portfolio': 'Portfolio',
+                    'banner-h3': 'Special Offer for /function1 Attendees',
+                    'banner-h3-span': 'Special Offer for /function1 Attendees',
+                    'banner-h4': '(November 18-19, 2025, Dubai)',
+                    'banner-p': 'Meet us in Dubai at the largest AI conference of the year! Free technical consultation + special conditions for conference participants.',
+                    'banner-meta': 'Valid: November 18-19, 2025 | Festival Arena, Dubai',
+                    'banner-cta': 'Claim Your Offer',
+                    'hero-h1': 'AI Systems That Earn More Than They Cost',
+                    'hero-h3': 'DIVO is a hybrid studio combining AI expertise and enterprise architecture. We build stable, scalable systems with measurable ROI.',
+                    'hero-p': 'We bridge the gap between beautiful AI demonstrations and working enterprise systems. Our solutions handle real-world load, integrate deeply into existing infrastructure, and deliver measurable profit.',
+                    'special-h2': 'Expertise + Approach + Results',
+                    'special-p1': 'We combine two rare competencies: deep enterprise architecture and product thinking.',
+                    'special-p2': 'Clients get a complete solution that works technically and pays off commercially.',
+                    'special-cta': 'View Special Offers',
+                    'special-feat1-h': 'Product Expertise',
+                    'special-feat1-p': 'We know how to find product-market fit, package technology into a scalable product, and build a growth engine. 10x revenue growth in 4 months is the result of the right product strategy.',
+                    'special-feat2-h': 'Enterprise Architecture',
+                    'special-feat2-p': 'We design systems that won\'t crash under load. 10+ million users, $18.4B+ in transactions — systems that work at real scale.',
+                    'special-feat3-h': 'Client Service',
+                    'special-feat3-p': 'We don\'t abandon projects after launch. We adapt to your security requirements, integrate with any infrastructure, and guarantee enterprise-level support.',
+                    'daria-h3': 'Daria Kamyshina',
+                    'daria-title': 'CEO & Co-Founder',
+                    'daria-quote': 'The 10x Growth Product Leader',
+                    'daria-p': 'I ensure that technology turns into money and scalable growth. I grew up in Yandex\'s product culture, then as Product Lead of an EdTech startup increased revenue from $5,000 to $50,000 MRR in 4 months.',
+                    'daria-ach-title': 'Key Achievements:',
+                    'daria-ach1': '10x monthly revenue growth in 4 months',
+                    'daria-ach2': '30% increase in Retention Rate and 15% in trial conversion',
+                    'daria-ach3': 'Managing a team of 15 core employees and 150+ part-time specialists',
+                    'daria-ach4': 'Developed GTM strategy for US market entry',
+                    'daria-cta': 'Learn More About Daria &rarr;',
+                    'victor-h3': 'Victor Pisarevsky',
+                    'victor-title': 'CTO & Co-Founder',
+                    'victor-quote': 'The Architect of Enterprise-Grade AI',
+                    'victor-p': 'I create AI architectures that actually work at scale. With 15+ years in enterprise development, I was an Enterprise Architect at one of the region\'s largest tech corporations, where I designed core systems for DomClick — the region\'s #1 real estate platform.',
+                    'victor-ach-title': 'Key Achievements:',
+                    'victor-ach1': 'Platform serving 10+ million monthly active users',
+                    'victor-ach2': 'Escrow service handling $18.4B+ in transactions',
+                    'victor-ach3': '3 production systems: 99% operation automation',
+                    'victor-ach4': 'Expertise in Java for high-load, Python for AI, Scala for complex tasks',
+                    'victor-cta': 'Learn More About Victor &rarr;',
+                    'approach-h2': 'How We Work',
+                    'approach1-h': 'Polystack Development',
+                    'approach1-p': 'We\'re not tied to one stack. Java for high-load systems, Python for AI integrations, JavaScript for interfaces, Scala for unique tasks. We choose the right tool for your challenge.',
+                    'approach2-h': 'Integration Expertise',
+                    'approach2-p': 'We build architectures that smoothly integrate into existing infrastructure. We have experience integrating with 1C, AmoCRM, Telegram, LinkedIn, SAP, as well as external APIs and services without APIs.',
+                    'approach3-h': 'Flexible Data Security',
+                    'approach3-p': 'We adapt to client security requirements. From API integrations with data depersonalization to fully isolated on-premise solutions.',
+                    'approach4-h': 'Pragmatic AI Approach',
+                    'approach4-p': 'We take the best AI technologies (RAG, LLM, ASR) and embed them into reliable, scalable architecture that solves specific business problems.',
+                    'solutions-h2': 'Systems That Work in Production',
+                    'solutions-sub': 'Examples of architectural solutions deployed for enterprise clients.',
+                    'solution1-client': 'Major Banking & Fintech Group',
+                    'solution1-feat1': 'Fault-tolerant data pipeline for enterprise analytics',
+                    'solution1-feat2': 'Contextual validation engine for complex forms',
+                    'solution1-feat3': 'Letter of credit change automation: 99% of operations run automatically',
+                    'solution2-client': 'Leading E-commerce Platform',
+                    'solution2-feat1': 'AI assistant for art directors: removed up to 80% of layout review routine',
+                    'solution2-feat2': 'AI-powered redesign research: reduced time from 3 months to 1 month',
+                    'solution3-client': 'B2B Sales Tech',
+                    'solution3-feat1': 'Lead generation agent in LinkedIn and Telegram: automated prospecting and personalized communications',
+                    'solutions-cta': 'View All Solutions',
+                    'cta-h2': 'Let\'s Discuss Your Challenge',
+                    'cta-special': 'Special Conditions for /function1 Participants',
+                    'cta-opt1-h': 'OPTION 1: Free Consultation',
+                    'cta-opt1-p': '(for those who want to understand)',
+                    'cta-opt1-desc': 'Book a free 40-minute technical consultation on November 18-19 and get:',
+                    'cta-opt1-feat1': 'Written technical assessment of your challenge',
+                    'cta-opt1-feat2': '<strong>Bonus:</strong> 60% discount on Technical Audit ($1,999 instead of $5,000)',
+                    'cta-opt1-feat3': 'Discount valid for 30 days after consultation',
+                    'cta-opt1-cta': 'Book Consultation',
+                    'cta-opt2-h': 'OPTION 2: Discounted Technical Audit',
+                    'cta-opt2-p': '(for those ready to act)',
+                    'cta-opt2-desc': 'Pay for Technical Audit at the special price of $1,999 (instead of $5,000) during the event dates November 18-19 and get:',
+                    'cta-opt2-feat1': 'Full 2-week audit of your system/challenge',
+                    'cta-opt2-feat2': 'Detailed report with recommendations and technical specification',
+                    'cta-opt2-bonus1': '<strong>Bonus 1:</strong> Priority project start in December 2025',
+                    'cta-opt2-bonus2': '<strong>Bonus 2:</strong> 15% discount on project implementation (up to $15,000 savings)',
+                    'cta-opt2-cta': 'Pay for Technical Audit',
+                    'cta-final-p': 'We\'ll discuss where AI will deliver real impact and where classic automation will suffice.',
+                    'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
+                    'footer-solutions-title': 'Solutions',
+                    'footer-company-title': 'Company',
+                    'footer-portfolio': 'Portfolio & Cases',
+                    'footer-contact-title': 'Contact & Legal',
+                    'footer-legal-title': 'Legal',
+                    'footer-privacy': 'Privacy Policy',
+                    'footer-terms': 'Terms of Service'
+                }
+            };
+
+            const btnRuDesktop = document.getElementById('btn-ru');
+            const btnEnDesktop = document.getElementById('btn-en');
+            const btnRuMobile = document.getElementById('btn-ru-mobile');
+            const btnEnMobile = document.getElementById('btn-en-mobile');
+                        
+            const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+            function updateContent(lang) {
+                document.documentElement.lang = lang;
+
+                const isRu = lang === 'ru';
+                btnRuDesktop.classList.toggle('active', isRu);
+                btnEnDesktop.classList.toggle('active', !isRu);
+                btnRuMobile.classList.toggle('active', isRu);
+                btnEnMobile.classList.toggle('active', !isRu);
+
+                btnRuDesktop.setAttribute('aria-pressed', isRu);
+                btnEnDesktop.setAttribute('aria-pressed', !isRu);
+                btnRuMobile.setAttribute('aria-pressed', isRu);
+                btnEnMobile.setAttribute('aria-pressed', !isRu);
+
+                const langTranslations = translations[lang];
+
+                elementsToTranslate.forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    if (langTranslations[key]) {
+                        if (key === 'meta-title') {
+                            el.innerHTML = langTranslations[key];
+                        } else if (key === 'meta-description') {
+                            el.setAttribute('content', langTranslations[key]);
+                        } else {
+                            el.innerHTML = langTranslations[key];
+                        }
+                    }
+                });
+            }
+
+            btnRuDesktop.addEventListener('click', () => updateContent('ru'));
+            btnEnDesktop.addEventListener('click', () => updateContent('en'));
+            btnRuMobile.addEventListener('click', () => updateContent('ru'));
+            btnEnMobile.addEventListener('click', () => updateContent('en'));
+
+            updateContent('en');
+        });
+            
+    </script>
+</body>
+</html>
