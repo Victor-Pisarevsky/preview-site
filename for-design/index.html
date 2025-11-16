@@ -1,1565 +1,862 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Иконка из образца -->
+    <!-- Иконка из образца --><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+    <!-- Новые мета-данные для Главной страницы --><title data-lang="meta-title">DIVO - AI-системы, которые приносят деньги</title>
+    <meta name="description" data-lang="meta-description" content="Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой.">
 
-
-
-    <!-- Новые мета-данные для Françoise -->
-
-    <title data-lang="meta-title">Françoise by DIVO | Design QA Automation</title>
-
-    <meta name="description" data-lang="meta-description" content="Design quality and design system compliance checking. Save up to $150,000/year on quality control. From typography to RTL adaptation.">
-
-
-
-    <!-- Стили и скрипты из образца (Клио.html) -->
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    
+    <!-- Стили и скрипты из образца (for-sales.html) --><script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Шрифты из Клио.html -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;8800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-
-    
-
-    <!-- Полностью скопированный блок <style> из Клио.html -->
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
-
         @font-face {
-
             font-family: 'Eugusto';
-
-            src: url('EugustoFreePersonalUse-Regular.otf') format('otf');
-
+            src: url('EugustoFreePersonalUse-Regular.otf');
             font-weight: 800;
-
             font-style: normal;
-
         }
-
-
 
         :root {
-
             --font-sans: 'Inter', sans-serif;
-
             --font-heading: 'Alumni Sans', sans-serif;
-
-            /* Используем Eugusto (декоративный) для H1, как в Клио */
-
             --font-decorative: 'Eugusto', 'KS Bistra', sans-serif;
 
-
-
             --color-primary: rgb(203, 2, 19);
-
             --color-primary-dark: rgb(180, 2, 19);
-
             --color-bg-light: rgb(241, 241, 241);
-
             --color-text-main: rgb(30, 30, 30);
-
             --color-text-secondary: rgb(60, 60, 60);
-
             --color-card-bg: #ffffff;
-
             --color-footer-bg: rgb(30, 30, 30);
 
-
-
             --color-bg-1: rgba(203, 2, 19, 0.1);
-
             --color-bg-2: rgba(0, 240, 255, 0.1);
-
             --color-bg-3: rgba(60, 60, 60, 0.08);
-
             --color-bg-4: rgba(203, 2, 19, 0.1);
-
             --color-bg-5: rgba(0, 240, 255, 0.1);
-
             --color-bg-6: rgba(60, 60, 60, 0.08);
 
+            /* Новые переменные для ивент-стиля */
+            --color-event-primary: #00A0B0; /* Лазурный */
+            --color-event-background: #03101a; /* Темно-синий/черный */
+            --color-event-text: #E0E0E0;
         }
-
-
 
         body {
-
             font-family: var(--font-sans);
-
             background-color: var(--color-bg-light);
-
             color: var(--color-text-main);
-
-            font-weight: 300; 
-
+            font-weight: 300;
             line-height: 1.6;
-
-            scroll-behavior: smooth;
-
         }
-
-
-
-        /* Адаптируем H1, H2, H3 под стили из Клио */
 
         h1[data-lang], h2[data-lang], h3[data-lang], h4[data-lang], h5[data-lang], h6[data-lang] {
-
             font-family: var(--font-heading);
-
             font-weight: 700;
-
             color: var(--color-text-main);
-
             line-height: 1.2;
-
             margin-bottom: 1rem;
-
         }
 
-
-
+        /* Стиль H1 для Hero */
         h1[data-lang] {
-
             font-family: var(--font-decorative);
-
             font-weight: 800;
-
             font-size: clamp(3.5rem, 3rem + 2vw, 5rem);
-
             letter-spacing: -1px;
-
         }
-
         h2[data-lang] {
-
             font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
-
             font-weight: 800;
-
         }
-
-                
 
         h3[data-lang] {
-
             font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
-
             font-weight: 700;
-
         }
-
-        
 
         h4[data-lang] {
-
             font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
-
             font-weight: 700;
-
         }
-
-
 
         p, ul {
-
             color: var(--color-text-secondary);
-
             margin-bottom: 1.25rem;
-
-            font-size: 0.95rem; 
-
+            font-size: 0.95rem;
             font-weight: 400;
-
             line-height: 1.6;
-
         }
-
-        
 
         ul {
-
             list-style-position: inside;
-
             list-style-type: disc;
-
             padding-left: 0.5rem;
-
         }
-
         li {
-
             margin-bottom: 0.5rem;
-
-            font-size: 0.95rem; 
-
+            font-size: 0.95rem;
         }
-
-        
 
         blockquote {
-
             font-style: italic;
-
             border-left: 4px solid var(--color-primary);
-
             padding-left: 1rem;
-
             margin-left: 0;
-
             margin-bottom: 1.25rem;
-
             color: var(--color-text-main);
-
             font-weight: 500;
-
             line-height: 1.5;
-
             font-size: 1.125rem !important;
-
         }
-
-
 
         h5[data-lang] {
-
             font-family: var(--font-heading);
-
             font-weight: 700;
-
             color: var(--color-text-main);
-
             font-size: 2rem;
-
             margin-top: 1rem;
-
             margin-bottom: 0.75rem;
-
         }
-
-        
 
         @media (max-width: 640px) {
-
             h5[data-lang] {
-
                 font-size: 1.5rem !important;
-
             }
-
         }
-
-        
 
         @media (min-width: 641px) and (max-width: 1024px) {
-
             h5[data-lang] {
-
                 font-size: 1.5rem !important;
-
             }
-
         }
-
-        
 
         @media (min-width: 1025px) {
-
             h5[data-lang] {
-
                 font-size: 2rem !important;
-
             }
-
         }
-
-        
 
         .header-logo {
-
             font-family: var(--font-decorative);
-
             font-weight: 800;
-
             color: var(--color-primary);
-
             font-size: 2.25rem;
-
             line-height: 1;
-
         }
-
-        
 
         .header-nav-link {
-
             font-family: var(--font-heading);
-
             font-weight: 600;
-
             font-size: 1.1rem;
-
             color: var(--color-text-secondary);
-
             transition: color 0.2s ease;
-
             text-transform: uppercase;
-
         }
-
         .header-nav-link:hover {
-
             color: var(--color-primary);
-
         }
-
-                
 
         #mobile-menu {
-
             transition: all 0.3s ease-out;
-
             z-index: 40;
-
         }
-
-
 
         .btn {
-
             display: inline-block;
-
             padding: 0.75rem 1.75rem;
-
             border-radius: 8px;
-
             font-family: var(--font-heading);
-
             font-weight: 600;
-
             font-size: 1.1rem;
-
             text-decoration: none;
-
             text-transform: uppercase;
-
             letter-spacing: 0.5px;
-
             cursor: pointer;
-
             transition: all 0.3s ease;
-
             margin: 0.25rem;
-
-            /* white-space: nowrap; */ /* Убрано для адаптации кнопок */
-
+            white-space: nowrap;
         }
-
         .btn-primary {
-
             background-color: var(--color-primary);
-
             color: white;
-
             border: 2px solid var(--color-primary);
-
         }
-
         .btn-primary:hover {
-
             background-color: var(--color-primary-dark);
-
             border-color: var(--color-primary-dark);
-
             transform: translateY(-2px);
-
             box-shadow: 0 4px 15px rgba(203, 2, 19, 0.3);
-
         }
-
         .btn-secondary {
-
             background-color: transparent;
-
             color: var(--color-primary);
-
             border: 2px solid var(--color-primary);
-
         }
-
         .btn-secondary:hover {
-
             background-color: var(--color-primary);
-
             color: white;
-
             transform: translateY(-2px);
-
         }
-
-        
 
         .btn-azure {
-
             background-color: #00A0B0;
-
             color: white;
-
             border: 2px solid #00A0B0;
-
         }
-
         .btn-azure:hover {
-
             background-color: #007A86;
-
             border-color: #007A86;
-
             transform: translateY(-2px);
-
             box-shadow: 0 4px 15px rgba(0, 160, 176, 0.3);
-
         }
-
-        
 
         .btn-tag {
-
-            background-color: rgba(0, 0, 0, 0.05); 
-
+            background-color: rgba(0, 0, 0, 0.05);
             color: var(--color-text-secondary);
-
-            border: 2px solid transparent; 
-
-            font-weight: 700; 
-
-            text-transform: none; 
-
+            border: 2px solid transparent;
+            font-weight: 700;
+            text-transform: none;
             padding: 0.5rem 1.25rem;
-
             font-size: 1rem;
-
-            margin: 0.25rem; 
-
+            margin: 0.25rem;
             white-space: nowrap;
-
             display: inline-block;
-
             border-radius: 8px;
-
             cursor: pointer;
-
             transition: all 0.3s ease;
-
         }
-
         .btn-tag:hover {
-
             background-color: var(--color-primary);
-
             color: white;
-
             border-color: var(--color-primary);
-
             transform: translateY(-2px);
-
         }
-
-
 
         .link-arrow {
-
             display: inline-block;
-
             font-family: var(--font-heading);
-
             font-weight: 600;
-
             font-size: 1.1rem;
-
             color: var(--color-primary);
-
             text-decoration: none;
-
             text-transform: uppercase;
-
             letter-spacing: 0.5px;
-
             transition: transform 0.3s ease, color 0.3s ease;
-
         }
-
         .link-arrow:hover {
-
             color: var(--color-primary-dark);
-
-            transform: translateX(4px); 
-
+            transform: translateX(4px);
+        }
+        .link-arrow::after {
+            content: ' →';
+            transition: transform 0.3s ease;
         }
 
-
-
-        /* Стиль .event-banner из Клио - идеально для CTA */
-
+        /* Это стиль для нижнего баннера */
         .event-banner {
-
-            background-color: #03101a;
-
-            color: white;
-
+            background-color: var(--color-event-background);
+            color: var(--color-event-text);
             padding: 2.5rem;
-
             border-radius: 12px;
-
             background-image: url('background.png');
-
             background-size: cover;
-
             background-position: center;
-
             border: 1px solid rgba(0, 240, 255, 0.3);
-
         }
-
-                
 
         .event-banner h2[data-lang],
-
         .event-banner h4[data-lang],
-
         .event-banner h3[data-lang] {
-
             color: white;
-
         }
-
-
 
         .highlight-text {
-
-            color: #00A0B0;
-
-            font-weight: 600; 
-
+            color: var(--color-event-primary);
+            font-weight: 600;
         }
-
-                
 
         .event-banner p {
-
-            color: #e0e0e0; 
-
+            color: var(--color-event-text);
         }
 
-
-
-        /* Кнопка .btn-event из Клио */
-
+        /* Эта кнопка будет использоваться в баннерах */
         .btn-event {
-
-            background-color: #D90429; /* Красный */
-
+            background-color: var(--color-event-primary);
             color: white;
-
-            border: 2px solid #D90429;
-
-            display: inline-block;
-
-            padding: 0.75rem 1.75rem;
-
-            border-radius: 8px;
-
-            font-family: var(--font-heading);
-
-            font-weight: 600;
-
-            font-size: 1.1rem;
-
-            text-decoration: none;
-
-            text-transform: uppercase;
-
-            letter-spacing: 0.5px;
-
-            cursor: pointer;
-
-            transition: all 0.3s ease;
-
-            margin: 0.25rem;
-
+            border: none;
         }
-
         .btn-event:hover {
-
-            background-color: #EF233C;
-
-            border-color: #EF233C;
-
+            background-color: #007A86; /* Более темный лазурный */
             transform: translateY(-2px);
-
         }
-
-        
-
-        .btn-outline-white {
-
-            background-color: transparent;
-
-            color: white;
-
-            border: 2px solid white;
-
-        }
-
-        .btn-outline-white:hover {
-
-            background-color: white;
-
-            color: var(--color-footer-bg); /* dark text */
-
-            transform: translateY(-2px);
-
-        }
-
-
 
         .cta-banner {
-
             background-color: #03101a;
-
             color: white;
-
             padding: 2.5rem;
-
             border-radius: 12px;
-
             background-image: linear-gradient(90deg, rgba(3, 16, 26, 0.9) 0%, rgba(5, 26, 46, 0.8) 100%), url('https://placehold.co/1200x600/051a2e/FFFFFF?text=Discuss+Your+Challenge');
-
             background-size: cover;
-
             background-position: center;
-
             border: 1px solid rgba(0, 240, 255, 0.3);
-
         }
-
         .cta-banner h2[data-lang],
-
         .cta-banner h3[data-lang] {
-
             color: white;
-
         }
-
-
 
         .card {
-
             background-color: var(--color-card-bg);
-
             border-radius: 12px;
-
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-
             border: 1px solid rgba(0, 0, 0, 0.08);
-
             padding: 1.5rem;
-
             transition: all 0.3s ease;
-
             height: 100%;
-
         }
-
         .card-no-hover:hover {
-
             transform: none;
-
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-
         }
-
-        .enterprise-illustration{
-            background-image: url('entIll.png'); /* Путь к изображению */
-
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-
-            background-repeat: no-repeat;
-            background-position: center top;
-
-            width: 100%;
-            height: 100%;
-        }
-
-        .expert-illustration{
-            background-image: url('ExpIll.png'); /* Путь к изображению */
-
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-
-            background-repeat: no-repeat;
-            background-position: center top;
-
-            width: 100%;
-            height: 100%;
-        }
-
-
-        .basic-illustration{
-            background-image: url('BasicIll.png'); /* Путь к изображению */
-
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-
-            background-repeat: no-repeat;
-            background-position: center top;
-
-            width: 100%;
-            height: 100%;
-        }
-
-
         .card:not(.card-no-hover):hover {
-
             transform: translateY(-5px);
-
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
         }
-
-                
 
         .card-poster__header {
-
             padding: 1.5rem;
-
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-
             border-radius: 12px 12px 0 0;
-
         }
-
         .card-poster__header h4[data-lang] {
-
             margin-bottom: 0;
-
         }
-
         .bg-custom-1 { background-color: var(--color-bg-1); }
-
         .bg-custom-2 { background-color: var(--color-bg-2); }
-
         .bg-custom-3 { background-color: var(--color-bg-3); }
-
         .bg-custom-4 { background-color: var(--color-bg-4); }
 
-
-
         .lang-switcher-inline {
-
             background-color: rgba(0,0,0,0.05);
-
             border-radius: 8px;
-
             padding: 0.25rem;
-
             display: flex;
-
         }
-
         .lang-switcher-inline button {
-
             padding: 0.5rem 0.75rem;
-
             font-family: var(--font-heading);
-
             font-weight: 600;
-
             color: var(--color-text-secondary);
-
             background-color: transparent;
-
             border: none;
-
             border-radius: 6px;
-
             cursor: pointer;
-
             transition: all 0.2s ease;
-
         }
-
         .lang-switcher-inline button.active {
-
             color: var(--color-primary);
-
             background-color: var(--color-card-bg);
-
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-
         }
-
         .lang-switcher-inline button:hover:not(.active) {
-
             background-color: rgba(0,0,0,0.03);
-
         }
-
-
 
         .footer {
-
             background-color: var(--color-footer-bg);
-
-            color: #CFCFCF; 
-
-            display: block;
-
-        }
-
-        .footer-logo {
-
-            font-family: var(--font-decorative);
-
-            font-weight: 800;
-
-            color: white;
-
-            font-size: 2.5rem;
-
-            line-height: 1;
-
-            margin-bottom: 1rem;
-
-        }
-
-        .footer-title {
-
-            font-family: var(--font-heading);
-
-            font-weight: 700;
-
-            color: white;
-
-            font-size: 1.25rem;
-
-            margin-bottom: 1rem;
-
-            text-transform: uppercase;
-
-        }
-
-        p[data-lang="footer-mission"] {
-
-            color: white;
-
-        }
-
-        .footer-link {
-
             color: #CFCFCF;
-
-            font-family: var(--font-sans);
-
-            font-weight: 400; 
-
-            font-size: 1rem;
-
-            text-decoration: none;
-
-            transition: color 0.2s ease;
-
+            display: block;
         }
-
-        .footer-link:hover {
-
+        .footer-logo {
+            font-family: var(--font-decorative);
+            font-weight: 800;
             color: white;
-
-        }
-
-
-
-        /* Стили для таблицы (из Клио) */
-
-        table {
-
-            border-collapse: collapse;
-
-            width: 100%;
-
-        }
-
-        th, td {
-
-            border: 1px solid rgba(0, 0, 0, 0.1);
-
-            padding: 0.75rem 1rem;
-
-            text-align: left;
-
-            font-size: 0.9rem;
-
-        }
-
-        th {
-
-            background-color: rgba(0, 0, 0, 0.03);
-
-            font-family: var(--font-heading);
-
-            font-weight: 700;
-
-            font-size: 1rem;
-
-            color: var(--color-text-main);
-
-        }
-
-        td {
-
-            color: var(--color-text-secondary);
-
-        }
-
-        tr:nth-child(even) td {
-
-            background-color: rgba(0, 0, 0, 0.01);
-
-        }
-
-        
-
-        /* Стили для ценовой карточки (из Клио) */
-
-        .price-card {
-
-            background-color: var(--color-card-bg);
-
-            border-radius: 12px;
-
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-
-            border: 1px solid rgba(0, 0, 0, 0.08);
-
-            padding: 2rem;
-
-            transition: all 0.3s ease;
-
-            height: 100%;
-
-            display: flex;
-
-            flex-direction: column;
-
-        }
-
-        .price-card:hover {
-
-            transform: translateY(-5px);
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-        }
-
-        .price-card-popular {
-
-            border: 2px solid var(--color-primary);
-
-        }
-
-        .price-card ul {
-
-            list-style: none;
-
-            padding-left: 0;
-
-            margin-bottom: 1.5rem;
-
-            flex-grow: 1;
-
-        }
-
-        .price-card li {
-
-            position: relative;
-
-            padding-left: 1.75rem;
-
-            margin-bottom: 0.75rem;
-
-            font-size: 0.95rem;
-
-            color: var(--color-text-secondary);
-
-        }
-
-        .price-card li::before {
-
-            content: '✓';
-
-            position: absolute;
-
-            left: 0;
-
-            top: 0;
-
-            color: var(--color-primary);
-
-            font-weight: 700;
-
-            font-size: 1rem;
-
-        }
-
-
-
-        /* Стили для горизонтального таймлайна (из Клио, адаптируем для 5 шагов) */
-
-        .timeline-container {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 1rem;
-
-        }
-
-        .timeline-step {
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            position: relative;
-
-            padding-bottom: 2rem;
-
-            flex: 1; /* Добавлено для 5 шагов */
-
-        }
-
-        .timeline-step:not(:last-child)::after {
-
-            content: '';
-
-            position: absolute;
-
-            bottom: 0;
-
-            height: 2rem;
-
-            width: 2px;
-
-            background-color: var(--color-primary);
-
-            opacity: 0.3;
-
-        }
-
-        .timeline-circle {
-
-            width: 3rem;
-
-            height: 3rem;
-
-            border-radius: 50%;
-
-            background-color: var(--color-card-bg);
-
-            border: 3px solid var(--color-primary);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-weight: 700;
-
-            font-size: 1.25rem;
-
-            color: var(--color-primary);
-
-            z-index: 10;
-
-        }
-
-        .timeline-content {
-
-            text-align: center;
-
-            margin-top: 1rem;
-
-            padding: 0 1rem;
-
-        }
-
-        .timeline-content h4 {
-
-            margin-bottom: 0.5rem;
-
-        }
-
-        
-
-        /* Desktop-версия таймлайна (из Клио) */
-
-        @media (min-width: 768px) {
-
-            .timeline-container {
-
-                flex-direction: row;
-
-                justify-content: space-between;
-
-                gap: 0;
-
-            }
-
-            .timeline-step {
-
-                flex: 1;
-
-                padding-bottom: 0;
-
-                padding-top: 1.5rem; /* Сдвиг для круга */
-
-            }
-
-            .timeline-step:not(:last-child)::after {
-
-                height: 2px;
-
-                width: 100%;
-
-                top: 1.5rem; /* Позиция круга */
-
-                left: 50%;
-
-                bottom: auto;
-
-                transform: translateY(-50%);
-
-            }
-
-            .timeline-circle {
-
-                position: absolute;
-
-                top: 0;
-
-                left: 50%;
-
-                transform: translateX(-50%);
-
-            }
-
-            .timeline-content {
-
-                margin-top: 4rem; /* Место под круг */
-
-                padding: 0;
-
-            }
-
-        }
-
-
-
-        /* Стили для FAQ (из Клио) */
-
-        .faq-item {
-
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-            padding-bottom: 1rem;
-
+            font-size: 2.5rem;
+            line-height: 1;
             margin-bottom: 1rem;
-
         }
-
-        .faq-item:last-child {
-
-            border-bottom: none;
-
-            margin-bottom: 0;
-
-        }
-
-        .faq-toggle {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            width: 100%;
-
-            background: none;
-
-            border: none;
-
-            cursor: pointer;
-
-            padding: 0.5rem 0;
-
-        }
-
-        .faq-toggle h4 {
-
-            font-family: var(--font-sans);
-
+        .footer-title {
+            font-family: var(--font-heading);
             font-weight: 700;
-
-            font-size: 1.1rem;
-
-            color: var(--color-text-main);
-
-            margin-bottom: 0;
-
-            text-align: left;
-
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
         }
-
-        .faq-icon {
-
-            font-size: 1.5rem;
-
-            font-weight: 700;
-
-            color: var(--color-primary);
-
-            transition: transform 0.2s ease-out;
-
-            margin-left: 1rem;
-
+        p[data-lang="footer-mission"] {
+            color: white;
         }
-
-        .faq-answer {
-
-            max-height: 0;
-
-            overflow: hidden;
-
-            transition: max-height 0.3s ease-out;
-
-        }
-
-        .faq-answer p {
-
-            padding-top: 0.5rem;
-
-            margin-bottom: 0;
-
-        }
-
-        .faq-item.faq-open .faq-answer {
-
-            max-height: 200px; /* Достаточно для параграфа */
-
-        }
-
-        .faq-item.faq-open .faq-icon {
-
-            transform: rotate(45deg);
-
-        }
-
-        
-
-        /* Новая анимация для Hero Badge */
-
-        @keyframes pulse-bg {
-
-            0%, 100% { background-color: var(--color-primary); }
-
-            50% { background-color: var(--color-primary-dark); }
-
-        }
-
-        /* .animate-pulse-bg {
-
-             animation: pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-
-        } */
-
- 
-
-        /* Новые стили для ROI калькулятора */
-
-        .form-input {
-
-            width: 100%;
-
-            border: 1px solid rgba(0, 0, 0, 0.2);
-
-            border-radius: 8px;
-
-            padding: 0.75rem 1rem;
-
+        .footer-link {
+            color: #CFCFCF;
             font-family: var(--font-sans);
-
+            font-weight: 400;
             font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: white;
+        }
 
+        /* Стили для ценовой карточки (используем для блока "Что мы делаем") */
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .feature-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+        .feature-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* Новый стиль для верхнего sticky-баннера */
+        #top-sticky-banner {
+            background-color: var(--color-event-background); /* Черный/темно-синий для ивента */
+            color: var(--color-event-text);
+            padding: 0.75rem 1rem;
+            transition: transform 0.3s ease-out;
+            border-bottom: 1px solid var(--color-event-primary); /* Лазурный бордер */
+        }
+        #top-sticky-banner .btn-event-inline {
+            background-color: var(--color-event-primary);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        #top-sticky-banner .btn-event-inline:hover {
+            background-color: #007A86;
+            transform: translateY(-1px);
+        }
+
+        /* Новый стиль для формы */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
             transition: border-color 0.2s, box-shadow 0.2s;
-
         }
-
         .form-input:focus {
-
             outline: none;
-
             border-color: var(--color-primary);
-
             box-shadow: 0 0 0 3px rgba(203, 2, 19, 0.2);
-
+        }
+        .form-label {
+            display: block;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-text-main);
+            margin-bottom: 0.5rem;
         }
 
-            
+        /* Стиль для плашки с P.S. */
+        .conference-note-card {
+            background-color: var(--color-event-background);
+            color: var(--color-event-text);
+            border-left: 4px solid var(--color-event-primary);
+            border-radius: 0 8px 8px 0; /* Только правые закругления */
+            padding: 1rem;
+        }
+        .conference-note-card b {
+            color: white; /* Жирный текст внутри плашки белый */
+        }
+        .conference-note-card .contact-icon {
+            color: var(--color-event-primary);
+            transition: color 0.2s ease;
+        }
+        .conference-note-card .contact-icon:hover {
+            color: #007A86; /* Темнее лазурный при наведении */
+        }
+
+        .btn-outline-white {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+.btn-outline-white:hover {
+    background-color: white;
+    color: var(--color-footer-bg); /* dark text */
+    transform: translateY(-2px);
+}
+
+.enterprise-illustration{
+    background-image: url('entIll.png'); /* Путь к изображению */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 100%;
+}
+.expert-illustration{
+    background-image: url('ExpIll.png'); /* Путь к изображению */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 100%;
+}
+.basic-illustration{
+    background-image: url('BasicIll.png'); /* Путь к изображению */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 100%;
+}
+
+/* Стили для таблицы (из Клио) */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+th {
+    background-color: rgba(0, 0, 0, 0.03);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text-main);
+}
+td {
+    color: var(--color-text-secondary);
+}
+tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+/* Стили для ценовой карточки (из Клио) */
+.price-card {
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.price-card-popular {
+    border: 2px solid var(--color-primary);
+}
+.price-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.price-card li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+.price-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Стили для горизонтального таймлайна (из Клио, адаптируем для 5 шагов) */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 2rem;
+    flex: 1; /* Добавлено для 5 шагов */
+}
+.timeline-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2rem;
+    width: 2px;
+    background-color: var(--color-primary);
+    opacity: 0.3;
+}
+.timeline-circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--color-card-bg);
+    border: 3px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    z-index: 10;
+}
+.timeline-content {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+.timeline-content h4 {
+    margin-bottom: 0.5rem;
+}
+
+/* Desktop-версия таймлайна (из Клио) */
+@media (min-width: 768px) {
+    .timeline-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .timeline-step {
+        flex: 1;
+        padding-bottom: 0;
+        padding-top: 1.5rem; /* Сдвиг для круга */
+    }
+    .timeline-step:not(:last-child)::after {
+        height: 2px;
+        width: 100%;
+        top: 1.5rem; /* Позиция круга */
+        left: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+    .timeline-circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .timeline-content {
+        margin-top: 4rem; /* Место под круг */
+        padding: 0;
+    }
+}
+
+/* Стили для FAQ (из Клио) */
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.faq-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0;
+}
+.faq-toggle h4 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+    margin-bottom: 0;
+    text-align: left;
+}
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    transition: transform 0.2s ease-out;
+    margin-left: 1rem;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.faq-answer p {
+    padding-top: 0.5rem;
+    margin-bottom: 0;
+}
+.faq-item.faq-open .faq-answer {
+    max-height: 200px; /* Достаточно для параграфа */
+}
+.faq-item.faq-open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.francoise-offer{
+    background-image: url('background-v.png');
+                background-size: cover;
+            background-position: center;
+}
+
+        .francoise-offer h2[data-lang],
+        .francoise-offer h4[data-lang],
+        .francoise-offer li[data-lang],
+        .francoise-offer p[data-lang],
+        .francoise-offer h3[data-lang] {
+            color: white;
+        }
+
+/* Новая анимация для Hero Badge */
+@keyframes pulse-bg {
+    0%, 100% { background-color: var(--color-primary); }
+    50% { background-color: var(--color-primary-dark); }
+}
 
     </style>
-
 </head>
-
 <body class="antialiased">
 
-
-
-    <!-- 
-
-      HEADER (ШАПКА)
-
-      Скопировано 1-в-1 из Клио.html
-
-    -->
-
-    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-
+    <!--
+      НОВЫЙ БЛОК: Top Sticky Banner
+      Для трафика с выставки - обновленные стили
+    --><div id="top-sticky-banner" class="sticky top-0 z-[51]">
         <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center gap-4">
+                <div class="text-sm md:text-base font-medium text-center flex-grow flex items-center justify-center gap-2">
+                    <span data-lang="sticky-banner-text">👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount</span>
+                    <a href="#final-cta" data-lang="sticky-banner-cta" class="btn-event-inline whitespace-nowrap">Book now</a>
+                </div>
+                <button id="close-sticky-banner" class="text-white text-2xl font-light hover:opacity-80" aria-label="Close banner">&times;</button>
+            </div>
+        </div>
+    </div>
 
+    <!--
+      HEADER (ШАПКА)
+      Скопировано 1-в-1 из for-sales.html
+      Изменен z-index с z-50 на z-40, чтобы быть ПОД sticky-баннером
+    --><header class="sticky top-0 lg:top-[49px] w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
+        <div class="container max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-20">
-
-                
 
                 <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
 
-
-
                 <div class="hidden lg:flex items-center gap-6">
-
                     <nav class="flex gap-8 items-center">
-
                         <div class="relative group">
-
                             <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
-
                                 Решения
-
                                 <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-
                                 </svg>
-
                             </button>
-
                             <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-
                                 <div class="py-2">
-
                                     <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
-
                                     <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
-
                                     <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
-
                                 </div>
-
                             </div>
-
                         </div>
-
-                        
 
                         <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
-
                         <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
-
                     </nav>
 
-
-
                     <div class="flex items-center gap-4">
-
-                        <a href="/#final-cta" class="btn btn-primary btn-sm" href="#section-6-cta" data-lang="header-cta-special">Получить консультацию</a>
-
+                        <a href="#final-cta" class="btn btn-primary btn-sm" data-lang="header-cta">Получить консультацию</a>
                         <div class="lang-switcher-inline">
-
                             <button id="btn-ru" class="" aria-pressed="false">RU</button>
-
                             <button id="btn-en" class="active" aria-pressed="true">EN</button>
-
                         </div>
-
                     </div>
-
                 </div>
-
-
 
                 <div class="lg:hidden flex items-center gap-2">
-
-                    <a href="/#final-cta" class="btn btn-primary text-sm px-4 py-2 whitespace-nowrap" data-lang="header-cta-special">Консультация</a>
-
+                    <a href="#final-cta" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap" data-lang="header-cta-mobile">Консультация</a>
                     <div class="lang-switcher-inline">
-
-                        <button id="btn-ru-mobile" class="text-sm px-3 py-2" aria-pressed="false">RU</button>
-
-                        <button id="btn-en-mobile" class="active text-sm px-3 py-2" aria-pressed="true">EN</button>
-
+                        <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                        <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
                     </div>
-
                     <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
-
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-
                         </svg>
-
                     </button>
-
                 </div>
-
             </div>
-
-
 
             <div id="mobile-menu" class="hidden lg:hidden pb-4">
-
                 <nav class="flex flex-col gap-4">
-
                     <div>
-
                         <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
-
                         <div class="pl-4 flex flex-col gap-2">
-
                             <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
-
                             <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
-
                             <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
-
                         </div>
-
                     </div>
-
                     <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
-
                     <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
-
                 </nav>
-
             </div>
-
         </div>
-
     </header>
-
-
-
-    <!-- 
-
-      EVENT BANNER (взят из Клио.html по запросу)
-
-    -->
-
-    <div class="container max-w-6xl mx-auto px-4 pt-12 sm:pt-16">        
-
-        <section id="function1-banner" class="mb-12 md:mb-16">
-
-            <div class="event-banner">
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-
-                    <div class="md:col-span-2">
-
-                        <h3 data-lang="banner-h3" class="mb-2">🔥 <span data-lang="banner-h3-span">Специальное предложение для участников /function1</span></h3>
-
-                        <h4 data-lang="banner-h4" class="highlight-text mb-4">(18-19 ноября 2025, Дубай)</h4>
-
-                        <p data-lang="banner-p" class="text-lg mb-4">Встречаемся в Дубае на крупнейшей AI-конференции года! Бесплатная техническая консультация + специальные условия для участников конференции.</p>
-
-                        <p data-lang="banner-meta" class="text-sm opacity-80">Действует: 18-19 ноября 2025 | Festival Arena, Dubai</p>
-
-                    </div>
-
-                    <div class="md:text-right flex items-center md:items-start md:justify-end">
-
-                        <a href="/#final-cta" data-lang="banner-cta" class="btn btn-event btn-lg whitespace-nowrap">Получить предложение</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
-
-
-
-    <!-- 
-
-      НАЧАЛО НОВОГО КОНТЕНТА ДЛЯ "FRANÇOISE"
-
-    -->
-
-
-
-    <!-- SECTION 1: HERO -->
 
     <section id="section-1-hero" class="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center py-20 px-4">
 
         <div class="container max-w-4xl mx-auto">
 
- 
+
 
             <!-- H1 -->
 
-            <h1 data-lang="hero-h1" class="mb-6">Françoise — Your AI Art Director for Design Quality Control</h1>
+            <h1 data-lang="hero-h1" class="mb-6">Françoise - Your AI Art Director for Design Quality Control</h1>
 
-            
+
 
             <!-- Subheading -->
 
             <h2 data-lang="hero-sub" class="text-lg md:text-xl font-normal text-text-secondary max-w-3xl mx-auto mb-10 !font-sans !font-light !leading-relaxed">
 
-                We automate routine checks of typography, spacing, composition, and RTL adaptation with mathematical precision. Your team returns to creativity — consistency is maintained 24/7.
+                We automate routine checks of typography, spacing, composition, and RTL adaptation with mathematical precision. Your team returns to creativity.
 
             </h2>
 
@@ -1611,9 +908,7 @@
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
 
-                <a href="/#final-cta" class="btn btn-primary" data-lang="hero-cta1">Book Free Consultation</a>
-
-                <a href="#" class="btn btn-secondary" data-lang="hero-cta2">Get $99 Demo</a>
+                <a href="#section-6-cta" class="btn btn-primary" data-lang="hero-cta1">Get $99 Demo</a>
 
             </div>
 
@@ -1626,22 +921,18 @@
         </div>
 
     </section>
-
-
-
     <!-- SECTION 2: PROBLEM → SOLUTION -->
-
     <section id="section-2-problem" class="py-16 md:py-24 bg-white">
 
         <div class="container max-w-6xl mx-auto px-4">
 
             <div class="text-center max-w-3xl mx-auto mb-12">
 
-                <h2 data-lang="problem-h2">When Françoise Solves Your Problems</h2>
+                <h2 data-lang="problem-h2">When Francoise Solves Your Problems</h2>
 
             </div>
 
-            
+
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -1653,7 +944,7 @@
 
                     <p data-lang="problem1-p1" class="font-semibold text-text-main">Art directors spend 20-30 hours per week checking spacing, colors, and fonts instead of strategic work and team development.</p>
 
-                    <p data-lang="problem1-p2" class="mb-4">Françoise automates typography, spacing, and alignment with 100% accuracy.</p>
+                    <p data-lang="problem1-p2" class="mb-4">Francoise automates typography, spacing, and alignment with 100% accuracy.</p>
 
                     <span data-lang="problem1-badge" class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase">BASIC TIER → 15-20h/week saved</span>
 
@@ -1665,9 +956,9 @@
 
                     <h3 data-lang="problem2-h3">Consistency suffers during scaling</h3>
 
-                    <p data-lang="problem2-p1" class="font-semibold text-text-main">Newcomers and contractors don't keep the entire design system in mind — errors multiply, brand dilutes.</p>
+                    <p data-lang="problem2-p1" class="font-semibold text-text-main">Newcomers and contractors don't keep the entire design system in mind - errors multiply, brand dilutes.</p>
 
-                    <p data-lang="problem2-p2" class="mb-4">AI checks composition, visual hierarchy, and business effectiveness of interfaces — every layout meets standards.</p>
+                    <p data-lang="problem2-p2" class="mb-4">AI checks composition, visual hierarchy, and business effectiveness of interfaces - every layout meets standards.</p>
 
                     <span data-lang="problem2-badge" class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full uppercase">ADVANCED TIER → 80-85% reviews automated</span>
 
@@ -1695,7 +986,7 @@
 
                     <p data-lang="problem4-p1" class="font-semibold text-text-main">Developers receive layouts with errors, leading to rework, delays, and lost time on explanations.</p>
 
-                    <p data-lang="problem4-p2" class="mb-4">Auto-generation of CSS specifications, design tokens in JSON/YAML, WCAG compliance — handoff without questions.</p>
+                    <p data-lang="problem4-p2" class="mb-4">Auto-generation of CSS specifications, design tokens in JSON/YAML, WCAG compliance - handoff without questions.</p>
 
                     <span data-lang="problem4-badge" class="inline-block bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full uppercase">ENTERPRISE TIER → $300k+ hiring saved</span>
 
@@ -1706,18 +997,14 @@
         </div>
 
     </section>
-
-
-
-    <!-- SECTION 4: WHY FRANÇOISE (ПЕРЕМЕЩЕН) -->
-
+    <!-- SECTION 4: WHY Francoise (ПЕРЕМЕЩЕН) -->
     <section id="section-4-why" class="py-16 md:py-24 bg-white">
 
         <div class="container max-w-6xl mx-auto px-4">
 
             <div class="text-center max-w-3xl mx-auto mb-12">
 
-                <h2 data-lang="why-h2">Why Françoise</h2>
+                <h2 data-lang="why-h2">Why Francoise</h2>
 
                 <p data-lang="why-sub" class="text-xl text-text-secondary">What Sets Us Apart from Other AI Design Tools</p>
 
@@ -1733,7 +1020,7 @@
 
                     <h3 data-lang="why1-h3">Mathematical Precision</h3>
 
-                    <p data-lang="why1-p" class="mb-0">We analyze Figma JSON directly, not just visually — 100% accuracy of numerical parameters. No "approximately 8px" — only exact values from your design system.</p>
+                    <p data-lang="why1-p" class="mb-0">We analyze Figma JSON directly, not just visually - 100% accuracy of numerical parameters. No "approximately 8px" - only exact values from your design system.</p>
 
                 </div>
 
@@ -1743,7 +1030,7 @@
 
                     <h3 data-lang="why2-h3">Full Customization</h3>
 
-                    <p data-lang="why2-p" class="mb-0">White-glove service for each client's unique design system. Françoise learns your rules, doesn't impose standards — your brand, your standards.</p>
+                    <p data-lang="why2-p" class="mb-0">White-glove service for each client's unique design system. Francoise learns your rules, doesn't impose standards - your brand, your standards.</p>
 
                 </div>
 
@@ -1753,7 +1040,7 @@
 
                     <h3 data-lang="why3-h3">RTL-First Approach</h3>
 
-                    <p data-lang="why3-p" class="mb-0">The only AI tool with automatic RTL verification for Arabic market expansion. 310+ million users await your product — we make localization error-free.</p>
+                    <p data-lang="why3-p" class="mb-0">The only AI tool with automatic RTL verification for Arabic market expansion. 310+ million users await your product - we make localization error-free.</p>
 
                 </div>
 
@@ -1861,7 +1148,7 @@
 
                         <p data-lang="tier1-for" class="text-lg mb-8">For whom: Startups, growing product teams, small agencies with basic quality control needs.</p>
 
-                        
+
 
                         <h4 data-lang="tier1-included" class="text-xl font-bold mb-4">What's Included</h4>
 
@@ -1893,7 +1180,7 @@
 
                         </div>
 
-                        
+
 
                         <div class="card bg-blue-50 border-blue-200 p-6 text-center">
 
@@ -1945,7 +1232,7 @@
 
                         <p data-lang="tier2-for" class="text-lg mb-8">For whom: E-commerce, SaaS platforms, marketplaces where business effectiveness of interfaces matters.</p>
 
-                        
+
 
                         <div class="text-center my-6">
 
@@ -1953,7 +1240,7 @@
 
                         </div>
 
-                        
+
 
                         <h4 data-lang="tier2-included" class="text-xl font-bold mb-4">New Features</h4>
 
@@ -1993,7 +1280,7 @@
 
                         </div>
 
-                        
+
 
                         <div class="card bg-indigo-50 border-indigo-200 p-6 text-center">
 
@@ -2045,7 +1332,7 @@
 
                         <p data-lang="tier3-for" class="text-lg mb-8">For whom: Companies with international expansion, Arabic market entry, fintech/healthtech with compliance requirements.</p>
 
-                        
+
 
                         <div class="text-center my-6">
 
@@ -2053,7 +1340,7 @@
 
                         </div>
 
-                        
+
 
                         <h4 data-lang="tier3-included" class="text-xl font-bold mb-4">New Features</h4>
 
@@ -2093,7 +1380,7 @@
 
                         </div>
 
-                        
+
 
                         <div class="card bg-purple-50 border-purple-200 p-6 text-center">
 
@@ -2130,7 +1417,7 @@
 
             </div>
 
-            
+
 
             <!-- ROI CALCULATOR -->
 
@@ -2168,7 +1455,7 @@
 
                     </div>
 
-                    
+
 
                     <div class="mt-6 bg-gray-50 p-6 rounded-lg border">
 
@@ -2184,7 +1471,7 @@
 
                             <div>
 
-                                <p data-lang="roi-res2" class="text-sm text-gray-500 uppercase">With Françoise (Advanced):</p>
+                                <p data-lang="roi-res2" class="text-sm text-gray-500 uppercase">With Francoise (Advanced):</p>
 
                                 <p id="roi-output-francoise" class="text-2xl font-bold text-text-main">$17,000/year</p>
 
@@ -2214,13 +1501,13 @@
 
             </div>
 
-            
+
 
         </div>
 
     </section>
 
-    
+
 
     <!-- SECTION 5: HOW IT WORKS -->
 
@@ -2230,13 +1517,13 @@
 
             <div class="text-center max-w-3xl mx-auto mb-16">
 
-                <h2 data-lang="how-h2">How Françoise Works</h2>
+                <h2 data-lang="how-h2">How Francoise Works</h2>
 
                 <p data-lang="how-sub" class="text-xl">Simple process from upload to handoff</p>
 
             </div>
 
-            
+
 
             <!-- Горизонтальный таймлайн (из Клио, 5 шагов) -->
 
@@ -2366,11 +1653,47 @@
 
             </div>
 
-            
+
 
             <!-- Структура FAQ из Клио -->
 
             <div class="card card-no-hover p-6 md:p-8">
+
+                <script>
+                // Ждем, пока вся страница загрузится
+                document.addEventListener('DOMContentLoaded', function() {
+
+                    // Находим все кнопки-переключатели
+                    const faqToggles = document.querySelectorAll('.faq-toggle');
+
+                    // Проходим по каждой кнопке
+                    faqToggles.forEach(function(toggle) {
+
+                        // Добавляем обработчик клика
+                        toggle.addEventListener('click', function() {
+
+                            // Находим родительский элемент .faq-item
+                            const item = this.closest('.faq-item');
+
+                            // 1. Переключаем класс .faq-open у родителя
+                            //    (добавляем, если нет, или убираем, если есть)
+                            item.classList.toggle('faq-open');
+
+                            // 2. Находим иконку внутри этой кнопки
+                            const icon = this.querySelector('.faq-icon');
+
+                            // 3. Меняем текст иконки
+                            if (item.classList.contains('faq-open')) {
+                                // Если блок стал открытым, ставим "минус"
+                                icon.textContent = '–';
+                            } else {
+                                // Если блок закрылся, ставим "плюс"
+                                icon.textContent = '+';
+                            }
+                        });
+                    });
+                });
+            </script>
 
                 <!-- FAQ Item 1 -->
 
@@ -2378,7 +1701,7 @@
 
                     <button class="faq-toggle">
 
-                        <h4 data-lang="faq1-q">How does Françoise integrate with our design system?</h4>
+                        <h4 data-lang="faq1-q">How does Francoise integrate with our design system?</h4>
 
                         <span class="faq-icon">+</span>
 
@@ -2392,7 +1715,7 @@
 
                 </div>
 
-                
+
 
                 <!-- FAQ Item 2 -->
 
@@ -2414,7 +1737,7 @@
 
                 </div>
 
-                
+
 
                 <!-- FAQ Item 3 -->
 
@@ -2436,7 +1759,7 @@
 
                 </div>
 
-                
+
 
                 <!-- FAQ Item 4 -->
 
@@ -2444,7 +1767,7 @@
 
                     <button class="faq-toggle">
 
-                        <h4 data-lang="faq4-q">Will Françoise replace the art director?</h4>
+                        <h4 data-lang="faq4-q">Will Francoise replace the art director?</h4>
 
                         <span class="faq-icon">+</span>
 
@@ -2458,7 +1781,7 @@
 
                 </div>
 
-                
+
 
                 <!-- FAQ Item 5 -->
 
@@ -2498,18 +1821,17 @@
 
             <!-- Single Merged Offer -->
             <div class="max-w-2xl mx-auto">
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-lg border-2 border-primary flex flex-col shadow-lg">
-                    <span data-lang="final-offer-badge" class="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 self-start">ATTENDEES ONLY — SPECIAL BUNDLE</span>
+                <div class="francoise-offer p-8 rounded-lg border-2 border-primary flex flex-col shadow-lg">
+                    <span data-lang="final-offer-badge" class="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 self-start">ATTENDEES ONLY - SPECIAL BUNDLE</span>
                     <h3 data-lang="final-offer-h3" class="mb-4">Your $99 Starter Pack</h3>
-                    <p data-lang="final-offer-p1" class="text-text-secondary mb-4">Everything you need to experience Françoise:</p>
+                    <p data-lang="final-offer-p1" class="text-text-secondary mb-4">Everything you need to experience Francoise:</p>
                     <ul class="text-text-secondary list-none pl-0 space-y-3 flex-grow mb-6">
                         <li data-lang="final-offer-li1" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span>Expert audit of 2 layouts in 24 hours (Enterprise level with RTL)</span></li>
                         <li data-lang="final-offer-li2" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span>Detailed report: composition, business task, RTL adaptation + references</span></li>
-                        <li data-lang="final-offer-li3" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS:</strong> Free 15-min consultation to review your audit results</span></li>
-                        <li data-lang="final-offer-li4" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS:</strong> 15% discount unlocked for any annual plan</span></li>
-                        <li data-lang="final-offer-li5" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS:</strong> Priority implementation start in December 2025</span></li>
+                        <li data-lang="final-offer-li3" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS: </strong> Free 15-min consultation to review your audit results</span></li>
+                        <li data-lang="final-offer-li4" class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">✓</span><span><strong>BONUS: </strong> 15% discount unlocked for any annual plan</span></li>
                     </ul>
-                    <p data-lang="final-offer-p2" class="text-primary font-bold text-base mt-4 mb-6 text-center">⚠️ Exclusive offer valid ONLY November 18-19, 2025</p>
+                    <p data-lang="final-offer-p2" class="text-primary font-bold text-base mt-4 mb-6 text-center"> Exclusive offer valid ONLY November 18-19, 2025</p>
                     <a href="#" class="btn btn-primary btn-lg w-full text-center text-lg popup-trigger" data-popup="demo" data-lang="final-offer-cta">Get Your $99 Starter Pack →</a>
                 </div>
             </div>
@@ -2517,7 +1839,7 @@
             <!-- Benefits -->
             <div class="max-w-3xl mx-auto mt-10">
                 <ul class="list-none p-0 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                    <li data-lang="final-ben1" class="text-text-main font-semibold text-sm mb-0">✓ $99 Starter Pack — all-in-one bundle only Nov 18-19</li>
+                    <li data-lang="final-ben1" class="text-text-main font-semibold text-sm mb-0">✓ $99 Starter Pack - all-in-one bundle only Nov 18-19</li>
                     <li data-lang="final-ben2" class="text-text-main font-semibold text-sm mb-0">✓ Enterprise-level audit + free consultation included</li>
                     <li data-lang="final-ben3" class="text-text-main font-semibold text-sm mb-0">✓ 15% discount + priority start automatically unlocked</li>
                 </ul>
@@ -2527,311 +1849,111 @@
     </section>
 
 
-
-    <!-- 
-
+    </div> <!-- /end container --><!--
       FOOTER (ПОДВАЛ)
-
-      Скопировано 1-в-1 из Клио.html
-
-    -->
-
-    <footer class="footer pt-16 pb-8 md:pb-12">
-
+      Скопировано 1-в-1 из for-sales.html
+    --><footer class="footer pt-16 pb-8 md:pb-12">
         <div class="container max-w-7xl mx-auto px-4">
-
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
 
-                
-
                 <div>
-
                     <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
-
                     <p class="text-sm mb-2" data-lang="footer-mission">
-
                         Мы превращаем технологии в двигатель роста вашего бизнеса.
-
                     </p>
-
                 </div>
 
-
-
                 <div>
-
                     <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
-
                     <ul class="space-y-2">
-
                         <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
-
                         <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
-
                         <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
-
                     </ul>
-
                 </div>
 
-
-
                 <div>
-
                     <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
-
                     <ul class="space-y-2">
-
                         <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
-
                         <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
-
                     </ul>
-
                 </div>
-
-
 
                 <div>
-
                     <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
-
                     <ul class="space-y-2">
-
                         <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
-
-                        <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
-
-                        <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
-
+                        <li><a href="httpsS://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
+                        <li><a href="httpsS://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
                     </ul>
-
                     <div class="mt-3">
-
                         <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
-
                         <ul class="space-y-2">
-
                             <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
-
                             <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
-
                         </ul>
-
                     </div>
-
                 </div>
-
             </div>
-
-
 
             <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
-
                 <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
-
             </div>
-
         </div>
-
     </footer>
 
-
-
-    <!-- 
-
+    <!--
       JAVASCRIPT
-
-      Логика из Клио.html + новый объект translations + новая логика
-
-    -->
-
-    <script>
-
+      Логика из for-sales.html + новый объект translations
+    --><script>
         document.addEventListener('DOMContentLoaded', () => {
 
-
-
-            // --- Логика из Клио.html ---
-
-
-
-            // Логика мобильного меню
-
+            // Логика мобильного меню (из образца)
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-
             const mobileMenu = document.getElementById('mobile-menu');
-
             if (mobileMenuToggle && mobileMenu) {
-
                 mobileMenuToggle.addEventListener('click', () => {
-
                     mobileMenu.classList.toggle('hidden');
-
                     const isExpanded = !mobileMenu.classList.contains('hidden');
-
                     mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-
                 });
-
             }
 
+            // Новая логика: Закрытие sticky-баннера
+            const closeStickyBannerBtn = document.getElementById('close-sticky-banner');
+            const stickyBanner = document.getElementById('top-sticky-banner');
+            const header = document.querySelector('header'); // Шапка
 
+            if (closeStickyBannerBtn && stickyBanner && header) {
+                closeStickyBannerBtn.addEventListener('click', () => {
+                    stickyBanner.remove(); // Удаляем баннер
+                    header.style.top = '0'; // Сдвигаем шапку вверх
+                });
 
-            // Логика для FAQ-аккордеона
-
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-
-                const toggle = item.querySelector('.faq-toggle');
-
-                const icon = item.querySelector('.faq-icon');
-
-                
-
-                toggle.addEventListener('click', () => {
-
-                    const isOpen = item.classList.contains('faq-open');
-
-                    
-
-                    if (isOpen) {
-
-                        item.classList.remove('faq-open');
-
-                        if (icon) icon.textContent = '+';
-
-                    } else {
-
-                        item.classList.add('faq-open');
-
-                        if (icon) icon.textContent = '–'; // Используем '–' (минус)
-
+                // Проверяем, есть ли баннер, и сдвигаем шапку
+                if (document.body.contains(stickyBanner)) {
+                    // Высота баннера 49px (p-3 + text-sm/base)
+                    // Устанавливаем top для шапки на lg+ экранах
+                    if (window.innerWidth >= 1024) {
+                         header.style.top = '49px';
                     }
-
-                });
-
-            });
-
-            
-
-            // --- Новая логика для Françoise ---
-
-
-
-            // Логика ROI Калькулятора
-
-            const roiDesigners = document.getElementById('roi-designers');
-
-            const roiLayouts = document.getElementById('roi-layouts');
-
-            const roiHours = document.getElementById('roi-hours');
-
-            const outCurrent = document.getElementById('roi-output-current');
-
-            const outFrancoise = document.getElementById('roi-output-francoise');
-
-            const outSavings = document.getElementById('roi-output-savings');
-
-            const artDirectorHourlyRate = 100; // $100/час
-
-            const tiers = {
-
-                basic: { cost: 6000, setup: 4000 },
-
-                advanced: { cost: 10000, setup: 7000 },
-
-                enterprise: { cost: 18000, setup: 12000 }
-
-            };
-
-
-
-            function formatCurrency(num) {
-
-                return '$' + num.toLocaleString('en-US', { maximumFractionDigits: 0 });
-
-            }
-
-
-
-            function updateFranROI() {
-
-                if (!roiDesigners) return; // Убедиться, что мы на нужной странице
-
-
-
-                try {
-
-                    const designers = parseInt(roiDesigners.value) || 0;
-
-                    const layouts = parseInt(roiLayouts.value) || 0;
-
-                    const hoursPerWeek = parseInt(roiHours.value) || 0;
-
-
-
-                    // 1. Рассчитать текущие затраты
-
-                    // Затраты на ревью = часы в неделю * 52 недели * ставка
-
-                    const currentCost = hoursPerWeek * 52 * artDirectorHourlyRate;
-
-
-
-                    // 2. Рассчитать стоимость Françoise (на основе 'Advanced' как в примере)
-
-                    let francoiseCost = tiers.advanced.cost + tiers.advanced.setup;
-
-                    
-
-                    // 3. Рассчитать экономию
-
-                    const savings = currentCost - francoiseCost;
-
-                    const savingsPercent = (currentCost > 0) ? Math.round((savings / currentCost) * 100) : 0;
-
-
-
-                    // 4. Обновить UI
-
-                    outCurrent.textContent = `${formatCurrency(currentCost)}/year`;
-
-                    outFrancoise.textContent = `${formatCurrency(francoiseCost)}/year`;
-
-                    outSavings.textContent = `${formatCurrency(savings)}/year (${savingsPercent}%)`;
-
-
-
-                } catch (e) {
-
-                    console.error("ROI Calc Error:", e);
-
+                    // Слушатель на ресайз, если вдруг
+                     window.addEventListener('resize', () => {
+                         if (document.body.contains(stickyBanner)) {
+                            if (window.innerWidth >= 1024) {
+                                header.style.top = '49px';
+                            } else {
+                                header.style.top = '0'; // На мобилке шапка просто скроллится
+                            }
+                         }
+                     });
                 }
-
             }
 
 
-
-            if (roiDesigners && roiLayouts && roiHours) {
-
-                [roiDesigners, roiLayouts, roiHours].forEach(input => {
-
-                    input.addEventListener('input', updateFranROI);
-
-                });
-
-                updateFranROI(); // Первый расчет при загрузке
-
-            }
-
-
-
-            // --- ОБЪЕКТ ПЕРЕВОДОВ (НОВЫЙ + ИЗ КЛИО) ---
-
+            // РАСШИРЕННЫЙ ОБЪЕКТ ПЕРЕВОДОВ
             const translations = {
-
                 'ru': {
 
                     // --- Переводы из "Клио.html" (Шапка, Подвал, Баннер) ---
@@ -2884,9 +2006,9 @@
 
 
 
-                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Françoise" ---
+                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Francoise" ---
 
-                    'meta-title': 'Françoise by DIVO | Автоматизация дизайн-контроля',
+                    'meta-title': 'Francoise by DIVO | Автоматизация дизайн-контроля',
 
                     'meta-description': 'Проверка качества дизайна и соответствия дизайн-системе. Экономия до $150,000/год на контроле качества. От типографики до RTL-адаптации.',
 
@@ -2894,9 +2016,9 @@
 
                     // Section 1: Hero
 
-                    'hero-h1': 'Françoise — ваш AI арт-директор для контроля качества дизайна',
+                    'hero-h1': 'Francoise - ваш AI арт-директор для контроля качества дизайна',
 
-                    'hero-sub': 'Автоматизируем рутинные проверки типографики, spacing, композиции и RTL-адаптации с математической точностью. Ваша команда возвращается к творчеству — консистентность поддерживается 24/7.',
+                    'hero-sub': 'Автоматизируем рутинные проверки типографики, spacing, композиции и RTL-адаптации с математической точностью. Ваша команда возвращается к творчеству.',
 
                     'hero-metric1-h': 'В 20 раз быстрее',
 
@@ -2912,23 +2034,20 @@
 
                     'hero-social': 'Доверяют: E-commerce | Fintech | SaaS | Healthtech',
 
-                    'hero-cta1': 'Бесплатная консультация',
-
-                    'hero-cta2': 'Демо за $99',
+                    'hero-cta1': 'Демо за $99 + консультация',
 
                     'hero-cta-fineprint': 'Офферы действуют только 18-19 ноября 2025',
                     'header-cta-special': 'Получить $99 Audit',
-                    'final-offer-badge': 'ТОЛЬКО ДЛЯ УЧАСТНИКОВ — СПЕЦПАКЕТ',
+                    'final-offer-badge': 'ТОЛЬКО ДЛЯ УЧАСТНИКОВ - СПЕЦПАКЕТ',
                     'final-offer-h3': 'Ваш $99 Стартовый Пакет',
-                    'final-offer-p1': 'Всё необходимое для знакомства с Françoise:',
+                    'final-offer-p1': 'Всё необходимое для знакомства с Francoise:',
                     'final-offer-li1': 'Экспертный аудит 2 макетов за 24 часа (уровень Enterprise с RTL)',
                     'final-offer-li2': 'Детальный отчёт: композиция, бизнес-задача, RTL-адаптация + референсы',
-                    'final-offer-li3': '<strong>БОНУС:</strong> Бесплатная 15-мин консультация для разбора результатов',
-                    'final-offer-li4': '<strong>БОНУС:</strong> Скидка 15% на любой годовой тариф',
-                    'final-offer-li5': '<strong>БОНУС:</strong> Приоритетный запуск в декабре 2025',
-                    'final-offer-p2': '⚠️ Эксклюзивное предложение действует ТОЛЬКО 18-19 ноября 2025',
+                    'final-offer-li3': '<strong>БОНУС: </strong> Бесплатная 40-мин консультация для разбора результатов',
+                    'final-offer-li4': '<strong>БОНУС: </strong> Скидка 15% на любой годовой тариф',
+                    'final-offer-p2': ' Эксклюзивное предложение действует ТОЛЬКО 18-19 ноября 2025',
                     'final-offer-cta': 'Получить $99 Стартовый Пакет →',
-                    'final-ben1': '✓ $99 Стартовый Пакет — всё в одном, только 18-19 ноя',
+                    'final-ben1': '✓ $99 Стартовый Пакет - всё в одном, только 18-19 ноя',
                     'final-ben2': '✓ Аудит уровня Enterprise + бесплатная консультация',
                     'final-ben3': '✓ Скидка 15% + приоритетный запуск автоматически',
 
@@ -2936,27 +2055,27 @@
 
                     // Section 2: Problem
 
-                    'problem-h2': 'Когда Françoise решает ваши задачи',
+                    'problem-h2': 'Когда Francoise решает ваши задачи',
 
                     'problem1-h3': 'Рутинный контроль съедает время',
 
                     'problem1-p1': 'Арт-директора тратят 20-30 часов в неделю на проверку spacing, цветов и шрифтов вместо стратегической работы и развития команды.',
 
-                    'problem1-p2': 'Françoise автоматизирует типографику, spacing и выравнивание с 100% точностью.',
+                    'problem1-p2': 'Francoise автоматизирует типографику, spacing и выравнивание с 100% точностью.',
 
                     'problem1-badge': 'BASIC TIER → 15-20h/week saved',
 
                     'problem2-h3': 'Консистентность страдает при масштабировании',
 
-                    'problem2-p1': 'Новички и контракторы не держат всю дизайн-систему в голове — ошибки множатся, бренд размывается.',
+                    'problem2-p1': 'Новички и контракторы не держат всю дизайн-систему в голове - ошибки множатся, бренд размывается.',
 
-                    'problem2-p2': 'AI проверяет композицию, визуальную иерархию и бизнес-эффективность интерфейса — каждый макет соответствует стандартам.',
+                    'problem2-p2': 'AI проверяет композицию, визуальную иерархию и бизнес-эффективность интерфейса - каждый макет соответствует стандартам.',
 
                     'problem2-badge': 'ADVANCED TIER → 80-85% reviews automated',
 
                     'problem3-h3': 'Выход на международные рынки требует RTL-адаптации',
 
-                    'problem3-p1': 'Зеркалирование макетов для арабских рынков — это 40+ часов ручной работы в неделю с высоким риском ошибок.',
+                    'problem3-p1': 'Зеркалирование макетов для арабских рынков - это 40+ часов ручной работы в неделю с высоким риском ошибок.',
 
                     'problem3-p2': 'Автоматическая проверка RTL ↔ LTR адаптации для 310+ млн арабоязычных пользователей без ошибок.',
 
@@ -2966,11 +2085,11 @@
 
                     'problem4-p1': 'Разработчики получают макеты с ошибками, что ведет к переделкам, задержкам и потерянному времени на объяснения.',
 
-                    'problem4-p2': 'Автогенерация CSS-спецификаций, design tokens в JSON/YAML, WCAG compliance — handoff без вопросов.',
+                    'problem4-p2': 'Автогенерация CSS-спецификаций, design tokens в JSON/YAML, WCAG compliance - handoff без вопросов.',
 
                     'problem4-badge': 'ENTERPRISE TIER → $300k+ hiring saved',
 
- 
+
 
                     // Section 3: Features & Pricing
 
@@ -3012,7 +2131,7 @@
 
                     'features-nav-toggle1': 'Переключить: [Отдельные детали] | [Сравнить бок о бок →]',
 
-                    
+
 
                     // Tier 1
 
@@ -3042,7 +2161,7 @@
 
                     'tier1-img-placeholder': 'Заглушка для иллюстрации Basic',
 
-                    
+
 
                     // Tier 2
 
@@ -3078,7 +2197,7 @@
 
                     'tier2-img-placeholder': 'Заглушка для иллюстрации Advanced',
 
- 
+
 
                     // Tier 3
 
@@ -3114,7 +2233,7 @@
 
                     'tier3-img-placeholder': 'Заглушка для иллюстрации Enterprise',
 
- 
+
 
                     // ROI Calculator
 
@@ -3128,37 +2247,37 @@
 
                     'roi-res1': 'Ваша текущая стоимость:',
 
-                    'roi-res2': 'С Françoise (Advanced):',
+                    'roi-res2': 'С Francoise (Advanced):',
 
                     'roi-res3': 'Экономия:',
 
                     'roi-cta': 'Получить персональный расчет →',
 
-                    
+
 
                     // Section 4: Why
 
-                    'why-h2': 'Почему Françoise',
+                    'why-h2': 'Почему Francoise',
 
                     'why-sub': 'Что отличает нас от других AI-инструментов для дизайна',
 
                     'why1-h3': 'Математическая точность',
 
-                    'why1-p': 'Анализируем JSON Figma напрямую, а не только визуально — 100% точность численных параметров. Никаких "примерно 8px" — только точные значения из вашей дизайн-системы.',
+                    'why1-p': 'Анализируем JSON Figma напрямую, а не только визуально - 100% точность численных параметров. Никаких "примерно 8px" - только точные значения из вашей дизайн-системы.',
 
                     'why2-h3': 'Полная кастомизация',
 
-                    'why2-p': 'White-glove service под уникальную дизайн-систему каждого клиента. Françoise учится вашим правилам, а не навязывает стандарты — ваш бренд, ваши стандарты.',
+                    'why2-p': 'White-glove service под уникальную дизайн-систему каждого клиента. Francoise учится вашим правилам, а не навязывает стандарты - ваш бренд, ваши стандарты.',
 
                     'why3-h3': 'RTL-first подход',
 
-                    'why3-p': 'Единственный AI-инструмент с автоматической RTL-проверкой для выхода на арабские рынки. 310+ млн пользователей ждут ваш продукт — мы делаем локализацию безошибочной.',
+                    'why3-p': 'Единственный AI-инструмент с автоматической RTL-проверкой для выхода на арабские рынки. 310+ млн пользователей ждут ваш продукт - мы делаем локализацию безошибочной.',
 
-                    
+
 
                     // Section 5: How
 
-                    'how-h2': 'Как работает Françoise',
+                    'how-h2': 'Как работает Francoise',
 
                     'how-sub': 'Простой процесс от загрузки до handoff',
 
@@ -3200,7 +2319,7 @@
 
                     'faq-h2': 'FAQ',
 
-                    'faq1-q': 'Как Françoise интегрируется с нашей дизайн-системой?',
+                    'faq1-q': 'Как Francoise интегрируется с нашей дизайн-системой?',
 
                     'faq1-a': 'White-glove service: настраиваем под ваши уникальные правила. Setup: 1-2 недели (Basic) до 6-8 недель (Enterprise).',
 
@@ -3212,7 +2331,7 @@
 
                     'faq3-a': 'Basic: типографика, spacing, выравнивание (40% ревью).<br>Advanced: + композиция, бизнес-задача, референсы (80-85%).<br>Enterprise: + RTL, a11y WCAG, CSS-спецификации (95%+).',
 
-                    'faq4-q': 'Заменит ли Françoise арт-директора?',
+                    'faq4-q': 'Заменит ли Francoise арт-директора?',
 
                     'faq4-a': 'Нет. Берем рутину, чтобы арт-директор фокусировался на стратегии, UX-гипотезах, развитии команды.',
 
@@ -3224,7 +2343,7 @@
 
                     // Section 6: Final CTA
 
-                    'final-cta-h2': 'Встречаемся на Function1 — эксклюзивные предложения',
+                    'final-cta-h2': 'Встречаемся на Function1 - эксклюзивные предложения',
 
                     'final-cta-sub': 'Дубай, 18-19 ноября 2025',
 
@@ -3260,7 +2379,7 @@
 
                     'final-offer2-cta': 'Записаться на консультацию →',
 
-                    'final-ben1': '✓ Демо за $99 — эксклюзивная цена только 18-19 ноября',
+                    'final-ben1': '✓ Демо за $99 - эксклюзивная цена только 18-19 ноября',
 
                     'final-ben2': '✓ Скидка 15% на годовую подписку при записи на консультацию',
 
@@ -3322,9 +2441,9 @@
 
 
 
-                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Françoise" ---
+                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Francoise" ---
 
-                    'meta-title': 'Françoise by DIVO | Design QA Automation',
+                    'meta-title': 'Francoise by DIVO | Design QA Automation',
 
                     'meta-description': 'Design quality and design system compliance checking. Save up to $150,000/year on quality control. From typography to RTL adaptation.',
 
@@ -3332,9 +2451,9 @@
 
                     // Section 1: Hero
 
-                    'hero-h1': 'Françoise — Your AI Art Director for Design Quality Control',
+                    'hero-h1': 'Francoise - Your AI Art Director for Design Quality Control',
 
-                    'hero-sub': 'We automate routine checks of typography, spacing, composition, and RTL adaptation with mathematical precision. Your team returns to creativity — consistency is maintained 24/7.',
+                    'hero-sub': 'We automate routine checks of typography, spacing, composition, and RTL adaptation with mathematical precision. Your team returns to creativity.',
 
                     'hero-metric1-h': '20x faster',
 
@@ -3350,23 +2469,21 @@
 
                     'hero-social': 'Trusted by: E-commerce | Fintech | SaaS | Healthtech',
 
-                    'hero-cta1': 'Book Free Consultation',
-
-                    'hero-cta2': 'Get $99 Demo',
+                    'hero-cta1': 'Get $99 Demo + cosultation',
 
                     'hero-cta-fineprint': 'Offers valid only November 18-19, 2025',
                     'header-cta-special': 'Get $99 Audit',
-                    'final-offer-badge': 'ATTENDEES ONLY — SPECIAL BUNDLE',
+                    'final-offer-badge': 'ATTENDEES ONLY - SPECIAL BUNDLE',
                     'final-offer-h3': 'Your $99 Starter Pack',
-                    'final-offer-p1': 'Everything you need to experience Françoise:',
+                    'final-offer-p1': 'Everything you need to experience Francoise:',
                     'final-offer-li1': 'Expert audit of 2 layouts in 24 hours (Enterprise level with RTL)',
                     'final-offer-li2': 'Detailed report: composition, business task, RTL adaptation + references',
-                    'final-offer-li3': '<strong>BONUS:</strong> Free 15-min consultation to review your audit results',
-                    'final-offer-li4': '<strong>BONUS:</strong> 15% discount unlocked for any annual plan',
-                    'final-offer-li5': '<strong>BONUS:</strong> Priority implementation start in December 2025',
-                    'final-offer-p2': '⚠️ Exclusive offer valid ONLY November 18-19, 2025',
+                    'final-offer-li3': '<strong>BONUS: </strong> Free 40-min consultation to review your audit results',
+                    'final-offer-li4': '<strong>BONUS: </strong> 15% discount unlocked for any annual plan',
+                    'final-offer-li5': '<strong>BONUS: </strong> Priority implementation start in December 2025',
+                    'final-offer-p2': ' Exclusive offer valid ONLY November 18-19, 2025',
                     'final-offer-cta': 'Get Your $99 Starter Pack →',
-                    'final-ben1': '✓ $99 Starter Pack — all-in-one bundle only Nov 18-19',
+                    'final-ben1': '✓ $99 Starter Pack - all-in-one bundle only Nov 18-19',
                     'final-ben2': '✓ Enterprise-level audit + free consultation included',
                     'final-ben3': '✓ 15% discount + priority start automatically unlocked',
 
@@ -3374,21 +2491,21 @@
 
                     // Section 2: Problem
 
-                    'problem-h2': 'When Françoise Solves Your Problems',
+                    'problem-h2': 'When Francoise Solves Your Problems',
 
                     'problem1-h3': 'Routine control eats up time',
 
                     'problem1-p1': 'Art directors spend 20-30 hours per week checking spacing, colors, and fonts instead of strategic work and team development.',
 
-                    'problem1-p2': 'Françoise automates typography, spacing, and alignment with 100% accuracy.',
+                    'problem1-p2': 'Francoise automates typography, spacing, and alignment with 100% accuracy.',
 
                     'problem1-badge': 'BASIC TIER → 15-20h/week saved',
 
                     'problem2-h3': 'Consistency suffers during scaling',
 
-                    'problem2-p1': 'Newcomers and contractors don\'t keep the entire design system in mind — errors multiply, brand dilutes.',
+                    'problem2-p1': 'Newcomers and contractors don\'t keep the entire design system in mind - errors multiply, brand dilutes.',
 
-                    'problem2-p2': 'AI checks composition, visual hierarchy, and business effectiveness of interfaces — every layout meets standards.',
+                    'problem2-p2': 'AI checks composition, visual hierarchy, and business effectiveness of interfaces - every layout meets standards.',
 
                     'problem2-badge': 'ADVANCED TIER → 80-85% reviews automated',
 
@@ -3404,11 +2521,11 @@
 
                     'problem4-p1': 'Developers receive layouts with errors, leading to rework, delays, and lost time on explanations.',
 
-                    'problem4-p2': 'Auto-generation of CSS specifications, design tokens in JSON/YAML, WCAG compliance — handoff without questions.',
+                    'problem4-p2': 'Auto-generation of CSS specifications, design tokens in JSON/YAML, WCAG compliance - handoff without questions.',
 
                     'problem4-badge': 'ENTERPRISE TIER → $300k+ hiring saved',
 
- 
+
 
                     // Section 3: Features & Pricing
 
@@ -3480,7 +2597,7 @@
 
                     'tier1-img-placeholder': 'Basic Illustration Placeholder',
 
- 
+
 
                     // Tier 2
 
@@ -3516,7 +2633,7 @@
 
                     'tier2-img-placeholder': 'Advanced Illustration Placeholder',
 
- 
+
 
                     // Tier 3
 
@@ -3552,7 +2669,7 @@
 
                     'tier3-img-placeholder': 'Enterprise Illustration Placeholder',
 
- 
+
 
                     // ROI Calculator
 
@@ -3566,7 +2683,7 @@
 
                     'roi-res1': 'Your current cost:',
 
-                    'roi-res2': 'With Françoise (Advanced):',
+                    'roi-res2': 'With Francoise (Advanced):',
 
                     'roi-res3': 'Savings:',
 
@@ -3576,27 +2693,27 @@
 
                     // Section 4: Why
 
-                    'why-h2': 'Why Françoise',
+                    'why-h2': 'Why Francoise',
 
                     'why-sub': 'What Sets Us Apart from Other AI Design Tools',
 
                     'why1-h3': 'Mathematical Precision',
 
-                    'why1-p': 'We analyze Figma JSON directly, not just visually — 100% accuracy of numerical parameters. No "approximately 8px" — only exact values from your design system.',
+                    'why1-p': 'We analyze Figma JSON directly, not just visually - 100% accuracy of numerical parameters. No "approximately 8px" - only exact values from your design system.',
 
                     'why2-h3': 'Full Customization',
 
-                    'why2-p': 'White-glove service for each client\'s unique design system. Françoise learns your rules, doesn\'t impose standards — your brand, your standards.',
+                    'why2-p': 'White-glove service for each client\'s unique design system. Francoise learns your rules, doesn\'t impose standards - your brand, your standards.',
 
                     'why3-h3': 'RTL-First Approach',
 
-                    'why3-p': 'The only AI tool with automatic RTL verification for Arabic market expansion. 310+ million users await your product — we make localization error-free.',
+                    'why3-p': 'The only AI tool with automatic RTL verification for Arabic market expansion. 310+ million users await your product - we make localization error-free.',
 
-                    
+
 
                     // Section 5: How
 
-                    'how-h2': 'How Françoise Works',
+                    'how-h2': 'How Francoise Works',
 
                     'how-sub': 'Simple process from upload to handoff',
 
@@ -3638,7 +2755,7 @@
 
                     'faq-h2': 'FAQ',
 
-                    'faq1-q': 'How does Françoise integrate with our design system?',
+                    'faq1-q': 'How does Francoise integrate with our design system?',
 
                     'faq1-a': 'White-glove service: we configure for your unique rules. Setup: 1-2 weeks (Basic) to 6-8 weeks (Enterprise).',
 
@@ -3650,7 +2767,7 @@
 
                     'faq3-a': 'Basic: typography, spacing, alignment (40% reviews).<br>Advanced: + composition, business task, references (80-85%).<br>Enterprise: + RTL, a11y WCAG, CSS specifications (95%+).',
 
-                    'faq4-q': 'Will Françoise replace the art director?',
+                    'faq4-q': 'Will Francoise replace the art director?',
 
                     'faq4-a': 'No. We handle routine work so art director can focus on strategy, UX hypotheses, team development.',
 
@@ -3662,7 +2779,7 @@
 
                     // Section 6: Final CTA
 
-                    'final-cta-h2': 'Meet Us at Function1 — Exclusive Offers',
+                    'final-cta-h2': 'Meet Us at Function1 - Exclusive Offers',
 
                     'final-cta-sub': 'Dubai, November 18-19, 2025',
 
@@ -3698,7 +2815,7 @@
 
                     'final-offer2-cta': 'Book Consultation →',
 
-                    'final-ben1': '✓ Demo for $99 — exclusive price only November 18-19',
+                    'final-ben1': '✓ Demo for $99 - exclusive price only November 18-19',
 
                     'final-ben2': '✓ 15% discount on annual subscription when booking consultation',
 
@@ -3707,122 +2824,59 @@
                     'final-contact': 'Request Form | Email: hello@divo.ai | Telegram | Function1 Booth',
 
                 }
-
             };
 
-
-
-            // --- Логика переключения языка (из Клио.html) ---
-
+            // --- Логика переключения языка (из образца) ---
             const btnRuDesktop = document.getElementById('btn-ru');
-
             const btnEnDesktop = document.getElementById('btn-en');
-
             const btnRuMobile = document.getElementById('btn-ru-mobile');
-
             const btnEnMobile = document.getElementById('btn-en-mobile');
-
-                        
 
             const elementsToTranslate = document.querySelectorAll('[data-lang]');
 
-
-
             function updateContent(lang) {
-
-                // Сохраняем язык в localStorage
-
-                localStorage.setItem('divo-lang', lang);
-
-
-
                 document.documentElement.lang = lang;
 
-
-
                 const isRu = lang === 'ru';
-
                 if(btnRuDesktop) btnRuDesktop.classList.toggle('active', isRu);
-
                 if(btnEnDesktop) btnEnDesktop.classList.toggle('active', !isRu);
-
                 if(btnRuMobile) btnRuMobile.classList.toggle('active', isRu);
-
                 if(btnEnMobile) btnEnMobile.classList.toggle('active', !isRu);
 
-
-
                 if(btnRuDesktop) btnRuDesktop.setAttribute('aria-pressed', isRu);
-
                 if(btnEnDesktop) btnEnDesktop.setAttribute('aria-pressed', !isRu);
-
                 if(btnRuMobile) btnRuMobile.setAttribute('aria-pressed', isRu);
-
                 if(btnEnMobile) btnEnMobile.setAttribute('aria-pressed', !isRu);
-
-
 
                 const langTranslations = translations[lang];
 
-
-
                 elementsToTranslate.forEach(el => {
-
                     const key = el.getAttribute('data-lang');
-
-                    if (langTranslations && langTranslations[key]) {
-
+                    if (langTranslations[key]) {
                         if (key === 'meta-title') {
-
                             el.innerHTML = langTranslations[key];
-
                         } else if (key === 'meta-description') {
-
                             el.setAttribute('content', langTranslations[key]);
-
                         } else {
-
+                            // Простая защита от XSS (хотя в данном случае ключи контролируем мы)
+                            // Для вставки HTML (как в 'why-daria-note') нам нужно использовать innerHTML
+                            // В остальных случаях - textContent
+                            // Но для простоты, т.к. мы доверяем контенту, используем innerHTML
                             el.innerHTML = langTranslations[key];
-
                         }
-
-                    } else if (langTranslations) {
-
-                        // console.warn(`Translation key not found for lang '${lang}': ${key}`);
-
                     }
-
                 });
-
             }
 
-
-
             if(btnRuDesktop) btnRuDesktop.addEventListener('click', () => updateContent('ru'));
-
             if(btnEnDesktop) btnEnDesktop.addEventListener('click', () => updateContent('en'));
-
             if(btnRuMobile) btnRuMobile.addEventListener('click', () => updateContent('ru'));
-
             if(btnEnMobile) btnEnMobile.addEventListener('click', () => updateContent('en'));
 
-
-
-            // Устанавливаем язык при загрузке
-
-            // Проверяем URL (например, /fr/...) или localStorage, или default
-
-            const savedLang = localStorage.getItem('divo-lang') || 'en'; // Default 'en'
-
-            updateContent(savedLang);
-
+            // Устанавливаем язык по умолчанию (EN), как в образце
+            updateContent('en');
         });
 
-            
-
     </script>
-
 </body>
-
 </html>
-
