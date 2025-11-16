@@ -20,7 +20,7 @@
         /* Шрифты (из примера) */
         @font-face {
             font-family: 'Eugusto';
-             src: url('EugustoFreePersonalUse-Regular.otf');
+            src: url('EugustoFreePersonalUse-Regular.otf');
             font-weight: 800;
             font-style: normal;
         }
@@ -432,7 +432,7 @@
                                 <div class="py-2">
                                     <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
                                     <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
-                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Разработка</a>
+                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +441,8 @@
                     </nav>
 
                     <div class="flex items-center gap-4">
-                        <a href="#" class="btn btn-primary btn-sm popup-trigger" data-popup="consult" data-lang="header-cta">Получить консультацию</a>
+                        <!-- ИЗМЕНЕНО: data-lang="header-cta" заменен на data-lang="cta2-cta" -->
+                        <a href="/payments/audit" class="btn btn-primary btn-sm popup-trigger" data-popup="consult" data-lang="cta2-cta">Получить консультацию</a>
                         <div class="lang-switcher-inline">
                             <button id="btn-ru" class="" aria-pressed="false">RU</button>
                             <button id="btn-en" class="active" aria-pressed="true">EN</button>
@@ -450,7 +451,8 @@
                 </div>
 
                 <div class="lg:hidden flex items-center gap-2">
-                    <a href="#" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="header-cta-mobile">Консультация</a>
+                    <!-- ИЗМЕНЕНО: data-lang="header-cta-mobile" заменен на data-lang="cta2-cta-mobile" -->
+                    <a href="/payments/audit" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="cta2-cta-mobile">Консультация</a>
                     <div class="lang-switcher-inline">
                         <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
                         <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
@@ -470,7 +472,7 @@
                         <div class="pl-4 flex flex-col gap-2">
                             <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
                             <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
-                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Разработка</a>
+                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
                         </div>
                     </div>
                     <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
@@ -488,7 +490,8 @@
             <h1 data-lang="hero-h1" class="mb-6">Custom Development of Systems That Work at Scale</h1>
             <p data-lang="hero-subtitle" class="text-xl max-w-3xl mx-auto text-text-secondary mb-8">We design fault-tolerant architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.</p>
             <div>
-                <a href="#" class="btn btn-primary btn-lg popup-trigger" data-popup="consult" data-lang="hero-cta">Get Consultation</a>
+                <!-- ИЗМЕНЕНО: data-lang="hero-cta" заменен на data-lang="cta2-cta" -->
+                <a href="/payments/audit" class="btn btn-primary btn-lg popup-trigger" data-popup="consult" data-lang="cta2-cta">Get Consultation</a>
             </div>
         </section>
 
@@ -854,38 +857,39 @@
 
         </section>
 
-        <!-- Блок 7: CTA Консультация/Аудит (БЕЗ ИЗМЕНЕНИЙ) -->
+        <!-- Блок 7: CTA Консультация/Аудит (ИЗМЕНЕН) -->
         <section id="cta-options" class="mb-16 md:mb-24">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 data-lang="cta-h2">Let's Start With Your Challenge</h2>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                <!-- Опция 1: Консультация -->
-                <div class="card p-8 flex flex-col">
-                    <h3 data-lang="cta1-title" class="mb-3">OPTION 1: Free Consultation (For those exploring)</h3>
-                    <p data-lang="cta1-desc" class="mb-4">Book a free 40-minute consultation. We'll discuss your architecture and determine where technology will deliver maximum impact.</p>
-                    <div class="flex-grow">
-                        <h5 data-lang="cta-get-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">What you get:</h5>
-                        <ul data-lang="cta1-bullets" class="content-list"></ul>
-                    </div>
-                    <div class="mt-6">
-                        <a href="/#final-cta" class="btn btn-secondary w-full text-center" data-lang="cta1-cta">Book Consultation</a>
-                    </div>
-                </div>
+            <!-- ИЗМЕНЕНО: Удалена Опция 1, сетка изменена на 1 колонку и отцентрована -->
+            <!-- ИЗМЕНЕНО: Ширина увеличена с max-w-2xl до max-w-4xl -->
+            <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 items-stretch max-w-4xl mx-auto w-full">
                 
-                <!-- Опция 2: Аудит -->
+                <!-- Опция 1: Консультация (УДАЛЕНА) -->
+                
+                <!-- Опция 2: Аудит (ОСТАВЛЕНА) -->
                 <div class="card p-8 flex flex-col border-2 border-primary shadow-xl">
-                     <h3 data-lang="cta2-title" class="mb-3">OPTION 2: Technical Audit (For those ready to act)</h3>
+                     <!-- ИЗМЕНЕНО: Убран заголовок h3 -->
                     <p data-lang="cta2-desc" class="mb-4">Order a 2-week Technical Audit at the special price of $1,999 (instead of $5,000). Get a detailed report with recommendations and priority project start.</p>
                     <div class="flex-grow">
                         <h5 data-lang="cta-get-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">What you get:</h5>
                         <ul data-lang="cta2-bullets" class="content-list"></ul>
                     </div>
                     <div class="mt-6">
-                        <a href="#" class="btn btn-primary w-full text-center" data-lang="cta2-cta">Order Technical Audit</a>
+                        <a href="/payments/audit" class="btn btn-primary w-full text-center" data-lang="cta2-cta">Order Technical Audit</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- НОВЫЙ БЛОК: Остались вопросы? -->
+        <section id="still-have-questions" class="mb-16 md:mb-24 -mt-8 md:-mt-12">
+            <!-- ИЗМЕНЕНО: верстка в одну строку, убрана подложка (bg-white shadow-md) -->
+            <div class="w-full p-6 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-lg text-text-secondary m-0 text-center md:text-left" data-lang="questions-text">Остались вопросы?</p>
+                <a hrefhref="/payments/audit" class="btn btn-secondary popup-trigger flex-shrink-0" data-popup="consult" data-lang="cta1-cta">Записаться на консультацию</a>
             </div>
         </section>
 
@@ -909,7 +913,7 @@
                     <ul class="space-y-2">
                         <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
                         <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
-                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Разработка</a></li>
+                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
                     </ul>
                 </div>
 
@@ -961,7 +965,7 @@
             const translations = {
                 'ru': {
                     // Мета
-                    'meta-title': 'Разработка AI-систем | Enterprise-решения DIVO',
+                    'meta-title': 'Кастомная разработка AI-систем | Enterprise-решения DIVO',
                     'meta-description': 'Проектируем отказоустойчивые AI-системы для enterprise. Опыт работы с банками, e-commerce, tech-корпорациями. От $30k до $400k+.',
                     
                     // Шапка (общие)
@@ -969,16 +973,16 @@
                     'nav-sales': 'Для Продаж',
                     'nav-design': 'Для Дизайна',
                     'nav-about': 'О нас',
-                    'header-cta': 'Получить консультацию',
-                    'header-cta-mobile': 'Консультация',
+                    // 'header-cta': 'Получить консультацию', // Ключ больше не используется
+                    // 'header-cta-mobile': 'Консультация', // Ключ больше не используется
                     'nav-solutions': 'Решения',
-                    'nav-custom-dev': 'Разработка',
+                    'nav-custom-dev': 'Кастомная разработка',
                     'nav-portfolio': 'Портфолио',
 
                     // Блок 1: Hero
-                    'hero-h1': 'Разработка систем, которые работают в масштабе',
+                    'hero-h1': 'Кастомная разработка систем, которые работают в масштабе',
                     'hero-subtitle': 'Мы проектируем отказоустойчивые архитектуры, которые безопасно интегрируются в вашу (даже legacy) инфраструктуру и приносят измеримый ROI.',
-                    'hero-cta': 'Получить консультацию',
+                    // 'hero-cta': 'Получить консультацию', // Ключ больше не используется
 
                     // Блок 'Trusted By'
                     'trusted-h3': 'Нам доверяют в Enterprise',
@@ -994,12 +998,12 @@
                     'comp2-desc': 'Мы погружаемся в рутинные процессы и пересобираем их с помощью AI и RPA, высвобождая время сотрудников для стратегических и креативных задач.',
                     'comp2-bullets': '<li>Автоматизация документооборота: генерация договоров, счетов и коммерческих предложений по данным из CRM или таск-трекеров</li><li>Автоматизация коммуникаций: создание умных голосовых и текстовых ассистентов для поддержки клиентов и внутренних процессов</li><li>Автоматизация контроля качества: системы проверки соблюдения стандартов в дизайне, тексте, коде</li>',
                     'comp3-title': 'Безопасная инфраструктура',
-                    'comp3-desc': 'Мы умеем встраивать AI в любую, даже самую сложную и зарегулированную среду. Безопасность данных и бесшовная интеграция - наши ключевые приоритеты.',
+                    'comp3-desc': 'Мы умеем встраивать AI в любую, даже самую сложную и зарегулированную среду. Безопасность данных и бесшовная интеграция — наши ключевые приоритеты.',
                     'comp3-bullets': '<li>On-premise развёртывание: данные никогда не покидают контур компании, полный контроль над инфраструктурой</li><li>Гибкие интеграции: бесшовное подключение к CRM, ERP-системам (SAP, 1C), внутренним базам данных и API</li><li>Безопасный доступ к внешним моделям: через шлюзы с деперсонализацией данных и контролем запросов</li>',
                     
                     // Блок 'Tech Stack'
                     'tech-stack-h2': 'Наш технологический стек',
-                    'tech-stack-p': 'Мы используем full-stack подход, выбирая правильную технологию для задачи - от enterprise Java до высокопроизводительного Python.',
+                    'tech-stack-p': 'Мы используем full-stack подход, выбирая правильную технологию для задачи — от enterprise Java до высокопроизводительного Python.',
 
                     // Блок 3: Баннер
                     'function1-banner-h2': 'Специальные предложения для участников /function1',
@@ -1031,7 +1035,7 @@
                     
                     'case1-title': 'AI-ассистент арт-директора',
                     'case1-task': 'Арт-директора тратили 60-80% времени на рутинную проверку макетов на соответствие дизайн-системе. Это замедляло цикл утверждения.',
-                    'case1-results': '<li>Освобождение арт-директоров от рутинных проверок</li><li>Ускорение цикла дизайна - нет ожидания ручного ревью</li><li>Единые стандарты качества для всех участников</li><li>Проверка доступна 24/7 без нагрузки на команду</li><li>До 80% сокращение рутины</li>',
+                    'case1-results': '<li>Освобождение арт-директоров от рутинных проверок</li><li>Ускорение цикла дизайна — нет ожидания ручного ревью</li><li>Единые стандарты качества для всех участников</li><li>Проверка доступна 24/7 без нагрузки на команду</li><li>До 80% сокращение рутины</li>',
                     
                     'case2-title': 'Конвейер данных для enterprise-аналитики',
                     'case2-task': 'Десятки внутренних систем нуждались в данных из ядра бизнеса. Прямые интеграции были нестабильны и создавали риски для критичных сервисов.',
@@ -1068,25 +1072,38 @@
                     'poc3-title': 'AI-платформа генерации изображений',
                     'poc3-desc': 'Мультимодальная платформа (Firefly, Recraft, GPT-Image) с поддержкой text-to-image, image-to-image и text-to-vector для автоматизации маркетинга.',
                     'poc4-title': 'EdTech CRM-автоматизация',
-                    'poc4-desc': 'CRM-экосистема (AmoCRM, WhatsApp API, RPA) для школы корпоративного обучения. Сокращение рутины менеджеров - до 80%.',
+                    'poc4-desc': 'CRM-экосистема (AmoCRM, WhatsApp API, RPA) для школы корпоративного обучения. Сокращение рутины менеджеров — до 80%.',
                     'poc5-title': 'On-premise RAG Telegram-бот',
                     'poc5-desc': 'MVP Telegram-бота (Python, LLM, Qdrant) для внутренней базы знаний. Безопасно обрабатывает PDF, DOCX, XLSX и даёт ответы с цитатами.',
                     'poc8-title': 'On-premise голосовая аналитика (ASR)',
                     'poc8-desc': 'Стек для распознавания речи (Whisper Large V3 + NVIDIA Triton) на серверах клиента. Точность 95-97% без выноса данных в облако.',
 
 
-                    // Блок 7: CTA
+                    // Блок 7: CTA (ИЗМЕНЕН)
                     'cta-h2': 'Начнём с вашей задачи',
                     'cta-get-label': 'Что получите:',
+                    
+                    // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
                     'cta1-title': 'ОПЦИЯ 1: Бесплатная консультация (для тех, кто хочет разобраться)',
                     'cta1-desc': 'Запишитесь на бесплатную 40-минутную консультацию. Обсудим вашу архитектуру и определим, где технологии дадут максимальный эффект.',
                     'cta1-bullets': '<li>Письменное техническое заключение по вашей задаче</li><li>Бонус: Скидка 60% на Technical Audit ($1,999 вместо $5,000)</li><li>Скидка действует 30 дней после консультации</li>',
                     'cta1-cta': 'Записаться на консультацию',
-                    'cta2-title': 'ОПЦИЯ 2: Technical Audit со скидкой (для тех, кто готов к действию)',
+                    
+                    // Опция 2 (Аудит)
+                    // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
+                    'cta2-title': '', 
                     'cta2-desc': 'Закажите 2-недельный Technical Audit по специальной цене $1,999 (вместо $5,000). Получите детальный отчёт с рекомендациями и приоритетный старт проекта.',
                     'cta2-bullets': '<li>Полный 2-недельный аудит вашей системы/задачи</li><li>Детальный отчёт с рекомендациями и техническим заданием</li><li>Бонус 1: Приоритетный старт проекта в декабре 2025</li><li>Бонус 2: Скидка 15% на реализацию проекта (до $15,000 экономии)</li>',
-                    'cta2-cta': 'Заказать Technical Audit',
                     
+                    // ИЗМЕНЕННЫЙ КЛЮЧ
+                    'cta2-cta': 'Заказать технический аудит', 
+                    // НОВЫЙ КЛЮЧ для мобильной кнопки
+                    'cta2-cta-mobile': 'Заказать аудит',
+                    
+                    // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
+                    // ИЗМЕНЕНО: Текст упрощен
+                    'questions-text': 'Остались вопросы?',
+
                     // Футер (общие)
                     'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
                     'footer-solutions-title': 'Решения',
@@ -1108,8 +1125,8 @@
                     'nav-sales': 'For Sales',
                     'nav-design': 'For Design',
                     'nav-about': 'About Us',
-                    'header-cta': 'Get a Consultation',
-                    'header-cta-mobile': 'Consultation',
+                    // 'header-cta': 'Get a Consultation', // Ключ больше не используется
+                    // 'header-cta-mobile': 'Consultation', // Ключ больше не используется
                     'nav-solutions': 'Solutions',
                     'nav-custom-dev': 'Custom Development',
                     'nav-portfolio': 'Portfolio',
@@ -1117,7 +1134,7 @@
                     // Блок 1: Hero
                     'hero-h1': 'Custom Development of Systems That Work at Scale',
                     'hero-subtitle': 'We design fault-tolerant architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.',
-                    'hero-cta': 'Get Consultation',
+                    // 'hero-cta': 'Get Consultation', // Ключ больше не используется
 
                     // Блок 'Trusted By'
                     'trusted-h3': 'Trusted in Enterprise',
@@ -1170,7 +1187,7 @@
                     
                     'case1-title': "AI Art Director's Assistant",
                     'case1-task': "Art directors spent 60-80% of their time on routine layout checks for design system compliance. This slowed down the approval cycle.",
-                    'case1-results': '<li>Freed art directors from routine checks</li><li>Accelerated design cycle - no waiting for manual review</li><li>Unified quality standards for all participants</li><li>Checks available 24/7 without team load</li><li>Up to 80% routine reduction</li>',
+                    'case1-results': '<li>Freed art directors from routine checks</li><li>Accelerated design cycle — no waiting for manual review</li><li>Unified quality standards for all participants</li><li>Checks available 24/7 without team load</li><li>Up to 80% routine reduction</li>',
                     
                     'case2-title': 'Data Pipeline for Enterprise Analytics',
                     'case2-task': 'Dozens of internal systems needed data from the core business platform. Direct integrations were unstable and created risks for critical services.',
@@ -1213,17 +1230,30 @@
                     'poc8-title': 'On-Premise Voice Analytics (ASR)',
                     'poc8-desc': 'A speech recognition stack (Whisper Large V3 + NVIDIA Triton) deployed on client servers. Achieves 95-97% accuracy without data leaving the company.',
 
-                    // Блок 7: CTA
+                    // Блок 7: CTA (ИЗМЕНЕН)
                     'cta-h2': "Let's Start With Your Challenge",
                     'cta-get-label': 'What you get:',
+                    
+                    // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
                     'cta1-title': 'OPTION 1: Free Consultation (For those exploring)',
                     'cta1-desc': "Book a free 40-minute consultation. We'll discuss your architecture and determine where technology will deliver maximum impact.",
                     'cta1-bullets': '<li>Written technical assessment for your task</li><li>Bonus: 60% off Technical Audit ($1,999 instead of $5,000)</li><li>Discount valid for 30 days after consultation</li>',
                     'cta1-cta': 'Book Consultation',
-                    'cta2-title': 'OPTION 2: Technical Audit (For those ready to act)',
+                    
+                    // Опция 2 (Аудит)
+                    // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
+                    'cta2-title': '',
                     'cta2-desc': 'Order a 2-week Technical Audit at the special price of $1,999 (instead of $5,000). Get a detailed report with recommendations and priority project start.',
                     'cta2-bullets': '<li>Full 2-week audit of your system/task</li><li>Detailed report with recommendations and technical specs</li><li>Bonus 1: Priority project start in December 2025</li><li>Bonus 2: 15% off project implementation (up to $15,000 savings)</li>',
+                    
+                    // ИЗМЕНЕННЫЙ КЛЮЧ
                     'cta2-cta': 'Order Technical Audit',
+                    // НОВЫЙ КЛЮЧ для мобильной кнопки
+                    'cta2-cta-mobile': 'Order Audit',
+
+                    // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
+                    // ИЗМЕНЕНО: Текст упрощен
+                    'questions-text': 'Have questions?',
 
                     // Футер (общие)
                     'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
@@ -1282,6 +1312,8 @@
             btnRuMobile.addEventListener('click', () => updateContent('ru'));
             btnEnMobile.addEventListener('click', () => updateContent('en'));
 
+            // ИЗМЕНЕНО: Запускаем с 'ru' по умолчанию, как было в оригинальном файле (судя по 'active' у btn-en)
+            // Ошибка в комментарии выше, в оригинале 'active' у btn-en, значит, запускаем с 'en'
             updateContent('en');
         });
             

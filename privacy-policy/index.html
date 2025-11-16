@@ -6,7 +6,7 @@
     <title>Политика конфиденциальности | Privacy Policy - DIVO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Alumni+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Alumni+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -46,7 +46,7 @@
         /* Header Styles */
         .header-logo {
             font-family: var(--font-decorative);
-            font-size: 1.75rem;
+            font-size: 2rem; /* Было 1.75rem */
             font-weight: 800;
             color: var(--color-primary);
             text-decoration: none;
@@ -104,7 +104,7 @@
 
         .footer-logo {
             font-family: var(--font-decorative);
-            font-size: 1.5rem;
+            font-size: 1.75rem; /* Было 1.5rem */
             font-weight: 800;
             color: var(--color-primary);
             text-decoration: none;
@@ -114,7 +114,7 @@
 
         .footer-title {
             font-family: var(--font-heading);
-            font-size: 1.125rem;
+            font-size: 1.25rem; /* Было 1.125rem */
             font-weight: 700;
             color: white;
             margin-bottom: 1rem;
@@ -148,12 +148,13 @@
 
         h1 {
             font-family: var(--font-decorative);
-            font-size: clamp(2.5rem, 2rem + 2vw, 4rem);
+            font-size: clamp(4rem, 3.5rem + 2vw, 6rem); /* Было clamp(3rem, 2.5rem + 2vw, 5rem) */
             color: var(--color-text-main);
             margin-bottom: 0.5rem;
             text-align: center;
             font-weight: 800;
             letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         .effective-date {
@@ -168,22 +169,25 @@
 
         h2 {
             font-family: var(--font-heading);
-            font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+            font-size: clamp(2.5rem, 2.25rem + 1.5vw, 3.5rem); /* Было clamp(2rem, 1.75rem + 1.5vw, 3rem) */
             color: var(--color-text-main);
             margin-top: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--color-primary);
-            font-weight: 800;
+            border-bottom: 3px solid var(--color-primary);
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
         }
 
         h3 {
             font-family: var(--font-heading);
-            font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
+            font-size: clamp(2rem, 1.75rem + 0.75vw, 2.5rem); /* Было clamp(1.5rem, 1.35rem + 0.75vw, 2rem) */
             color: var(--color-text-main);
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
+            margin-top: 1.75rem;
+            margin-bottom: 0.875rem;
+            font-weight: 800;
+            line-height: 1.3;
         }
 
         p {
@@ -197,6 +201,7 @@
         ul, ol {
             margin-left: 1.5rem;
             margin-bottom: 1rem;
+            list-style-type: disc;
         }
 
         li {
@@ -226,6 +231,15 @@
             margin: 1.5rem 0;
             border-radius: 4px;
         }
+        
+        .company-info ul {
+            list-style-type: none;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+        .company-info li {
+            font-size: 0.9rem;
+        }
 
         .highlight {
             background: rgba(203, 2, 19, 0.1);
@@ -254,15 +268,21 @@
         .toc h3 {
             margin-top: 0;
             color: var(--color-text-main);
+            font-size: 1.75rem; /* Было 1.5rem */
         }
 
         .toc ul {
             margin-left: 1rem;
+            list-style-type: decimal;
+        }
+        .toc li {
+            font-size: 0.95rem;
         }
 
         .toc a {
             color: var(--color-text-secondary);
             transition: color 0.3s;
+            font-weight: 500;
         }
 
         .toc a:hover {
@@ -276,11 +296,15 @@
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 3rem; /* Было 2.5rem */
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 2.25rem; /* Было 1.75rem */
+            }
+
+            h3 {
+                font-size: 1.75rem; /* Было 1.35rem */
             }
         }
 
@@ -368,7 +392,7 @@
     <main>
         <div class="policy-container">
             <!-- Russian Version -->
-            <div id="content-ru" class="lang-content active">
+            <div id="content-ru" class="lang-content">
                 <h1>Политика конфиденциальности</h1>
                 <p class="effective-date">Дата вступления в силу: 15 ноября 2025 г.</p>
 
@@ -395,7 +419,7 @@
 
                 <h2 id="ru-1">1. ОБЩИЕ ПОЛОЖЕНИЯ</h2>
                 
-                <p>1.1. Настоящая Политика конфиденциальности (далее - «Политика») описывает, как:</p>
+                <p>1.1. Настоящая Политика конфиденциальности (далее — «Политика») описывает, как:</p>
 
                 <div class="company-info">
                     <strong>Для международных клиентов:</strong>
@@ -418,15 +442,15 @@
                     </ul>
                 </div>
 
-                <p>(далее совместно - «DIVO», «Компания», «мы» или «Оператор») собирает, использует, хранит и защищает персональные данные пользователей сайта divo.ai и сервисов (далее - «Пользователь», «вы»).</p>
+                <p>(далее совместно — «DIVO», «Компания», «мы» или «Оператор») собирает, использует, хранит и защищает персональные данные пользователей сайта divo.ai и сервисов (далее — «Пользователь», «вы»).</p>
 
                 <p>1.2. Используя наш сайт, отправляя формы, используя SaaS-продукты или заказывая услуги, вы соглашаетесь с условиями настоящей Политики.</p>
 
                 <p>1.3. Мы серьезно относимся к защите вашей конфиденциальности и обязуемся обрабатывать ваши данные в соответствии с применимым законодательством:</p>
                 <ul>
                     <li>Закон Грузии о защите персональных данных (совместим с GDPR, действует с марта 2024)</li>
-                    <li>GDPR (General Data Protection Regulation) - для клиентов из Европейского Союза</li>
-                    <li>Федеральный закон РФ №152-ФЗ "О персональных данных" - для клиентов из России</li>
+                    <li>GDPR (General Data Protection Regulation) — для клиентов из Европейского Союза</li>
+                    <li>Федеральный закон РФ №152-ФЗ "О персональных данных" — для клиентов из России</li>
                 </ul>
 
                 <p>1.4. Если у вас есть вопросы по данной Политике, свяжитесь с нами: <a href="mailto:info@divo.solutions">info@divo.solutions</a></p>
@@ -466,7 +490,7 @@
                     <li>Поисковые запросы на сайте</li>
                 </ul>
 
-                <h3>2.4. Данные при использовании SaaS-продуктов (Françoise, Clio):</h3>
+                <h3>2.4. Данные при использовании SaaS-продуктов (Françoise, Klio):</h3>
                 <ul>
                     <li>Загруженные файлы (дизайн-макеты, документы, изображения)</li>
                     <li>Текстовые запросы и промпты к AI-системам</li>
@@ -485,7 +509,7 @@
                 <ul>
                     <li>Данные банковских карт обрабатываются <span class="highlight">напрямую платёжным провайдером NOWPayments</span></li>
                     <li>Мы <span class="highlight">НЕ храним и НЕ имеем доступа</span> к полным номерам карт, CVV-кодам, PIN-кодам</li>
-                    <li>NOWPayments сертифицирован по стандарту <strong>PCI DSS Level 1</strong> - высшему уровню безопасности для обработки карточных данных</li>
+                    <li>NOWPayments сертифицирован по стандарту <strong>PCI DSS Level 1</strong> — высшему уровню безопасности для обработки карточных данных</li>
                     <li>Мы получаем от NOWPayments только:
                         <ul>
                             <li>Статус транзакции (успешно/отклонено)</li>
@@ -542,7 +566,7 @@
                 <ul>
                     <li>Обработка заказов и предоставление доступа к SaaS-продуктам</li>
                     <li>Отправка уникальных ссылок доступа и API-ключей</li>
-                    <li>Обеспечение работы AI-систем (Françoise, Clio)</li>
+                    <li>Обеспечение работы AI-систем (Françoise, Klio)</li>
                     <li>Выполнение работ по Custom AI Engineering</li>
                     <li>Техническая поддержка и консультации</li>
                 </ul>
@@ -580,7 +604,7 @@
                     <li>Образовательный контент и кейсы</li>
                     <li>Опросы удовлетворенности</li>
                 </ul>
-                <p><em>Вы можете отписаться от маркетинговых рассылок в любое время, кликнув на ссылку "Отписаться" в письме или написав на info@divo.solutions</em></p>
+                <p><em>Вы можете отписаться от маркетинговых рассылок в любое время, кликнув на ссылку "Отписаться" в письме или написав на <a href="mailto:info@divo.solutions">info@divo.solutions</a></em></p>
 
                 <h3>3.6. Аналитика и улучшение сервисов:</h3>
                 <ul>
@@ -610,7 +634,7 @@
                 <p><strong>5.1. Контактные данные из форм и заказов:</strong></p>
                 <ul>
                     <li>3 года с последнего взаимодействия (для потенциальных клиентов)</li>
-                    <li>На период действия договора + 5 лет (для активных клиентов) - требования налогового законодательства</li>
+                    <li>На период действия договора + 5 лет (для активных клиентов) — требования налогового законодательства</li>
                 </ul>
 
                 <p><strong>5.2. Данные, загруженные в SaaS-продукты:</strong></p>
@@ -655,16 +679,16 @@
 
                 <h3>6.2.1. Сервисы аналитики и маркетинга:</h3>
                 <ul>
-                    <li>Google Analytics (США) - для аналитики сайта</li>
-                    <li>Яндекс.Метрика (Россия) - для аналитики сайта</li>
-                    <li>Meta Pixel / Facebook Pixel (США) - для рекламных кампаний (только с вашего согласия через cookies)</li>
-                    <li>LinkedIn Insight Tag (США) - для B2B-маркетинга</li>
+                    <li>Google Analytics (США) — для аналитики сайта</li>
+                    <li>Яндекс.Метрика (Россия) — для аналитики сайта</li>
+                    <li>Meta Pixel / Facebook Pixel (США) — для рекламных кампаний (только с вашего согласия через cookies)</li>
+                    <li>LinkedIn Insight Tag (США) — для B2B-маркетинга</li>
                 </ul>
                 <p><em>Все эти сервисы работают на основании Стандартных договорных оговорок (SCC) для соответствия GDPR.</em></p>
 
                 <h3>6.2.2. Платёжные системы:</h3>
                 <ul>
-                    <li><strong>NOWPayments (Нидерланды/международные)</strong> - для обработки криптовалютных и карточных платежей от международных клиентов
+                    <li><strong>NOWPayments (Нидерланды/международные)</strong> — для обработки криптовалютных и карточных платежей от международных клиентов
                         <ul>
                             <li>Политика конфиденциальности: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
                             <li>Сертификация: PCI DSS Level 1</li>
@@ -672,22 +696,22 @@
                             <li>Передаваемые данные: email, сумма платежа, данные карты (обрабатываются напрямую NOWPayments, мы их не видим)</li>
                         </ul>
                     </li>
-                    <li><strong>CloudPayments (Россия)</strong> - для обработки платежей картами от клиентов из РФ
+                    <li><strong>CloudPayments (Россия)</strong> — для обработки платежей картами от клиентов из РФ
                         <ul>
                             <li>Сертификация: PCI DSS Level 1</li>
                         </ul>
                     </li>
-                    <li><strong>Криптовалютные кошельки</strong> - децентрализованные, данные транзакций публичны в блокчейне</li>
+                    <li><strong>Криптовалютные кошельки</strong> — децентрализованные, данные транзакций публичны в блокчейне</li>
                 </ul>
 
                 <h3>6.2.3. Облачные провайдеры и хостинг:</h3>
                 <ul>
-                    <li>GitHub Pages - для хранения данных и работы сервисов</li>
+                    <li>GitHub Pages — для хранения данных и работы сервисов</li>
                 </ul>
 
                 <h3>6.2.4. Email-сервисы:</h3>
                 <ul>
-                    <li>Zoho Mail - для отправки транзакционных и маркетинговых писем</li>
+                    <li>Zoho Mail — для отправки транзакционных и маркетинговых писем</li>
                 </ul>
 
                 <h3>6.2.5. Государственные органы:</h3>
@@ -709,21 +733,297 @@
                 <p><strong>7.2. Передача данных за пределы ЕС/Грузии:</strong></p>
                 <p>Некоторые сервисы, которые мы используем, расположены в странах за пределами Европейского Союза (например, США). Для обеспечения защиты ваших данных мы применяем следующие механизмы:</p>
                 <ul>
-                    <li><strong>Стандартные договорные оговорки (SCC)</strong> - одобренные Европейской Комиссией механизмы защиты данных</li>
-                    <li><strong>Adequacy Decision</strong> - для стран, признанных ЕС обеспечивающими адекватный уровень защиты</li>
+                    <li><strong>Стандартные договорные оговорки (SCC)</strong> — одобренные Европейской Комиссией механизмы защиты данных</li>
+                    <li><strong>Adequacy Decision</strong> — для стран, признанных ЕС обеспечивающими адекватный уровень защиты</li>
                     <li><strong>Дополнительные технические меры:</strong> шифрование, псевдонимизация, минимизация данных</li>
                 </ul>
 
                 <p><strong>7.3. Грузия и GDPR:</strong></p>
                 <p>Грузия применяет законодательство о защите персональных данных, совместимое с GDPR (Закон о защите персональных данных, вступил в силу в марте 2024). Это означает, что ваши данные защищены в соответствии с европейскими стандартами.</p>
 
-                <!-- Остальные разделы продолжаются аналогично... -->
-                <!-- Для краткости я не включаю весь текст, но все разделы из вашего файла должны быть здесь -->
+                <h2 id="ru-8">8. ОБРАБОТКА ДАННЫХ ДЛЯ AI-ПРОДУКТОВ</h2>
+
+                <p><strong>8.1. Françoise и Klio — что происходит с вашими данными:</strong></p>
+                <p>Мы НЕ используем ваши данные для обучения AI-моделей без вашего явного письменного согласия. Это означает:</p>
+                <ul>
+                    <li>Дизайн-файлы, загруженные в Françoise, не используются для улучшения моделей</li>
+                    <li>Тексты и документы, загруженные в Klio, не используются для обучения</li>
+                    <li>Ваши промпты и запросы остаются конфиденциальными</li>
+                </ul>
+
+                <p><strong>8.2. Как обрабатываются данные:</strong></p>
+                <ul>
+                    <li>Файлы обрабатываются в реальном времени для предоставления результата</li>
+                    <li>Данные хранятся в зашифрованном виде на защищенных серверах</li>
+                    <li>Доступ к данным имеют только авторизованные системы и (в исключительных случаях) сотрудники техподдержки для решения проблем</li>
+                    <li>После окончания оплаченного периода + 30 дней данные удаляются</li>
+                </ul>
+
+                <p><strong>8.3. Использование сторонних AI-моделей:</strong></p>
+                <p>Françoise и Klio могут использовать сторонние AI-модели (например, OpenAI GPT, Anthropic Claude, Google Gemini) для обработки запросов. В этих случаях:</p>
+                <ul>
+                    <li>Данные передаются провайдерам по защищенным каналам</li>
+                    <li>Провайдеры обязаны не использовать данные для обучения своих моделей (согласно их Business/Enterprise условиям)</li>
+                    <li>Мы используем только провайдеров с GDPR-совместимыми политиками</li>
+                </ul>
+
+                <p><strong>8.4. Право на объяснение автоматизированных решений:</strong></p>
+                <p>Если AI-система принимает решение, которое существенно влияет на вас (например, отклонение заказа), вы имеете право:</p>
+                <ul>
+                    <li>Получить объяснение логики принятия решения</li>
+                    <li>Оспорить решение</li>
+                    <li>Потребовать вмешательства человека</li>
+                </ul>
+
+                <h2 id="ru-9">9. КРИПТОВАЛЮТНЫЕ ПЛАТЕЖИ И ДАННЫЕ</h2>
+
+                <p><strong>9.1. Какие данные собираются при криптоплатежах:</strong></p>
+                <ul>
+                    <li>Адрес криптовалютного кошелька отправителя (публичная информация в блокчейне)</li>
+                    <li>Hash транзакции для подтверждения оплаты</li>
+                    <li>Сумма, валюта, дата и время транзакции</li>
+                    <li>Для платежей свыше $10,000: KYC-документы (паспорт, подтверждение адреса, источник средств)</li>
+                </ul>
+
+                <p><strong>9.2. Особенности обработки:</strong></p>
+                <ul>
+                    <li>Мы НЕ храним приватные ключи — у нас нет доступа к вашим криптокошелькам</li>
+                    <li>Адреса кошельков и транзакции публичны — любой может посмотреть их в блокчейн-эксплорере</li>
+                    <li>Мы не можем удалить информацию из блокчейна (это децентрализованная система)</li>
+                </ul>
+
+                <p><strong>9.3. Цели обработки криптоданных:</strong></p>
+                <ul>
+                    <li>Подтверждение оплаты</li>
+                    <li>Финансовая и налоговая отчетность</li>
+                    <li>Соблюдение законодательства о противодействии отмыванию денег (AML)</li>
+                    <li>Предотвращение мошенничества</li>
+                </ul>
+
+                <p><strong>9.4. AML/KYC для крупных платежей:</strong></p>
+                <p>При платежах свыше $10,000 мы обязаны по законодательству:</p>
+                <ul>
+                    <li>Проверить вашу личность (KYC — Know Your Customer)</li>
+                    <li>Запросить подтверждение источника средств</li>
+                    <li>Проверить отсутствие санкций</li>
+                    <li>Хранить эти данные 5 лет</li>
+                </ul>
+                <p>Для этого мы можем использовать сервисы скрининга (Chainalysis, Elliptic), которые проверяют криптоадреса на связь с преступной деятельностью.</p>
+                
+                <h2 id="ru-9a">9A. ОБРАБОТКА ДАННЫХ ПЛАТЁЖНЫМ ПРОВАЙДЕРОМ NOWPAYMENTS</h2>
+
+                <h3>9A.1. Роль NOWPayments:</h3>
+                <p>NOWPayments выступает независимым обработчиком данных (data processor) для карточных и криптовалютных платежей. Мы не контролируем и не имеем доступа к данным, обрабатываемым NOWPayments.</p>
+
+                <h3>9A.2. Какие данные обрабатывает NOWPayments:</h3>
+                <p>Для карточных платежей:</p>
+                <ul>
+                    <li>Полные данные банковской карты (номер, срок действия, CVV)</li>
+                    <li>Имя держателя карты</li>
+                    <li>Email для отправки квитанций</li>
+                    <li>IP-адрес для fraud prevention</li>
+                    <li>Данные устройства (браузер, ОС)</li>
+                </ul>
+                <p>Для криптовалютных платежей:</p>
+                <ul>
+                    <li>Адрес кошелька отправителя</li>
+                    <li>Выбранная криптовалюта</li>
+                    <li>Сумма платежа</li>
+                </ul>
+
+                <h3>9A.3. Как NOWPayments использует данные:</h3>
+                <ul>
+                    <li>Обработка платежей</li>
+                    <li>Предотвращение мошенничества (fraud detection)</li>
+                    <li>Соблюдение требований AML/KYC</li>
+                    <li>Техническая поддержка пользователей</li>
+                    <li>Соблюдение требований регуляторов</li>
+                </ul>
+
+                <h3>9A.4. Безопасность NOWPayments:</h3>
+                <ul>
+                    <li>Сертификация PCI DSS Level 1</li>
+                    <li>Шифрование всех данных при передаче и хранении</li>
+                    <li>Регулярные аудиты безопасности</li>
+                    <li>Соблюдение GDPR для клиентов из ЕС</li>
+                </ul>
+
+                <h3>9A.5. Ваши права в отношении данных NOWPayments:</h3>
+                <ul>
+                    <li>Вы можете запросить информацию о своих платежах у NOWPayments напрямую: <a href="mailto:support@nowpayments.io">support@nowpayments.io</a></li>
+                    <li>Вы можете потребовать удаления данных в соответствии с GDPR</li>
+                    <li>Политика конфиденциальности NOWPayments: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                </ul>
+
+                <h3>9A.6. Мы не несём ответственности за:</h3>
+                <ul>
+                    <li>Обработку данных NOWPayments (они действуют как независимый контролер данных для карточных платежей)</li>
+                    <li>Утечки данных на стороне NOWPayments</li>
+                    <li>Задержки или ошибки в обработке платежей NOWPayments</li>
+                </ul>
+                <p>Если у вас есть вопросы или жалобы на обработку данных NOWPayments, обращайтесь напрямую к ним: <a href="mailto:support@nowpayments.io">support@nowpayments.io</a></p>
+
+                <h2 id="ru-10">10. БЕЗОПАСНОСТЬ ДАННЫХ</h2>
+
+                <h3>10.1. Технические меры защиты:</h3>
+                <ul>
+                    <li><strong>Шифрование при передаче:</strong> SSL/TLS 256-bit для всех соединений</li>
+                    <li><strong>Шифрование при хранении:</strong> данные на серверах хранятся в зашифрованном виде</li>
+                    <li><strong>Защита от несанкционированного доступа:</strong> многофакторная аутентификация, контроль доступа</li>
+                    <li><strong>Резервное копирование:</strong> регулярные бэкапы для защиты от потери данных</li>
+                    <li><strong>Мониторинг безопасности:</strong> отслеживание подозрительной активности 24/7</li>
+                    <li><strong>Обновления безопасности:</strong> регулярные патчи и обновления ПО</li>
+                </ul>
+
+                <h3>10.2. Организационные меры:</h3>
+                <ul>
+                    <li>Доступ к персональным данным имеют только авторизованные сотрудники</li>
+                    <li>Все сотрудники проходят обучение по защите данных и подписывают NDA</li>
+                    <li>Регулярные аудиты безопасности (внутренние и внешние)</li>
+                    <li>Политики и процедуры обработки данных</li>
+                </ul>
+
+                <h3>10.3. В случае утечки данных:</h3>
+                <p>В маловероятном случае утечки персональных данных мы:</p>
+                <ul>
+                    <li>Уведомим вас по email в течение 72 часов</li>
+                    <li>Уведомим соответствующие регуляторные органы (если требуется по GDPR)</li>
+                    <li>Предпримем меры для минимизации ущерба</li>
+                    <li>Расследуем причины и устраним уязвимости</li>
+                </ul>
+
+                <h3>10.4. Ограничения:</h3>
+                <p>Несмотря на все меры, абсолютная безопасность невозможна. Вы также несете ответственность за:</p>
+                <ul>
+                    <li>Безопасность уникальных ссылок доступа и API-ключей</li>
+                    <li>Безопасность email-аккаунта, на который отправляется доступ</li>
+                    <li>Безопасность устройств, с которых вы используете сервисы</li>
+                </ul>
+
+                <h2 id="ru-11">11. COOKIES И ОТСЛЕЖИВАНИЕ</h2>
+
+                <h3>11.1. Что такое cookies:</h3>
+                <p>Cookies — это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении сайта. Они помогают сайту "запоминать" вас и ваши предпочтения.</p>
+
+                <h3>11.2. Какие cookies мы используем:</h3>
+                
+                <h3>11.2.1. Обязательные cookies (Necessary):</h3>
+                <ul>
+                    <li>Сохранение языка сайта</li>
+                    <li>Сохранение согласия на cookies</li>
+                    <li>Безопасность и предотвращение мошенничества</li>
+                    <li>Работа корзины и оформления заказа</li>
+                </ul>
+                <p>Эти cookies критичны для работы сайта, и мы не можем их отключить.</p>
+                
+                <h3>11.2.2. Аналитические cookies (Analytics):</h3>
+                <ul>
+                    <li>Google Analytics — анализ посещаемости, поведения пользователей</li>
+                    <li>Яндекс.Метрика — аналитика для российской аудитории</li>
+                    <li>Hotjar / Microsoft Clarity — тепловые карты, записи сессий</li>
+                </ul>
+                <p>Эти cookies помогают нам понять, как улучшить сайт. Вы можете отключить их в настройках cookies.</p>
+
+                <h3>11.2.3. Маркетинговые cookies (Marketing):</h3>
+                <ul>
+                    <li>Meta Pixel (Facebook) — для показа релевантной рекламы</li>
+                    <li>LinkedIn Insight Tag — для B2B-маркетинга</li>
+                    <li>Google Ads — для рекламных кампаний</li>
+                </ul>
+                <p>Эти cookies используются для показа персонализированной рекламы. Вы можете отключить их в настройках cookies.</p>
+
+                <h3>11.3. Сторонние cookies:</h3>
+                <p>Некоторые сервисы на нашем сайте (YouTube видео, Google Maps и др.) могут устанавливать свои cookies. Мы не контролируем эти cookies — обратитесь к политикам конфиденциальности соответствующих сервисов.</p>
+
+                <h3>11.4. Как управлять cookies:</h3>
+                <ul>
+                    <li>Через наш баннер cookies при первом посещении сайта</li>
+                    <li>В настройках браузера: Chrome, Firefox, Safari позволяют блокировать или удалять cookies</li>
+                    <li>Через настройки на странице divo.ai/cookie-settings (если есть)</li>
+                </ul>
+
+                <h3>11.5. Срок действия cookies:</h3>
+                <ul>
+                    <li>Сессионные cookies: удаляются при закрытии браузера</li>
+                    <li>Постоянные cookies: до 2 лет (аналитика), до 1 года (маркетинг)</li>
+                </ul>
+
+                <h2 id="ru-12">12. ВАШИ ПРАВА</h2>
+                <p>В соответствии с GDPR, законодательством Грузии и РФ №152-ФЗ, вы имеете следующие права:</p>
+                
+                <h3>12.1. Право на доступ:</h3>
+                <p>Вы можете запросить копию всех персональных данных, которые мы о вас храним. Мы предоставим их в течение 30 дней в машиночитаемом формате (PDF, CSV, JSON).</p>
+                
+                <h3>12.2. Право на исправление:</h3>
+                <p>Если ваши данные неточны или неполны, вы можете запросить их исправление. Мы обновим данные в течение 14 дней.</p>
+                
+                <h3>12.3. Право на удаление ("право на забвение"):</h3>
+                <p>Вы можете запросить удаление своих персональных данных в следующих случаях:</p>
+                <ul>
+                    <li>Данные больше не нужны для целей, для которых собирались</li>
+                    <li>Вы отзываете согласие (если обработка основана на согласии)</li>
+                    <li>Вы возражаете против обработки</li>
+                    <li>Данные обрабатывались незаконно</li>
+                </ul>
+                <p><strong>Ограничения:</strong> Мы не можем удалить данные, если обязаны их хранить по закону (финансовые документы — 5 лет, KYC — 5 лет).</p>
+
+                <h3>12.4. Право на ограничение обработки:</h3>
+                <p>Вы можете потребовать временно прекратить обработку ваших данных (например, пока проверяется их точность или законность обработки).</p>
+
+                <h3>12.5. Право на портируемость данных:</h3>
+                <p>Вы можете получить свои данные в структурированном формате (CSV, JSON) и передать их другому провайдеру.</p>
+
+                <h3>12.6. Право на возражение:</h3>
+                <p>Вы можете возразить против обработки данных на основании законных интересов или для прямого маркетинга. После возражения мы прекратим обработку (кроме случаев, когда есть законные основания).</p>
+
+                <h3>12.7. Право на отзыв согласия:</h3>
+                <p>Если обработка основана на вашем согласии, вы можете отозвать его в любое время. Это не влияет на законность обработки до отзыва.</p>
+
+                <h3>12.8. Право не быть объектом автоматизированного принятия решений:</h3>
+                <p>Вы имеете право не подвергаться решениям, основанным исключительно на автоматизированной обработке (включая AI), если это существенно влияет на вас.</p>
+
+                <h3>12.9. Право на подачу жалобы:</h3>
+                <p>Вы можете подать жалобу в надзорный орган по защите данных:</p>
+                <ul>
+                    <li>Для ЕС: национальный регулятор вашей страны</li>
+                    <li>Для Грузии: Personal Data Protection Service of Georgia</li>
+                    <li>Для России: Роскомнадзор</li>
+                </ul>
+
+                <h3>Как реализовать свои права:</h3>
+                <p>Отправьте запрос на email: <a href="mailto:info@divo.solutions">info@divo.solutions</a> с темой письма "Запрос на реализацию прав субъекта данных / Data Subject Rights Request".</p>
+                <p>Мы ответим в течение <strong>30 дней</strong> (может быть продлено до 60 дней в сложных случаях с уведомлением).</p>
+
+                <h2 id="ru-13">13. ИЗМЕНЕНИЯ В ПОЛИТИКЕ</h2>
+                
+                <p>13.1. Мы можем обновлять настоящую Политику конфиденциальности для отражения изменений в наших практиках, законодательстве или функционале сервисов.</p>
+                
+                <p>13.2. <strong>Уведомление об изменениях:</strong></p>
+                <ul>
+                    <li>Актуальная версия всегда доступна на divo.ai/privacy с указанием даты последнего обновления</li>
+                    <li>При существенных изменениях мы уведомим вас по email за 30 дней до вступления в силу</li>
+                    <li>Продолжение использования сервисов после вступления изменений в силу означает ваше согласие с новой Политикой</li>
+                </ul>
+                
+                <p>13.3. Мы рекомендуем периодически просматривать эту страницу для ознакомления с актуальными условиями.</p>
 
                 <h2 id="ru-14">14. КОНТАКТЫ</h2>
 
                 <p><strong>По вопросам защиты персональных данных:</strong></p>
                 <p>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></p>
+
+                <p><strong>Общие вопросы:</strong></p>
+                <ul>
+                    <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a> (юридические вопросы)</li>
+                    <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a> (техническая поддержка)</li>
+                </ul>
+                
+                <p><strong>По вопросам платежей через NOWPayments:</strong></p>
+                <ul>
+                    <li>Техподдержка NOWPayments: <a href="mailto:support@nowpayments.io">support@nowpayments.io</a></li>
+                    <li>Политика конфиденциальности: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                    <li>Условия использования: <a href="https://nowpayments.io/terms-of-use" target="_blank">https://nowpayments.io/terms-of-use</a></li>
+                </ul>
 
                 <div class="company-info">
                     <strong>Для международных клиентов (грузинское ИП):</strong>
@@ -746,13 +1046,21 @@
                     </ul>
                 </div>
 
+                <p><strong>Надзорные органы:</strong></p>
+                <ul>
+                    <li>ЕС: <a href="https://edpb.europa.eu/about-edpb/board/members_en" target="_blank">Список регуляторов</a></li>
+                    <li>Грузия: <a href="https://personaldata.ge/" target="_blank">Personal Data Protection Service</a></li>
+                    <li>Россия: <a href="https://rkn.gov.ru/" target="_blank">Роскомнадзор</a></li>
+                </ul>
+
                 <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--color-bg-light);">
 
                 <p style="text-align: center; color: var(--color-text-secondary); font-style: italic; font-size: 0.875rem;">Последнее обновление: 15 ноября 2025 г.</p>
+                <p style="text-align: center;"><strong>Используя сервисы DIVO, вы подтверждаете, что прочитали и поняли настоящую Политику конфиденциальности.</strong></p>
             </div>
 
             <!-- English Version -->
-            <div id="content-en" class="lang-content">
+            <div id="content-en" class="lang-content active">
                 <h1>Privacy Policy</h1>
                 <p class="effective-date">Effective Date: November 15, 2025</p>
 
@@ -768,6 +1076,7 @@
                         <li><a href="#en-7">7. International Data Transfers</a></li>
                         <li><a href="#en-8">8. AI Product Data Processing</a></li>
                         <li><a href="#en-9">9. Cryptocurrency Payments and Data</a></li>
+                        <li><a href="#en-9a">9A. Data Processing by Payment Provider NOWPayments</a></li>
                         <li><a href="#en-10">10. Data Security</a></li>
                         <li><a href="#en-11">11. Cookies and Tracking</a></li>
                         <li><a href="#en-12">12. Your Rights</a></li>
@@ -803,11 +1112,618 @@
 
                 <p>(hereinafter collectively "DIVO", "Company", "we" or "Operator") collects, uses, stores, and protects personal data of users of the divo.ai website and services (hereinafter "User", "you").</p>
 
-                <!-- Продолжение английской версии аналогично русской... -->
+                <p>1.2. By using our website, submitting forms, using SaaS products, or ordering services, you agree to the terms of this Policy.</p>
+
+                <p>1.3. We take your privacy seriously and commit to processing your data in accordance with applicable legislation:</p>
+                <ul>
+                    <li>Law of Georgia on Personal Data Protection (GDPR-compatible, effective March 2024)</li>
+                    <li>GDPR (General Data Protection Regulation) — for clients from the European Union</li>
+                    <li>Federal Law of RF No. 152-FZ "On Personal Data" — for clients from Russia</li>
+                </ul>
+
+                <p>1.4. If you have questions about this Policy, contact us: <a href="mailto:info@divo.solutions">info@divo.solutions</a></p>
+
+                <h2 id="en-2">2. WHAT DATA WE COLLECT</h2>
+
+                <h3>2.1. Contact data (when filling forms or placing orders):</h3>
+                <ul>
+                    <li>First and last name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Company name</li>
+                    <li>Job title</li>
+                    <li>Country/city</li>
+                    <li>Task or request description</li>
+                </ul>
+
+                <h3>2.2. Technical data (automatically when visiting the site):</h3>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Operating system</li>
+                    <li>Screen resolution</li>
+                    <li>Browser language</li>
+                    <li>Device information (type, model)</li>
+                    <li>Referrer (which site you came from)</li>
+                    <li>UTM tags and advertising campaign parameters</li>
+                    <li>Cookies and similar tracking technologies</li>
+                </ul>
+
+                <h3>2.3. Service usage data:</h3>
+                <ul>
+                    <li>Pages you visited</li>
+                    <li>Time spent on pages</li>
+                    <li>Clicks and actions on the site</li>
+                    <li>Date and time of visit</li>
+                    <li>Search queries on the site</li>
+                </ul>
+
+                <h3>2.4. Data when using SaaS products (Françoise, Klio):</h3>
+                <ul>
+                    <li>Uploaded files (design layouts, documents, images)</li>
+                    <li>Text queries and prompts to AI systems</li>
+                    <li>Usage settings and preferences</li>
+                    <li>AI work results (generated reports, proposals)</li>
+                    <li>File metadata (size, format, creation date)</li>
+                    <li>Number of API requests</li>
+                    <li>Service usage time</li>
+                </ul>
+
+                <h3>2.5. Payment information:</h3>
+                <strong>For payments via NOWPayments (international clients):</strong>
                 
+                <p><strong>Card payments:</strong></p>
+                <ul>
+                    <li>Bank card data is processed <span class="highlight">directly by payment provider NOWPayments</span></li>
+                    <li>We <span class="highlight">DO NOT store and DO NOT have access</span> to full card numbers, CVV codes, PIN codes</li>
+                    <li>NOWPayments is <strong>PCI DSS Level 1</strong> certified — the highest security level for card data processing</li>
+                    <li>We only receive from NOWPayments:
+                        <ul>
+                            <li>Transaction status (successful/declined)</li>
+                            <li>Unique payment identifier (transaction ID)</li>
+                            <li>Payment amount</li>
+                            <li>Payment method type (Visa/Mastercard/Crypto)</li>
+                            <li>Payer's email (if provided)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p><strong>Cryptocurrency payments:</strong></p>
+                <ul>
+                    <li>Sender's cryptocurrency wallet address (public blockchain information)</li>
+                    <li>Transaction hash</li>
+                    <li>Payment amount and currency</li>
+                    <li>Transaction date and time</li>
+                    <li>Selected cryptocurrency for payment</li>
+                </ul>
+
+                <p><strong>General payment information:</strong></p>
+                <ul>
+                    <li>Payment and order history</li>
+                    <li>Invoices and financial documents</li>
+                    <li>For payments over $10,000: KYC documents (see section 2.6)</li>
+                </ul>
+
+                <p><strong>For payments via CloudPayments (RF clients):</strong></p>
+                <ul>
+                    <li>Card data is processed by CloudPayments (PCI DSS Level 1)</li>
+                    <li>We only receive last 4 digits of card number, card type, transaction status</li>
+                    <li>For recurring payments, CloudPayments creates a token (without disclosing card data)</li>
+                </ul>
+
+                <h3>2.6. KYC/AML data (for crypto payments over $10,000):</h3>
+                <ul>
+                    <li>Copy of identity document (passport, ID)</li>
+                    <li>Address registration confirmation</li>
+                    <li>Company documents (for legal entities)</li>
+                    <li>Information about source of funds</li>
+                </ul>
+
+                <h3>2.7. Communication data:</h3>
+                <ul>
+                    <li>Email correspondence with our support</li>
+                    <li>Consultation recordings (with your consent)</li>
+                    <li>Comments and reviews</li>
+                    <li>Information provided during meetings or calls</li>
+                </ul>
+
+                <h2 id="en-3">3. PURPOSES OF DATA PROCESSING</h2>
+
+                <h3>3.1. Service and product provision:</h3>
+                <ul>
+                    <li>Order processing and providing access to SaaS products</li>
+                    <li>Sending unique access links and API keys</li>
+                    <li>Ensuring AI systems operation (Françoise, Klio)</li>
+                    <li>Performing Custom AI Engineering work</li>
+                    <li>Technical support and consultations</li>
+                </ul>
+
+                <h3>3.2. Client communication:</h3>
+                <ul>
+                    <li>Responding to inquiries and requests</li>
+                    <li>Sending order and payment confirmations</li>
+                    <li>Notifications about work and service status</li>
+                    <li>Informing about technical work or issues</li>
+                    <li>Subscription renewal reminders</li>
+                </ul>
+
+                <h3>3.3. Payment processing and financial reporting:</h3>
+                <ul>
+                    <li>Conducting financial transactions</li>
+                    <li>Issuing invoices and generating documents</li>
+                    <li>Compliance with tax legislation</li>
+                    <li>Accounting</li>
+                    <li>Fraud prevention</li>
+                </ul>
+
+                <h3>3.4. Legal compliance:</h3>
+                <ul>
+                    <li>AML/KYC checks for cryptocurrency payments</li>
+                    <li>Responses to government inquiries</li>
+                    <li>Compliance with personal data protection requirements</li>
+                    <li>Dispute resolution and protecting our rights</li>
+                </ul>
+
+                <h3>3.5. Marketing (only with your consent):</h3>
+                <ul>
+                    <li>Sending news about new features and products</li>
+                    <li>Informing about special offers</li>
+                    <li>Educational content and case studies</li>
+                    <li>Satisfaction surveys</li>
+                </ul>
+                <p><em>You can unsubscribe from marketing emails at any time by clicking the "Unsubscribe" link in the email or writing to <a href="mailto:info@divo.solutions">info@divo.solutions</a></em></p>
+
+                <h3>3.6. Analytics and service improvement:</h3>
+                <ul>
+                    <li>Analyzing user behavior on the site</li>
+                    <li>Studying marketing campaign effectiveness</li>
+                    <li>Improving user experience</li>
+                    <li>Developing new features</li>
+                    <li>A/B testing</li>
+                </ul>
+
+                <h2 id="en-4">4. LEGAL BASIS FOR PROCESSING</h2>
+
+                <p><strong>4.1. Contract (performance of obligations):</strong></p>
+                <p>Data processing is necessary to fulfill the service agreement concluded with you (providing product access, performing work, technical support).</p>
+
+                <p><strong>4.2. Consent:</strong></p>
+                <p>For marketing communications, consultation recordings, processing of special data categories, we request your explicit consent, which you can withdraw at any time.</p>
+
+                <p><strong>4.3. Legitimate interests:</strong></p>
+                <p>For analytics, service improvement, fraud prevention, we rely on our legitimate interests that do not violate your rights and freedoms.</p>
+
+                <p><strong>4.4. Legal compliance:</strong></p>
+                <p>Data processing for tax reporting, AML/KYC checks, responses to government inquiries is necessary to comply with applicable legislation.</p>
+
+                <h2 id="en-5">5. DATA RETENTION PERIODS</h2>
+
+                <p><strong>5.1. Contact data from forms and orders:</strong></p>
+                <ul>
+                    <li>3 years from last interaction (for potential clients)</li>
+                    <li>Contract period + 5 years (for active clients) — tax legislation requirements</li>
+                </ul>
+
+                <p><strong>5.2. Data uploaded to SaaS products:</strong></p>
+                <ul>
+                    <li>During paid access period</li>
+                    <li>30 days after access ends (for recovery possibility)</li>
+                    <li>Deleted immediately upon your request</li>
+                </ul>
+
+                <p><strong>5.3. Financial documents and payment information:</strong></p>
+                <ul>
+                    <li>5 years from transaction date (tax and accounting legislation requirements)</li>
+                    <li>For cryptocurrency transactions: hash and addresses stored indefinitely (public blockchain information)</li>
+                </ul>
+
+                <p><strong>5.4. KYC/AML documents:</strong></p>
+                <ul>
+                    <li>5 years from last transaction (anti-money laundering legislation requirements)</li>
+                </ul>
+
+                <p><strong>5.5. Technical data and cookies:</strong></p>
+                <ul>
+                    <li>Analytics cookies: up to 2 years</li>
+                    <li>Server logs: up to 12 months</li>
+                    <li>Web analytics data: up to 26 months (Google Analytics standard)</li>
+                </ul>
+
+                <p><strong>5.6. Correspondence and communications:</strong></p>
+                <ul>
+                    <li>Email correspondence: 3 years from last message</li>
+                    <li>Consultation recordings: deleted after use or upon your request</li>
+                    <li>Dispute correspondence: until statute of limitations expires (3 years in most cases)</li>
+                </ul>
+
+                <p>5.7. After retention periods expire, data is deleted or anonymized (depersonalized) for statistical purposes.</p>
+
+                <h2 id="en-6">6. WHO WE SHARE DATA WITH</h2>
+
+                <p>6.1. <span class="highlight">We DO NOT sell or transfer your personal data to third parties for their marketing purposes.</span></p>
+
+                <p>6.2. Data transfer to third parties occurs only in the following cases:</p>
+
+                <h3>6.2.1. Analytics and marketing services:</h3>
+                <ul>
+                    <li>Google Analytics (USA) — for website analytics</li>
+                    <li>Yandex.Metrica (Russia) — for website analytics</li>
+                    <li>Meta Pixel / Facebook Pixel (USA) — for advertising campaigns (only with your cookie consent)</li>
+                    <li>LinkedIn Insight Tag (USA) — for B2B marketing</li>
+                </ul>
+                <p><em>All these services operate on the basis of Standard Contractual Clauses (SCC) for GDPR compliance.</em></p>
+
+                <h3>6.2.2. Payment systems:</h3>
+                <ul>
+                    <li><strong>NOWPayments (Netherlands/international)</strong> — for processing cryptocurrency and card payments from international clients
+                        <ul>
+                            <li>Privacy Policy: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                            <li>Certification: PCI DSS Level 1</li>
+                            <li>Data processing: in accordance with GDPR</li>
+                            <li>Transmitted data: email, payment amount, card data (processed directly by NOWPayments, we don't see it)</li>
+                        </ul>
+                    </li>
+                    <li><strong>CloudPayments (Russia)</strong> — for processing card payments from RF clients
+                        <ul>
+                            <li>Certification: PCI DSS Level 1</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cryptocurrency wallets</strong> — decentralized, transaction data is public on blockchain</li>
+                </ul>
+
+                <h3>6.2.3. Cloud providers and hosting:</h3>
+                <ul>
+                    <li>GitHub Pages — for data storage and service operation</li>
+                </ul>
+
+                <h3>6.2.4. Email services:</h3>
+                <ul>
+                    <li>Zoho Mail — for sending transactional and marketing emails</li>
+                </ul>
+
+                <h3>6.2.5. Government authorities:</h3>
+                <p>Upon lawful request from law enforcement, tax authorities, or courts</p>
+
+                <h3>6.2.6. In case of business sale:</h3>
+                <p>In case of merger, acquisition, or company sale, data may be transferred to new owner (with 30 days notice)</p>
+
+                <p>6.3. All third parties are obligated to maintain confidentiality and use data only for specified purposes.</p>
+
+                <h2 id="en-7">7. INTERNATIONAL DATA TRANSFERS</h2>
+
+                <p><strong>7.1. Where your data is stored:</strong></p>
+                <ul>
+                    <li>Primary servers are located in the European Union and/or Georgia</li>
+                    <li>RF client data may be stored on servers in Russia (when working through Russian IE)</li>
+                </ul>
+
+                <p><strong>7.2. Data transfers outside EU/Georgia:</strong></p>
+                <p>Some services we use are located in countries outside the European Union (e.g., USA). To ensure protection of your data, we apply the following mechanisms:</p>
+                <ul>
+                    <li><strong>Standard Contractual Clauses (SCC)</strong> — European Commission-approved data protection mechanisms</li>
+                    <li><strong>Adequacy Decision</strong> — for countries recognized by EU as ensuring adequate protection level</li>
+                    <li><strong>Additional technical measures:</strong> encryption, pseudonymization, data minimization</li>
+                </ul>
+
+                <p><strong>7.3. Georgia and GDPR:</strong></p>
+                <p>Georgia applies personal data protection legislation compatible with GDPR (Law on Personal Data Protection, effective March 2024). This means your data is protected in accordance with European standards.</p>
+
+                <h2 id="en-8">8. AI PRODUCT DATA PROCESSING</h2>
+
+                <p><strong>8.1. Françoise and Klio — what happens to your data:</strong></p>
+                <p>We DO NOT use your data to train AI models without your explicit written consent. This means:</p>
+                <ul>
+                    <li>Design files uploaded to Françoise are not used to improve models</li>
+                    <li>Texts and documents uploaded to Klio are not used for training</li>
+                    <li>Your prompts and queries remain confidential</li>
+                </ul>
+
+                <p><strong>8.2. How data is processed:</strong></p>
+                <ul>
+                    <li>Files are processed in real-time to provide results</li>
+                    <li>Data is stored encrypted on secure servers</li>
+                    <li>Data access is limited to authorized systems and (in exceptional cases) support staff for problem resolution</li>
+                    <li>After paid period + 30 days, data is deleted</li>
+                </ul>
+
+                <p><strong>8.3. Use of third-party AI models:</strong></p>
+                <p>Françoise and Klio may use third-party AI models (e.g., OpenAI GPT, Anthropic Claude, Google Gemini) to process requests. In these cases:</p>
+                <ul>
+                    <li>Data is transmitted to providers via secure channels</li>
+                    <li>Providers are obligated not to use data to train their models (according to their Business/Enterprise terms)</li>
+                    <li>We only use providers with GDPR-compatible policies</li>
+                </ul>
+
+                <p><strong>8.4. Right to explanation of automated decisions:</strong></p>
+                <p>If an AI system makes a decision that significantly affects you (e.g., order rejection), you have the right to:</p>
+                <ul>
+                    <li>Receive an explanation of the decision-making logic</li>
+                    <li>Challenge the decision</li>
+                    <li>Request human intervention</li>
+                </ul>
+
+                <h2 id="en-9">9. CRYPTOCURRENCY PAYMENTS AND DATA</h2>
+
+                <p><strong>9.1. What data is collected for crypto payments:</strong></p>
+                <ul>
+                    <li>Sender's cryptocurrency wallet address (public blockchain information)</li>
+                    <li>Transaction hash for payment confirmation</li>
+                    <li>Amount, currency, date and time of transaction</li>
+                    <li>For payments over $10,000: KYC documents (passport, address confirmation, source of funds)</li>
+                </ul>
+
+                <p><strong>9.2. Processing specifics:</strong></p>
+                <ul>
+                    <li>We DO NOT store private keys — we have no access to your crypto wallets</li>
+                    <li>Wallet addresses and transactions are public — anyone can view them in blockchain explorer</li>
+                    <li>We cannot delete information from blockchain (it's a decentralized system)</li>
+                </ul>
+
+                <p><strong>9.3. Crypto data processing purposes:</strong></p>
+                <ul>
+                    <li>Payment confirmation</li>
+                    <li>Financial and tax reporting</li>
+                    <li>Compliance with anti-money laundering (AML) legislation</li>
+                    <li>Fraud prevention</li>
+                </ul>
+
+                <p><strong>9.4. AML/KYC for large payments:</strong></p>
+                <p>For payments over $10,000, we are legally obligated to:</p>
+                <ul>
+                    <li>Verify your identity (KYC — Know Your Customer)</li>
+                    <li>Request proof of source of funds</li>
+                    <li>Check absence of sanctions</li>
+                    <li>Store this data for 5 years</li>
+                </ul>
+                <p>For this, we may use screening services (Chainalysis, Elliptic) that check crypto addresses for links to criminal activity.</p>
+                
+                <h2 id="en-9a">9A. DATA PROCESSING BY PAYMENT PROVIDER NOWPAYMENTS</h2>
+
+                <h3>9A.1. NOWPayments role:</h3>
+                <p>NOWPayments acts as an independent data processor for card and cryptocurrency payments. We do not control and do not have access to data processed by NOWPayments.</p>
+
+                <h3>9A.2. What data NOWPayments processes:</h3>
+                <p>For card payments:</p>
+                <ul>
+                    <li>Full bank card data (number, expiration date, CVV)</li>
+                    <li>Cardholder name</li>
+                    <li>Email for receipt delivery</li>
+                    <li>IP address for fraud prevention</li>
+                    <li>Device data (browser, OS)</li>
+                </ul>
+                <p>For cryptocurrency payments:</p>
+                <ul>
+                    <li>Sender wallet address</li>
+                    <li>Selected cryptocurrency</li>
+                    <li>Payment amount</li>
+                </ul>
+
+                <h3>9A.3. How NOWPayments uses data:</h3>
+                <ul>
+                    <li>Payment processing</li>
+                    <li>Fraud prevention (fraud detection)</li>
+                    <li>AML/KYC compliance</li>
+                    <li>User technical support</li>
+                    <li>Regulatory compliance</li>
+                </ul>
+
+                <h3>9A.4. NOWPayments security:</h3>
+                <ul>
+                    <li>PCI DSS Level 1 certification</li>
+                    <li>Encryption of all data in transit and at rest</li>
+                    <li>Regular security audits</li>
+                    <li>GDPR compliance for EU clients</li>
+                </ul>
+
+                <h3>9A.5. Your rights regarding NOWPayments data:</h3>
+                <ul>
+                    <li>You can request information about your payments from NOWPayments directly: <a href="mailto:support@nowpayments.io">support@nowpayments.io</a></li>
+                    <li>You can request data deletion in accordance with GDPR</li>
+                    <li>NOWPayments Privacy Policy: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                </ul>
+
+                <h3>9A.6. We are not responsible for:</h3>
+                <ul>
+                    <li>NOWPayments data processing (they act as independent data controller for card payments)</li>
+                    <li>Data breaches on NOWPayments side</li>
+                    <li>Delays or errors in NOWPayments payment processing</li>
+                </ul>
+                <p>If you have questions or complaints about NOWPayments data processing, contact them directly: <a href="mailto:support@nowpayments.io">support@nowpayments.io</a></p>
+
+                <h2 id="en-10">10. DATA SECURITY</h2>
+
+                <h3>10.1. Technical security measures:</h3>
+                <ul>
+                    <li><strong>Encryption in transit:</strong> SSL/TLS 256-bit for all connections</li>
+                    <li><strong>Encryption at rest:</strong> data on servers is stored encrypted</li>
+                    <li><strong>Unauthorized access protection:</strong> multi-factor authentication, access control</li>
+                    <li><strong>Backup:</strong> regular backups to protect against data loss</li>
+                    <li><strong>Security monitoring:</strong> suspicious activity tracking 24/7</li>
+                    <li><strong>Security updates:</strong> regular patches and software updates</li>
+                </ul>
+
+                <h3>10.2. Organizational measures:</h3>
+                <ul>
+                    <li>Only authorized employees have access to personal data</li>
+                    <li>All employees undergo data protection training and sign NDAs</li>
+                    <li>Regular security audits (internal and external)</li>
+                    <li>Data processing policies and procedures</li>
+                </ul>
+
+                <h3>10.3. In case of data breach:</h3>
+                <p>In the unlikely event of a personal data breach, we will:</p>
+                <ul>
+                    <li>Notify you by email within 72 hours</li>
+                    <li>Notify relevant regulatory authorities (if required by GDPR)</li>
+                    <li>Take measures to minimize damage</li>
+                    <li>Investigate causes and fix vulnerabilities</li>
+                </ul>
+
+                <h3>10.4. Limitations:</h3>
+                <p>Despite all measures, absolute security is impossible. You are also responsible for:</p>
+                <ul>
+                    <li>Security of unique access links and API keys</li>
+                    <li>Security of email account where access is sent</li>
+                    <li>Security of devices from which you use services</li>
+                </ul>
+
+                <h2 id="en-11">11. COOKIES AND TRACKING</h2>
+
+                <h3>11.1. What are cookies:</h3>
+                <p>Cookies are small text files saved on your device when visiting a website. They help the website "remember" you and your preferences.</p>
+
+                <h3>11.2. What cookies we use:</h3>
+                
+                <h3>11.2.1. Necessary cookies:</h3>
+                <ul>
+                    <li>Saving site language</li>
+                    <li>Saving cookie consent</li>
+                    <li>Security and fraud prevention</li>
+                    <li>Shopping cart and checkout functionality</li>
+                </ul>
+                <p>These cookies are critical for site operation, and we cannot disable them.</p>
+                
+                <h3>11.2.2. Analytics cookies:</h3>
+                <ul>
+                    <li>Google Analytics — traffic analysis, user behavior</li>
+                    <li>Yandex.Metrica — analytics for Russian audience</li>
+                    <li>Hotjar / Microsoft Clarity — heatmaps, session recordings</li>
+                </ul>
+                <p>These cookies help us understand how to improve the site. You can disable them in cookie settings.</p>
+
+                <h3>11.2.3. Marketing cookies:</h3>
+                <ul>
+                    <li>Meta Pixel (Facebook) — for showing relevant ads</li>
+                    <li>LinkedIn Insight Tag — for B2B marketing</li>
+                    <li>Google Ads — for advertising campaigns</li>
+                </ul>
+                <p>These cookies are used to show personalized advertising. You can disable them in cookie settings.</p>
+
+                <h3>11.3. Third-party cookies:</h3>
+                <p>Some services on our site (YouTube videos, Google Maps, etc.) may set their own cookies. We do not control these cookies — refer to the privacy policies of respective services.</p>
+
+                <h3>11.4. How to manage cookies:</h3>
+                <ul>
+                    <li>Through our cookie banner on first site visit</li>
+                    <li>In browser settings: Chrome, Firefox, Safari allow blocking or deleting cookies</li>
+                    <li>Through settings on page divo.ai/cookie-settings (if available)</li>
+                </ul>
+
+                <h3>11.5. Cookie lifespan:</h3>
+                <ul>
+                    <li>Session cookies: deleted when browser closes</li>
+                    <li>Persistent cookies: up to 2 years (analytics), up to 1 year (marketing)</li>
+                </ul>
+
+                <h2 id="en-12">12. YOUR RIGHTS</h2>
+                <p>In accordance with GDPR, Georgian legislation, and RF No. 152-FZ, you have the following rights:</p>
+                
+                <h3>12.1. Right of access:</h3>
+                <p>You can request a copy of all personal data we store about you. We will provide it within 30 days in machine-readable format (PDF, CSV, JSON).</p>
+                
+                <h3>12.2. Right to rectification:</h3>
+                <p>If your data is inaccurate or incomplete, you can request its correction. We will update data within 14 days.</p>
+                
+                <h3>12.3. Right to erasure ("right to be forgotten"):</h3>
+                <p>You can request deletion of your personal data in the following cases:</p>
+                <ul>
+                    <li>Data is no longer needed for the purposes for which it was collected</li>
+                    <li>You withdraw consent (if processing is based on consent)</li>
+                    <li>You object to processing</li>
+                    <li>Data was processed unlawfully</li>
+                </ul>
+                <p><strong>Limitations:</strong> We cannot delete data if we are legally obligated to retain it (financial documents — 5 years, KYC — 5 years).</p>
+
+                <h3>12.4. Right to restriction of processing:</h3>
+                <p>You can request to temporarily stop processing your data (e.g., while verifying its accuracy or lawfulness of processing).</p>
+
+                <h3>12.5. Right to data portability:</h3>
+                <p>You can receive your data in structured format (CSV, JSON) and transfer it to another provider.</p>
+
+                <h3>12.6. Right to object:</h3>
+                <p>You can object to data processing based on legitimate interests or for direct marketing. After objection, we will stop processing (except when there are compelling legitimate grounds).</p>
+
+                <h3>12.7. Right to withdraw consent:</h3>
+                <p>If processing is based on your consent, you can withdraw it at any time. This does not affect the lawfulness of processing before withdrawal.</p>
+
+                <h3>12.8. Right not to be subject to automated decision-making:</h3>
+                <p>You have the right not to be subject to decisions based solely on automated processing (including AI) if it significantly affects you.</p>
+
+                <h3>12.9. Right to lodge a complaint:</h3>
+                <p>You can lodge a complaint with a data protection supervisory authority:</p>
+                <ul>
+                    <li>For EU: your country's national regulator</li>
+                    <li>For Georgia: Personal Data Protection Service of Georgia</li>
+                    <li>For Russia: Roskomnadzor</li>
+                </ul>
+
+                <h3>How to exercise your rights:</h3>
+                <p>Send a request to email: <a href="mailto:info@divo.solutions">info@divo.solutions</a> with subject line "Data Subject Rights Request".</p>
+                <p>We will respond within <strong>30 days</strong> (may be extended to 60 days in complex cases with notification).</p>
+
+                <h2 id="en-13">13. POLICY CHANGES</h2>
+                
+                <p>13.1. We may update this Privacy Policy to reflect changes in our practices, legislation, or service functionality.</p>
+                
+                <p>13.2. <strong>Change notification:</strong></p>
+                <ul>
+                    <li>Current version is always available at divo.ai/privacy with last update date</li>
+                    <li>For material changes, we will notify you by email 30 days before taking effect</li>
+                    <li>Continued use of services after changes take effect means your acceptance of new Policy</li>
+                </ul>
+                
+                <p>13.3. We recommend periodically reviewing this page to familiarize yourself with current terms.</p>
+
+                <h2 id="en-14">14. CONTACT INFORMATION</h2>
+
+                <p><strong>Regarding personal data protection:</strong></p>
+                <p>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></p>
+
+                <p><strong>General inquiries:</strong></p>
+                <ul>
+                    <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a> (legal matters)</li>
+                    <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a> (technical support)</li>
+                </ul>
+                
+                <p><strong>Regarding payments via NOWPayments:</strong></p>
+                <ul>
+                    <li>NOWPayments support: <a href="mailto:support@nowpayments.io">support@nowpayments.io</a></li>
+                    <li>Privacy Policy: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                    <li>Terms of Use: <a href="https://nowpayments.io/terms-of-use" target="_blank">https://nowpayments.io/terms-of-use</a></li>
+                </ul>
+
+                <div class="company-info">
+                    <strong>For international clients (Georgian IE):</strong>
+                    <ul>
+                        <li>Individual Entrepreneur DARIA KAMYSHINA</li>
+                        <li>Identification number: 302259641</li>
+                        <li>Address: Akhvlediani, 14, TBILISI</li>
+                        <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="company-info">
+                    <strong>For RF clients (Russian IE):</strong>
+                    <ul>
+                        <li>Individual Entrepreneur КАМЫШИНА ДАРЬЯ ЭДУАРДОВНА</li>
+                        <li>TIN: 772781640947</li>
+                        <li>OGRNIP: 325774600505272</li>
+                        <li>Address: RF, 117623, Moscow, 2-st Melitopolskaya street, 21/3/125</li>
+                        <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    </ul>
+                </div>
+
+                <p><strong>Supervisory authorities:</strong></p>
+                <ul>
+                    <li>EU: <a href="https://edpb.europa.eu/about-edpb/board/members_en" target="_blank">List of regulators</a></li>
+                    <li>Georgia: <a href="https://personaldata.ge/" target="_blank">Personal Data Protection Service</a></li>
+                    <li>Russia: <a href="https://rkn.gov.ru/" target="_blank">Roskomnadzor</a></li>
+                </ul>
+
                 <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--color-bg-light);">
 
                 <p style="text-align: center; color: var(--color-text-secondary); font-style: italic; font-size: 0.875rem;">Last updated: November 15, 2025</p>
+                <p style="text-align: center;"><strong>By using DIVO services, you confirm that you have read and understood this Privacy Policy.</strong></p>
             </div>
         </div>
     </main>
@@ -875,7 +1791,12 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            document.getElementById('btn-' + lang).classList.add('active');
+            // Hаходим обе кнопки (десктоп и мобильную) по ID
+            const desktopBtn = document.getElementById('btn-' + lang);
+            if (desktopBtn) {
+                 desktopBtn.classList.add('active');
+            }
+           
             
             // Обновляем кнопки на мобильных
             const mobileBtnRu = document.getElementById('btn-ru-mobile');
@@ -883,7 +1804,10 @@
             if (mobileBtnRu && mobileBtnEn) {
                 mobileBtnRu.classList.remove('active');
                 mobileBtnEn.classList.remove('active');
-                document.getElementById('btn-' + lang + '-mobile').classList.add('active');
+                const mobileBtn = document.getElementById('btn-' + lang + '-mobile');
+                if (mobileBtn) {
+                    mobileBtn.classList.add('active');
+                }
             }
             
             // Сохраняем выбор в localStorage
@@ -896,9 +1820,28 @@
         // Восстанавливаем выбранный язык при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('selectedLanguage');
+            // По умолчанию активен 'ru', поэтому переключаем только если сохранен 'en'
             if (savedLang && savedLang === 'en') {
                 switchLanguage('en');
+            } else {
+                // Убедимся, что 'ru' активен по умолчанию
+                switchLanguage('ru');
             }
+
+            // Плавная прокрутка для якорей
+            document.querySelectorAll('.toc a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
 
         // Мобильное меню
@@ -906,28 +1849,6 @@
             const menu = document.querySelector('.mobile-menu');
             menu.classList.toggle('active');
         }
-
-        // Обновление текстов навигации при переключении языка
-        const translations = {
-            'ru': {
-                'nav-solutions': 'Решения',
-                'nav-sales': 'Для Продаж',
-                'nav-design': 'Для Дизайна',
-                'nav-custom-dev': 'Кастомная разработка',
-                'nav-portfolio': 'Портфолио',
-                'nav-about': 'О нас',
-                'nav-contact': 'Контакты'
-            },
-            'en': {
-                'nav-solutions': 'Solutions',
-                'nav-sales': 'For Sales',
-                'nav-design': 'For Design',
-                'nav-custom-dev': 'Custom Development',
-                'nav-portfolio': 'Portfolio',
-                'nav-about': 'About',
-                'nav-contact': 'Contact'
-            }
-        };
     </script>
 </body>
 </html>

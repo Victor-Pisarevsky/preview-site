@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Иконка из образца --><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
-    <!-- Новые мета-данные для Главной страницы --><title data-lang="meta-title">DIVO - AI-системы, которые приносят деньги</title>
-    <meta name="description" data-lang="meta-description" content="Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой.">
+    <!-- Иконка из образца -->
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
-    <!-- Стили и скрипты из образца (for-sales.html) --><script src="https://cdn.tailwindcss.com"></script>
-    
+    <!-- Новые мета-данные для Главной страницы --><title data-lang="meta-title">DIVO - AI-системы, которые приносят
+    деньги</title>
+    <meta name="description" data-lang="meta-description"
+          content="Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой.">
+
+    <!-- Стили и скрипты из образца (for-sales.html) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap"
+          rel="stylesheet">
+
     <!-- 
       Полностью скопированный блок <style> из for-sales.html
       Он содержит все переменные, стили кнопок, карточек, баннеров и т.д.
-    --><style>
+    -->
+    <style>
         @font-face {
             font-family: 'Eugusto';
             src: url('EugustoFreePersonalUse-Regular.otf');
@@ -56,7 +63,7 @@
             font-family: var(--font-sans);
             background-color: var(--color-bg-light);
             color: var(--color-text-main);
-            font-weight: 300; 
+            font-weight: 300;
             line-height: 1.6;
         }
 
@@ -75,16 +82,17 @@
             font-size: clamp(3.5rem, 3rem + 2vw, 5rem);
             letter-spacing: -1px;
         }
+
         h2[data-lang] {
             font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
             font-weight: 800;
         }
-                
+
         h3[data-lang] {
             font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
             font-weight: 700;
         }
-        
+
         h4[data-lang] {
             font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
             font-weight: 700;
@@ -93,21 +101,22 @@
         p, ul {
             color: var(--color-text-secondary);
             margin-bottom: 1.25rem;
-            font-size: 0.95rem; 
+            font-size: 0.95rem;
             font-weight: 400;
             line-height: 1.6;
         }
-        
+
         ul {
             list-style-position: inside;
             list-style-type: disc;
             padding-left: 0.5rem;
         }
+
         li {
             margin-bottom: 0.5rem;
-            font-size: 0.95rem; 
+            font-size: 0.95rem;
         }
-        
+
         blockquote {
             font-style: italic;
             border-left: 4px solid var(--color-primary);
@@ -128,25 +137,25 @@
             margin-top: 1rem;
             margin-bottom: 0.75rem;
         }
-        
+
         @media (max-width: 640px) {
             h5[data-lang] {
                 font-size: 1.5rem !important;
             }
         }
-        
+
         @media (min-width: 641px) and (max-width: 1024px) {
             h5[data-lang] {
                 font-size: 1.5rem !important;
             }
         }
-        
+
         @media (min-width: 1025px) {
             h5[data-lang] {
                 font-size: 2rem !important;
             }
         }
-        
+
         .header-logo {
             font-family: var(--font-decorative);
             font-weight: 800;
@@ -154,7 +163,7 @@
             font-size: 2.25rem;
             line-height: 1;
         }
-        
+
         .header-nav-link {
             font-family: var(--font-heading);
             font-weight: 600;
@@ -163,10 +172,11 @@
             transition: color 0.2s ease;
             text-transform: uppercase;
         }
+
         .header-nav-link:hover {
             color: var(--color-primary);
         }
-                
+
         #mobile-menu {
             transition: all 0.3s ease-out;
             z-index: 40;
@@ -187,55 +197,61 @@
             margin: 0.25rem;
             white-space: nowrap;
         }
+
         .btn-primary {
             background-color: var(--color-primary);
             color: white;
             border: 2px solid var(--color-primary);
         }
+
         .btn-primary:hover {
             background-color: var(--color-primary-dark);
             border-color: var(--color-primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(203, 2, 19, 0.3);
         }
+
         .btn-secondary {
             background-color: transparent;
             color: var(--color-primary);
             border: 2px solid var(--color-primary);
         }
+
         .btn-secondary:hover {
             background-color: var(--color-primary);
             color: white;
             transform: translateY(-2px);
         }
-        
+
         .btn-azure {
             background-color: #00A0B0;
             color: white;
             border: 2px solid #00A0B0;
         }
+
         .btn-azure:hover {
             background-color: #007A86;
             border-color: #007A86;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 160, 176, 0.3);
         }
-        
+
         .btn-tag {
-            background-color: rgba(0, 0, 0, 0.05); 
+            background-color: rgba(0, 0, 0, 0.05);
             color: var(--color-text-secondary);
-            border: 2px solid transparent; 
-            font-weight: 700; 
-            text-transform: none; 
+            border: 2px solid transparent;
+            font-weight: 700;
+            text-transform: none;
             padding: 0.5rem 1.25rem;
             font-size: 1rem;
-            margin: 0.25rem; 
+            margin: 0.25rem;
             white-space: nowrap;
             display: inline-block;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .btn-tag:hover {
             background-color: var(--color-primary);
             color: white;
@@ -254,10 +270,12 @@
             letter-spacing: 0.5px;
             transition: transform 0.3s ease, color 0.3s ease;
         }
+
         .link-arrow:hover {
             color: var(--color-primary-dark);
-            transform: translateX(4px); 
+            transform: translateX(4px);
         }
+
         .link-arrow::after {
             content: ' →';
             transition: transform 0.3s ease;
@@ -274,7 +292,7 @@
             background-position: center;
             border: 1px solid rgba(0, 240, 255, 0.3);
         }
-                
+
         .event-banner h2[data-lang],
         .event-banner h4[data-lang],
         .event-banner h3[data-lang] {
@@ -283,11 +301,11 @@
 
         .highlight-text {
             color: var(--color-event-primary);
-            font-weight: 600; 
+            font-weight: 600;
         }
-                
+
         .event-banner p {
-            color: var(--color-event-text); 
+            color: var(--color-event-text);
         }
 
         /* Эта кнопка будет использоваться в баннерах */
@@ -296,6 +314,7 @@
             color: white;
             border: none;
         }
+
         .btn-event:hover {
             background-color: #007A86; /* Более темный лазурный */
             transform: translateY(-2px);
@@ -311,6 +330,7 @@
             background-position: center;
             border: 1px solid rgba(0, 240, 255, 0.3);
         }
+
         .cta-banner h2[data-lang],
         .cta-banner h3[data-lang] {
             color: white;
@@ -325,34 +345,50 @@
             transition: all 0.3s ease;
             height: 100%;
         }
+
         .card-no-hover:hover {
             transform: none;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
+
         .card:not(.card-no-hover):hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-                
+
         .card-poster__header {
             padding: 1.5rem;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 12px 12px 0 0;
         }
+
         .card-poster__header h4[data-lang] {
             margin-bottom: 0;
         }
-        .bg-custom-1 { background-color: var(--color-bg-1); }
-        .bg-custom-2 { background-color: var(--color-bg-2); }
-        .bg-custom-3 { background-color: var(--color-bg-3); }
-        .bg-custom-4 { background-color: var(--color-bg-4); }
+
+        .bg-custom-1 {
+            background-color: var(--color-bg-1);
+        }
+
+        .bg-custom-2 {
+            background-color: var(--color-bg-2);
+        }
+
+        .bg-custom-3 {
+            background-color: var(--color-bg-3);
+        }
+
+        .bg-custom-4 {
+            background-color: var(--color-bg-4);
+        }
 
         .lang-switcher-inline {
-            background-color: rgba(0,0,0,0.05);
+            background-color: rgba(0, 0, 0, 0.05);
             border-radius: 8px;
             padding: 0.25rem;
             display: flex;
         }
+
         .lang-switcher-inline button {
             padding: 0.5rem 0.75rem;
             font-family: var(--font-heading);
@@ -364,20 +400,23 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
+
         .lang-switcher-inline button.active {
             color: var(--color-primary);
             background-color: var(--color-card-bg);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
+
         .lang-switcher-inline button:hover:not(.active) {
-            background-color: rgba(0,0,0,0.03);
+            background-color: rgba(0, 0, 0, 0.03);
         }
 
         .footer {
             background-color: var(--color-footer-bg);
-            color: #CFCFCF; 
+            color: #CFCFCF;
             display: block;
         }
+
         .footer-logo {
             font-family: var(--font-decorative);
             font-weight: 800;
@@ -386,6 +425,7 @@
             line-height: 1;
             margin-bottom: 1rem;
         }
+
         .footer-title {
             font-family: var(--font-heading);
             font-weight: 700;
@@ -394,21 +434,24 @@
             margin-bottom: 1rem;
             text-transform: uppercase;
         }
+
         p[data-lang="footer-mission"] {
             color: white;
         }
+
         .footer-link {
             color: #CFCFCF;
             font-family: var(--font-sans);
-            font-weight: 400; 
+            font-weight: 400;
             font-size: 1rem;
             text-decoration: none;
             transition: color 0.2s ease;
         }
+
         .footer-link:hover {
             color: white;
         }
-        
+
         /* Стили для ценовой карточки (используем для блока "Что мы делаем") */
         .feature-card ul {
             list-style: none;
@@ -416,6 +459,7 @@
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
+
         .feature-card li {
             position: relative;
             padding-left: 1.75rem;
@@ -423,6 +467,7 @@
             font-size: 0.95rem;
             color: var(--color-text-secondary);
         }
+
         .feature-card li::before {
             content: '✓';
             position: absolute;
@@ -432,7 +477,7 @@
             font-weight: 700;
             font-size: 1rem;
         }
-        
+
         /* Новый стиль для верхнего sticky-баннера */
         #top-sticky-banner {
             background-color: var(--color-event-background); /* Черный/темно-синий для ивента */
@@ -441,6 +486,7 @@
             transition: transform 0.3s ease-out;
             border-bottom: 1px solid var(--color-event-primary); /* Лазурный бордер */
         }
+
         #top-sticky-banner .btn-event-inline {
             background-color: var(--color-event-primary);
             color: white;
@@ -449,6 +495,7 @@
             font-weight: 600;
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
+
         #top-sticky-banner .btn-event-inline:hover {
             background-color: #007A86;
             transform: translateY(-1px);
@@ -464,11 +511,13 @@
             font-size: 0.95rem;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
+
         .form-input:focus {
             outline: none;
             border-color: var(--color-primary);
             box-shadow: 0 0 0 3px rgba(203, 2, 19, 0.2);
         }
+
         .form-label {
             display: block;
             font-family: var(--font-heading);
@@ -477,7 +526,7 @@
             color: var(--color-text-main);
             margin-bottom: 0.5rem;
         }
-        
+
         /* Стиль для плашки с P.S. */
         .conference-note-card {
             background-color: var(--color-event-background);
@@ -486,297 +535,354 @@
             border-radius: 0 8px 8px 0; /* Только правые закругления */
             padding: 1rem;
         }
+
         .conference-note-card b {
             color: white; /* Жирный текст внутри плашки белый */
         }
+
         .conference-note-card .contact-icon {
             color: var(--color-event-primary);
             transition: color 0.2s ease;
         }
+
         .conference-note-card .contact-icon:hover {
             color: #007A86; /* Темнее лазурный при наведении */
         }
-            
+
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- 
-      НОВЫЙ БЛОК: Top Sticky Banner
-      Для трафика с выставки - обновленные стили
-    --><div id="top-sticky-banner" class="sticky top-0 z-[51]">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center gap-4">
-                <div class="text-sm md:text-base font-medium text-center flex-grow flex items-center justify-center gap-2">
-                    <span data-lang="sticky-banner-text">👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount</span>
-                    <a href="#final-cta" data-lang="sticky-banner-cta" class="btn-event-inline whitespace-nowrap">Book now</a>
-                </div>
-                <button id="close-sticky-banner" class="text-white text-2xl font-light hover:opacity-80" aria-label="Close banner">&times;</button>
+<!--
+  НОВЫЙ БЛОК: Top Sticky Banner
+  Для трафика с выставки - обновленные стили
+-->
+<div id="top-sticky-banner" class="sticky top-0 z-[51]">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center gap-4">
+            <div class="text-sm md:text-base font-medium text-center flex-grow flex items-center justify-center gap-2">
+                <span data-lang="sticky-banner-text">👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount</span>
+                <a href="#final-cta" data-lang="sticky-banner-cta" class="btn-event-inline whitespace-nowrap">Book
+                    now</a>
             </div>
+            <button id="close-sticky-banner" class="text-white text-2xl font-light hover:opacity-80"
+                    aria-label="Close banner">&times;
+            </button>
         </div>
     </div>
+</div>
 
-    <!-- 
-      HEADER (ШАПКА)
-      Скопировано 1-в-1 из for-sales.html
-      Изменен z-index с z-50 на z-40, чтобы быть ПОД sticky-баннером
-    --><header class="sticky top-0 lg:top-[49px] w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                
-                <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+<!--
+  HEADER (ШАПКА)
+  Скопировано 1-в-1 из for-sales.html
+  Изменен z-index с z-50 на z-40, чтобы быть ПОД sticky-баннером
+-->
+<header class="sticky top-0 lg:top-[49px] w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
 
-                <div class="hidden lg:flex items-center gap-6">
-                    <nav class="flex gap-8 items-center">
-                        <div class="relative group">
-                            <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
-                                Решения
-                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                <div class="py-2">
-                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
-                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
-                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
-                                </div>
+            <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <nav class="flex gap-8 items-center">
+                    <div class="relative group">
+                        <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions"
+                                aria-expanded="false" aria-controls="solutions-dropdown">
+                            Решения
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="solutions-dropdown"
+                             class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для
+                                    Продаж</a>
+                                <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для
+                                    Дизайна</a>
+                                <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50"
+                                   data-lang="nav-custom-dev">Кастомная разработка</a>
                             </div>
                         </div>
-                        
-                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
-                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
-                    </nav>
-
-                    <div class="flex items-center gap-4">
-                        <a href="#final-cta" class="btn btn-primary btn-sm" data-lang="header-cta">Получить консультацию</a>
-                        <div class="lang-switcher-inline">
-                            <button id="btn-ru" class="" aria-pressed="false">RU</button>
-                            <button id="btn-en" class="active" aria-pressed="true">EN</button>
-                        </div>
                     </div>
-                </div>
 
-                <div class="lg:hidden flex items-center gap-2">
-                    <a href="#final-cta" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap" data-lang="header-cta-mobile">Консультация</a>
-                    <div class="lang-switcher-inline">
-                        <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
-                        <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
-                    </div>
-                    <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div id="mobile-menu" class="hidden lg:hidden pb-4">
-                <nav class="flex flex-col gap-4">
-                    <div>
-                        <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
-                        <div class="pl-4 flex flex-col gap-2">
-                            <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
-                            <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
-                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
-                        </div>
-                    </div>
                     <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
                     <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
                 </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="#final-cta" class="btn btn-primary btn-sm" data-lang="header-cta">Получить консультацию</a>
+                    <div class="lang-switcher-inline">
+                        <button id="btn-ru" class="" aria-pressed="false">RU</button>
+                        <button id="btn-en" class="active" aria-pressed="true">EN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:hidden flex items-center gap-2">
+                <a href="#final-cta" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap"
+                   data-lang="header-cta-mobile">Консультация</a>
+                <div class="lang-switcher-inline">
+                    <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                    <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
+                </div>
+                <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false"
+                        aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </header>
 
-    <!-- 
-      НАЧАЛО НОВОГО КОНТЕНТА ДЛЯ ГЛАВНОЙ СТРАНИЦЫ
-    --><div class="container max-w-6xl mx-auto px-4">
-
-        <!-- 1. Hero Section --><section id="hero" class="py-12 md:py-16 text-center">
-            <div class="max-w-4xl mx-auto">
-                <h1 data-lang="hero-h1">AI systems that make money</h1>
-                <p data-lang="hero-sub" class="text-xl md:text-2xl !text-text-secondary mt-4 mb-8">We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure</p>
-
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-                    <a href="#final-cta" class="btn btn-primary" data-lang="hero-cta1">Get a consultation</a>
-                    <a href="/case-studies" class="btn btn-secondary" data-lang="hero-cta2">View our case studies</a>
+        <div id="mobile-menu" class="hidden lg:hidden pb-4">
+            <nav class="flex flex-col gap-4">
+                <div>
+                    <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
+                    <div class="pl-4 flex flex-col gap-2">
+                        <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
+                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная
+                            разработка</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+                <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+            </nav>
+        </div>
+    </div>
+</header>
 
-        <!-- 2. Social Proof --><section id="social-proof" class="py-12">
-            <h2 data-lang="social-h2" class="text-center !font-heading">Trusted by industry leaders</h2>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-8">
-                <img src="https://placehold.co/160x60/f1f1f1/303030?text=SBER&font=inter&font-size=30px" alt="Sber logo" class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
-                <img src="https://placehold.co/160x60/f1f1f1/303030?text=Avito&font=inter&font-size=30px" alt="Avito logo" class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
-                <img src="https://placehold.co/160x60/f1f1f1/303030?text=Yandex&font=inter&font-size=30px" alt="Yandex logo" class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
-            </div>
-        </section>
+<!--
+  НАЧАЛО НОВОГО КОНТЕНТА ДЛЯ ГЛАВНОЙ СТРАНИЦЫ
+-->
+<div class="container max-w-6xl mx-auto px-4">
 
-        <!-- 3. Why Us (Founders) --><section id="why-us" class="py-12 md:py-16">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="why-h2">Growth × Scale = Profit</h2>
+    <!-- 1. Hero Section -->
+    <section id="hero" class="py-12 md:py-16 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 data-lang="hero-h1">AI systems that make money</h1>
+            <p data-lang="hero-sub" class="text-xl md:text-2xl !text-text-secondary mt-4 mb-8">We transform ambitious AI
+                ideas into production-ready systems that handle millions of users and integrate seamlessly with your
+                infrastructure</p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+                <a href="#final-cta" class="btn btn-primary" data-lang="hero-cta1">Get a consultation</a>
+                <a href="/case-studies" class="btn btn-secondary" data-lang="hero-cta2">View our case studies</a>
             </div>
-            
-            <!-- ИЗМЕНЕННАЯ СТРУКТURA: 
-                 Теперь 2-колоночная сетка содержит и карточки, и P.S. блок, и ссылку 
-            -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                
-                <!-- Колонка 1: Дарья + P.S. -->
-                <div class="flex flex-col gap-8">
-                    <!-- Daria's Card -->
-                    <div class="card p-6 text-center md:text-left">
-                        <div class="flex flex-col md:flex-row items-center gap-6">
-                            <img src="daria.jpg" alt="Daria Kamyshina" class="w-32 h-32 rounded-full border-4 border-white/80 shadow-lg flex-shrink-0">
-                            <div>
-                                <h4 class="!mb-1">Daria Kamyshina</h4>
-                                <p class="!text-text-secondary !font-semibold !mb-3">CEO & Co-Founder</p>
-                                <blockquote data-lang="why-daria" class="!text-lg">Grew MRR by 10x in 4 months. I know how to turn technology into revenue</blockquote>
-                            </div>
+        </div>
+    </section>
+
+    <!-- 2. Social Proof -->
+    <section id="social-proof" class="py-12">
+        <h2 data-lang="social-h2" class="text-center !font-heading">Trusted by industry leaders</h2>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-8">
+            <div>
+                <img src="Logo_Sberbank.png" alt="Sber logo"
+                     class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <p data-lang="logo-sber-description">Russia's largest bank</p>
+            </div>
+            <div>
+                <img src="Avito_logo.svg" alt="Avito logo"
+                     class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <p data-lang="logo-avito-description">Russia's largest e-commerce</p>
+            </div>
+            <div>
+                <img src="yandex_logo.png" alt="Yandex logo"
+                     class="h-18 md:h-24 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <p data-lang="logo-yandex-description">Russia's search leader</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Why Us (Founders) -->
+    <section id="why-us" class="py-12 md:py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="why-h2">Growth × Scale = Profit</h2>
+        </div>
+
+        <!-- ИЗМЕНЕННАЯ СТРУКТURA:
+             Теперь 2-колоночная сетка содержит и карточки, и P.S. блок, и ссылку
+        -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+            <!-- Колонка 1: Дарья + P.S. -->
+            <div class="flex flex-col gap-8">
+                <!-- Daria's Card -->
+                <div class="card p-6 text-center md:text-left">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <img src="daria.jpg" alt="Daria Kamyshina"
+                             class="w-32 h-32 rounded-full border-4 border-white/80 shadow-lg flex-shrink-0">
+                        <div>
+                            <h4 class="!mb-1">Daria Kamyshina</h4>
+                            <p class="!text-text-secondary !font-semibold !mb-3">CEO & Co-Founder</p>
+                            <blockquote data-lang="why-daria" class="!text-lg">Grew MRR by 10x in 4 months. I know how
+                                to turn technology into revenue
+                            </blockquote>
                         </div>
                     </div>
-                    
-                    <!-- P.S. Block -->
-                    <div data-lang="why-daria-note">
-                        <!-- Контент будет вставлен JS-ом. -->
-                    </div>
-                </div> <!-- Конец Колонки 1 -->
-                
-                <!-- Колонка 2: Виктор + Ссылка -->
-                <div class="flex flex-col gap-8">
-                    <!-- Viktor's Card -->
-                    <div class="card p-6 text-center md:text-left">
-                         <div class="flex flex-col md:flex-row items-center gap-6">
-                            <img src="victor.jpeg" alt="Viktor Pisarevskiy" class="w-32 h-32 rounded-full border-4 border-white/80 shadow-lg flex-shrink-0">
-                            <div>
-                                <h4 class="!mb-1">Viktor Pisarevskiy</h4>
-                                <p class="!text-text-secondary !font-semibold !mb-3">CTO & Co-Founder</p>
-                                <blockquote data-lang="why-viktor" class="!text-lg">Designed Russia's #1 platform serving 10M users. I build systems that don't fail</blockquote>
-                            </div>
+                </div>
+
+                <!-- P.S. Block -->
+                <div data-lang="why-daria-note">
+                    <!-- Контент будет вставлен JS-ом. -->
+                </div>
+            </div> <!-- Конец Колонки 1 -->
+
+            <!-- Колонка 2: Виктор + Ссылка -->
+            <div class="flex flex-col gap-8">
+                <!-- Viktor's Card -->
+                <div class="card p-6 text-center md:text-left">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <img src="victor.jpeg" alt="Viktor Pisarevskiy"
+                             class="w-32 h-32 rounded-full border-4 border-white/80 shadow-lg flex-shrink-0">
+                        <div>
+                            <h4 class="!mb-1">Viktor Pisarevskiy</h4>
+                            <p class="!text-text-secondary !font-semibold !mb-3">CTO & Co-Founder</p>
+                            <blockquote data-lang="why-viktor" class="!text-lg">Designed Russia's #1 platform serving
+                                10M users. I build systems that don't fail
+                            </blockquote>
                         </div>
                     </div>
-                    
-                    <!-- "Meet the team" Link -->
-                    <div class="text-center md:text-left pt-4">
-                        <a href="/about-us" class="link-arrow" data-lang="why-cta">Meet the team</a>
-                    </div>
-                </div> <!-- Конец Колонки 2 -->
-            
-            </div>
-            <!-- КОНЕЦ ИЗМЕНЕННОЙ СТРУКТУРЫ -->
+                </div>
 
-        </section>
+                <!-- "Meet the team" Link -->
+                <div class="text-center md:text-left pt-4">
+                    <a href="/about-us" class="link-arrow" data-lang="why-cta">Meet the team</a>
+                </div>
+            </div> <!-- Конец Колонки 2 -->
 
-        <!-- 4. What We Do --><section id="what-we-do" class="py-12 md:py-16 bg-white rounded-lg shadow-inner">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="what-h2">Two ways to work with us</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Enterprise AI Engineering --><div class="card card-no-hover p-6 md:p-8 feature-card flex flex-col">
-                    <h3 data-lang="what-enterprise-h">Enterprise AI Engineering</h3>
-                    <ul>
-                        <li data-lang="what-enterprise-f1">Full-cycle turnkey development</li>
-                        <li data-lang="what-enterprise-f2">Integration with SAP, 1C, and legacy systems</li>
-                        <li data-lang="what-enterprise-f3">On-premise solutions for banks and government companies</li>
-                    </ul>
-                    <div class="mt-auto pt-4">
-                        <a href="/custom-ai" class="btn btn-primary w-full text-center" data-lang="what-enterprise-cta">Discuss your project</a>
-                    </div>
-                </div>
-                <!-- AI Products (SaaS) --><div class="card card-no-hover p-6 md:p-8 feature-card flex flex-col">
-                    <h3 data-lang="what-saas-h">AI Products (SaaS)</h3>
-                    
-                    <!-- Измененная структура. Удален UL и общая кнопка. --><div class="flex-grow flex flex-col justify-around gap-6 mt-4">
-                        <!-- Product 1: Françoise --><div>
-                            <h4 class="!mb-1">Françoise</h4>
-                            <p data-lang="what-saas-f1" class="!mb-4">Design QA for Enterprise brands</p>
-                            <a href="httpsS://francoise.ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-lang="what-saas-cta1">Learn more about Françoise</a>
-                        </div>
-                        
-                        <!-- Product 2: Clio --><div>
-                            <h4 class="!mb-1">Clio</h4>
-                            <p data-lang="what-saas-f2" class="!mb-4">B2B sales automation</p>
-                            <a href="/for-sales" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-lang="what-saas-cta2">Learn more about Clio</a>
-                        </div>
-                    </div>
-                    <!-- Конец измененной структуры --></div>
-            </div>
-        </section>
+        </div>
+        <!-- КОНЕЦ ИЗМЕНЕННОЙ СТРУКТУРЫ -->
 
-        <!-- 5. Proof (Mini Cases) --><section id="proof" class="py-12 md:py-16">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="results-h2">Results</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="card p-6 text-center">
-                    <h2 data-lang="results-h-num1" class="!text-primary !text-6xl md:!text-7xl !mb-2">10M</h2>
-                    <p data-lang="results-c1" class="!text-lg">users served by the platform designed by our CTO</p>
-                </div>
-                <div class="card p-6 text-center">
-                    <h2 data-lang="results-h-num2" class="!text-primary !text-6xl md:!text-7xl !mb-2">10x</h2>
-                    <p data-lang="results-c2" class="!text-lg">MRR growth in 4 months on the latest CEO project</p>
-                </div>
-                <div class="card p-6 text-center">
-                    <h2 data-lang="results-h-num3" class="!text-primary !text-6xl md:!text-7xl !mb-2">100%</h2>
-                    <p data-lang="results-c3" class="!text-lg">brand consistency guaranteed by Françoise</p>
-                </div>
-            </div>
-             <div class="text-center mt-12">
-                <a href="/case-studies" class="link-arrow" data-lang="results-cta">All case studies</a>
-            </div>
-        </section>
+    </section>
 
-        <!-- 6. Final CTA (Form) --><section id="final-cta" class="py-12 md:py-16">
-            <div class="card card-no-hover max-w-3xl mx-auto p-6 md:p-10">
-                <div class="text-center max-w-2xl mx-auto">
-                    <h2 data-lang="final-cta-h2">Let's start with a free audit of your AI strategy</h2>
-                    <p data-lang="final-cta-sub" class="!text-lg !text-text-secondary mt-2 mb-8">40 minutes with experts who built systems for 10M+ users</p>
+    <!-- 4. What We Do -->
+    <section id="what-we-do" class="py-12 md:py-16 bg-white rounded-lg shadow-inner">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="what-h2">Two ways to work with us</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Enterprise AI Engineering -->
+            <div class="card card-no-hover p-6 md:p-8 feature-card flex flex-col">
+                <h3 data-lang="what-enterprise-h">Enterprise AI Engineering</h3>
+                <ul>
+                    <li data-lang="what-enterprise-f1">Full-cycle turnkey development</li>
+                    <li data-lang="what-enterprise-f2">Integration with SAP, 1C, and legacy systems</li>
+                    <li data-lang="what-enterprise-f3">On-premise solutions for banks and government companies</li>
+                </ul>
+                <div class="mt-auto pt-4">
+                    <a href="/custom-ai" class="btn btn-primary w-full text-center" data-lang="what-enterprise-cta">Discuss
+                        your project</a>
                 </div>
-                
-                <form action="#" method="POST" id="collectData" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            </div>
+            <!-- AI Products (SaaS) -->
+            <div class="card card-no-hover p-6 md:p-8 feature-card flex flex-col">
+                <h3 data-lang="what-saas-h">AI Products (SaaS)</h3>
+
+                <!-- Измененная структура. Удален UL и общая кнопка. -->
+                <div class="flex-grow flex flex-col justify-around gap-6 mt-4">
+                    <!-- Product 1: Françoise -->
                     <div>
-                        <label for="name" class="form-label" data-lang="final-cta-form-name">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                        <h4 class="!mb-1">Françoise</h4>
+                        <p data-lang="what-saas-f1" class="!mb-4">Design QA for Enterprise brands</p>
+                        <a href="httpsS://francoise.ai" target="_blank" rel="noopener noreferrer"
+                           class="btn btn-secondary" data-lang="what-saas-cta1">Learn more about Françoise</a>
                     </div>
+
+                    <!-- Product 2: Clio -->
                     <div>
-                        <label for="email" class="form-label" data-lang="final-cta-form-email">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
+                        <h4 class="!mb-1">Clio</h4>
+                        <p data-lang="what-saas-f2" class="!mb-4">B2B sales automation</p>
+                        <a href="/for-sales" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+                           data-lang="what-saas-cta2">Learn more about Clio</a>
                     </div>
-                    <div class="md:col-span-2">
-                        <label for="phone" class="form-label" data-lang="final-cta-form-phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
-                    <div class="md:col-span-2">
-                        <label for="task-description" class="form-label" data-lang="final-cta-form-task">Brief task description</label>
-                        <textarea id="task-description" name="task-description" rows="4" class="form-input"></textarea>
-                    </div>
-                    <div class="md:col-span-2">
-                        <button type="submit" class="btn btn-primary w-full" data-lang="final-cta-form-cta">Book an audit</button>
-                        <p class="text-sm text-center !text-text-secondary mt-4 mb-0">
+                </div>
+                <!-- Конец измененной структуры --></div>
+        </div>
+    </section>
+
+    <!-- 5. Proof (Mini Cases) -->
+    <section id="proof" class="py-12 md:py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="results-h2">Results</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card p-6 text-center">
+                <h2 data-lang="results-h-num1" class="!text-primary !text-6xl md:!text-7xl !mb-2">10M</h2>
+                <p data-lang="results-c1" class="!text-lg">users served by the platform designed by our CTO</p>
+            </div>
+            <div class="card p-6 text-center">
+                <h2 data-lang="results-h-num2" class="!text-primary !text-6xl md:!text-7xl !mb-2">10x</h2>
+                <p data-lang="results-c2" class="!text-lg">MRR growth in 4 months on the latest CEO project</p>
+            </div>
+            <div class="card p-6 text-center">
+                <h2 data-lang="results-h-num3" class="!text-primary !text-6xl md:!text-7xl !mb-2">100%</h2>
+                <p data-lang="results-c3" class="!text-lg">brand consistency guaranteed by Françoise</p>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="/case-studies" class="link-arrow" data-lang="results-cta">All case studies</a>
+        </div>
+    </section>
+
+    <!-- 6. Final CTA (Form) -->
+    <section id="final-cta" class="py-12 md:py-16">
+        <div class="card card-no-hover max-w-3xl mx-auto p-6 md:p-10">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 data-lang="final-cta-h2">Let's start with a free audit of your AI strategy</h2>
+                <p data-lang="final-cta-sub" class="!text-lg !text-text-secondary mt-2 mb-8">40 minutes with experts who
+                    built systems for 10M+ users</p>
+            </div>
+
+            <form action="#" method="POST" id="collectData" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div>
+                    <label for="name" class="form-label" data-lang="final-cta-form-name">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div>
+                    <label for="email" class="form-label" data-lang="final-cta-form-email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="md:col-span-2">
+                    <label for="phone" class="form-label" data-lang="final-cta-form-phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="task-description" class="form-label" data-lang="final-cta-form-task">Brief task
+                        description</label>
+                    <textarea id="task-description" name="task-description" rows="4" class="form-input"></textarea>
+                </div>
+                <div class="md:col-span-2">
+                    <button type="submit" class="btn btn-primary w-full" data-lang="final-cta-form-cta">Book an audit
+                    </button>
+                    <p class="text-sm text-center !text-text-secondary mt-4 mb-0">
 
                           <span data-lang="final-cta-form-note">
                             By clicking the "Submit" button, you agree to the
                           </span>
 
-                          <a href="/privacy-policy"
-                             data-lang="final-cta-form-note-policy"
-                             class="!text-blue-600 !underline hover:!text-blue-800">
+                        <a href="/privacy-policy"
+                           data-lang="final-cta-form-note-policy"
+                           class="!text-blue-600 !underline hover:!text-blue-800">
                             Privacy Policy
-                          </a>
+                        </a>
 
-                        </p>
-                    </div>
-                </form>
-                <div id="form-status"></div>
-                <script>
-                  // ВСТАВЬТЕ СЮДА ВАШ URL ИЗ ШАГА 3
-                  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyiLXse-mVCk_xiuJ8mj4XAVSwA1y83C7EPSZb-vanZsnLpbaTlZQNUaEFxcsxTdTqWSg/exec";
+                    </p>
+                </div>
+            </form>
+            <div id="form-status"></div>
+            <script>
+                // ВСТАВЬТЕ СЮДА ВАШ URL ИЗ ШАГА 3
+                const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyiLXse-mVCk_xiuJ8mj4XAVSwA1y83C7EPSZb-vanZsnLpbaTlZQNUaEFxcsxTdTqWSg/exec";
 
-                  const form = document.getElementById('collectData');
-                  const statusEl = document.getElementById('form-status');
+                const form = document.getElementById('collectData');
+                const statusEl = document.getElementById('form-status');
 
-                  form.addEventListener('submit', function(e) {
+                form.addEventListener('submit', function (e) {
                     // Отменяем стандартную отправку формы
                     e.preventDefault();
 
@@ -784,370 +890,388 @@
                     statusEl.style.color = 'black';
 
                     fetch(SCRIPT_URL, {
-                      method: 'POST',
-                      body: new FormData(form)
+                        method: 'POST',
+                        body: new FormData(form)
                     })
-                    .then(response => response.json())
-                    .then(data => {
-                      if (data.result === 'success') {
-                        statusEl.innerText = 'Спасибо! Ваша заявка принята.';
-                        statusEl.style.color = 'green';
-                        form.reset(); // Очищаем форму
-                      } else {
-                        // Показываем ошибку, если скрипт ее вернул
-                        throw new Error(data.message || 'Что-то пошло не так.');
-                      }
-                    })
-                    .catch(error => {
-                      console.error('Ошибка!', error);
-                      statusEl.innerText = 'Ошибка отправки. Попробуйте еще раз.';
-                      statusEl.style.color = 'red';
-                    });
-                  });
-                </script>
-            </div>
-        </section>
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.result === 'success') {
+                                statusEl.innerText = 'Спасибо! Ваша заявка принята.';
+                                statusEl.style.color = 'green';
+                                form.reset(); // Очищаем форму
+                            } else {
+                                // Показываем ошибку, если скрипт ее вернул
+                                throw new Error(data.message || 'Что-то пошло не так.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Ошибка!', error);
+                            statusEl.innerText = 'Ошибка отправки. Попробуйте еще раз.';
+                            statusEl.style.color = 'red';
+                        });
+                });
+            </script>
+        </div>
+    </section>
 
-        <!-- 
-          НОВЫЙ БЛОК: Bottom Banner
-          Стиль .event-banner взят из for-sales.html
-          Уменьшен отступ my -> mt
-        --><section id="bottom-event-banner" class="mt-12 md:mt-16 mb-12">
-            <div class="event-banner p-8 md:p-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                    <div class="md:col-span-2">
-                        <h2 data-lang="bottom-banner-h2" class="!text-white">Don't miss exclusive offers for event guests</h2>
-                        <p data-lang="bottom-banner-sub" class="text-lg mb-4">Special packages, private CTO consultations, and bonuses exclusively for event attendees</p>
-                    </div>
-                    <div class="md:text-right flex items-center md:items-start md:justify-end">
-                        <a href="/function1-offers" data-lang="bottom-banner-cta" class="btn btn-primary btn-sm">View all offers</a>
-                    </div>
+    <!--
+      НОВЫЙ БЛОК: Bottom Banner
+      Стиль .event-banner взят из for-sales.html
+      Уменьшен отступ my -> mt
+    -->
+    <section id="bottom-event-banner" class="mt-12 md:mt-16 mb-12">
+        <div class="event-banner p-8 md:p-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <div class="md:col-span-2">
+                    <h2 data-lang="bottom-banner-h2" class="!text-white">Don't miss exclusive offers for event
+                        guests</h2>
+                    <p data-lang="bottom-banner-sub" class="text-lg mb-4">Special packages, private CTO consultations,
+                        and bonuses exclusively for event attendees</p>
                 </div>
-            </div>
-        </section>
-
-    </div> <!-- /end container --><!-- 
-      FOOTER (ПОДВАЛ)
-      Скопировано 1-в-1 из for-sales.html
-    --><footer class="footer pt-16 pb-8 md:pb-12">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
-                
-                <div>
-                    <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
-                    <p class="text-sm mb-2" data-lang="footer-mission">
-                        Мы превращаем технологии в двигатель роста вашего бизнеса.
-                    </p>
+                <div class="md:text-right flex items-center md:items-start md:justify-end">
+                    <a href="/function1-offers" data-lang="bottom-banner-cta" class="btn btn-primary btn-sm">View all
+                        offers</a>
                 </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
-                        <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
-                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
-                        <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
-                    <ul class="space-y-2">
-                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
-                        <li><a href="httpsS://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
-                        <li><a href="httpsS://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
-                    </ul>
-                    <div class="mt-3">
-                        <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
-                        <ul class="space-y-2">
-                            <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
-                            <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
-                <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- 
-      JAVASCRIPT
-      Логика из for-sales.html + новый объект translations
-    --><script>
-        document.addEventListener('DOMContentLoaded', () => {
+</div> <!-- /end container --><!--
+      FOOTER (ПОДВАЛ)
+      Скопировано 1-в-1 из for-sales.html
+    -->
+<footer class="footer pt-16 pb-8 md:pb-12">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
 
-            // Логика мобильного меню (из образца)
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    const isExpanded = !mobileMenu.classList.contains('hidden');
-                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-                });
-            }
-            
-            // Новая логика: Закрытие sticky-баннера
-            const closeStickyBannerBtn = document.getElementById('close-sticky-banner');
-            const stickyBanner = document.getElementById('top-sticky-banner');
-            const header = document.querySelector('header'); // Шапка
-            
-            if (closeStickyBannerBtn && stickyBanner && header) {
-                closeStickyBannerBtn.addEventListener('click', () => {
-                    stickyBanner.remove(); // Удаляем баннер
-                    header.style.top = '0'; // Сдвигаем шапку вверх
-                });
-                
-                // Проверяем, есть ли баннер, и сдвигаем шапку
-                if (document.body.contains(stickyBanner)) {
-                    // Высота баннера 49px (p-3 + text-sm/base)
-                    // Устанавливаем top для шапки на lg+ экранах
-                    if (window.innerWidth >= 1024) {
-                         header.style.top = '49px';
-                    }
-                    // Слушатель на ресайз, если вдруг
-                     window.addEventListener('resize', () => {
-                         if (document.body.contains(stickyBanner)) {
-                            if (window.innerWidth >= 1024) {
-                                header.style.top = '49px';
-                            } else {
-                                header.style.top = '0'; // На мобилке шапка просто скроллится
-                            }
-                         }
-                     });
+            <div>
+                <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
+                <p class="text-sm mb-2" data-lang="footer-mission">
+                    Мы превращаем технологии в двигатель роста вашего бизнеса.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
+                <ul class="space-y-2">
+                    <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
+                    <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
+                    <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная
+                        разработка</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
+                <ul class="space-y-2">
+                    <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
+                    <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и
+                        Кейсы</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
+                <ul class="space-y-2">
+                    <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+                    <li><a href="httpsS://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517
+                        6391</a></li>
+                    <li><a href="httpsS://t.me/darikamouse" target="_blank" class="footer-link">Telegram:
+                        @darikamouse</a></li>
+                </ul>
+                <div class="mt-3">
+                    <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика
+                            конфиденциальности</a></li>
+                        <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия
+                            использования</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
+            <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!--
+  JAVASCRIPT
+  Логика из for-sales.html + новый объект translations
+-->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Логика мобильного меню (из образца)
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isExpanded = !mobileMenu.classList.contains('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+        }
+
+        // Новая логика: Закрытие sticky-баннера
+        const closeStickyBannerBtn = document.getElementById('close-sticky-banner');
+        const stickyBanner = document.getElementById('top-sticky-banner');
+        const header = document.querySelector('header'); // Шапка
+
+        if (closeStickyBannerBtn && stickyBanner && header) {
+            closeStickyBannerBtn.addEventListener('click', () => {
+                stickyBanner.remove(); // Удаляем баннер
+                header.style.top = '0'; // Сдвигаем шапку вверх
+            });
+
+            // Проверяем, есть ли баннер, и сдвигаем шапку
+            if (document.body.contains(stickyBanner)) {
+                // Высота баннера 49px (p-3 + text-sm/base)
+                // Устанавливаем top для шапки на lg+ экранах
+                if (window.innerWidth >= 1024) {
+                    header.style.top = '49px';
                 }
-            }
-
-
-            // РАСШИРЕННЫЙ ОБЪЕКТ ПЕРЕВОДОВ
-            const translations = {
-                'ru': {
-                    // --- МЕТА ---
-                    'meta-title': 'DIVO - AI-системы, которые приносят деньги',
-                    'meta-description': 'Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой.',
-
-                    // --- Общие (Шапка, Подвал) ---
-                    'logo': 'DIVO',
-                    'nav-sales': 'Для Продаж',
-                    'nav-design': 'Для Дизайна',
-                    'nav-about': 'О нас',
-                    'header-cta': 'Получить консультацию',
-                    'header-cta-mobile': 'Консультация',
-                    'nav-solutions': 'Решения',
-                    'nav-custom-dev': 'Кастомная разработка',
-                    'nav-portfolio': 'Портфолио',
-                    'footer-mission': 'Мы превращаем технологии в двигатель роста вашего бизнеса.',
-                    'footer-solutions-title': 'Решения',
-                    'footer-company-title': 'Компания',
-                    'footer-portfolio': 'Портфолио и Кейсы',
-                    'footer-contact-title': 'Контакты',
-                    'footer-legal-title': 'Документы',
-                    'footer-privacy': 'Политика конфиденциальности',
-                    'footer-terms': 'Условия использования',
-
-                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
-                    
-                    // Top Sticky Banner
-                    'sticky-banner-text': '👋 Привет с выставки! Специальное предложение действует 48 часов → Бесплатный аудит + скидка 15%',
-                    'sticky-banner-cta': 'Забронировать',
-                    
-                    // 1. Hero
-                    'hero-h1': 'AI-системы, которые приносят деньги',
-                    'hero-sub': 'Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой',
-                    'hero-cta1': 'Получить бесплатный технический аудит',
-                    'hero-cta2': 'Посмотреть наши кейсы',
-                    
-                    // 2. Social Proof
-                    'social-h2': 'Нам доверяют',
-                    
-                    // 3. Why Us
-                    'why-h2': 'Рост × Масштаб = Прибыль',
-                    'why-daria': 'Увеличила MRR в 10x за 4 месяца. Знаю, как превратить технологию в revenue',
-                    'why-viktor': 'Спроектировал платформу №1 в России для 10M пользователей. Строю системы, которые не падают',
-                    'why-cta': 'Познакомиться с командой',
-                    'why-daria-note': '<div class="conference-note-card"><p class="!text-sm !text-white !font-normal !mb-2"><span><b>P.S.</b> Я сейчас на конференции!</span></p><div class="flex items-center gap-4"><span class="!text-sm !text-white !font-normal !mb-0">Напишите мне:</span><a href="httpsS://t.me/darikamouse" target="_blank" class="contact-icon" aria-label="Чат в Telegram"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 11.9c-.88-.27-.88-1.37.2-1.64l16.4-6.05c.75-.27 1.45.16 1.18 1.08l-3.0 14.17c-.2 1.02-1.03 1.28-1.88.8l-5.1-3.72-2.45 2.35c-.27.27-.67.43-1.08.19z"></path></svg></a><a href="httpsS://wa.me/79035176391" target="_blank" class="contact-icon" aria-label="Чат в WhatsApp"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.49 1.29 4.99L2 22l5.25-1.38c1.45.77 3.09 1.19 4.79 1.19h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.13c-1.57 0-3.07-.4-4.4-1.1L7.5 19.1l-3.32.87.89-3.23-.7-1.17c-.8-1.4-1.22-3.03-1.22-4.7C3.15 7.01 7.15 3 12.04 3s8.89 4.01 8.89 8.91c0 4.9-3.99 8.91-8.89 8.91zm4.71-5.38c-.27-.13-1.59-.78-1.84-.87-.25-.09-.43-.13-.61.13-.18.27-.7.87-.86 1.04-.16.18-.32.19-.59.06-.27-.13-1.15-.42-2.19-1.34-.81-.72-1.37-1.61-1.53-1.88-.16-.27-.02-.42.11-.55.12-.12.27-.3.4-.46.13-.16.18-.27.27-.46.09-.18.04-.36-.02-.49-.07-.13-.61-1.47-.84-2.01-.22-.54-.45-.47-.61-.47h-.5c-.18 0-.46.07-.7.34-.24.27-.92.9-1.13 2.17-.21 1.27.1 2.44.23 2.61.13.18.9 1.41 2.19 3.09 1.29 1.68 2.3 2.23 3.1 2.52.8.29 1.5.23 2.05.14.62-.1 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.13-.24-.2-.51-.34z"></path></svg></a></div></div>',
-                    
-                    // 4. What We Do
-                    'what-h2': 'Два способа работы с нами',
-                    'what-enterprise-h': 'Enterprise AI Engineering',
-                    'what-enterprise-f1': 'Полный цикл разработки под ключ',
-                    'what-enterprise-f2': 'Интеграция с SAP, 1C, legacy-системами',
-                    'what-enterprise-f3': 'On-premise решения для банков и госкомпаний',
-                    'what-enterprise-cta': 'Обсудить проект',
-                    'what-saas-h': 'AI-Продукты (SaaS)',
-                    'what-saas-f1': 'Design QA для Enterprise-брендов',
-                    'what-saas-f2': 'Автоматизация B2B-продаж',
-                    'what-saas-cta1': 'Узнать больше о Françoise',
-                    'what-saas-cta2': 'Узнать больше о Clio',
-                    
-                    // 5. Proof
-                    'results-h2': 'Результаты',
-                    'results-c1': '10M пользователей обслуживает платформа, спроектированная нашим CTO',
-                    'results-c2': '10x рост MRR за 4 месяца на последнем проекте CEO',
-                    'results-c3': '100% консистентность бренда гарантирует Françoise',
-                    'results-cta': 'Все кейсы',
-                    
-                    // 6. Final CTA
-                    'final-cta-h2': 'Начнем с бесплатного аудита вашей AI-стратегии',
-                    'final-cta-sub': '40 минут с экспертами, которые построили системы для 10M+ пользователей',
-                    'final-cta-form-name': 'Имя',
-                    'final-cta-form-email': 'Email',
-                    'final-cta-form-phone': 'Телефон',
-                    'final-cta-form-task': 'Краткое описание задачи',
-                    'final-cta-form-note': 'Нажимая на эту кнопку вы соглашаетесь с',
-                    'final-cta-form-note-policy': 'Политикой конфиденциальности',
-                    'final-cta-form-cta': 'Записаться на аудит',
-                    
-                    // Bottom Banner
-                    'bottom-banner-h2': 'Не пропустите эксклюзивные предложения для гостей выставки',
-                    'bottom-banner-sub': 'Специальные пакеты, закрытые консультации с CTO и бонусы только для участников ивента',
-                    'bottom-banner-cta': 'Смотреть все предложения'
-                },
-                'en': {
-                    // --- МЕТА ---
-                    'meta-title': 'DIVO - AI systems that make money',
-                    'meta-description': 'We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure.',
-
-                    // --- Общие (Шапка, Подвал) ---
-                    'logo': 'DIVO',
-                    'nav-sales': 'For Sales',
-                    'nav-design': 'For Design',
-                    'nav-about': 'About Us',
-                    'header-cta': 'Get a Consultation',
-                    'header-cta-mobile': 'Consultation',
-                    'nav-solutions': 'Solutions',
-                    'nav-custom-dev': 'Custom Development',
-                    'nav-portfolio': 'Portfolio',
-                    'footer-mission': 'We turn technology into a growth engine for your business.',
-                    'footer-solutions-title': 'Solutions',
-                    'footer-company-title': 'Company',
-                    'footer-portfolio': 'Portfolio & Cases',
-                    'footer-contact-title': 'Contact & Legal',
-                    'footer-legal-title': 'Legal',
-                    'footer-privacy': 'Privacy Policy',
-                    'footer-terms': 'Terms of Service',
-
-                    // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
-                    
-                    // Top Sticky Banner
-                    'sticky-banner-text': '👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount',
-                    'sticky-banner-cta': 'Book now',
-                    
-                    // 1. Hero
-                    'hero-h1': 'AI systems that make money',
-                    'hero-sub': 'We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure',
-                    'hero-cta1': 'Get a consultation',
-                    'hero-cta2': 'View our case studies',
-                    
-                    // 2. Social Proof
-                    'social-h2': 'Trusted by industry leaders',
-                    
-                    // 3. Why Us
-                    'why-h2': 'Growth × Scale = Profit',
-                    'why-daria': 'Grew MRR by 10x in 4 months. I know how to turn technology into revenue',
-                    'why-viktor': 'Designed Russia\'s #1 platform serving 10M users. I build systems that don\'t fail',
-                    'why-cta': 'Meet the team',
-                    'why-daria-note': '<div class="conference-note-card"><p class="!text-sm !text-white !font-normal !mb-2"><span><b>P.S.</b> I\'m at the conference right now!</span></p><div class="flex items-center gap-4"><span class="!text-sm !text-white !font-normal !mb-0">Message me:</span><a href="httpsS://t.me/darikamouse" target="_blank" class="contact-icon" aria-label="Chat on Telegram"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 11.9c-.88-.27-.88-1.37.2-1.64l16.4-6.05c.75-.27 1.45.16 1.18 1.08l-3.0 14.17c-.2 1.02-1.03 1.28-1.88.8l-5.1-3.72-2.45 2.35c-.27.27-.67.43-1.08.19z"></path></svg></a><a href="httpsS://wa.me/79035176391" target="_blank" class="contact-icon" aria-label="Chat on WhatsApp"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.49 1.29 4.99L2 22l5.25-1.38c1.45.77 3.09 1.19 4.79 1.19h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.13c-1.57 0-3.07-.4-4.4-1.1L7.5 19.1l-3.32.87.89-3.23-.7-1.17c-.8-1.4-1.22-3.03-1.22-4.7C3.15 7.01 7.15 3 12.04 3s8.89 4.01 8.89 8.91c0 4.9-3.99 8.91-8.89 8.91zm4.71-5.38c-.27-.13-1.59-.78-1.84-.87-.25-.09-.43-.13-.61.13-.18.27-.7.87-.86 1.04-.16.18-.32.19-.59.06-.27-.13-1.15-.42-2.19-1.34-.81-.72-1.37-1.61-1.53-1.88-.16-.27-.02-.42.11-.55.12-.12.27-.3.4-.46.13-.16.18-.27.27-.46.09-.18.04-.36-.02-.49-.07-.13-.61-1.47-.84-2.01-.22-.54-.45-.47-.61-.47h-.5c-.18 0-.46.07-.7.34-.24.27-.92.9-1.13 2.17-.21 1.27.1 2.44.23 2.61.13.18.9 1.41 2.19 3.09 1.29 1.68 2.3 2.23 3.1 2.52.8.29 1.5.23 2.05.14.62-.1 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.13-.24-.2-.51-.34z"></path></svg></a></div></div>',
-
-                    // 4. What We Do
-                    'what-h2': 'Two ways to work with us',
-                    'what-enterprise-h': 'Enterprise AI Engineering',
-                    'what-enterprise-f1': 'Full-cycle turnkey development',
-                    'what-enterprise-f2': 'Integration with SAP, 1C, legacy systems',
-                    'what-enterprise-f3': 'On-premise solutions for banks and state-owned companies',
-                    'what-enterprise-cta': 'Discuss the project',
-                    'what-saas-h': 'AI Products (SaaS)',
-                    'what-saas-f1': 'Design QA for Enterprise brands',
-                    'what-saas-f2': 'B2B sales automation',
-                    'what-saas-cta1': 'Learn more about Françoise',
-                    'what-saas-cta2': 'Learn more about Clio',
-
-                    // 5. Proof
-                    'results-h2': 'Results',
-                    'results-c1': '10M users served by the platform engineered by our CTO',
-                    'results-c2': '10x MRR growth in 4 months on the CEO’s last project',
-                    'results-c3': '100% brand consistency guaranteed by Françoise',
-                    'results-cta': 'All case studies',
-
-                    // 6. Final CTA
-                    'final-cta-h2': 'Let\'s start with a free audit of your AI strategy',
-                    'final-cta-sub': '40 minutes with experts who built systems for 10M+ users',
-                    'final-cta-form-name': 'Name',
-                    'final-cta-form-email': 'Email',
-                    'final-cta-form-phone': 'Phone',
-                    'final-cta-form-task': 'Brief task description',
-                    'final-cta-form-note': 'By clicking this button you agree to the',
-                    'final-cta-form-note-policy': 'Privacy Policy',
-                    'final-cta-form-cta': 'Sign up for an audit',
-
-                    // Bottom Banner
-                    'bottom-banner-h2': 'Don\'t miss exclusive offers for exhibition guests',
-                    'bottom-banner-sub': 'Special packages, private consultations with the CTO, and bonuses only for event participants',
-                    'bottom-banner-cta': 'See all offers'
-                }
-            };
-
-            // --- Логика переключения языка (из образца) ---
-            const btnRuDesktop = document.getElementById('btn-ru');
-            const btnEnDesktop = document.getElementById('btn-en');
-            const btnRuMobile = document.getElementById('btn-ru-mobile');
-            const btnEnMobile = document.getElementById('btn-en-mobile');
-                        
-            const elementsToTranslate = document.querySelectorAll('[data-lang]');
-
-            function updateContent(lang) {
-                document.documentElement.lang = lang;
-
-                const isRu = lang === 'ru';
-                if(btnRuDesktop) btnRuDesktop.classList.toggle('active', isRu);
-                if(btnEnDesktop) btnEnDesktop.classList.toggle('active', !isRu);
-                if(btnRuMobile) btnRuMobile.classList.toggle('active', isRu);
-                if(btnEnMobile) btnEnMobile.classList.toggle('active', !isRu);
-
-                if(btnRuDesktop) btnRuDesktop.setAttribute('aria-pressed', isRu);
-                if(btnEnDesktop) btnEnDesktop.setAttribute('aria-pressed', !isRu);
-                if(btnRuMobile) btnRuMobile.setAttribute('aria-pressed', isRu);
-                if(btnEnMobile) btnEnMobile.setAttribute('aria-pressed', !isRu);
-
-                const langTranslations = translations[lang];
-
-                elementsToTranslate.forEach(el => {
-                    const key = el.getAttribute('data-lang');
-                    if (langTranslations[key]) {
-                        if (key === 'meta-title') {
-                            el.innerHTML = langTranslations[key];
-                        } else if (key === 'meta-description') {
-                            el.setAttribute('content', langTranslations[key]);
+                // Слушатель на ресайз, если вдруг
+                window.addEventListener('resize', () => {
+                    if (document.body.contains(stickyBanner)) {
+                        if (window.innerWidth >= 1024) {
+                            header.style.top = '49px';
                         } else {
-                            // Простая защита от XSS (хотя в данном случае ключи контролируем мы)
-                            // Для вставки HTML (как в 'why-daria-note') нам нужно использовать innerHTML
-                            // В остальных случаях - textContent
-                            // Но для простоты, т.к. мы доверяем контенту, используем innerHTML
-                            el.innerHTML = langTranslations[key];
+                            header.style.top = '0'; // На мобилке шапка просто скроллится
                         }
                     }
                 });
             }
+        }
 
-            if(btnRuDesktop) btnRuDesktop.addEventListener('click', () => updateContent('ru'));
-            if(btnEnDesktop) btnEnDesktop.addEventListener('click', () => updateContent('en'));
-            if(btnRuMobile) btnRuMobile.addEventListener('click', () => updateContent('ru'));
-            if(btnEnMobile) btnEnMobile.addEventListener('click', () => updateContent('en'));
 
-            // Устанавливаем язык по умолчанию (EN), как в образце
-            updateContent('en');
-        });
-            
-    </script>
+        // РАСШИРЕННЫЙ ОБЪЕКТ ПЕРЕВОДОВ
+        const translations = {
+            'ru': {
+                // --- МЕТА ---
+                'meta-title': 'DIVO - AI-системы, которые приносят деньги',
+                'meta-description': 'Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой.',
+
+                // --- Общие (Шапка, Подвал) ---
+                'logo': 'DIVO',
+                'nav-sales': 'Для Продаж',
+                'nav-design': 'Для Дизайна',
+                'nav-about': 'О нас',
+                'header-cta': 'Получить консультацию',
+                'header-cta-mobile': 'Консультация',
+                'nav-solutions': 'Решения',
+                'nav-custom-dev': 'Кастомная разработка',
+                'nav-portfolio': 'Портфолио',
+                'footer-mission': 'Мы превращаем технологии в двигатель роста вашего бизнеса.',
+                'footer-solutions-title': 'Решения',
+                'footer-company-title': 'Компания',
+                'footer-portfolio': 'Портфолио и Кейсы',
+                'footer-contact-title': 'Контакты',
+                'footer-legal-title': 'Документы',
+                'footer-privacy': 'Политика конфиденциальности',
+                'footer-terms': 'Условия использования',
+                'logo-sber-description': 'Крупнейший банк России',
+                'logo-avito-description': 'Крупнейший e-ком России',
+                'logo-yandex-description': 'Лидер поиска в Росиии',
+
+                // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
+
+                // Top Sticky Banner
+                'sticky-banner-text': '👋 Привет с выставки! Специальное предложение действует 48 часов → Бесплатный аудит + скидка 15%',
+                'sticky-banner-cta': 'Забронировать',
+
+                // 1. Hero
+                'hero-h1': 'AI-системы, которые приносят деньги',
+                'hero-sub': 'Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой',
+                'hero-cta1': 'Получить бесплатный технический аудит',
+                'hero-cta2': 'Посмотреть наши кейсы',
+
+                // 2. Social Proof
+                'social-h2': 'Нам доверяют',
+
+                // 3. Why Us
+                'why-h2': 'Рост × Масштаб = Прибыль',
+                'why-daria': 'Увеличила MRR в 10x за 4 месяца. Знаю, как превратить технологию в revenue',
+                'why-viktor': 'Спроектировал платформу №1 в России для 10M пользователей. Строю системы, которые не падают',
+                'why-cta': 'Познакомиться с командой',
+                'why-daria-note': '<div class="conference-note-card"><p class="!text-sm !text-white !font-normal !mb-2"><span><b>P.S.</b> Я сейчас на конференции!</span></p><div class="flex items-center gap-4"><span class="!text-sm !text-white !font-normal !mb-0">Напишите мне:</span><a href="httpsS://t.me/darikamouse" target="_blank" class="contact-icon" aria-label="Чат в Telegram"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 11.9c-.88-.27-.88-1.37.2-1.64l16.4-6.05c.75-.27 1.45.16 1.18 1.08l-3.0 14.17c-.2 1.02-1.03 1.28-1.88.8l-5.1-3.72-2.45 2.35c-.27.27-.67.43-1.08.19z"></path></svg></a><a href="httpsS://wa.me/79035176391" target="_blank" class="contact-icon" aria-label="Чат в WhatsApp"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.49 1.29 4.99L2 22l5.25-1.38c1.45.77 3.09 1.19 4.79 1.19h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.13c-1.57 0-3.07-.4-4.4-1.1L7.5 19.1l-3.32.87.89-3.23-.7-1.17c-.8-1.4-1.22-3.03-1.22-4.7C3.15 7.01 7.15 3 12.04 3s8.89 4.01 8.89 8.91c0 4.9-3.99 8.91-8.89 8.91zm4.71-5.38c-.27-.13-1.59-.78-1.84-.87-.25-.09-.43-.13-.61.13-.18.27-.7.87-.86 1.04-.16.18-.32.19-.59.06-.27-.13-1.15-.42-2.19-1.34-.81-.72-1.37-1.61-1.53-1.88-.16-.27-.02-.42.11-.55.12-.12.27-.3.4-.46.13-.16.18-.27.27-.46.09-.18.04-.36-.02-.49-.07-.13-.61-1.47-.84-2.01-.22-.54-.45-.47-.61-.47h-.5c-.18 0-.46.07-.7.34-.24.27-.92.9-1.13 2.17-.21 1.27.1 2.44.23 2.61.13.18.9 1.41 2.19 3.09 1.29 1.68 2.3 2.23 3.1 2.52.8.29 1.5.23 2.05.14.62-.1 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.13-.24-.2-.51-.34z"></path></svg></a></div></div>',
+
+                // 4. What We Do
+                'what-h2': 'Два способа работы с нами',
+                'what-enterprise-h': 'Enterprise AI Engineering',
+                'what-enterprise-f1': 'Полный цикл разработки под ключ',
+                'what-enterprise-f2': 'Интеграция с SAP, 1C, legacy-системами',
+                'what-enterprise-f3': 'On-premise решения для банков и госкомпаний',
+                'what-enterprise-cta': 'Обсудить проект',
+                'what-saas-h': 'AI-Продукты (SaaS)',
+                'what-saas-f1': 'Design QA для Enterprise-брендов',
+                'what-saas-f2': 'Автоматизация B2B-продаж',
+                'what-saas-cta1': 'Узнать больше о Françoise',
+                'what-saas-cta2': 'Узнать больше о Clio',
+
+                // 5. Proof
+                'results-h2': 'Результаты',
+                'results-c1': '10M пользователей обслуживает платформа, спроектированная нашим CTO',
+                'results-c2': '10x рост MRR за 4 месяца на последнем проекте CEO',
+                'results-c3': '100% консистентность бренда гарантирует Françoise',
+                'results-cta': 'Все кейсы',
+
+                // 6. Final CTA
+                'final-cta-h2': 'Начнем с бесплатного аудита вашей AI-стратегии',
+                'final-cta-sub': '40 минут с экспертами, которые построили системы для 10M+ пользователей',
+                'final-cta-form-name': 'Имя',
+                'final-cta-form-email': 'Email',
+                'final-cta-form-phone': 'Телефон',
+                'final-cta-form-task': 'Краткое описание задачи',
+                'final-cta-form-note': 'Нажимая на эту кнопку вы соглашаетесь с',
+                'final-cta-form-note-policy': 'Политикой конфиденциальности',
+                'final-cta-form-cta': 'Записаться на аудит',
+
+                // Bottom Banner
+                'bottom-banner-h2': 'Не пропустите эксклюзивные предложения для гостей выставки',
+                'bottom-banner-sub': 'Специальные пакеты, закрытые консультации с CTO и бонусы только для участников ивента',
+                'bottom-banner-cta': 'Смотреть все предложения'
+            },
+            'en': {
+                // --- МЕТА ---
+                'meta-title': 'DIVO - AI systems that make money',
+                'meta-description': 'We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure.',
+
+                // --- Общие (Шапка, Подвал) ---
+                'logo': 'DIVO',
+                'nav-sales': 'For Sales',
+                'nav-design': 'For Design',
+                'nav-about': 'About Us',
+                'header-cta': 'Get a Consultation',
+                'header-cta-mobile': 'Consultation',
+                'nav-solutions': 'Solutions',
+                'nav-custom-dev': 'Custom Development',
+                'nav-portfolio': 'Portfolio',
+                'footer-mission': 'We turn technology into a growth engine for your business.',
+                'footer-solutions-title': 'Solutions',
+                'footer-company-title': 'Company',
+                'footer-portfolio': 'Portfolio & Cases',
+                'footer-contact-title': 'Contact & Legal',
+                'footer-legal-title': 'Legal',
+                'footer-privacy': 'Privacy Policy',
+                'footer-terms': 'Terms of Service',
+                'logo-sber-description': 'Russia\'s largest bank',
+                'logo-avito-description': 'Russia\'s largest e-commerce',
+                'logo-yandex-description': 'Russia\'s search leader',
+
+                // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
+
+                // Top Sticky Banner
+                'sticky-banner-text': '👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount',
+                'sticky-banner-cta': 'Book now',
+
+                // 1. Hero
+                'hero-h1': 'AI systems that make money',
+                'hero-sub': 'We transform ambitious AI ideas into production-ready systems that handle millions of users and integrate seamlessly with your infrastructure',
+                'hero-cta1': 'Get a consultation',
+                'hero-cta2': 'View our case studies',
+
+                // 2. Social Proof
+                'social-h2': 'Trusted by industry leaders',
+
+                // 3. Why Us
+                'why-h2': 'Growth × Scale = Profit',
+                'why-daria': 'Grew MRR by 10x in 4 months. I know how to turn technology into revenue',
+                'why-viktor': 'Designed Russia\'s #1 platform serving 10M users. I build systems that don\'t fail',
+                'why-cta': 'Meet the team',
+                'why-daria-note': '<div class="conference-note-card"><p class="!text-sm !text-white !font-normal !mb-2"><span><b>P.S.</b> I\'m at the conference right now!</span></p><div class="flex items-center gap-4"><span class="!text-sm !text-white !font-normal !mb-0">Message me:</span><a href="httpsS://t.me/darikamouse" target="_blank" class="contact-icon" aria-label="Chat on Telegram"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 11.9c-.88-.27-.88-1.37.2-1.64l16.4-6.05c.75-.27 1.45.16 1.18 1.08l-3.0 14.17c-.2 1.02-1.03 1.28-1.88.8l-5.1-3.72-2.45 2.35c-.27.27-.67.43-1.08.19z"></path></svg></a><a href="httpsS://wa.me/79035176391" target="_blank" class="contact-icon" aria-label="Chat on WhatsApp"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.49 1.29 4.99L2 22l5.25-1.38c1.45.77 3.09 1.19 4.79 1.19h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.13c-1.57 0-3.07-.4-4.4-1.1L7.5 19.1l-3.32.87.89-3.23-.7-1.17c-.8-1.4-1.22-3.03-1.22-4.7C3.15 7.01 7.15 3 12.04 3s8.89 4.01 8.89 8.91c0 4.9-3.99 8.91-8.89 8.91zm4.71-5.38c-.27-.13-1.59-.78-1.84-.87-.25-.09-.43-.13-.61.13-.18.27-.7.87-.86 1.04-.16.18-.32.19-.59.06-.27-.13-1.15-.42-2.19-1.34-.81-.72-1.37-1.61-1.53-1.88-.16-.27-.02-.42.11-.55.12-.12.27-.3.4-.46.13-.16.18-.27.27-.46.09-.18.04-.36-.02-.49-.07-.13-.61-1.47-.84-2.01-.22-.54-.45-.47-.61-.47h-.5c-.18 0-.46.07-.7.34-.24.27-.92.9-1.13 2.17-.21 1.27.1 2.44.23 2.61.13.18.9 1.41 2.19 3.09 1.29 1.68 2.3 2.23 3.1 2.52.8.29 1.5.23 2.05.14.62-.1 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.13-.24-.2-.51-.34z"></path></svg></a></div></div>',
+
+                // 4. What We Do
+                'what-h2': 'Two ways to work with us',
+                'what-enterprise-h': 'Enterprise AI Engineering',
+                'what-enterprise-f1': 'Full-cycle turnkey development',
+                'what-enterprise-f2': 'Integration with SAP, 1C, legacy systems',
+                'what-enterprise-f3': 'On-premise solutions for banks and state-owned companies',
+                'what-enterprise-cta': 'Discuss the project',
+                'what-saas-h': 'AI Products (SaaS)',
+                'what-saas-f1': 'Design QA for Enterprise brands',
+                'what-saas-f2': 'B2B sales automation',
+                'what-saas-cta1': 'Learn more about Françoise',
+                'what-saas-cta2': 'Learn more about Clio',
+
+                // 5. Proof
+                'results-h2': 'Results',
+                'results-c1': '10M users served by the platform engineered by our CTO',
+                'results-c2': '10x MRR growth in 4 months on the CEO’s last project',
+                'results-c3': '100% brand consistency guaranteed by Françoise',
+                'results-cta': 'All case studies',
+
+                // 6. Final CTA
+                'final-cta-h2': 'Let\'s start with a free audit of your AI strategy',
+                'final-cta-sub': '40 minutes with experts who built systems for 10M+ users',
+                'final-cta-form-name': 'Name',
+                'final-cta-form-email': 'Email',
+                'final-cta-form-phone': 'Phone',
+                'final-cta-form-task': 'Brief task description',
+                'final-cta-form-note': 'By clicking this button you agree to the',
+                'final-cta-form-note-policy': 'Privacy Policy',
+                'final-cta-form-cta': 'Sign up for an audit',
+
+                // Bottom Banner
+                'bottom-banner-h2': 'Don\'t miss exclusive offers for exhibition guests',
+                'bottom-banner-sub': 'Special packages, private consultations with the CTO, and bonuses only for event participants',
+                'bottom-banner-cta': 'See all offers'
+            }
+        };
+
+        // --- Логика переключения языка (из образца) ---
+        const btnRuDesktop = document.getElementById('btn-ru');
+        const btnEnDesktop = document.getElementById('btn-en');
+        const btnRuMobile = document.getElementById('btn-ru-mobile');
+        const btnEnMobile = document.getElementById('btn-en-mobile');
+
+        const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+        function updateContent(lang) {
+            document.documentElement.lang = lang;
+
+            const isRu = lang === 'ru';
+            if (btnRuDesktop) btnRuDesktop.classList.toggle('active', isRu);
+            if (btnEnDesktop) btnEnDesktop.classList.toggle('active', !isRu);
+            if (btnRuMobile) btnRuMobile.classList.toggle('active', isRu);
+            if (btnEnMobile) btnEnMobile.classList.toggle('active', !isRu);
+
+            if (btnRuDesktop) btnRuDesktop.setAttribute('aria-pressed', isRu);
+            if (btnEnDesktop) btnEnDesktop.setAttribute('aria-pressed', !isRu);
+            if (btnRuMobile) btnRuMobile.setAttribute('aria-pressed', isRu);
+            if (btnEnMobile) btnEnMobile.setAttribute('aria-pressed', !isRu);
+
+            const langTranslations = translations[lang];
+
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (langTranslations[key]) {
+                    if (key === 'meta-title') {
+                        el.innerHTML = langTranslations[key];
+                    } else if (key === 'meta-description') {
+                        el.setAttribute('content', langTranslations[key]);
+                    } else {
+                        // Простая защита от XSS (хотя в данном случае ключи контролируем мы)
+                        // Для вставки HTML (как в 'why-daria-note') нам нужно использовать innerHTML
+                        // В остальных случаях - textContent
+                        // Но для простоты, т.к. мы доверяем контенту, используем innerHTML
+                        el.innerHTML = langTranslations[key];
+                    }
+                }
+            });
+        }
+
+        if (btnRuDesktop) btnRuDesktop.addEventListener('click', () => updateContent('ru'));
+        if (btnEnDesktop) btnEnDesktop.addEventListener('click', () => updateContent('en'));
+        if (btnRuMobile) btnRuMobile.addEventListener('click', () => updateContent('ru'));
+        if (btnEnMobile) btnEnMobile.addEventListener('click', () => updateContent('en'));
+
+        // Устанавливаем язык по умолчанию (EN), как в образце
+        updateContent('en');
+    });
+
+</script>
 </body>
 </html>

@@ -395,8 +395,8 @@
                         
                         <!-- Новый переключатель языка -->
                         <div class="lang-switcher-inline">
-                            <button id="btn-en" class="" aria-pressed="false">EN</button>
-                            <button id="btn-ru" class="active" aria-pressed="true">RU</button>
+                            <button id="btn-en" class="" aria-pressed="false">RU</button>
+                            <button id="btn-ru" class="active" aria-pressed="true">EN</button>
                         </div>
                     </div>
                 </div>
@@ -404,8 +404,8 @@
                 <div class="lg:hidden flex items-center gap-2">
                     <!-- <a href="#" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="header-cta-mobile">Консультация</a> -->
                     <div class="lang-switcher-inline">
-                        <button id="btn-en-mobile" class="text-xs px-2 py-1" aria-pressed="false">EN</button>
-                        <button id="btn-ru-mobile" class="active text-xs px-2 py-1" aria-pressed="true">RU</button>
+                        <button id="btn-en-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                        <button id="btn-ru-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
                     </div>
                     <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -474,70 +474,48 @@
 
             <!-- Правая колонка: Виджет оплаты -->
             <div class="payment-widget lg:sticky top-28 bg-white rounded-lg border border-gray-200 shadow-lg p-6 md:p-8">
-                <!-- Кнопка для мобильной версии -->
-                <button class="widget-toggle" id="widgetToggle" data-lang-key="button_text">Proceed to Payment</button>
                 
                 <div class="widget-content">
-                    <div class="order-summary mb-8 pb-6 border-b border-gray-200">
-                        <h3 class="text-xl font-heading font-bold mb-4" data-lang-key="order_summary">Order Summary</h3>
-                        <div class="flex justify-between items-center mb-2 text-text-secondary">
-                            <span data-lang-key="product_name">Technical Audit</span>
-                            <span data-lang-key="product_price">$1,999 USD</span>
-                        </div>
-                        <div class="flex justify-between items-center text-lg font-bold text-text-main pt-4 border-t border-gray-200 mt-4">
-                            <span data-lang-key="total_label">Total</span>
-                            <span data-lang-key="product_price">$1,999 USD</span>
-                        </div>
-                    </div>
+                        <iframe src="https://nowpayments.io/embeds/payment-widget?iid=6079019684" width="410" height="696" frameborder="0" scrolling="no" style="overflow-y: hidden;">
+                            Can't load widget
+                        </iframe>
 
-                    <div id="messageContainer"></div>
+                        <p class="text-sm text-center !text-text-secondary mt-4 mb-0">
 
-                    <form id="paymentForm">
-                        <div class="mb-6">
-                            <label class="block text-sm font-bold font-heading text-text-main mb-2" for="paymentMethod" data-lang-key="select_method">Select Payment Method</label>
-                            <select id="paymentMethod" class="form-select" required>
-                                <option value="">Choose payment method...</option>
-                                <option value="bitcoin">Bitcoin</option>
-                                <option value="ethereum">Ethereum</option>
-                                <option value="usdc">USDC</option>
-                                <option value="other">Other Crypto</option>
-                            </select>
-                        </div>
+                          <span data-lang="form_note_p1">
+                            By clicking the button, you agree to the
+                          </span>
 
-                        <div class="mb-6">
-                            <label class="block text-sm font-bold font-heading text-text-main mb-2" for="email" data-lang-key="email_label">Email Address</label>
-                            <input type="email" id="email" class="form-input" required placeholder="your@email.com">
-                        </div>
+                          <a href="/privacy-policy"
+                             data-lang="form_note_privacy_policy"
+                             class="!text-blue-600 !underline hover:!text-blue-800">
+                            Privacy Policy
+                          </a>
 
-                        <div class="mb-6">
-                            <label class="block text-sm font-bold font-heading text-text-main mb-2" for="fullName" data-lang-key="name_label">Full Name</label>
-                            <input type="text" id="fullName" class="form-input" required placeholder="John Doe">
-                        </div>
+                          <span data-lang="form_note_p2">
+                            and
+                          </span>
 
-                        <div class="mb-6">
-                            <label class="block text-sm font-bold font-heading text-text-main mb-2" for="organization" data-lang-key="organization_label">Organization (Optional)</label>
-                            <input type="text" id="organization" class="form-input" placeholder="Your Company">
-                        </div>
+                          <a href="/terms-of-service"
+                             data-lang="form_note_terms_of_service"
+                             class="!text-blue-600 !underline hover:!text-blue-800">
+                            Terms of Service
+                          </a>
 
-                        <div class="flex items-start gap-3 mb-4">
-                            <input type="checkbox" id="agreeToS" class="checkbox-input flex-shrink-0 mt-0.5" required>
-                            <label class="text-sm text-text-secondary" for="agreeToS">
-                                <span data-lang-key="agree_tos">I agree with</span> <a href="#" class="text-primary hover:underline" data-lang-key="tos_link_short">Terms of Service</a>
-                            </label>
-                        </div>
+                          <span data-lang="form_note_p3">
+                            and
+                          </span>
 
-                        <div class="flex items-start gap-3 mb-6">
-                            <input type="checkbox" id="agreePrivacy" class="checkbox-input flex-shrink-0 mt-0.5" required>
-                            <label class="text-sm text-text-secondary" for="agreePrivacy">
-                                <span data-lang-key="agree_privacy">I have read</span> <a href="/privacy-policy" class="text-primary hover:underline" data-lang-key="privacy_link_short">Privacy Policy</a>
-                            </label>
-                        </div>
+                          <a href="/user-agreement"
+                             data-lang="form_note_user_agreement"
+                             class="!text-blue-600 !underline hover:!text-blue-800">
+                            User Agreement
+                          </a>
 
-                        <button type="submit" class="btn btn-primary w-full text-center py-3 btn-lg" id="submitBtn" data-lang-key="button_text">Proceed to Payment</button>
-                    </form>
+                        </p>
 
                     <div class="mt-6 pt-6 border-t border-gray-200 text-center">
-                        <div class="font-bold text-text-main" data-lang-key="secure_payment">🔒 Secure payment</div>
+                        <div class="font-bold text-text-main" data-lang-key="secure_payment"> Secure payment</div>
                         <div class="text-sm text-text-secondary mt-1" data-lang-key="trust_message">Your payment data is encrypted and secure</div>
                     </div>
                 </div>
@@ -667,7 +645,7 @@
                     agree_tos: "I agree with",
                     agree_privacy: "I have read",
                     button_text: "Proceed to Payment",
-                    secure_payment: "🔒 Secure payment",
+                    secure_payment: " Secure payment",
                     trust_message: "Your payment data is encrypted and secure",
                     tos_link: "Terms of Service →",
                     privacy_link: "Privacy Policy →",
@@ -676,6 +654,13 @@
                     privacy_link_short: "Privacy Policy",
                     success_message: "Form submitted successfully! Redirecting to payment...",
                     error_message: "Please fill in all required fields and accept the terms.",
+                    form_note_p1: "By clicking the button, you agree to the ",
+                    form_note_p2: " and ",
+                    form_note_p3: " and ",
+                    form_note_privacy_policy: "Privacy Policy",
+                    form_note_terms_of_service: "Terms of Service",
+                    form_note_user_agreement: "User Agreement",
+
                     // Футер ключи (для полноты)
                     logo: 'DIVO',
                     'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
@@ -709,7 +694,7 @@
                     agree_tos: "Я согласен с",
                     agree_privacy: "Я прочитал",
                     button_text: "Перейти к оплате",
-                    secure_payment: "🔒 Безопасная оплата",
+                    secure_payment: " Безопасная оплата",
                     trust_message: "Ваши платежные данные зашифрованы и защищены",
                     tos_link: "Условия обслуживания →",
                     privacy_link: "Политика конфиденциальности →",
@@ -718,6 +703,12 @@
                     privacy_link_short: "Политику конфиденциальности",
                     success_message: "Форма успешно отправлена! Перенаправление на оплату...",
                     error_message: "Пожалуйста, заполните все обязательные поля и примите условия.",
+                    form_note_p1: "Нажимая на эту кнопку вы соглашаетесь с ",
+                    form_note_p2: " и ",
+                    form_note_p3: " и ",
+                    form_note_privacy_policy: "Политика Конфиденциальности",
+                    form_note_terms_of_service: "Условия использования",
+                    form_note_user_agreement: "Пользовательское соглашение",
                     // Футер ключи
                     logo: 'DIVO',
                     'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
