@@ -2176,8 +2176,7 @@
                     <ul class="space-y-2">
                         <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика
                             конфиденциальности</a></li>
-                        <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия
-                            использования</a></li>
+                        <li><a href="/user-agreement" class="footer-link text-sm" data-lang="footer-user-agreement">Пользовательское соглашение</a></li>
                     </ul>
                 </div>
             </div>
@@ -2272,6 +2271,7 @@
             .then(response => response.json())
             .then(data => {
                 overlayToHide.style.display = 'none';
+                window.location.assign("/thx");
             })
             .catch(error => {
                 console.error('Ошибка!', error);
@@ -2395,7 +2395,7 @@
 
                 'footer-privacy': 'Политика конфиденциальности',
 
-                'footer-terms': 'Условия использования',
+                'footer-user-agreement': 'Пользовательское соглашение',
 
 
                 // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Francoise" ---
@@ -2836,7 +2836,7 @@
 
                 'footer-privacy': 'Privacy Policy',
 
-                'footer-terms': 'Terms of Service',
+                'footer-user-agreement': 'User Agreement',
 
 
                 // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ "Francoise" ---
