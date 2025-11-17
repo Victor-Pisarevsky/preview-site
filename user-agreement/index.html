@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Новый title -->
+    <title>Пользовательское соглашение | Terms of Service - DIVO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Alumni+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Стили остались те же, включая увеличенные заголовки -->
+    <style>
+        @font-face {
+            font-family: 'Eugusto';
+            src: url('EugustoFreePersonalUse-Regular.otf');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Alumni Sans', sans-serif;
+            --font-decorative: 'Eugusto', 'KS Bistra', sans-serif;
+
+            --color-primary: rgb(203, 2, 19);
+            --color-primary-dark: rgb(180, 2, 19);
+            --color-bg-light: rgb(241, 241, 241);
+            --color-text-main: rgb(30, 30, 30);
+            --color-text-secondary: rgb(60, 60, 60);
+            --color-card-bg: #ffffff;
+            --color-footer-bg: rgb(30, 30, 30);
+
+            --color-bg-1: rgba(203, 2, 19, 0.1);
+            --color-bg-2: rgba(0, 240, 255, 0.1);
+            --color-bg-3: rgba(60, 60, 60, 0.08);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-weight: 300; 
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header-logo {
+            font-family: var(--font-decorative);
+            font-size: 2rem; /* Было 1.75rem */
+            font-weight: 800;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .header-nav-link {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .header-nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            gap: 0.25rem;
+            background: var(--color-bg-light);
+            padding: 0.25rem;
+            border-radius: 6px;
+            border: 1px solid rgba(60, 60, 60, 0.1);
+        }
+
+        .lang-btn {
+            padding: 0.375rem 0.75rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s;
+            color: var(--color-text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .lang-btn:hover {
+            background: rgba(203, 2, 19, 0.05);
+        }
+
+        .lang-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--color-footer-bg);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-logo {
+            font-family: var(--font-decorative);
+            font-size: 1.75rem; /* Было 1.5rem */
+            font-weight: 800;
+            color: var(--color-primary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem; /* Было 1.125rem */
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        .footer-link:hover {
+            color: var(--color-primary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .policy-container {
+            background: var(--color-card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        h1 {
+            font-family: var(--font-decorative);
+            font-size: clamp(4rem, 3.5rem + 2vw, 6rem); /* Было clamp(3rem, 2.5rem + 2vw, 5rem) */
+            color: var(--color-text-main);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .effective-date {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--color-bg-light);
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 2.25rem + 1.5vw, 3.5rem); /* Было clamp(2rem, 1.75rem + 1.5vw, 3rem) */
+            color: var(--color-text-main);
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--color-primary);
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 1.75rem + 0.75vw, 2.5rem); /* Было clamp(1.5rem, 1.35rem + 0.75vw, 2rem) */
+            color: var(--color-text-main);
+            margin-top: 1.75rem;
+            margin-bottom: 0.875rem;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        strong {
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .company-info {
+            background: var(--color-bg-1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--color-primary);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .company-info ul {
+            list-style-type: none;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+        .company-info li {
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            background: rgba(203, 2, 19, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Language Content Toggle */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--color-bg-3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: var(--color-text-main);
+            font-size: 1.75rem; /* Было 1.5rem */
+        }
+
+        .toc ul {
+            margin-left: 1rem;
+            list-style-type: decimal;
+        }
+        .toc li {
+            font-size: 0.95rem;
+        }
+
+        .toc a {
+            color: var(--color-text-secondary);
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 3rem; /* Было 2.5rem */
+            }
+
+            h2 {
+                font-size: 2.25rem; /* Было 1.75rem */
+            }
+
+            h3 {
+                font-size: 1.75rem; /* Было 1.35rem */
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header from Reference -->
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                
+                <a href="/" class="header-logo flex-shrink-0">DIVO</a>
+
+                <div class="desktop-nav hidden lg:flex items-center gap-6">
+                    <nav class="flex gap-8 items-center">
+                        <div class="relative group">
+                            <button class="header-nav-link flex items-center gap-1">
+                                <span data-lang="nav-solutions">Решения</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
+                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
+                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+                        <a href="/contact" class="header-nav-link" data-lang="nav-contact">Контакты</a>
+                    </nav>
+
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" onclick="switchLanguage('ru')" id="btn-ru">RU</button>
+                        <button class="lang-btn" onclick="switchLanguage('en')" id="btn-en">EN</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu lg:hidden pb-4">
+                <nav class="flex flex-col gap-4">
+                    <a href="/for-sales" class="header-nav-link">Для Продаж</a>
+                    <a href="/for-design" class="header-nav-link">Для Дизайна</a>
+                    <a href="/custom-development" class="header-nav-link">Кастомная разработка</a>
+                    <a href="/custom-development" class="header-nav-link">Портфолио</a>
+                    <a href="/about-us" class="header-nav-link">О нас</a>
+                    <a href="/contact" class="header-nav-link">Контакты</a>
+                    
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" onclick="switchLanguage('ru')" id="btn-ru-mobile">RU</button>
+                        <button class="lang-btn" onclick="switchLanguage('en')" id="btn-en-mobile">EN</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="policy-container">
+            <!-- Russian Version -->
+            <div id="content-ru" class="lang-content">
+                <!-- Новый H1 -->
+                <h1>Пользовательское соглашение</h1>
+                <p class="effective-date">Дата вступления в силу: 15 ноября 2025 г.</p>
+
+                <!-- Новое Содержание (TOC) -->
+                <div class="toc">
+                    <h3>Содержание</h3>
+                    <ul>
+                        <li><a href="#ru-1">1. Общие положения</a></li>
+                        <li><a href="#ru-2">2. Предмет соглашения</a></li>
+                        <li><a href="#ru-3">3. Использование сервисов</a></li>
+                        <li><a href="#ru-4">4. Права и обязанности сторон</a></li>
+                        <li><a href="#ru-5">5. Интеллектуальная собственность</a></li>
+                        <li><a href="#ru-6">6. Оплата и возвраты</a></li>
+                        <li><a href="#ru-7">7. Ограничение ответственности</a></li>
+                        <li><a href="#ru-8">8. Конфиденциальность и защита данных</a></li>
+                        <li><a href="#ru-9">9. Прекращение использования</a></li>
+                        <li><a href="#ru-10">10. Разрешение споров</a></li>
+                        <li><a href="#ru-11">11. Прочие условия</a></li>
+                        <li><a href="#ru-12">12. Контактная информация</a></li>
+                    </ul>
+                </div>
+
+                <!-- Далее идет полный текст Пользовательского соглашения (RU) -->
+
+                <h2 id="ru-1">1. ОБЩИЕ ПОЛОЖЕНИЯ</h2>
+                
+                <p>1.1. Настоящее Пользовательское соглашение (далее — «Соглашение») регулирует отношения между:</p>
+
+                <div class="company-info">
+                    <strong>Для международных клиентов:</strong>
+                    <ul>
+                        <li>Индивидуальным предпринимателем DARIA KAMYSHINA</li>
+                        <li>Идентификационный номер: 302259641</li>
+                        <li>Адрес: ул. Ахвледиани 14, ТБИЛИСИ</li>
+                        <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="company-info">
+                    <strong>Для клиентов из Российской Федерации:</strong>
+                    <ul>
+                        <li>ИП КАМЫШИНА ДАРЬЯ ЭДУАРДОВНА</li>
+                        <li>ИНН: 772781640947</li>
+                        <li>ОГРНИП: 325774600505272</li>
+                        <li>Адрес: Россия, 117623, г. Москва, вн.тер.г. муниципальный округ Южное Бутово, ул. 2-я Мелитопольская, дом 21, корп. 3, кв. 125</li>
+                        <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    </ul>
+                </div>
+
+                <p>(далее совместно — «DIVO», «Компания» или «Исполнитель») и пользователем сайта divo.ai и связанных сервисов (далее — «Пользователь» или «Клиент»).</p>
+
+                <p>1.2. Используя сайт divo.ai, загружая контент, используя SaaS-продукты или заказывая услуги, Пользователь полностью принимает условия настоящего Соглашения. Если вы не согласны с условиями, пожалуйста, немедленно прекратите использование сайта и сервисов.</p>
+                <p>1.3. Компания оставляет за собой право изменять условия Соглашения в одностороннем порядке. Актуальная версия размещается на сайте divo.ai/terms с указанием даты последнего обновления. Продолжение использования сервисов после внесения изменений означает ваше согласие с новыми условиями. Существенные изменения вступают в силу через 30 дней после публикации.</p>
+                <p>1.4. Настоящее Соглашение составлено на русском и английском языках и имеет одинаковую юридическую силу. При расхождении толкования приоритет имеет версия на языке юрисдикции, применимой к конкретному клиенту (русская версия для клиентов из РФ, английская для международных клиентов).</p>
+
+
+                <h2 id="ru-2">2. ПРЕДМЕТ СОГЛАШЕНИЯ</h2>
+                <p>2.1. Компания предоставляет Пользователю доступ к следующим услугам и продуктам:</p>
+                <ul>
+                    <li>Информационный веб-сайт divo.ai</li>
+                    <li>SaaS-продукты:
+                        <ul>
+                            <li><strong>Françoise</strong> — AI Design QA система для обеспечения консистентности бренда</li>
+                            <li><strong>Klio</strong> — AI Proposal Generator для автоматизации B2B-продаж</li>
+                        </ul>
+                    </li>
+                    <li>Услуги кастомной разработки AI-систем (Custom AI Engineering)</li>
+                    <li>Консультационные и аудиторские услуги</li>
+                </ul>
+                
+                <p>2.2. <strong>Условия использования SaaS-продуктов:</strong></p>
+                <ul>
+                    <li>Доступ предоставляется после оплаты на основе разовых платежей или подписки</li>
+                    <li>Лицензия является неисключительной, непередаваемой третьим лицам, ограниченной сроком оплаты</li>
+                    <li>Пользователь получает право использовать продукт исключительно для своих бизнес-целей</li>
+                    <li>Запрещена перепродажа, субаренда или иное коммерческое использование доступа к сервисам</li>
+                    <li>Доступ предоставляется через уникальную ссылку или API-ключ</li>
+                </ul>
+
+                <p>2.3. <strong>Условия оказания услуг Custom AI Engineering:</strong></p>
+                <ul>
+                    <li>Определяются отдельным договором на оказание услуг или контрактом</li>
+                    <li>Включают техническое задание, сроки, стоимость и порядок приемки работ</li>
+                    <li>Права на разработанное ПО регулируются отдельным соглашением</li>
+                </ul>
+
+                <p>2.4. <strong>Консультационные услуги:</strong></p>
+                <ul>
+                    <li>Оказываются по запросу клиента</li>
+                    <li>Могут включать бесплатную первичную консультацию (40 минут)</li>
+                    <li>Платные консультации оплачиваются по согласованным тарифам</li>
+                </ul>
+
+                <h2 id="ru-3">3. ИСПОЛЬЗОВАНИЕ СЕРВИСОВ</h2>
+                
+                <p><strong>3.1. Ответственность за доступ:</strong></p>
+                <p>Пользователь несет полную ответственность за безопасность уникальных ссылок доступа и API-ключей, предоставленных для использования SaaS-продуктов. Любые действия, совершенные через предоставленный доступ, считаются совершенными Пользователем.</p>
+                <p>3.2. Пользователь обязан немедленно уведомить Компанию по адресу <a href="mailto:info@divo.solutions">info@divo.solutions</a> о любом несанкционированном использовании или компрометации доступа.</p>
+                <p>3.3. <strong>Запрещено:</strong></p>
+                <ul>
+                    <li>Передавать доступ (ссылки, API-ключи) третьим лицам без письменного согласия Компании</li>
+                    <li>Использовать сервисы для незаконной деятельности, спама, фишинга или иных противоправных действий</li>
+                    <li>Предпринимать попытки взлома, реверс-инжиниринга, декомпиляции или извлечения исходного кода</li>
+                    <li>Перегружать систему чрезмерными запросами (более 1000 API-вызовов в минуту без согласования)</li>
+                    <li>Загружать в систему вредоносное ПО, вирусы или иной деструктивный контент</li>
+                    <li>Использовать сервисы для создания конкурирующих продуктов</li>
+                </ul>
+
+                <p>3.4. Компания вправе приостановить или прекратить доступ без предварительного уведомления в случаях:</p>
+                <ul>
+                    <li>Нарушения условий настоящего Соглашения</li>
+                    <li>Неоплаты услуг более 7 дней после окончания оплаченного периода</li>
+                    <li>Попыток взлома или противоправных действий</li>
+                    <li>По требованию государственных органов</li>
+                    <li>При обнаружении мошеннической активности</li>
+                </ul>
+                <p>При прекращении доступа за нарушение условий возврат средств не производится.</p>
+
+                <h2 id="ru-4">4. ПРАВА И ОБЯЗАННОСТИ СТОРОН</h2>
+                
+                <p><strong>4.1. Компания обязуется:</strong></p>
+                <ul>
+                    <li>Предоставлять доступ к оплаченным сервисам в соответствии с заказанным пакетом</li>
+                    <li>Обеспечивать конфиденциальность данных Пользователя согласно Политике конфиденциальности (divo.ai/privacy)</li>
+                    <li>Уведомлять о плановых технических работах не менее чем за 24 часа через email</li>
+                    <li>Обрабатывать обращения в техническую поддержку в течение 48 часов в рабочие дни</li>
+                    <li>Обеспечивать доступность сервисов не менее 99% времени в месяц (за исключением планового обслуживания)</li>
+                </ul>
+
+                <p><strong>4.2. Компания имеет право:</strong></p>
+                <ul>
+                    <li>Изменять функционал продуктов, добавлять или удалять функции с уведомлением пользователей за 14 дней</li>
+                    <li>Приостанавливать работу сервисов для планового технического обслуживания (не более 4 часов в месяц)</li>
+                    <li>Отказать в обслуживании при нарушении условий Соглашения без возврата средств</li>
+                    <li>Изменять тарифы с уведомлением за 30 дней (изменения не влияют на уже оплаченные услуги)</li>
+                    <li>Запрашивать дополнительную информацию для верификации пользователя</li>
+                </ul>
+
+                <p><strong>4.3. Пользователь обязуется:</strong></p>
+                <ul>
+                    <li>Использовать сервисы в соответствии с законодательством страны своего местонахождения и международным правом</li>
+                    <li>Не предпринимать попытки взлома или извлечения исходного кода продуктов</li>
+                    <li>Не перегружать систему чрезмерными запросами</li>
+                    <li>Своевременно оплачивать услуги</li>
+                    <li>Не загружать в систему вредоносный контент</li>
+                    <li>Не использовать сервисы для создания конкурирующих продуктов</li>
+                </ul>
+
+                <p><strong>4.4. Пользователь имеет право:</strong></p>
+                <ul>
+                    <li>Использовать сервисы в полном объеме в рамках оплаченного доступа</li>
+                    <li>Обращаться в техническую поддержку по вопросам работы сервисов</li>
+                    <li>Запросить удаление всех своих данных из системы</li>
+                </ul>
+
+                <h2 id="ru-5">5. ИНТЕЛЛЕКТУАЛЬНАЯ СОБСТВЕННОСТЬ</h2>
+                
+                <p>5.1. Все права на программное обеспечение, исходный код, дизайн, графику, контент, товарные знаки, логотипы и другие объекты интеллектуальной собственности на сайте divo.ai и в сервисах Françoise и Klio принадлежат Компании или ее партнерам и защищены законодательством об интеллектуальной собственности.</p>
+                <p>5.2. Использование материалов сайта и сервисов возможно только в рамках функционала, предоставленного Компанией по настоящему Соглашению. Копирование, модификация, воспроизведение, распространение, публичный показ или иное использование без предварительного письменного согласия Компании категорически запрещены.</p>
+                
+                <p><strong>5.3. Контент Пользователя:</strong></p>
+                <ul>
+                    <li>Контент, загруженный Пользователем в сервисы (дизайн-файлы, тексты, документы, изображения, данные), остается исключительной собственностью Пользователя</li>
+                    <li>Компания получает ограниченную, неисключительную, непередаваемую лицензию на использование контента Пользователя исключительно для предоставления услуг по настоящему Соглашению</li>
+                    <li>Компания не использует контент клиентов для обучения собственных AI-моделей или моделей третьих лиц без явного письменного согласия Пользователя</li>
+                    <li>Пользователь гарантирует, что обладает всеми необходимыми правами на загружаемый контент и его использование не нарушает права третьих лиц</li>
+                </ul>
+
+                <p><strong>5.4. Результаты работы по Custom AI Engineering:</strong></p>
+                <ul>
+                    <li>Права на разработанное программное обеспечение определяются отдельным договором</li>
+                    <li>По умолчанию все имущественные права на результаты работы переходят к Заказчику после полной оплаты</li>
+                    <li>Компания сохраняет право использовать общие подходы, методологии и непатентуемые решения в других проектах</li>
+                </ul>
+
+                <h2 id="ru-6">6. ОПЛАТА И ВОЗВРАТЫ</h2>
+                
+                <p><strong>6.1. Стоимость услуг:</strong></p>
+                <ul>
+                    <li>Стоимость указана на сайте divo.ai в разделе тарифов</li>
+                    <li>Для международных клиентов цены указаны в USD или EUR</li>
+                    <li>Для клиентов из РФ цены могут быть указаны в RUB</li>
+                    <li>Все цены являются окончательными и включают применимые налоги (если применимо)</li>
+                </ul>
+
+                <p><strong>6.2. Способы оплаты:</strong></p>
+                <p><strong>Для международных клиентов (оплата на грузинское ИП):</strong></p>
+                <p>Платежи обрабатываются через платежный провайдер <strong>NOWPayments</strong> (<a href="https://nowpayments.io" target="_blank">https://nowpayments.io</a>):</p>
+                <ul>
+                    <li><strong>Криптовалюта напрямую:</strong> USDT (TRC-20, ERC-20), USDC (ERC-20), ETH (Ethereum), BTC (Bitcoin), 300+ других криптовалют</li>
+                    <li><strong>Банковские карты</strong> (с автоматической конвертацией в криптовалюту): Visa (любые страны), Mastercard (любые страны), Apple Pay, Google Pay</li>
+                    <li><strong>Банковский перевод SWIFT/SEPA</strong> (для клиентов из ЕС)</li>
+                    <li><strong>Wise Business</strong> (для определённых регионов)</li>
+                    <li>Другие способы по согласованию</li>
+                </ul>
+
+                <p><strong>Для клиентов из Российской Федерации (оплата на российское ИП):</strong></p>
+                <ul>
+                    <li><strong>CloudPayments</strong> (банковские карты: Visa, Mastercard, МИР, выпущенные российскими банками)</li>
+                    <li><strong>Система быстрых платежей (СБП)</strong></li>
+                    <li>Банковский перевод на расчётный счёт</li>
+                    <li>Выставление счёта для юридических лиц</li>
+                    <li>Криптовалюта через NOWPayments (по согласованию)</li>
+                </ul>
+
+                <p><strong>6.3. Оплата криптовалютой:</strong></p>
+                <p>6.3.1. При оплате криптовалютой Клиент подтверждает и гарантирует:</p>
+                <ul>
+                    <li>Законность происхождения криптовалютных средств</li>
+                    <li>Соблюдение применимого законодательства о противодействии отмыванию денег (AML) и финансированию терроризма</li>
+                    <li>Что не находится под международными санкциями</li>
+                </ul>
+                
+                <p>6.3.2. Условия криптовалютных платежей:</p>
+                <ul>
+                    <li>Курс конвертации фиксируется на момент выставления счета (invoice) и действителен в течение 24 часов</li>
+                    <li>Волатильность криптовалюты после оплаты не влияет на стоимость оказанных услуг</li>
+                    <li>Транзакция считается завершенной после получения необходимого количества подтверждений в блокчейн-сети (обычно 3-6 подтверждений)</li>
+                    <li>Клиент оплачивает комиссии блокчейн-сети (gas fees)</li>
+                    <li>Компания не несет ответственности за задержки, связанные с работой блокчейн-сети</li>
+                </ul>
+
+                <p>6.3.3. Для платежей свыше $10,000 USD эквивалента требуется прохождение процедуры KYC (Know Your Customer):</p>
+                <ul>
+                    <li>Предоставление документа, удостоверяющего личность</li>
+                    <li>Подтверждение источника средств</li>
+                    <li>Подтверждение адреса регистрации (для юридических лиц)</li>
+                </ul>
+
+                <p><strong>6.3A. Оплата банковскими картами через NOWPayments:</strong></p>
+                <p>6.3A.1. При выборе оплаты банковской картой транзакция обрабатывается платёжным провайдером <strong>NOWPayments</strong> и автоматически конвертируется в криптовалюту.</p>
+                <p>6.3A.2. Процесс оплаты:</p>
+                <ul>
+                    <li>Вы выбираете продукт и переходите к оплате</li>
+                    <li>Открывается защищённая платёжная форма NOWPayments</li>
+                    <li>Вы выбираете способ оплаты: "Pay with Card" или "Pay with Crypto"</li>
+                    <li>При оплате картой вводите данные карты</li>
+                    <li>NOWPayments обрабатывает платёж и конвертирует сумму в криптовалюту по текущему курсу</li>
+                    <li>Мы получаем криптовалюту и предоставляем вам доступ к сервису</li>
+                </ul>
+                
+                <p>6.3A.3. <strong>Важные условия:</strong></p>
+                <ul>
+                    <li>Курс конвертации фиксируется на момент создания платёжной ссылки и действителен в течение 15 минут</li>
+                    <li>Обработка платежа обычно занимает 1-5 минут</li>
+                    <li>Данные вашей карты <strong>не передаются и не хранятся</strong> нами — они обрабатываются напрямую NOWPayments в соответствии с стандартом PCI DSS</li>
+                    <li>Комиссия за обработку карточного платежа составляет 3.5% + €0.30 и может быть: Включена в стоимость (вы платите указанную цену) или добавлена сверху (указывается при оформлении)</li>
+                </ul>
+                
+                <p>6.3A.4. При оплате картой вы соглашаетесь с:</p>
+                <ul>
+                    <li>Политикой конфиденциальности NOWPayments: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                    <li>Условиями использования NOWPayments: <a href="https://nowpayments.io/terms-of-use" target="_blank">https://nowpayments.io/terms-of-use</a></li>
+                    <li>Автоматической конвертацией платежа в криптовалюту</li>
+                </ul>
+
+                <p>6.3A.5. Безопасность:</p>
+                <ul>
+                    <li>NOWPayments сертифицирован по стандарту PCI DSS Level 1</li>
+                    <li>Все карточные данные шифруются при передаче</li>
+                    <li>Мы не имеем доступа к полным номерам карт и CVV-кодам</li>
+                </ul>
+
+                <p><strong>6.4. Подписки и разовые платежи:</strong></p>
+                <p>6.4.1. После оплаты Пользователь получает уникальную ссылку доступа или API-ключ на email, указанный при оформлении заказа.</p>
+                <p>6.4.2. Доступ предоставляется:</p>
+                <ul>
+                    <li>На согласованный период (1 месяц, 3 месяца, 1 год) для подписок</li>
+                    <li>Бессрочно для разовых платежей (с правом Компании прекратить поддержку с уведомлением за 90 дней)</li>
+                </ul>
+                <p>6.4.3. Продление подписки:</p>
+                <ul>
+                    <li>За 7 дней до окончания подписки направляется уведомление с возможностью оплатить продление</li>
+                    <li>Подписка не продлевается автоматически</li>
+                    <li>При неоплате доступ прекращается после окончания оплаченного периода</li>
+                </ul>
+
+                <p><strong>6.5. Возврат средств:</strong></p>
+                <p>6.5.1. <strong>Подписки и разовые платежи:</strong></p>
+                <ul>
+                    <li>Возврат возможен в течение 14 дней с момента первой оплаты, если сервис не был использован (не загружены файлы, не отправлены запросы к API)</li>
+                    <li>После начала использования сервиса возврат не производится</li>
+                    <li>Исключение: технические проблемы, делающие сервис полностью недоступным более 72 часов подряд — производится пропорциональный возврат</li>
+                </ul>
+                
+                <p>6.5.2. <strong>Криптовалютные платежи:</strong></p>
+                <ul>
+                    <li>Возврат осуществляется в той же криптовалюте, что была использована для оплаты</li>
+                    <li>Возврат производится по курсу на день возврата (может отличаться от курса оплаты)</li>
+                    <li>Комиссии блокчейн-сети при возврате вычитаются из суммы возврата</li>
+                    <li>Срок возврата: до 14 рабочих дней с момента одобрения</li>
+                </ul>
+
+                <p>6.5.3. <strong>Карточные платежи через NOWPayments:</strong></p>
+                <ul>
+                    <li>Возврат осуществляется в той же валюте, которой был совершён платёж (карта → фиат)</li>
+                    <li>Возврат обрабатывается через NOWPayments в течение 5-14 рабочих дней</li>
+                    <li>Комиссия за обработку возврата удерживается из суммы возврата</li>
+                    <li>Возврат невозможен, если платёж был конвертирован в криптовалюту и уже переведён на наш кошелёк (технические ограничения) — в этом случае возврат осуществляется криптовалютой на предоставленный вами адрес кошелька</li>
+                </ul>
+                
+                <p>6.5.4. <strong>Custom AI Engineering:</strong></p>
+                <ul>
+                    <li>Условия возврата определяются отдельным договором</li>
+                    <li>Как правило, возврат невозможен после начала выполнения работ</li>
+                </ul>
+
+                <p><strong>6.6. Документы:</strong></p>
+                <ul>
+                    <li>Для всех платежей выдается счет (invoice)</li>
+                    <li>После оплаты предоставляется подтверждение оплаты</li>
+                    <li>Для юридических лиц из РФ: счет, акт выполненных работ, счет-фактура (при необходимости)</li>
+                    <li>Для криптоплатежей: invoice с крипто-адресом, transaction receipt (хэш транзакции)</li>
+                </ul>
+
+                <p><strong>6.7. Для платежей через NOWPayments:</strong></p>
+                <ul>
+                    <li>Invoice с выбором способа оплаты (карта или крипта)</li>
+                    <li>Payment confirmation (подтверждение оплаты с transaction ID)</li>
+                    <li>Для криптоплатежей: transaction hash в блокчейне</li>
+                    <li>Для карточных платежей: payment receipt от NOWPayments</li>
+                </ul>
+
+                <h2 id="ru-7">7. ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ</h2>
+                
+                <p><strong>7.1. Предоставление услуг "как есть":</strong></p>
+                <p>Сервисы предоставляются по принципу "как есть" (as-is) и "как доступно" (as available). Компания не гарантирует:</p>
+                <ul>
+                    <li>Абсолютно бесперебойную работу сервисов</li>
+                    <li>Полное отсутствие ошибок или багов</li>
+                    <li>Что сервисы будут соответствовать всем ожиданиям Пользователя</li>
+                    <li>Конкретные бизнес-результаты от использования сервисов</li>
+                </ul>
+
+                <p><strong>7.2. Компания не несет ответственности за:</strong></p>
+                <ul>
+                    <li>Косвенные убытки, упущенную выгоду, потерю репутации, потерю данных или иные непрямые убытки</li>
+                    <li>Действия третьих лиц (хакерские атаки, DDoS, взломы)</li>
+                    <li>Форс-мажорные обстоятельства (стихийные бедствия, войны, террористические акты, изменения законодательства, действия властей)</li>
+                    <li>Несовместимость сервисов с оборудованием, программным обеспечением или интернет-соединением Пользователя</li>
+                    <li>Действия или бездействие третьих лиц (платежных систем, хостинг-провайдеров, интернет-провайдеров)</li>
+                    <li>Неправомерные действия Пользователя или нарушение им законодательства</li>
+                </ul>
+
+                <p><strong>7.3. Ограничение суммы ответственности:</strong></p>
+                <p>Максимальная совокупная ответственность Компании по настоящему Соглашению ограничена суммой, фактически уплаченной Пользователем за последние 3 (три) месяца использования сервисов, но не более 1000 USD (одной тысячи долларов США).</p>
+
+                <p><strong>7.4. Ответственность Пользователя:</strong></p>
+                <p>Пользователь несет полную ответственность за:</p>
+                <ul>
+                    <li>Весь контент, загружаемый в сервисы, включая соблюдение авторских прав, прав на товарные знаки и иных прав третьих лиц</li>
+                    <li>Соблюдение применимого законодательства при использовании сервисов</li>
+                    <li>Любые убытки, причиненные Компании в результате нарушения настоящего Соглашения</li>
+                    <li>Безопасность своих учетных данных</li>
+                </ul>
+
+                <p><strong>7.5. Индемнификация (возмещение убытков):</strong></p>
+                <p>Пользователь обязуется возместить Компании все убытки, расходы, претензии третьих лиц, возникшие в результате:</p>
+                <ul>
+                    <li>Нарушения Пользователем настоящего Соглашения</li>
+                    <li>Нарушения Пользователем прав третьих лиц</li>
+                    <li>Неправомерного использования сервисов</li>
+                </ul>
+
+                <h2 id="ru-8">8. КОНФИДЕНЦИАЛЬНОСТЬ И ЗАЩИТА ДАННЫХ</h2>
+                
+                <p>8.1. Обработка персональных данных осуществляется в соответствии с Политикой конфиденциальности, размещенной по адресу: <a href="divo.ai/privacy">divo.ai/privacy</a></p>
+                
+                <p><strong>8.2. Применимое законодательство:</strong></p>
+                <ul>
+                    <li>Для международных клиентов: Закон Грузии о защите персональных данных (совместим с GDPR, действует с марта 2024), GDPR (для клиентов из ЕС)</li>
+                    <li>Для клиентов из РФ: Федеральный закон №152-ФЗ "О персональных данных"</li>
+                </ul>
+
+                <p><strong>8.3. Меры защиты данных:</strong></p>
+                <p>Компания применяет следующие технические и организационные меры:</p>
+                <ul>
+                    <li>Шифрование данных при передаче (TLS/SSL 256-bit)</li>
+                    <li>Шифрование данных при хранении</li>
+                    <li>Контроль доступа и аутентификация</li>
+                    <li>Регулярные резервные копии</li>
+                    <li>Регулярные аудиты безопасности</li>
+                    <li>Обучение сотрудников вопросам защиты данных</li>
+                </ul>
+
+                <p><strong>8.4. Хранение данных:</strong></p>
+                <ul>
+                    <li>Данные хранятся на серверах, расположенных в Европейском Союзе и/или Грузии</li>
+                    <li>При использовании зарубежных облачных провайдеров (AWS, Google Cloud) применяются стандартные договорные оговорки (SCC) в соответствии с GDPR</li>
+                    <li>Персональные данные клиентов из РФ могут храниться на территории РФ при работе через российское ИП</li>
+                </ul>
+
+                <p><strong>8.5. Обработка данных для AI:</strong></p>
+                <ul>
+                    <li>Компания НЕ использует данные клиентов для обучения собственных AI-моделей без явного письменного согласия</li>
+                    <li>Данные, загружаемые в Françoise и Klio, обрабатываются исключительно для предоставления услуг и удаляются после окончания подписки (или по запросу клиента)</li>
+                </ul>
+
+                <h2 id="ru-9">9. ПРЕКРАЩЕНИЕ ИСПОЛЬЗОВАНИЯ</h2>
+                
+                <p><strong>9.1. Прекращение по инициативе Пользователя:</strong></p>
+                <ul>
+                    <li>Пользователь может прекратить использование сервисов в любое время</li>
+                    <li>Удаление учетной записи осуществляется через личный кабинет или по запросу на email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    <li>Доступ к платным сервисам сохраняется до конца оплаченного периода</li>
+                    <li>После удаления учетной записи данные удаляются в течение 30 дней</li>
+                </ul>
+
+                <p><strong>9.2. Прекращение по инициативе Компании:</strong></p>
+                <p>Компания вправе приостановить или прекратить доступ без предварительного уведомления в случаях:</p>
+                <ul>
+                    <li>Существенного нарушения условий настоящего Соглашения</li>
+                    <li>Неоплаты услуг более 7 дней после окончания оплаченного периода</li>
+                    <li>Попыток взлома, DDoS-атак или иных противоправных действий</li>
+                    <li>По требованию государственных органов или в соответствии с законодательством</li>
+                    <li>При выявлении мошеннической активности или использования ворованных платежных данных</li>
+                </ul>
+
+                <p><strong>9.3. Последствия прекращения:</strong></p>
+                <ul>
+                    <li>Доступ к сервисам немедленно прекращается</li>
+                    <li>Пользователь сохраняет право экспортировать свои данные в течение 14 дней после прекращения (если прекращение не связано с мошенничеством)</li>
+                    <li>Компания удаляет персональные данные Пользователя в течение 30 дней, за исключением данных, которые должны храниться по закону (финансовая документация — 5 лет, переписка по спорам — до окончания срока исковой давности)</li>
+                </ul>
+
+                <h2 id="ru-10">10. РАЗРЕШЕНИЕ СПОРОВ</h2>
+                
+                <p><strong>10.1. Досудебный порядок:</strong></p>
+                <p>Все споры и разногласия решаются путем переговоров. Сторона, имеющая претензии, направляет письменную претензию по адресу: <a href="mailto:info@divo.solutions">info@divo.solutions</a></p>
+                <p>10.2. Срок рассмотрения претензии — 30 (тридцать) календарных дней с момента получения.</p>
+                
+                <p><strong>10.3. Применимое право и юрисдикция:</strong></p>
+                <p><strong>Для международных клиентов:</strong></p>
+                <ul>
+                    <li>Применимое право: законодательство Грузии</li>
+                    <li>Юрисдикция: суды города Тбилиси, Грузия</li>
+                    <li>Стороны могут согласовать разрешение спора в международном арбитраже (например, ICDR, LCIA)</li>
+                </ul>
+                
+                <p><strong>Для клиентов из Российской Федерации (при работе через российское ИП):</strong></p>
+                <ul>
+                    <li>Применимое право: законодательство Российской Федерации</li>
+                    <li>Юрисдикция: суды по месту нахождения ответчика</li>
+                </ul>
+
+                <p>10.4. При недостижении согласия в досудебном порядке в течение 30 дней, спор передается на рассмотрение в суд согласно п. 10.3.</p>
+                
+                <p><strong>10.5. Язык разбирательства:</strong></p>
+                <ul>
+                    <li>Для международных клиентов: английский или грузинский (по выбору истца)</li>
+                    <li>Для клиентов из РФ: русский</li>
+                </ul>
+
+                <h2 id="ru-11">11. ПРОЧИЕ УСЛОВИЯ</h2>
+                
+                <p><strong>11.1. Делимость положений:</strong></p>
+                <p>Если какое-либо положение настоящего Соглашения признано недействительным или не имеющим юридической силы, остальные положения Соглашения сохраняют полную силу и действие.</p>
+                
+                <p><strong>11.2. Отказ от прав:</strong></p>
+                <p>Бездействие Компании при нарушении Пользователем условий Соглашения не означает отказ от права требовать исполнения в будущем или отказ от иных прав.</p>
+                
+                <p><strong>11.3. Уступка прав:</strong></p>
+                <p>Пользователь не вправе передавать свои права и обязанности по настоящему Соглашению третьим лицам без письменного согласия Компании. Компания вправе передавать свои права и обязанности третьим лицам с уведомлением Пользователя за 30 дней.</p>
+                
+                <p><strong>11.4. Полнота соглашения:</strong></p>
+                <p>Настоящее Соглашение вместе с Политикой конфиденциальности составляет полное соглашение между Сторонами и заменяет все предыдущие устные и письменные договоренности.</p>
+                
+                <p><strong>11.5. Уведомления:</strong></p>
+                <p>Все уведомления направляются:</p>
+                <ul>
+                    <li>Пользователю: на email, указанный при регистрации, или через личный кабинет</li>
+                    <li>Компании: на email <a href="mailto:info@divo.solutions">info@divo.solutions</a> или <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                </ul>
+                <p>Уведомления считаются полученными в момент отправки email (для Компании) или через 24 часа после отправки (для Пользователя).</p>
+                
+                <p><strong>11.6. Язык Соглашения:</strong></p>
+                <p>Настоящее Соглашение составлено на русском и английском языках и имеет одинаковую юридическую силу. При расхождениях приоритет имеет версия на языке юрисдикции, применимой к конкретному клиенту.</p>
+
+                <h2 id="ru-12">12. КОНТАКТНАЯ ИНФОРМАЦИЯ</h2>
+                
+                <p><strong>Для международных клиентов (грузинское ИП):</strong></p>
+                <ul>
+                    <li>Индивидуальный предприниматель: DARIA KAMYSHINA</li>
+                    <li>ID номер: 302259641</li>
+                    <li>Адрес: ул. Ахвледиани 14, ТБИЛИСИ, Грузия</li>
+                    <li>Email (юридические вопросы): <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    <li>Email (техническая поддержка): <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    <li>Email (продажи): <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                </ul>
+
+                <p><strong>Способы оплаты:</strong></p>
+                <p><strong>1. Онлайн-платежи через сайт (NOWPayments):</strong></p>
+                <p>Для оплаты некоторых продуктов и услуг на сайте divo.ai используется платежный сервис NOWPayments:</p>
+                <ul>
+                    <li>Поддерживаемые методы: криптовалюты (USDT, USDC, ETH, BTC и другие), банковские карты</li>
+                    <li>Обработка платежей: NOWPayments (<a href="https://nowpayments.io" target="_blank">https://nowpayments.io</a>)</li>
+                    <li>Политика конфиденциальности: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                    <li>Безопасность: Данные банковских карт обрабатываются напрямую NOWPayments согласно стандарту PCI DSS. Мы не получаем и не храним данные ваших карт.</li>
+                    <li>Подтверждение: Вы получите email-уведомление о статусе платежа</li>
+                </ul>
+
+                <p><strong>2. Оплата по счету (Invoice):</strong></p>
+                <p>Для крупных заказов, корпоративных клиентов или индивидуальных проектов реквизиты для оплаты (банковские, криптовалютные) предоставляются индивидуально в выставленном счете.</p>
+                <p><strong>Внимание:</strong> Всегда проверяйте актуальные реквизиты в выставленном счете. Компания не несет ответственности за платежи на неверные адреса.</p>
+
+                <p><strong>Для клиентов из Российской Федерации (российское ИП):</strong></p>
+                <ul>
+                    <li>ИП: КАМЫШИНА ДАРЬЯ ЭДУАРДОВНА</li>
+                    <li>ИНН: 772781640947</li>
+                    <li>ОГРНИП: 325774600505272</li>
+                    <li>Адрес: Россия, 117623, г. Москва, вн.тер.г. муниципальный округ Южное Бутово, ул. 2-я Мелитопольская, дом 21, корп. 3, кв. 125</li>
+                    <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a>, <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                </ul>
+
+                <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--color-bg-light);">
+
+                <p style="text-align: center; color: var(--color-text-secondary); font-style: italic; font-size: 0.875rem;">Последнее обновление: 15 ноября 2025 г.</p>
+                <p style="text-align: center;"><strong>Используя сервисы DIVO, вы подтверждаете, что прочитали, поняли и согласны соблюдать настоящее Пользовательское соглашение.</strong></p>
+            </div>
+
+            <!-- English Version -->
+            <div id="content-en" class="lang-content active">
+                <!-- Новый H1 -->
+                <h1>Terms of Service</h1>
+                <p class="effective-date">Effective Date: November 15, 2025</p>
+
+                <!-- Новое Содержание (TOC) -->
+                <div class="toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#en-1">1. General Provisions</a></li>
+                        <li><a href="#en-2">2. Subject of Agreement</a></li>
+                        <li><a href="#en-3">3. Use of Services</a></li>
+                        <li><a href="#en-4">4. Rights and Obligations</a></li>
+                        <li><a href="#en-5">5. Intellectual Property</a></li>
+                        <li><a href="#en-6">6. Payment and Refunds</a></li>
+                        <li><a href="#en-7">7. Limitation of Liability</a></li>
+                        <li><a href="#en-8">8. Privacy and Data Protection</a></li>
+                        <li><a href="#en-9">9. Termination</a></li>
+                        <li><a href="#en-10">10. Dispute Resolution</a></li>
+                        <li><a href="#en-11">11. Miscellaneous</a></li>
+                        <li><a href="#en-12">12. Contact Information</a></li>
+                    </ul>
+                </div>
+
+                <!-- Далее идет полный текст Пользовательского соглашения (EN) -->
+
+                <h2 id="en-1">1. GENERAL PROVISIONS</h2>
+                
+                <p>1.1. These Terms of Service (the "Agreement") govern the relationship between:</p>
+
+                <div class="company-info">
+                    <strong>For international clients:</strong>
+                    <ul>
+                        <li>Individual Entrepreneur DARIA KAMYSHINA</li>
+                        <li>Identification number: 302259641</li>
+                        <li>Address: Akhvlediani St. 14, TBILISI</li>
+                        <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="company-info">
+                    <strong>For clients from the Russian Federation:</strong>
+                    <ul>
+                        <li>Individual Entrepreneur КАМЫШИНА ДАРЬЯ ЭДУАРДОВНА</li>
+                        <li>TIN: 772781640947</li>
+                        <li>OGRNIP: 325774600505272</li>
+                        <li>Address: Russia, 117623, Moscow, South Butovo municipal district, 2nd Melitopolskaya St., building 21, block 3, apt. 125</li>
+                        <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    </ul>
+                </div>
+
+                <p>(hereinafter collectively "DIVO", "Company" or "Service Provider") and users of the divo.ai website and related services (hereinafter "User" or "Client").</p>
+
+                <p>1.2. By using the divo.ai website, uploading content, using SaaS products, or ordering services, you fully accept the terms of this Agreement. If you do not agree to these terms, please immediately discontinue use of the website and services.</p>
+                <p>1.3. The Company reserves the right to modify the terms of this Agreement unilaterally. The current version is posted at divo.ai/terms with the date of the last update. Continued use of the services after changes are made constitutes your acceptance of the new terms. Material changes take effect 30 days after publication.</p>
+                <p>1.4. This Agreement is executed in Russian and English and has equal legal force. In case of interpretation discrepancies, the version in the language of the jurisdiction applicable to the specific client takes priority (Russian version for RF clients, English version for international clients).</p>
+
+
+                <h2 id="en-2">2. SUBJECT OF AGREEMENT</h2>
+                <p>2.1. The Company provides Users with access to the following services and products:</p>
+                <ul>
+                    <li>Informational website divo.ai</li>
+                    <li>SaaS products:
+                        <ul>
+                            <li><strong>Françoise</strong> — AI Design QA system for brand consistency</li>
+                            <li><strong>Klio</strong> — AI Proposal Generator for B2B sales automation</li>
+                        </ul>
+                    </li>
+                    <li>Custom AI systems development services (Custom AI Engineering)</li>
+                    <li>Consulting and audit services</li>
+                </ul>
+                
+                <p>2.2. <strong>Terms of use for SaaS products:</strong></p>
+                <ul>
+                    <li>Access is provided after payment on a one-time or subscription basis</li>
+                    <li>The license is non-exclusive, non-transferable to third parties, limited by payment period</li>
+                    <li>The User has the right to use the product exclusively for their business purposes</li>
+                    <li>Resale, sublease, or other commercial use of service access is prohibited</li>
+                    <li>Access is provided via unique link or API key</li>
+                </ul>
+
+                <p>2.3. <strong>Terms for Custom AI Engineering services:</strong></p>
+                <ul>
+                    <li>Defined in a separate service agreement or contract</li>
+                    <li>Include technical specifications, timelines, cost, and work acceptance procedures</li>
+                    <li>Rights to developed software are governed by a separate agreement</li>
+                </ul>
+
+                <p>2.4. <strong>Consulting services:</strong></p>
+                <ul>
+                    <li>Provided upon client request</li>
+                    <li>May include a free initial consultation (40 minutes)</li>
+                    <li>Paid consultations are charged at agreed rates</li>
+                </ul>
+
+                <h2 id="en-3">3. USE OF SERVICES</h2>
+                
+                <p><strong>3.1. Access responsibility:</strong></p>
+                <p>The User bears full responsibility for the security of unique access links and API keys provided for using SaaS products. Any actions performed through the provided access are considered performed by the User.</p>
+                <p>3.2. The User must immediately notify the Company at <a href="mailto:info@divo.solutions">info@divo.solutions</a> of any unauthorized use or compromise of access.</p>
+                <p>3.3. <strong>It is prohibited to:</strong></p>
+                <ul>
+                    <li>Transfer access (links, API keys) to third parties without written Company consent</li>
+                    <li>Use services for illegal activities, spam, phishing, or other unlawful actions</li>
+                    <li>Attempt hacking, reverse engineering, decompilation, or source code extraction</li>
+                    <li>Overload the system with excessive requests (more than 1000 API calls per minute without agreement)</li>
+                    <li>Upload malicious software, viruses, or other destructive content to the system</li>
+                    <li>Use services to create competing products</li>
+                </ul>
+
+                <p>3.4. The Company may suspend or terminate access without prior notice in cases of:</p>
+                <ul>
+                    <li>Violation of this Agreement</li>
+                    <li>Non-payment for more than 7 days after the paid period ends</li>
+                    <li>Hacking attempts or unlawful actions</li>
+                    <li>At the request of government authorities</li>
+                    <li>Upon detection of fraudulent activity</li>
+                </ul>
+                <p>No refunds are provided if access is terminated for violation of terms.</p>
+
+                <h2 id="en-4">4. RIGHTS AND OBLIGATIONS</h2>
+                
+                <p><strong>4.1. The Company undertakes to:</strong></p>
+                <ul>
+                    <li>Provide access to paid services according to the ordered package</li>
+                    <li>Ensure confidentiality of User data according to the Privacy Policy (divo.ai/privacy)</li>
+                    <li>Notify about scheduled maintenance at least 24 hours in advance via email</li>
+                    <li>Process technical support requests within 48 hours on business days</li>
+                    <li>Ensure service availability of at least 99% uptime per month (excluding scheduled maintenance)</li>
+                </ul>
+
+                <p><strong>4.2. The Company has the right to:</strong></p>
+                <ul>
+                    <li>Change product functionality, add or remove features with 14 days notice to users</li>
+                    <li>Suspend services for scheduled maintenance (no more than 4 hours per month)</li>
+                    <li>Refuse service for violation of the Agreement without refund</li>
+                    <li>Change pricing with 30 days notice (changes do not affect already paid services)</li>
+                    <li>Request additional information for user verification</li>
+                </ul>
+
+                <p><strong>4.3. The User undertakes to:</strong></p>
+                <ul>
+                    <li>Use services in accordance with the laws of their country of residence and international law</li>
+                    <li>Not attempt hacking or source code extraction</li>
+                    <li>Not overload the system with excessive requests</li>
+                    <li>Pay for services on time</li>
+                    <li>Not upload malicious content to the system</li>
+                    <li>Not use services to create competing products</li>
+                </ul>
+
+                <p><strong>4.4. The User has the right to:</strong></p>
+                <ul>
+                    <li>Use services in full within paid access</li>
+                    <li>Contact technical support regarding service operation</li>
+                    <li>Request deletion of all their data from the system</li>
+                </ul>
+
+                <h2 id="en-5">5. INTELLECTUAL PROPERTY</h2>
+                
+                <p>5.1. All rights to software, source code, design, graphics, content, trademarks, logos, and other intellectual property objects on the divo.ai website and in Françoise and Klio services belong to the Company or its partners and are protected by intellectual property law.</p>
+                <p>5.2. Use of website and service materials is only permitted within the functionality provided by the Company under this Agreement. Copying, modification, reproduction, distribution, public display, or other use without prior written consent of the Company is strictly prohibited.</p>
+                
+                <p><strong>5.3. User Content:</strong></p>
+                <ul>
+                    <li>Content uploaded by the User to services (design files, texts, documents, images, data) remains the exclusive property of the User</li>
+                    <li>The Company receives a limited, non-exclusive, non-transferable license to use User content solely to provide services under this Agreement</li>
+                    <li>The Company does not use client content to train its own AI models or third-party models without explicit written User consent</li>
+                    <li>The User warrants that they possess all necessary rights to uploaded content and its use does not violate third-party rights</li>
+                </ul>
+
+                <p><strong>5.4. Custom AI Engineering work results:</strong></p>
+                <ul>
+                    <li>Rights to developed software are defined in a separate agreement</li>
+                    <li>By default, all property rights to work results transfer to the Client after full payment</li>
+                    <li>The Company retains the right to use general approaches, methodologies, and non-patentable solutions in other projects</li>
+                </ul>
+
+                <h2 id="en-6">6. PAYMENT AND REFUNDS</h2>
+                
+                <p><strong>6.1. Service pricing:</strong></p>
+                <ul>
+                    <li>Pricing is indicated on divo.ai in the pricing section</li>
+                    <li>For international clients, prices are listed in USD or EUR</li>
+                    <li>For RF clients, prices may be listed in RUB</li>
+                    <li>All prices are final and include applicable taxes (if applicable)</li>
+                </ul>
+
+                <p><strong>6.2. Payment methods:</strong></p>
+                <p><strong>For international clients (payment to Georgian IE):</strong></p>
+                <p>Payments are processed through payment provider <strong>NOWPayments</strong> (<a href="https://nowpayments.io" target="_blank">https://nowpayments.io</a>):</p>
+                <ul>
+                    <li><strong>Cryptocurrency directly:</strong> USDT (TRC-20, ERC-20), USDC (ERC-20), ETH (Ethereum), BTC (Bitcoin), 300+ other cryptocurrencies</li>
+                    <li><strong>Bank cards</strong> (with automatic conversion to cryptocurrency): Visa (any country), Mastercard (any country), Apple Pay, Google Pay</li>
+                    <li><strong>Bank transfer SWIFT/SEPA</strong> (for EU clients)</li>
+                    <li><strong>Wise Business</strong> (for certain regions)</li>
+                    <li>Other methods by agreement</li>
+                </ul>
+
+                <p><strong>For clients from the Russian Federation (payment to Russian IE):</strong></p>
+                <ul>
+                    <li><strong>CloudPayments</strong> (bank cards: Visa, Mastercard, MIR issued by Russian banks)</li>
+                    <li><strong>Fast Payment System (SBP)</strong></li>
+                    <li>Bank transfer to settlement account</li>
+                    <li>Invoice issuance for legal entities</li>
+                    <li>Cryptocurrency via NOWPayments (by agreement)</li>
+                </ul>
+
+                <p><strong>6.3. Cryptocurrency payments:</strong></p>
+                <p>6.3.1. When paying with cryptocurrency, the Client confirms and warrants:</p>
+                <ul>
+                    <li>Legality of cryptocurrency funds origin</li>
+                    <li>Compliance with applicable anti-money laundering (AML) and counter-terrorism financing legislation</li>
+                    <li>Not being under international sanctions</li>
+                </ul>
+                
+                <p>6.3.2. Cryptocurrency payment terms:</p>
+                <ul>
+                    <li>Conversion rate is fixed at invoice issuance and valid for 24 hours</li>
+                    <li>Cryptocurrency volatility after payment does not affect service cost</li>
+                    <li>Transaction is considered complete after receiving the required number of blockchain network confirmations (typically 3-6 confirmations)</li>
+                    <li>Client pays blockchain network fees (gas fees)</li>
+                    <li>Company is not responsible for delays related to blockchain network operation</li>
+                </ul>
+
+                <p>6.3.3. For payments over $10,000 USD equivalent, KYC (Know Your Customer) procedure is required:</p>
+                <ul>
+                    <li>Provision of identity document</li>
+                    <li>Proof of source of funds</li>
+                    <li>Registration address confirmation (for legal entities)</li>
+                </ul>
+
+                <p><strong>6.3A. Payment by bank card via NOWPayments:</strong></p>
+                <p>6.3A.1. When selecting bank card payment, the transaction is processed by payment provider <strong>NOWPayments</strong> and automatically converted to cryptocurrency.</p>
+                <p>6.3A.2. Payment process:</p>
+                <ul>
+                    <li>You select a product and proceed to payment</li>
+                    <li>A secure NOWPayments payment form opens</li>
+                    <li>You choose payment method: "Pay with Card" or "Pay with Crypto"</li>
+                    <li>When paying by card, enter card details</li>
+                    <li>NOWPayments processes payment and converts amount to cryptocurrency at current rate</li>
+                    <li>We receive cryptocurrency and provide you with service access</li>
+                </ul>
+                
+                <p>6.3A.3. <strong>Important terms:</strong></p>
+                <ul>
+                    <li>Conversion rate is fixed at payment link creation time and valid for 15 minutes</li>
+                    <li>Payment processing typically takes 1-5 minutes</li>
+                    <li>Your card data is <strong>not transmitted or stored</strong> by us — it's processed directly by NOWPayments in accordance with PCI DSS standard</li>
+                    <li>Card payment processing fee is 3.5% + €0.30 and may be: Included in price (you pay stated price) or added on top (indicated at checkout)</li>
+                </ul>
+                
+                <p>6.3A.4. When paying by card, you agree to:</p>
+                <ul>
+                    <li>NOWPayments Privacy Policy: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                    <li>NOWPayments Terms of Use: <a href="https://nowpayments.io/terms-of-use" target="_blank">https://nowpayments.io/terms-of-use</a></li>
+                    <li>Automatic payment conversion to cryptocurrency</li>
+                </ul>
+
+                <p>6.3A.5. Security:</p>
+                <ul>
+                    <li>NOWPayments is PCI DSS Level 1 certified</li>
+                    <li>All card data is encrypted during transmission</li>
+                    <li>We do not have access to full card numbers and CVV codes</li>
+                </ul>
+
+                <p><strong>6.4. Subscriptions and one-time payments:</strong></p>
+                <p>6.4.1. After payment, the User receives a unique access link or API key to the email specified when placing the order.</p>
+                <p>6.4.2. Access is provided:</p>
+                <ul>
+                    <li>For an agreed period (1 month, 3 months, 1 year) for subscriptions</li>
+                    <li>Indefinitely for one-time payments (with Company's right to discontinue support with 90 days notice)</li>
+                </ul>
+                <p>6.4.3. Subscription renewal:</p>
+                <ul>
+                    <li>A notification with option to pay for renewal is sent 7 days before subscription ends</li>
+                    <li>Subscription does not renew automatically</li>
+                    <li>If not paid, access terminates after the paid period ends</li>
+                </ul>
+
+                <p><strong>6.5. Refunds:</strong></p>
+                <p>6.5.1. <strong>Subscriptions and one-time payments:</strong></p>
+                <ul>
+                    <li>Refund is possible within 14 days of first payment if service was not used (no files uploaded, no API requests sent)</li>
+                    <li>After service use begins, no refund is provided</li>
+                    <li>Exception: technical issues making service completely unavailable for more than 72 consecutive hours — proportional refund provided</li>
+                </ul>
+                
+                <p>6.5.2. <strong>Cryptocurrency payments:</strong></p>
+                <ul>
+                    <li>Refund is made in the same cryptocurrency used for payment</li>
+                    <li>Refund is made at the rate on refund date (may differ from payment rate)</li>
+                    <li>Blockchain network fees for refund are deducted from refund amount</li>
+                    <li>Refund period: up to 14 business days from approval</li>
+                </ul>
+
+                <p>6.5.3. <strong>Card payments via NOWPayments:</strong></p>
+                <ul>
+                    <li>Refund is made in the same currency as payment (card → fiat)</li>
+                    <li>Refund is processed via NOWPayments within 5-14 business days</li>
+                    <li>Refund processing fee is deducted from refund amount</li>
+                    <li>Refund is not possible if payment was converted to cryptocurrency and already transferred to our wallet (technical limitations) — in this case refund is made in cryptocurrency to wallet address you provide</li>
+                </ul>
+                
+                <p>6.5.4. <strong>Custom AI Engineering:</strong></p>
+                <ul>
+                    <li>Refund terms are defined in separate agreement</li>
+                    <li>Generally, refund is not possible after work commencement</li>
+                </ul>
+
+                <p><strong>6.6. Documents:</strong></p>
+                <ul>
+                    <li>Invoice is issued for all payments</li>
+                    <li>Payment confirmation provided after payment</li>
+                    <li>For RF legal entities: invoice, work completion act, invoice-facture (if necessary)</li>
+                    <li>For crypto payments: invoice with crypto address, transaction receipt (transaction hash)</li>
+                </ul>
+
+                <p><strong>6.7. For payments via NOWPayments:</strong></p>
+                <ul>
+                    <li>Invoice with payment method selection (card or crypto)</li>
+                    <li>Payment confirmation (with transaction ID)</li>
+                    <li>For crypto payments: transaction hash in blockchain</li>
+                    <li>For card payments: payment receipt from NOWPayments</li>
+                </ul>
+
+                <h2 id="en-7">7. LIMITATION OF LIABILITY</h2>
+                
+                <p><strong>7.1. "As-is" service provision:</strong></p>
+                <p>Services are provided on an "as-is" and "as available" basis. The Company does not guarantee:</p>
+                <ul>
+                    <li>Absolutely uninterrupted service operation</li>
+                    <li>Complete absence of errors or bugs</li>
+                    <li>That services will meet all User expectations</li>
+                    <li>Specific business results from service use</li>
+                </ul>
+
+                <p><strong>7.2. The Company is not liable for:</strong></p>
+                <ul>
+                    <li>Indirect losses, lost profits, loss of reputation, data loss, or other indirect damages</li>
+                    <li>Actions of third parties (hacker attacks, DDoS, hacks)</li>
+                    <li>Force majeure circumstances (natural disasters, wars, terrorist acts, legislative changes, government actions)</li>
+                    <li>Service incompatibility with User's equipment, software, or internet connection</li>
+                    <li>Actions or inaction of third parties (payment systems, hosting providers, internet providers)</li>
+                    <li>User's unlawful actions or violation of legislation</li>
+                </ul>
+
+                <p><strong>7.3. Liability amount limitation:</strong></p>
+                <p>The Company's maximum aggregate liability under this Agreement is limited to the amount actually paid by the User for the last 3 (three) months of service use, but not more than 1000 USD (one thousand US dollars).</p>
+
+                <p><strong>7.4. User liability:</strong></p>
+                <p>The User bears full responsibility for:</p>
+                <ul>
+                    <li>All content uploaded to services, including compliance with copyrights, trademark rights, and other third-party rights</li>
+                    <li>Compliance with applicable legislation when using services</li>
+                    <li>Any losses caused to the Company as a result of Agreement violation</li>
+                    <li>Security of their credentials</li>
+                </ul>
+
+                <p><strong>7.5. Indemnification:</strong></p>
+                <p>The User undertakes to indemnify the Company for all losses, expenses, third-party claims arising from:</p>
+                <ul>
+                    <li>User's violation of this Agreement</li>
+                    <li>User's violation of third-party rights</li>
+                    <li>Unlawful use of services</li>
+                </ul>
+
+                <h2 id="en-8">8. PRIVACY AND DATA PROTECTION</h2>
+                
+                <p>8.1. Personal data processing is carried out in accordance with the Privacy Policy posted at: <a href="divo.ai/privacy">divo.ai/privacy</a></p>
+                
+                <p><strong>8.2. Applicable legislation:</strong></p>
+                <ul>
+                    <li>For international clients: Law of Georgia on Personal Data Protection (GDPR-compatible, effective March 2024), GDPR (for EU clients)</li>
+                    <li>For RF clients: Federal Law No. 152-FZ "On Personal Data"</li>
+                </ul>
+
+                <p><strong>8.3. Data protection measures:</strong></p>
+                <p>The Company applies the following technical and organizational measures:</p>
+                <ul>
+                    <li>Data encryption in transit (TLS/SSL 256-bit)</li>
+                    <li>Data encryption at rest</li>
+                    <li>Access control and authentication</li>
+                    <li>Regular backups</li>
+                    <li>Regular security audits</li>
+                    <li>Employee training on data protection</li>
+                </ul>
+
+                <p><strong>8.4. Data storage:</strong></p>
+                <ul>
+                    <li>Data is stored on servers located in the European Union and/or Georgia</li>
+                    <li>When using foreign cloud providers (AWS, Google Cloud), Standard Contractual Clauses (SCC) are applied in accordance with GDPR</li>
+                    <li>Personal data of RF clients may be stored in RF territory when working through Russian IE</li>
+                </ul>
+
+                <p><strong>8.5. AI data processing:</strong></p>
+                <ul>
+                    <li>The Company does NOT use client data to train its own AI models without explicit written consent</li>
+                    <li>Data uploaded to Françoise and Klio is processed solely to provide services and deleted after subscription ends (or upon client request)</li>
+                </ul>
+
+                <h2 id="en-9">9. TERMINATION</h2>
+                
+                <p><strong>9.1. Termination by User:</strong></p>
+                <ul>
+                    <li>User can terminate service use at any time</li>
+                    <li>Account deletion is performed through personal account or by request to email: <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    <li>Access to paid services remains until the end of paid period</li>
+                    <li>After account deletion, data is deleted within 30 days</li>
+                </ul>
+
+                <p><strong>9.2. Termination by Company:</strong></p>
+                <p>The Company may suspend or terminate access without prior notice in cases of:</p>
+                <ul>
+                    <li>Material violation of this Agreement</li>
+                    <li>Non-payment for more than 7 days after paid period ends</li>
+                    <li>Hacking attempts, DDoS attacks, or other unlawful actions</li>
+                    <li>At the request of government authorities or in accordance with legislation</li>
+                    <li>Upon detection of fraudulent activity or use of stolen payment data</li>
+                </ul>
+
+                <p><strong>9.3. Termination consequences:</strong></p>
+                <ul>
+                    <li>Access to services is immediately terminated</li>
+                    <li>User retains the right to export their data within 14 days after termination (unless termination is related to fraud)</li>
+                    <li>Company deletes User's personal data within 30 days, except data that must be retained by law (financial documentation — 5 years, dispute correspondence — until statute of limitations expires)</li>
+                </ul>
+
+                <h2 id="en-10">10. DISPUTE RESOLUTION</h2>
+                
+                <p><strong>10.1. Pre-trial procedure:</strong></p>
+                <p>All disputes and disagreements are resolved through negotiations. The party with claims sends a written claim to: <a href="mailto:info@divo.solutions">info@divo.solutions</a></p>
+                <p>10.2. Claim review period — 30 (thirty) calendar days from receipt.</p>
+                
+                <p><strong>10.3. Applicable law and jurisdiction:</strong></p>
+                <p><strong>For international clients:</strong></p>
+                <ul>
+                    <li>Applicable law: legislation of Georgia</li>
+                    <li>Jurisdiction: courts of Tbilisi, Georgia</li>
+                    <li>Parties may agree to dispute resolution in international arbitration (e.g., ICDR, LCIA)</li>
+                </ul>
+                
+                <p><strong>For clients from the Russian Federation (when working through Russian IE):</strong></p>
+                <ul>
+                    <li>Applicable law: legislation of the Russian Federation</li>
+                    <li>Jurisdiction: courts at the defendant's location</li>
+                </ul>
+
+                <p>10.4. If agreement is not reached in pre-trial procedure within 30 days, the dispute is submitted to court according to clause 10.3.</p>
+                
+                <p><strong>10.5. Language of proceedings:</strong></p>
+                <ul>
+                    <li>For international clients: English or Georgian (at plaintiff's choice)</li>
+                    <li>For RF clients: Russian</li>
+                </ul>
+
+                <h2 id="en-11">11. MISCELLANEOUS</h2>
+                
+                <p><strong>11.1. Severability:</strong></p>
+                <p>If any provision of this Agreement is found invalid or unenforceable, the remaining provisions of the Agreement retain full force and effect.</p>
+                
+                <p><strong>11.2. Waiver:</strong></p>
+                <p>The Company's inaction when User violates Agreement terms does not constitute a waiver of the right to demand compliance in the future or waiver of other rights.</p>
+                
+                <p><strong>11.3. Assignment:</strong></p>
+                <p>User may not transfer their rights and obligations under this Agreement to third parties without written Company consent. The Company may transfer its rights and obligations to third parties with 30 days notice to User.</p>
+                
+                <p><strong>11.4. Entire agreement:</strong></p>
+                <p>This Agreement together with the Privacy Policy constitutes the entire agreement between the Parties and supersedes all previous oral and written agreements.</p>
+                
+                <p><strong>11.5. Notifications:</strong></p>
+                <p>All notifications are sent:</p>
+                <ul>
+                    <li>To User: to email specified at registration, or through personal account</li>
+                    <li>To Company: to email <a href="mailto:info@divo.solutions">info@divo.solutions</a> or <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                </ul>
+                <p>Notifications are considered received at the time of email sending (for Company) or 24 hours after sending (for User).</p>
+                
+                <p><strong>11.6. Agreement language:</strong></p>
+                <p>This Agreement is executed in Russian and English and has equal legal force. In case of discrepancies, the version in the language of the jurisdiction applicable to the specific client takes priority.</p>
+
+                <h2 id="en-12">12. CONTACT INFORMATION</h2>
+                
+                <p><strong>For international clients (Georgian IE):</strong></p>
+                <ul>
+                    <li>Individual Entrepreneur: DARIA KAMYSHINA</li>
+                    <li>ID number: 302259641</li>
+                    <li>Address: Akhvlediani St. 14, TBILISI, Georgia</li>
+                    <li>Email (legal): <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    <li>Email (technical support): <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                    <li>Email (sales): <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                </ul>
+
+                <p><strong>Payment methods:</strong></p>
+                <p><strong>1. Online payments via website (NOWPayments):</strong></p>
+                <p>For payment of certain products and services on divo.ai website, we use NOWPayments payment service:</p>
+                <ul>
+                    <li>Supported methods: cryptocurrencies (USDT, USDC, ETH, BTC and others), bank cards</li>
+                    <li>Payment processing: NOWPayments (<a href="https://nowpayments.io" target="_blank">https://nowpayments.io</a>)</li>
+                    <li>Privacy Policy: <a href="https://nowpayments.io/privacy-policy" target="_blank">https://nowpayments.io/privacy-policy</a></li>
+                    <li>Security: Bank card data is processed directly by NOWPayments in accordance with PCI DSS standard. We do not receive or store your card data.</li>
+                    <li>Confirmation: You will receive email notification about payment status</li>
+                </ul>
+
+                <p><strong>2. Payment by invoice:</strong></p>
+                <p>For large orders, corporate clients, or custom projects, payment details (bank, cryptocurrency) are provided individually in the issued invoice.</p>
+                <p><strong>Note:</strong> Always verify current details in the issued invoice. The Company is not responsible for payments to incorrect addresses.</p>
+
+                <p><strong>For clients from the Russian Federation (Russian IE):</strong></p>
+                <ul>
+                    <li>IE: КАМЫШИНА ДАРЬЯ ЭДУАРДОВНА</li>
+                    <li>TIN: 772781640947</li>
+                    <li>OGRNIP: 325774600505272</li>
+                    <li>Address: Russia, 117623, Moscow, South Butovo municipal district, 2nd Melitopolskaya St., building 21, block 3, apt. 125</li>
+                    <li>Email: <a href="mailto:info@divo.solutions">info@divo.solutions</a>, <a href="mailto:info@divo.solutions">info@divo.solutions</a></li>
+                </ul>
+              
+
+                <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--color-bg-light);">
+
+                <p style="text-align: center; color: var(--color-text-secondary); font-style: italic; font-size: 0.875rem;">Last updated: November 15, 2025</p>
+                <p style="text-align: center;"><strong>By using DIVO services, you confirm that you have read, understood, and agree to comply with this Terms of Service.</strong></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer from Reference -->
+    <footer class="footer pt-16 pb-8 md:pb-12">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
+                
+                <div>
+                    <a href="/" class="footer-logo">DIVO</a>
+                    <p class="text-sm mb-2" style="color: rgba(255, 255, 255, 0.7);">
+                        Мы превращаем технологии в двигатель роста вашего бизнеса.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Решения</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/for-sales" class="footer-link">Для Продаж</a></li>
+                        <li><a href="/for-design" class="footer-link">Для Дизайна</a></li>
+                        <li><a href="/custom-development" class="footer-link">Кастомная разработка</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Компания</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about-us" class="footer-link">О нас</a></li>
+                        <li><a href="/custom-development" class="footer-link">Портфолио и Кейсы</a></li>
+                        <!-- Ссылка в футере теперь должна вести на privacy-policy, но текст можно оставить или поменять. Оставляю как было в privacy.html -->
+                        <li><a href="/privacy-policy" class="footer-link">Политика конфиденциальности</a></li>
+                        <!-- Вы можете захотеть добавить ссылку на terms.html сюда -->
+                        <!-- <li><a href="/terms" class="footer-link">Пользовательское соглашение</a></li> -->
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+                        <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
+                        <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.875rem;">
+                    © 2025 DIVO. Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS не изменился, он по-прежнему обрабатывает переключение языка и якоря TOC -->
+    <script>
+        // Функция переключения языка с сохранением состояния
+        function switchLanguage(lang) {
+            // Скрываем все языковые версии
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Показываем выбранную версию
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Обновляем кнопки на десктопе
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Hаходим обе кнопки (десктоп и мобильную) по ID
+            const desktopBtn = document.getElementById('btn-' + lang);
+            if (desktopBtn) {
+                 desktopBtn.classList.add('active');
+            }
+           
+            
+            // Обновляем кнопки на мобильных
+            const mobileBtnRu = document.getElementById('btn-ru-mobile');
+            const mobileBtnEn = document.getElementById('btn-en-mobile');
+            if (mobileBtnRu && mobileBtnEn) {
+                mobileBtnRu.classList.remove('active');
+                mobileBtnEn.classList.remove('active');
+                const mobileBtn = document.getElementById('btn-' + lang + '-mobile');
+                if (mobileBtn) {
+                    mobileBtn.classList.add('active');
+                }
+            }
+            
+            // Сохраняем выбор в localStorage
+            localStorage.setItem('selectedLanguage', lang);
+            
+            // Прокручиваем страницу вверх при смене языка
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Восстанавливаем выбранный язык при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage');
+            // По умолчанию активен 'ru', поэтому переключаем только если сохранен 'en'
+            if (savedLang && savedLang === 'en') {
+                switchLanguage('en');
+            } else {
+                // Убедимся, что 'ru' активен по умолчанию
+                switchLanguage('ru');
+            }
+
+            // Плавная прокрутка для якорей
+            document.querySelectorAll('.toc a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Мобильное меню
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
