@@ -7,17 +7,17 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
     <!-- Новые мета-данные для страницы спецпредложений -->
-    <title data-lang="meta-title">Спецпредложения /function1 - DIVO</title>
+    <title data-lang="meta-title">Спецпредложения /function1 — DIVO</title>
     <meta name="description" data-lang="meta-description" content="Эксклюзивные условия на продукты DIVO только для участников конференции /function1.">
 
-    <!-- Стили и скрипты из образца (for-sales.html) -->
+    <!-- Стили и скрипты из образца (Клио.html) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- Полностью скопированный блок <style> из for-sales.html -->
+    <!-- Полностью скопированный блок <style> из Клио.html -->
     <style>
         @font-face {
             font-family: 'Eugusto';
@@ -259,7 +259,6 @@
             padding: 2.5rem;
             border-radius: 12px;
             background-image: url('background-v.png');
-            background-repeat: repeat-y;
             background-size: cover;
             background-position: center;
             border: 1px solid rgba(0, 240, 255, 0.3);
@@ -449,8 +448,8 @@
             font-size: 0.95rem;
             color: #e0e0e0;
             margin-bottom: 1.5rem;
-            flex-grow: 1; /* <-- ЭТО ГЛАВНОЕ: Прижимает кнопки к низу */
-            min-height: 4.5rem; /* Резервируем место ~3 строки */
+            /* flex-grow: 1; <-- УДАЛЕНО: больше не нужно для верт. отступа */
+            /* min-height: 4.5rem; <-- УДАЛЕНО */
         }
 
         /* Цена */
@@ -475,7 +474,7 @@
         
         /* Контейнер для кнопок, прижимается к низу */
         .offer-card-actions {
-            margin-top: auto; /* Прижимает блок к низу flex-контейнера */
+            /* margin-top: auto; <-- УДАЛЕНО: больше не нужно для верт. отступа */
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
@@ -501,7 +500,7 @@
 
     <!-- 
       HEADER (ШАПКА)
-      Скопировано 1-в-1 из for-sales.html
+      Скопировано 1-в-1 из Клио.html
     -->
     <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div class="container max-w-7xl mx-auto px-4">
@@ -532,7 +531,7 @@
                     </nav>
 
                     <div class="flex items-center gap-4">
-                        <a href="/#final-cta" class="btn btn-primary btn-sm popup-trigger" data-popup="consult" data-lang="header-cta">Получить консультацию</a>
+                        <a href="#" class="btn btn-primary btn-sm popup-trigger" data-popup="consult" data-lang="header-cta">Получить консультацию</a>
                         <div class="lang-switcher-inline">
                             <button id="btn-ru" class="" aria-pressed="false">RU</button>
                             <button id="btn-en" class="active" aria-pressed="true">EN</button>
@@ -541,7 +540,7 @@
                 </div>
 
                 <div class="lg:hidden flex items-center gap-2">
-                    <a href="/#final-cta" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="header-cta-mobile">Консультация</a>
+                    <a href="#" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="header-cta-mobile">Консультация</a>
                     <div class="lang-switcher-inline">
                         <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
                         <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
@@ -582,7 +581,7 @@
     
     <!-- Используем стиль event-banner для общей темной темы, как просили -->
     <!-- Добавлен pt-12 sm:pt-16, чтобы компенсировать удаленный баннер -->
-    <div id="offers-start" class="event-banner container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 mb-12 md:mb-16 pt-12 sm:pt-16">
+    <div id="offers-start" class="event-banner container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 pt-12 sm:pt-16"> <!-- ИЗМЕНЕНИЕ: убран mb-12 md:mb-16 -->
 
         <!-- Заголовок страницы -->
         <section id="offers-header" class="mb-12 md:mb-16 text-center">
@@ -590,64 +589,36 @@
             <h3 data-lang="page-subtitle" class="!text-gray-200">Эксклюзивные условия только для участников конференции</h3>
         </section>
 
-        <!-- 1. AI Proposal Generator (Clio) -->
+        <!-- 1. Clio (AI Proposal Generator) -->
         <section id="clio-offers" class="mb-12 md:mb-16">
-            <h2 data-lang="clio-title" class="!text-white border-b border-white/20 pb-4">AI Proposal Generator (Clio)</h2>
+            <h2 data-lang="clio-title" class="!text-white border-b border-white/20 pb-4">Clio (AI Proposal Generator)</h2>
             <!-- ДОБАВЛЕН ПОДЗАГОЛОВОК -->
             <p data-lang="clio-subtitle" class="!text-gray-300 text-lg mt-4 mb-2">Автоматически превращает запись встречи с клиентом в готовое коммерческое предложение за 2-4 часа.</p>
             <!-- ДОБАВЛЕНА ЕДИНАЯ ССЫЛКА "ПОДРОБНЕЕ" -->
             <a href="/for-sales" class="offer-card-link !text-lg !text-left" data-lang="clio-learn-more">Подробнее об AI Proposal Generator →</a>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- ИЗМЕНЕНИЕ: Убран max-w-md, карточка теперь горизонтальная -->
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 mt-8">
                 
-                <!-- Карточка: Пробный пакет -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="clio-offer1-title">Пробный пакет</div>
-                    <!-- ДОБАВЛЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="clio-offer1-desc-main">5 готовых коммерческих предложений с полным research по клиенту и рынку.</div>
-                    <div class="offer-card-price" data-lang="clio-offer1-price">$100</div>
-                    <div class="offer-card-price-desc" data-lang="clio-offer1-desc-sub">разовый платеж</div>
-                    <div class="offer-card-actions">
-                        <a href="#" class="btn btn-event w-full text-center" data-lang="clio-offer1-cta">Оплатить пробный пакет</a>
-                        <!-- Ссылка "Подробнее" удалена отсюда -->
+                <!-- Карточка: Пробный пакет (ОБНОВЛЕНО) -->
+                <div class="offer-card md:flex-row md:items-center md:justify-between">
+                    <!-- Колонка 1: Инфо -->
+                    <div class="md:w-3/5 lg:w-2/3 mb-4 md:mb-0 md:pr-6">
+                        <div class="offer-card-title" data-lang="clio-offer1-title">Пробный пакет (Триал)</div>
+                        <!-- ОБНОВЛЕННОЕ ОПИСАНИЕ -->
+                        <div class="offer-card-description" data-lang="clio-offer1-desc-main">5 готовых КП + 15% скидка на будущие подписки + приоритетный доступ к планам.</div>
                     </div>
-                </div>
-                
-                <!-- Карточка: Подписка Standard -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="clio-offer2-title">Подписка Standard</div>
-                    <!-- ДОБАВЛЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="clio-offer2-desc-main">15 КП в месяц, автоматическая генерация, скидка 25% на 12 месяцев.</div>
-                    <div class="offer-card-price" data-lang="clio-offer2-price">$150/мес</div>
-                    <div class="offer-card-price-desc" data-lang="clio-offer2-desc-sub">вместо $200</div>
-                    <div class="offer-card-actions">
-                        <a href="#" class="btn btn-event w-full text-center" data-lang="clio-offer2-cta">Оформить подписку</a>
+                    <!-- Колонка 2: Цена и Действие -->
+                    <div class="md:w-2/5 lg:w-1/3 md:text-right">
+                        <div class="offer-card-price" data-lang="clio-offer1-price">$100</div>
+                        <div class="offer-card-price-desc" data-lang="clio-offer1-desc-sub">разовый платеж</div>
+                        <div class="offer-card-actions mt-4"> <!-- Добавлен mt-4 для отступа -->
+                            <a href="#" class="btn btn-event w-full text-center" data-lang="clio-offer1-cta">Оплатить триал</a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Карточка: Подписка Professional -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="clio-offer3-title">Подписка Professional</div>
-                    <!-- ДОБАВЛЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="clio-offer3-desc-main">60 КП в месяц, приоритетная обработка, расширенный research, скидка 25% на 12 месяцев.</div>
-                    <div class="offer-card-price" data-lang="clio-offer3-price">$300/мес</div>
-                    <div class="offer-card-price-desc" data-lang="clio-offer3-desc-sub">вместо $400</div>
-                    <div class="offer-card-actions">
-                        <a href="#" class="btn btn-event w-full text-center" data-lang="clio-offer3-cta">Оформить подписку</a>
-                    </div>
-                </div>
-
-                <!-- Карточка: Лид-магнит Clio (ПЕРЕРАБОТАНО) -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="clio-offer4-title">Лист ожидания</div>
-                    <!-- ИЗМЕНЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="clio-offer4-desc-main">Оставьте email, чтобы закрепить скидку 20% на 3 месяца на любой план (Standard или Professional) при запуске.</div>
-                    <div class="offer-card-price" data-lang="clio-offer4-price">Бесплатно</div>
-                    <div class="offer-card-price-desc" data-lang="clio-offer4-desc-sub">закрепить скидку</div>
-                    <div class="offer-card-actions">
-                        <a href="#" class="btn btn-event-secondary w-full text-center" data-lang="clio-offer4-cta">Записаться в лист ожидания</a>
-                    </div>
-                </div>
+                <!-- Карточки Standard, Professional и Лист ожидания УДАЛЕНЫ -->
 
             </div>
         </section>
@@ -660,31 +631,28 @@
             <!-- ДОБАВЛЕНА ЕДИНАЯ ССЫЛКА "ПОДРОБНЕЕ" -->
             <a href="/for-design" class="offer-card-link !text-lg !text-left" data-lang="fran-learn-more">Подробнее о Françoise →</a>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- ИЗМЕНЕНИЕ: Убран max-w-md, карточка теперь горизонтальная -->
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 mt-8">
                 
-                <!-- Карточка: Пробный аудит -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="fran-offer1-title">Пробный аудит</div>
-                    <!-- ДОБАВЛЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="fran-offer1-desc-main">Экспертный аудит 2 макетов за 24 часа. Визуальный анализ, оценка бизнес-задачи, проверка RTL.</div>
-                    <div class="offer-card-price" data-lang="fran-offer1-price">$99</div>
-                    <div class="offer-card-price-desc" data-lang="fran-offer1-desc-sub">разовый платеж</div>
-                    <div class="offer-card-actions">
-                        <a href="#" class="btn btn-event w-full text-center" data-lang="fran-offer1-cta">Оплатить аудит</a>
+                <!-- Карточка: Пробный аудит (ОБНОВЛЕНО) -->
+                <div class="offer-card md:flex-row md:items-center md:justify-between">
+                    <!-- Колонка 1: Инфо -->
+                    <div class="md:w-3/5 lg:w-2/3 mb-4 md:mb-0 md:pr-6">
+                        <div class="offer-card-title" data-lang="fran-offer1-title">Пробный аудит (Репорт)</div>
+                        <!-- ОБНОВЛЕННОЕ ОПИСАНИЕ -->
+                        <div class="offer-card-description" data-lang="fran-offer1-desc-main">Экспертный аудит 2 макетов + бесплатная консультация + 60% скидка на сетап (в течение 6 мес.)</div>
+                    </div>
+                    <!-- Колонка 2: Цена и Действие -->
+                    <div class="md:w-2/5 lg:w-1/3 md:text-right">
+                        <div class="offer-card-price" data-lang="fran-offer1-price">$99</div>
+                        <div class="offer-card-price-desc" data-lang="fran-offer1-desc-sub">разовый платеж</div>
+                        <div class="offer-card-actions mt-4"> <!-- Добавлен mt-4 для отступа -->
+                            <a href="#" class="btn btn-event w-full text-center" data-lang="fran-offer1-cta">Оплатить аудит</a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Карточка: Лид-магнит Françoise (ПЕРЕРАБОТАНО) -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="fran-offer2-title">Лист ожидания</div>
-                    <!-- ИЗМЕНЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="fran-offer2-desc-main">Оставьте email, чтобы получить скидку 50% на Setup Fee при покупке подписки любого тарифа.</div>
-                    <div class="offer-card-price" data-lang="fran-offer2-price">Бесплатно</div>
-                    <div class="offer-card-price-desc" data-lang="fran-offer2-desc-sub">получить скидку 50%</div>
-                    <div class="offer-card-actions">
-                        <a href="/#final-cta" class="btn btn-event-secondary w-full text-center" data-lang="fran-offer2-cta">Записаться и получить скидку</a>
-                    </div>
-                </div>
+                <!-- Карточка Лист ожидания УДАЛЕНА -->
 
             </div>
         </section>
@@ -697,40 +665,83 @@
             <!-- ДОБАВЛЕНА ЕДИНАЯ ССЫЛКА "ПОДРОБНЕЕ" -->
             <a href="/custom-development" class="offer-card-link !text-lg !text-left" data-lang="custom-learn-more">Подробнее о Custom AI Engineering →</a>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- ИЗМЕНЕНИЕ: Убран max-w-md, карточка теперь горизонтальная -->
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 mt-8">
                 
-                <!-- Карточка: Бесплатная консультация -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="custom-offer1-title">Бесплатная консультация</div>
-                    <!-- ДОБАВЛЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="custom-offer1-desc-main">Приоритетная 40-минутная техническая консультация + письменное тех. заключение.</div>
-                    <div class="offer-card-price" data-lang="custom-offer1-price">Бесплатно</div>
-                    <div class="offer-card-price-desc" data-lang="custom-offer1-desc-sub">для участников ивента</div>
-                    <div class="offer-card-actions">
-                        <a href="/#final-cta" class="btn btn-event-secondary w-full text-center" data-lang="custom-offer1-cta">Записаться на консультацию</a>
+                <!-- Карточка: Discovery & Technical Audit (ОБНОВЛЕНО) -->
+                <div class="offer-card md:flex-row md:items-center md:justify-between">
+                    <!-- Колонка 1: Инфо -->
+                    <div class="md:w-3/5 lg:w-2/3 mb-4 md:mb-0 md:pr-6">
+                        <div class="offer-card-title" data-lang="custom-offer2-title">Technical Audit</div>
+                        <!-- ОБНОВЛЕННОЕ ОПИСАНИЕ -->
+                        <div class="offer-card-description" data-lang="custom-offer2-desc-main">Полный Technical Audit (2 недели) + скидка 15% на реализацию решения.</div>
+                    </div>
+                    <!-- Колонка 2: Цена и Действие -->
+                    <div class="md:w-2/5 lg:w-1/3 md:text-right">
+                        <!-- ОБНОВЛЕННАЯ ЦЕНА -->
+                        <div class="offer-card-price" data-lang="custom-offer2-price">$1,999</div>
+                        <!-- ОБНОВЛЕННОЕ ОПИСАНИЕ ЦЕНЫ -->
+                        <div class="offer-card-price-desc" data-lang="custom-offer2-desc-sub">разовый платеж</div>
+                        <div class="offer-card-actions mt-4"> <!-- Добавлен mt-4 для отступа -->
+                            <a href="#" class="btn btn-event w-full text-center" data-lang="custom-offer2-cta">Оплатить аудит</a>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Карточка: Discovery & Technical Audit -->
-                <div class="offer-card">
-                    <div class="offer-card-title" data-lang="custom-offer2-title">Discovery & Technical Audit</div>
-                    <!-- ДОБАВЛЕНО ОПИСАНИЕ -->
-                    <div class="offer-card-description" data-lang="custom-offer2-desc-main">Полный Discovery & Technical Audit (2 недели). Анализ задачи, technical expertise, roadmap решения.</div>
-                    <div class="offer-card-price" data-lang="custom-offer2-price">$1,999</div>
-                    <div class="offer-card-price-desc" data-lang="custom-offer2-desc-sub">разовый платеж (скидка 60%)</div>
-                    <div class="offer-card-actions">
-                        <a href="#" class="btn btn-event w-full text-center" data-lang="custom-offer2-cta">Оплатить Discovery</a>
-                    </div>
+
+                <!-- Карточка Бесплатная консультация УДАЛЕНА -->
+            </div>
+        </section>
+
+        <!-- 
+          НОВЫЙ БЛОК: Остались вопросы?
+          (Этот раздел ПЕРЕМЕЩЕН ВНИЗ, за пределы темного баннера)
+        -->
+        <section id="contact-form-section-placeholder" class="border-t border-white/20 pt-8 mt-8 hidden"> <!-- ИЗМЕНЕНИЕ: Этот блок теперь скрыт, так как логика переехала -->
+            <div class="md:flex md:items-center md:justify-between"> 
+                <div class="md:w-3/5 lg:w-2/3 mb-4 md:mb-0 md:pr-6">
+                    <h2 data-lang="contact-title" class="!text-white !text-3xl mb-2">Остались вопросы?</h2> 
+                    <p data-lang="contact-subtitle" class="!text-gray-300 text-lg mb-0">Если у вас остались вопросы по спецпредложениям или вы хотите обсудить кастомную задачу, оставьте заявку, и мы свяжемся с вами.</p> 
+                </div>
+                <div class="md:w-2/5 lg:w-1/3 md:text-right">
+                    <a href="#" class="btn btn-event-secondary w-full md:w-auto popup-trigger" data-popup="consult" data-lang="contact-cta">Оставить заявку</a> 
                 </div>
             </div>
         </section>
 
     </div> <!-- /end .event-banner .container -->
 
+    <!-- 
+      НОВЫЙ БЛОК: Остались вопросы?
+      (Возвращен на серый фон, стиль "карточки")
+    -->
+    <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+        <section id="contact-form-section" class="border-t border-gray-200 pt-8"> <!-- ИЗМЕНЕНИЕ: стили рамки, отступы -->
+            <div class="md:flex md:items-center md:justify-between"> 
+                <!-- Колонка 1: Инфо -->
+                <div class="md:w-3/5 lg:w-2/3 mb-4 md:mb-0 md:pr-6">
+                    <h2 data-lang="contact-title" class="!text-gray-800 !text-3xl mb-2">Остались вопросы?</h2> <!-- ИЗМЕНЕНИЕ: Цвет -->
+                    <p data-lang="contact-subtitle" class="text-lg mb-0">Если у вас остались вопросы по спецпредложениям или вы хотите обсудить кастомную задачу, оставьте заявку, и мы свяжемся с вами.</p> <!-- ИЗМЕНЕНИЕ: Цвет (убран !text-gray-300) -->
+                </div>
+                <!-- Колонка 2: Действие -->
+                <div class="md:w-2/5 lg:w-1/3 md:text-right">
+                    <a href="#" class="btn btn-secondary w-full md:w-auto popup-trigger" data-popup="consult" data-lang="contact-cta">Оставить заявку</a> <!-- ИЗМЕНЕНИЕ: btn-event-secondary -> btn-secondary -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 
+      НОВЫЙ БЛОК: Остались вопросы?
+      (Этот раздел ПЕРЕМЕЩЕН ВЫШЕ, внутрь темного баннера)
+    -->
+    <section id="contact-form-section-placeholder" class="container max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16 hidden"> 
+        <!-- Этот блок больше не используется -->
+    </section>
+
 
     <!-- 
       FOOTER (ПОДВАЛ)
-      Скопировано 1-в-1 из for-sales.html
+      Скопировано 1-в-1 из Клио.html
     -->
     <footer class="footer pt-16 pb-8 md:pb-12">
         <div class="container max-w-7xl mx-auto px-4">
@@ -785,7 +796,7 @@
 
     <!-- 
       JAVASCRIPT
-      Логика из for-sales.html + ОБНОВЛЕННЫЙ объект translations
+      Логика из Клио.html + ОБНОВЛЕННЫЙ объект translations
     -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -805,7 +816,7 @@
             const translations = {
                 'ru': {
                     // --- Мета-данные ---
-                    'meta-title': 'Спецпредложения /function1 - DIVO',
+                    'meta-title': 'Спецпредложения /function1 — DIVO',
                     'meta-description': 'Эксклюзивные условия на продукты DIVO только для участников конференции /function1.',
                     
                     // --- Шапка (из образца) ---
@@ -818,84 +829,48 @@
                     'nav-solutions': 'Решения',
                     'nav-custom-dev': 'Кастомная разработка',
                     'nav-portfolio': 'Портфолио',
-                    
-                    // --- Баннер (УДАЛЕН) ---
-                    
+                                        
                     // --- НОВЫЕ: Заголовки страницы ---
                     'page-title': 'Специальные предложения /function1',
                     'page-subtitle': 'Эксклюзивные условия только для участников конференции',
                     
-                    // --- НОВЫЕ: Clio ---
-                    'clio-title': 'AI Proposal Generator (Clio)',
+                    // --- ОБНОВЛЕНО: Clio ---
+                    'clio-title': 'Clio (AI Proposal Generator)',
                     'clio-subtitle': 'Автоматически превращает запись встречи с клиентом в готовое коммерческое предложение за 2-4 часа.',
                     'clio-learn-more': 'Подробнее об AI Proposal Generator →',
                     
-                    'clio-offer1-title': 'Пробный пакет',
-                    'clio-offer1-desc-main': '5 готовых коммерческих предложений с полным research по клиенту и рынку.',
-                    'clio-offer1-price': '$100',
+                    'clio-offer1-title': 'Пробный пакет (Триал)',
+                    'clio-offer1-desc-main': '5 готовых КП + 15% скидка на будущие подписки + приоритетный доступ к планам.',
+                    'clio-offer1-price': '$99',
                     'clio-offer1-desc-sub': 'разовый платеж',
-                    'clio-offer1-cta': 'Оплатить пробный пакет',
+                    'clio-offer1-cta': 'Оплатить триал',
                     
-                    'clio-offer2-title': 'Подписка Standard',
-                    'clio-offer2-desc-main': '15 КП в месяц, автоматическая генерация, скидка 25% на 12 месяцев.',
-                    'clio-offer2-price': '$150/мес',
-                    'clio-offer2-desc-sub': 'вместо $200',
-                    'clio-offer2-cta': 'Оформить подписку',
-                    
-                    'clio-offer3-title': 'Подписка Professional',
-                    'clio-offer3-desc-main': '60 КП в месяц, приоритетная обработка, расширенный research, скидка 25% на 12 месяцев.',
-                    'clio-offer3-price': '$300/мес',
-                    'clio-offer3-desc-sub': 'вместо $400',
-                    'clio-offer3-cta': 'Оформить подписку',
-                    
-                    'clio-offer4-title': 'Лист ожидания',
-                    'clio-offer4-desc-main': 'Оставьте email, чтобы закрепить скидку 20% на 3 месяца на любой план (Standard или Professional) при запуске.',
-                    'clio-offer4-price': 'Бесплатно',
-                    'clio-offer4-desc-sub': 'закрепить скидку',
-                    'clio-offer4-cta': 'Записаться в лист ожидания',
-
-                    // --- НОВЫЕ: Françoise ---
+                    // --- ОБНОВЛЕНО: Françoise ---
                     'fran-title': 'Françoise (DIVO DesignQA)',
                     'fran-subtitle': 'AI-ассистент для автоматической проверки дизайна: типографика, композиция, RTL, accessibility.',
                     'fran-learn-more': 'Подробнее о Françoise →',
 
-                    'fran-offer1-title': 'Пробный аудит',
-                    'fran-offer1-desc-main': 'Экспертный аудит 2 макетов за 24 часа. Визуальный анализ, оценка бизнес-задачи, проверка RTL.',
+                    'fran-offer1-title': 'Пробный аудит (Репорт)',
+                    'fran-offer1-desc-main': 'Экспертный аудит 2 макетов + бесплатная консультация + 60% скидка на сетап (в течение 6 мес.)',
                     'fran-offer1-price': '$99',
                     'fran-offer1-desc-sub': 'разовый платеж',
                     'fran-offer1-cta': 'Оплатить аудит',
                     
-                    'fran-offer2-title': 'Лист ожидания',
-                    'fran-offer2-desc-main': 'Оставьте email, чтобы получить скидку 50% на Setup Fee при покупке подписки любого тарифа.',
-                    'fran-offer2-price': 'Бесплатно',
-                    'fran-offer2-desc-sub': 'получить скидку 50%',
-                    'fran-offer2-cta': 'Записаться и получить скидку',
-
-                    // --- НОВЫЕ: Custom AI ---
+                    // --- ОБНОВЛЕНО: Custom AI ---
                     'custom-title': 'Custom AI Engineering',
                     'custom-subtitle': 'Разработка интеллектуальных систем под ключ для вашего бизнеса.',
                     'custom-learn-more': 'Подробнее о Custom AI Engineering →',
-
-                    'custom-offer1-title': 'Бесплатная консультация',
-                    'custom-offer1-desc-main': 'Приоритетная 40-минутная тех. консультация. **Закрепляет скидку на Discovery & Audit на 1 месяц**.',
-                    'custom-offer1-price': 'Бесплатно',
-                    'custom-offer1-desc-sub': 'для участников ивента',
-                    'custom-offer1-cta': 'Записаться на консультацию',
                     
-                    'custom-offer2-title': 'Discovery & Technical Audit',
-                    'custom-offer2-desc-main': 'Полный Discovery & Technical Audit (2 недели). Анализ, roadmap. **Закрепляет скидку 15% на полный проект на 3 месяца**.',
+                    'custom-offer2-title': 'Technical Audit',
+                    'custom-offer2-desc-main': 'Полный Technical Audit (2 недели) + скидка 15% на реализацию решения.',
                     'custom-offer2-price': '$1,999',
-                    'custom-offer2-desc-sub': 'разовый платеж (скидка 60%)',
-                    'custom-offer2-cta': 'Оплатить Discovery',
+                    'custom-offer2-desc-sub': 'разовый платеж',
+                    'custom-offer2-cta': 'Оплатить аудит',
 
-                    // --- НОВЫЕ: Контакты ---
-                    'contact-title': 'Давайте встретимся на /function1!',
-                    'contact-intro': 'Я, Дарья (Daria), буду на конференции оба дня, но не на стенде, а "в полях". С радостью выцеплю вас на кофе обсудить задачи. Напишите мне, и мы договоримся о времени.',
-                    // 'contact-tg': 'Telegram: @darikamouse', // Ключи больше не нужны, т.к. текст убран
-                    // 'contact-wa': 'WhatsApp: +79035176391',
-                    // 'contact-booth-intro': 'Или подходите на стенд:',
-                    // 'contact-booth-number': 'Стенд #[номер]',
-                    'contact-disclaimer': 'Все специальные предложения действуют только для участников конференции /function1 и ограничены по времени и количеству.',
+                    // --- НОВЫЙ БЛОК: Контакты ---
+                    'contact-title': 'Остались вопросы?',
+                    'contact-subtitle': 'Если у вас остались вопросы по спецпредложениям или вы хотите обсудить кастомную задачу, оставьте заявку, и мы свяжемся с вами.',
+                    'contact-cta': 'Оставить заявку',
 
                     // --- Подвал (из образца) ---
                     'footer-mission': 'Мы превращаем технологии в двигатель роста вашего бизнеса.',
@@ -909,7 +884,7 @@
                 },
                 'en': {
                     // --- Meta ---
-                    'meta-title': '/function1 Special Offers - DIVO',
+                    'meta-title': '/function1 Special Offers — DIVO',
                     'meta-description': 'Exclusive conditions on DIVO products only for /function1 conference attendees.',
                     
                     // --- Header (from sample) ---
@@ -923,83 +898,47 @@
                     'nav-custom-dev': 'Custom Development',
                     'nav-portfolio': 'Portfolio',
                     
-                    // --- Banner (REMOVED) ---
-                    
                     // --- NEW: Page Titles ---
                     'page-title': '/function1 Special Offers',
                     'page-subtitle': 'Exclusive conditions for conference attendees only',
 
-                    // --- NEW: Clio ---
-                    'clio-title': 'AI Proposal Generator (Clio)',
+                    // --- UPDATED: Clio ---
+                    'clio-title': 'Clio (AI Proposal Generator)',
                     'clio-subtitle': 'Automatically turns your client meeting recording into a ready proposal in 2-4 hours.',
                     'clio-learn-more': 'Learn more about AI Proposal Generator →',
 
                     'clio-offer1-title': 'Trial Package',
-                    'clio-offer1-desc-main': '5 ready-made commercial proposals with full client and market research.',
-                    'clio-offer1-price': '$100',
+                    'clio-offer1-desc-main': '5 ready proposals + 15% discount on future subscriptions + priority access to all plans.',
+                    'clio-offer1-price': '$99',
                     'clio-offer1-desc-sub': 'one-time payment',
-                    'clio-offer1-cta': 'Purchase trial package',
+                    'clio-offer1-cta': 'Purchase trial',
                     
-                    'clio-offer2-title': 'Standard Subscription',
-                    'clio-offer2-desc-main': '15 proposals/month, automatic generation, 25% discount for 12 months.',
-                    'clio-offer2-price': '$150/mo',
-                    'clio-offer2-desc-sub': 'instead of $200',
-                    'clio-offer2-cta': 'Subscribe now',
-                    
-                    'clio-offer3-title': 'Professional Subscription',
-                    'clio-offer3-desc-main': '60 proposals/month, priority processing, extended research, 25% discount for 12 months.',
-                    'clio-offer3-price': '$300/mo',
-                    'clio-offer3-desc-sub': 'instead of $400',
-                    'clio-offer3-cta': 'Subscribe now',
-                    
-                    'clio-offer4-title': 'Waiting List',
-                    'clio-offer4-desc-main': 'Leave your email to lock in a 20% discount for 3 months on any plan (Standard or Professional) at launch.',
-                    'clio-offer4-price': 'Free',
-                    'clio-offer4-desc-sub': 'lock in discount',
-                    'clio-offer4-cta': 'Join Waiting List',
-
-                    // --- NEW: Françoise ---
+                    // --- UPDATED: Françoise ---
                     'fran-title': 'Françoise (DIVO DesignQA)',
                     'fran-subtitle': 'AI assistant for automatic design review: typography, composition, RTL, accessibility.',
                     'fran-learn-more': 'Learn more about Françoise →',
 
-                    'fran-offer1-title': 'Trial Audit',
-                    'fran-offer1-desc-main': 'Expert audit of 2 layouts in 24 hours. Visual analysis, business objective assessment, RTL check.',
+                    'fran-offer1-title': 'Trial Audit (Report)',
+                    'fran-offer1-desc-main': 'Expert audit of 2 layouts + free consultation + 60% discount on setup fee (valid for 6 months).',
                     'fran-offer1-price': '$99',
                     'fran-offer1-desc-sub': 'one-time payment',
                     'fran-offer1-cta': 'Order audit',
                     
-                    'fran-offer2-title': 'Waiting List',
-                    'fran-offer2-desc-main': 'Leave your email to get a 50% discount on the Setup Fee when purchasing any subscription tier.',
-                    'fran-offer2-price': 'Free',
-                    'fran-offer2-desc-sub': 'get 50% off',
-                    'fran-offer2-cta': 'Join and get discount',
-
-                    // --- NEW: Custom AI ---
+                    // --- UPDATED: Custom AI ---
                     'custom-title': 'Custom AI Engineering',
                     'custom-subtitle': 'Turnkey intelligent systems development for your business.',
                     'custom-learn-more': 'Learn more about Custom AI Engineering →',
-
-                    'custom-offer1-title': 'Free Consultation',
-                    'custom-offer1-desc-main': 'Priority 40-min tech consultation. **Locks in a discount on Discovery & Audit for 1 month**.',
-                    'custom-offer1-price': 'Free',
-                    'custom-offer1-desc-sub': 'for event attendees',
-                    'custom-offer1-cta': 'Schedule consultation',
                     
-                    'custom-offer2-title': 'Discovery & Technical Audit',
-                    'custom-offer2-desc-main': 'Full Discovery & Technical Audit (2 weeks). Analysis, roadmap. **Locks in a 15% discount on the full project for 3 months**.',
+                    'custom-offer2-title': 'Technical Audit',
+                    'custom-offer2-desc-main': 'Full Technical Audit (2 weeks) + 15% discount on solution implementation.',
                     'custom-offer2-price': '$1,999',
-                    'custom-offer2-desc-sub': 'one-time payment (60% off)',
-                    'custom-offer2-cta': 'Order Discovery',
+                    'custom-offer2-desc-sub': 'one-time payment',
+                    'custom-offer2-cta': 'Order audit',
 
                     // --- NEW: Contacts ---
-                    'contact-title': 'Let\'s meet at /function1!',
-                    'contact-intro': 'I\'m Daria, and I\'ll be at the conference both days, but "in the field," not at a booth. I\'d love to grab a coffee and discuss your challenges. Message me, and we\'ll set up a time.',
-                    // 'contact-tg': 'Telegram: @darikamouse', // Keys no longer needed
-                    // 'contact-wa': 'WhatsApp: +79035176391',
-                    // 'contact-booth-intro': 'Or find me at our booth:',
-                    // 'contact-booth-number': 'Booth #[number]',
-                    'contact-disclaimer': 'All special offers are valid only for /function1 conference attendees and are limited by time and quantity.',
+                    'contact-title': 'Have questions?',
+                    'contact-subtitle': 'If you have questions about the special offers or want to discuss a custom task, leave a request, and we will contact you.',
+                    'contact-cta': 'Leave a request',
 
                     // --- Footer (from sample) ---
                     'footer-mission': 'We turn technology into a growth engine for your business.',

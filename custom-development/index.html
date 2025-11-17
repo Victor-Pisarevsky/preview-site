@@ -4,18 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
     <title data-lang="meta-title">Custom AI Development | Enterprise Solutions by DIVO</title>
-    <meta name="description" data-lang="meta-description" content="We design fault-tolerant AI systems for enterprise. Experience with banking, e-commerce, tech corporations. From $30k to $400k+.">
+    <meta name="description" data-lang="meta-description"
+          content="We design fault-tolerant AI systems for enterprise. Experience with banking, e-commerce, tech corporations. From $30k to $400k+.">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap"
+          rel="stylesheet">
+
     <style>
         /* Шрифты (из примера) */
         @font-face {
@@ -412,911 +415,1038 @@
 </head>
 <body class="antialiased">
 
-    <!-- Шапка (Header) -->
-    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                
-                <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+<!-- Шапка (Header) -->
+<header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
 
-                <div class="hidden lg:flex items-center gap-6">
-                    <nav class="flex gap-8 items-center">
-                        <div class="relative group">
-                            <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
-                                Решения
-                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                <div class="py-2">
-                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
-                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
-                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
-                                </div>
+            <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <nav class="flex gap-8 items-center">
+                    <div class="relative group">
+                        <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions"
+                                aria-expanded="false" aria-controls="solutions-dropdown">
+                            Решения
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="solutions-dropdown"
+                             class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для
+                                    Продаж</a>
+                                <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для
+                                    Дизайна</a>
+                                <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50"
+                                   data-lang="nav-custom-dev">Кастомная разработка</a>
                             </div>
-                        </div>
-                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
-                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
-                    </nav>
-
-                    <div class="flex items-center gap-4">
-                        <!-- ИЗМЕНЕНО: data-lang="header-cta" заменен на data-lang="cta2-cta" -->
-                        <a href="/payments/audit" class="btn btn-primary btn-sm popup-trigger" data-popup="consult" data-lang="cta2-cta">Получить консультацию</a>
-                        <div class="lang-switcher-inline">
-                            <button id="btn-ru" class="" aria-pressed="false">RU</button>
-                            <button id="btn-en" class="active" aria-pressed="true">EN</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:hidden flex items-center gap-2">
-                    <!-- ИЗМЕНЕНО: data-lang="header-cta-mobile" заменен на data-lang="cta2-cta-mobile" -->
-                    <a href="/payments/audit" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger" data-popup="consult" data-lang="cta2-cta-mobile">Консультация</a>
-                    <div class="lang-switcher-inline">
-                        <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
-                        <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
-                    </div>
-                    <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div id="mobile-menu" class="hidden lg:hidden pb-4">
-                <nav class="flex flex-col gap-4">
-                    <div>
-                        <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
-                        <div class="pl-4 flex flex-col gap-2">
-                            <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
-                            <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
-                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
                         </div>
                     </div>
                     <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
                     <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
                 </nav>
+
+                <div class="flex items-center gap-4">
+                    <!-- ИЗМЕНЕНО: data-lang="header-cta" заменен на data-lang="cta2-cta" -->
+                    <a href="/payments/audit" class="btn btn-primary btn-sm popup-trigger" data-popup="consult"
+                       data-lang="cta2-cta">Получить консультацию</a>
+                    <div class="lang-switcher-inline">
+                        <button id="btn-ru" class="" aria-pressed="false">RU</button>
+                        <button id="btn-en" class="active" aria-pressed="true">EN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:hidden flex items-center gap-2">
+                <!-- ИЗМЕНЕНО: data-lang="header-cta-mobile" заменен на data-lang="cta2-cta-mobile" -->
+                <a href="/payments/audit" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger"
+                   data-popup="consult" data-lang="cta2-cta-mobile">Консультация</a>
+                <div class="lang-switcher-inline">
+                    <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                    <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
+                </div>
+                <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false"
+                        aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </header>
 
-    <!-- Общий контейнер -->
-    <div class="container max-w-6xl mx-auto px-4 pt-12 sm:pt-16">
+        <div id="mobile-menu" class="hidden lg:hidden pb-4">
+            <nav class="flex flex-col gap-4">
+                <div>
+                    <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
+                    <div class="pl-4 flex flex-col gap-2">
+                        <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
+                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная
+                            разработка</a>
+                    </div>
+                </div>
+                <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+            </nav>
+        </div>
+    </div>
+</header>
 
-        <!-- Блок 1: Hero -->
-        <section id="hero" class="text-center pt-12 pb-16 md:pt-16 md:pb-24">
-            <h1 data-lang="hero-h1" class="mb-6">Custom Development of Systems That Work at Scale</h1>
-            <p data-lang="hero-subtitle" class="text-xl max-w-3xl mx-auto text-text-secondary mb-8">We design fault-tolerant architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.</p>
+<!-- Общий контейнер -->
+<div class="container max-w-6xl mx-auto px-4 pt-12 sm:pt-16">
+
+    <!-- Блок 1: Hero -->
+    <section id="hero" class="text-center pt-12 pb-16 md:pt-16 md:pb-24">
+        <h1 data-lang="hero-h1" class="mb-6">Custom Development of Systems That Work at Scale</h1>
+        <p data-lang="hero-subtitle" class="text-xl max-w-3xl mx-auto text-text-secondary mb-8">We design fault-tolerant
+            architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.</p>
+        <div>
+            <!-- ИЗМЕНЕНО: data-lang="hero-cta" заменен на data-lang="cta2-cta" -->
+            <a href="/payments/audit" class="btn btn-primary btn-lg popup-trigger" data-popup="consult"
+               data-lang="cta2-cta">Get Consultation</a>
+        </div>
+    </section>
+
+    <!-- НОВЫЙ БЛОК: Нам доверяют -->
+    <section id="trusted-by" class="mb-16 md:mb-24">
+        <h3 data-lang="trusted-h3" class="text-center text-2xl font-semibold font-heading text-text-secondary mb-8">
+            Trusted in Enterprise</h3>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-8">
             <div>
-                <!-- ИЗМЕНЕНО: data-lang="hero-cta" заменен на data-lang="cta2-cta" -->
-                <a href="/payments/audit" class="btn btn-primary btn-lg popup-trigger" data-popup="consult" data-lang="cta2-cta">Get Consultation</a>
+                <img src="Logo_Sberbank.png" alt="Sber logo"
+                     class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <p data-lang="logo-sber-description">Russia's largest bank</p>
             </div>
-        </section>
-
-        <!-- НОВЫЙ БЛОК: Нам доверяют -->
-        <section id="trusted-by" class="mb-16 md:mb-24">
-            <h3 data-lang="trusted-h3" class="text-center text-2xl font-semibold font-heading text-text-secondary mb-8">Trusted in Enterprise</h3>
-            <div class="trusted-by-logos">
-                <!-- Sber -->
-                <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="40">
-                    <rect width="120" height="40" rx="8" fill="#1E9F44"/>
-                    <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">СБЕР</text>
-                </svg>
-                <!-- Avito -->
-                <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" height="40">
-                    <rect width="130" height="40" rx="8" fill="#00AAFF"/>
-                    <text x="65" y="27" font-size="24" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">avito</text>
-                </svg>
-                <!-- Yandex -->
-                <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg" height="40">
-                    <rect width="150" height="40" rx="8" fill="#FF0000"/>
-                    <text x="75" y="28" font-size="20" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">Yandex</text>
-                </svg>
+            <div>
+                <img src="Avito_logo.svg" alt="Avito logo"
+                     class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <p data-lang="logo-avito-description">Russia's largest e-commerce</p>
             </div>
-        </section>
-
-        <!-- Блок 2: Наши компетенции (С ИКОНКАМИ) -->
-        <section id="competencies" class="mb-16 md:mb-24">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="competencies-h2">What We Build</h2>
-                <p data-lang="competencies-intro" class="text-lg">All our solutions are built on three core competencies that create value for business at different levels.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Карточка 1 -->
-                <div class="card p-6">
-                    <div class="icon-wrapper bg-light mb-4">
-                        <!-- Иконка "Мозг" -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5c3.464 0 6.312 2.14 7.29 5.003V10.5h1.71c.418 0 .75.332.75.75v1.5a.75.75 0 0 1-.75.75h-1.71v.003c-.978 2.863-3.826 5.003-7.29 5.003-3.464 0-6.312-2.14-7.29-5.003V13.5H3a.75.75 0 0 1-.75-.75v-1.5c0-.418.332-.75.75-.75h1.71V9.503C5.688 6.64 8.536 4.5 12 4.5ZM12 6c-2.73 0-5.022 1.636-5.836 3.866M12 6v4.5m0 7.5v-4.5m0 0c-2.73 0-5.022-1.636-5.836-3.866m5.836 3.866C13.978 12.364 16.27 10.73 17.836 8.134M12 10.5c2.73 0 5.022 1.636 5.836 3.866m-5.836-3.866C10.022 12.364 7.73 10.73 6.164 8.134" />
-                        </svg>
-                    </div>
-                    <h3 data-lang="comp1-title" class="mb-3">Intelligent Systems</h3>
-                    <p data-lang="comp1-desc" class="mb-4">We create systems that can understand, analyze, and predict. These are full-fledged assistants that help make decisions.</p>
-                    <h4 data-lang="comp-includes" class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's included:</h4>
-                    <ul data-lang="comp1-bullets" class="content-list"></ul>
-                </div>
-                <!-- Карточка 2 -->
-                <div class="card p-6">
-                    <div class="icon-wrapper bg-light mb-4">
-                        <!-- Иконка "Шестеренки" -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h3.75" />
-                        </svg>
-                    </div>
-                    <h3 data-lang="comp2-title" class="mb-3">Process Automation</h3>
-                    <p data-lang="comp2-desc" class="mb-4">We dive into routine processes and rebuild them using AI and RPA, freeing up employees' time for strategic and creative tasks.</p>
-                    <h4 data-lang="comp-includes" class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's included:</h4>
-                    <ul data-lang="comp2-bullets" class="content-list"></ul>
-                </div>
-                <!-- Карточка 3 -->
-                <div class="card p-6">
-                    <div class="icon-wrapper bg-light mb-4">
-                        <!-- Иконка "Щит" -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.242-1.008 2.25-2.25 2.25S16.5 13.242 16.5 12 17.758 9.75 19 9.75c1.036 0 1.903.694 2.166 1.649M15.75 12c0 1.242-1.008 2.25-2.25 2.25S11.25 13.242 11.25 12 12.508 9.75 13.75 9.75c1.036 0 1.903.694 2.166 1.649m-8.25 0c.263-.955 1.13-1.649 2.166-1.649 1.242 0 2.25 1.008 2.25 2.25S8.742 14.25 7.5 14.25C6.464 14.25 5.597 13.655 5.334 12.706M3 12c0 1.242 1.008 2.25 2.25 2.25S7.5 13.242 7.5 12 6.242 9.75 5 9.75C3.964 9.75 3.097 10.345 2.834 11.294" />
-                        </svg>
-                    </div>
-                    <h3 data-lang="comp3-title" class="mb-3">Secure Infrastructure</h3>
-                    <p data-lang="comp3-desc" class="mb-4">We know how to embed AI into any environment, even the most complex and regulated. Data security and seamless integration are our key priorities.</p>
-                    <h4 data-lang="comp-includes" class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's included:</h4>
-                    <ul data-lang="comp3-bullets" class="content-list"></ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- НОВЫЙ БЛОК: Технологический стек -->
-        <section id="tech-stack" class="mb-16 md:mb-24">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="tech-stack-h2">Our Tech Stack</h2>
-                <p data-lang="tech-stack-p" class="text-lg">We use a full-stack approach, selecting the right technology for the job, from enterprise Java to high-performance Python.</p>
-            </div>
-            <div class="max-w-4xl mx-auto text-center">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">Scala</span>
-                <span class="tech-tag">Go</span>
-                <span class="tech-tag">Kubernetes</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Terraform</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">ClickHouse</span>
-                <span class="tech-tag">Kafka</span>
-                <span class="tech-tag">SAP</span>
-                <span class="tech-tag">1C</span>
-                <span class="tech-tag">Yandex Cloud</span>
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">LLM / RAG</span>
-            </div>
-        </section>
-
-        <!-- Блок 3: Баннер /function1 -->
-        <section id="function1-banner" class="mb-16 md:mb-24">
-            <div class="event-banner">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                    <div class="md:col-span-2">
-                        <h2 data-lang="function1-banner-h2" class="highlight-text mb-4">Special Offers for /function1 Attendees</h2>
-                        <p data-lang="function1-banner-text" class="text-lg mb-4">Get access to all DIVO products at special conference prices: from trial demos at $99 to 60% off Technical Audit ($1,999 instead of $5,000).</p>
-                    </div>
-                    <div class="md:text-right flex items-center md:items-start md:justify-end">
-                        <a href="/function1-offers" data-lang="function1-banner-cta" class="btn btn-event btn-lg whitespace-nowrap">View All Offers</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Блок 4: Наш процесс (С ИКОНКАМИ) -->
-        <section id="process" class="mb-16 md:mb-24">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="process-h2">How We Work</h2>
-            </div>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="process-line">
-                    <!-- Шаг 1 -->
-                    <div class="process-step">
-                        <div class="icon-wrapper">
-                            <!-- Иконка "Календарь" -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                            </svg>
-                        </div>
-                        <h3 data-lang="step1-title" class="mb-2">Step 1: Free Consultation (40 minutes)</h3>
-                        <div data-lang="step1-price" class="process-step-price">Free</div>
-                        <p data-lang="step1-desc" class="mt-3">We discuss your challenge and determine where AI will deliver real impact and where classic automation will suffice. You receive a written technical assessment with recommendations.</p>
-                    </div>
-                    <!-- Шаг 2 -->
-                    <div class="process-step">
-                        <div class="icon-wrapper">
-                            <!-- Иконка "Лупа" -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.773 4.773ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                        </div>
-                        <h3 data-lang="step2-title" class="mb-2">Step 2: Discovery & Technical Audit (2 weeks)</h3>
-                        <div data-lang="step2-price" class="process-step-price">$1,999 (discounted for /function1) | $5,000 (regular price)</div>
-                        <p data-lang="step2-desc" class="mt-3">Complete analysis of your system, security requirements, and integration points. We study your infrastructure, identify technical risks, and design optimal solution architecture. You receive a detailed report with recommendations and ready technical specifications.</p>
-                    </div>
-                    <!-- Шаг 3 -->
-                    <div class="process-step">
-                        <div class="icon-wrapper">
-                            <!-- Иконка "Код" -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0-3 16.5" />
-                            </svg>
-                        </div>
-                        <h3 data-lang="step3-title" class="mb-3">Step 3: Development</h3>
-                        
-                        <div class="card p-6 mb-6">
-                            <h4 data-lang="step3-quick-title" class="mb-2">Quick Build (1-3 months)</h4>
-                            <div data-lang="step3-quick-price" class="process-step-price">$30,000 - $80,000</div>
-                            <p data-lang="step3-quick-desc" class="mt-3">Clear task, standard technology stack, fast implementation. Examples: basic document automation, API integration, RAG bot for internal knowledge base.</p>
-                        </div>
-                        <div class="card p-6">
-                            <h4 data-lang="step3-complex-title" class="mb-2">Complex Build (3-12 months)</h4>
-                            <div data-lang="step3-complex-price" class="process-step-price">$100,000 - $400,000+</div>
-                            <p data-lang="step3-complex-desc" class="mt-3">Complex task, legacy system integration (SAP, 1C), high security requirements, on-premise deployment. Examples: AI system for entire department, enterprise RAG with access control, migration from monolith to microservices.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Блок 5: ПОРТФОЛИО (Полностью переработан) -->
-        <section id="portfolio" class="mb-16 md:mb-24">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="cases-h2">Systems That Work in Production</h2>
-                <p data-lang="cases-subtitle" class="text-lg">Examples of architectural solutions implemented for enterprise clients.</p>
-            </div>
-            
-            <div class="space-y-12">
-                <!-- Кейс 1: Авито -->
-                <div class="card p-6 md:p-8">
-                    <div class="client-logo-wrapper mb-3">
-                        <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                            <rect width="130" height="40" rx="8" fill="#00AAFF"/>
-                            <text x="65" y="27" font-size="24" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">avito</text>
-                        </svg>
-                    </div>
-                    <h3 data-lang="case1-title" class="mt-1 mb-4">AI Art Director's Assistant</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h5 data-lang="case-task-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Challenge</h5>
-                            <p data-lang="case1-task">Art directors spent 60-80% of their time on routine layout checks for design system compliance. This slowed down the approval cycle.</p>
-                        </div>
-                        <div>
-                            <h5 data-lang="case-results-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Results</h5>
-                            <ul data-lang="case1-results" class="content-list"></ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Кейс 2: Сбер -->
-                <div class="card p-6 md:p-8">
-                    <div class="client-logo-wrapper mb-3">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                            <rect width="120" height="40" rx="8" fill="#1E9F44"/>
-                            <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">СБЕР</text>
-                        </svg>
-                    </div>
-                    <h3 data-lang="case2-title" class="mt-1 mb-4">Data Pipeline for Enterprise Analytics</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h5 data-lang="case-task-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Challenge</h5>
-                            <p data-lang="case2-task">Dozens of internal systems needed data from the core business platform. Direct integrations were unstable and created risks for critical services.</p>
-                        </div>
-                        <div>
-                            <h5 data-lang="case-results-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Results</h5>
-                            <ul data-lang="case2-results" class="content-list"></ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Кейс 3: Сбер -->
-                <div class="card p-6 md:p-8">
-                    <div class="client-logo-wrapper mb-3">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                            <rect width="120" height="40" rx="8" fill="#1E9F44"/>
-                            <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">СБЕР</text>
-                        </svg>
-                    </div>
-                    <h3 data-lang="case3-title" class="mt-1 mb-4">Flexible Data Validation</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h5 data-lang="case-task-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Challenge</h5>
-                            <p data-lang="case3-task">Users spent a lot of time finding and fixing errors when filling out complex forms. Errors reached the backend and disrupted business processes.</p>
-                        </div>
-                        <div>
-                            <h5 data-lang="case-results-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Results</h5>
-                            <ul data-lang="case3-results" class="content-list"></ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Кейс 4: Сбер -->
-                <div class="card p-6 md:p-8">
-                    <div class="client-logo-wrapper mb-3">
-                        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                            <rect width="120" height="40" rx="8" fill="#1E9F44"/>
-                            <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">СБЕР</text>
-                        </svg>
-                    </div>
-                    <h3 data-lang="case4-title" class="mt-1 mb-4">Letter of Credit Automation</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h5 data-lang="case-task-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Challenge</h5>
-                            <p data-lang="case4-task">Processes for changing letter of credit terms were complex, required manual agreement, and led to errors and delays.</p>
-                        </div>
-                        <div>
-                            <h5 data-lang="case-results-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Results</h5>
-                            <ul data-lang="case4-results" class="content-list"></ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Кейс 5: Авито -->
-                <div class="card p-6 md:p-8">
-                    <div class="client-logo-wrapper mb-3">
-                        <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                            <rect width="130" height="40" rx="8" fill="#00AAFF"/>
-                            <text x="65" y="27" font-size="24" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">avito</text>
-                        </svg>
-                    </div>
-                    <h3 data-lang="case5-title" class="mt-1 mb-4">AI-Powered Redesign Research</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h5 data-lang="case-task-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Challenge</h5>
-                            <p data-lang="case5-task">The team planned a redesign of the car product card. Classic UX research would take 3 months, but deep insights were needed quickly.</p>
-                        </div>
-                        <div>
-                            <h5 data-lang="case-results-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Results</h5>
-                            <ul data-lang="case5-results" class="content-list"></ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Кейс 6: Яндекс Браузер -->
-                <div class="card p-6 md:p-8">
-                    <div class="client-logo-wrapper mb-3">
-                         <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                            <rect width="150" height="40" rx="8" fill="#FF0000"/>
-                            <text x="75" y="28" font-size="20" fill="white" font-family="sans-serif" font-weight="bold" text-anchor="middle">Yandex</text>
-                        </svg>
-                    </div>
-                    <h3 data-lang="case6-title" class="mt-1 mb-4">AI Content Generation Training</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h5 data-lang="case-task-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Challenge</h5>
-                            <p data-lang="case6-task">Yandex Browser's marketing and design teams wanted to accelerate the production of creatives (banners, videos, landing pages) without long iterations.</p>
-                        </div>
-                        <div>
-                            <h5 data-lang="case-results-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Results</h5>
-                            <ul data-lang="case6-results" class="content-list"></ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Кейс 7: B2B Sales -->
-                <div class="card p-6 md:p-8">
-                    <h4 data-lang="case7-client" class="text-base text-text-secondary uppercase font-bold tracking-wider">B2B Sales Tech</h4>
-                    <h3 data-lang="case7-title" class="mt-1 mb-4">Lead Generation Agent (LinkedIn & Telegram)</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h5 data-lang="case-task-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Challenge</h5>
-                            <p data-lang="case7-task">A need to scale outreach communications without losing contact quality or getting blocked by platforms.</p>
-                        </div>
-                        <div>
-                            <h5 data-lang="case-results-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The Results</h5>
-                            <ul data-lang="case7-results" class="content-list"></ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Подзаголовок для PoC -->
-            <div class="text-center max-w-3xl mx-auto my-16">
-                <h3 data-lang="poc-h3" class="text-2xl">Proof-of-Concept & MVP Solutions</h3>
-                <p data-lang="poc-subtitle" class="text-lg">Examples of rapid-development solutions and MVPs that test hypotheses and pave the way for full-scale systems.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- PoC 1: Документооборот -->
-                <div class="card p-6">
-                    <h4 data-lang="poc1-title" class="mb-2">Document Automation (Construction)</h4>
-                    <p data-lang="poc1-desc" class="text-base">A Python/Node.js pipeline that automatically generates reports from YouGile and CAD systems, saving dozens of man-hours per project.</p>
-                </div>
-                <!-- PoC 2: Освещение -->
-                <div class="card p-6">
-                    <h4 data-lang="poc2-title" class="mb-2">Automated Lighting Design</h4>
-                    <p data-lang="poc2-desc" class="text-base">An AI algorithm architecture (Python) that connects Relux and AutoCAD/ArchiCAD for automated lighting calculations and fixture placement.</p>
-                </div>
-                <!-- PoC 3: Генерация изображений -->
-                <div class="card p-6">
-                    <h4 data-lang="poc3-title" class="mb-2">AI Image Generation Platform</h4>
-                    <p data-lang="poc3-desc" class="text-base">A multi-modal platform (Firefly, Recraft, GPT-Image) supporting text-to-image, image-to-image, and text-to-vector for marketing content automation.</p>
-                </div>
-                <!-- PoC 4: EdTech -->
-                <div class="card p-6">
-                    <h4 data-lang="poc4-title" class="mb-2">EdTech CRM Automation</h4>
-                    <p data-lang="poc4-desc" class="text-base">A CRM ecosystem (AmoCRM, WhatsApp API, RPA) for a corporate training school, reducing manager routine by up to 80%.</p>
-                </div>
-                <!-- PoC 5: RAG Бот -->
-                <div class="card p-6">
-                    <h4 data-lang="poc5-title" class="mb-2">On-Premise RAG Telegram Bot</h4>
-                    <p data-lang="poc5-desc" class="text-base">An MVP Telegram bot (Python, LLM, Qdrant) for internal knowledge bases. Securely processes PDF, DOCX, XLSX and provides cited answers.</p>
-                </div>
-                <!-- PoC 6: On-prem ASR -->
-                <div class="card p-6">
-                    <h4 data-lang="poc8-title" class="mb-2">On-Premise Voice Analytics (ASR)</h4>
-                    <p data-lang="poc8-desc" class="text-base">A speech recognition stack (Whisper Large V3 + NVIDIA Triton) deployed on client servers. Achieves 95-97% accuracy without data leaving the company.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Блок 7: CTA Консультация/Аудит (ИЗМЕНЕН) -->
-        <section id="cta-options" class="mb-16 md:mb-24">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 data-lang="cta-h2">Let's Start With Your Challenge</h2>
-            </div>
-            
-            <!-- ИЗМЕНЕНО: Удалена Опция 1, сетка изменена на 1 колонку и отцентрована -->
-            <!-- ИЗМЕНЕНО: Ширина увеличена с max-w-2xl до max-w-4xl -->
-            <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 items-stretch max-w-4xl mx-auto w-full">
-                
-                <!-- Опция 1: Консультация (УДАЛЕНА) -->
-                
-                <!-- Опция 2: Аудит (ОСТАВЛЕНА) -->
-                <div class="card p-8 flex flex-col border-2 border-primary shadow-xl">
-                     <!-- ИЗМЕНЕНО: Убран заголовок h3 -->
-                    <p data-lang="cta2-desc" class="mb-4">Order a 2-week Technical Audit at the special price of $1,999 (instead of $5,000). Get a detailed report with recommendations and priority project start.</p>
-                    <div class="flex-grow">
-                        <h5 data-lang="cta-get-label" class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">What you get:</h5>
-                        <ul data-lang="cta2-bullets" class="content-list"></ul>
-                    </div>
-                    <div class="mt-6">
-                        <a href="/payments/audit" class="btn btn-primary w-full text-center" data-lang="cta2-cta">Order Technical Audit</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- НОВЫЙ БЛОК: Остались вопросы? -->
-        <section id="still-have-questions" class="mb-16 md:mb-24 -mt-8 md:-mt-12">
-            <!-- ИЗМЕНЕНО: верстка в одну строку, убрана подложка (bg-white shadow-md) -->
-            <div class="w-full p-6 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-lg text-text-secondary m-0 text-center md:text-left" data-lang="questions-text">Остались вопросы?</p>
-                <a hrefhref="/payments/audit" class="btn btn-secondary popup-trigger flex-shrink-0" data-popup="consult" data-lang="cta1-cta">Записаться на консультацию</a>
-            </div>
-        </section>
-
-        <!-- Блок 8: УДАЛЕН -->
-
-    </div> <!-- Конец .container -->
-
-
-    <!-- Подвал (Footer) -->
-    <footer class="footer pt-16 pb-8 md:pb-12">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
-                
-                <div>
-                    <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
-                    <p class="text-sm mb-2" data-lang="footer-mission"></p>
-                </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
-                        <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
-                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
-                        <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
-                    <ul class="space-y-2">
-                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
-                        <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
-                        <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
-                    </ul>
-                    <div class="mt-3">
-                        <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
-                        <ul class="space-y-2">
-                            <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
-                            <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
-                <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+            <div>
+                <img src="yandex_logo.png" alt="Yandex logo"
+                     class="h-18 md:h-24 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
+                <p data-lang="logo-yandex-description">Russia's search leader</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- ОБНОВЛЕННЫЙ translations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+    <!-- Блок 2: Наши компетенции (С ИКОНКАМИ) -->
+    <section id="competencies" class="mb-16 md:mb-24">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="competencies-h2">What We Build</h2>
+            <p data-lang="competencies-intro" class="text-lg">All our solutions are built on three core competencies
+                that create value for business at different levels.</p>
+        </div>
 
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    const isExpanded = !mobileMenu.classList.contains('hidden');
-                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-                });
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Карточка 1 -->
+            <div class="card p-6">
+                <div class="icon-wrapper bg-light mb-4">
+                    <!-- Иконка "Мозг" -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M12 4.5c3.464 0 6.312 2.14 7.29 5.003V10.5h1.71c.418 0 .75.332.75.75v1.5a.75.75 0 0 1-.75.75h-1.71v.003c-.978 2.863-3.826 5.003-7.29 5.003-3.464 0-6.312-2.14-7.29-5.003V13.5H3a.75.75 0 0 1-.75-.75v-1.5c0-.418.332-.75.75-.75h1.71V9.503C5.688 6.64 8.536 4.5 12 4.5ZM12 6c-2.73 0-5.022 1.636-5.836 3.866M12 6v4.5m0 7.5v-4.5m0 0c-2.73 0-5.022-1.636-5.836-3.866m5.836 3.866C13.978 12.364 16.27 10.73 17.836 8.134M12 10.5c2.73 0 5.022 1.636 5.836 3.866m-5.836-3.866C10.022 12.364 7.73 10.73 6.164 8.134"/>
+                    </svg>
+                </div>
+                <h3 data-lang="comp1-title" class="mb-3">Intelligent Systems</h3>
+                <p data-lang="comp1-desc" class="mb-4">We create systems that can understand, analyze, and predict.
+                    These are full-fledged assistants that help make decisions.</p>
+                <h4 data-lang="comp-includes"
+                    class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's
+                    included:</h4>
+                <ul data-lang="comp1-bullets" class="content-list"></ul>
+            </div>
+            <!-- Карточка 2 -->
+            <div class="card p-6">
+                <div class="icon-wrapper bg-light mb-4">
+                    <!-- Иконка "Шестеренки" -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h3.75"/>
+                    </svg>
+                </div>
+                <h3 data-lang="comp2-title" class="mb-3">Process Automation</h3>
+                <p data-lang="comp2-desc" class="mb-4">We dive into routine processes and rebuild them using AI and RPA,
+                    freeing up employees' time for strategic and creative tasks.</p>
+                <h4 data-lang="comp-includes"
+                    class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's
+                    included:</h4>
+                <ul data-lang="comp2-bullets" class="content-list"></ul>
+            </div>
+            <!-- Карточка 3 -->
+            <div class="card p-6">
+                <div class="icon-wrapper bg-light mb-4">
+                    <!-- Иконка "Щит" -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M9 12.75 11.25 15 15 9.75M21 12c0 1.242-1.008 2.25-2.25 2.25S16.5 13.242 16.5 12 17.758 9.75 19 9.75c1.036 0 1.903.694 2.166 1.649M15.75 12c0 1.242-1.008 2.25-2.25 2.25S11.25 13.242 11.25 12 12.508 9.75 13.75 9.75c1.036 0 1.903.694 2.166 1.649m-8.25 0c.263-.955 1.13-1.649 2.166-1.649 1.242 0 2.25 1.008 2.25 2.25S8.742 14.25 7.5 14.25C6.464 14.25 5.597 13.655 5.334 12.706M3 12c0 1.242 1.008 2.25 2.25 2.25S7.5 13.242 7.5 12 6.242 9.75 5 9.75C3.964 9.75 3.097 10.345 2.834 11.294"/>
+                    </svg>
+                </div>
+                <h3 data-lang="comp3-title" class="mb-3">Secure Infrastructure</h3>
+                <p data-lang="comp3-desc" class="mb-4">We know how to embed AI into any environment, even the most
+                    complex and regulated. Data security and seamless integration are our key priorities.</p>
+                <h4 data-lang="comp-includes"
+                    class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's
+                    included:</h4>
+                <ul data-lang="comp3-bullets" class="content-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВЫЙ БЛОК: Технологический стек -->
+    <section id="tech-stack" class="mb-16 md:mb-24">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="tech-stack-h2">Our Tech Stack</h2>
+            <p data-lang="tech-stack-p" class="text-lg">We use a full-stack approach, selecting the right technology for
+                the job, from enterprise Java to high-performance Python.</p>
+        </div>
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Scala</span>
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">ClickHouse</span>
+            <span class="tech-tag">Kafka</span>
+            <span class="tech-tag">SAP</span>
+            <span class="tech-tag">1C</span>
+            <span class="tech-tag">Yandex Cloud</span>
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">LLM / RAG</span>
+        </div>
+    </section>
+
+    <!-- Блок 3: Баннер /function1 -->
+    <section id="function1-banner" class="mb-16 md:mb-24">
+        <div class="event-banner">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <div class="md:col-span-2">
+                    <h2 data-lang="function1-banner-h2" class="highlight-text mb-4">Special Offers for /function1
+                        Attendees</h2>
+                    <p data-lang="function1-banner-text" class="text-lg mb-4">Get access to all DIVO products at special
+                        conference prices: from trial demos at $99 to 60% off Technical Audit ($1,999 instead of
+                        $5,000).</p>
+                </div>
+                <div class="md:text-right flex items-center md:items-start md:justify-end">
+                    <a href="/function1-offers" data-lang="function1-banner-cta"
+                       class="btn btn-event btn-lg whitespace-nowrap">View All Offers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 4: Наш процесс (С ИКОНКАМИ) -->
+    <section id="process" class="mb-16 md:mb-24">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="process-h2">How We Work</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            <div class="process-line">
+                <!-- Шаг 1 -->
+                <div class="process-step">
+                    <div class="icon-wrapper">
+                        <!-- Иконка "Календарь" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/>
+                        </svg>
+                    </div>
+                    <h3 data-lang="step1-title" class="mb-2">Step 1: Free Consultation (40 minutes)</h3>
+                    <div data-lang="step1-price" class="process-step-price">Free</div>
+                    <p data-lang="step1-desc" class="mt-3">We discuss your challenge and determine where AI will deliver
+                        real impact and where classic automation will suffice. You receive a written technical
+                        assessment with recommendations.</p>
+                </div>
+                <!-- Шаг 2 -->
+                <div class="process-step">
+                    <div class="icon-wrapper">
+                        <!-- Иконка "Лупа" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.773 4.773ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                        </svg>
+                    </div>
+                    <h3 data-lang="step2-title" class="mb-2">Step 2: Discovery & Technical Audit (2 weeks)</h3>
+                    <div data-lang="step2-price" class="process-step-price">$1,999 (discounted for /function1) | $5,000
+                        (regular price)
+                    </div>
+                    <p data-lang="step2-desc" class="mt-3">Complete analysis of your system, security requirements, and
+                        integration points. We study your infrastructure, identify technical risks, and design optimal
+                        solution architecture. You receive a detailed report with recommendations and ready technical
+                        specifications.</p>
+                </div>
+                <!-- Шаг 3 -->
+                <div class="process-step">
+                    <div class="icon-wrapper">
+                        <!-- Иконка "Код" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0-3 16.5"/>
+                        </svg>
+                    </div>
+                    <h3 data-lang="step3-title" class="mb-3">Step 3: Development</h3>
+
+                    <div class="card p-6 mb-6">
+                        <h4 data-lang="step3-quick-title" class="mb-2">Quick Build (1-3 months)</h4>
+                        <div data-lang="step3-quick-price" class="process-step-price">$30,000 - $80,000</div>
+                        <p data-lang="step3-quick-desc" class="mt-3">Clear task, standard technology stack, fast
+                            implementation. Examples: basic document automation, API integration, RAG bot for internal
+                            knowledge base.</p>
+                    </div>
+                    <div class="card p-6">
+                        <h4 data-lang="step3-complex-title" class="mb-2">Complex Build (3-12 months)</h4>
+                        <div data-lang="step3-complex-price" class="process-step-price">$100,000 - $400,000+</div>
+                        <p data-lang="step3-complex-desc" class="mt-3">Complex task, legacy system integration (SAP,
+                            1C), high security requirements, on-premise deployment. Examples: AI system for entire
+                            department, enterprise RAG with access control, migration from monolith to
+                            microservices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 5: ПОРТФОЛИО (Полностью переработан) -->
+    <section id="portfolio" class="mb-16 md:mb-24">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="cases-h2">Systems That Work in Production</h2>
+            <p data-lang="cases-subtitle" class="text-lg">Examples of architectural solutions implemented for enterprise
+                clients.</p>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Кейс 1: Авито -->
+            <div class="card p-6 md:p-8">
+                <div class="client-logo-wrapper mb-3">
+                    <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" height="32">
+                        <rect width="130" height="40" rx="8" fill="#00AAFF"/>
+                        <text x="65" y="27" font-size="24" fill="white" font-family="sans-serif" font-weight="bold"
+                              text-anchor="middle">avito
+                        </text>
+                    </svg>
+                </div>
+                <h3 data-lang="case1-title" class="mt-1 mb-4">AI Art Director's Assistant</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 data-lang="case-task-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Challenge</h5>
+                        <p data-lang="case1-task">Art directors spent 60-80% of their time on routine layout checks for
+                            design system compliance. This slowed down the approval cycle.</p>
+                    </div>
+                    <div>
+                        <h5 data-lang="case-results-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Results</h5>
+                        <ul data-lang="case1-results" class="content-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кейс 2: Сбер -->
+            <div class="card p-6 md:p-8">
+                <div class="client-logo-wrapper mb-3">
+                    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
+                        <rect width="120" height="40" rx="8" fill="#1E9F44"/>
+                        <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
+                              text-anchor="middle">СБЕР
+                        </text>
+                    </svg>
+                </div>
+                <h3 data-lang="case2-title" class="mt-1 mb-4">Data Pipeline for Enterprise Analytics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 data-lang="case-task-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Challenge</h5>
+                        <p data-lang="case2-task">Dozens of internal systems needed data from the core business
+                            platform. Direct integrations were unstable and created risks for critical services.</p>
+                    </div>
+                    <div>
+                        <h5 data-lang="case-results-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Results</h5>
+                        <ul data-lang="case2-results" class="content-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кейс 3: Сбер -->
+            <div class="card p-6 md:p-8">
+                <div class="client-logo-wrapper mb-3">
+                    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
+                        <rect width="120" height="40" rx="8" fill="#1E9F44"/>
+                        <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
+                              text-anchor="middle">СБЕР
+                        </text>
+                    </svg>
+                </div>
+                <h3 data-lang="case3-title" class="mt-1 mb-4">Flexible Data Validation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 data-lang="case-task-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Challenge</h5>
+                        <p data-lang="case3-task">Users spent a lot of time finding and fixing errors when filling out
+                            complex forms. Errors reached the backend and disrupted business processes.</p>
+                    </div>
+                    <div>
+                        <h5 data-lang="case-results-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Results</h5>
+                        <ul data-lang="case3-results" class="content-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кейс 4: Сбер -->
+            <div class="card p-6 md:p-8">
+                <div class="client-logo-wrapper mb-3">
+                    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
+                        <rect width="120" height="40" rx="8" fill="#1E9F44"/>
+                        <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
+                              text-anchor="middle">СБЕР
+                        </text>
+                    </svg>
+                </div>
+                <h3 data-lang="case4-title" class="mt-1 mb-4">Letter of Credit Automation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 data-lang="case-task-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Challenge</h5>
+                        <p data-lang="case4-task">Processes for changing letter of credit terms were complex, required
+                            manual agreement, and led to errors and delays.</p>
+                    </div>
+                    <div>
+                        <h5 data-lang="case-results-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Results</h5>
+                        <ul data-lang="case4-results" class="content-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кейс 5: Авито -->
+            <div class="card p-6 md:p-8">
+                <div class="client-logo-wrapper mb-3">
+                    <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" height="32">
+                        <rect width="130" height="40" rx="8" fill="#00AAFF"/>
+                        <text x="65" y="27" font-size="24" fill="white" font-family="sans-serif" font-weight="bold"
+                              text-anchor="middle">avito
+                        </text>
+                    </svg>
+                </div>
+                <h3 data-lang="case5-title" class="mt-1 mb-4">AI-Powered Redesign Research</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 data-lang="case-task-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Challenge</h5>
+                        <p data-lang="case5-task">The team planned a redesign of the car product card. Classic UX
+                            research would take 3 months, but deep insights were needed quickly.</p>
+                    </div>
+                    <div>
+                        <h5 data-lang="case-results-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Results</h5>
+                        <ul data-lang="case5-results" class="content-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кейс 6: Яндекс Браузер -->
+            <div class="card p-6 md:p-8">
+                <div class="client-logo-wrapper mb-3">
+                    <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg" height="32">
+                        <rect width="150" height="40" rx="8" fill="#FF0000"/>
+                        <text x="75" y="28" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
+                              text-anchor="middle">Yandex
+                        </text>
+                    </svg>
+                </div>
+                <h3 data-lang="case6-title" class="mt-1 mb-4">AI Content Generation Training</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 data-lang="case-task-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Challenge</h5>
+                        <p data-lang="case6-task">Yandex Browser's marketing and design teams wanted to accelerate the
+                            production of creatives (banners, videos, landing pages) without long iterations.</p>
+                    </div>
+                    <div>
+                        <h5 data-lang="case-results-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Results</h5>
+                        <ul data-lang="case6-results" class="content-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кейс 7: B2B Sales -->
+            <div class="card p-6 md:p-8">
+                <h4 data-lang="case7-client" class="text-base text-text-secondary uppercase font-bold tracking-wider">
+                    B2B Sales Tech</h4>
+                <h3 data-lang="case7-title" class="mt-1 mb-4">Lead Generation Agent (LinkedIn & Telegram)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 data-lang="case-task-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Challenge</h5>
+                        <p data-lang="case7-task">A need to scale outreach communications without losing contact quality
+                            or getting blocked by platforms.</p>
+                    </div>
+                    <div>
+                        <h5 data-lang="case-results-label"
+                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
+                            Results</h5>
+                        <ul data-lang="case7-results" class="content-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Подзаголовок для PoC -->
+        <div class="text-center max-w-3xl mx-auto my-16">
+            <h3 data-lang="poc-h3" class="text-2xl">Proof-of-Concept & MVP Solutions</h3>
+            <p data-lang="poc-subtitle" class="text-lg">Examples of rapid-development solutions and MVPs that test
+                hypotheses and pave the way for full-scale systems.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- PoC 1: Документооборот -->
+            <div class="card p-6">
+                <h4 data-lang="poc1-title" class="mb-2">Document Automation (Construction)</h4>
+                <p data-lang="poc1-desc" class="text-base">A Python/Node.js pipeline that automatically generates
+                    reports from YouGile and CAD systems, saving dozens of man-hours per project.</p>
+            </div>
+            <!-- PoC 2: Освещение -->
+            <div class="card p-6">
+                <h4 data-lang="poc2-title" class="mb-2">Automated Lighting Design</h4>
+                <p data-lang="poc2-desc" class="text-base">An AI algorithm architecture (Python) that connects Relux and
+                    AutoCAD/ArchiCAD for automated lighting calculations and fixture placement.</p>
+            </div>
+            <!-- PoC 3: Генерация изображений -->
+            <div class="card p-6">
+                <h4 data-lang="poc3-title" class="mb-2">AI Image Generation Platform</h4>
+                <p data-lang="poc3-desc" class="text-base">A multi-modal platform (Firefly, Recraft, GPT-Image)
+                    supporting text-to-image, image-to-image, and text-to-vector for marketing content automation.</p>
+            </div>
+            <!-- PoC 4: EdTech -->
+            <div class="card p-6">
+                <h4 data-lang="poc4-title" class="mb-2">EdTech CRM Automation</h4>
+                <p data-lang="poc4-desc" class="text-base">A CRM ecosystem (AmoCRM, WhatsApp API, RPA) for a corporate
+                    training school, reducing manager routine by up to 80%.</p>
+            </div>
+            <!-- PoC 5: RAG Бот -->
+            <div class="card p-6">
+                <h4 data-lang="poc5-title" class="mb-2">On-Premise RAG Telegram Bot</h4>
+                <p data-lang="poc5-desc" class="text-base">An MVP Telegram bot (Python, LLM, Qdrant) for internal
+                    knowledge bases. Securely processes PDF, DOCX, XLSX and provides cited answers.</p>
+            </div>
+            <!-- PoC 6: On-prem ASR -->
+            <div class="card p-6">
+                <h4 data-lang="poc8-title" class="mb-2">On-Premise Voice Analytics (ASR)</h4>
+                <p data-lang="poc8-desc" class="text-base">A speech recognition stack (Whisper Large V3 + NVIDIA Triton)
+                    deployed on client servers. Achieves 95-97% accuracy without data leaving the company.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Блок 7: CTA Консультация/Аудит (ИЗМЕНЕН) -->
+    <section id="cta-options" class="mb-16 md:mb-24">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 data-lang="cta-h2">Let's Start With Your Challenge</h2>
+        </div>
+
+        <!-- ИЗМЕНЕНО: Удалена Опция 1, сетка изменена на 1 колонку и отцентрована -->
+        <!-- ИЗМЕНЕНО: Ширина увеличена с max-w-2xl до max-w-4xl -->
+        <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 items-stretch max-w-4xl mx-auto w-full">
+
+            <!-- Опция 1: Консультация (УДАЛЕНА) -->
+
+            <!-- Опция 2: Аудит (ОСТАВЛЕНА) -->
+            <div class="card p-8 flex flex-col border-2 border-primary shadow-xl">
+                <!-- ИЗМЕНЕНО: Убран заголовок h3 -->
+                <p data-lang="cta2-desc" class="mb-4">Order a 2-week Technical Audit at the special price of $1,999
+                    (instead of $5,000). Get a detailed report with recommendations and priority project start.</p>
+                <div class="flex-grow">
+                    <h5 data-lang="cta-get-label"
+                        class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">What you get:</h5>
+                    <ul data-lang="cta2-bullets" class="content-list"></ul>
+                </div>
+                <div class="mt-6">
+                    <a href="/payments/audit" class="btn btn-primary w-full text-center" data-lang="cta2-cta">Order
+                        Technical Audit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВЫЙ БЛОК: Остались вопросы? -->
+    <section id="still-have-questions" class="mb-16 md:mb-24 -mt-8 md:-mt-12">
+        <!-- ИЗМЕНЕНО: верстка в одну строку, убрана подложка (bg-white shadow-md) -->
+        <div class="w-full p-6 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-lg text-text-secondary m-0 text-center md:text-left" data-lang="questions-text">Остались
+                вопросы?</p>
+            <a hrefhref="/payments/audit" class="btn btn-secondary popup-trigger flex-shrink-0" data-popup="consult"
+               data-lang="cta1-cta">Записаться на консультацию</a>
+        </div>
+    </section>
+
+    <!-- Блок 8: УДАЛЕН -->
+
+</div> <!-- Конец .container -->
+
+
+<!-- Подвал (Footer) -->
+<footer class="footer pt-16 pb-8 md:pb-12">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
+
+            <div>
+                <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
+                <p class="text-sm mb-2" data-lang="footer-mission"></p>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
+                <ul class="space-y-2">
+                    <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
+                    <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
+                    <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная
+                        разработка</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
+                <ul class="space-y-2">
+                    <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
+                    <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и
+                        Кейсы</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
+                <ul class="space-y-2">
+                    <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+                    <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517
+                        6391</a></li>
+                    <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram:
+                        @darikamouse</a></li>
+                </ul>
+                <div class="mt-3">
+                    <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика
+                            конфиденциальности</a></li>
+                        <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия
+                            использования</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
+            <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ОБНОВЛЕННЫЙ translations -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isExpanded = !mobileMenu.classList.contains('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+        }
+
+        const translations = {
+            'ru': {
+                // Мета
+                'meta-title': 'Кастомная разработка AI-систем | Enterprise-решения DIVO',
+                'meta-description': 'Проектируем отказоустойчивые AI-системы для enterprise. Опыт работы с банками, e-commerce, tech-корпорациями. От $30k до $400k+.',
+
+                // Шапка (общие)
+                'logo': 'DIVO',
+                'nav-sales': 'Для Продаж',
+                'nav-design': 'Для Дизайна',
+                'nav-about': 'О нас',
+                // 'header-cta': 'Получить консультацию', // Ключ больше не используется
+                // 'header-cta-mobile': 'Консультация', // Ключ больше не используется
+                'nav-solutions': 'Решения',
+                'nav-custom-dev': 'Кастомная разработка',
+                'nav-portfolio': 'Портфолио',
+
+                // Блок 1: Hero
+                'hero-h1': 'Кастомная разработка систем, которые работают в масштабе',
+                'hero-subtitle': 'Мы проектируем отказоустойчивые архитектуры, которые безопасно интегрируются в вашу (даже legacy) инфраструктуру и приносят измеримый ROI.',
+                // 'hero-cta': 'Получить консультацию', // Ключ больше не используется
+
+                // Блок 'Trusted By'
+                'trusted-h3': 'Нам доверяют в Enterprise',
+                'logo-sber-description': 'Крупнейший банк России',
+                'logo-avito-description': 'Крупнейший e-ком России',
+                'logo-yandex-description': 'Лидер поиска в Росиии',
+
+                // Блок 2: Компетенции
+                'competencies-h2': 'Что мы строим',
+                'competencies-intro': 'В основе всех наших решений лежат три ключевые компетенции, которые позволяют создавать ценность для бизнеса на разных уровнях.',
+                'comp-includes': 'Что входит:',
+                'comp1-title': 'Интеллектуальные системы',
+                'comp1-desc': 'Мы создаём системы, способные понимать, анализировать и прогнозировать. Это полноценные ассистенты, которые помогают принимать решения.',
+                'comp1-bullets': '<li>Глубинные исследования с AI: поиск неочевидных инсайтов о пользователях и рынке</li><li>Прогнозная аналитика и риск-анализ: помощь в принятии стратегических решений на основе данных</li><li>Умный поиск по базам знаний (RAG): корпоративные поисковые системы, которые дают точные ответы с учётом прав доступа</li>',
+                'comp2-title': 'Автоматизация процессов',
+                'comp2-desc': 'Мы погружаемся в рутинные процессы и пересобираем их с помощью AI и RPA, высвобождая время сотрудников для стратегических и креативных задач.',
+                'comp2-bullets': '<li>Автоматизация документооборота: генерация договоров, счетов и коммерческих предложений по данным из CRM или таск-трекеров</li><li>Автоматизация коммуникаций: создание умных голосовых и текстовых ассистентов для поддержки клиентов и внутренних процессов</li><li>Автоматизация контроля качества: системы проверки соблюдения стандартов в дизайне, тексте, коде</li>',
+                'comp3-title': 'Безопасная инфраструктура',
+                'comp3-desc': 'Мы умеем встраивать AI в любую, даже самую сложную и зарегулированную среду. Безопасность данных и бесшовная интеграция — наши ключевые приоритеты.',
+                'comp3-bullets': '<li>On-premise развёртывание: данные никогда не покидают контур компании, полный контроль над инфраструктурой</li><li>Гибкие интеграции: бесшовное подключение к CRM, ERP-системам (SAP, 1C), внутренним базам данных и API</li><li>Безопасный доступ к внешним моделям: через шлюзы с деперсонализацией данных и контролем запросов</li>',
+
+                // Блок 'Tech Stack'
+                'tech-stack-h2': 'Наш технологический стек',
+                'tech-stack-p': 'Мы используем full-stack подход, выбирая правильную технологию для задачи — от enterprise Java до высокопроизводительного Python.',
+
+                // Блок 3: Баннер
+                'function1-banner-h2': 'Специальные предложения для участников /function1',
+                'function1-banner-text': 'Получите доступ ко всем продуктам DIVO по специальным ценам конференции: от пробных демо за $99 до скидки 60% на Technical Audit ($1,999 вместо $5,000).',
+                'function1-banner-cta': 'Посмотреть все предложения',
+
+                // Блок 4: Процесс
+                'process-h2': 'Как мы работаем',
+                'step1-title': 'Шаг 1: Бесплатная консультация (40 минут)',
+                'step1-desc': 'Обсуждаем вашу задачу и определяем, где AI даст реальный эффект, а где хватит классической автоматизации. Вы получаете письменное техническое заключение с рекомендациями.',
+                'step1-price': 'Бесплатно',
+                'step2-title': 'Шаг 2: Discovery & Technical Audit (2 недели)',
+                'step2-desc': 'Полный анализ вашей системы, требований безопасности и интеграционных точек. Мы изучаем вашу инфраструктуру, выявляем технические риски и проектируем оптимальную архитектуру решения. Вы получаете детальный отчёт с рекомендациями и готовое техническое задание.',
+                'step2-price': '$1,999 (со скидкой для /function1) | $5,000 (обычная цена)',
+                'step3-title': 'Шаг 3: Разработка',
+                'step3-quick-title': 'Quick Build (1-3 месяца)',
+                'step3-quick-desc': 'Чёткая задача, стандартный технологический стек, быстрая реализация. Примеры: базовая автоматизация документооборота, интеграция с API, RAG-бот для внутренней базы знаний.',
+                'step3-quick-price': '$30,000 - $80,000',
+                'step3-complex-title': 'Complex Build (3-12 месяцев)',
+                'step3-complex-desc': 'Сложная задача, интеграция с legacy-системами (SAP, 1C), высокие требования к безопасности, on-premise развёртывание. Примеры: AI-система для целого департамента, enterprise RAG с доступами, миграция с монолита на микросервисы.',
+                'step3-complex-price': '$100,000 - $400,000+',
+
+                // Блок 5: Кейсы
+                'cases-h2': 'Системы, которые работают в production',
+                'cases-subtitle': 'Примеры архитектурных решений, реализованных для enterprise-клиентов.',
+                'case-task-label': 'Задача',
+                'case-solution-label': 'Решение',
+                'case-results-label': 'Результаты',
+
+                'case1-title': 'AI-ассистент арт-директора',
+                'case1-task': 'Арт-директора тратили 60-80% времени на рутинную проверку макетов на соответствие дизайн-системе. Это замедляло цикл утверждения.',
+                'case1-results': '<li>Освобождение арт-директоров от рутинных проверок</li><li>Ускорение цикла дизайна — нет ожидания ручного ревью</li><li>Единые стандарты качества для всех участников</li><li>Проверка доступна 24/7 без нагрузки на команду</li><li>До 80% сокращение рутины</li>',
+
+                'case2-title': 'Конвейер данных для enterprise-аналитики',
+                'case2-task': 'Десятки внутренних систем нуждались в данных из ядра бизнеса. Прямые интеграции были нестабильны и создавали риски для критичных сервисов.',
+                'case2-results': '<li>Быстрое и безопасное подключение новых аналитических систем</li><li>Стрессоустойчивая архитектура без рисков перегрузок ядра</li><li>Сокращение времени вывода новых продуктов на рынок</li>',
+
+                'case3-title': 'Гибкая валидация данных',
+                'case3-task': 'Пользователи тратили много времени на поиск и исправление ошибок при заполнении сложных форм. Ошибки доходили до бэкенда и нарушали процессы.',
+                'case3-results': '<li>Ошибки выявляются на уровне ввода, до загрузки в систему</li><li>Время исправления ошибок сокращено</li><li>Пользовательские сценарии стали предсказуемыми и быстрыми</li>',
+
+                'case4-title': 'Автоматизация изменений аккредитива',
+                'case4-task': 'Процессы изменения условий аккредитива были сложными, требовали ручного согласования и приводили к ошибкам и задержкам.',
+                'case4-results': '<li>Стабильная система, покрывающая 99% сценариев</li><li>Существенное ускорение работы по изменению условий сделок</li><li>Полная прозрачность и контроль для участников</li>',
+
+                'case5-title': 'AI-исследование для редизайна',
+                'case5-task': 'Команда планировала редизайн карточки продукта. Классическое UX-исследование заняло бы 3 месяца, а инсайты нужны были быстро.',
+                'case5-results': '<li>Редизайн выполнен за 1 месяц вместо 3</li><li>Получены глубинные инсайты с помощью синтетических персон</li><li>Сокращение затрат на традиционные UX-исследования</li>',
+
+                'case6-title': 'Обучение команд AI-генерации контента',
+                'case6-task': 'Команды маркетинга и дизайна Яндекс.Браузера хотели ускорить производство креативов (баннеры, видео, лендинги) без долгих итераций.',
+                'case6-results': '<li>Команды самостоятельно создают контент под разные рынки</li><li>Ускорен цикл обновления рекламных креативов</li><li>Снижен порог входа в работу с AI-генерацией</li>',
+
+                'case7-client': 'B2B Sales Tech',
+                'case7-title': 'Агент лидогенерации (LinkedIn & Telegram)',
+                'case7-task': 'Потребность в масштабировании outreach-коммуникаций без потери качества контакта и без блокировок со стороны платформ.',
+                'case7-results': '<li>Увеличен объём исходящих контактов при сохранении CTR и CR</li><li>AI-агент адаптируется под изменения алгоритмов платформ</li><li>Масштабирование В2В-продаж без расширения команды</li>',
+
+                // PoC-кейсы
+                'poc-h3': 'Решения Proof-of-Concept и MVP',
+                'poc-subtitle': 'Примеры решений быстрой разработки и MVP, которые проверяют гипотезы и открывают путь к полномасштабным системам.',
+                'poc1-title': 'Автоматизация документооборота (Строительство)',
+                'poc1-desc': 'Пайплайн на Python/Node.js, который автоматически формирует отчёты из YouGile и CAD-систем, экономя десятки человеко-часов на проекте.',
+                'poc2-title': 'Автоматизация расстановки освещения',
+                'poc2-desc': 'Архитектура алгоритма на Python, объединяющая Relux и AutoCAD/ArchiCAD для автоматического расчёта освещённости и расстановки приборов.',
+                'poc3-title': 'AI-платформа генерации изображений',
+                'poc3-desc': 'Мультимодальная платформа (Firefly, Recraft, GPT-Image) с поддержкой text-to-image, image-to-image и text-to-vector для автоматизации маркетинга.',
+                'poc4-title': 'EdTech CRM-автоматизация',
+                'poc4-desc': 'CRM-экосистема (AmoCRM, WhatsApp API, RPA) для школы корпоративного обучения. Сокращение рутины менеджеров — до 80%.',
+                'poc5-title': 'On-premise RAG Telegram-бот',
+                'poc5-desc': 'MVP Telegram-бота (Python, LLM, Qdrant) для внутренней базы знаний. Безопасно обрабатывает PDF, DOCX, XLSX и даёт ответы с цитатами.',
+                'poc8-title': 'On-premise голосовая аналитика (ASR)',
+                'poc8-desc': 'Стек для распознавания речи (Whisper Large V3 + NVIDIA Triton) на серверах клиента. Точность 95-97% без выноса данных в облако.',
+
+
+                // Блок 7: CTA (ИЗМЕНЕН)
+                'cta-h2': 'Начнём с вашей задачи',
+                'cta-get-label': 'Что получите:',
+
+                // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
+                'cta1-title': 'ОПЦИЯ 1: Бесплатная консультация (для тех, кто хочет разобраться)',
+                'cta1-desc': 'Запишитесь на бесплатную 40-минутную консультацию. Обсудим вашу архитектуру и определим, где технологии дадут максимальный эффект.',
+                'cta1-bullets': '<li>Письменное техническое заключение по вашей задаче</li><li>Бонус: Скидка 60% на Technical Audit ($1,999 вместо $5,000)</li><li>Скидка действует 30 дней после консультации</li>',
+                'cta1-cta': 'Записаться на консультацию',
+
+                // Опция 2 (Аудит)
+                // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
+                'cta2-title': '',
+                'cta2-desc': 'Закажите 2-недельный Technical Audit по специальной цене $1,999 (вместо $5,000). Получите детальный отчёт с рекомендациями и приоритетный старт проекта.',
+                'cta2-bullets': '<li>Полный 2-недельный аудит вашей системы/задачи</li><li>Детальный отчёт с рекомендациями и техническим заданием</li><li>Бонус 1: Приоритетный старт проекта в декабре 2025</li><li>Бонус 2: Скидка 15% на реализацию проекта (до $15,000 экономии)</li>',
+
+                // ИЗМЕНЕННЫЙ КЛЮЧ
+                'cta2-cta': 'Заказать технический аудит',
+                // НОВЫЙ КЛЮЧ для мобильной кнопки
+                'cta2-cta-mobile': 'Заказать аудит',
+
+                // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
+                // ИЗМЕНЕНО: Текст упрощен
+                'questions-text': 'Остались вопросы?',
+
+                // Футер (общие)
+                'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
+                'footer-solutions-title': 'Решения',
+                'footer-company-title': 'Компания',
+                'footer-portfolio': 'Портфолио и Кейсы',
+                'footer-contact-title': 'Контакты',
+                'footer-legal-title': 'Документы',
+                'footer-privacy': 'Политика конфиденциальности',
+                'footer-terms': 'Условия использования'
+            },
+
+            'en': {
+                // Мета
+                'meta-title': 'Custom AI Development | Enterprise Solutions by DIVO',
+                'meta-description': 'We design fault-tolerant AI systems for enterprise. Experience with banking, e-commerce, tech corporations. From $30k to $400k+.',
+
+                // Шапка (общие)
+                'logo': 'DIVO',
+                'nav-sales': 'For Sales',
+                'nav-design': 'For Design',
+                'nav-about': 'About Us',
+                // 'header-cta': 'Get a Consultation', // Ключ больше не используется
+                // 'header-cta-mobile': 'Consultation', // Ключ больше не используется
+                'nav-solutions': 'Solutions',
+                'nav-custom-dev': 'Custom Development',
+                'nav-portfolio': 'Portfolio',
+
+                // Блок 1: Hero
+                'hero-h1': 'Custom Development of Systems That Work at Scale',
+                'hero-subtitle': 'We design fault-tolerant architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.',
+                // 'hero-cta': 'Get Consultation', // Ключ больше не используется
+
+                // Блок 'Trusted By'
+                'trusted-h3': 'Trusted in Enterprise',
+                'logo-sber-description': 'Russia\'s largest bank',
+                'logo-avito-description': 'Russia\'s largest e-commerce',
+                'logo-yandex-description': 'Russia\'s search leader',
+
+                // Блок 2: Компетенции
+                'competencies-h2': 'What We Build',
+                'competencies-intro': 'All our solutions are built on three core competencies that create value for business at different levels.',
+                'comp-includes': "What's included:",
+                'comp1-title': 'Intelligent Systems',
+                'comp1-desc': 'We create systems that can understand, analyze, and predict. These are full-fledged assistants that help make decisions.',
+                'comp1-bullets': '<li>AI-powered deep research: finding non-obvious insights about users and markets</li><li>Predictive analytics and risk analysis: helping make strategic data-driven decisions</li><li>Smart knowledge base search (RAG): corporate search systems that provide accurate answers with access control</li>',
+                'comp2-title': 'Process Automation',
+                'comp2-desc': 'We dive into routine processes and rebuild them using AI and RPA, freeing up employees\' time for strategic and creative tasks.',
+                'comp2-bullets': '<li>Document workflow automation: generating contracts, invoices, and proposals from CRM or task tracker data</li><li>Communication automation: creating smart voice and text assistants for customer support and internal processes</li><li>Quality control automation: systems for checking compliance with standards in design, text, and code</li>',
+                'comp3-title': 'Secure Infrastructure',
+                'comp3-desc': 'We know how to embed AI into any environment, even the most complex and regulated. Data security and seamless integration are our key priorities.',
+                'comp3-bullets': '<li>On-premise deployment: data never leaves the company perimeter, full infrastructure control</li><li>Flexible integrations: seamless connection to CRM, ERP systems (SAP, 1C), internal databases, and APIs</li><li>Secure access to external models: through gateways with data depersonalization and request control</li>',
+
+                // Блок 'Tech Stack'
+                'tech-stack-h2': 'Our Tech Stack',
+                'tech-stack-p': 'We use a full-stack approach, selecting the right technology for the job, from enterprise Java to high-performance Python.',
+
+                // Блок 3: Баннер
+                'function1-banner-h2': 'Special Offers for /function1 Attendees',
+                'function1-banner-text': 'Get access to all DIVO products at special conference prices: from trial demos at $99 to 60% off Technical Audit ($1,999 instead of $5,000).',
+                'function1-banner-cta': 'View All Offers',
+
+                // Блок 4: Процесс
+                'process-h2': 'How We Work',
+                'step1-title': 'Step 1: Free Consultation (40 minutes)',
+                'step1-desc': 'We discuss your challenge and determine where AI will deliver real impact and where classic automation will suffice. You receive a written technical assessment with recommendations.',
+                'step1-price': 'Free',
+                'step2-title': 'Step 2: Discovery & Technical Audit (2 weeks)',
+                'step2-desc': 'Complete analysis of your system, security requirements, and integration points. We study your infrastructure, identify technical risks, and design optimal solution architecture. You receive a detailed report with recommendations and ready technical specifications.',
+                'step2-price': '$1,999 (discounted for /function1) | $5,000 (regular price)',
+                'step3-title': 'Step 3: Development',
+                'step3-quick-title': 'Quick Build (1-3 months)',
+                'step3-quick-desc': 'Clear task, standard technology stack, fast implementation. Examples: basic document automation, API integration, RAG bot for internal knowledge base.',
+                'step3-quick-price': '$30,000 - $80,000',
+                'step3-complex-title': 'Complex Build (3-12 months)',
+                'step3-complex-desc': 'Complex task, legacy system integration (SAP, 1C), high security requirements, on-premise deployment. Examples: AI system for entire department, enterprise RAG with access control, migration from monolith to microservices.',
+                'step3-complex-price': '$100,000 - $400,000+',
+
+                // Блок 5: Кейсы
+                'cases-h2': 'Systems That Work in Production',
+                'cases-subtitle': 'Examples of architectural solutions implemented for enterprise clients.',
+                'case-task-label': 'The Challenge',
+                'case-solution-label': 'The Solution',
+                'case-results-label': 'The Results',
+
+                'case1-title': "AI Art Director's Assistant",
+                'case1-task': "Art directors spent 60-80% of their time on routine layout checks for design system compliance. This slowed down the approval cycle.",
+                'case1-results': '<li>Freed art directors from routine checks</li><li>Accelerated design cycle — no waiting for manual review</li><li>Unified quality standards for all participants</li><li>Checks available 24/7 without team load</li><li>Up to 80% routine reduction</li>',
+
+                'case2-title': 'Data Pipeline for Enterprise Analytics',
+                'case2-task': 'Dozens of internal systems needed data from the core business platform. Direct integrations were unstable and created risks for critical services.',
+                'case2-results': '<li>Fast and secure connection of new analytical systems</li><li>Stress-resistant architecture without risks of core overloads</li><li>Reduced time-to-market for new products</li>',
+
+                'case3-title': 'Flexible Data Validation',
+                'case3-task': 'Users spent a lot of time finding and fixing errors when filling out complex forms. Errors reached the backend and disrupted business processes.',
+                'case3-results': '<li>Errors are identified at the input level, before system load</li><li>Error correction time reduced</li><li>User scenarios became predictable and fast</li>',
+
+                'case4-title': 'Letter of Credit Automation',
+                'case4-task': 'Processes for changing letter of credit terms were complex, required manual agreement, and led to errors and delays.',
+                'case4-results': '<li>Stable system covering 99% of scenarios</li><li>Significant acceleration of deal term modification</li><li>Full transparency and control for participants</li>',
+
+                'case5-title': 'AI-Powered Redesign Research',
+                'case5-task': 'The team planned a redesign of the car product card. Classic UX research would take 3 months, but deep insights were needed quickly.',
+                'case5-results': '<li>Redesign completed in 1 month instead of 3</li><li>Obtained deep insights using synthetic personas</li><li>Reduced costs of traditional UX research</li>',
+
+                'case6-title': 'AI Content Generation Training',
+                'case6-task': "Yandex Browser's marketing and design teams wanted to accelerate the production of creatives (banners, videos, landing pages) without long iterations.",
+                'case6-results': '<li>Teams independently create content for different markets</li><li>Accelerated ad creative update cycle</li><li>Lowered entry barrier for working with AI generation</li>',
+
+                'case7-client': 'B2B Sales Tech',
+                'case7-title': 'Lead Generation Agent (LinkedIn & Telegram)',
+                'case7-task': 'A need to scale outreach communications without losing contact quality or getting blocked by platforms.',
+                'case7-results': '<li>Increased volume of outgoing contacts while maintaining CTR and CR</li><li>AI agent adapts to platform algorithm changes</li><li>Scaling B2B sales without expanding the team</li>',
+
+                // PoC-кейсы
+                'poc-h3': 'Proof-of-Concept & MVP Solutions',
+                'poc-subtitle': 'Examples of rapid-development solutions and MVPs that test hypotheses and pave the way for full-scale systems.',
+                'poc1-title': 'Document Automation (Construction)',
+                'poc1-desc': 'A Python/Node.js pipeline that automatically generates reports from YouGile and CAD systems, saving dozens of man-hours per project.',
+                'poc2-title': 'Automated Lighting Design',
+                'poc2-desc': 'An AI algorithm architecture (Python) that connects Relux and AutoCAD/ArchiCAD for automated lighting calculations and fixture placement.',
+                'poc3-title': 'AI Image Generation Platform',
+                'poc3-desc': 'A multi-modal platform (Firefly, Recraft, GPT-Image) supporting text-to-image, image-to-image, and text-to-vector for marketing content automation.',
+                'poc4-title': 'EdTech CRM Automation',
+                'poc4-desc': 'A CRM ecosystem (AmoCRM, WhatsApp API, RPA) for a corporate training school, reducing manager routine by up to 80%.',
+                'poc5-title': 'On-Premise RAG Telegram Bot',
+                'poc5-desc': 'An MVP Telegram bot (Python, LLM, Qdrant) for an internal knowledge base. Securely processes PDF, DOCX, XLSX and provides cited answers.',
+                'poc8-title': 'On-Premise Voice Analytics (ASR)',
+                'poc8-desc': 'A speech recognition stack (Whisper Large V3 + NVIDIA Triton) deployed on client servers. Achieves 95-97% accuracy without data leaving the company.',
+
+                // Блок 7: CTA (ИЗМЕНЕН)
+                'cta-h2': "Let's Start With Your Challenge",
+                'cta-get-label': 'What you get:',
+
+                // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
+                'cta1-title': 'OPTION 1: Free Consultation (For those exploring)',
+                'cta1-desc': "Book a free 40-minute consultation. We'll discuss your architecture and determine where technology will deliver maximum impact.",
+                'cta1-bullets': '<li>Written technical assessment for your task</li><li>Bonus: 60% off Technical Audit ($1,999 instead of $5,000)</li><li>Discount valid for 30 days after consultation</li>',
+                'cta1-cta': 'Book Consultation',
+
+                // Опция 2 (Аудит)
+                // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
+                'cta2-title': '',
+                'cta2-desc': 'Order a 2-week Technical Audit at the special price of $1,999 (instead of $5,000). Get a detailed report with recommendations and priority project start.',
+                'cta2-bullets': '<li>Full 2-week audit of your system/task</li><li>Detailed report with recommendations and technical specs</li><li>Bonus 1: Priority project start in December 2025</li><li>Bonus 2: 15% off project implementation (up to $15,000 savings)</li>',
+
+                // ИЗМЕНЕННЫЙ КЛЮЧ
+                'cta2-cta': 'Order Technical Audit',
+                // НОВЫЙ КЛЮЧ для мобильной кнопки
+                'cta2-cta-mobile': 'Order Audit',
+
+                // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
+                // ИЗМЕНЕНО: Текст упрощен
+                'questions-text': 'Have questions?',
+
+                // Футер (общие)
+                'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
+                'footer-solutions-title': 'Solutions',
+                'footer-company-title': 'Company',
+                'footer-portfolio': 'Portfolio & Cases',
+                'footer-contact-title': 'Contact & Legal',
+                'footer-legal-title': 'Legal',
+                'footer-privacy': 'Privacy Policy',
+                'footer-terms': 'Terms of Service'
             }
-            
-            const translations = {
-                'ru': {
-                    // Мета
-                    'meta-title': 'Кастомная разработка AI-систем | Enterprise-решения DIVO',
-                    'meta-description': 'Проектируем отказоустойчивые AI-системы для enterprise. Опыт работы с банками, e-commerce, tech-корпорациями. От $30k до $400k+.',
-                    
-                    // Шапка (общие)
-                    'logo': 'DIVO',
-                    'nav-sales': 'Для Продаж',
-                    'nav-design': 'Для Дизайна',
-                    'nav-about': 'О нас',
-                    // 'header-cta': 'Получить консультацию', // Ключ больше не используется
-                    // 'header-cta-mobile': 'Консультация', // Ключ больше не используется
-                    'nav-solutions': 'Решения',
-                    'nav-custom-dev': 'Кастомная разработка',
-                    'nav-portfolio': 'Портфолио',
+        };
 
-                    // Блок 1: Hero
-                    'hero-h1': 'Кастомная разработка систем, которые работают в масштабе',
-                    'hero-subtitle': 'Мы проектируем отказоустойчивые архитектуры, которые безопасно интегрируются в вашу (даже legacy) инфраструктуру и приносят измеримый ROI.',
-                    // 'hero-cta': 'Получить консультацию', // Ключ больше не используется
+        const btnRuDesktop = document.getElementById('btn-ru');
+        const btnEnDesktop = document.getElementById('btn-en');
+        const btnRuMobile = document.getElementById('btn-ru-mobile');
+        const btnEnMobile = document.getElementById('btn-en-mobile');
 
-                    // Блок 'Trusted By'
-                    'trusted-h3': 'Нам доверяют в Enterprise',
+        const elementsToTranslate = document.querySelectorAll('[data-lang]');
 
-                    // Блок 2: Компетенции
-                    'competencies-h2': 'Что мы строим',
-                    'competencies-intro': 'В основе всех наших решений лежат три ключевые компетенции, которые позволяют создавать ценность для бизнеса на разных уровнях.',
-                    'comp-includes': 'Что входит:',
-                    'comp1-title': 'Интеллектуальные системы',
-                    'comp1-desc': 'Мы создаём системы, способные понимать, анализировать и прогнозировать. Это полноценные ассистенты, которые помогают принимать решения.',
-                    'comp1-bullets': '<li>Глубинные исследования с AI: поиск неочевидных инсайтов о пользователях и рынке</li><li>Прогнозная аналитика и риск-анализ: помощь в принятии стратегических решений на основе данных</li><li>Умный поиск по базам знаний (RAG): корпоративные поисковые системы, которые дают точные ответы с учётом прав доступа</li>',
-                    'comp2-title': 'Автоматизация процессов',
-                    'comp2-desc': 'Мы погружаемся в рутинные процессы и пересобираем их с помощью AI и RPA, высвобождая время сотрудников для стратегических и креативных задач.',
-                    'comp2-bullets': '<li>Автоматизация документооборота: генерация договоров, счетов и коммерческих предложений по данным из CRM или таск-трекеров</li><li>Автоматизация коммуникаций: создание умных голосовых и текстовых ассистентов для поддержки клиентов и внутренних процессов</li><li>Автоматизация контроля качества: системы проверки соблюдения стандартов в дизайне, тексте, коде</li>',
-                    'comp3-title': 'Безопасная инфраструктура',
-                    'comp3-desc': 'Мы умеем встраивать AI в любую, даже самую сложную и зарегулированную среду. Безопасность данных и бесшовная интеграция — наши ключевые приоритеты.',
-                    'comp3-bullets': '<li>On-premise развёртывание: данные никогда не покидают контур компании, полный контроль над инфраструктурой</li><li>Гибкие интеграции: бесшовное подключение к CRM, ERP-системам (SAP, 1C), внутренним базам данных и API</li><li>Безопасный доступ к внешним моделям: через шлюзы с деперсонализацией данных и контролем запросов</li>',
-                    
-                    // Блок 'Tech Stack'
-                    'tech-stack-h2': 'Наш технологический стек',
-                    'tech-stack-p': 'Мы используем full-stack подход, выбирая правильную технологию для задачи — от enterprise Java до высокопроизводительного Python.',
+        function updateContent(lang) {
+            document.documentElement.lang = lang;
 
-                    // Блок 3: Баннер
-                    'function1-banner-h2': 'Специальные предложения для участников /function1',
-                    'function1-banner-text': 'Получите доступ ко всем продуктам DIVO по специальным ценам конференции: от пробных демо за $99 до скидки 60% на Technical Audit ($1,999 вместо $5,000).',
-                    'function1-banner-cta': 'Посмотреть все предложения',
+            const isRu = lang === 'ru';
+            btnRuDesktop.classList.toggle('active', isRu);
+            btnEnDesktop.classList.toggle('active', !isRu);
+            btnRuMobile.classList.toggle('active', isRu);
+            btnEnMobile.classList.toggle('active', !isRu);
 
-                    // Блок 4: Процесс
-                    'process-h2': 'Как мы работаем',
-                    'step1-title': 'Шаг 1: Бесплатная консультация (40 минут)',
-                    'step1-desc': 'Обсуждаем вашу задачу и определяем, где AI даст реальный эффект, а где хватит классической автоматизации. Вы получаете письменное техническое заключение с рекомендациями.',
-                    'step1-price': 'Бесплатно',
-                    'step2-title': 'Шаг 2: Discovery & Technical Audit (2 недели)',
-                    'step2-desc': 'Полный анализ вашей системы, требований безопасности и интеграционных точек. Мы изучаем вашу инфраструктуру, выявляем технические риски и проектируем оптимальную архитектуру решения. Вы получаете детальный отчёт с рекомендациями и готовое техническое задание.',
-                    'step2-price': '$1,999 (со скидкой для /function1) | $5,000 (обычная цена)',
-                    'step3-title': 'Шаг 3: Разработка',
-                    'step3-quick-title': 'Quick Build (1-3 месяца)',
-                    'step3-quick-desc': 'Чёткая задача, стандартный технологический стек, быстрая реализация. Примеры: базовая автоматизация документооборота, интеграция с API, RAG-бот для внутренней базы знаний.',
-                    'step3-quick-price': '$30,000 - $80,000',
-                    'step3-complex-title': 'Complex Build (3-12 месяцев)',
-                    'step3-complex-desc': 'Сложная задача, интеграция с legacy-системами (SAP, 1C), высокие требования к безопасности, on-premise развёртывание. Примеры: AI-система для целого департамента, enterprise RAG с доступами, миграция с монолита на микросервисы.',
-                    'step3-complex-price': '$100,000 - $400,000+',
+            btnRuDesktop.setAttribute('aria-pressed', isRu);
+            btnEnDesktop.setAttribute('aria-pressed', !isRu);
+            btnRuMobile.setAttribute('aria-pressed', isRu);
+            btnEnMobile.setAttribute('aria-pressed', !isRu);
 
-                    // Блок 5: Кейсы
-                    'cases-h2': 'Системы, которые работают в production',
-                    'cases-subtitle': 'Примеры архитектурных решений, реализованных для enterprise-клиентов.',
-                    'case-task-label': 'Задача',
-                    'case-solution-label': 'Решение',
-                    'case-results-label': 'Результаты',
-                    
-                    'case1-title': 'AI-ассистент арт-директора',
-                    'case1-task': 'Арт-директора тратили 60-80% времени на рутинную проверку макетов на соответствие дизайн-системе. Это замедляло цикл утверждения.',
-                    'case1-results': '<li>Освобождение арт-директоров от рутинных проверок</li><li>Ускорение цикла дизайна — нет ожидания ручного ревью</li><li>Единые стандарты качества для всех участников</li><li>Проверка доступна 24/7 без нагрузки на команду</li><li>До 80% сокращение рутины</li>',
-                    
-                    'case2-title': 'Конвейер данных для enterprise-аналитики',
-                    'case2-task': 'Десятки внутренних систем нуждались в данных из ядра бизнеса. Прямые интеграции были нестабильны и создавали риски для критичных сервисов.',
-                    'case2-results': '<li>Быстрое и безопасное подключение новых аналитических систем</li><li>Стрессоустойчивая архитектура без рисков перегрузок ядра</li><li>Сокращение времени вывода новых продуктов на рынок</li>',
+            const langTranslations = translations[lang];
 
-                    'case3-title': 'Гибкая валидация данных',
-                    'case3-task': 'Пользователи тратили много времени на поиск и исправление ошибок при заполнении сложных форм. Ошибки доходили до бэкенда и нарушали процессы.',
-                    'case3-results': '<li>Ошибки выявляются на уровне ввода, до загрузки в систему</li><li>Время исправления ошибок сокращено</li><li>Пользовательские сценарии стали предсказуемыми и быстрыми</li>',
-                    
-                    'case4-title': 'Автоматизация изменений аккредитива',
-                    'case4-task': 'Процессы изменения условий аккредитива были сложными, требовали ручного согласования и приводили к ошибкам и задержкам.',
-                    'case4-results': '<li>Стабильная система, покрывающая 99% сценариев</li><li>Существенное ускорение работы по изменению условий сделок</li><li>Полная прозрачность и контроль для участников</li>',
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                const translation = langTranslations[key];
 
-                    'case5-title': 'AI-исследование для редизайна',
-                    'case5-task': 'Команда планировала редизайн карточки продукта. Классическое UX-исследование заняло бы 3 месяца, а инсайты нужны были быстро.',
-                    'case5-results': '<li>Редизайн выполнен за 1 месяц вместо 3</li><li>Получены глубинные инсайты с помощью синтетических персон</li><li>Сокращение затрат на традиционные UX-исследования</li>',
-                    
-                    'case6-title': 'Обучение команд AI-генерации контента',
-                    'case6-task': 'Команды маркетинга и дизайна Яндекс.Браузера хотели ускорить производство креативов (баннеры, видео, лендинги) без долгих итераций.',
-                    'case6-results': '<li>Команды самостоятельно создают контент под разные рынки</li><li>Ускорен цикл обновления рекламных креативов</li><li>Снижен порог входа в работу с AI-генерацией</li>',
-                    
-                    'case7-client': 'B2B Sales Tech',
-                    'case7-title': 'Агент лидогенерации (LinkedIn & Telegram)',
-                    'case7-task': 'Потребность в масштабировании outreach-коммуникаций без потери качества контакта и без блокировок со стороны платформ.',
-                    'case7-results': '<li>Увеличен объём исходящих контактов при сохранении CTR и CR</li><li>AI-агент адаптируется под изменения алгоритмов платформ</li><li>Масштабирование В2В-продаж без расширения команды</li>',
-
-                    // PoC-кейсы
-                    'poc-h3': 'Решения Proof-of-Concept и MVP',
-                    'poc-subtitle': 'Примеры решений быстрой разработки и MVP, которые проверяют гипотезы и открывают путь к полномасштабным системам.',
-                    'poc1-title': 'Автоматизация документооборота (Строительство)',
-                    'poc1-desc': 'Пайплайн на Python/Node.js, который автоматически формирует отчёты из YouGile и CAD-систем, экономя десятки человеко-часов на проекте.',
-                    'poc2-title': 'Автоматизация расстановки освещения',
-                    'poc2-desc': 'Архитектура алгоритма на Python, объединяющая Relux и AutoCAD/ArchiCAD для автоматического расчёта освещённости и расстановки приборов.',
-                    'poc3-title': 'AI-платформа генерации изображений',
-                    'poc3-desc': 'Мультимодальная платформа (Firefly, Recraft, GPT-Image) с поддержкой text-to-image, image-to-image и text-to-vector для автоматизации маркетинга.',
-                    'poc4-title': 'EdTech CRM-автоматизация',
-                    'poc4-desc': 'CRM-экосистема (AmoCRM, WhatsApp API, RPA) для школы корпоративного обучения. Сокращение рутины менеджеров — до 80%.',
-                    'poc5-title': 'On-premise RAG Telegram-бот',
-                    'poc5-desc': 'MVP Telegram-бота (Python, LLM, Qdrant) для внутренней базы знаний. Безопасно обрабатывает PDF, DOCX, XLSX и даёт ответы с цитатами.',
-                    'poc8-title': 'On-premise голосовая аналитика (ASR)',
-                    'poc8-desc': 'Стек для распознавания речи (Whisper Large V3 + NVIDIA Triton) на серверах клиента. Точность 95-97% без выноса данных в облако.',
-
-
-                    // Блок 7: CTA (ИЗМЕНЕН)
-                    'cta-h2': 'Начнём с вашей задачи',
-                    'cta-get-label': 'Что получите:',
-                    
-                    // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
-                    'cta1-title': 'ОПЦИЯ 1: Бесплатная консультация (для тех, кто хочет разобраться)',
-                    'cta1-desc': 'Запишитесь на бесплатную 40-минутную консультацию. Обсудим вашу архитектуру и определим, где технологии дадут максимальный эффект.',
-                    'cta1-bullets': '<li>Письменное техническое заключение по вашей задаче</li><li>Бонус: Скидка 60% на Technical Audit ($1,999 вместо $5,000)</li><li>Скидка действует 30 дней после консультации</li>',
-                    'cta1-cta': 'Записаться на консультацию',
-                    
-                    // Опция 2 (Аудит)
-                    // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
-                    'cta2-title': '', 
-                    'cta2-desc': 'Закажите 2-недельный Technical Audit по специальной цене $1,999 (вместо $5,000). Получите детальный отчёт с рекомендациями и приоритетный старт проекта.',
-                    'cta2-bullets': '<li>Полный 2-недельный аудит вашей системы/задачи</li><li>Детальный отчёт с рекомендациями и техническим заданием</li><li>Бонус 1: Приоритетный старт проекта в декабре 2025</li><li>Бонус 2: Скидка 15% на реализацию проекта (до $15,000 экономии)</li>',
-                    
-                    // ИЗМЕНЕННЫЙ КЛЮЧ
-                    'cta2-cta': 'Заказать технический аудит', 
-                    // НОВЫЙ КЛЮЧ для мобильной кнопки
-                    'cta2-cta-mobile': 'Заказать аудит',
-                    
-                    // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
-                    // ИЗМЕНЕНО: Текст упрощен
-                    'questions-text': 'Остались вопросы?',
-
-                    // Футер (общие)
-                    'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
-                    'footer-solutions-title': 'Решения',
-                    'footer-company-title': 'Компания',
-                    'footer-portfolio': 'Портфолио и Кейсы',
-                    'footer-contact-title': 'Контакты',
-                    'footer-legal-title': 'Документы',
-                    'footer-privacy': 'Политика конфиденциальности',
-                    'footer-terms': 'Условия использования'
-                },
-                
-                'en': {
-                    // Мета
-                    'meta-title': 'Custom AI Development | Enterprise Solutions by DIVO',
-                    'meta-description': 'We design fault-tolerant AI systems for enterprise. Experience with banking, e-commerce, tech corporations. From $30k to $400k+.',
-
-                    // Шапка (общие)
-                    'logo': 'DIVO',
-                    'nav-sales': 'For Sales',
-                    'nav-design': 'For Design',
-                    'nav-about': 'About Us',
-                    // 'header-cta': 'Get a Consultation', // Ключ больше не используется
-                    // 'header-cta-mobile': 'Consultation', // Ключ больше не используется
-                    'nav-solutions': 'Solutions',
-                    'nav-custom-dev': 'Custom Development',
-                    'nav-portfolio': 'Portfolio',
-
-                    // Блок 1: Hero
-                    'hero-h1': 'Custom Development of Systems That Work at Scale',
-                    'hero-subtitle': 'We design fault-tolerant architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.',
-                    // 'hero-cta': 'Get Consultation', // Ключ больше не используется
-
-                    // Блок 'Trusted By'
-                    'trusted-h3': 'Trusted in Enterprise',
-
-                    // Блок 2: Компетенции
-                    'competencies-h2': 'What We Build',
-                    'competencies-intro': 'All our solutions are built on three core competencies that create value for business at different levels.',
-                    'comp-includes': "What's included:",
-                    'comp1-title': 'Intelligent Systems',
-                    'comp1-desc': 'We create systems that can understand, analyze, and predict. These are full-fledged assistants that help make decisions.',
-                    'comp1-bullets': '<li>AI-powered deep research: finding non-obvious insights about users and markets</li><li>Predictive analytics and risk analysis: helping make strategic data-driven decisions</li><li>Smart knowledge base search (RAG): corporate search systems that provide accurate answers with access control</li>',
-                    'comp2-title': 'Process Automation',
-                    'comp2-desc': 'We dive into routine processes and rebuild them using AI and RPA, freeing up employees\' time for strategic and creative tasks.',
-                    'comp2-bullets': '<li>Document workflow automation: generating contracts, invoices, and proposals from CRM or task tracker data</li><li>Communication automation: creating smart voice and text assistants for customer support and internal processes</li><li>Quality control automation: systems for checking compliance with standards in design, text, and code</li>',
-                    'comp3-title': 'Secure Infrastructure',
-                    'comp3-desc': 'We know how to embed AI into any environment, even the most complex and regulated. Data security and seamless integration are our key priorities.',
-                    'comp3-bullets': '<li>On-premise deployment: data never leaves the company perimeter, full infrastructure control</li><li>Flexible integrations: seamless connection to CRM, ERP systems (SAP, 1C), internal databases, and APIs</li><li>Secure access to external models: through gateways with data depersonalization and request control</li>',
-
-                    // Блок 'Tech Stack'
-                    'tech-stack-h2': 'Our Tech Stack',
-                    'tech-stack-p': 'We use a full-stack approach, selecting the right technology for the job, from enterprise Java to high-performance Python.',
-
-                    // Блок 3: Баннер
-                    'function1-banner-h2': 'Special Offers for /function1 Attendees',
-                    'function1-banner-text': 'Get access to all DIVO products at special conference prices: from trial demos at $99 to 60% off Technical Audit ($1,999 instead of $5,000).',
-                    'function1-banner-cta': 'View All Offers',
-
-                    // Блок 4: Процесс
-                    'process-h2': 'How We Work',
-                    'step1-title': 'Step 1: Free Consultation (40 minutes)',
-                    'step1-desc': 'We discuss your challenge and determine where AI will deliver real impact and where classic automation will suffice. You receive a written technical assessment with recommendations.',
-                    'step1-price': 'Free',
-                    'step2-title': 'Step 2: Discovery & Technical Audit (2 weeks)',
-                    'step2-desc': 'Complete analysis of your system, security requirements, and integration points. We study your infrastructure, identify technical risks, and design optimal solution architecture. You receive a detailed report with recommendations and ready technical specifications.',
-                    'step2-price': '$1,999 (discounted for /function1) | $5,000 (regular price)',
-                    'step3-title': 'Step 3: Development',
-                    'step3-quick-title': 'Quick Build (1-3 months)',
-                    'step3-quick-desc': 'Clear task, standard technology stack, fast implementation. Examples: basic document automation, API integration, RAG bot for internal knowledge base.',
-                    'step3-quick-price': '$30,000 - $80,000',
-                    'step3-complex-title': 'Complex Build (3-12 months)',
-                    'step3-complex-desc': 'Complex task, legacy system integration (SAP, 1C), high security requirements, on-premise deployment. Examples: AI system for entire department, enterprise RAG with access control, migration from monolith to microservices.',
-                    'step3-complex-price': '$100,000 - $400,000+',
-
-                    // Блок 5: Кейсы
-                    'cases-h2': 'Systems That Work in Production',
-                    'cases-subtitle': 'Examples of architectural solutions implemented for enterprise clients.',
-                    'case-task-label': 'The Challenge',
-                    'case-solution-label': 'The Solution',
-                    'case-results-label': 'The Results',
-                    
-                    'case1-title': "AI Art Director's Assistant",
-                    'case1-task': "Art directors spent 60-80% of their time on routine layout checks for design system compliance. This slowed down the approval cycle.",
-                    'case1-results': '<li>Freed art directors from routine checks</li><li>Accelerated design cycle — no waiting for manual review</li><li>Unified quality standards for all participants</li><li>Checks available 24/7 without team load</li><li>Up to 80% routine reduction</li>',
-                    
-                    'case2-title': 'Data Pipeline for Enterprise Analytics',
-                    'case2-task': 'Dozens of internal systems needed data from the core business platform. Direct integrations were unstable and created risks for critical services.',
-                    'case2-results': '<li>Fast and secure connection of new analytical systems</li><li>Stress-resistant architecture without risks of core overloads</li><li>Reduced time-to-market for new products</li>',
-
-                    'case3-title': 'Flexible Data Validation',
-                    'case3-task': 'Users spent a lot of time finding and fixing errors when filling out complex forms. Errors reached the backend and disrupted business processes.',
-                    'case3-results': '<li>Errors are identified at the input level, before system load</li><li>Error correction time reduced</li><li>User scenarios became predictable and fast</li>',
-                    
-                    'case4-title': 'Letter of Credit Automation',
-                    'case4-task': 'Processes for changing letter of credit terms were complex, required manual agreement, and led to errors and delays.',
-                    'case4-results': '<li>Stable system covering 99% of scenarios</li><li>Significant acceleration of deal term modification</li><li>Full transparency and control for participants</li>',
-
-                    'case5-title': 'AI-Powered Redesign Research',
-                    'case5-task': 'The team planned a redesign of the car product card. Classic UX research would take 3 months, but deep insights were needed quickly.',
-                    'case5-results': '<li>Redesign completed in 1 month instead of 3</li><li>Obtained deep insights using synthetic personas</li><li>Reduced costs of traditional UX research</li>',
-                    
-                    'case6-title': 'AI Content Generation Training',
-                    'case6-task': "Yandex Browser's marketing and design teams wanted to accelerate the production of creatives (banners, videos, landing pages) without long iterations.",
-                    'case6-results': '<li>Teams independently create content for different markets</li><li>Accelerated ad creative update cycle</li><li>Lowered entry barrier for working with AI generation</li>',
-                    
-                    'case7-client': 'B2B Sales Tech',
-                    'case7-title': 'Lead Generation Agent (LinkedIn & Telegram)',
-                    'case7-task': 'A need to scale outreach communications without losing contact quality or getting blocked by platforms.',
-                    'case7-results': '<li>Increased volume of outgoing contacts while maintaining CTR and CR</li><li>AI agent adapts to platform algorithm changes</li><li>Scaling B2B sales without expanding the team</li>',
-                    
-                    // PoC-кейсы
-                    'poc-h3': 'Proof-of-Concept & MVP Solutions',
-                    'poc-subtitle': 'Examples of rapid-development solutions and MVPs that test hypotheses and pave the way for full-scale systems.',
-                    'poc1-title': 'Document Automation (Construction)',
-                    'poc1-desc': 'A Python/Node.js pipeline that automatically generates reports from YouGile and CAD systems, saving dozens of man-hours per project.',
-                    'poc2-title': 'Automated Lighting Design',
-                    'poc2-desc': 'An AI algorithm architecture (Python) that connects Relux and AutoCAD/ArchiCAD for automated lighting calculations and fixture placement.',
-                    'poc3-title': 'AI Image Generation Platform',
-                    'poc3-desc': 'A multi-modal platform (Firefly, Recraft, GPT-Image) supporting text-to-image, image-to-image, and text-to-vector for marketing content automation.',
-                    'poc4-title': 'EdTech CRM Automation',
-                    'poc4-desc': 'A CRM ecosystem (AmoCRM, WhatsApp API, RPA) for a corporate training school, reducing manager routine by up to 80%.',
-                    'poc5-title': 'On-Premise RAG Telegram Bot',
-                    'poc5-desc': 'An MVP Telegram bot (Python, LLM, Qdrant) for an internal knowledge base. Securely processes PDF, DOCX, XLSX and provides cited answers.',
-                    'poc8-title': 'On-Premise Voice Analytics (ASR)',
-                    'poc8-desc': 'A speech recognition stack (Whisper Large V3 + NVIDIA Triton) deployed on client servers. Achieves 95-97% accuracy without data leaving the company.',
-
-                    // Блок 7: CTA (ИЗМЕНЕН)
-                    'cta-h2': "Let's Start With Your Challenge",
-                    'cta-get-label': 'What you get:',
-                    
-                    // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
-                    'cta1-title': 'OPTION 1: Free Consultation (For those exploring)',
-                    'cta1-desc': "Book a free 40-minute consultation. We'll discuss your architecture and determine where technology will deliver maximum impact.",
-                    'cta1-bullets': '<li>Written technical assessment for your task</li><li>Bonus: 60% off Technical Audit ($1,999 instead of $5,000)</li><li>Discount valid for 30 days after consultation</li>',
-                    'cta1-cta': 'Book Consultation',
-                    
-                    // Опция 2 (Аудит)
-                    // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
-                    'cta2-title': '',
-                    'cta2-desc': 'Order a 2-week Technical Audit at the special price of $1,999 (instead of $5,000). Get a detailed report with recommendations and priority project start.',
-                    'cta2-bullets': '<li>Full 2-week audit of your system/task</li><li>Detailed report with recommendations and technical specs</li><li>Bonus 1: Priority project start in December 2025</li><li>Bonus 2: 15% off project implementation (up to $15,000 savings)</li>',
-                    
-                    // ИЗМЕНЕННЫЙ КЛЮЧ
-                    'cta2-cta': 'Order Technical Audit',
-                    // НОВЫЙ КЛЮЧ для мобильной кнопки
-                    'cta2-cta-mobile': 'Order Audit',
-
-                    // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
-                    // ИЗМЕНЕНО: Текст упрощен
-                    'questions-text': 'Have questions?',
-
-                    // Футер (общие)
-                    'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
-                    'footer-solutions-title': 'Solutions',
-                    'footer-company-title': 'Company',
-                    'footer-portfolio': 'Portfolio & Cases',
-                    'footer-contact-title': 'Contact & Legal',
-                    'footer-legal-title': 'Legal',
-                    'footer-privacy': 'Privacy Policy',
-                    'footer-terms': 'Terms of Service'
-                }
-            };
-
-            const btnRuDesktop = document.getElementById('btn-ru');
-            const btnEnDesktop = document.getElementById('btn-en');
-            const btnRuMobile = document.getElementById('btn-ru-mobile');
-            const btnEnMobile = document.getElementById('btn-en-mobile');
-                        
-            const elementsToTranslate = document.querySelectorAll('[data-lang]');
-
-            function updateContent(lang) {
-                document.documentElement.lang = lang;
-
-                const isRu = lang === 'ru';
-                btnRuDesktop.classList.toggle('active', isRu);
-                btnEnDesktop.classList.toggle('active', !isRu);
-                btnRuMobile.classList.toggle('active', isRu);
-                btnEnMobile.classList.toggle('active', !isRu);
-
-                btnRuDesktop.setAttribute('aria-pressed', isRu);
-                btnEnDesktop.setAttribute('aria-pressed', !isRu);
-                btnRuMobile.setAttribute('aria-pressed', isRu);
-                btnEnMobile.setAttribute('aria-pressed', !isRu);
-
-                const langTranslations = translations[lang];
-
-                elementsToTranslate.forEach(el => {
-                    const key = el.getAttribute('data-lang');
-                    const translation = langTranslations[key];
-                    
-                    if (translation !== undefined) {
-                        if (key === 'meta-title') {
-                            el.innerHTML = translation;
-                        } else if (key === 'meta-description') {
-                            el.setAttribute('content', translation);
-                        } else {
-                            // Позволяем HTML (для списков <li>)
-                            el.innerHTML = translation;
-                        }
+                if (translation !== undefined) {
+                    if (key === 'meta-title') {
+                        el.innerHTML = translation;
+                    } else if (key === 'meta-description') {
+                        el.setAttribute('content', translation);
+                    } else {
+                        // Позволяем HTML (для списков <li>)
+                        el.innerHTML = translation;
                     }
-                });
-            }
+                }
+            });
+        }
 
-            btnRuDesktop.addEventListener('click', () => updateContent('ru'));
-            btnEnDesktop.addEventListener('click', () => updateContent('en'));
-            btnRuMobile.addEventListener('click', () => updateContent('ru'));
-            btnEnMobile.addEventListener('click', () => updateContent('en'));
+        btnRuDesktop.addEventListener('click', () => updateContent('ru'));
+        btnEnDesktop.addEventListener('click', () => updateContent('en'));
+        btnRuMobile.addEventListener('click', () => updateContent('ru'));
+        btnEnMobile.addEventListener('click', () => updateContent('en'));
 
-            // ИЗМЕНЕНО: Запускаем с 'ru' по умолчанию, как было в оригинальном файле (судя по 'active' у btn-en)
-            // Ошибка в комментарии выше, в оригинале 'active' у btn-en, значит, запускаем с 'en'
-            updateContent('en');
-        });
-            
-    </script>
+        // ИЗМЕНЕНО: Запускаем с 'ru' по умолчанию, как было в оригинальном файле (судя по 'active' у btn-en)
+        // Ошибка в комментарии выше, в оригинале 'active' у btn-en, значит, запускаем с 'en'
+        updateContent('en');
+    });
+
+</script>
 </body>
 </html>
