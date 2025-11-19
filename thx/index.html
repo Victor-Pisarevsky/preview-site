@@ -7,9 +7,9 @@
     <link rel="icon"
           href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
-    <title data-lang="meta-title-thanks">DIVO - Payment Successful</title>
+    <title data-lang="meta-title-thanks">DIVO - Request Received</title>
     <meta name="description" data-lang="meta-description-thanks"
-          content="Thank you for your payment. Your transaction was successful.">
+          content="Thank you for your request. We will contact you shortly.">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -629,15 +629,15 @@
     <section id="thank-you" class="py-16 md:py-24">
         <div class="card card-no-hover max-w-2xl mx-auto p-6 md:p-10 text-center">
 
-            <h2 data-lang="thanks-h2">Payment Successful!</h2>
+            <h2 data-lang="thanks-h2">Request Received!</h2>
 
             <p data-lang="thanks-sub" class="!text-lg !text-text-secondary mt-2 mb-6">
-                Thank you for your payment. We have sent a confirmation and receipt to your email address.
+                Thank you for your interest. We have received your request and will contact you shortly.
             </p>
 
             <p data-lang="thanks-contact" class="!text-text-secondary mt-2 mb-8">
                 If you have any questions or need assistance, please contact us at:
-                <a href="mailto:info@divo.solutions">info@divo.solutions</a><
+                <a href="mailto:info@divo.solutions">info@divo.solutions</a>
             </p>
 
             <div class="mt-8">
@@ -705,7 +705,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-        // Логика мобильного меню (из образца)
+        // Логика мобильного меню
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenuToggle && mobileMenu) {
@@ -716,11 +716,10 @@
             });
         }
 
-        // Логика Sticky-баннера (оставлена, но баннера нет)
-        // Она не вызовет ошибок, т.к. 'closeStickyBannerBtn' будет null
+        // Логика Sticky-баннера
         const closeStickyBannerBtn = document.getElementById('close-sticky-banner');
         const stickyBanner = document.getElementById('top-sticky-banner');
-        const header = document.querySelector('header'); // Шапка
+        const header = document.querySelector('header');
 
         if (closeStickyBannerBtn && stickyBanner && header) {
             closeStickyBannerBtn.addEventListener('click', () => {
@@ -749,12 +748,12 @@
         const translations = {
             'ru': {
                 // --- МЕТА (Страница "Спасибо") ---
-                'meta-title-thanks': 'DIVO - Оплата прошла успешно',
-                'meta-description-thanks': 'Спасибо за ваш платеж. Ваша транзакция прошла успешно.',
+                'meta-title-thanks': 'DIVO - Заявка принята',
+                'meta-description-thanks': 'Спасибо за проявленный интерес. Мы получили вашу заявку и скоро свяжемся с вами.',
 
                 // --- Контент (Страница "Спасибо") ---
-                'thanks-h2': 'Оплата прошла успешно!',
-                'thanks-sub': 'Спасибо за ваш платеж. Мы отправили подтверждение и чек на ваш email.',
+                'thanks-h2': 'Заявка принята!',
+                'thanks-sub': 'Спасибо за ваш интерес. Мы получили вашу заявку и скоро свяжемся с вами для обсуждения деталей.',
                 'thanks-contact': 'Если у вас есть вопросы или нужна помощь, свяжитесь с нами: <a href="mailto:info@divo.solutions" class="!text-primary ...">info@divo.solutions</a>',
                 'thanks-cta': 'Вернуться на главную',
 
@@ -777,7 +776,7 @@
                 'footer-privacy': 'Политика конфиденциальности',
                 'footer-user-agreement': 'Пользовательское соглашение',
 
-                // --- Остальные ключи (на всякий случай, если будете добавлять блоки) ---
+                // --- Остальные ключи ---
                 'meta-title': 'DIVO - AI-системы, которые приносят деньги',
                 'meta-description': 'Превращаем амбициозные AI-идеи в production-системы...',
                 'logo-sber-description': 'Крупнейший банк России',
@@ -788,12 +787,12 @@
             },
             'en': {
                 // --- МЕТА (Thank You Page) ---
-                'meta-title-thanks': 'DIVO - Payment Successful',
-                'meta-description-thanks': 'Thank you for your payment. Your transaction was successful.',
+                'meta-title-thanks': 'DIVO - Request Received',
+                'meta-description-thanks': 'Thank you for your interest. We have received your request and will contact you shortly.',
 
                 // --- Контент (Thank You Page) ---
-                'thanks-h2': 'Payment Successful!',
-                'thanks-sub': 'Thank you for your payment. We have sent a confirmation and receipt to your email address.',
+                'thanks-h2': 'Request Received!',
+                'thanks-sub': 'Thank you for your interest. We have received your request and will contact you shortly to discuss details.',
                 'thanks-contact': 'If you have any questions or need assistance, please contact us at: <a href="mailto:info@divo.solutions" class="!text-primary ...">info@divo.solutions</a>',
                 'thanks-cta': 'Back to Home',
 
@@ -816,7 +815,7 @@
                 'footer-privacy': 'Privacy Policy',
                 'footer-user-agreement': 'User Agreement',
 
-                // --- Остальные ключи (на всякий случай, если будете добавлять блоки) ---
+                // --- Остальные ключи ---
                 'meta-title': 'DIVO - AI systems that make money',
                 'meta-description': 'We transform ambitious AI ideas into production-ready systems...',
                 'logo-sber-description': 'Russia\'s largest bank',
@@ -827,7 +826,7 @@
             }
         };
 
-        // --- Логика переключения языка (из образца) ---
+        // --- Логика переключения языка ---
         const btnRuDesktop = document.getElementById('btn-ru');
         const btnEnDesktop = document.getElementById('btn-en');
         const btnRuMobile = document.getElementById('btn-ru-mobile');
@@ -870,7 +869,7 @@
         if (btnRuMobile) btnRuMobile.addEventListener('click', () => updateContent('ru'));
         if (btnEnMobile) btnEnMobile.addEventListener('click', () => updateContent('en'));
 
-        // Устанавливаем язык по умолчанию (EN), как в образце
+        // Устанавливаем язык по умолчанию (EN)
         updateContent('en');
     });
 
