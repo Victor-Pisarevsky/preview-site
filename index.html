@@ -553,31 +553,7 @@
 </head>
 <body class="antialiased">
 
-<!--
-  НОВЫЙ БЛОК: Top Sticky Banner
-  Для трафика с выставки - обновленные стили
--->
-<div id="top-sticky-banner" class="sticky top-0 z-[51]">
-    <div class="container max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center gap-4">
-            <div class="text-sm md:text-base font-medium text-center flex-grow flex items-center justify-center gap-2">
-                <span data-lang="sticky-banner-text">👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount</span>
-                <a href="#final-cta" data-lang="sticky-banner-cta" class="btn-event-inline whitespace-nowrap">Book
-                    now</a>
-            </div>
-            <button id="close-sticky-banner" class="text-white text-2xl font-light hover:opacity-80"
-                    aria-label="Close banner">&times;
-            </button>
-        </div>
-    </div>
-</div>
-
-<!--
-  HEADER (ШАПКА)
-  Скопировано 1-в-1 из for-sales.html
-  Изменен z-index с z-50 на z-40, чтобы быть ПОД sticky-баннером
--->
-<header class="sticky top-0 lg:top-[49px] w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
+<header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
     <div class="container max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center h-20">
 
@@ -906,24 +882,6 @@
         </div>
     </section>
 
-    <!--
-      НОВЫЙ БЛОК: Bottom Banner
-      Стиль .event-banner взят из for-sales.html
-      Уменьшен отступ my -> mt
-    -->
-    <section id="bottom-event-banner" class="mt-12 md:mt-16 mb-12">
-        <div class="event-banner p-8 md:p-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                <div class="md:col-span-2">
-                    <h2 data-lang="bottom-banner-h2" class="!text-white">Don't miss exclusive offers for event
-                        guests</h2>
-                    <p data-lang="bottom-banner-sub" class="text-lg mb-4">Special packages, private CTO consultations,
-                        and bonuses exclusively for event attendees</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 </div> <!-- /end container --><!--
       FOOTER (ПОДВАЛ)
       Скопировано 1-в-1 из for-sales.html
@@ -1065,10 +1023,6 @@
 
                 // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
 
-                // Top Sticky Banner
-                'sticky-banner-text': '👋 Привет с выставки! Специальное предложение действует 48 часов → Бесплатный аудит + скидка 15%',
-                'sticky-banner-cta': 'Забронировать',
-
                 // 1. Hero
                 'hero-h1': 'AI-системы, которые приносят деньги',
                 'hero-sub': 'Превращаем амбициозные AI-идеи в production-системы, которые выдерживают миллионы пользователей и интегрируются с вашей инфраструктурой',
@@ -1148,11 +1102,6 @@
                 'logo-avito-description': 'Russia\'s largest e-commerce',
                 'logo-yandex-description': 'Russia\'s search leader',
 
-                // --- НОВЫЕ ПЕРЕВОДЫ ДЛЯ ГЛАВНОЙ ---
-
-                // Top Sticky Banner
-                'sticky-banner-text': '👋 Hello from the event! Special offer valid for 48 hours → Free audit + 15% discount',
-                'sticky-banner-cta': 'Book now',
 
                 // 1. Hero
                 'hero-h1': 'AI systems that make money',
