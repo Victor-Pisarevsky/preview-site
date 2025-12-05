@@ -1,1421 +1,767 @@
 <!DOCTYPE html>
-<!-- lang="en" по умолчанию, JS переключит на 'ru', если нужно -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
-    <link rel="icon"
-          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
-
-    <title data-lang="meta-title">Custom AI Development | Enterprise Solutions by DIVO</title>
-    <meta name="description" data-lang="meta-description"
-          content="We design fault-tolerant AI systems for enterprise. Experience with banking, e-commerce, tech corporations. From $30k to $400k+.">
+    <title data-lang="meta-title">Intelligent Automation | DIVO</title>
+    <meta name="description" data-lang="meta-description" content="Custom automation pipelines that replace manual routine with reliable code. Sales, Ops, Finance.">
 
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap"
-          rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Шрифты (из примера) */
-        @font-face {
-            font-family: 'Eugusto';
-            src: url('EugustoFreePersonalUse-Regular.otf');
-            font-weight: 800;
-            font-style: normal;
-        }
-
+        /* --- CORE VARIABLES --- */
         :root {
             --font-sans: 'Inter', sans-serif;
             --font-heading: 'Alumni Sans', sans-serif;
-            --font-decorative: 'Eugusto', 'KS Bistra', sans-serif;
             --color-primary: rgb(203, 2, 19);
-            --color-primary-dark: rgb(180, 2, 19);
-            --color-bg-light: rgb(241, 241, 241);
-            --color-text-main: rgb(30, 30, 30);
-            --color-text-secondary: rgb(60, 60, 60);
+            --color-primary-dark: rgb(160, 2, 15);
+            --color-bg-light: #F9FAFB;
+            --color-text-main: rgb(17, 24, 39);
+            --color-text-secondary: rgb(75, 85, 99);
             --color-card-bg: #ffffff;
-            --color-footer-bg: rgb(30, 30, 30);
-            --color-bg-1: rgba(203, 2, 19, 0.1);
-            --color-bg-2: rgba(0, 240, 255, 0.1);
-            --color-bg-3: rgba(60, 60, 60, 0.08);
+            --color-dark-bg: #0f0f0f;
         }
 
-        /* Базовые стили */
         body {
             font-family: var(--font-sans);
             background-color: var(--color-bg-light);
             color: var(--color-text-main);
             font-weight: 300; 
             line-height: 1.6;
-            overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+            scroll-behavior: smooth;
+            overflow-x: hidden; 
         }
 
-        /* Заголовки */
-        h1[data-lang], h2[data-lang], h3[data-lang], h4[data-lang], h5[data-lang], h6[data-lang] {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            color: var(--color-text-main);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        h1[data-lang] {
-            font-family: var(--font-decorative);
-            font-weight: 800;
-            font-size: clamp(3.5rem, 3rem + 2vw, 5rem);
-            letter-spacing: -1px;
-        }
-        h2[data-lang] {
-            font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem);
-            font-weight: 800;
-        }
-        h3[data-lang] {
-            font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
-            font-weight: 700;
-        }
-        h4[data-lang] {
-            font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
-            font-weight: 700;
-        }
-        p, blockquote {
-            color: var(--color-text-secondary);
-            margin-bottom: 1.25rem;
-            font-size: 1.1rem;
-            font-weight: 400;
+        h1, h2, h3, h4, h5, h6 { color: var(--color-text-main); line-height: 1.1; }
+        h1 { font-family: var(--font-heading); font-weight: 800; }
+        h2 { font-family: var(--font-heading); font-weight: 700; }
+        h3, h4 { font-family: var(--font-heading); font-weight: 600; }
+
+        .header-logo {
+            font-family: var(--font-heading); font-weight: 900; color: var(--color-primary);
+            font-size: 1.8rem; line-height: 1; letter-spacing: -0.5px;
         }
         
-        /* Стили Шапки */
-        .header-logo {
-            font-family: var(--font-decorative);
-            font-weight: 800;
-            color: var(--color-primary);
-            font-size: 2.25rem;
-            line-height: 1;
-        }
         .header-nav-link {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            transition: color 0.2s ease;
-            text-transform: uppercase;
+            font-family: var(--font-sans); font-weight: 500; font-size: 0.95rem;
+            color: var(--color-text-main); transition: color 0.2s ease;
         }
-        .header-nav-link:hover {
-            color: var(--color-primary);
-        }
-        #mobile-menu {
-            transition: all 0.3s ease-out;
-            z-index: 40;
-        }
+        .header-nav-link:hover { color: var(--color-primary); }
 
-        /* Стили кнопок */
         .btn {
-            display: inline-block;
-            padding: 0.75rem 1.75rem;
-            border-radius: 8px;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 0.25rem;
-            white-space: nowrap;
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 2rem; border-radius: 6px;
+            font-family: var(--font-sans); font-weight: 600; font-size: 1rem;
+            text-decoration: none; cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
         }
         .btn-primary {
-            background-color: var(--color-primary);
-            color: white;
-            border: 2px solid var(--color-primary);
+            background-color: var(--color-primary); color: white; border: 2px solid var(--color-primary);
         }
         .btn-primary:hover {
-            background-color: var(--color-primary-dark);
-            border-color: var(--color-primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(203, 2, 19, 0.3);
+            background-color: var(--color-primary-dark); border-color: var(--color-primary-dark);
+            box-shadow: 0 4px 12px rgba(203, 2, 19, 0.2); transform: translateY(-2px);
         }
         .btn-secondary {
-            background-color: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
+            background-color: transparent; color: var(--color-text-main); border: 2px solid #E5E7EB;
         }
         .btn-secondary:hover {
-            background-color: var(--color-primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-        .btn-lg {
-            padding: 1rem 2.25rem;
-            font-size: 1.25rem;
-        }
-        
-        /* Баннер */
-        .event-banner {
-            background-color: #03101a;
-            color: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            border: 1px solid rgba(0, 240, 255, 0.3);
-        }
-        .event-banner h2[data-lang],
-        .event-banner h4[data-lang] {
-            color: white;
-        }
-        .highlight-text {
-            color: #00A0B0; 
-            font-weight: 600; 
-        }
-        .event-banner p {
-            color: #e0e0e0; 
-        }
-        .btn-event {
-            background-color: #D90429; 
-            color: white;
-            border: none;
-        }
-        .btn-event:hover {
-            background-color: #EF233C;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.4);
+            border-color: var(--color-primary); color: var(--color-primary);
+            background-color: white; transform: translateY(-2px);
         }
 
-        /* Карточки */
         .card {
-            background-color: var(--color-card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            height: 100%;
+            background-color: var(--color-card-bg); border: 1px solid #E5E7EB;
+            border-radius: 12px; padding: 2rem; transition: all 0.3s ease;
+            height: 100%; display: flex; flex-direction: column;
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Переключатель языка */
-        .lang-switcher-inline {
-            background-color: rgba(0,0,0,0.05);
-            border-radius: 8px;
-            padding: 0.25rem;
-            display: flex;
-        }
-        .lang-switcher-inline button {
-            padding: 0.5rem 0.75rem;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            color: var(--color-text-secondary);
-            background-color: transparent;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .lang-switcher-inline button.active {
-            color: var(--color-primary);
-            background-color: var(--color-card-bg);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .lang-switcher-inline button:hover:not(.active) {
-            background-color: rgba(0,0,0,0.03);
+            transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1); border-color: #D1D5DB;
         }
 
-        /* Списки для фич */
-        .content-list {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-        .content-list li {
-            position: relative;
-            padding-left: 1.75rem;
-            margin-bottom: 0.75rem;
-            color: var(--color-text-secondary);
-            font-size: 1rem;
-            font-weight: 400;
-        }
-        .content-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--color-primary);
-            font-weight: 700;
-        }
-        
-        /* Блок "Процесс" */
-        .process-line {
-            position: relative;
-            border-left: 3px solid rgba(203, 2, 19, 0.2);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-        .process-step {
-            position: relative;
-            padding-left: 3.5rem; /* Увеличено для иконки */
-            padding-bottom: 3rem;
-        }
-        .process-step:last-child {
-            padding-bottom: 0;
-        }
-        /* Круглая точка на линии */
-        .process-step::before {
-            content: '';
-            position: absolute;
-            left: -0.6rem;
-            top: 0.85rem; /* Выровнено с иконкой */
-            width: 1.25rem;
-            height: 1.25rem;
-            border-radius: 50%;
-            background-color: var(--color-primary);
-            border: 3px solid var(--color-bg-light);
-            z-index: 1;
-        }
-        .process-step-price {
-            display: inline-block;
-            background-color: var(--color-bg-1);
-            color: var(--color-primary);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            margin-top: 0.5rem;
-            font-size: 1rem;
+        /* Hero Pattern */
+        .hero-pattern-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 24px 24px; opacity: 0.5;
         }
 
-        /* Иконки (Новый стиль) */
-        .icon-wrapper {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
-            color: var(--color-primary);
+        /* Custom Range Slider */
+        input[type=range] {
+            -webkit-appearance: none; width: 100%; background: transparent; 
         }
-        .icon-wrapper.bg-light {
-            background-color: var(--color-bg-1);
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%;
+            background: var(--color-primary); cursor: pointer; margin-top: -10px;
+            box-shadow: 0 2px 6px rgba(203, 2, 19, 0.4); border: 2px solid white;
         }
-        .icon-wrapper-sm {
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 0.5rem;
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px; cursor: pointer; background: #E5E7EB; border-radius: 2px;
         }
-        /* Иконка в блоке "Процесс" */
-        .process-step .icon-wrapper {
-            position: absolute;
-            left: 0;
-            top: 0.25rem;
+
+        /* Use Case Flow Styles */
+        .flow-step {
+            display: flex; align-items: center; gap: 0.75rem;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        .flow-step:last-child { padding-bottom: 0; }
+        .flow-step:not(:last-child)::after {
+            content: ''; position: absolute; left: 1rem; top: 2.2rem; bottom: 0;
+            width: 2px; background-color: #F3F4F6;
+        }
+        .flow-icon {
+            width: 2rem; height: 2rem; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: bold; flex-shrink: 0;
             z-index: 2;
-            width: 2.5rem;
-            height: 2.5rem;
-            padding: 0.5rem;
-            background-color: var(--color-bg-light); /* чтобы перекрыть линию */
         }
-        .process-step .icon-wrapper svg {
-            width: 1.75rem;
-            height: 1.75rem;
-            color: var(--color-primary);
+        .flow-content {
+            background-color: #F9FAFB; padding: 0.75rem; border-radius: 8px; width: 100%;
+            font-size: 0.85rem; border: 1px solid #E5E7EB;
         }
 
-        /* Блок "Нам доверяют" (Новый стиль) */
-        .trusted-by-logos {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            filter: grayscale(100%);
-            opacity: 0.7;
-        }
-        .trusted-by-logos svg {
-            height: 40px; /* 32px - 40px */
-            width: auto;
-            max-width: 150px;
-        }
+        /* Lang Switcher */
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .lang-menu { display: none; position: absolute; right: 0; top: 100%; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 50; border: 1px solid #E5E7EB; overflow: hidden; margin-top: 0.5rem; }
+        .lang-menu.show { display: block; }
+        .lang-option { padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: background 0.2s; font-size: 0.95rem; color: var(--color-text-main); width: 100%; text-align: left; border: none; background: transparent; }
+        .lang-option:hover { background-color: #F3F4F6; }
 
-        /* Блок "Технологии" (Новый стиль) */
-        .tech-tag {
-            display: inline-block;
-            background-color: rgba(60, 60, 60, 0.08); /* --color-bg-3 */
-            color: var(--color-text-secondary);
-            font-family: var(--font-sans);
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 0.5rem 1.25rem;
-            border-radius: 8px;
-            margin: 0.25rem;
-            transition: all 0.2s ease;
+        .footer-link { color: #9CA3AF; transition: color 0.2s; }
+        .footer-link:hover { color: white; }
+        .dark-bg-custom { background-color: var(--color-dark-bg); }
+        
+        .form-input, .form-textarea {
+            width: 100%; padding: 0.75rem 1rem; background-color: white;
+            border: 1px solid #D1D5DB; border-radius: 0.5rem;
+            color: var(--color-text-main); font-family: var(--font-sans);
+            appearance: none; transition: all 0.2s;
         }
-        .tech-tag:hover {
-            background-color: var(--color-primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Логотипы клиентов в кейсах (Новый стиль) */
-        .client-logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem; /* 12px */
-            height: 2rem; /* 32px */
-        }
-        .client-logo-wrapper svg {
-            height: 100%;
-            width: auto;
-            max-width: 120px;
-        }
-
-        /* Подвал */
-        .footer {
-            background-color: var(--color-footer-bg);
-            color: #CFCFCF; 
-            display: block;
-        }
-        .footer-logo {
-            font-family: var(--font-decorative);
-            font-weight: 800;
-            color: white;
-            font-size: 2.5rem;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-        .footer-title {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            color: white;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        p[data-lang="footer-mission"] {
-            color: white;
-        }
-        .footer-link {
-            color: #CFCFCF;
-            font-family: var(--font-sans);
-            font-weight: 400; 
-            font-size: 1rem;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        .footer-link:hover {
-            color: white;
-        }
+        .form-input:focus { border-color: var(--color-primary); outline: none; box-shadow: 0 0 0 3px rgba(203,2,19,0.1); }
     </style>
 </head>
 <body class="antialiased">
 
-<!-- Шапка (Header) -->
-<header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-    <div class="container max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center h-20">
+    <!-- HEADER -->
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="main.html" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
+                
+                <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
+                    <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-sm">
+                        <a href="copilot.html" class="header-nav-link" data-lang="nav-design">Design Copilot</a>
+                        <a href="main.html#services" class="header-nav-link" data-lang="nav-intelligent">Intelligent Systems</a>
+                        <a href="#" class="header-nav-link text-primary font-bold" data-lang="nav-automation">Automation</a>
+                        <a href="main.html#services" class="header-nav-link" data-lang="nav-secure">Secure Infrastructure</a>
+                    </nav>
+                </div>
 
-            <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
-
-            <div class="hidden lg:flex items-center gap-6">
-                <nav class="flex gap-8 items-center">
-                    <div class="relative group">
-                        <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions"
-                                aria-expanded="false" aria-controls="solutions-dropdown">
-                            Решения
-                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
-                                 stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M19 9l-7 7-7-7"></path>
-                            </svg>
+                <div class="hidden lg:flex items-center gap-6 relative z-10">
+                    <div class="lang-dropdown">
+                        <button id="lang-toggle" class="lang-btn" aria-label="Select Language">
+                            <span id="current-lang-flag">🇪🇳</span>
+                            <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div id="solutions-dropdown"
-                             class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="py-2">
-                                <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для
-                                    Продаж</a>
-                                <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для
-                                    Дизайна</a>
-                                <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50"
-                                   data-lang="nav-custom-dev">Кастомная разработка</a>
+                        <div id="lang-menu" class="lang-menu">
+                            <button class="lang-option" onclick="changeLang('en')"><span>🇪🇳</span> English</button>
+                            <button class="lang-option" onclick="changeLang('ru')"><span>🇷🇺</span> Русский</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4 relative z-10">
+                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">🇪🇳</span></button>
+                    <button id="mobile-menu-toggle" class="text-gray-800 p-2 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2 border-t border-gray-100">
+                <nav class="flex flex-col gap-4 p-4">
+                    <a href="copilot.html" class="header-nav-link text-lg" data-lang="nav-design">Design Copilot</a>
+                    <a href="main.html" class="header-nav-link text-lg" data-lang="nav-intelligent">Intelligent Systems</a>
+                    <a href="#" class="header-nav-link text-lg text-primary font-bold" data-lang="nav-automation">Automation</a>
+                    <a href="main.html" class="header-nav-link text-lg" data-lang="nav-secure">Secure Infrastructure</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative pt-24 pb-20 md:pt-32 md:pb-24 bg-white overflow-hidden">
+            <div class="hero-pattern-bg"></div>
+            
+            <div class="container max-w-7xl mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <div class="inline-flex items-center gap-2 bg-primary/5 border border-primary/20 rounded-full px-4 py-1.5 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-xs font-bold text-primary tracking-wide uppercase" data-lang="hero-tag">Intelligent Automation</span>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl mb-6 tracking-tight text-gray-900 leading-[0.95]" data-lang="hero-h1">
+                            Turn Operational Chaos into <span class="text-primary">Reliable Code</span>.
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8 font-light leading-relaxed" data-lang="hero-sub">
+                            Your best employees shouldn't be copy-pasting data. We build custom "digital workers" that handle routine tasks 24/7 without errors, complaints, or vacations.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#calculator" class="btn btn-primary text-lg px-8 py-3 shadow-lg hover:shadow-xl" data-lang="hero-cta">Calculate Savings</a>
+                            <a href="#scenarios" class="btn btn-secondary text-lg px-8 py-3" data-lang="hero-secondary">See Examples</a>
+                        </div>
+                    </div>
+                    
+                    <!-- VISUAL: Abstract Flowchart -->
+                    <div class="w-full md:w-1/2 relative hidden md:block">
+                        <div class="bg-white border border-gray-200 rounded-xl shadow-2xl p-6 relative z-10 transform transition-transform duration-500">
+                            <!-- Fake Interface: Automation Flow -->
+                            <div class="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+                                <span class="text-sm font-bold text-gray-400 uppercase">System Status: Active</span>
+                                <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-bold">● 99.9% Uptime</span>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center border border-blue-100">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="h-2 w-24 bg-gray-200 rounded mb-1"></div>
+                                        <div class="h-2 w-32 bg-gray-100 rounded"></div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 font-mono">Incoming</span>
+                                </div>
+                                <div class="pl-5"><div class="w-0.5 h-6 bg-gray-200"></div></div>
+                                <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg border border-dashed border-gray-300">
+                                    <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="text-xs font-bold text-gray-700 mb-1">DIVO Automation Core</div>
+                                        <div class="text-[10px] text-gray-500 font-mono bg-white p-1 rounded border border-gray-200">Processing...</div>
+                                    </div>
+                                </div>
+                                <div class="pl-5"><div class="w-0.5 h-6 bg-gray-200"></div></div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-green-50 text-green-600 rounded-lg flex items-center justify-center border border-green-100">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="h-2 w-20 bg-gray-200 rounded mb-1"></div>
+                                        <div class="h-2 w-16 bg-gray-100 rounded"></div>
+                                    </div>
+                                    <span class="text-xs text-green-600 font-bold font-mono">Synced</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
-                    <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
-                </nav>
+                </div>
+            </div>
+        </section>
 
-                <div class="flex items-center gap-4">
-                    <!-- ИЗМЕНЕНО: data-lang="header-cta" заменен на data-lang="cta2-cta" -->
-                    <a href="/payments/audit" class="btn btn-primary btn-sm popup-trigger" data-popup="consult"
-                       data-lang="cta2-cta">Получить консультацию</a>
-                    <div class="lang-switcher-inline">
-                        <button id="btn-ru" class="" aria-pressed="false">RU</button>
-                        <button id="btn-en" class="active" aria-pressed="true">EN</button>
+        <!-- REAL WORLD SCENARIOS -->
+        <section id="scenarios" class="py-20 bg-gray-50 border-y border-gray-200">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4" data-lang="case-title">Real-World Use Cases</h2>
+                    <p class="text-xl text-gray-500 max-w-3xl mx-auto" data-lang="case-sub">See how we replace "Busy Work" with intelligent pipelines.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    
+                    <!-- CASE 1: SALES -->
+                    <div class="card bg-white p-6 hover:border-primary/50 group">
+                        <div class="mb-4 flex items-center justify-between">
+                            <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <span class="text-xs font-bold uppercase text-gray-400">Sales</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="c1-title">Lead Gen Agent</h3>
+                        <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c1-desc">Managers hate cold outreach. We automate prospecting on LinkedIn/Email to deliver hot leads.</p>
+                        
+                        <!-- Flow Visualization -->
+                        <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
+                                <div class="flow-content" data-lang="c1-s1">Finds leads (Apollo/LinkedIn)</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c1-s2">AI Personalizes Email</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">3</div>
+                                <div class="flow-content" data-lang="c1-s3">Syncs "Interested" to CRM</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <span class="text-sm font-bold text-green-600" data-lang="c1-res">+20h/week Saved</span>
+                        </div>
+                    </div>
+
+                    <!-- CASE 2: FINANCE -->
+                    <div class="card bg-white p-6 hover:border-primary/50 group">
+                        <div class="mb-4 flex items-center justify-between">
+                            <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            </div>
+                            <span class="text-xs font-bold uppercase text-gray-400">Finance</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="c2-title">Invoice Parsing</h3>
+                        <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c2-desc">Stop manual data entry errors. Extract data from PDFs and push it directly into 1C/SAP.</p>
+                        
+                        <!-- Flow Visualization -->
+                        <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
+                                <div class="flow-content" data-lang="c2-s1">Monitors Email for PDF</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c2-s2">OCR + AI Extraction</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">3</div>
+                                <div class="flow-content" data-lang="c2-s3">Create Bill in ERP</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <span class="text-sm font-bold text-green-600" data-lang="c2-res">0% Data Errors</span>
+                        </div>
+                    </div>
+
+                    <!-- CASE 3: HR -->
+                    <div class="card bg-white p-6 hover:border-primary/50 group">
+                        <div class="mb-4 flex items-center justify-between">
+                            <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            </div>
+                            <span class="text-xs font-bold uppercase text-gray-400">HR / Support</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="c3-title">Onboarding Bot</h3>
+                        <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c3-desc">HR answers the same questions 100 times. We build a bot trained on your Notion/Wiki.</p>
+                        
+                        <!-- Flow Visualization -->
+                        <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
+                                <div class="flow-content" data-lang="c3-s1">Employee Asks in Slack</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c3-s2">AI Search (RAG)</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">3</div>
+                                <div class="flow-content" data-lang="c3-s3">Instant Answer</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <span class="text-sm font-bold text-green-600" data-lang="c3-res">-40h/mo HR Time</span>
+                        </div>
+                    </div>
+
+                    <!-- CASE 4: LOGISTICS -->
+                    <div class="card bg-white p-6 hover:border-primary/50 group">
+                        <div class="mb-4 flex items-center justify-between">
+                            <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+                            </div>
+                            <span class="text-xs font-bold uppercase text-gray-400">Logistics</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="c4-title">Order Updates</h3>
+                        <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c4-desc">Clients call "Where is my cargo?". We automate status checks across 5 different carrier portals.</p>
+                        
+                        <!-- Flow Visualization -->
+                        <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
+                                <div class="flow-content" data-lang="c4-s1">Check Carrier Sites</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c4-s2">Normalize Statuses</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="flow-icon bg-white border border-gray-200 text-gray-400">3</div>
+                                <div class="flow-content" data-lang="c4-s3">Update Client Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <span class="text-sm font-bold text-green-600" data-lang="c4-res">Real-time Visibility</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- NEW BUTTON -->
+                <div class="text-center">
+                    <a href="portfolio.html" class="btn btn-secondary text-lg px-8 py-3" data-lang="btn-more-cases">View All Cases</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK (Dark Section) -->
+        <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
+             <!-- Background Grid -->
+             <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#374151 1px, transparent 1px), linear-gradient(90deg, #374151 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+             <div class="container max-w-7xl mx-auto px-4 relative z-10">
+                 <div class="flex flex-col md:flex-row gap-12 items-center">
+                     <div class="w-full md:w-1/2">
+                         <h2 class="text-4xl font-heading font-bold mb-6" data-lang="tech-title">Engineering, Not Just "Glue".</h2>
+                         <p class="text-gray-400 mb-8 text-lg" data-lang="tech-desc">
+                             No-code tools (Zapier/Make) are great for prototypes, but they break at scale. We build robust, monitored pipelines using enterprise-grade code.
+                         </p>
+                         
+                         <div class="grid grid-cols-2 gap-6">
+                             <div class="border-l-2 border-primary pl-4">
+                                 <h4 class="font-bold text-lg mb-1">Python Core</h4>
+                                 <p class="text-xs text-gray-500">FastAPI, Pandas, Selenium. Logic that handles complex data.</p>
+                             </div>
+                             <div class="border-l-2 border-primary pl-4">
+                                 <h4 class="font-bold text-lg mb-1">AI Models</h4>
+                                 <p class="text-xs text-gray-500">GPT-4, Claude, Local LLaMA. Cognitive tasks, not just if/else.</p>
+                             </div>
+                             <div class="border-l-2 border-primary pl-4">
+                                 <h4 class="font-bold text-lg mb-1">Monitoring</h4>
+                                 <p class="text-xs text-gray-500">Sentry, Grafana. If a bot fails, we know before you do.</p>
+                             </div>
+                             <div class="border-l-2 border-primary pl-4">
+                                 <h4 class="font-bold text-lg mb-1">Orchestration</h4>
+                                 <p class="text-xs text-gray-500">Airflow, n8n (self-hosted). Reliable task scheduling.</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="w-full md:w-1/2 bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-2xl font-mono text-xs md:text-sm">
+                         <!-- Code Block -->
+                         <div class="flex gap-2 mb-4">
+                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                             <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                         </div>
+                         <div class="text-green-400"># Example: Invoice Processing Logic</div>
+                         <div class="text-blue-300 mt-2">from</div> <div class="text-white inline">divo_core</div> <div class="text-blue-300 inline">import</div> <div class="text-white inline">Agent, ERP</div>
+                         <br><br>
+                         <div class="text-purple-400">async def</div> <div class="text-yellow-300 inline">process_invoice</div><div class="text-white inline">(pdf_file):</div>
+                         <div class="pl-4 text-gray-400"># 1. AI extracts structured data</div>
+                         <div class="pl-4 text-white">data = <span class="text-purple-400">await</span> Agent.extract(pdf_file)</div>
+                         <br>
+                         <div class="pl-4 text-gray-400"># 2. Validate Amount</div>
+                         <div class="pl-4 text-purple-400">if</div> <div class="text-white inline">data.total > <span class="text-orange-400">50000</span>:</div>
+                         <div class="pl-8 text-white">Slack.alert_cfo(data)</div>
+                         <div class="pl-8 text-purple-400">return</div> <div class="text-green-300">"Pending Approval"</div>
+                         <br>
+                         <div class="pl-4 text-gray-400"># 3. Create Record in SAP</div>
+                         <div class="pl-4 text-purple-400">return</div> <div class="text-white inline">ERP.create_record(data)</div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <!-- ROI CALCULATOR -->
+        <section id="calculator" class="py-20 bg-white">
+            <div class="container max-w-4xl mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-heading font-bold mb-2" data-lang="calc-h">The Cost of Doing Nothing</h2>
+                    <p class="text-gray-500" data-lang="calc-sub">How much are you spending on manual tasks right now?</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Inputs -->
+                        <div class="space-y-8">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-lang="calc-l1">Employees doing routine tasks</label>
+                                <input type="range" id="slider-emp" min="1" max="50" value="5" step="1" class="mb-2">
+                                <div class="text-2xl font-bold text-primary" id="val-emp">5 <span class="text-sm font-normal text-gray-400">people</span></div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-lang="calc-l2">Hours per week (per person)</label>
+                                <input type="range" id="slider-hours" min="1" max="40" value="10" step="1" class="mb-2">
+                                <div class="text-2xl font-bold text-primary" id="val-hours">10 <span class="text-sm font-normal text-gray-400">hours/week</span></div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-lang="calc-l3">Avg. Hourly Cost ($)</label>
+                                <input type="number" id="input-rate" value="30" class="form-input w-24 font-bold text-lg">
+                            </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div class="flex flex-col justify-center items-center bg-gray-50 rounded-xl p-6 border border-gray-100">
+                            <div class="text-sm text-gray-500 uppercase tracking-widest font-bold mb-2" data-lang="calc-res">Annual Loss</div>
+                            <div class="text-5xl font-heading font-black text-gray-900 mb-2" id="result-total">$78,000</div>
+                            <p class="text-xs text-gray-400 text-center max-w-xs" data-lang="calc-note">
+                                This is money spent on work that a script could do for a fraction of the cost.
+                            </p>
+                            <a href="#contact" class="mt-8 btn btn-primary w-full" data-lang="calc-cta">Automate This</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="lg:hidden flex items-center gap-2">
-                <!-- ИЗМЕНЕНО: data-lang="header-cta-mobile" заменен на data-lang="cta2-cta-mobile" -->
-                <a href="/payments/audit" class="btn btn-primary text-xs px-3 py-2 whitespace-nowrap popup-trigger"
-                   data-popup="consult" data-lang="cta2-cta-mobile">Консультация</a>
-                <div class="lang-switcher-inline">
-                    <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
-                    <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
+        <!-- FAQ SECTION -->
+        <section id="faq" class="py-16 bg-gray-50 border-t border-gray-200">
+            <div class="container max-w-4xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-heading font-bold" data-lang="faq-title">Common Questions</h2>
                 </div>
-                <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false"
-                        aria-controls="mobile-menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden lg:hidden pb-4">
-            <nav class="flex flex-col gap-4">
-                <div>
-                    <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
-                    <div class="pl-4 flex flex-col gap-2">
-                        <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
-                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
-                        <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная
-                            разработка</a>
+                <div class="grid gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-lg mb-2" data-lang="faq-q1">What if an external API (like LinkedIn) changes?</h4>
+                        <p class="text-sm text-gray-600" data-lang="faq-a1">We use monitoring systems. If an API layout changes, our system alerts our engineers instantly, and we update the adapter. Your business logic remains safe.</p>
                     </div>
-                </div>
-                <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
-                <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
-            </nav>
-        </div>
-    </div>
-</header>
-
-<!-- Общий контейнер -->
-<div class="container max-w-6xl mx-auto px-4 pt-12 sm:pt-16">
-
-    <!-- Блок 1: Hero -->
-    <section id="hero" class="text-center pt-12 pb-16 md:pt-16 md:pb-24">
-        <h1 data-lang="hero-h1" class="mb-6">Custom Development of Systems That Work at Scale</h1>
-        <p data-lang="hero-subtitle" class="text-xl max-w-3xl mx-auto text-text-secondary mb-8">We design fault-tolerant
-            architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.</p>
-        <div>
-            <!-- ИЗМЕНЕНО: data-lang="hero-cta" заменен на data-lang="cta2-cta" -->
-            <a href="/payments/audit" class="btn btn-primary btn-lg popup-trigger" data-popup="consult"
-               data-lang="cta2-cta">Get Consultation</a>
-        </div>
-    </section>
-
-    <!-- НОВЫЙ БЛОК: Нам доверяют -->
-    <section id="trusted-by" class="mb-16 md:mb-24">
-        <h3 data-lang="trusted-h3" class="text-center text-2xl font-semibold font-heading text-text-secondary mb-8">
-            Trusted in Enterprise</h3>
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-8">
-            <div>
-                <img src="Logo_Sberbank.png" alt="Sber logo"
-                     class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
-                <p data-lang="logo-sber-description">Russia's largest bank</p>
-            </div>
-            <div>
-                <img src="Avito_logo.svg" alt="Avito logo"
-                     class="h-10 md:h-12 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
-                <p data-lang="logo-avito-description">Russia's largest e-commerce</p>
-            </div>
-            <div>
-                <img src="yandex_logo.png" alt="Yandex logo"
-                     class="h-18 md:h-24 w-auto filter grayscale hover:grayscale-0 transition duration-300 opacity-70 hover:opacity-100">
-                <p data-lang="logo-yandex-description">Russia's search leader</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 2: Наши компетенции (С ИКОНКАМИ) -->
-    <section id="competencies" class="mb-16 md:mb-24">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 data-lang="competencies-h2">What We Build</h2>
-            <p data-lang="competencies-intro" class="text-lg">All our solutions are built on three core competencies
-                that create value for business at different levels.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Карточка 1 -->
-            <div class="card p-6">
-                <div class="icon-wrapper bg-light mb-4">
-                    <!-- Иконка "Мозг" -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                         stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M12 4.5c3.464 0 6.312 2.14 7.29 5.003V10.5h1.71c.418 0 .75.332.75.75v1.5a.75.75 0 0 1-.75.75h-1.71v.003c-.978 2.863-3.826 5.003-7.29 5.003-3.464 0-6.312-2.14-7.29-5.003V13.5H3a.75.75 0 0 1-.75-.75v-1.5c0-.418.332-.75.75-.75h1.71V9.503C5.688 6.64 8.536 4.5 12 4.5ZM12 6c-2.73 0-5.022 1.636-5.836 3.866M12 6v4.5m0 7.5v-4.5m0 0c-2.73 0-5.022-1.636-5.836-3.866m5.836 3.866C13.978 12.364 16.27 10.73 17.836 8.134M12 10.5c2.73 0 5.022 1.636 5.836 3.866m-5.836-3.866C10.022 12.364 7.73 10.73 6.164 8.134"/>
-                    </svg>
-                </div>
-                <h3 data-lang="comp1-title" class="mb-3">Intelligent Systems</h3>
-                <p data-lang="comp1-desc" class="mb-4">We create systems that can understand, analyze, and predict.
-                    These are full-fledged assistants that help make decisions.</p>
-                <h4 data-lang="comp-includes"
-                    class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's
-                    included:</h4>
-                <ul data-lang="comp1-bullets" class="content-list"></ul>
-            </div>
-            <!-- Карточка 2 -->
-            <div class="card p-6">
-                <div class="icon-wrapper bg-light mb-4">
-                    <!-- Иконка "Шестеренки" -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                         stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h3.75"/>
-                    </svg>
-                </div>
-                <h3 data-lang="comp2-title" class="mb-3">Process Automation</h3>
-                <p data-lang="comp2-desc" class="mb-4">We dive into routine processes and rebuild them using AI and RPA,
-                    freeing up employees' time for strategic and creative tasks.</p>
-                <h4 data-lang="comp-includes"
-                    class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's
-                    included:</h4>
-                <ul data-lang="comp2-bullets" class="content-list"></ul>
-            </div>
-            <!-- Карточка 3 -->
-            <div class="card p-6">
-                <div class="icon-wrapper bg-light mb-4">
-                    <!-- Иконка "Щит" -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                         stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M9 12.75 11.25 15 15 9.75M21 12c0 1.242-1.008 2.25-2.25 2.25S16.5 13.242 16.5 12 17.758 9.75 19 9.75c1.036 0 1.903.694 2.166 1.649M15.75 12c0 1.242-1.008 2.25-2.25 2.25S11.25 13.242 11.25 12 12.508 9.75 13.75 9.75c1.036 0 1.903.694 2.166 1.649m-8.25 0c.263-.955 1.13-1.649 2.166-1.649 1.242 0 2.25 1.008 2.25 2.25S8.742 14.25 7.5 14.25C6.464 14.25 5.597 13.655 5.334 12.706M3 12c0 1.242 1.008 2.25 2.25 2.25S7.5 13.242 7.5 12 6.242 9.75 5 9.75C3.964 9.75 3.097 10.345 2.834 11.294"/>
-                    </svg>
-                </div>
-                <h3 data-lang="comp3-title" class="mb-3">Secure Infrastructure</h3>
-                <p data-lang="comp3-desc" class="mb-4">We know how to embed AI into any environment, even the most
-                    complex and regulated. Data security and seamless integration are our key priorities.</p>
-                <h4 data-lang="comp-includes"
-                    class="font-heading font-bold text-base text-text-main uppercase tracking-wide">What's
-                    included:</h4>
-                <ul data-lang="comp3-bullets" class="content-list"></ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- НОВЫЙ БЛОК: Технологический стек -->
-    <section id="tech-stack" class="mb-16 md:mb-24">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 data-lang="tech-stack-h2">Our Tech Stack</h2>
-            <p data-lang="tech-stack-p" class="text-lg">We use a full-stack approach, selecting the right technology for
-                the job, from enterprise Java to high-performance Python.</p>
-        </div>
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Scala</span>
-            <span class="tech-tag">Go</span>
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Terraform</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">ClickHouse</span>
-            <span class="tech-tag">Kafka</span>
-            <span class="tech-tag">SAP</span>
-            <span class="tech-tag">1C</span>
-            <span class="tech-tag">Yandex Cloud</span>
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">LLM / RAG</span>
-        </div>
-    </section>
-
-    <!-- Блок 4: Наш процесс (С ИКОНКАМИ) -->
-    <section id="process" class="mb-16 md:mb-24">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 data-lang="process-h2">How We Work</h2>
-        </div>
-
-        <div class="max-w-3xl mx-auto">
-            <div class="process-line">
-                <!-- Шаг 1 -->
-                <div class="process-step">
-                    <div class="icon-wrapper">
-                        <!-- Иконка "Календарь" -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/>
-                        </svg>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-lg mb-2" data-lang="faq-q2">Is my data safe?</h4>
+                        <p class="text-sm text-gray-600" data-lang="faq-a2">Absolutely. We can deploy automation agents On-Premise (on your servers) or in a private cloud. Data never leaves your perimeter if you require it.</p>
                     </div>
-                    <h3 data-lang="step1-title" class="mb-2">Step 1: Free Consultation (40 minutes)</h3>
-                    <div data-lang="step1-price" class="process-step-price">Free</div>
-                    <p data-lang="step1-desc" class="mt-3">We discuss your challenge and determine where AI will deliver
-                        real impact and where classic automation will suffice. You receive a written technical
-                        assessment with recommendations.</p>
-                </div>
-                <!-- Шаг 2 -->
-                <div class="process-step">
-                    <div class="icon-wrapper">
-                        <!-- Иконка "Лупа" -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.773 4.773ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                        </svg>
-                    </div>
-                    <h3 data-lang="step2-title" class="mb-2">Step 2: Discovery & Technical Audit (2 weeks)</h3>
-                    <div data-lang="step2-price" class="process-step-price">$5,000
-                    </div>
-                    <p data-lang="step2-desc" class="mt-3">Complete analysis of your system, security requirements, and
-                        integration points. We study your infrastructure, identify technical risks, and design optimal
-                        solution architecture. You receive a detailed report with recommendations and ready technical
-                        specifications.</p>
-                </div>
-                <!-- Шаг 3 -->
-                <div class="process-step">
-                    <div class="icon-wrapper">
-                        <!-- Иконка "Код" -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0-3 16.5"/>
-                        </svg>
-                    </div>
-                    <h3 data-lang="step3-title" class="mb-3">Step 3: Development</h3>
-
-                    <div class="card p-6 mb-6">
-                        <h4 data-lang="step3-quick-title" class="mb-2">Quick Build (1-3 months)</h4>
-                        <div data-lang="step3-quick-price" class="process-step-price">$30,000 - $80,000</div>
-                        <p data-lang="step3-quick-desc" class="mt-3">Clear task, standard technology stack, fast
-                            implementation. Examples: basic document automation, API integration, RAG bot for internal
-                            knowledge base.</p>
-                    </div>
-                    <div class="card p-6">
-                        <h4 data-lang="step3-complex-title" class="mb-2">Complex Build (3-12 months)</h4>
-                        <div data-lang="step3-complex-price" class="process-step-price">$100,000 - $400,000+</div>
-                        <p data-lang="step3-complex-desc" class="mt-3">Complex task, legacy system integration (SAP,
-                            1C), high security requirements, on-premise deployment. Examples: AI system for entire
-                            department, enterprise RAG with access control, migration from monolith to
-                            microservices.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-lg mb-2" data-lang="faq-q3">How long does it take to build?</h4>
+                        <p class="text-sm text-gray-600" data-lang="faq-a3">A simple MVP (e.g., an invoice parser) takes 2-4 weeks. Complex enterprise pipelines with ERP integrations take 2-3 months.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Блок 5: ПОРТФОЛИО (Полностью переработан) -->
-    <section id="portfolio" class="mb-16 md:mb-24">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 data-lang="cases-h2">Systems That Work in Production</h2>
-            <p data-lang="cases-subtitle" class="text-lg">Examples of architectural solutions implemented for enterprise
-                clients.</p>
-        </div>
-
-        <div class="space-y-12">
-            <!-- Кейс 1: Авито -->
-            <div class="card p-6 md:p-8">
-                <div class="client-logo-wrapper mb-3">
-                    <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                        <rect width="130" height="40" rx="8" fill="#00AAFF"/>
-                        <text x="65" y="27" font-size="24" fill="white" font-family="sans-serif" font-weight="bold"
-                              text-anchor="middle">avito
-                        </text>
-                    </svg>
-                </div>
-                <h3 data-lang="case1-title" class="mt-1 mb-4">AI Art Director's Assistant</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 data-lang="case-task-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Challenge</h5>
-                        <p data-lang="case1-task">Art directors spent 60-80% of their time on routine layout checks for
-                            design system compliance. This slowed down the approval cycle.</p>
-                    </div>
-                    <div>
-                        <h5 data-lang="case-results-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Results</h5>
-                        <ul data-lang="case1-results" class="content-list"></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Кейс 2: Сбер -->
-            <div class="card p-6 md:p-8">
-                <div class="client-logo-wrapper mb-3">
-                    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                        <rect width="120" height="40" rx="8" fill="#1E9F44"/>
-                        <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
-                              text-anchor="middle">СБЕР
-                        </text>
-                    </svg>
-                </div>
-                <h3 data-lang="case2-title" class="mt-1 mb-4">Data Pipeline for Enterprise Analytics</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 data-lang="case-task-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Challenge</h5>
-                        <p data-lang="case2-task">Dozens of internal systems needed data from the core business
-                            platform. Direct integrations were unstable and created risks for critical services.</p>
+        <!-- CTA SECTION -->
+        <section id="contact" class="py-20 bg-white border-t border-gray-200">
+            <div class="container max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6" data-lang="cta-h">Ready to scale without hiring?</h2>
+                <p class="text-xl text-gray-600 mb-10" data-lang="cta-sub">
+                    Book a free 30-minute technical audit. We'll identify which of your processes can be automated for the highest ROI.
+                </p>
+                <form class="bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-lg text-left space-y-4" name="client-data">
+                    <input type="hidden" name="type" value="custom">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="lbl-name">Name</label>
+                            <input type="text" class="form-input" placeholder="Name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="lbl-contact">Email / Telegram</label>
+                            <input type="text" class="form-input" placeholder="@username or email">
+                        </div>
                     </div>
                     <div>
-                        <h5 data-lang="case-results-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Results</h5>
-                        <ul data-lang="case2-results" class="content-list"></ul>
+                        <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="lbl-desc">What do you want to automate?</label>
+                        <textarea class="form-textarea" rows="3" placeholder="e.g. Sales outreach, Reporting, Invoice processing..."></textarea>
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-primary w-full py-4 text-lg font-bold" data-lang="btn-send">Request Free Audit</button>
+                </form>
             </div>
+        </section>
+    </main>
 
-            <!-- Кейс 3: Сбер -->
-            <div class="card p-6 md:p-8">
-                <div class="client-logo-wrapper mb-3">
-                    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                        <rect width="120" height="40" rx="8" fill="#1E9F44"/>
-                        <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
-                              text-anchor="middle">СБЕР
-                        </text>
-                    </svg>
-                </div>
-                <h3 data-lang="case3-title" class="mt-1 mb-4">Flexible Data Validation</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 data-lang="case-task-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Challenge</h5>
-                        <p data-lang="case3-task">Users spent a lot of time finding and fixing errors when filling out
-                            complex forms. Errors reached the backend and disrupted business processes.</p>
-                    </div>
-                    <div>
-                        <h5 data-lang="case-results-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Results</h5>
-                        <ul data-lang="case3-results" class="content-list"></ul>
-                    </div>
-                </div>
+    <!-- FOOTER -->
+    <footer class="dark-bg-custom text-gray-400 py-12 border-t border-gray-800">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div><a href="main.html" class="header-logo text-white mb-4 block">DIVO</a><p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator.</p></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col1">Products</h4><ul class="space-y-2 text-sm"><li><a href="copilot.html" class="footer-link">Design Copilot</a></li><li><a href="#" class="footer-link">Intelligent Systems</a></li><li><a href="#" class="footer-link">Automation</a></li><li><a href="#" class="footer-link">Secure Infrastructure</a></li></ul></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col2">Company</h4><ul class="space-y-2 text-sm"><li><a href="portfolio.html" class="footer-link" data-lang="footer-portfolio">Portfolio</a></li><li><a href="#" class="footer-link" data-lang="footer-team">Team</a></li><li><a href="#" class="footer-link" data-lang="footer-privacy">Privacy Policy</a></li></ul></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col3">Contact</h4><ul class="space-y-2 text-sm"><li>info@divo.solutions</li><li><a href="https://t.me/darikamouse" class="footer-link">Telegram</a></li><li><a href="https://wa.me/+79035176391" class="footer-link">WhatsApp</a></li><li><a href="https://www.linkedin.com/company/divo-solutions" class="footer-link">LinkedIn</a></li></ul></div>
             </div>
-
-            <!-- Кейс 4: Сбер -->
-            <div class="card p-6 md:p-8">
-                <div class="client-logo-wrapper mb-3">
-                    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                        <rect width="120" height="40" rx="8" fill="#1E9F44"/>
-                        <text x="60" y="25" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
-                              text-anchor="middle">СБЕР
-                        </text>
-                    </svg>
-                </div>
-                <h3 data-lang="case4-title" class="mt-1 mb-4">Letter of Credit Automation</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 data-lang="case-task-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Challenge</h5>
-                        <p data-lang="case4-task">Processes for changing letter of credit terms were complex, required
-                            manual agreement, and led to errors and delays.</p>
-                    </div>
-                    <div>
-                        <h5 data-lang="case-results-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Results</h5>
-                        <ul data-lang="case4-results" class="content-list"></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Кейс 5: Авито -->
-            <div class="card p-6 md:p-8">
-                <div class="client-logo-wrapper mb-3">
-                    <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                        <rect width="130" height="40" rx="8" fill="#00AAFF"/>
-                        <text x="65" y="27" font-size="24" fill="white" font-family="sans-serif" font-weight="bold"
-                              text-anchor="middle">avito
-                        </text>
-                    </svg>
-                </div>
-                <h3 data-lang="case5-title" class="mt-1 mb-4">AI-Powered Redesign Research</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 data-lang="case-task-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Challenge</h5>
-                        <p data-lang="case5-task">The team planned a redesign of the car product card. Classic UX
-                            research would take 3 months, but deep insights were needed quickly.</p>
-                    </div>
-                    <div>
-                        <h5 data-lang="case-results-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Results</h5>
-                        <ul data-lang="case5-results" class="content-list"></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Кейс 6: Яндекс Браузер -->
-            <div class="card p-6 md:p-8">
-                <div class="client-logo-wrapper mb-3">
-                    <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg" height="32">
-                        <rect width="150" height="40" rx="8" fill="#FF0000"/>
-                        <text x="75" y="28" font-size="20" fill="white" font-family="sans-serif" font-weight="bold"
-                              text-anchor="middle">Yandex
-                        </text>
-                    </svg>
-                </div>
-                <h3 data-lang="case6-title" class="mt-1 mb-4">AI Content Generation Training</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 data-lang="case-task-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Challenge</h5>
-                        <p data-lang="case6-task">Yandex Browser's marketing and design teams wanted to accelerate the
-                            production of creatives (banners, videos, landing pages) without long iterations.</p>
-                    </div>
-                    <div>
-                        <h5 data-lang="case-results-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Results</h5>
-                        <ul data-lang="case6-results" class="content-list"></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Кейс 7: B2B Sales -->
-            <div class="card p-6 md:p-8">
-                <h4 data-lang="case7-client" class="text-base text-text-secondary uppercase font-bold tracking-wider">
-                    B2B Sales Tech</h4>
-                <h3 data-lang="case7-title" class="mt-1 mb-4">Lead Generation Agent (LinkedIn & Telegram)</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h5 data-lang="case-task-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Challenge</h5>
-                        <p data-lang="case7-task">A need to scale outreach communications without losing contact quality
-                            or getting blocked by platforms.</p>
-                    </div>
-                    <div>
-                        <h5 data-lang="case-results-label"
-                            class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">The
-                            Results</h5>
-                        <ul data-lang="case7-results" class="content-list"></ul>
-                    </div>
-                </div>
-            </div>
+            <div class="border-t border-gray-800 mt-10 pt-8 text-center text-xs"><p>&copy; 2025 DIVO. All rights reserved.</p></div>
         </div>
+    </footer>
 
-        <!-- Подзаголовок для PoC -->
-        <div class="text-center max-w-3xl mx-auto my-16">
-            <h3 data-lang="poc-h3" class="text-2xl">Proof-of-Concept & MVP Solutions</h3>
-            <p data-lang="poc-subtitle" class="text-lg">Examples of rapid-development solutions and MVPs that test
-                hypotheses and pave the way for full-scale systems.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- PoC 1: Документооборот -->
-            <div class="card p-6">
-                <h4 data-lang="poc1-title" class="mb-2">Document Automation (Construction)</h4>
-                <p data-lang="poc1-desc" class="text-base">A Python/Node.js pipeline that automatically generates
-                    reports from YouGile and CAD systems, saving dozens of man-hours per project.</p>
-            </div>
-            <!-- PoC 2: Освещение -->
-            <div class="card p-6">
-                <h4 data-lang="poc2-title" class="mb-2">Automated Lighting Design</h4>
-                <p data-lang="poc2-desc" class="text-base">An AI algorithm architecture (Python) that connects Relux and
-                    AutoCAD/ArchiCAD for automated lighting calculations and fixture placement.</p>
-            </div>
-            <!-- PoC 3: Генерация изображений -->
-            <div class="card p-6">
-                <h4 data-lang="poc3-title" class="mb-2">AI Image Generation Platform</h4>
-                <p data-lang="poc3-desc" class="text-base">A multi-modal platform (Firefly, Recraft, GPT-Image)
-                    supporting text-to-image, image-to-image, and text-to-vector for marketing content automation.</p>
-            </div>
-            <!-- PoC 4: EdTech -->
-            <div class="card p-6">
-                <h4 data-lang="poc4-title" class="mb-2">EdTech CRM Automation</h4>
-                <p data-lang="poc4-desc" class="text-base">A CRM ecosystem (AmoCRM, WhatsApp API, RPA) for a corporate
-                    training school, reducing manager routine by up to 80%.</p>
-            </div>
-            <!-- PoC 5: RAG Бот -->
-            <div class="card p-6">
-                <h4 data-lang="poc5-title" class="mb-2">On-Premise RAG Telegram Bot</h4>
-                <p data-lang="poc5-desc" class="text-base">An MVP Telegram bot (Python, LLM, Qdrant) for internal
-                    knowledge bases. Securely processes PDF, DOCX, XLSX and provides cited answers.</p>
-            </div>
-            <!-- PoC 6: On-prem ASR -->
-            <div class="card p-6">
-                <h4 data-lang="poc8-title" class="mb-2">On-Premise Voice Analytics (ASR)</h4>
-                <p data-lang="poc8-desc" class="text-base">A speech recognition stack (Whisper Large V3 + NVIDIA Triton)
-                    deployed on client servers. Achieves 95-97% accuracy without data leaving the company.</p>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Блок 7: CTA Консультация/Аудит (ИЗМЕНЕН) -->
-    <section id="cta-options" class="mb-16 md:mb-24">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 data-lang="cta-h2">Let's Start With Your Challenge</h2>
-        </div>
-
-        <!-- ИЗМЕНЕНО: Удалена Опция 1, сетка изменена на 1 колонку и отцентрована -->
-        <!-- ИЗМЕНЕНО: Ширина увеличена с max-w-2xl до max-w-4xl -->
-        <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 items-stretch max-w-4xl mx-auto w-full">
-
-            <!-- Опция 1: Консультация (УДАЛЕНА) -->
-
-            <!-- Опция 2: Аудит (ОСТАВЛЕНА) -->
-            <div class="card p-8 flex flex-col border-2 border-primary shadow-xl">
-                <!-- ИЗМЕНЕНО: Убран заголовок h3 -->
-                <p data-lang="cta2-desc" class="mb-4">Order a 2-week Technical Audit at the special price of $1,999
-                    (instead of $5,000). Get a detailed report with recommendations and priority project start.</p>
-                <div class="flex-grow">
-                    <h5 data-lang="cta-get-label"
-                        class="font-heading font-bold text-sm text-text-main uppercase tracking-wide">What you get:</h5>
-                    <ul data-lang="cta2-bullets" class="content-list"></ul>
-                </div>
-                <div class="mt-6">
-                    <a href="/payments/audit" class="btn btn-primary w-full text-center" data-lang="cta2-cta">Order
-                        Technical Audit</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- НОВЫЙ БЛОК: Остались вопросы? -->
-    <section id="still-have-questions" class="mb-16 md:mb-24 -mt-8 md:-mt-12">
-        <!-- ИЗМЕНЕНО: верстка в одну строку, убрана подложка (bg-white shadow-md) -->
-        <div class="w-full p-6 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-lg text-text-secondary m-0 text-center md:text-left" data-lang="questions-text">Остались
-                вопросы?</p>
-            <a hrefhref="/payments/audit" class="btn btn-secondary popup-trigger flex-shrink-0" data-popup="consult"
-               data-lang="cta1-cta">Записаться на консультацию</a>
-        </div>
-    </section>
-
-    <!-- Блок 8: УДАЛЕН -->
-
-</div> <!-- Конец .container -->
-
-
-<!-- Подвал (Footer) -->
-<footer class="footer pt-16 pb-8 md:pb-12">
-    <div class="container max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
-
-            <div>
-                <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
-                <p class="text-sm mb-2" data-lang="footer-mission"></p>
-            </div>
-
-            <div>
-                <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
-                <ul class="space-y-2">
-                    <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
-                    <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
-                    <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная
-                        разработка</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
-                <ul class="space-y-2">
-                    <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
-                    <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и
-                        Кейсы</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
-                <ul class="space-y-2">
-                    <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
-                    <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517
-                        6391</a></li>
-                    <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram:
-                        @darikamouse</a></li>
-                </ul>
-                <div class="mt-3">
-                    <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
-                    <ul class="space-y-2">
-                        <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика
-                            конфиденциальности</a></li>
-                        <li><a href="/user-agreement" class="footer-link text-sm" data-lang="footer-user-agreement">Пользовательское соглашение</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
-            <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-<!-- ОБНОВЛЕННЫЙ translations -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuToggle && mobileMenu) {
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const isExpanded = !mobileMenu.classList.contains('hidden');
-                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-            });
-        }
-
+    <script>
         const translations = {
-            'ru': {
-                // Мета
-                'meta-title': 'Кастомная разработка AI-систем | Enterprise-решения DIVO',
-                'meta-description': 'Проектируем отказоустойчивые AI-системы для enterprise. Опыт работы с банками, e-commerce, tech-корпорациями. От $30k до $400k+.',
-
-                // Шапка (общие)
-                'logo': 'DIVO',
-                'nav-sales': 'Для Продаж',
-                'nav-design': 'Для Дизайна',
-                'nav-about': 'О нас',
-                // 'header-cta': 'Получить консультацию', // Ключ больше не используется
-                // 'header-cta-mobile': 'Консультация', // Ключ больше не используется
-                'nav-solutions': 'Решения',
-                'nav-custom-dev': 'Кастомная разработка',
-                'nav-portfolio': 'Портфолио',
-
-                // Блок 1: Hero
-                'hero-h1': 'Кастомная разработка систем, которые работают в масштабе',
-                'hero-subtitle': 'Мы проектируем отказоустойчивые архитектуры, которые безопасно интегрируются в вашу (даже legacy) инфраструктуру и приносят измеримый ROI.',
-                // 'hero-cta': 'Получить консультацию', // Ключ больше не используется
-
-                // Блок 'Trusted By'
-                'trusted-h3': 'Нам доверяют в Enterprise',
-                'logo-sber-description': 'Крупнейший банк России',
-                'logo-avito-description': 'Крупнейший e-ком России',
-                'logo-yandex-description': 'Лидер поиска в Росиии',
-
-                // Блок 2: Компетенции
-                'competencies-h2': 'Что мы строим',
-                'competencies-intro': 'В основе всех наших решений лежат три ключевые компетенции, которые позволяют создавать ценность для бизнеса на разных уровнях.',
-                'comp-includes': 'Что входит:',
-                'comp1-title': 'Интеллектуальные системы',
-                'comp1-desc': 'Мы создаём системы, способные понимать, анализировать и прогнозировать. Это полноценные ассистенты, которые помогают принимать решения.',
-                'comp1-bullets': '<li>Глубинные исследования с AI: поиск неочевидных инсайтов о пользователях и рынке</li><li>Прогнозная аналитика и риск-анализ: помощь в принятии стратегических решений на основе данных</li><li>Умный поиск по базам знаний (RAG): корпоративные поисковые системы, которые дают точные ответы с учётом прав доступа</li>',
-                'comp2-title': 'Автоматизация процессов',
-                'comp2-desc': 'Мы погружаемся в рутинные процессы и пересобираем их с помощью AI и RPA, высвобождая время сотрудников для стратегических и креативных задач.',
-                'comp2-bullets': '<li>Автоматизация документооборота: генерация договоров, счетов и коммерческих предложений по данным из CRM или таск-трекеров</li><li>Автоматизация коммуникаций: создание умных голосовых и текстовых ассистентов для поддержки клиентов и внутренних процессов</li><li>Автоматизация контроля качества: системы проверки соблюдения стандартов в дизайне, тексте, коде</li>',
-                'comp3-title': 'Безопасная инфраструктура',
-                'comp3-desc': 'Мы умеем встраивать AI в любую, даже самую сложную и зарегулированную среду. Безопасность данных и бесшовная интеграция — наши ключевые приоритеты.',
-                'comp3-bullets': '<li>On-premise развёртывание: данные никогда не покидают контур компании, полный контроль над инфраструктурой</li><li>Гибкие интеграции: бесшовное подключение к CRM, ERP-системам (SAP, 1C), внутренним базам данных и API</li><li>Безопасный доступ к внешним моделям: через шлюзы с деперсонализацией данных и контролем запросов</li>',
-
-                // Блок 'Tech Stack'
-                'tech-stack-h2': 'Наш технологический стек',
-                'tech-stack-p': 'Мы используем full-stack подход, выбирая правильную технологию для задачи — от enterprise Java до высокопроизводительного Python.',
-
-                // Блок 4: Процесс
-                'process-h2': 'Как мы работаем',
-                'step1-title': 'Шаг 1: Бесплатная консультация (40 минут)',
-                'step1-desc': 'Обсуждаем вашу задачу и определяем, где AI даст реальный эффект, а где хватит классической автоматизации. Вы получаете письменное техническое заключение с рекомендациями.',
-                'step1-price': 'Бесплатно',
-                'step2-title': 'Шаг 2: Discovery & Technical Audit (2 недели)',
-                'step2-desc': 'Полный анализ вашей системы, требований безопасности и интеграционных точек. Мы изучаем вашу инфраструктуру, выявляем технические риски и проектируем оптимальную архитектуру решения. Вы получаете детальный отчёт с рекомендациями и готовое техническое задание.',
-                'step2-price': '$5,000 (обычная цена)',
-                'step3-title': 'Шаг 3: Разработка',
-                'step3-quick-title': 'Quick Build (1-3 месяца)',
-                'step3-quick-desc': 'Чёткая задача, стандартный технологический стек, быстрая реализация. Примеры: базовая автоматизация документооборота, интеграция с API, RAG-бот для внутренней базы знаний.',
-                'step3-quick-price': '$30,000 - $80,000',
-                'step3-complex-title': 'Complex Build (3-12 месяцев)',
-                'step3-complex-desc': 'Сложная задача, интеграция с legacy-системами (SAP, 1C), высокие требования к безопасности, on-premise развёртывание. Примеры: AI-система для целого департамента, enterprise RAG с доступами, миграция с монолита на микросервисы.',
-                'step3-complex-price': '$100,000 - $400,000+',
-
-                // Блок 5: Кейсы
-                'cases-h2': 'Системы, которые работают в production',
-                'cases-subtitle': 'Примеры архитектурных решений, реализованных для enterprise-клиентов.',
-                'case-task-label': 'Задача',
-                'case-solution-label': 'Решение',
-                'case-results-label': 'Результаты',
-
-                'case1-title': 'AI-ассистент арт-директора',
-                'case1-task': 'Арт-директора тратили 60-80% времени на рутинную проверку макетов на соответствие дизайн-системе. Это замедляло цикл утверждения.',
-                'case1-results': '<li>Освобождение арт-директоров от рутинных проверок</li><li>Ускорение цикла дизайна — нет ожидания ручного ревью</li><li>Единые стандарты качества для всех участников</li><li>Проверка доступна 24/7 без нагрузки на команду</li><li>До 80% сокращение рутины</li>',
-
-                'case2-title': 'Конвейер данных для enterprise-аналитики',
-                'case2-task': 'Десятки внутренних систем нуждались в данных из ядра бизнеса. Прямые интеграции были нестабильны и создавали риски для критичных сервисов.',
-                'case2-results': '<li>Быстрое и безопасное подключение новых аналитических систем</li><li>Стрессоустойчивая архитектура без рисков перегрузок ядра</li><li>Сокращение времени вывода новых продуктов на рынок</li>',
-
-                'case3-title': 'Гибкая валидация данных',
-                'case3-task': 'Пользователи тратили много времени на поиск и исправление ошибок при заполнении сложных форм. Ошибки доходили до бэкенда и нарушали процессы.',
-                'case3-results': '<li>Ошибки выявляются на уровне ввода, до загрузки в систему</li><li>Время исправления ошибок сокращено</li><li>Пользовательские сценарии стали предсказуемыми и быстрыми</li>',
-
-                'case4-title': 'Автоматизация изменений аккредитива',
-                'case4-task': 'Процессы изменения условий аккредитива были сложными, требовали ручного согласования и приводили к ошибкам и задержкам.',
-                'case4-results': '<li>Стабильная система, покрывающая 99% сценариев</li><li>Существенное ускорение работы по изменению условий сделок</li><li>Полная прозрачность и контроль для участников</li>',
-
-                'case5-title': 'AI-исследование для редизайна',
-                'case5-task': 'Команда планировала редизайн карточки продукта. Классическое UX-исследование заняло бы 3 месяца, а инсайты нужны были быстро.',
-                'case5-results': '<li>Редизайн выполнен за 1 месяц вместо 3</li><li>Получены глубинные инсайты с помощью синтетических персон</li><li>Сокращение затрат на традиционные UX-исследования</li>',
-
-                'case6-title': 'Обучение команд AI-генерации контента',
-                'case6-task': 'Команды маркетинга и дизайна Яндекс.Браузера хотели ускорить производство креативов (баннеры, видео, лендинги) без долгих итераций.',
-                'case6-results': '<li>Команды самостоятельно создают контент под разные рынки</li><li>Ускорен цикл обновления рекламных креативов</li><li>Снижен порог входа в работу с AI-генерацией</li>',
-
-                'case7-client': 'B2B Sales Tech',
-                'case7-title': 'Агент лидогенерации (LinkedIn & Telegram)',
-                'case7-task': 'Потребность в масштабировании outreach-коммуникаций без потери качества контакта и без блокировок со стороны платформ.',
-                'case7-results': '<li>Увеличен объём исходящих контактов при сохранении CTR и CR</li><li>AI-агент адаптируется под изменения алгоритмов платформ</li><li>Масштабирование В2В-продаж без расширения команды</li>',
-
-                // PoC-кейсы
-                'poc-h3': 'Решения Proof-of-Concept и MVP',
-                'poc-subtitle': 'Примеры решений быстрой разработки и MVP, которые проверяют гипотезы и открывают путь к полномасштабным системам.',
-                'poc1-title': 'Автоматизация документооборота (Строительство)',
-                'poc1-desc': 'Пайплайн на Python/Node.js, который автоматически формирует отчёты из YouGile и CAD-систем, экономя десятки человеко-часов на проекте.',
-                'poc2-title': 'Автоматизация расстановки освещения',
-                'poc2-desc': 'Архитектура алгоритма на Python, объединяющая Relux и AutoCAD/ArchiCAD для автоматического расчёта освещённости и расстановки приборов.',
-                'poc3-title': 'AI-платформа генерации изображений',
-                'poc3-desc': 'Мультимодальная платформа (Firefly, Recraft, GPT-Image) с поддержкой text-to-image, image-to-image и text-to-vector для автоматизации маркетинга.',
-                'poc4-title': 'EdTech CRM-автоматизация',
-                'poc4-desc': 'CRM-экосистема (AmoCRM, WhatsApp API, RPA) для школы корпоративного обучения. Сокращение рутины менеджеров — до 80%.',
-                'poc5-title': 'On-premise RAG Telegram-бот',
-                'poc5-desc': 'MVP Telegram-бота (Python, LLM, Qdrant) для внутренней базы знаний. Безопасно обрабатывает PDF, DOCX, XLSX и даёт ответы с цитатами.',
-                'poc8-title': 'On-premise голосовая аналитика (ASR)',
-                'poc8-desc': 'Стек для распознавания речи (Whisper Large V3 + NVIDIA Triton) на серверах клиента. Точность 95-97% без выноса данных в облако.',
-
-
-                // Блок 7: CTA (ИЗМЕНЕН)
-                'cta-h2': 'Начнём с вашей задачи',
-                'cta-get-label': 'Что получите:',
-
-                // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
-                'cta1-title': 'ОПЦИЯ 1: Бесплатная консультация (для тех, кто хочет разобраться)',
-                'cta1-desc': 'Запишитесь на бесплатную 40-минутную консультацию. Обсудим вашу архитектуру и определим, где технологии дадут максимальный эффект.',
-                'cta1-bullets': '<li>Письменное техническое заключение по вашей задаче</li><li>Бонус: Скидка 60% на Technical Audit ($1,999 вместо $5,000)</li><li>Скидка действует 30 дней после консультации</li>',
-                'cta1-cta': 'Записаться на консультацию',
-
-                // Опция 2 (Аудит)
-                // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
-                'cta2-title': '',
-                'cta2-desc': 'Закажите 2-недельный Technical Audit по специальной цене $1,999 (вместо $5,000). Получите детальный отчёт с рекомендациями и приоритетный старт проекта.',
-                'cta2-bullets': '<li>Полный 2-недельный аудит вашей системы/задачи</li><li>Детальный отчёт с рекомендациями и техническим заданием</li><li>Бонус 1: Приоритетный старт проекта в декабре 2025</li><li>Бонус 2: Скидка 15% на реализацию проекта (до $15,000 экономии)</li>',
-
-                // ИЗМЕНЕННЫЙ КЛЮЧ
-                'cta2-cta': 'Заказать технический аудит',
-                // НОВЫЙ КЛЮЧ для мобильной кнопки
-                'cta2-cta-mobile': 'Заказать аудит',
-
-                // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
-                // ИЗМЕНЕНО: Текст упрощен
-                'questions-text': 'Остались вопросы?',
-
-                // Футер (общие)
-                'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
-                'footer-solutions-title': 'Решения',
-                'footer-company-title': 'Компания',
-                'footer-portfolio': 'Портфолио и Кейсы',
-                'footer-contact-title': 'Контакты',
-                'footer-legal-title': 'Документы',
-                'footer-privacy': 'Политика конфиденциальности',
-                'footer-user-agreement': 'Пользовательское соглашение'
-            },
-
             'en': {
-                // Мета
-                'meta-title': 'Custom AI Development | Enterprise Solutions by DIVO',
-                'meta-description': 'We design fault-tolerant AI systems for enterprise. Experience with banking, e-commerce, tech corporations. From $30k to $400k+.',
+                'meta-title': 'Intelligent Automation | DIVO',
+                'nav-design': 'Design Copilot', 'nav-intelligent': 'Intelligent Systems', 'nav-automation': 'Automation', 'nav-secure': 'Secure Infrastructure',
+                'hero-tag': 'Intelligent Automation',
+                'hero-h1': 'Turn Operational Chaos into <span class="text-primary">Reliable Code</span>.',
+                'hero-sub': 'Your best employees shouldn\'t be copy-pasting data. We build custom "digital workers" that handle routine tasks 24/7 without errors, complaints, or vacations.',
+                'hero-cta': 'Calculate Savings', 'hero-secondary': 'See Examples',
+                
+                'case-title': 'Real-World Use Cases', 'case-sub': 'See how we replace "Busy Work" with intelligent pipelines.',
+                
+                'c1-title': 'Lead Gen Agent', 'c1-desc': 'Managers hate cold outreach. We automate prospecting on LinkedIn/Email to deliver hot leads.',
+                'c1-s1': 'Finds leads (Apollo/LinkedIn)', 'c1-s2': 'AI Personalizes Email', 'c1-s3': 'Syncs "Interested" to CRM', 'c1-res': '+20h/week Saved',
+                
+                'c2-title': 'Invoice Parsing', 'c2-desc': 'Stop manual data entry errors. Extract data from PDFs and push it directly into 1C/SAP.',
+                'c2-s1': 'Monitors Email for PDF', 'c2-s2': 'OCR + AI Extraction', 'c2-s3': 'Create Bill in ERP', 'c2-res': '0% Data Errors',
+                
+                'c3-title': 'Onboarding Bot', 'c3-desc': 'HR answers the same questions 100 times. We build a bot trained on your Notion/Wiki.',
+                'c3-s1': 'Employee Asks in Slack', 'c3-s2': 'AI Search (RAG)', 'c3-s3': 'Instant Answer', 'c3-res': '-40h/mo HR Time',
 
-                // Шапка (общие)
-                'logo': 'DIVO',
-                'nav-sales': 'For Sales',
-                'nav-design': 'For Design',
-                'nav-about': 'About Us',
-                // 'header-cta': 'Get a Consultation', // Ключ больше не используется
-                // 'header-cta-mobile': 'Consultation', // Ключ больше не используется
-                'nav-solutions': 'Solutions',
-                'nav-custom-dev': 'Custom Development',
-                'nav-portfolio': 'Portfolio',
+                'c4-title': 'Order Updates', 'c4-desc': 'Clients call "Where is my cargo?". We automate status checks across 5 different carrier portals.',
+                'c4-s1': 'Check Carrier Sites', 'c4-s2': 'Normalize Statuses', 'c4-s3': 'Update Client Dashboard', 'c4-res': 'Real-time Visibility',
+                
+                'btn-more-cases': 'View All Cases',
 
-                // Блок 1: Hero
-                'hero-h1': 'Custom Development of Systems That Work at Scale',
-                'hero-subtitle': 'We design fault-tolerant architectures that securely integrate with your (even legacy) infrastructure and deliver measurable ROI.',
-                // 'hero-cta': 'Get Consultation', // Ключ больше не используется
+                'tech-title': 'Engineering, Not Just "Glue".',
+                'tech-desc': 'No-code tools (Zapier/Make) are great for prototypes, but they break at scale. We build robust, monitored pipelines using enterprise-grade code.',
+                
+                'calc-h': 'The Cost of Doing Nothing', 'calc-sub': 'How much are you spending on manual tasks right now?',
+                'calc-l1': 'Employees doing routine tasks', 'calc-l2': 'Hours per week (per person)', 'calc-l3': 'Avg. Hourly Cost ($)',
+                'calc-res': 'Annual Loss', 'calc-note': 'This is money spent on work that a script could do for a fraction of the cost.', 'calc-cta': 'Automate This',
+                
+                'faq-title': 'Common Questions',
+                'faq-q1': 'What if an external API (like LinkedIn) changes?', 'faq-a1': 'We use monitoring systems. If an API layout changes, our system alerts our engineers instantly, and we update the adapter. Your business logic remains safe.',
+                'faq-q2': 'Is my data safe?', 'faq-a2': 'Absolutely. We can deploy automation agents On-Premise (on your servers) or in a private cloud. Data never leaves your perimeter if you require it.',
+                'faq-q3': 'How long does it take to build?', 'faq-a3': 'A simple MVP (e.g., an invoice parser) takes 2-4 weeks. Complex enterprise pipelines with ERP integrations take 2-3 months.',
 
-                // Блок 'Trusted By'
-                'trusted-h3': 'Trusted in Enterprise',
-                'logo-sber-description': 'Russia\'s largest bank',
-                'logo-avito-description': 'Russia\'s largest e-commerce',
-                'logo-yandex-description': 'Russia\'s search leader',
+                'cta-h': 'Ready to scale without hiring?', 'cta-sub': 'Book a free 30-minute technical audit. We\'ll identify which of your processes can be automated for the highest ROI.',
+                'lbl-name': 'Name', 'lbl-contact': 'Email / Telegram', 'lbl-desc': 'What do you want to automate?', 'btn-send': 'Request Free Audit',
 
-                // Блок 2: Компетенции
-                'competencies-h2': 'What We Build',
-                'competencies-intro': 'All our solutions are built on three core competencies that create value for business at different levels.',
-                'comp-includes': "What's included:",
-                'comp1-title': 'Intelligent Systems',
-                'comp1-desc': 'We create systems that can understand, analyze, and predict. These are full-fledged assistants that help make decisions.',
-                'comp1-bullets': '<li>AI-powered deep research: finding non-obvious insights about users and markets</li><li>Predictive analytics and risk analysis: helping make strategic data-driven decisions</li><li>Smart knowledge base search (RAG): corporate search systems that provide accurate answers with access control</li>',
-                'comp2-title': 'Process Automation',
-                'comp2-desc': 'We dive into routine processes and rebuild them using AI and RPA, freeing up employees\' time for strategic and creative tasks.',
-                'comp2-bullets': '<li>Document workflow automation: generating contracts, invoices, and proposals from CRM or task tracker data</li><li>Communication automation: creating smart voice and text assistants for customer support and internal processes</li><li>Quality control automation: systems for checking compliance with standards in design, text, and code</li>',
-                'comp3-title': 'Secure Infrastructure',
-                'comp3-desc': 'We know how to embed AI into any environment, even the most complex and regulated. Data security and seamless integration are our key priorities.',
-                'comp3-bullets': '<li>On-premise deployment: data never leaves the company perimeter, full infrastructure control</li><li>Flexible integrations: seamless connection to CRM, ERP systems (SAP, 1C), internal databases, and APIs</li><li>Secure access to external models: through gateways with data depersonalization and request control</li>',
+                'footer-desc': 'Enterprise AI Integrator.', 'footer-col1': 'Products', 'footer-col2': 'Company', 'footer-col3': 'Contact', 'footer-portfolio': 'Portfolio', 'footer-team': 'Team', 'footer-privacy': 'Privacy Policy'
+            },
+            'ru': {
+                'meta-title': 'Интеллектуальная Автоматизация | DIVO',
+                'nav-design': 'Design Copilot', 'nav-intelligent': 'Интеллектуальные системы', 'nav-automation': 'Автоматизация', 'nav-secure': 'Безопасная инфраструктура',
+                'hero-tag': 'Интеллектуальная Автоматизация',
+                'hero-h1': 'Превращаем операционный хаос в <span class="text-primary">Надежный Код</span>.',
+                'hero-sub': 'Ваши лучшие сотрудники не должны заниматься "копипастом". Мы создаем "цифровых сотрудников", которые выполняют рутину 24/7 без ошибок, жалоб и больничных.',
+                'hero-cta': 'Рассчитать выгоду', 'hero-secondary': 'Примеры',
+                
+                'case-title': 'Живые кейсы', 'case-sub': 'Посмотрите, как мы заменяем ручной труд на интеллектуальные пайплайны.',
+                
+                'c1-title': 'Агент Лидогенерации', 'c1-desc': 'Менеджеры ненавидят холодные звонки. Мы автоматизируем поиск в LinkedIn/Email, отдавая в отдел продаж только "горячих" лидов.',
+                'c1-s1': 'Поиск контактов (Apollo)', 'c1-s2': 'AI пишет персон. письмо', 'c1-s3': 'Синхронизация с CRM', 'c1-res': '+20ч/нед экономии',
+                
+                'c2-title': 'Парсинг Инвойсов', 'c2-desc': 'Исключите ошибки ручного ввода. Извлекаем данные из PDF-счетов и заносим их напрямую в 1С/SAP.',
+                'c2-s1': 'Мониторинг почты', 'c2-s2': 'OCR + AI Извлечение', 'c2-s3': 'Создание счета в ERP', 'c2-res': '0% Ошибок ввода',
+                
+                'c3-title': 'Onboarding Бот', 'c3-desc': 'HR отвечает на одни и те же вопросы 100 раз. Мы создаем бота, обученного на вашей Базе Знаний.',
+                'c3-s1': 'Вопрос сотрудника в Slack', 'c3-s2': 'AI Поиск (RAG)', 'c3-s3': 'Мгновенный ответ', 'c3-res': '-40ч/мес HR времени',
 
-                // Блок 'Tech Stack'
-                'tech-stack-h2': 'Our Tech Stack',
-                'tech-stack-p': 'We use a full-stack approach, selecting the right technology for the job, from enterprise Java to high-performance Python.',
+                'c4-title': 'Статусы Заказов', 'c4-desc': 'Клиенты звонят: "Где груз?". Мы автоматизируем проверку статусов на порталах 5 разных перевозчиков.',
+                'c4-s1': 'Проверка сайтов служб', 'c4-s2': 'Нормализация статусов', 'c4-s3': 'Обновление дашборда', 'c4-res': 'Прозрачность Real-time',
+                
+                'btn-more-cases': 'Смотреть все кейсы',
 
-                // Блок 4: Процесс
-                'process-h2': 'How We Work',
-                'step1-title': 'Step 1: Free Consultation (40 minutes)',
-                'step1-desc': 'We discuss your challenge and determine where AI will deliver real impact and where classic automation will suffice. You receive a written technical assessment with recommendations.',
-                'step1-price': 'Free',
-                'step2-title': 'Step 2: Discovery & Technical Audit (2 weeks)',
-                'step2-desc': 'Complete analysis of your system, security requirements, and integration points. We study your infrastructure, identify technical risks, and design optimal solution architecture. You receive a detailed report with recommendations and ready technical specifications.',
-                'step2-price': '$5,000',
-                'step3-title': 'Step 3: Development',
-                'step3-quick-title': 'Quick Build (1-3 months)',
-                'step3-quick-desc': 'Clear task, standard technology stack, fast implementation. Examples: basic document automation, API integration, RAG bot for internal knowledge base.',
-                'step3-quick-price': '$30,000 - $80,000',
-                'step3-complex-title': 'Complex Build (3-12 months)',
-                'step3-complex-desc': 'Complex task, legacy system integration (SAP, 1C), high security requirements, on-premise deployment. Examples: AI system for entire department, enterprise RAG with access control, migration from monolith to microservices.',
-                'step3-complex-price': '$100,000 - $400,000+',
+                'tech-title': 'Инженерия, а не "Клей".',
+                'tech-desc': 'No-code инструменты (Zapier) хороши для прототипов, но ломаются на масштабе. Мы строим надежные системы с мониторингом на базе Enterprise-кода.',
+                
+                'calc-h': 'Цена Бездействия', 'calc-sub': 'Сколько денег вы теряете на рутине прямо сейчас?',
+                'calc-l1': 'Сотрудников на рутине', 'calc-l2': 'Часов в неделю (на чел.)', 'calc-l3': 'Средняя ставка в час ($)',
+                'calc-res': 'Потери в год', 'calc-note': 'Это деньги, которые вы платите за работу, которую скрипт сделает за копейки.', 'calc-cta': 'Автоматизировать',
+                
+                'faq-title': 'Частые вопросы',
+                'faq-q1': 'А если API (например, LinkedIn) изменится?', 'faq-a1': 'Мы используем системы мониторинга. Если верстка или API меняется, наши инженеры получают алерт мгновенно и обновляют адаптер. Ваша бизнес-логика не страдает.',
+                'faq-q2': 'Мои данные в безопасности?', 'faq-a2': 'Абсолютно. Мы можем развернуть агентов On-Premise (на ваших серверах) или в частном облаке. Данные не покинут ваш периметр.',
+                'faq-q3': 'Как долго это внедрять?', 'faq-a3': 'Простой MVP (например, парсер инвойсов) занимает 2-4 недели. Сложные Enterprise-пайплайны с интеграцией в ERP — 2-3 месяца.',
 
-                // Блок 5: Кейсы
-                'cases-h2': 'Systems That Work in Production',
-                'cases-subtitle': 'Examples of architectural solutions implemented for enterprise clients.',
-                'case-task-label': 'The Challenge',
-                'case-solution-label': 'The Solution',
-                'case-results-label': 'The Results',
+                'cta-h': 'Готовы масштабироваться?', 'cta-sub': 'Запишитесь на бесплатный 30-минутный аудит. Мы найдем узкие места и оценим окупаемость автоматизации.',
+                'lbl-name': 'Имя', 'lbl-contact': 'Email / Telegram', 'lbl-desc': 'Что вы хотите автоматизировать?', 'btn-send': 'Заказать аудит',
 
-                'case1-title': "AI Art Director's Assistant",
-                'case1-task': "Art directors spent 60-80% of their time on routine layout checks for design system compliance. This slowed down the approval cycle.",
-                'case1-results': '<li>Freed art directors from routine checks</li><li>Accelerated design cycle — no waiting for manual review</li><li>Unified quality standards for all participants</li><li>Checks available 24/7 without team load</li><li>Up to 80% routine reduction</li>',
-
-                'case2-title': 'Data Pipeline for Enterprise Analytics',
-                'case2-task': 'Dozens of internal systems needed data from the core business platform. Direct integrations were unstable and created risks for critical services.',
-                'case2-results': '<li>Fast and secure connection of new analytical systems</li><li>Stress-resistant architecture without risks of core overloads</li><li>Reduced time-to-market for new products</li>',
-
-                'case3-title': 'Flexible Data Validation',
-                'case3-task': 'Users spent a lot of time finding and fixing errors when filling out complex forms. Errors reached the backend and disrupted business processes.',
-                'case3-results': '<li>Errors are identified at the input level, before system load</li><li>Error correction time reduced</li><li>User scenarios became predictable and fast</li>',
-
-                'case4-title': 'Letter of Credit Automation',
-                'case4-task': 'Processes for changing letter of credit terms were complex, required manual agreement, and led to errors and delays.',
-                'case4-results': '<li>Stable system covering 99% of scenarios</li><li>Significant acceleration of deal term modification</li><li>Full transparency and control for participants</li>',
-
-                'case5-title': 'AI-Powered Redesign Research',
-                'case5-task': 'The team planned a redesign of the car product card. Classic UX research would take 3 months, but deep insights were needed quickly.',
-                'case5-results': '<li>Redesign completed in 1 month instead of 3</li><li>Obtained deep insights using synthetic personas</li><li>Reduced costs of traditional UX research</li>',
-
-                'case6-title': 'AI Content Generation Training',
-                'case6-task': "Yandex Browser's marketing and design teams wanted to accelerate the production of creatives (banners, videos, landing pages) without long iterations.",
-                'case6-results': '<li>Teams independently create content for different markets</li><li>Accelerated ad creative update cycle</li><li>Lowered entry barrier for working with AI generation</li>',
-
-                'case7-client': 'B2B Sales Tech',
-                'case7-title': 'Lead Generation Agent (LinkedIn & Telegram)',
-                'case7-task': 'A need to scale outreach communications without losing contact quality or getting blocked by platforms.',
-                'case7-results': '<li>Increased volume of outgoing contacts while maintaining CTR and CR</li><li>AI agent adapts to platform algorithm changes</li><li>Scaling B2B sales without expanding the team</li>',
-
-                // PoC-кейсы
-                'poc-h3': 'Proof-of-Concept & MVP Solutions',
-                'poc-subtitle': 'Examples of rapid-development solutions and MVPs that test hypotheses and pave the way for full-scale systems.',
-                'poc1-title': 'Document Automation (Construction)',
-                'poc1-desc': 'A Python/Node.js pipeline that automatically generates reports from YouGile and CAD systems, saving dozens of man-hours per project.',
-                'poc2-title': 'Automated Lighting Design',
-                'poc2-desc': 'An AI algorithm architecture (Python) that connects Relux and AutoCAD/ArchiCAD for automated lighting calculations and fixture placement.',
-                'poc3-title': 'AI Image Generation Platform',
-                'poc3-desc': 'A multi-modal platform (Firefly, Recraft, GPT-Image) supporting text-to-image, image-to-image, and text-to-vector for marketing content automation.',
-                'poc4-title': 'EdTech CRM Automation',
-                'poc4-desc': 'A CRM ecosystem (AmoCRM, WhatsApp API, RPA) for a corporate training school, reducing manager routine by up to 80%.',
-                'poc5-title': 'On-Premise RAG Telegram Bot',
-                'poc5-desc': 'An MVP Telegram bot (Python, LLM, Qdrant) for an internal knowledge base. Securely processes PDF, DOCX, XLSX and provides cited answers.',
-                'poc8-title': 'On-Premise Voice Analytics (ASR)',
-                'poc8-desc': 'A speech recognition stack (Whisper Large V3 + NVIDIA Triton) deployed on client servers. Achieves 95-97% accuracy without data leaving the company.',
-
-                // Блок 7: CTA (ИЗМЕНЕН)
-                'cta-h2': "Let's Start With Your Challenge",
-                'cta-get-label': 'What you get:',
-
-                // Опция 1 (Консультация) - Текст оставлен для нового блока "Остались вопросы?"
-                'cta1-title': 'OPTION 1: Free Consultation (For those exploring)',
-                'cta1-desc': "Book a free 40-minute consultation. We'll discuss your architecture and determine where technology will deliver maximum impact.",
-                'cta1-bullets': '<li>Written technical assessment for your task</li><li>Bonus: 60% off Technical Audit ($1,999 instead of $5,000)</li><li>Discount valid for 30 days after consultation</li>',
-                'cta1-cta': 'Book Consultation',
-
-                // Опция 2 (Аудит)
-                // ИЗМЕНЕНО: Ключ cta2-title больше не используется, т.к. элемент удален
-                'cta2-title': '',
-                'cta2-desc': 'Order a 2-week Technical Audit at the special price of $1,999 (instead of $5,000). Get a detailed report with recommendations and priority project start.',
-                'cta2-bullets': '<li>Full 2-week audit of your system/task</li><li>Detailed report with recommendations and technical specs</li><li>Bonus 1: Priority project start in December 2025</li><li>Bonus 2: 15% off project implementation (up to $15,000 savings)</li>',
-
-                // ИЗМЕНЕННЫЙ КЛЮЧ
-                'cta2-cta': 'Order Technical Audit',
-                // НОВЫЙ КЛЮЧ для мобильной кнопки
-                'cta2-cta-mobile': 'Order Audit',
-
-                // НОВЫЙ КЛЮЧ для блока "Остались вопросы?"
-                // ИЗМЕНЕНО: Текст упрощен
-                'questions-text': 'Have questions?',
-
-                // Футер (общие)
-                'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
-                'footer-solutions-title': 'Solutions',
-                'footer-company-title': 'Company',
-                'footer-portfolio': 'Portfolio & Cases',
-                'footer-contact-title': 'Contact & Legal',
-                'footer-legal-title': 'Legal',
-                'footer-privacy': 'Privacy Policy',
-                'footer-user-agreement': 'User Agreement'
+                'footer-desc': 'Интегратор ИИ решений.', 'footer-col1': 'Продукты', 'footer-col2': 'Компания', 'footer-col3': 'Контакты', 'footer-portfolio': 'Портфолио', 'footer-team': 'Команда', 'footer-privacy': 'Политика конфиденциальности'
             }
         };
 
-        const btnRuDesktop = document.getElementById('btn-ru');
-        const btnEnDesktop = document.getElementById('btn-en');
-        const btnRuMobile = document.getElementById('btn-ru-mobile');
-        const btnEnMobile = document.getElementById('btn-en-mobile');
+        // --- CALCULATOR LOGIC ---
+        const sliderEmp = document.getElementById('slider-emp');
+        const sliderHours = document.getElementById('slider-hours');
+        const inputRate = document.getElementById('input-rate');
+        
+        const valEmp = document.getElementById('val-emp');
+        const valHours = document.getElementById('val-hours');
+        const resultTotal = document.getElementById('result-total');
 
-        const elementsToTranslate = document.querySelectorAll('[data-lang]');
+        function calculate() {
+            const employees = parseInt(sliderEmp.value);
+            const hours = parseInt(sliderHours.value);
+            const rate = parseInt(inputRate.value) || 0;
 
-        function updateContent(lang) {
-            document.documentElement.lang = lang;
+            valEmp.innerHTML = `${employees} <span class="text-sm font-normal text-gray-400">people</span>`;
+            valHours.innerHTML = `${hours} <span class="text-sm font-normal text-gray-400">hours/week</span>`;
 
-            const isRu = lang === 'ru';
-            btnRuDesktop.classList.toggle('active', isRu);
-            btnEnDesktop.classList.toggle('active', !isRu);
-            btnRuMobile.classList.toggle('active', isRu);
-            btnEnMobile.classList.toggle('active', !isRu);
-
-            btnRuDesktop.setAttribute('aria-pressed', isRu);
-            btnEnDesktop.setAttribute('aria-pressed', !isRu);
-            btnRuMobile.setAttribute('aria-pressed', isRu);
-            btnEnMobile.setAttribute('aria-pressed', !isRu);
-
-            const langTranslations = translations[lang];
-
-            elementsToTranslate.forEach(el => {
-                const key = el.getAttribute('data-lang');
-                const translation = langTranslations[key];
-
-                if (translation !== undefined) {
-                    if (key === 'meta-title') {
-                        el.innerHTML = translation;
-                    } else if (key === 'meta-description') {
-                        el.setAttribute('content', translation);
-                    } else {
-                        // Позволяем HTML (для списков <li>)
-                        el.innerHTML = translation;
-                    }
-                }
-            });
+            // Formula: Employees * Hours * 52 weeks * Rate
+            const total = employees * hours * 52 * rate;
+            
+            // Format Currency
+            const formatted = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(total);
+            resultTotal.textContent = formatted;
         }
 
-        btnRuDesktop.addEventListener('click', () => updateContent('ru'));
-        btnEnDesktop.addEventListener('click', () => updateContent('en'));
-        btnRuMobile.addEventListener('click', () => updateContent('ru'));
-        btnEnMobile.addEventListener('click', () => updateContent('en'));
+        if(sliderEmp && sliderHours && inputRate) {
+            sliderEmp.addEventListener('input', calculate);
+            sliderHours.addEventListener('input', calculate);
+            inputRate.addEventListener('input', calculate);
+            calculate(); // init
+        }
 
-        // ИЗМЕНЕНО: Запускаем с 'ru' по умолчанию, как было в оригинальном файле (судя по 'active' у btn-en)
-        // Ошибка в комментарии выше, в оригинале 'active' у btn-en, значит, запускаем с 'en'
-        updateContent('en');
-    });
+        // --- LANG SWITCHER ---
+        let currentLang = 'en';
+        function changeLang(lang) {
+            currentLang = lang;
+            const flag = lang === 'en' ? '🇪🇳' : '🇷🇺';
+            document.getElementById('current-lang-flag').textContent = flag;
+            document.getElementById('mobile-lang-flag').textContent = flag;
+            const t = translations[lang];
+            
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(t[key]) {
+                     if (key === 'meta-description') el.setAttribute('content', t[key]);
+                     else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = t[key]; }
+                     else el.innerHTML = t[key];
+                }
+            });
+            const langMenu = document.getElementById('lang-menu');
+            if(langMenu) langMenu.classList.remove('show');
+        }
 
+        function toggleMobileLang() {
+            const newLang = currentLang === 'en' ? 'ru' : 'en';
+            changeLang(newLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const langToggle = document.getElementById('lang-toggle');
+            const langMenu = document.getElementById('lang-menu');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if(langToggle && langMenu) {
+                langToggle.addEventListener('click', (e) => { e.stopPropagation(); langMenu.classList.toggle('show'); });
+                document.addEventListener('click', () => { langMenu.classList.remove('show'); });
+            }
+            if(mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            }
+            changeLang('en');
+        });
+    </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxxXgZqiiBn1bDvqbDxJxqv12lvi5yekglH6sI9wMkD2mjqxm91wVIPxGpLY5ZoJYKv8Q/exec'
+const form = document.forms['client-data']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+
+  // Показываем пользователю, что процесс идет
+  msg.innerHTML = "Отправка..."
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        msg.innerHTML = "Спасибо! Заявка отправлена."
+        form.reset() // Очистить форму
+        setTimeout(function(){
+            msg.innerHTML = ""
+        }, 5000)
+    })
+    .catch(error => {
+        console.error('Error!', error.message)
+        msg.innerHTML = "Ошибка отправки."
+    })
+})
 </script>
 </body>
 </html>
