@@ -108,8 +108,8 @@
             /* Active Grid: Primary Red Tint (for shimmer) */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' stroke='rgba(203, 2, 19, 0.15)' stroke-width='1' d='M10 0v20ZM0 10h20Z'/%3E%3C/svg%3E");
             /* Initially hidden by mask */
-            -webkit-mask-image: radial-gradient(300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
-            mask-image: radial-gradient(300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(100px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+            mask-image: radial-gradient(100px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
             opacity: 0; /* JS will enable opacity */
             transition: opacity 0.5s ease;
         }
@@ -172,8 +172,15 @@
 
         .impact-badge {
             display: inline-block;
-            font-size: 0.75rem; font-weight: 700; color: #059669; background-color: #ECFDF5;
-            padding: 0.2rem 0.6rem; border-radius: 6px; margin-top: auto;
+            font-size: 0.75rem;
+            font-weight: 700;
+            /* Изменено: используем основной красный цвет бренда */
+            color: var(--color-primary);
+            /* Изменено: используем светло-серый фон (как у иконок выше) */
+            background-color: #F3F4F6;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            margin-top: auto;
         }
         
         .poc-audience {
