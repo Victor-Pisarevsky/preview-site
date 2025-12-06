@@ -149,18 +149,17 @@
 </head>
 <body class="antialiased">
 
-    <!-- HEADER -->
     <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
         <div class="container max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16 md:h-20">
-                <a href="main.html" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
-                
+                <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
+
                 <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
                     <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-sm">
-                        <a href="copilot.html" class="header-nav-link" data-lang="nav-design">Design Copilot</a>
-                        <a href="main.html#services" class="header-nav-link" data-lang="nav-intelligent">Intelligent Systems</a>
-                        <a href="#" class="header-nav-link text-primary font-bold" data-lang="nav-automation">Automation</a>
-                        <a href="main.html#services" class="header-nav-link" data-lang="nav-secure">Secure Infrastructure</a>
+                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Design Copilot</a>
+                        <a href="/intelligent" class="header-nav-link" data-lang="nav-intelligent">Intelligent Systems</a>
+                        <a href="/custom-development" class="header-nav-link text-primary font-bold" data-lang="nav-automation">Automation</a>
+                        <a href="/secure" class="header-nav-link" data-lang="nav-secure">Secure Infrastructure</a>
                     </nav>
                 </div>
 
@@ -187,20 +186,19 @@
 
             <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2 border-t border-gray-100">
                 <nav class="flex flex-col gap-4 p-4">
-                    <a href="copilot.html" class="header-nav-link text-lg" data-lang="nav-design">Design Copilot</a>
-                    <a href="main.html" class="header-nav-link text-lg" data-lang="nav-intelligent">Intelligent Systems</a>
-                    <a href="#" class="header-nav-link text-lg text-primary font-bold" data-lang="nav-automation">Automation</a>
-                    <a href="main.html" class="header-nav-link text-lg" data-lang="nav-secure">Secure Infrastructure</a>
+                    <a href="/for-design" class="header-nav-link text-lg" data-lang="nav-design">Design Copilot</a>
+                    <a href="/intelligent" class="header-nav-link text-lg" data-lang="nav-intelligent">Intelligent Systems</a>
+                    <a href="/custom-development" class="header-nav-link text-lg text-primary font-bold" data-lang="nav-automation">Automation</a>
+                    <a href="/secure" class="header-nav-link text-lg" data-lang="nav-secure">Secure Infrastructure</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
         <section class="relative pt-24 pb-20 md:pt-32 md:pb-24 bg-white overflow-hidden">
             <div class="hero-pattern-bg"></div>
-            
+
             <div class="container max-w-7xl mx-auto px-4 relative z-10">
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="w-full md:w-1/2">
@@ -219,16 +217,14 @@
                             <a href="#scenarios" class="btn btn-secondary text-lg px-8 py-3" data-lang="hero-secondary">See Examples</a>
                         </div>
                     </div>
-                    
-                    <!-- VISUAL: Abstract Flowchart -->
+
                     <div class="w-full md:w-1/2 relative hidden md:block">
                         <div class="bg-white border border-gray-200 rounded-xl shadow-2xl p-6 relative z-10 transform transition-transform duration-500">
-                            <!-- Fake Interface: Automation Flow -->
                             <div class="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
                                 <span class="text-sm font-bold text-gray-400 uppercase">System Status: Active</span>
                                 <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-bold">● 99.9% Uptime</span>
                             </div>
-                            
+
                             <div class="space-y-4">
                                 <div class="flex items-center gap-4">
                                     <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center border border-blue-100">
@@ -268,7 +264,6 @@
             </div>
         </section>
 
-        <!-- REAL WORLD SCENARIOS -->
         <section id="scenarios" class="py-20 bg-gray-50 border-y border-gray-200">
             <div class="container max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
@@ -277,8 +272,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    
-                    <!-- CASE 1: SALES -->
+
                     <div class="card bg-white p-6 hover:border-primary/50 group">
                         <div class="mb-4 flex items-center justify-between">
                             <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
@@ -288,8 +282,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-lang="c1-title">Lead Gen Agent</h3>
                         <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c1-desc">Managers hate cold outreach. We automate prospecting on LinkedIn/Email to deliver hot leads.</p>
-                        
-                        <!-- Flow Visualization -->
+
                         <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
                             <div class="flow-step">
                                 <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
@@ -309,7 +302,6 @@
                         </div>
                     </div>
 
-                    <!-- CASE 2: FINANCE -->
                     <div class="card bg-white p-6 hover:border-primary/50 group">
                         <div class="mb-4 flex items-center justify-between">
                             <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
@@ -319,8 +311,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-lang="c2-title">Invoice Parsing</h3>
                         <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c2-desc">Stop manual data entry errors. Extract data from PDFs and push it directly into 1C/SAP.</p>
-                        
-                        <!-- Flow Visualization -->
+
                         <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
                             <div class="flow-step">
                                 <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
@@ -340,7 +331,6 @@
                         </div>
                     </div>
 
-                    <!-- CASE 3: HR -->
                     <div class="card bg-white p-6 hover:border-primary/50 group">
                         <div class="mb-4 flex items-center justify-between">
                             <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
@@ -350,8 +340,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-lang="c3-title">Onboarding Bot</h3>
                         <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c3-desc">HR answers the same questions 100 times. We build a bot trained on your Notion/Wiki.</p>
-                        
-                        <!-- Flow Visualization -->
+
                         <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
                             <div class="flow-step">
                                 <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
@@ -371,7 +360,6 @@
                         </div>
                     </div>
 
-                    <!-- CASE 4: LOGISTICS -->
                     <div class="card bg-white p-6 hover:border-primary/50 group">
                         <div class="mb-4 flex items-center justify-between">
                             <div class="w-12 h-12 bg-gray-50 text-red-600 rounded-lg flex items-center justify-center font-bold">
@@ -381,8 +369,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2" data-lang="c4-title">Order Updates</h3>
                         <p class="text-sm text-gray-500 mb-6 min-h-[60px]" data-lang="c4-desc">Clients call "Where is my cargo?". We automate status checks across 5 different carrier portals.</p>
-                        
-                        <!-- Flow Visualization -->
+
                         <div class="mt-auto bg-gray-50 rounded-lg p-3 border border-gray-100">
                             <div class="flow-step">
                                 <div class="flow-icon bg-white border border-gray-200 text-gray-400">1</div>
@@ -404,16 +391,13 @@
 
                 </div>
 
-                <!-- NEW BUTTON -->
                 <div class="text-center">
-                    <a href="portfolio.html" class="btn btn-secondary text-lg px-8 py-3" data-lang="btn-more-cases">View All Cases</a>
+                    <a href="/portfolio" class="btn btn-secondary text-lg px-8 py-3" data-lang="btn-more-cases">View All Cases</a>
                 </div>
             </div>
         </section>
 
-        <!-- TECH STACK (Dark Section) -->
         <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
-             <!-- Background Grid -->
              <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#374151 1px, transparent 1px), linear-gradient(90deg, #374151 1px, transparent 1px); background-size: 40px 40px;"></div>
 
              <div class="container max-w-7xl mx-auto px-4 relative z-10">
@@ -423,7 +407,7 @@
                          <p class="text-gray-400 mb-8 text-lg" data-lang="tech-desc">
                              No-code tools (Zapier/Make) are great for prototypes, but they break at scale. We build robust, monitored pipelines using enterprise-grade code.
                          </p>
-                         
+
                          <div class="grid grid-cols-2 gap-6">
                              <div class="border-l-2 border-primary pl-4">
                                  <h4 class="font-bold text-lg mb-1">Python Core</h4>
@@ -444,7 +428,6 @@
                          </div>
                      </div>
                      <div class="w-full md:w-1/2 bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-2xl font-mono text-xs md:text-sm">
-                         <!-- Code Block -->
                          <div class="flex gap-2 mb-4">
                              <div class="w-3 h-3 rounded-full bg-red-500"></div>
                              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -469,7 +452,6 @@
              </div>
         </section>
 
-        <!-- ROI CALCULATOR -->
         <section id="calculator" class="py-20 bg-white">
             <div class="container max-w-4xl mx-auto px-4">
                 <div class="text-center mb-10">
@@ -479,14 +461,13 @@
 
                 <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <!-- Inputs -->
                         <div class="space-y-8">
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-2" data-lang="calc-l1">Employees doing routine tasks</label>
                                 <input type="range" id="slider-emp" min="1" max="50" value="5" step="1" class="mb-2">
                                 <div class="text-2xl font-bold text-primary" id="val-emp">5 <span class="text-sm font-normal text-gray-400">people</span></div>
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-2" data-lang="calc-l2">Hours per week (per person)</label>
                                 <input type="range" id="slider-hours" min="1" max="40" value="10" step="1" class="mb-2">
@@ -499,7 +480,6 @@
                             </div>
                         </div>
 
-                        <!-- Result -->
                         <div class="flex flex-col justify-center items-center bg-gray-50 rounded-xl p-6 border border-gray-100">
                             <div class="text-sm text-gray-500 uppercase tracking-widest font-bold mb-2" data-lang="calc-res">Annual Loss</div>
                             <div class="text-5xl font-heading font-black text-gray-900 mb-2" id="result-total">$78,000</div>
@@ -513,7 +493,6 @@
             </div>
         </section>
 
-        <!-- FAQ SECTION -->
         <section id="faq" class="py-16 bg-gray-50 border-t border-gray-200">
             <div class="container max-w-4xl mx-auto px-4">
                 <div class="text-center mb-12">
@@ -536,7 +515,6 @@
             </div>
         </section>
 
-        <!-- CTA SECTION -->
         <section id="contact" class="py-20 bg-white border-t border-gray-200">
             <div class="container max-w-3xl mx-auto px-4 text-center">
                 <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6" data-lang="cta-h">Ready to scale without hiring?</h2>
@@ -565,13 +543,11 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="dark-bg-custom text-gray-400 py-12 border-t border-gray-800">
         <div class="container max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div><a href="main.html" class="header-logo text-white mb-4 block">DIVO</a><p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator.</p></div>
-                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col1">Products</h4><ul class="space-y-2 text-sm"><li><a href="copilot.html" class="footer-link">Design Copilot</a></li><li><a href="#" class="footer-link">Intelligent Systems</a></li><li><a href="#" class="footer-link">Automation</a></li><li><a href="#" class="footer-link">Secure Infrastructure</a></li></ul></div>
-                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col2">Company</h4><ul class="space-y-2 text-sm"><li><a href="portfolio.html" class="footer-link" data-lang="footer-portfolio">Portfolio</a></li><li><a href="#" class="footer-link" data-lang="footer-team">Team</a></li><li><a href="#" class="footer-link" data-lang="footer-privacy">Privacy Policy</a></li></ul></div>
+                <div><a href="/" class="header-logo text-white mb-4 block">DIVO</a><p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator.</p></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col1">Products</h4><ul class="space-y-2 text-sm"><li><a href="/for-design" class="footer-link">Design Copilot</a></li><li><a href="/intelligent" class="footer-link">Intelligent Systems</a></li><li><a href="/custom-development" class="footer-link">Automation</a></li><li><a href="/secure" class="footer-link">Secure Infrastructure</a></li></ul></div>
                 <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col3">Contact</h4><ul class="space-y-2 text-sm"><li>info@divo.solutions</li><li><a href="https://t.me/darikamouse" class="footer-link">Telegram</a></li><li><a href="https://wa.me/+79035176391" class="footer-link">WhatsApp</a></li><li><a href="https://www.linkedin.com/company/divo-solutions" class="footer-link">LinkedIn</a></li></ul></div>
             </div>
             <div class="border-t border-gray-800 mt-10 pt-8 text-center text-xs"><p>&copy; 2025 DIVO. All rights reserved.</p></div>
