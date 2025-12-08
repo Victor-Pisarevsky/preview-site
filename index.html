@@ -114,7 +114,7 @@
             /* PERFORMANCE: GPU Acceleration hints */
             transform: translateZ(0);
         }
-        .hero-pattern-base { opacity: 0.6; }
+        .hero-pattern-base { opacity: 1; }
         .hero-pattern-active {
             opacity: 1; z-index: 1;
             -webkit-mask-image: transparent; mask-image: transparent;
@@ -152,7 +152,7 @@
 
         /* Lang Switcher */
         .lang-dropdown { position: relative; display: inline-block; }
-        .lang-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 0.75rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
         .lang-menu { display: none; position: absolute; right: 0; top: 100%; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 50; border: 1px solid #E5E7EB; overflow: hidden; margin-top: 0.5rem; }
         .lang-menu.show { display: block; }
         .lang-option { padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: background 0.2s; font-size: 0.95rem; color: var(--color-text-main); width: 100%; text-align: left; border: none; background: transparent; }
@@ -196,7 +196,7 @@
 
         .social-icon-link { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background-color: transparent; color: #4B5563; transition: all 0.2s ease; }
         .social-icon-link:hover { color: var(--color-primary); transform: translateY(-2px); }
-        .social-icon-link svg { width: 24px; height: 24px; }
+        .social-icon-link svg { width: 24px; height: 24px;}
     </style>
 </head>
 <body class="antialiased">
@@ -218,7 +218,7 @@
             <div class="hidden lg:flex items-center gap-6 relative z-10">
                 <div class="lang-dropdown">
                     <button id="lang-toggle" class="lang-btn" aria-label="Select Language">
-                        <span id="current-lang-flag">EN</span>
+                        <span id="current-lang-flag" class="lang-label">EN</span>
                         <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M19 9l-7 7-7-7"></path>
@@ -416,7 +416,7 @@
                             </text>
                         </svg>
                     </div>
-                    <h4 class="text-2xl font-bold mb-2 font-heading">High-load Architecture</h4>
+                    <h4 class="text-2xl font-bold mb-2 font-heading" data-lang="case-1-header">High-load Architecture</h4>
                     <p class="text-sm text-gray-600 mb-2 flex-grow" data-lang="case-1-text">Platform for 10M+ users
                         handling trillions in transactions.</p>
                     <div class="w-full text-right mt-4"><p class="text-lg font-bold text-primary"
@@ -431,7 +431,7 @@
                             </text>
                         </svg>
                     </div>
-                    <h4 class="text-2xl font-bold mb-2 font-heading">Content Production</h4>
+                    <h4 class="text-2xl font-bold mb-2 font-heading" data-lang="case-2-header">Content Production</h4>
                     <p class="text-sm text-gray-600 mb-2 flex-grow" data-lang="case-2-text">Autonomous generation of
                         video and banners by teams.</p>
                     <div class="w-full text-right mt-4"><p class="text-lg font-bold text-primary"
@@ -446,7 +446,7 @@
                             </text>
                         </svg>
                     </div>
-                    <h4 class="text-2xl font-bold mb-2 font-heading">Automated Design QA</h4>
+                    <h4 class="text-2xl font-bold mb-2 font-heading" data-lang="case-3-header">Automated Design QA</h4>
                     <p class="text-sm text-gray-600 mb-2 flex-grow" data-lang="case-3-text">AI assistant checking
                         layouts against 7 brand parameters.</p>
                     <div class="w-full text-right mt-4"><p class="text-lg font-bold text-primary"
@@ -461,7 +461,7 @@
             <div class="text-center mb-12 max-w-3xl mx-auto">
                 <h2 class="text-4xl md:text-6xl mb-4 tracking-tight" data-lang="exp-h2">The DIVO Formula</h2>
                 <p class="text-xl text-gray-500 font-light leading-relaxed" data-lang="exp-sub">
-                    We are the hybrid engine that combines deep tech with aggressive growth.
+                    Combining advanced technologies with business objectives.
                 </p>
             </div>
 
@@ -474,11 +474,11 @@
                                       d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl mb-2 font-heading" data-lang="card1-h">Enterprise DNA</h3>
+                        <h3 class="text-2xl mb-2 font-heading" data-lang="card1-h">Enterprise level</h3>
                         <p class="text-sm text-gray-600 mb-4" data-lang="card1-p">We build systems that handle millions
-                            of users and billions in transactions without crashing.</p>
+                            of users and billions in transactions.</p>
                         <div class="mt-auto pt-4 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-400 uppercase" data-lang="card1-tag">Source: CTO Expertise</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase" data-lang="card1-tag">CTO Expertise</span>
                         </div>
                     </div>
                 </div>
@@ -491,11 +491,11 @@
                                       d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl mb-2 font-heading" data-lang="card2-h">Product Aggression</h3>
+                        <h3 class="text-2xl mb-2 font-heading" data-lang="card2-h">Product Expertise</h3>
                         <p class="text-sm text-gray-600 mb-4" data-lang="card2-p">We build growth engines, find PMF, and
                             optimize for 10x ROI.</p>
                         <div class="mt-auto pt-4 border-t border-gray-200">
-                            <span class="text-xs font-bold text-gray-400 uppercase" data-lang="card2-tag">Source: CEO Expertise</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase" data-lang="card2-tag">CEO Expertise</span>
                         </div>
                     </div>
                 </div>
@@ -510,8 +510,7 @@
                             </svg>
                         </div>
                         <h3 class="text-2xl mb-2 text-primary font-heading" data-lang="card3-h">Predictable ROI</h3>
-                        <p class="text-sm text-gray-600 mb-4" data-lang="card3-p">Systems that work technically AND pay
-                            off commercially. You get stable architecture that makes money.</p>
+                        <p class="text-sm text-gray-600 mb-4" data-lang="card3-p">You get stable architecture that makes money.</p>
                         <div class="mt-auto pt-4 border-t border-gray-100 relative z-10">
                             <span class="text-xs font-bold text-primary uppercase"
                                   data-lang="card3-tag">The DIVO Result</span>
@@ -528,7 +527,7 @@
                 <h2 class="text-4xl md:text-5xl mb-4 font-heading" data-lang="founders-h2">The Architecture of
                     Partnership</h2>
                 <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-lang="founders-sub">
-                    Two opposite forces—enterprise stability and startup speed—merge through the expertise of our
+                    Enterprise stability and startup speed merges through the expertise of our
                     co-founders.
                 </p>
             </div>
@@ -718,8 +717,7 @@
                     <h3 class="text-2xl font-bold text-gray-900 font-heading" data-lang="step4-title">Step 4: Technical
                         Support</h3>
                     <div class="price-badge" data-lang="step4-price">Hourly / Retainer</div>
-                    <p class="text-gray-600 mt-2 leading-relaxed" data-lang="step4-desc">We don't leave you alone with
-                        the code. We provide support by hours or, if the solution architecture requires it, we offer
+                    <p class="text-gray-600 mt-2 leading-relaxed" data-lang="step4-desc">We provide support by hours or, if the solution architecture requires it, we offer
                         monthly support packages to ensure stability and updates.</p>
                 </div>
             </div>
@@ -733,7 +731,7 @@
                     <h2 data-lang="form-title" class="mb-4 text-4xl font-heading font-bold">Book a 40-minute technical
                         consultation</h2>
                     <p class="text-gray-600 mb-8" data-lang="form-sub">We will analyze your architecture, find growth
-                        points for AI, and propose a solution (Quick Build or Complex Build).</p>
+                        points for AI, and propose a solution.</p>
                     <form name="client-data" class="space-y-4">
                         <input type="hidden" name="type" value="main">
                         <div><label class="form-label" for="name" data-lang="label-name">Name</label><input
@@ -809,7 +807,6 @@
                 Company</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a href="/portfolio" class="footer-link" data-lang="footer-portfolio">Portfolio</a></li>
-                    <li><a href="/team/cto" class="footer-link" data-lang="footer-team">Team</a></li>
                     <li><a href="/privacy-policy" class="footer-link" data-lang="footer-privacy">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -829,61 +826,79 @@
 </footer>
 
 <script>
-    // --- INTERACTIVE PATTERN ANIMATION (OPTIMIZED) ---
+// --- INTERACTIVE PATTERN ANIMATION (FIXED) ---
     function initPatternAnimation() {
         const container = document.getElementById('hero-section');
         const activeLayer = document.getElementById('hero-active');
-        if(!container || !activeLayer) return;
+        const baseLayer = document.getElementById('hero-base');
 
-        // Simplified SVG (Reduced scale calculation inside patterns if needed, but keeping visual logic)
-        // Note: SVG string remains same but rendering strategy changes via CSS 'will-change'
+        if(!container || !activeLayer || !baseLayer) return;
+
+        // Исходный SVG
         const rawSvg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500' preserveAspectRatio="xMidYMid slice"><rect fill='#ffffff' width='2000' height='1500'/><defs><rect stroke='#ffffff' stroke-width='0.4' width='1' height='1' id='s'/><pattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><use fill='#fcfcfc' href='#s' y='2'/><use fill='#fcfcfc' href='#s' x='1' y='2'/><use fill='#fafafa' href='#s' x='2' y='2'/><use fill='#fafafa' href='#s'/><use fill='#f7f7f7' href='#s' x='2'/><use fill='#f7f7f7' href='#s' x='1' y='1'/></pattern><pattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><g fill='#f5f5f5'><use href='#s'/><use href='#s' y='5' /><use href='#s' x='1' y='10'/><use href='#s' x='2' y='1'/><use href='#s' x='2' y='4'/><use href='#s' x='3' y='8'/><use href='#s' x='4' y='3'/><use href='#s' x='4' y='7'/><use href='#s' x='5' y='2'/><use href='#s' x='5' y='6'/><use href='#s' x='6' y='9'/></g></pattern><pattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><g fill='#f5f5f5'><use href='#s' y='5'/><use href='#s' y='8'/><use href='#s' x='1' y='1'/><use href='#s' x='1' y='9'/><use href='#s' x='1' y='12'/><use href='#s' x='2'/><use href='#s' x='2' y='4'/><use href='#s' x='3' y='2'/><use href='#s' x='3' y='6'/><use href='#s' x='3' y='11'/><use href='#s' x='4' y='3'/><use href='#s' x='4' y='7'/><use href='#s' x='4' y='10'/></g></pattern><pattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><g fill='#f2f2f2'><use href='#s' y='11'/><use href='#s' x='2' y='9'/><use href='#s' x='5' y='12'/><use href='#s' x='9' y='4'/><use href='#s' x='12' y='1'/><use href='#s' x='16' y='6'/></g></pattern><pattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><g fill='#ffffff'><use href='#s' y='9'/><use href='#s' x='16' y='5'/><use href='#s' x='14' y='2'/><use href='#s' x='11' y='11'/><use href='#s' x='6' y='14'/></g><g fill='#efefef'><use href='#s' x='3' y='13'/><use href='#s' x='9' y='7'/><use href='#s' x='13' y='10'/><use href='#s' x='15' y='4'/><use href='#s' x='18' y='1'/></g></pattern><pattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><g fill='#C52A0E'><use href='#s' x='2' y='5'/><use href='#s' x='16' y='38'/><use href='#s' x='46' y='42'/><use href='#s' x='29' y='20'/></g></pattern><pattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><g fill='#C52A0E'><use href='#s' x='33' y='13'/><use href='#s' x='27' y='54'/><use href='#s' x='55' y='55'/></g></pattern><pattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(35) translate(-977.25 -732.94)'><g fill='#C52A0E'><use href='#s' x='11' y='8'/><use href='#s' x='51' y='13'/><use href='#s' x='17' y='73'/><use href='#s' x='99' y='57'/></g></pattern></defs><rect fill='url(#a)' width='100%' height='100%'/><rect fill='url(#b)' width='100%' height='100%'/><rect fill='url(#h)' width='100%' height='100%'/><rect fill='url(#c)' width='100%' height='100%'/><rect fill='url(#d)' width='100%' height='100%'/><rect fill='url(#e)' width='100%' height='100%'/><rect fill='url(#f)' width='100%' height='100%'/><rect fill='url(#g)' width='100%' height='100%'/></svg>`;
 
-        document.getElementById('hero-base').innerHTML = rawSvg.replace(/#C52A0E/g, '#E5E5E5');
-        activeLayer.innerHTML = rawSvg;
+        // 1. БАЗОВЫЙ СЛОЙ (Темно-серый)
+        baseLayer.innerHTML = rawSvg.replace(/#C52A0E/g, '#9CA3AF');
+
+        // 2. АКТИВНЫЙ СЛОЙ (Красный)
+        let activeSvg = rawSvg;
+
+        // А. Удаляем белый фон (прямоугольник), чтобы слой был прозрачным
+        activeSvg = activeSvg.replace("<rect fill='#ffffff' width='2000' height='1500'/>", "");
+
+        // Б. Меняем все светлые цвета (fcfcfc, fafafa и т.д.) на бренд-красный (#CB0213)
+        // Используем точный Regex для захвата оттенков
+        activeSvg = activeSvg.replace(/fill='#(f[0-9a-f]{5}|e[0-9a-f]{5}|ffffff)'/gi, "fill='#CB0213'");
+
+        // В. Красим обводки
+        activeSvg = activeSvg.replace(/stroke='#ffffff'/gi, "stroke='#CB0213'");
+
+        // Г. Обновляем старый красный (на всякий случай)
+        activeSvg = activeSvg.replace(/#C52A0E/gi, '#CB0213');
+
+        activeLayer.innerHTML = activeSvg;
 
         let mouseX = -500, mouseY = -500;
         const flashes = [];
-        const MAX_FLASHES = 15; // Limit active flashes for performance
+        const MAX_FLASHES = 15;
 
         container.addEventListener('mousemove', (e) => {
             const rect = container.getBoundingClientRect();
             mouseX = e.clientX - rect.left;
             mouseY = e.clientY - rect.top;
-        }, { passive: true }); // Passive event listener
+        }, { passive: true });
 
         function loop() {
-            // Add new flash (reduced probability slightly)
+            // Добавляем случайные вспышки
             if(Math.random() < 0.08 && flashes.length < MAX_FLASHES) {
                 const rect = container.getBoundingClientRect();
                 const gridSize = 35;
                 const gx = Math.floor(Math.random() * (rect.width / gridSize)) * gridSize + gridSize/2;
                 const gy = Math.floor(Math.random() * (rect.height / gridSize)) * gridSize + gridSize/2;
 
-                flashes.push({
-                    x: gx,
-                    y: gy,
-                    age: 0,
-                    life: 40 + Math.random() * 40
-                });
+                flashes.push({ x: gx, y: gy, age: 0, life: 40 + Math.random() * 40 });
             }
 
-            // Update flashes
+            // Обновляем вспышки
             for(let i = flashes.length - 1; i >= 0; i--) {
                 flashes[i].age++;
                 if(flashes[i].age > flashes[i].life) flashes.splice(i, 1);
             }
 
-            let maskString = `radial-gradient(100px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
+            // --- ИСПРАВЛЕНИЕ: Правильный порядок аргументов для radial-gradient ---
+            // Было: 100px circle (Ошибка) -> Стало: circle 150px (Верно)
+            let maskString = `radial-gradient(circle 150px at ${mouseX}px ${mouseY}px, black, transparent)`;
 
             flashes.forEach(f => {
                 let opacity = 1;
                 if(f.age < 10) opacity = f.age / 10;
                 else if(f.age > f.life - 10) opacity = (f.life - f.age) / 10;
-                maskString += `, radial-gradient(20px circle at ${f.x}px ${f.y}px, rgba(0,0,0,${opacity * 0.8}), transparent)`;
+
+                // Также исправляем синтаксис для вспышек
+                maskString += `, radial-gradient(circle 20px at ${f.x}px ${f.y}px, rgba(0,0,0,${opacity * 0.8}), transparent)`;
             });
 
-            // Apply mask
+            // Применяем маску
             activeLayer.style.webkitMaskImage = maskString;
             activeLayer.style.maskImage = maskString;
 
@@ -907,16 +922,16 @@
             'service-2-title': 'Intelligent Systems', 'service-2-sub': 'AI assistants and analytics for decision making.', 'service-2-li1': 'Smart Knowledge Base Search (RAG)', 'service-2-li2': 'Predictive analytics & risk analysis', 'service-2-li3': 'Department Assistants (HR, Sales, Legal)',
             'service-3-title': 'Automation', 'service-3-sub': 'Eliminating manual operations in sales and marketing.', 'service-3-li1': 'Generating proposals and contracts', 'service-3-li2': 'B2B Outreach Automation (LinkedIn, TG)', 'service-3-li3': 'Smart chatbots & voice assistants',
             'service-4-title': 'Secure Infrastructure', 'service-4-sub': 'Secure On-premise AI within your perimeter.', 'service-4-li1': 'Deployment on your servers', 'service-4-li2': 'Data Sanitization', 'service-4-li3': 'Legacy Integration (SAP, ERP, 1C)',
-            'trust-h2': 'Trusted By', 'case-1-text': 'Platform for 10M+ users handling trillions in transactions.', 'trust-result-1': '10M+ Daily Users', 'case-2-text': 'Autonomous generation of video and banners by teams.', 'trust-result-2': '10x Faster Launch', 'case-3-text': 'AI assistant checking layouts against 7 brand parameters.', 'trust-result-3': '100% Brand Consistency',
-            'form-title': 'Book a 40-minute technical consultation', 'form-sub': 'We will analyze your architecture, find growth points for AI, and propose a solution (Quick Build or Complex Build).', 'label-name': 'Name', 'label-company': 'Company *', 'label-contact': 'Telegram / WhatsApp / Email', 'label-task': 'Brief Task Description', 'form-btn': 'Get Breakdown',
+            'trust-h2': 'Trusted By', 'case-1-header': 'High-load Architecture', 'case-1-text': 'Platform for 10M+ users handling trillions in transactions.', 'trust-result-1': '10M+ Daily Users', 'case-2-header': 'Content Production', 'case-2-text': 'Autonomous generation of video and banners by teams.', 'trust-result-2': '10x Faster Launch', 'case-3-header': 'Automated Design QA', 'case-3-text': 'AI assistant checking layouts against 7 brand parameters.', 'trust-result-3': '100% Brand Consistency',
+            'form-title': 'Book a 40-minute technical consultation', 'form-sub': 'We will analyze your architecture, find growth points for AI, and propose a solution.', 'label-name': 'Name', 'label-company': 'Company *', 'label-contact': 'Telegram / WhatsApp / Email', 'label-task': 'Brief Task Description', 'form-btn': 'Get Breakdown',
             'contacts-title': 'Or contact us directly', 'contacts-sub': 'We are available during business hours and ready to answer questions in your preferred channel.',
-            'footer-desc': 'Enterprise AI Integrator.', 'footer-col1': 'Products', 'footer-col2': 'Company', 'footer-col3': 'Contact', 'footer-portfolio': 'Portfolio', 'footer-team': 'Team', 'footer-privacy': 'Privacy Policy',
+            'footer-desc': 'Enterprise AI Integrator.', 'footer-col1': 'Products', 'footer-col2': 'Company', 'footer-col3': 'Contact', 'footer-portfolio': 'Portfolio', 'footer-privacy': 'Privacy Policy',
 
-            'exp-h2': 'The DIVO Formula', 'exp-sub': 'We are the hybrid engine that combines deep tech with aggressive growth.',
-            'card1-h': 'Enterprise DNA', 'card1-p': 'We build systems that handle millions of users and billions in transactions without crashing.', 'card1-tag': 'Source: CTO Expertise',
-            'card2-h': 'Product Aggression', 'card2-p': 'We build growth engines, find PMF, and optimize for 10x ROI.', 'card2-tag': 'Source: CEO Expertise',
-            'card3-h': 'Predictable ROI', 'card3-p': 'Systems that work technically AND pay off commercially. You get stable architecture that makes money.', 'card3-tag': 'The DIVO Result',
-            'founders-h2': 'The Architecture of Partnership', 'founders-sub': 'Two opposite forces—enterprise stability and startup speed—merge through the expertise of our co-founders.',
+            'exp-h2': 'The DIVO Formula', 'exp-sub': 'Combining advanced technologies with business objectives.',
+            'card1-h': 'Enterprise level', 'card1-p': 'We build systems that handle millions of users and billions in transactions.', 'card1-tag': 'CTO Expertise',
+            'card2-h': 'Product Expertise', 'card2-p': 'We build growth engines, find PMF, and optimize for 10x ROI.', 'card2-tag': 'CEO Expertise',
+            'card3-h': 'Predictable ROI', 'card3-p': 'You get stable architecture that makes money.', 'card3-tag': 'The DIVO Result',
+            'founders-h2': 'The Architecture of Partnership', 'founders-sub': 'Enterprise stability and startup speed merges through the expertise of our co-founders.',
             'daria-name': 'Daria Kamyshina', 'daria-role': 'CEO / Growth Engine', 'daria-quote': '"Code is useless if it doesn\'t sell."', 'daria-bio': 'Ex-Yandex. I inject the "Startup Mindset" into our DNA. My job is to ensure every line of code translates into revenue.',
             'specs-title': 'Performance Specs', 'd-spec1-k': 'Revenue Growth', 'd-spec1-v': '10x in 4 months', 'd-spec2-k': 'Retention Impact', 'd-spec2-v': '+30% Rate', 'd-spec3-k': 'Scale Capacity', 'd-spec3-v': '150+ Specialists', 'd-spec4-k': 'Core Skill', 'd-spec4-v': 'GTM & Unit Economics',
             'victor-name': 'Victor Pisarevsky', 'victor-role': 'CTO / System Core', 'victor-quote': '"Scale breaks everything. I prevent the break."', 'victor-bio': 'Ex-DomClick Architect. I bring "Enterprise Rigor". My job is to ensure Daria\'s growth ideas don\'t crash the server.',
@@ -936,7 +951,7 @@
             'step3-c-desc': 'Legacy integration (SAP/1C), On-premise, High Security. For enterprise-wide systems.',
             'step4-title': 'Step 4: Technical Support',
             'step4-price': 'Hourly / Retainer',
-            'step4-desc': 'We don\'t leave you alone with the code. We provide support by hours or, if the solution architecture requires it, we offer monthly support packages to ensure stability and updates.',
+            'step4-desc': 'We provide support by hours or, if the solution architecture requires it, we offer monthly support packages to ensure stability and updates.',
             'learn-more': 'Learn more', 'view-profile': 'Profile'
         },
         'ru': {
@@ -952,16 +967,16 @@
             'service-2-title': 'Интеллектуальные системы', 'service-2-sub': 'ИИ-ассистенты и аналитика для принятия решений.', 'service-2-li1': 'Умный поиск по Базе Знаний (RAG)', 'service-2-li2': 'Предиктивная аналитика и анализ рисков', 'service-2-li3': 'Ассистенты департаментов (HR, Sales, Legal)',
             'service-3-title': 'Автоматизация', 'service-3-sub': 'Исключение ручных операций в продажах и маркетинге.', 'service-3-li1': 'Генерация КП и договоров', 'service-3-li2': 'Автоматизация B2B Outreach (LinkedIn, TG)', 'service-3-li3': 'Умные чат-боты и голосовые ассистенты',
             'service-4-title': 'Безопасная инфраструктура', 'service-4-sub': 'Безопасный On-premise AI внутри вашего периметра.', 'service-4-li1': 'Развертывание на ваших серверах', 'service-4-li2': 'Очистка данных (Sanitization)', 'service-4-li3': 'Интеграция с Legacy (SAP, ERP, 1C)',
-            'trust-h2': 'Нам доверяют', 'case-1-text': 'Платформа для 10M+ пользователей с триллионными оборотами.', 'trust-result-1': '10M+ Пользователей', 'case-2-text': 'Автономная генерация видео и баннеров командами.', 'trust-result-2': 'В 10 раз быстрее', 'case-3-text': 'ИИ-ассистент, проверяющий макеты по 7 бренд-параметрам.', 'trust-result-3': '100% Бренд-контроль',
-            'form-title': 'Запишитесь на 40-минутную техническую консультацию', 'form-sub': 'Мы проанализируем вашу архитектуру, найдем точки роста для ИИ и предложим решение (Quick Build или Complex Build).', 'label-name': 'Имя', 'label-company': 'Компания *', 'label-contact': 'Telegram / WhatsApp / Email', 'label-task': 'Краткое описание задачи', 'form-btn': 'Получить разбор',
+            'trust-h2': 'Нам доверяют', 'case-1-header': 'Хайлоад архитектура', 'case-1-text': 'Платформа для 10M+ пользователей с триллионными оборотами.', 'trust-result-1': '10M+ Пользователей', 'case-2-header': 'Контент-завод', 'case-2-text': 'Автономная генерация видео и баннеров командами.', 'trust-result-2': 'В 10 раз быстрее', 'case-3-header': 'Дизайн копайлот', 'case-3-text': 'ИИ-ассистент, проверяющий макеты по 7 бренд-параметрам.', 'trust-result-3': '100% Бренд-контроль',
+            'form-title': 'Запишитесь на 40-минутную техническую консультацию', 'form-sub': 'Мы проанализируем вашу архитектуру, найдем точки роста для ИИ и предложим решение.', 'label-name': 'Имя', 'label-company': 'Компания *', 'label-contact': 'Telegram / WhatsApp / Email', 'label-task': 'Краткое описание задачи', 'form-btn': 'Получить разбор',
             'contacts-title': 'Или свяжитесь напрямую', 'contacts-sub': 'Мы на связи в рабочее время и готовы ответить на вопросы в удобном для вас канале.',
-            'footer-desc': 'Мы превращаем технологии в двигатель роста вашего бизнеса.', 'footer-col1': 'Продукты', 'footer-col2': 'Компания', 'footer-col3': 'Контакты', 'footer-portfolio': 'Портфолио', 'footer-team': 'Команда', 'footer-privacy': 'Политика конфиденциальности',
+            'footer-desc': 'Превращаем технологии в двигатель роста вашего бизнеса.', 'footer-col1': 'Продукты', 'footer-col2': 'Компания', 'footer-col3': 'Контакты', 'footer-portfolio': 'Портфолио', 'footer-privacy': 'Политика конфиденциальности',
 
-            'exp-h2': 'Формула DIVO', 'exp-sub': 'Мы — гибридный двигатель, объединяющий глубокие технологии с агрессивным ростом.',
-            'card1-h': 'Enterprise ДНК', 'card1-p': 'Мы строим системы, которые выдерживают миллионы пользователей и миллиарды транзакций без сбоев.', 'card1-tag': 'Источник: Экспертиза CTO',
-            'card2-h': 'Продуктовая Агрессия', 'card2-p': 'Мы создаем механизмы роста, находим PMF и оптимизируем под 10x ROI.', 'card2-tag': 'Источник: Экспертиза CEO',
-            'card3-h': 'Предсказуемый ROI', 'card3-p': 'Системы, которые работают технически И окупаются коммерчески. Вы получаете стабильную архитектуру, которая зарабатывает деньги.', 'card3-tag': 'Результат DIVO',
-            'founders-h2': 'Архитектура Партнерства', 'founders-sub': 'Две противоположные силы — стабильность энтерпрайза и скорость стартапа — объединяются благодаря экспертизе наших основателей.',
+            'exp-h2': 'Формула DIVO', 'exp-sub': 'Объединяющий передовые технологии с задачами бизнеса.',
+            'card1-h': 'Enterprise стандарты', 'card1-p': 'Мы строим системы, которые выдерживают миллионы пользователей и миллиарды транзакций.', 'card1-tag': 'Экспертиза CTO',
+            'card2-h': 'Продуктовая экспертиза', 'card2-p': 'Мы создаем механизмы роста, находим PMF и оптимизируем под 10x ROI.', 'card2-tag': 'Экспертиза CEO',
+            'card3-h': 'Предсказуемый ROI', 'card3-p': 'Вы получаете стабильную архитектуру, которая зарабатывает деньги.', 'card3-tag': 'Результат DIVO',
+            'founders-h2': 'Архитектура Партнерства', 'founders-sub': 'Стабильность энтерпрайза и скорость стартапа объединяются благодаря экспертизе наших основателей.',
             'daria-name': 'Дарья Камышина', 'daria-role': 'CEO / Growth Engine', 'daria-quote': '"Код бесполезен, если он не продает."', 'daria-bio': 'Ex-Yandex. Я внедряю "Startup Mindset" в наше ДНК. Моя работа — гарантировать, что каждая строка кода превращается в прибыль.',
             'specs-title': 'Спецификации', 'd-spec1-k': 'Рост Выручки', 'd-spec1-v': '10x за 4 месяца', 'd-spec2-k': 'Влияние на Retention', 'd-spec2-v': '+30%', 'd-spec3-k': 'Масштабирование', 'd-spec3-v': '150+ Специалистов', 'd-spec4-k': 'Ключевой навык', 'd-spec4-v': 'GTM & Unit Economics',
             'victor-name': 'Виктор Писаревский', 'victor-role': 'CTO / System Core', 'victor-quote': '"Масштаб ломает всё. Я предотвращаю поломку."', 'victor-bio': 'Ex-DomClick Architect. Я привношу "Enterprise Строгость". Моя работа — гарантировать, что идеи роста Дарьи не обрушат сервер.',
@@ -971,7 +986,7 @@
             'step1-title': 'Шаг 1: Бесплатная консультация (40 мин)', 'step1-price': 'Бесплатно', 'step1-desc': 'Мы обсуждаем вашу задачу и определяем, где ИИ принесет реальную пользу. Вы получаете письменную техническую оценку с рекомендациями.',
             'step2-title': 'Шаг 2: Discovery и Технический Аудит', 'step2-price': '$5,000 (2 недели)', 'step2-desc': 'Полный анализ вашей системы, требований безопасности и рисков. Вы получаете детальный отчет и готовое ТЗ.',
             'step3-title': 'Шаг 3: Разработка', 'step3-q-title': 'Быстрая сборка (Quick Build)', 'step3-q-price': '$30k - $80k', 'step3-q-desc': 'Стандартный стек, быстрая реализация. Идеально для RAG-ботов и API-интеграций.', 'step3-c-title': 'Комплексная система (Complex Build)', 'step3-c-price': '$100k - $400k+', 'step3-c-desc': 'Интеграция с Legacy (SAP/1C), On-premise, высокая безопасность. Для общекорпоративных систем.',
-            'step4-title': 'Шаг 4: Техническая поддержка', 'step4-price': 'По часам / Абонемент', 'step4-desc': 'Мы не оставляем вас один на один с кодом. Мы предоставляем поддержку по часам или, если этого требует архитектура решения, предлагаем ежемесячные пакеты для гарантии стабильности и обновлений.',
+            'step4-title': 'Шаг 4: Техническая поддержка', 'step4-price': 'По часам / Абонемент', 'step4-desc': 'Мы предоставляем поддержку по часам или, если этого требует архитектура решения, предлагаем ежемесячные пакеты для гарантии стабильности и обновлений.',
             'learn-more': 'Подробнее', 'view-profile': 'Профиль'
         }
     };

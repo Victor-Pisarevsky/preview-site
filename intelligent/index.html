@@ -117,7 +117,7 @@
 
         /* LANG */
         .lang-dropdown { position: relative; display: inline-block; }
-        .lang-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 0.75rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
         .lang-menu { display: none; position: absolute; right: 0; top: 100%; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 50; border: 1px solid #E5E7EB; overflow: hidden; margin-top: 0.5rem; }
         .lang-menu.show { display: block; }
     </style>
@@ -175,16 +175,15 @@
 
             <div class="container max-w-7xl mx-auto px-4 relative z-20 text-center">
                 <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full pl-3 pr-4 py-1.5 mb-8 shadow-sm">
-                     <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
                     <span class="text-xs font-bold text-gray-500 tracking-wide uppercase" data-lang="hero-badge">Deep Tech & Enterprise Engineering</span>
                 </div>
 
                 <h1 class="text-5xl md:text-7xl mb-6 tracking-tight text-gray-900 leading-[0.95]" data-lang="hero-h1">
-                    Complex Systems. <br><span class="text-primary">Not just Prompts.</span>
+                    Complex Systems
                 </h1>
 
                 <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed font-light" data-lang="hero-sub">
-                    We build "Intelligent Systems" where AI is just the tip of the iceberg. Beneath the surface: fault-tolerant architecture, legacy integrations, and strict business logic.
+                    We build intelligent systems where AI is just a part of them, and at the core lies a fault-tolerant architecture and strict business logic
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -765,8 +764,8 @@
         // TRANSLATIONS
         const translations = {
             'en': {
-                'hero-h1': 'Complex Systems. <br><span class="text-primary">Not just Prompts.</span>',
-                'hero-sub': 'We build "Intelligent Systems" where AI is just the tip of the iceberg. Beneath the surface: fault-tolerant architecture, legacy integrations, and strict business logic.',
+                'hero-h1': 'Complex Systems',
+                'hero-sub': 'We build intelligent systems where AI is just a part of them, and at the core lies a fault-tolerant architecture and strict business logic',
                 'hero-cta': 'Discuss Architecture', 'hero-cta2': 'Explore Cases',
                 'gap-title': 'Why GPT Wrappers Fail in Enterprise',
                 'gap-sub': 'Business needs processes, not chatbots. We bridge the gap between "Magic AI Demo" and "Production Reality".',
@@ -793,10 +792,10 @@
                 'header-cta': 'Book Consultation'
             },
             'ru': {
-                'hero-h1': 'Сложные системы. <br><span class="text-primary">Не просто промты.</span>',
-                'hero-sub': 'Мы строим «Интеллектуальные системы», где ИИ — лишь вершина айсберга. Под водой: отказоустойчивая архитектура, интеграции с Legacy и строгая бизнес-логика.',
+                'hero-h1': 'Сложные системы',
+                'hero-sub': 'Мы строим интеллектуальные системы, где AI лишь их часть, а в основе лежит отказоустойчивая архитектура и строгая бизнес логика',
                 'hero-cta': 'Обсудить архитектуру', 'hero-cta2': 'Смотреть кейсы',
-                'gap-title': 'Почему GPT-обертки падают в Энтерпрайзе',
+                'gap-title': 'Почему GPT-обертки не способны к мастшабированию',
                 'gap-sub': 'Бизнесу нужны процессы, а не чат-боты. Мы закрываем разрыв между «Магическим демо» и «Суровой реальностью продакшена».',
                 'p1-title': 'Legacy Данные', 'p1-desc': 'Ваши данные не в Векторной БД. Они в Oracle (2010), SAP или 1C. Мы пишем адаптеры.',
                 'p2-title': 'Безопасность', 'p2-desc': 'Нельзя слать данные клиентов в OpenAI. Мы разворачиваем On-premise LLM внутри контура.',
