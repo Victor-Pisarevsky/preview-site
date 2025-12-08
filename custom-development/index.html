@@ -289,7 +289,7 @@
                                 <div class="flow-content" data-lang="c1-s1">Finds leads (Apollo/LinkedIn)</div>
                             </div>
                             <div class="flow-step">
-                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-icon bg-primary text-primary font-bold shadow-md">2</div>
                                 <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c1-s2">AI Personalizes Email</div>
                             </div>
                             <div class="flow-step">
@@ -298,7 +298,7 @@
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-100 text-center">
-                            <span class="text-sm font-bold text-green-600" data-lang="c1-res">+20h/week Saved</span>
+                            <span class="text-sm font-bold text-red-600" data-lang="c1-res">+20h/week Saved</span>
                         </div>
                     </div>
 
@@ -318,7 +318,7 @@
                                 <div class="flow-content" data-lang="c2-s1">Monitors Email for PDF</div>
                             </div>
                             <div class="flow-step">
-                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-icon bg-primary text-primary font-bold shadow-md">2</div>
                                 <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c2-s2">OCR + AI Extraction</div>
                             </div>
                             <div class="flow-step">
@@ -327,7 +327,7 @@
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-100 text-center">
-                            <span class="text-sm font-bold text-green-600" data-lang="c2-res">0% Data Errors</span>
+                            <span class="text-sm font-bold text-red-600" data-lang="c2-res">0% Data Errors</span>
                         </div>
                     </div>
 
@@ -347,7 +347,7 @@
                                 <div class="flow-content" data-lang="c3-s1">Employee Asks in Slack</div>
                             </div>
                             <div class="flow-step">
-                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-icon bg-primary text-primary font-bold shadow-md">2</div>
                                 <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c3-s2">AI Search (RAG)</div>
                             </div>
                             <div class="flow-step">
@@ -356,7 +356,7 @@
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-100 text-center">
-                            <span class="text-sm font-bold text-green-600" data-lang="c3-res">-40h/mo HR Time</span>
+                            <span class="text-sm font-bold text-red-600" data-lang="c3-res">-40h/mo HR Time</span>
                         </div>
                     </div>
 
@@ -376,7 +376,7 @@
                                 <div class="flow-content" data-lang="c4-s1">Check Carrier Sites</div>
                             </div>
                             <div class="flow-step">
-                                <div class="flow-icon bg-primary text-white shadow-md">2</div>
+                                <div class="flow-icon bg-primary text-primary font-bold shadow-md">2</div>
                                 <div class="flow-content border-primary/20 bg-primary/5 text-primary font-bold" data-lang="c4-s2">Normalize Statuses</div>
                             </div>
                             <div class="flow-step">
@@ -385,7 +385,7 @@
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-100 text-center">
-                            <span class="text-sm font-bold text-green-600" data-lang="c4-res">Real-time Visibility</span>
+                            <span class="text-sm font-bold text-red-600" data-lang="c4-res">Real-time Visibility</span>
                         </div>
                     </div>
 
@@ -427,27 +427,63 @@
                              </div>
                          </div>
                      </div>
-                     <div class="w-full md:w-1/2 bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-2xl font-mono text-xs md:text-sm">
-                         <div class="flex gap-2 mb-4">
-                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                             <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                         </div>
-                         <div class="text-green-400"># Example: Invoice Processing Logic</div>
-                         <div class="text-blue-300 mt-2">from</div> <div class="text-white inline">divo_core</div> <div class="text-blue-300 inline">import</div> <div class="text-white inline">Agent, ERP</div>
-                         <br><br>
-                         <div class="text-purple-400">async def</div> <div class="text-yellow-300 inline">process_invoice</div><div class="text-white inline">(pdf_file):</div>
-                         <div class="pl-4 text-gray-400"># 1. AI extracts structured data</div>
-                         <div class="pl-4 text-white">data = <span class="text-purple-400">await</span> Agent.extract(pdf_file)</div>
-                         <br>
-                         <div class="pl-4 text-gray-400"># 2. Validate Amount</div>
-                         <div class="pl-4 text-purple-400">if</div> <div class="text-white inline">data.total > <span class="text-orange-400">50000</span>:</div>
-                         <div class="pl-8 text-white">Slack.alert_cfo(data)</div>
-                         <div class="pl-8 text-purple-400">return</div> <div class="text-green-300">"Pending Approval"</div>
-                         <br>
-                         <div class="pl-4 text-gray-400"># 3. Create Record in SAP</div>
-                         <div class="pl-4 text-purple-400">return</div> <div class="text-white inline">ERP.create_record(data)</div>
-                     </div>
+                     <div class="w-full md:w-1/2 bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-2xl font-mono text-xs md:text-sm leading-relaxed">
+                        <div class="flex gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+
+                        <div class="text-green-400"># Example: Invoice Processing Logic</div>
+
+                        <div class="mt-2">
+                            <span class="text-purple-400">from</span>
+                            <span class="text-white">divo_core</span>
+                            <span class="text-purple-400">import</span>
+                            <span class="text-white">Agent, ERP</span>
+                        </div>
+
+                        <div class="h-4"></div> <div>
+                            <span class="text-purple-400">async def</span>
+                            <span class="text-yellow-300">process_invoice</span><span class="text-white">(pdf_file):</span>
+                        </div>
+
+                        <div class="pl-4 text-gray-400"># 1. AI extracts structured data</div>
+
+                        <div class="pl-4">
+                            <span class="text-white">data = </span>
+                            <span class="text-purple-400">await</span>
+                            <span class="text-white">Agent.extract(pdf_file)</span>
+                        </div>
+
+                        <div class="h-4"></div>
+
+                        <div class="pl-4 text-gray-400"># 2. Validate Amount</div>
+
+                        <div class="pl-4">
+                            <span class="text-purple-400">if</span>
+                            <span class="text-white">data.total > </span>
+                            <span class="text-orange-400">50000</span><span class="text-white">:</span>
+                        </div>
+
+                        <div class="pl-8">
+                            <span class="text-white">Slack.alert_cfo(data)</span>
+                        </div>
+
+                        <div class="pl-8">
+                            <span class="text-purple-400">return</span>
+                            <span class="text-green-300">"Pending Approval"</span>
+                        </div>
+
+                        <div class="h-4"></div>
+
+                        <div class="pl-4 text-gray-400"># 3. Create Record in SAP</div>
+
+                        <div class="pl-4">
+                            <span class="text-purple-400">return</span>
+                            <span class="text-white">ERP.create_record(data)</span>
+                        </div>
+                    </div>
                  </div>
              </div>
         </section>
@@ -601,8 +637,8 @@
                 'meta-title': 'Интеллектуальная Автоматизация | DIVO',
                 'nav-design': 'Design Copilot', 'nav-intelligent': 'Интеллектуальные системы', 'nav-automation': 'Автоматизация', 'nav-secure': 'Безопасная инфраструктура',
                 'hero-tag': 'Интеллектуальная Автоматизация',
-                'hero-h1': 'Превращаем операционный хаос в <span class="text-primary">Надежный Код</span>.',
-                'hero-sub': 'Ваши лучшие сотрудники не должны заниматься "копипастом". Мы создаем "цифровых сотрудников", которые выполняют рутину 24/7 без ошибок, жалоб и больничных.',
+                'hero-h1': 'Превращаем операционный хаос в <span class="text-primary">надежные решения</span>.',
+                'hero-sub': 'Ваши лучшие сотрудники не должны заниматься "копипастом". Мы создаем "цифровых аватаров", которые выполняют рутину 24/7 без ошибок, жалоб и больничных.',
                 'hero-cta': 'Рассчитать выгоду', 'hero-secondary': 'Примеры',
                 
                 'case-title': 'Живые кейсы', 'case-sub': 'Посмотрите, как мы заменяем ручной труд на интеллектуальные пайплайны.',
@@ -613,7 +649,7 @@
                 'c2-title': 'Парсинг Инвойсов', 'c2-desc': 'Исключите ошибки ручного ввода. Извлекаем данные из PDF-счетов и заносим их напрямую в 1С/SAP.',
                 'c2-s1': 'Мониторинг почты', 'c2-s2': 'OCR + AI Извлечение', 'c2-s3': 'Создание счета в ERP', 'c2-res': '0% Ошибок ввода',
                 
-                'c3-title': 'Onboarding Бот', 'c3-desc': 'HR отвечает на одни и те же вопросы 100 раз. Мы создаем бота, обученного на вашей Базе Знаний.',
+                'c3-title': 'Onboarding Бот', 'c3-desc': 'HR отвечает на одни и те же вопросы 100 раз. Мы создаем бота, обученного на вашей базе знаний.',
                 'c3-s1': 'Вопрос сотрудника в Slack', 'c3-s2': 'AI Поиск (RAG)', 'c3-s3': 'Мгновенный ответ', 'c3-res': '-40ч/мес HR времени',
 
                 'c4-title': 'Статусы Заказов', 'c4-desc': 'Клиенты звонят: "Где груз?". Мы автоматизируем проверку статусов на порталах 5 разных перевозчиков.',
@@ -622,9 +658,9 @@
                 'btn-more-cases': 'Смотреть все кейсы',
 
                 'tech-title': 'Инженерия, а не "Клей".',
-                'tech-desc': 'No-code инструменты (Zapier) хороши для прототипов, но ломаются на масштабе. Мы строим надежные системы с мониторингом на базе Enterprise-кода.',
+                'tech-desc': 'No-code инструменты (Zapier) хороши для прототипов, но ломаются при масштабировании. Мы строим системы Enterprise уровня.',
                 
-                'calc-h': 'Цена Бездействия', 'calc-sub': 'Сколько денег вы теряете на рутине прямо сейчас?',
+                'calc-h': 'Цена бездействия', 'calc-sub': 'Сколько денег вы теряете на рутине прямо сейчас?',
                 'calc-l1': 'Сотрудников на рутине', 'calc-l2': 'Часов в неделю (на чел.)', 'calc-l3': 'Средняя ставка в час ($)',
                 'calc-res': 'Потери в год', 'calc-note': 'Это деньги, которые вы платите за работу, которую скрипт сделает за копейки.', 'calc-cta': 'Автоматизировать',
                 
