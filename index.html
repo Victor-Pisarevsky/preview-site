@@ -114,7 +114,7 @@
             /* PERFORMANCE: GPU Acceleration hints */
             transform: translateZ(0);
         }
-        .hero-pattern-base { opacity: 0.4; }
+        .hero-pattern-base { opacity: 0.6; }
         .hero-pattern-active {
             opacity: 1; z-index: 1;
             -webkit-mask-image: transparent; mask-image: transparent;
@@ -209,8 +209,8 @@
             <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
                 <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-sm">
                     <a href="/for-design" class="header-nav-link" data-lang="nav-design">Design Copilot</a>
-                    <a href="/custom-development" class="header-nav-link" data-lang="nav-intelligent">Intelligent Systems</a>
-                    <a href="/intelligent" class="header-nav-link" data-lang="nav-automation">Automation</a>
+                    <a href="/intelligent" class="header-nav-link" data-lang="nav-intelligent">Intelligent Systems</a>
+                    <a href="/custom-development" class="header-nav-link" data-lang="nav-automation">Automation</a>
                     <a href="/secure" class="header-nav-link" data-lang="nav-secure">Secure Infrastructure</a>
                 </nav>
             </div>
@@ -874,7 +874,7 @@
                 if(flashes[i].age > flashes[i].life) flashes.splice(i, 1);
             }
 
-            let maskString = `radial-gradient(350px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
+            let maskString = `radial-gradient(100px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
 
             flashes.forEach(f => {
                 let opacity = 1;
