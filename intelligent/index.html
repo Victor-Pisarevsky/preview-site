@@ -140,17 +140,17 @@
 
                 <div class="hidden lg:flex items-center gap-6 relative z-10">
                     <div class="lang-dropdown">
-                        <button id="lang-toggle" class="lang-btn"><span id="current-lang-flag">🇪🇳</span> <svg class="w-3 h-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
+                        <button id="lang-toggle" class="lang-btn"><span id="current-lang-flag">EN</span> <svg class="w-3 h-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
                         <div id="lang-menu" class="lang-menu">
-                            <button class="lang-option" onclick="changeLang('en')">🇪🇳 English</button>
-                            <button class="lang-option" onclick="changeLang('ru')">🇷🇺 Русский</button>
+                            <button class="lang-option" onclick="changeLang('en')">EN English</button>
+                            <button class="lang-option" onclick="changeLang('ru')">RU Русский</button>
                         </div>
                     </div>
                     <a href="#contact" class="btn btn-primary text-sm px-5 py-2" data-lang="header-cta">Book Consultation</a>
                 </div>
 
                 <div class="lg:hidden flex items-center gap-4 relative z-10">
-                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">🇪🇳</span></button>
+                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
                     <button id="mobile-menu-toggle" class="text-gray-800 p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
                 </div>
             </div>
@@ -825,7 +825,7 @@
         let currentLang = 'en';
         function changeLang(lang) {
             currentLang = lang;
-            const flag = lang === 'en' ? '🇪🇳' : '🇷🇺';
+            const flag = lang === 'en' ? 'EN' : 'RU';
             document.getElementById('current-lang-flag').textContent = flag;
             const t = translations[lang];
 
