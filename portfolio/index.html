@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+    <title data-lang="meta-title">Custom AI Development | Systems That Work at Scale</title>
+    <meta name="description" data-lang="meta-description" content="We design fault-tolerant AI systems for enterprise. Experience with banking, e-commerce, tech corporations. From $30k to $400k+.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CORE VARIABLES --- */
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Alumni Sans', sans-serif;
+            --color-primary: rgb(203, 2, 19);
+            --color-primary-dark: rgb(160, 2, 15);
+            --color-bg-light: #F9FAFB;
+            --color-text-main: rgb(17, 24, 39);
+            --color-text-secondary: rgb(75, 85, 99);
+            --color-card-bg: #ffffff;
+            --color-dark-bg: #0f0f0f;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-weight: 300; 
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden; 
+        }
+
+        h1, h2, h3, h4, h5, h6 { color: var(--color-text-main); line-height: 1.1; }
+        h1 { font-family: var(--font-heading); font-weight: 800; }
+        h2 { font-family: var(--font-heading); font-weight: 700; }
+        h3, h4 { font-family: var(--font-heading); font-weight: 600; }
+
+        .header-logo {
+            font-family: var(--font-heading); font-weight: 900; color: var(--color-primary);
+            font-size: 1.8rem; line-height: 1; letter-spacing: -0.5px;
+        }
+        
+        .header-nav-link {
+            font-family: var(--font-sans); font-weight: 500; font-size: 0.95rem;
+            color: var(--color-text-main); transition: color 0.2s ease;
+        }
+        .header-nav-link:hover { color: var(--color-primary); }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 2rem; border-radius: 6px;
+            font-family: var(--font-sans); font-weight: 600; font-size: 1rem;
+            text-decoration: none; cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
+        }
+        .btn-primary {
+            background-color: var(--color-primary); color: white; border: 2px solid var(--color-primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark); border-color: var(--color-primary-dark);
+            box-shadow: 0 4px 12px rgba(203, 2, 19, 0.2); transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent; color: var(--color-text-main); border: 2px solid #E5E7EB;
+        }
+        .btn-secondary:hover {
+            border-color: var(--color-primary); color: var(--color-primary);
+            background-color: white; transform: translateY(-2px);
+        }
+
+        .card {
+            background-color: var(--color-card-bg); border: 1px solid #E5E7EB;
+            border-radius: 12px; padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            height: 100%; display: flex; flex-direction: column; position: relative;
+            will-change: transform;
+        }
+        .card:hover {
+            transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1); border-color: #D1D5DB;
+        }
+        
+        /* Stats Styles */
+        .stat-value {
+            font-family: var(--font-heading); font-weight: 800; font-size: 2rem;
+            color: var(--color-text-main); line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #9CA3AF; font-weight: 600; margin-top: 0.2rem;
+        }
+
+        /* --- HERO PATTERN STYLES --- */
+        .hero-pattern-bg {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%; pointer-events: none; z-index: 0;
+            /* Base Grid: Neutral Gray */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='100%25' height='100%25' fill='%23ffffff'/%3E%3Cpath fill='none' stroke='%23e5e7eb' stroke-width='.5' d='M10 0v20ZM0 10h20Z'/%3E%3C/svg%3E");
+        }
+        
+        .hero-pattern-active {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%; pointer-events: none; z-index: 1;
+            /* Active Grid: Primary Red Tint (for shimmer) */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' stroke='rgba(203, 2, 19, 0.15)' stroke-width='1' d='M10 0v20ZM0 10h20Z'/%3E%3C/svg%3E");
+            /* Initially hidden by mask */
+            -webkit-mask-image: radial-gradient(100px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+            mask-image: radial-gradient(100px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+            opacity: 0; /* JS will enable opacity */
+            transition: opacity 0.5s ease;
+        }
+        
+        .hero-fade-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
+            background: linear-gradient(to top, var(--color-bg-light) 0%, rgba(249,250,251,0) 100%);
+            z-index: 5; pointer-events: none;
+        }
+
+        /* Lang Switcher */
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 0.75rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .lang-menu { display: none; position: absolute; right: 0; top: 100%; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 50; border: 1px solid #E5E7EB; overflow: hidden; margin-top: 0.5rem; }
+        .lang-menu.show { display: block; }
+        .lang-option { padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: background 0.2s; font-size: 0.95rem; color: var(--color-text-main); width: 100%; text-align: left; border: none; background: transparent; }
+        .lang-option:hover { background-color: #F3F4F6; }
+
+        .footer-link { color: #9CA3AF; transition: color 0.2s; }
+        .footer-link:hover { color: white; }
+        .dark-bg-custom { background-color: var(--color-dark-bg); }
+
+        /* Form Controls */
+        .form-input, .form-select, .form-textarea { 
+            width: 100%; padding: 0.75rem 1rem; background-color: white;
+            border: 1px solid #D1D5DB; border-radius: 0.5rem;
+            color: var(--color-text-main); font-family: var(--font-sans); font-size: 1rem;
+            transition: all 0.2s ease; appearance: none; 
+        }
+        .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; padding-right: 2.5rem;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { 
+            border-color: var(--color-primary); box-shadow: 0 0 0 4px rgba(203, 2, 19, 0.1); outline: none;
+        }
+
+        /* POC Icons & Styles */
+        .poc-icon {
+            width: 3rem; height: 3rem; 
+            background-color: #F3F4F6; color: #4B5563;
+            border-radius: 8px; 
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .card:hover .poc-icon {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        .poc-icon svg { width: 1.5rem; height: 1.5rem; }
+        
+        .company-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background-color: white; border: 1px solid #E5E7EB; 
+            padding: 0.25rem 0.75rem; border-radius: 99px;
+            font-size: 0.75rem; font-weight: 600; color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .impact-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            /* Изменено: используем основной красный цвет бренда */
+            color: var(--color-primary);
+            /* Изменено: используем светло-серый фон (как у иконок выше) */
+            background-color: #F3F4F6;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            margin-top: auto;
+        }
+        
+        .poc-audience {
+            font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+            color: var(--color-primary); margin-bottom: 0.5rem; display: block;
+        }
+        .poc-time {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            font-size: 0.75rem; font-weight: 600; color: #9CA3AF; background-color: #F3F4F6;
+            padding: 0.2rem 0.6rem; border-radius: 6px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
+
+                <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
+                    <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-sm">
+                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Design Copilot</a>
+                        <a href="/intelligent" class="header-nav-link" data-lang="nav-intelligent">Intelligent Systems</a>
+                        <a href="/custom-development" class="header-nav-link text-primary font-bold" data-lang="nav-automation">Automation</a>
+                        <a href="/secure" class="header-nav-link" data-lang="nav-secure">Secure Infrastructure</a>
+                    </nav>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-6 relative z-10">
+                    <div class="lang-dropdown">
+                        <button id="lang-toggle" class="lang-btn" aria-label="Select Language">
+                            <span id="current-lang-flag">EN</span>
+                            <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="lang-menu" class="lang-menu">
+                            <button class="lang-option" onclick="changeLang('en')"><span>EN</span> English</button>
+                            <button class="lang-option" onclick="changeLang('ru')"><span>RU</span> Русский</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4 relative z-10">
+                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
+                    <button id="mobile-menu-toggle" class="text-gray-800 p-2 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2 border-t border-gray-100">
+                <nav class="flex flex-col gap-4 p-4">
+                    <a href="/for-design" class="header-nav-link text-lg" data-lang="nav-design">Design Copilot</a>
+                    <a href="/intelligent" class="header-nav-link text-lg" data-lang="nav-intelligent">Intelligent Systems</a>
+                    <a href="/custom-development" class="header-nav-link text-lg text-primary font-bold" data-lang="nav-automation">Automation</a>
+                    <a href="/secure" class="header-nav-link text-lg" data-lang="nav-secure">Secure Infrastructure</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative pt-20 pb-8 md:pt-28 md:pb-12 bg-white hero-container" id="hero-section">
+            <div class="hero-pattern-bg"></div>
+            <div class="hero-pattern-active" id="hero-active"></div>
+            <div class="hero-fade-overlay"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 relative z-20 text-center">
+                <div class="max-w-4xl mx-auto pointer-events-auto">
+
+                    <p class="text-xs text-gray-400 font-medium tracking-wide uppercase mb-4" data-lang="hero-trusted">Trusted by market leaders: Sber, Yandex, Avito</p>
+
+                    <h1 data-lang="hero-h1" class="text-5xl md:text-7xl mb-6 tracking-tight text-gray-900 leading-tight">Systems That Work at Scale</h1>
+
+                    <p data-lang="hero-sub" class="text-lg text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
+                        We design fault-tolerant AI systems that securely integrate with your infrastructure (even legacy) and deliver measurable ROI.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-gray-50/50 border-t border-gray-100 relative">
+            <div class="container max-w-7xl mx-auto px-4 relative z-10">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="card col-span-1 md:col-span-2 cursor-pointer group hover:border-primary/30" onclick="location.href='/for-design'">
+                        <div class="flex flex-col md:flex-row gap-10 items-start">
+                            <div class="w-full md:w-3/5">
+                                <div class="company-badge">
+                                    <span class="font-bold">avito</span>
+                                    <span class="w-px h-3 bg-gray-300"></span>
+                                    <span class="text-gray-500" data-lang="meta-avito">Largest E-commerce in CIS</span>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-3 font-heading" data-lang="case1-title">Design Copilot</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed text-lg" data-lang="case1-desc">
+                                    Automated quality control for design systems. The Copilot validates layouts against brand guidelines, grids, and typography tokens, freeing Art Directors from routine reviews.
+                                </p>
+                                <span class="text-primary font-bold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                                    <span data-lang="case1-link">View Product Page</span> →
+                                </span>
+                            </div>
+                            <div class="w-full md:w-2/5 flex flex-col justify-center">
+                                <div class="grid grid-cols-2 gap-px bg-gray-200 rounded-xl overflow-hidden border border-gray-200">
+                                    <div class="bg-white p-6 text-center">
+                                        <div class="stat-value text-primary">80%</div>
+                                        <div class="stat-label" data-lang="case1-m1">Routine Reduction</div>
+                                    </div>
+                                    <div class="bg-white p-6 text-center">
+                                        <div class="stat-value">150+</div>
+                                        <div class="stat-label" data-lang="case1-m2">Designers Scalability</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="mb-6">
+                            <div class="company-badge">
+                                <span class="font-bold text-green-600">SBER</span>
+                                <span class="w-px h-3 bg-gray-300"></span>
+                                <span class="text-gray-500" data-lang="meta-sber-short">Largest Bank in Eastern Europe</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 font-heading" data-lang="case2-title">Enterprise Data Pipeline</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed" data-lang="case2-desc">
+                            Direct integrations were crashing the core banking platform. We built a stress-resistant middleware pipeline for analytical data serving internal systems.
+                        </p>
+                        <div class="pt-6 border-t border-gray-100">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="stat-value text-xl">280k+</div>
+                                    <div class="stat-label">Employees Supported</div>
+                                </div>
+                                <div>
+                                    <div class="stat-value text-xl">0%</div>
+                                    <div class="stat-label">Core Downtime</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="mb-6">
+                            <div class="company-badge">
+                                <span class="font-bold text-red-600">Yandex</span>
+                                <span class="w-px h-3 bg-gray-300"></span>
+                                <span class="text-gray-500" data-lang="meta-yandex">Browser Team</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 font-heading" data-lang="case3-title">AI Content Generation</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed" data-lang="case3-desc">
+                            Marketing needed to produce banners and videos for the largest browser in RF instantly. We trained teams and deployed GenAI pipelines.
+                        </p>
+                        <div class="pt-6 border-t border-gray-100">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="stat-value text-xl">80M+</div>
+                                    <div class="stat-label">Monthly Audience</div>
+                                </div>
+                                <div>
+                                    <div class="stat-value text-xl">10x</div>
+                                    <div class="stat-label">Faster Launch</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="mb-6">
+                            <div class="company-badge">
+                                <span class="font-bold text-green-600">SBER</span>
+                                <span class="w-px h-3 bg-gray-300"></span>
+                                <span class="text-gray-500" data-lang="meta-sber-short">Largest Bank in Eastern Europe</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 font-heading" data-lang="case4-title">Letter of Credit Automation</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed" data-lang="case4-desc">
+                            Changing deal terms required manual agreement and caused delays. We automated the entire workflow for letter of credits in real estate deals.
+                        </p>
+                        <div class="pt-6 border-t border-gray-100">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="stat-value text-xl">10M+</div>
+                                    <div class="stat-label">Users Served</div>
+                                </div>
+                                <div>
+                                    <div class="stat-value text-xl">99%</div>
+                                    <div class="stat-label">Scenario Coverage</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="mb-6">
+                            <div class="company-badge">
+                                <span class="font-bold text-green-600">SBER</span>
+                                <span class="w-px h-3 bg-gray-300"></span>
+                                <span class="text-gray-500" data-lang="meta-sber-short">Largest Bank in Eastern Europe</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 font-heading" data-lang="case5-title">Flexible Data Validation</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed" data-lang="case5-desc">
+                            Users spent a lot of time finding and fixing errors when filling out complex forms. We implemented intelligent validation logic to prevent backend load.
+                        </p>
+                        <div class="pt-6 border-t border-gray-100">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="stat-value text-xl">106M+</div>
+                                    <div class="stat-label">Active Clients</div>
+                                </div>
+                                <div>
+                                    <div class="stat-value text-xl">Real-time</div>
+                                    <div class="stat-label">Error Check</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="mb-6">
+                            <div class="company-badge">
+                                <span class="font-bold">avito</span>
+                                <span class="w-px h-3 bg-gray-300"></span>
+                                <span class="text-gray-500" data-lang="meta-avito">Largest E-commerce in CIS</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 font-heading" data-lang="case6-title">AI-Powered Redesign</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed" data-lang="case6-desc">
+                            The team planned a redesign of the car product card. We used synthetic personas to gather deep insights in record time.
+                        </p>
+                        <div class="pt-6 border-t border-gray-100">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="stat-value text-xl">60M+</div>
+                                    <div class="stat-label">MAU Reach</div>
+                                </div>
+                                <div>
+                                    <div class="stat-value text-xl">1 Month</div>
+                                    <div class="stat-label">Time to Result</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="mb-6">
+                             <div class="company-badge">
+                                <span class="font-bold text-gray-700">B2B Sales Tech</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 font-heading" data-lang="case7-title">Lead Gen Agent</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed" data-lang="case7-desc">
+                            Scaling outreach on LinkedIn & Telegram without getting blocked. AI agent mimics human behavior and adapts to algorithms.
+                        </p>
+                        <div class="pt-6 border-t border-gray-100">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="stat-value text-xl">Scale</div>
+                                    <div class="stat-label">Without Hiring</div>
+                                </div>
+                                <div>
+                                    <div class="stat-value text-xl">Safe</div>
+                                    <div class="stat-label">No Bans</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white border-t border-gray-100">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="mb-12">
+                    <h3 data-lang="poc-h3" class="text-3xl font-heading font-bold mb-2">Rapid Innovation (MVP)</h3>
+                    <p data-lang="poc-sub" class="text-lg text-gray-500">Fast solutions that solve specific business pains. From concept to value in 4-8 weeks.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Construction">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc1-title">Automated Site Reporting</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc1-desc">
+                            Don't let engineers waste 10h/week on paper. Our pipeline automatically generates flawless PDF reports directly from CAD drawings and YouGile chats.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-1">Save 40h/mo</div>
+                        </div>
+                    </div>
+
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Architecture">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc2-title">Instant Lighting Design</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc2-desc">
+                            Cut calculation time from 3 days to 30 mins. AI connects Relux & AutoCAD to automatically place fixtures and calculate coverage norms.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-2">30x Faster</div>
+                        </div>
+                    </div>
+
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Marketing">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc3-title">Brand-Safe Image Hub</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc3-desc">
+                            Forget stock photos and copyright risks. A private generation platform (Firefly/Recraft) trained on your brand style for instant, safe content.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-3">0 Legal Risk</div>
+                        </div>
+                    </div>
+
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Sales">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc4-title">Zero-Admin CRM</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc4-desc">
+                            Your managers hate filling CRM? We automate it. WhatsApp messages and calls are auto-logged and structured into deal cards automatically.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-4">+20% Sales Time</div>
+                        </div>
+                    </div>
+
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Security">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc5-title">On-Premise Secure Search</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc5-desc">
+                            Chat with your confidential documents. A local LLM that knows your regulations but never sends data to the cloud. Total data sovereignty.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-5">100% Secure</div>
+                        </div>
+                    </div>
+
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Compliance">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc6-title">Total Voice Coverage</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc6-desc">
+                            Monitor 100% of calls for leaks and quality. Secure on-premise transcription (Whisper) with 95% accuracy, even in noisy environments.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-6">95% Accuracy</div>
+                        </div>
+                    </div>
+
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Procurement">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc7-title">AI Procurement Assistant</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc7-desc">
+                            Cut costs by selecting the best suppliers instantly. AI analyzes thousands of price lists and delivery histories to find the optimal offer.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-7">Cost Reduction</div>
+                        </div>
+                    </div>
+
+                    <div class="card hover:shadow-lg transition-all p-6 flex flex-col">
+                        <div class="poc-icon" aria-label="Localization">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 font-heading" data-lang="poc8-title">Mixed-Language ASR</h4>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed flex-grow" data-lang="poc8-desc">
+                            Don't lose data in bilingual regions. Our model handles code-switching (e.g., Ru-Kz) fluently, restoring meaning where standard ASR fails.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <a href="#contact-form" class="text-sm font-bold text-primary hover:underline flex items-center gap-1">
+                                <span data-lang="btn-discuss-short">Discuss Case</span> →
+                            </a>
+                            <div class="impact-badge" data-lang="imp-8">Regional Scale</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-4xl md:text-5xl mb-6 font-bold text-gray-900" data-lang="form-h">Discuss Your Task</h2>
+                        <p class="text-xl text-gray-500 mb-8" data-lang="form-p">We will analyze your architecture, find growth points for AI, and propose a solution (Quick Build or Complex Build).</p>
+
+                        <div class="flex flex-col gap-4 text-sm text-gray-600">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1</div>
+                                <span data-lang="form-step1">Brief discovery call (15-30 min)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">2</div>
+                                <span data-lang="form-step2">Technical assessment & estimation</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">3</div>
+                                <span data-lang="form-step3">Roadmap proposal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-5/12 bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="label-name">Name</label>
+                                <input type="text" class="form-input" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="label-contact">Work Email / Telegram</label>
+                                <input type="text" class="form-input" placeholder="john@company.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="label-task">Brief Task Description</label>
+                                <textarea class="form-textarea" rows="3" placeholder="We need to automate..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full py-3 rounded text-lg mt-4" data-lang="form-btn">Get Consultation</button>
+                            <p class="text-xs text-center text-gray-400 mt-4">By clicking, you agree to our <a href="/privacy-policy" class="underline">Privacy Policy</a>.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="dark-bg-custom text-gray-400 py-12 border-t border-gray-800">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div><a href="/" class="header-logo text-white mb-4 block">DIVO</a><p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator.</p></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col1">Products</h4><ul class="space-y-2 text-sm"><li><a href="/for-design" class="footer-link">Design Copilot</a></li><li><a href="/intelligent" class="footer-link">Intelligent Systems</a></li><li><a href="/custom-development" class="footer-link">Automation</a></li><li><a href="/secure" class="footer-link">Secure Infrastructure</a></li></ul></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col2">Company</h4><ul class="space-y-2 text-sm"><li><a href="/portfolio" class="footer-link" data-lang="footer-portfolio">Portfolio</a></li><li><a href="#" class="footer-link" data-lang="footer-team">Team</a></li><li><a href="/privacy-policy" class="footer-link" data-lang="footer-privacy">Privacy Policy</a></li></ul></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col3">Contact</h4><ul class="space-y-2 text-sm"><li>info@divo.solutions</li><li><a href="https://t.me/darikamouse" class="footer-link">Telegram</a></li><li><a href="https://wa.me/+79035176391" class="footer-link">WhatsApp</a></li><li><a href="https://www.linkedin.com/company/divo-solutions" class="footer-link">LinkedIn</a></li></ul></div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-8 text-center text-xs"><p>&copy; 2025 DIVO. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // --- ANIMATION SCRIPT ---
+        function initPatternAnimation() {
+            const container = document.getElementById('hero-section');
+            const activeLayer = document.getElementById('hero-active');
+            if(!container || !activeLayer) return;
+
+            // Simplified Animation Logic for Mouse Tracking Glow
+            container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Update mask position via CSS variables or direct style
+                activeLayer.style.setProperty('--mouse-x', `${x}px`);
+                activeLayer.style.setProperty('--mouse-y', `${y}px`);
+                
+                // Make sure opacity is 1 when mouse is over
+                activeLayer.style.opacity = '1';
+            });
+
+            container.addEventListener('mouseleave', () => {
+                activeLayer.style.opacity = '0';
+            });
+        }
+
+        const translations = {
+            'en': {
+                'meta-title': 'Custom AI Development | Systems That Work at Scale',
+                'nav-design': 'Design Copilot', 'nav-intelligent': 'Intelligent Systems', 'nav-automation': 'Automation', 'nav-secure': 'Secure Infrastructure',
+                'hero-h1': 'Systems That Work at Scale', 
+                'hero-sub': 'We design fault-tolerant AI systems that securely integrate with your infrastructure (even legacy) and deliver measurable ROI.',
+                'hero-trusted': 'Trusted by market leaders: Sber, Yandex, Avito',
+                
+                'meta-avito': 'Largest E-commerce in CIS',
+                'meta-sber-short': 'Largest Bank in Eastern Europe',
+                'meta-yandex': 'Browser Team',
+                
+                'case1-title': "Design Copilot", 'case1-desc': 'Automated quality control for design systems. The Copilot validates layouts against brand guidelines, grids, and typography tokens, freeing Art Directors from routine reviews.', 'case1-link': 'View Product Page', 'case1-m1': 'Routine Reduction', 'case1-m2': 'Designers Scalability',
+                
+                'case2-title': 'Enterprise Data Pipeline', 'case2-desc': 'Direct integrations were crashing the core banking platform. We built a stress-resistant middleware pipeline for analytical data serving internal systems.',
+                'case3-title': 'AI Content Generation', 'case3-desc': 'Marketing needed to produce banners and videos for the largest browser in RF instantly. We trained teams and deployed GenAI pipelines.',
+                'case4-title': 'Letter of Credit Automation', 'case4-desc': 'Changing deal terms required manual agreement and caused delays. We automated the entire workflow for letter of credits in real estate deals.',
+                'case5-title': 'Flexible Data Validation', 'case5-desc': 'Users spent a lot of time finding and fixing errors when filling out complex forms. We implemented intelligent validation logic.',
+                'case6-title': 'AI-Powered Redesign', 'case6-desc': 'The team planned a redesign of the car product card. We used synthetic personas to gather deep insights in record time.',
+                'case7-title': 'Lead Gen Agent', 'case7-desc': 'Scaling outreach on LinkedIn & Telegram without getting blocked. AI agent mimics human behavior and adapts to algorithms.',
+                
+                'poc-h3': 'Rapid Innovation (PoC & MVP)', 'poc-sub': 'Solutions developed in 4-8 weeks to test hypotheses and deliver quick value.',
+                
+                'poc1-title': 'Automated Site Reporting', 'poc1-desc': "Don't let engineers waste 10h/week on paper. Our pipeline automatically generates flawless PDF reports directly from CAD drawings and YouGile chats.",
+                'imp-1': 'Save 40h/mo',
+                
+                'poc2-title': 'Instant Lighting Design', 'poc2-desc': 'Cut calculation time from 3 days to 30 mins. AI connects Relux & AutoCAD to automatically place fixtures and calculate coverage norms.',
+                'imp-2': '30x Faster',
+                
+                'poc3-title': 'Brand-Safe Image Hub', 'poc3-desc': 'Forget stock photos and copyright risks. A private generation platform (Firefly/Recraft) trained on your brand style for instant, safe content.',
+                'imp-3': '0 Legal Risk',
+                
+                'poc4-title': 'Zero-Admin CRM', 'poc4-desc': 'Your managers hate filling CRM? We automate it. WhatsApp messages and calls are auto-logged and structured into deal cards.',
+                'imp-4': '+20% Sales Time',
+                
+                'poc5-title': 'On-Premise Secure Search', 'poc5-desc': 'Chat with your confidential documents. A local LLM that knows your regulations but never sends data to the cloud.',
+                'imp-5': '100% Secure',
+                
+                'poc6-title': 'Total Voice Coverage', 'poc6-desc': 'Monitor 100% of calls for leaks and quality. Secure on-premise transcription (Whisper) with 95% accuracy, even in noisy environments.',
+                'imp-6': '95% Accuracy',
+                
+                'poc7-title': 'AI Procurement Assistant', 'poc7-desc': 'Cut costs by selecting the best suppliers. AI analyzes thousands of price lists and delivery histories to find the optimal offer.',
+                'imp-7': 'Cost Reduction',
+                
+                'poc8-title': 'Mixed-Language ASR', 'poc8-desc': 'Don\'t lose data in bilingual regions. Our model handles code-switching (e.g., Ru-Kz) fluently, restoring meaning where standard ASR fails.',
+                'imp-8': 'Regional Scale',
+                
+                'btn-discuss-short': 'Discuss Case',
+
+                'form-h': "Discuss Your Task", 'form-p': 'We will analyze your architecture, find growth points for AI, and propose a solution.',
+                'form-step1': 'Brief discovery call (15-30 min)', 'form-step2': 'Technical assessment & estimation', 'form-step3': 'Roadmap proposal',
+                'label-name': 'Name', 'label-contact': 'Work Email / Telegram', 'label-task': 'Brief Task Description', 'form-btn': 'Get Consultation',
+                'footer-desc': 'Enterprise AI Integrator.', 'footer-col1': 'Products', 'footer-col2': 'Company', 'footer-col3': 'Contact', 'footer-portfolio': 'Portfolio', 'footer-team': 'Team', 'footer-privacy': 'Privacy Policy'
+            },
+            'ru': {
+                'meta-title': 'Кастомная разработка AI | Системы, работающие в масштабе',
+                'nav-design': 'Design Copilot', 'nav-intelligent': 'Интеллектуальные системы', 'nav-automation': 'Автоматизация', 'nav-secure': 'Безопасная инфраструктура',
+                'hero-h1': 'Системы, которые работают в масштабе', 
+                'hero-sub': 'Мы проектируем отказоустойчивые архитектуры, которые безопасно интегрируются в вашу (даже legacy) инфраструктуру и приносят измеримый ROI.',
+                'hero-cta': 'Обсудить задачу',
+                'hero-trusted': 'Нам доверяют лидеры рынка: Сбер, Яндекс, Авито',
+                
+                'meta-avito': 'Крупнейший классифайд в СНГ',
+                'meta-sber-short': 'Крупнейший банк Восточной Европы',
+                'meta-yandex': 'Команда Яндекс Браузера',
+                
+                'case1-title': 'Design Copilot', 'case1-desc': 'Автоматизированный контроль качества для дизайн-систем. Copilot проверяет макеты на соответствие гайдлайнам, сеткам и токенам, освобождая арт-директоров от рутины.', 'case1-link': 'Страница продукта', 'case1-m1': 'Меньше рутины', 'case1-m2': 'Масштабируемость',
+                
+                'case2-title': 'Enterprise Data Pipeline', 'case2-desc': 'Прямые интеграции "клали" банковское ядро. Мы построили стрессоустойчивую middleware-шину для аналитических данных.',
+                'case3-title': 'Генерация Контента', 'case3-desc': 'Маркетингу нужно было создавать баннеры и видео для крупнейшего браузера РФ мгновенно. Мы обучили команды и развернули GenAI пайплайны.',
+                'case4-title': 'Автоматизация Аккредитивов', 'case4-desc': 'Изменение условий сделки требовало ручного согласования и вызывало задержки. Мы автоматизировали весь процесс для сделок с недвижимостью.',
+                'case5-title': 'Гибкая Валидация Данных', 'case5-desc': 'Пользователи тратили много времени на поиск ошибок в сложных формах. Мы внедрили интеллектуальную логику валидации.',
+                'case6-title': 'AI-Редизайн', 'case6-desc': 'Команда планировала редизайн карточки авто. Мы использовали синтетических персон для получения глубинных инсайтов в рекордные сроки.',
+                'case7-title': 'Агент Лидогенерации', 'case7-desc': 'Масштабирование outreach в LinkedIn и TG без блокировок. AI-агент имитирует поведение человека и адаптируется к алгоритмам.',
+                
+                'poc-h3': 'Rapid Innovation (MVP решения)', 'poc-sub': 'Решения быстрой разработки для проверки гипотез и подготовки к полномасштабным системам.',
+                
+                'poc1-title': 'Автоматизация Отчетов', 'poc1-desc': 'Не заставляйте инженеров тратить 10ч в неделю на бумаги. Наш пайплайн сам собирает идеальные PDF из CAD-чертежей и чатов.',
+                'imp-1': 'Экономия 40ч/мес',
+                
+                'poc2-title': 'Мгновенный Светодизайн', 'poc2-desc': 'Сократите расчеты с 3 дней до 30 минут. Алгоритм связывает Relux и AutoCAD, автоматически расставляя светильники по нормам.',
+                'imp-2': 'В 30 раз быстрее',
+                
+                'poc3-title': 'Безопасный AI-Фотосток', 'poc3-desc': 'Забудьте о дорогих стоках и авторских правах. Закрытая платформа (Firefly/Recraft), обученная на вашем бренде.',
+                'imp-3': '0 юр. рисков',
+                
+                'poc4-title': 'CRM Без Рутины', 'poc4-desc': 'Менеджеры ненавидят заполнять CRM? Мы автоматизируем это. Звонки и переписки сами превращаются в карточки сделок.',
+                'imp-4': '+20% врем. продаж',
+                
+                'poc5-title': 'Безопасный Поиск (On-Prem)', 'poc5-desc': 'Общайтесь с вашими конфиденциальными документами. Локальный LLM знает регламенты, но никогда не отправит данные в облако.',
+                'imp-5': '100% Безопасно',
+                
+                'poc6-title': 'Тотальный Контроль Звонков', 'poc6-desc': 'Мониторинг 100% разговоров на утечки и качество. Безопасная транскрибация (Whisper) на ваших серверах с точностью 95%.',
+                'imp-6': 'Точность 95%',
+                
+                'poc7-title': 'Умный Помощник Закупок', 'poc7-desc': 'Снижайте расходы на закупках. AI анализирует тысячи прайс-листов и историю поставок, находя лучшее предложение за секунды.',
+                'imp-7': 'Снижение затрат',
+                
+                'poc8-title': 'Смешанная Речь (Ru/Kz)', 'poc8-desc': 'Не теряйте данные в двуязычных регионах. Наша модель понимает смешанную речь (код-свитчинг), восстанавливая смысл там, где обычные ASR падают.',
+                'imp-8': 'Масштаб на СНГ',
+                
+                'btn-discuss-short': 'Обсудить кейс',
+
+                'form-h': 'Обсудить задачу', 'form-p': 'Мы проанализируем вашу архитектуру, найдем точки роста для ИИ и предложим решение.',
+                'form-step1': 'Короткий звонок-брифинг (15-30 мин)', 'form-step2': 'Техническая оценка и смета', 'form-step3': 'Предложение и Roadmap',
+                'label-name': 'Имя', 'label-contact': 'Рабочий Email / Telegram', 'label-task': 'Кратко о задаче', 'form-btn': 'Получить консультацию',
+                'footer-desc': 'Интегратор ИИ решений.', 'footer-col1': 'Продукты', 'footer-col2': 'Компания', 'footer-col3': 'Контакты', 'footer-portfolio': 'Портфолио', 'footer-team': 'Команда', 'footer-privacy': 'Политика конфиденциальности'
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initPatternAnimation();
+            const langToggle = document.getElementById('lang-toggle');
+            const langMenu = document.getElementById('lang-menu');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if(langToggle && langMenu) {
+                langToggle.addEventListener('click', (e) => { e.stopPropagation(); langMenu.classList.toggle('show'); });
+                document.addEventListener('click', () => { langMenu.classList.remove('show'); });
+            }
+            if(mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            }
+            changeLang('en');
+        });
+
+        let currentLang = 'en';
+        function changeLang(lang) {
+            currentLang = lang;
+            const flag = lang === 'en' ? 'EN' : 'RU';
+            document.getElementById('current-lang-flag').textContent = flag;
+            document.getElementById('mobile-lang-flag').textContent = flag;
+            const t = translations[lang];
+            
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(t[key]) {
+                     if (key === 'meta-description') el.setAttribute('content', t[key]);
+                     else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {} 
+                     else el.innerHTML = t[key];
+                }
+            });
+            const langMenu = document.getElementById('lang-menu');
+            if(langMenu) langMenu.classList.remove('show');
+        }
+        function toggleMobileLang() {
+            const newLang = currentLang === 'en' ? 'ru' : 'en';
+            changeLang(newLang);
+        }
+    </script>
+</body>
+</html>

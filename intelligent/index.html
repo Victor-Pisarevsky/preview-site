@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+    <title data-lang="meta-title">Intelligent Systems | Enterprise AI by DIVO</title>
+    <meta name="description" data-lang="meta-description" content="We build high-load AI systems that integrate with legacy infrastructure. Sber, Avito, and Enterprise cases.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CORE VARIABLES --- */
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Alumni Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            --color-primary: rgb(203, 2, 19);
+            --color-primary-dark: rgb(160, 2, 15);
+            --color-bg-light: #F9FAFB;
+            --color-text-main: rgb(17, 24, 39);
+            --color-text-secondary: rgb(75, 85, 99);
+            --color-card-bg: #ffffff;
+            --color-dark-bg: #0f0f0f;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-weight: 300; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.1; }
+        
+        /* HEADER & NAV */
+        .header-logo { font-family: var(--font-heading); font-weight: 900; color: var(--color-primary); font-size: 1.8rem; line-height: 1; letter-spacing: -0.5px; }
+        .header-nav-link { font-family: var(--font-sans); font-weight: 500; font-size: 0.95rem; color: var(--color-text-main); transition: color 0.2s ease; }
+        .header-nav-link:hover { color: var(--color-primary); }
+
+        /* BUTTONS */
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 2rem; border-radius: 6px; font-family: var(--font-sans); font-weight: 600; font-size: 1rem; transition: all 0.2s ease; white-space: nowrap; cursor: pointer; }
+        .btn-primary { background-color: var(--color-primary); color: white; border: 2px solid var(--color-primary); }
+        .btn-primary:hover { background-color: var(--color-primary-dark); border-color: var(--color-primary-dark); box-shadow: 0 4px 12px rgba(203, 2, 19, 0.2); transform: translateY(-2px); }
+        .btn-secondary { background-color: transparent; color: var(--color-text-main); border: 2px solid #E5E7EB; }
+        .btn-secondary:hover { border-color: var(--color-primary); color: var(--color-primary); background-color: white; transform: translateY(-2px); }
+
+        /* HERO PATTERN */
+        .hero-section { position: relative; overflow: hidden; background-color: white; contain: paint layout; }
+        .hero-pattern-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+        .hero-pattern-active { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; -webkit-mask-image: radial-gradient(100px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%); mask-image: radial-gradient(100px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%); opacity: 0; transition: opacity 0.3s ease; }
+        .hero-fade-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); z-index: 5; pointer-events: none; }
+
+        /* FORMS */
+        .form-input, .form-textarea, .form-select { width: 100%; padding: 0.75rem 1rem; background-color: white; border: 1px solid #D1D5DB; border-radius: 0.5rem; color: var(--color-text-main); font-family: var(--font-sans); font-size: 1rem; transition: all 0.2s ease; appearance: none; }
+        .form-input:focus, .form-textarea:focus { border-color: var(--color-primary); box-shadow: 0 0 0 4px rgba(203, 2, 19, 0.1); outline: none; }
+        .form-label { display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem; color: var(--color-text-main); }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+            z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+            display: flex; align-items: center; justify-content: center; padding: 1rem;
+        }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-content {
+            background: white; width: 100%; max-width: 480px; border-radius: 16px; 
+            padding: 2.5rem; position: relative; transform: translateY(20px); transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .modal-overlay.open .modal-content { transform: translateY(0); }
+
+        /* DIAGRAM CONTAINER STYLES */
+        .diagram-wrapper { background-color: white; border: 1px solid #E5E7EB; border-radius: 20px; box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.05); position: relative; overflow: visible; margin-top: 2rem; }
+        .grid-bg-diagram { position: absolute; inset: 0; background-image: radial-gradient(#E5E7EB 1px, transparent 1px); background-size: 24px 24px; z-index: 0; opacity: 0.6; }
+        .connections-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: visible; }
+
+        /* NODE STYLES */
+        .tech-node { background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 1.25rem; position: relative; z-index: 10; transition: all 0.2s ease; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); display: flex; flex-direction: column; min-height: 120px; }
+        .tech-node:hover { border-color: #D1D5DB; transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1); z-index: 20; }
+        
+        .node-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #F3F4F6; padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
+        .node-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: #111827; line-height: 1.2; }
+        .node-sub { font-size: 0.75rem; color: #6B7280; line-height: 1.4; }
+        .node-badge { font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600; background: #F3F4F6; padding: 4px 8px; border-radius: 6px; color: #6B7280; }
+        
+        .tech-pill { font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600; background: #F3F4F6; border: 1px solid #E5E7EB; padding: 3px 8px; border-radius: 6px; color: #4B5563; margin-top: auto; display: inline-block; width: fit-content; margin-right: 4px; }
+        
+        /* CASE SPECIFIC */
+        .group-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #9CA3AF; margin-bottom: 1rem; display: block; letter-spacing: 0.05em; }
+        .node-core { border-left: 4px solid #4B5563; }
+        .node-process { border-left: 4px solid var(--color-primary); }
+        .node-dlq { border: 1px dashed var(--color-primary); background: #FFF5F5; }
+        .node-kafka { background: #F9FAFB; border-color: #E5E7EB; }
+        .node-input { border-left: 3px solid #000; }
+        .node-cv { border-left: 4px solid var(--color-primary); }
+        .node-code { border-left: 4px solid #4B5563; }
+        .figma-pin { width: 32px; height: 32px; background: var(--color-primary); border: 2px solid white; border-radius: 50% 50% 0 50%; transform: rotate(45deg); box-shadow: 0 4px 6px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; position: absolute; top: -10px; left: -10px; z-index: 20; }
+        .figma-pin span { transform: rotate(-45deg); }
+        .figma-comment { background: white; border: 1px solid #E5E7EB; border-radius: 0 12px 12px 12px; box-shadow: 0 10px 30px -5px rgba(0,0,0,0.15); padding: 12px; font-size: 0.85rem; position: relative; min-width: 200px; }
+        .diff-text { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 0.75rem; background: #FEF2F2; color: #991B1B; padding: 4px 8px; border-radius: 4px; border: 1px solid #FECACA; }
+        .asset-stack { background: #F9FAFB; border: 1px solid #E5E7EB; }
+        .infra-block { background: #F9FAFB; border: 1px solid #E5E7EB; flex-direction: row; align-items: center; justify-content: space-between; }
+        
+        /* FOOTER */
+        .dark-bg-custom { background-color: var(--color-dark-bg); }
+        .footer-link { color: #9CA3AF; transition: color 0.2s; }
+        .footer-link:hover { color: white; }
+
+        /* LANG */
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 0.75rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .lang-menu { display: none; position: absolute; right: 0; top: 100%; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 50; border: 1px solid #E5E7EB; overflow: hidden; margin-top: 0.5rem; }
+        .lang-menu.show { display: block; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
+
+                <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
+                    <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-md">
+                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Design Copilot</a>
+                        <a href="/intelligent" class="header-nav-link text-primary font-bold" data-lang="nav-intelligent">Intelligent Systems</a>
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-automation">Automation</a>
+                        <a href="/secure" class="header-nav-link" data-lang="nav-secure">Secure Infrastructure</a>
+                    </nav>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-6 relative z-10">
+                    <div class="lang-dropdown">
+                        <button id="lang-toggle" class="lang-btn"><span id="current-lang-flag">EN</span> <svg class="w-3 h-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
+                        <div id="lang-menu" class="lang-menu">
+                            <button class="lang-option" onclick="changeLang('en')">EN English</button>
+                            <button class="lang-option" onclick="changeLang('ru')">RU Русский</button>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary text-sm px-5 py-2" data-lang="header-cta">Book Consultation</a>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4 relative z-10">
+                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
+                    <button id="mobile-menu-toggle" class="text-gray-800 p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2 border-t border-gray-100">
+                <nav class="flex flex-col gap-4 p-4">
+                    <a href="/for-design" class="header-nav-link text-lg">Design Copilot</a>
+                    <a href="/intelligent" class="header-nav-link text-lg text-primary font-bold">Intelligent Systems</a>
+                    <a href="/custom-development" class="header-nav-link text-lg">Automation</a>
+                    <a href="/secure" class="header-nav-link text-lg">Secure Infrastructure</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <section class="relative pt-20 pb-20 md:pt-32 md:pb-24 bg-white hero-section" id="hero-section">
+            <div class="hero-pattern-bg" id="hero-base"></div>
+            <div class="hero-pattern-active" id="hero-active"></div>
+            <div class="hero-fade-overlay"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 relative z-20 text-center">
+                <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full pl-3 pr-4 py-1.5 mb-8 shadow-sm">
+                    <span class="text-xs font-bold text-gray-500 tracking-wide uppercase" data-lang="hero-badge">Deep Tech & Enterprise Engineering</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl mb-6 tracking-tight text-gray-900 leading-[0.95]" data-lang="hero-h1">
+                    Complex Systems
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed font-light" data-lang="hero-sub">
+                    We build intelligent systems where AI is just a part of them, and at the core lies a fault-tolerant architecture and strict business logic
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#contact" class="btn btn-primary text-lg px-8 py-3 shadow-lg" data-lang="hero-cta">Discuss Architecture</a>
+                    <a href="#cases" class="btn btn-secondary text-lg px-8 py-3" data-lang="hero-cta2">Explore Cases</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gray-50 border-y border-gray-200">
+            <div class="container max-w-5xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold font-heading mb-4" data-lang="gap-title">Why GPT Wrappers Fail in Enterprise</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-lang="gap-sub">Business needs processes, not chatbots. We bridge the gap between "Magic AI Demo" and "Production Reality".</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <div class="text-4xl font-bold text-gray-200 mb-4 font-heading">01</div>
+                        <h3 class="text-lg font-bold mb-2" data-lang="p1-title">Legacy Data</h3>
+                        <p class="text-sm text-gray-500" data-lang="p1-desc">Your data isn't in a Vector DB. It's in Oracle (2010), SAP, or 1C. We build the adapters to fetch it.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm border-t-4 border-t-primary">
+                        <div class="text-4xl font-bold text-gray-200 mb-4 font-heading">02</div>
+                        <h3 class="text-lg font-bold mb-2 text-primary" data-lang="p2-title">Security & PII</h3>
+                        <p class="text-sm text-gray-500" data-lang="p2-desc">You can't send customer names to OpenAI. We deploy On-premise LLMs inside your perimeter.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <div class="text-4xl font-bold text-gray-200 mb-4 font-heading">03</div>
+                        <h3 class="text-lg font-bold mb-2" data-lang="p3-title">Strict Logic</h3>
+                        <p class="text-sm text-gray-500" data-lang="p3-desc">Neural networks hallucinate. We wrap them in code constraints (Guardrails) to ensure reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="cases" class="bg-white">
+
+            <section class="py-20 border-b border-gray-100">
+                <div class="container max-w-7xl mx-auto px-4">
+                     <div class="mb-10 flex flex-col lg:flex-row justify-between items-end gap-6">
+                         <div class="max-w-2xl">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-white bg-red-600 px-2 py-0.5 rounded uppercase">Case #1</span>
+                                <span class="text-xs font-bold text-gray-500 uppercase">FinTech / High-Load</span>
+                            </div>
+                            <h2 class="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-4" data-lang="sber-title">Sber Analytics Middleware</h2>
+                            <div class="flex flex-wrap items-center gap-3 mb-4 text-sm text-gray-600">
+                                 <span>Client: <b>Sberbank</b></span>
+                                 <span class="bg-gray-100 px-2 py-0.5 rounded text-xs font-bold">Largest Bank in CEE</span>
+                                 <span class="bg-gray-100 px-2 py-0.5 rounded text-xs font-bold">106M+ Clients</span>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed" data-lang="sber-desc">
+                                <b>Challenge:</b> Deliver real-time data to AI risk models without crashing the monolithic banking core under 15k EPS load.<br>
+                                <b>Solution:</b> Fault-tolerant Data Bus (CDC + Kafka) with complete core isolation.
+                            </p>
+                         </div>
+                         <div class="flex gap-8 text-right">
+                             <div><div class="text-4xl font-heading font-bold text-primary">15k</div><div class="text-xs text-gray-400 uppercase font-bold">EPS</div></div>
+                             <div><div class="text-4xl font-heading font-bold text-gray-900">&lt;1s</div><div class="text-xs text-gray-400 uppercase font-bold">Latency</div></div>
+                         </div>
+                    </div>
+
+                    <div class="diagram-wrapper p-6 md:p-12 min-h-[700px]" id="diagram-sber">
+                        <div class="grid-bg-diagram"></div>
+                        <svg id="svg-sber" class="connections-layer"></svg>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10 h-full">
+                            <div class="lg:col-span-3 flex flex-col gap-8">
+                                <span class="group-label">Source Zone</span>
+                                <div id="s-core" class="tech-node node-core">
+                                    <div class="node-header"><span class="node-title">Core Banking</span><span class="node-badge">ORACLE</span></div>
+                                    <div class="node-sub">Monolithic System</div>
+                                </div>
+                                <div id="s-logs" class="tech-node border-dashed justify-center items-center bg-gray-50">
+                                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gray-400 animate-pulse"></span><span class="text-xs font-bold text-gray-700">Redo Logs</span></div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-6 flex flex-col gap-4">
+                                <span class="group-label text-red-700">Integration Layer</span>
+                                <div class="border border-gray-200 bg-white rounded-2xl p-6 h-full flex flex-col gap-10">
+                                    <div class="flex justify-between items-start gap-8">
+                                        <div id="s-cdc" class="tech-node flex-1 shadow-md">
+                                            <div class="node-header"><span class="node-title text-sm">CDC Connector</span></div>
+                                            <div class="tech-pill">Debezium</div>
+                                        </div>
+                                        <div id="s-raw" class="tech-node flex-1 node-kafka">
+                                            <div class="node-header"><span class="node-title text-sm">Raw Events</span></div>
+                                            <div class="node-sub text-xs">Kafka Topic</div>
+                                        </div>
+                                    </div>
+                                    <div id="s-process" class="tech-node node-process shadow-lg border-l-4">
+                                        <div class="node-header"><span class="node-title">Stream Processor</span></div>
+                                        <div class="node-sub mb-3">Masking • Validation • Deduplication</div>
+                                        <div class="flex gap-2"><span class="tech-pill text-red-700">Flink</span><span class="tech-pill">Redis</span></div>
+                                    </div>
+                                    <div class="flex justify-between items-start gap-8">
+                                        <div id="s-clean" class="tech-node flex-1 node-kafka">
+                                            <div class="node-header"><span class="node-title text-sm">Clean Events</span></div>
+                                            <div class="node-sub text-xs">Public Topic</div>
+                                        </div>
+                                        <div id="s-dlq" class="tech-node flex-1 node-dlq">
+                                            <div class="node-header"><span class="node-title text-sm text-red-600">DLQ</span></div>
+                                            <div class="node-sub text-xs text-red-400">Error Handling</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-3 flex flex-col gap-6 pt-8">
+                                <span class="group-label">Analytics Zone</span>
+                                <div id="s-dwh" class="tech-node"><div class="node-title text-sm">Enterprise DWH</div><div class="tech-pill">Greenplum</div></div>
+                                <div id="s-lake" class="tech-node"><div class="node-title text-sm">Data Lake</div><div class="tech-pill">S3 MinIO</div></div>
+                                <div id="s-ml" class="tech-node"><div class="node-title text-sm">ML Feature Store</div><div class="tech-pill">Redis</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 border-b border-gray-100">
+                <div class="container max-w-7xl mx-auto px-4">
+                     <div class="mb-10 grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-white bg-red-600 px-2 py-0.5 rounded uppercase">Case #2</span>
+                                <span class="text-xs font-bold text-gray-500 uppercase">CV / Internal Tools</span>
+                            </div>
+                            <h2 class="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-4" data-lang="avito-title">Design Copilot</h2>
+                            <div class="flex flex-wrap items-center gap-3 mb-6 text-sm text-gray-600">
+                                 <span>Client: <b>Avito</b></span>
+                                 <span class="bg-gray-100 px-2 py-0.5 rounded text-xs font-bold">World's #1 Classified</span>
+                                 <span class="bg-gray-100 px-2 py-0.5 rounded text-xs font-bold">60M MAU</span>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-8" data-lang="avito-desc">
+                                <b>Challenge:</b> Automate Design QA across 150+ designers.<br>
+                                <b>Solution:</b> A hybrid engine (Computer Vision + Code AST) that checks Figma layouts against the Design System in real-time.
+                            </p>
+                            <a href="/for-design" class="btn btn-primary text-sm pl-6 pr-8 group">
+                                View Product Page <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-6 bg-gray-50 rounded-xl border border-gray-200 text-center">
+                                <div class="text-4xl font-heading font-bold text-primary mb-1">2x</div>
+                                <div class="text-xs font-bold text-gray-400 uppercase">Faster TTM</div>
+                            </div>
+                            <div class="p-6 bg-gray-50 rounded-xl border border-gray-200 text-center">
+                                <div class="text-4xl font-heading font-bold text-gray-900 mb-1">-30%</div>
+                                <div class="text-xs font-bold text-gray-400 uppercase">UI Bugs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-wrapper p-8 lg:p-12 min-h-[500px]" id="diagram-copilot">
+                        <div class="grid-bg-diagram"></div>
+                        <svg id="svg-copilot" class="connections-layer"></svg>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10 items-stretch">
+                            <div class="lg:col-span-2 flex flex-col justify-center">
+                                <div id="c-figma" class="tech-node node-input justify-center">
+                                    <div class="node-header"><span class="node-title text-sm">Figma Selection</span></div>
+                                    <p class="text-xs text-gray-500 font-mono">Layer ID: 124:4<br>Frame: "Cart_V2"</p>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-6">
+                                <div class="border border-dashed border-gray-300 rounded-2xl p-6 bg-gray-50 relative h-full flex flex-col justify-center">
+                                    <span class="absolute -top-3 left-4 bg-white px-2 font-bold text-xs text-gray-400 uppercase tracking-widest">Sync Analysis Engine</span>
+                                    <div class="flex flex-col md:flex-row gap-6 items-stretch relative">
+                                        <div id="c-vis" class="tech-node flex-1 node-cv">
+                                            <div class="node-header"><span class="node-title text-sm">Visual Stream</span><span class="node-badge text-red-600 bg-red-50">CV / CNN</span></div>
+                                            <ul class="text-xs text-gray-500 space-y-2">
+                                                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-red-400 rounded-full"></span> Padding (px)</li>
+                                                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-red-400 rounded-full"></span> Visual Noise</li>
+                                            </ul>
+                                        </div>
+                                        <div id="c-code" class="tech-node flex-1 node-code">
+                                            <div class="node-header"><span class="node-title text-sm">Code Stream</span><span class="node-badge text-gray-600 bg-gray-100">AST / JSON</span></div>
+                                            <ul class="text-xs text-gray-500 space-y-2">
+                                                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-gray-400 rounded-full"></span> Parse Tree</li>
+                                                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-gray-400 rounded-full"></span> Token Map</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div id="c-synth" class="mt-6 tech-node justify-center !min-h-0 !p-4 border-red-200 bg-red-50/20">
+                                        <div class="flex justify-between items-center"><span class="node-title text-sm text-red-900">Comparator & Ruler</span><span class="text-[10px] font-mono text-red-400 uppercase">Conflict Resolution</span></div>
+                                        <p class="text-xs text-gray-600 mt-2"><i>If (Visual != Token) -> Error</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4 flex flex-col justify-center pl-4">
+                                <div class="absolute -top-3 left-6 font-mono text-xs font-bold text-gray-400 uppercase">Result: Native Comment</div>
+                                <div id="c-out" class="relative group cursor-default">
+                                    <div class="absolute -inset-4 bg-gray-100 border border-gray-200 rounded-lg -z-10 opacity-50"></div>
+                                    <div class="figma-pin"><span>+</span></div>
+                                    <div class="figma-comment ml-6 mt-4">
+                                        <div class="flex justify-between mb-2 text-xs font-bold text-gray-500"><span class="text-black">Design Copilot</span><span>Now</span></div>
+                                        <div class="figma-comment-body">
+                                            <span class="text-red-600 font-bold text-xs uppercase">Blocker Issue</span>
+                                            <div class="flex items-center gap-2 mt-1 mb-2">
+                                                <svg class="w-4 h-4 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                                <span class="text-sm">Spacing violation detected.</span>
+                                            </div>
+                                            <div class="diff-text">Current: 21px (Custom)<br>Required: 24px ($spacing-3xl)</div>
+                                            <div class="mt-3 flex gap-2">
+                                                <button class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded">Auto-fix</button>
+                                                <button class="border border-gray-300 text-gray-600 text-[10px] font-bold px-3 py-1.5 rounded">Ignore</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="py-20 bg-white border-t border-gray-200">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-4xl font-bold font-heading mb-6 text-gray-900" data-lang="method-title">How we engage without SOW?</h2>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8" data-lang="method-desc">
+                            Complex systems cannot be estimated "at a glance". We use a phased approach to reduce uncertainty. You pay for the result of each stage, avoiding the "black box" trap.
+                        </p>
+                        <a href="manifest.pdf" download="manifest.pdf" target="_blank" class="text-gray-900 border-b border-primary pb-1 hover:text-primary transition-colors flex items-center gap-2 group font-medium cursor-pointer">
+                            <span data-lang="method-link">Download Architecture Vision Template</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="text-2xl font-heading font-bold text-gray-300 opacity-80">01</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-900" data-lang="step1-t">Discovery & Audit</h4>
+                                <p class="text-sm text-gray-600" data-lang="step1-d">2-3 weeks. We study legacy code, interview stakeholders, and draft the Architecture Vision. Output: Roadmap & Risk Assessment.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-2xl font-heading font-bold text-gray-300 opacity-80">02</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-900" data-lang="step2-t">PoC (Proof of Concept)</h4>
+                                <p class="text-sm text-gray-600" data-lang="step2-d">4-6 weeks. We build the "skeleton" on real data. Testing hypotheses (e.g., RAG quality). Output: Working Prototype.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-2xl font-heading font-bold text-gray-300 opacity-80">03</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-900" data-lang="step3-t">Production Engineering</h4>
+                                <p class="text-sm text-gray-600" data-lang="step3-d">3-6 months. Kubernetes, CI/CD, Tests, Monitoring. Output: Production System.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="mb-10 text-center">
+                     <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">Internal Project</span>
+                     <h2 class="text-3xl font-bold font-heading text-gray-900" data-lang="factory-title">Automated Content Factory</h2>
+                     <p class="text-gray-600 mt-2 max-w-2xl mx-auto" data-lang="factory-desc">Example of internal process automation: GenAI Pipeline from trend watching to video publishing.</p>
+                </div>
+
+                <div class="diagram-wrapper p-8 md:p-12 relative" id="diagram-factory">
+                    <div class="grid-bg-diagram"></div>
+                    <svg id="svg-factory" class="connections-layer"></svg>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10 items-stretch">
+                        <div class="lg:col-span-8 flex flex-col gap-8 h-full">
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 flex-grow">
+                                <div class="flex flex-col gap-8 h-full">
+                                    <div class="text-xs font-bold text-gray-400 uppercase tracking-widest">01. Ingestion</div>
+                                    <div id="f-trend" class="tech-node flex-1">
+                                        <div class="node-header"><span class="node-title">Trend Watcher</span><span class="node-badge">PYTHON</span></div>
+                                        <p class="text-sm text-gray-600 mb-4 leading-relaxed">Monitoring Telegram & Trends. Topic Clustering.</p>
+                                        <div class="mt-auto"><span class="tech-pill">Celery</span><span class="tech-pill">Redis</span></div>
+                                    </div>
+                                    <div id="f-llm" class="tech-node flex-1">
+                                        <div class="node-header"><span class="node-title">AI Screenwriter</span><span class="node-badge">LLM</span></div>
+                                        <p class="text-sm text-gray-600 mb-4 leading-relaxed">Script generation (Hook-Body-CTA). Timecodes.</p>
+                                        <div class="mt-auto"><span class="tech-pill">GPT-4o</span></div>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-2 flex flex-col h-full">
+                                    <div class="text-xs font-bold text-primary uppercase tracking-widest">02. Smart Asset Factory</div>
+                                    <div id="f-assets" class="tech-node asset-stack h-full flex flex-col p-6">
+                                        <div class="node-header border-b-0 pb-0 mb-4">
+                                            <span class="node-title text-lg">Central Asset Management</span>
+                                            <span class="node-badge">VECTOR DB</span>
+                                        </div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 flex-grow">
+                                            <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                                                <h5 class="text-xs font-bold text-gray-400 uppercase mb-3">Stock Library</h5>
+                                                <div class="space-y-2"><div class="bg-gray-50 px-2 py-1 rounded text-xs">Video .mp4</div><div class="bg-gray-50 px-2 py-1 rounded text-xs">Memes .gif</div></div>
+                                            </div>
+                                            <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                                                <h5 class="text-xs font-bold text-gray-400 uppercase mb-3">Gen-AI Pipeline</h5>
+                                                <div class="space-y-2"><div class="bg-gray-50 px-2 py-1 rounded text-xs">Midjourney</div><div class="bg-gray-50 px-2 py-1 rounded text-xs">ElevenLabs</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Infrastructure</div>
+                                <div class="tech-node infra-block !p-5">
+                                    <div><h4 class="font-bold text-gray-900">COMPUTE CLUSTER</h4><span class="text-xs text-gray-500">High-Load Environment</span></div>
+                                    <div class="hidden md:flex gap-3"><span class="tech-pill bg-white">Docker</span><span class="tech-pill bg-white">GPU A100</span><span class="tech-pill bg-white">S3</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 flex flex-col gap-8 h-full">
+                            <div class="text-xs font-bold text-gray-400 uppercase tracking-widest">03. Assembly & Control</div>
+                            <div id="f-edit" class="tech-node flex-1">
+                                <div class="node-header"><span class="node-title">Auto-Editor</span><span class="node-badge">FFMPEG</span></div>
+                                <p class="text-sm text-gray-600">Composition on timeline.</p>
+                            </div>
+                            <div id="f-human" class="tech-node relative flex-1 border-red-200">
+                                <div class="node-header"><span class="node-title">Admin UI</span></div>
+                                <p class="text-sm text-gray-600">Human Approval Loop.</p>
+                            </div>
+                            <div id="f-pub" class="tech-node bg-gray-50 border-gray-200 flex-1">
+                                <div class="node-header"><span class="node-title">Publisher API</span></div>
+                                <div class="grid grid-cols-3 gap-2 mt-2 text-center text-xs text-gray-500"><div>YouTube</div><div>TikTok</div><div>Insta</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white border-t border-gray-200">
+            <div class="container max-w-7xl mx-auto px-4 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading mb-12" data-lang="std-title">Enterprise Standards</h2>
+                    <div class="grid md:grid-cols-3 gap-8 text-left">
+
+                        <div class="bg-gray-50 border border-gray-100 rounded-xl p-6 hover:border-primary/30 transition-colors">
+                            <div class="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center text-lg mb-4 text-gray-700">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2" data-lang="std-1-t">IP Rights & NDA</h4>
+                            <p class="text-sm text-gray-600" data-lang="std-1-d">We work under strict NDA. All IP rights for code and architecture are transferred to the client. No Vendor Lock-in.</p>
+                        </div>
+
+                        <a href="/secure" class="bg-gray-50 border border-gray-100 rounded-xl p-6 hover:border-primary/30 transition-colors group">
+                            <div class="flex justify-between items-start">
+                                <div class="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center text-lg mb-4 text-gray-700">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                </div>
+                                <span class="text-xs text-primary font-bold group-hover:underline">Learn More →</span>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2 text-primary group-hover:text-red-700 transition-colors" data-lang="std-2-t">Security (On-Premise)</h4>
+                            <p class="text-sm text-gray-600" data-lang="std-2-d">Local LLM deployment. Data sanitization gateways. Your data never leaves your perimeter.</p>
+                        </a>
+
+                        <div class="bg-gray-50 border border-gray-100 rounded-xl p-6 hover:border-primary/30 transition-colors">
+                            <div class="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center text-lg mb-4 text-gray-700">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2" data-lang="std-3-t">Scalability</h4>
+                            <p class="text-sm text-gray-600" data-lang="std-3-d">Kubernetes-ready microservices. CI/CD pipelines. We build systems designed to grow.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-gray-50 border-t border-gray-200">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-16 border border-gray-100 text-center shadow-lg">
+                    <h2 class="text-4xl md:text-5xl mb-6 font-bold text-gray-900 font-heading" data-lang="form-h">Ready for a "Big" Project?</h2>
+                    <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto" data-lang="form-sub">
+                        Book a free 30-min architectural review. We will understand the task, assess risks, and draft a high-level Roadmap.
+                    </p>
+                    <form name="client-data" class="max-w-md mx-auto space-y-4">
+                            <input type="hidden" name="type" value="intelligent">
+                        <input type="text" placeholder="Your Name" name="name" class="form-input">
+                        <input type="text" placeholder="Email or Telegram" name="email" class="form-input">
+                        <button type="submit" class="btn btn-primary w-full justify-center text-lg py-4 shadow-none" data-lang="form-submit">Book Architecture Review</button>
+                        <span id="msg"></span>
+                    </form>
+                    <p class="mt-6 text-xs text-gray-400" data-lang="form-nda">By clicking, you agree to our Privacy Policy. We work under NDA.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="whitepaper-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold font-heading mb-2">Architecture Vision Paper</h3>
+                <p class="text-sm text-gray-600">
+                    Get our technical whitepaper on High-Load AI Systems (Legacy, Security, RAG patterns) delivered to your inbox.
+                </p>
+            </div>
+            <form onsubmit="handleWhitepaperSubmit(event)" class="space-y-4">
+                <div><input type="text" placeholder="Name" class="form-input" required></div>
+                <div><input type="email" placeholder="Work Email" class="form-input" required></div>
+                <button type="submit" class="btn btn-primary w-full justify-center">Send to Email</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="dark-bg-custom text-gray-400 py-12 border-t border-gray-800">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div><a href="/" class="header-logo text-white mb-4 block">DIVO</a><p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator.</p></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Products</h4><ul class="space-y-2 text-sm"><li><a href="/for-design" class="footer-link">Design Copilot</a></li><li><a href="/intelligent" class="footer-link text-white">Intelligent Systems</a></li><li><a href="/custom-development" class="footer-link">Automation</a></li><li><a href="/secure" class="footer-link">Secure Infrastructure</a></li></ul></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Company</h4><ul class="space-y-2 text-sm"><li><a href="/portfolio" class="footer-link">Portfolio</a></li><li><a href="#" class="footer-link">Team</a></li></ul></div>
+                <div><h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contact</h4><ul class="space-y-2 text-sm"><li>info@divo.solutions</li><li><a href="https://t.me/darikamouse" class="footer-link">Telegram</a></li></ul></div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-8 text-center text-xs"><p>&copy; 2025 DIVO. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // MOUSE EFFECT
+        document.addEventListener('mousemove', function(e) {
+            const hero = document.getElementById('hero-section');
+            const active = document.getElementById('hero-active');
+            if (hero && active) {
+                const r = hero.getBoundingClientRect();
+                if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom) {
+                    const x = e.clientX - r.left; const y = e.clientY - r.top;
+                    active.style.setProperty('--mouse-x', `${x}px`);
+                    active.style.setProperty('--mouse-y', `${y}px`);
+                    active.style.opacity = '1';
+                } else { active.style.opacity = '0'; }
+            }
+        });
+
+        // INIT PATTERN
+        function initPattern() {
+            // New SVG provided by user
+            const rawSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="69.282" height="40"><rect width="100%" height="100%" fill="transparent"/><path fill="none" stroke="#f44034" stroke-width=".5" d="M34.641-20v80m34.64-40L0-20m69.282 80L0 20m69.282 0L0 60m69.282-80L0 20m69.282-40v80M0-20v80m34.64-20 11.547-20m11.547 20 11.547 20m-34.64-20h23.094m11.547-20L57.735 40M46.188 20 34.641 40l11.547 20h23.094L80.83 40 69.282 20zM34.641 40l11.547-20m11.547 20 11.547 20M34.641 40h23.094m11.547-20L57.735 40M46.188 20 34.641 40l11.547 20h23.094L80.83 40 69.282 20zM34.641 0l11.547-20M57.735 0l11.547 20M34.642 0h23.093m11.547-20L57.735 0M46.188-20 34.641 0l11.547 20h23.094L80.83 0 69.282-20zM34.641 40 23.094 20M11.547 40 0 60m34.64-20H11.548M0 20l11.547 20m11.547-20 11.547 20-11.547 20H0l-11.547-20L0 20zM34.641 0 23.094-20M11.547 0 0 20M34.64 0H11.548M0-20 11.547 0m11.547-20L34.641 0 23.094 20H0L-11.547 0 0-20z"/></svg>`;
+
+            // Encode for BG (Gray for base)
+            const graySvg = rawSvg.replace(/#f44034/g, '#E5E7EB');
+            const redSvg = rawSvg; // Keep red
+
+            // Use background-image for repeating pattern
+            const grayUrl = `url("data:image/svg+xml,${encodeURIComponent(graySvg)}")`;
+            const redUrl = `url("data:image/svg+xml,${encodeURIComponent(redSvg)}")`;
+
+            document.getElementById('hero-base').style.backgroundImage = grayUrl;
+            document.getElementById('hero-active').style.backgroundImage = redUrl;
+        }
+
+        // MODAL LOGIC
+        function openModal() {
+            document.getElementById('whitepaper-modal').classList.add('open');
+        }
+        function closeModal() {
+            document.getElementById('whitepaper-modal').classList.remove('open');
+        }
+        function handleWhitepaperSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            setTimeout(() => {
+                btn.innerText = 'Check your inbox!';
+                btn.classList.add('bg-green-600', 'border-green-600');
+                setTimeout(() => {
+                    closeModal();
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-green-600', 'border-green-600');
+                    e.target.reset();
+                }, 2000);
+            }, 1000);
+        }
+
+        // DRAW UTILS
+        function createPath(svgId, d, color, marker, dashed=false) {
+            const svg = document.getElementById(svgId); if(!svg) return;
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", d); path.setAttribute("fill", "none");
+            path.setAttribute("stroke", color); path.setAttribute("stroke-width", "2");
+            if(dashed) path.setAttribute("stroke-dasharray", "4,4");
+            svg.appendChild(path);
+        }
+        function getPoint(id, side, wrapperId) {
+            const el = document.getElementById(id); const wrap = document.getElementById(wrapperId);
+            if (!el || !wrap) return {x:0, y:0};
+            const r = el.getBoundingClientRect(); const c = wrap.getBoundingClientRect();
+            const x = r.left - c.left; const y = r.top - c.top;
+            if (side === 'top') return { x: x + r.width/2, y: y };
+            if (side === 'bottom') return { x: x + r.width/2, y: y + r.height };
+            if (side === 'left') return { x: x, y: y + r.height/2 };
+            if (side === 'right') return { x: x + r.width, y: y + r.height/2 };
+            return { x: x + r.width/2, y: y + r.height/2 };
+        }
+
+        function drawSber() {
+            const svg = document.getElementById('svg-sber'); if(!svg) return;
+            svg.innerHTML = `<defs><marker id="s-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#9CA3AF" /></marker><marker id="s-arr-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#CB0213" /></marker></defs>`;
+            const wrap = 'diagram-sber';
+
+            let p1 = getPoint('s-core', 'bottom', wrap); let p2 = getPoint('s-logs', 'top', wrap);
+            createPath('svg-sber', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y}`, '#9CA3AF', 's-arr');
+
+            let p3 = getPoint('s-logs', 'right', wrap); let p4 = getPoint('s-cdc', 'left', wrap);
+            createPath('svg-sber', `M ${p3.x} ${p3.y} C ${p3.x+30} ${p3.y}, ${p4.x-30} ${p4.y}, ${p4.x} ${p4.y}`, '#CB0213', 's-arr-red');
+            let p5 = getPoint('s-cdc', 'right', wrap); let p6 = getPoint('s-raw', 'left', wrap);
+            createPath('svg-sber', `M ${p5.x} ${p5.y} C ${p5.x+20} ${p5.y}, ${p6.x-20} ${p6.y}, ${p6.x} ${p6.y}`, '#CB0213', 's-arr-red');
+
+            let p7 = getPoint('s-raw', 'bottom', wrap); let p8 = getPoint('s-process', 'top', wrap);
+            createPath('svg-sber', `M ${p7.x} ${p7.y} C ${p7.x} ${p7.y+30}, ${p8.x} ${p8.y-30}, ${p8.x} ${p8.y}`, '#CB0213', 's-arr-red');
+            let p9 = getPoint('s-process', 'bottom', wrap); let p10 = getPoint('s-clean', 'top', wrap);
+            createPath('svg-sber', `M ${p9.x-20} ${p9.y} C ${p9.x-20} ${p9.y+20}, ${p10.x} ${p10.y-20}, ${p10.x} ${p10.y}`, '#CB0213', 's-arr-red');
+
+            let p11 = getPoint('s-clean', 'right', wrap); let p12 = getPoint('s-dwh', 'left', wrap);
+            createPath('svg-sber', `M ${p11.x} ${p11.y} C ${p11.x+50} ${p11.y}, ${p12.x-50} ${p12.y}, ${p12.x} ${p12.y}`, '#9CA3AF', 's-arr');
+
+            // New connections for complexity
+            let p13 = getPoint('s-clean', 'right', wrap); let p14 = getPoint('s-lake', 'left', wrap);
+            createPath('svg-sber', `M ${p13.x} ${p13.y} C ${p13.x+50} ${p13.y}, ${p14.x-50} ${p14.y}, ${p14.x} ${p14.y}`, '#9CA3AF', 's-arr');
+            let p15 = getPoint('s-clean', 'right', wrap); let p16 = getPoint('s-ml', 'left', wrap);
+            createPath('svg-sber', `M ${p15.x} ${p15.y} C ${p15.x+50} ${p15.y}, ${p16.x-50} ${p16.y}, ${p16.x} ${p16.y}`, '#9CA3AF', 's-arr');
+        }
+
+        function drawCopilot() {
+            const svg = document.getElementById('svg-copilot'); if(!svg) return;
+            svg.innerHTML = `<defs><marker id="c-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#9CA3AF" /></marker><marker id="c-arr-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#CB0213" /></marker></defs>`;
+            const wrap = 'diagram-copilot';
+
+            let pIn = getPoint('c-figma', 'right', wrap);
+            let pVis = getPoint('c-vis', 'left', wrap); let pCode = getPoint('c-code', 'left', wrap);
+
+            createPath('svg-copilot', `M ${pIn.x} ${pIn.y} C ${pIn.x+40} ${pIn.y}, ${pVis.x-40} ${pVis.y}, ${pVis.x} ${pVis.y}`, '#9CA3AF', 'c-arr');
+            createPath('svg-copilot', `M ${pIn.x} ${pIn.y} C ${pIn.x+40} ${pIn.y}, ${pCode.x-40} ${pCode.y}, ${pCode.x} ${pCode.y}`, '#9CA3AF', 'c-arr');
+
+            let pVisB = getPoint('c-vis', 'bottom', wrap); let pCodeB = getPoint('c-code', 'bottom', wrap);
+            let pSynth = getPoint('c-synth', 'top', wrap);
+
+            createPath('svg-copilot', `M ${pVisB.x} ${pVisB.y} L ${pSynth.x-20} ${pSynth.y}`, '#CB0213', 'c-arr-red');
+            createPath('svg-copilot', `M ${pCodeB.x} ${pCodeB.y} L ${pSynth.x+20} ${pSynth.y}`, '#CB0213', 'c-arr-red');
+
+            let pSynthR = getPoint('c-synth', 'right', wrap); let pOut = getPoint('c-out', 'left', wrap);
+            createPath('svg-copilot', `M ${pSynthR.x} ${pSynthR.y} C ${pSynthR.x+30} ${pSynthR.y}, ${pOut.x-30} ${pOut.y}, ${pOut.x} ${pOut.y}`, '#9CA3AF', 'c-arr');
+        }
+
+        function drawFactory() {
+            const svg = document.getElementById('svg-factory'); if(!svg) return;
+            svg.innerHTML = `<defs><marker id="f-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#9CA3AF" /></marker></defs>`;
+            const wrap = 'diagram-factory';
+
+            let p1 = getPoint('f-trend', 'right', wrap); let p2 = getPoint('f-assets', 'left', wrap);
+            createPath('svg-factory', `M ${p1.x} ${p1.y} C ${p1.x+30} ${p1.y}, ${p2.x-30} ${p2.y}, ${p2.x} ${p2.y}`, '#9CA3AF', 'f-arr');
+            let p3 = getPoint('f-llm', 'right', wrap);
+            createPath('svg-factory', `M ${p3.x} ${p3.y} C ${p3.x+30} ${p3.y}, ${p2.x-30} ${p2.y}, ${p2.x} ${p2.y}`, '#9CA3AF', 'f-arr');
+
+            let p4 = getPoint('f-assets', 'right', wrap); let p5 = getPoint('f-edit', 'left', wrap);
+            createPath('svg-factory', `M ${p4.x} ${p4.y} C ${p4.x+30} ${p4.y}, ${p5.x-30} ${p5.y}, ${p5.x} ${p5.y}`, '#9CA3AF', 'f-arr');
+
+            let p6 = getPoint('f-edit', 'bottom', wrap); let p7 = getPoint('f-human', 'top', wrap);
+            createPath('svg-factory', `M ${p6.x} ${p6.y} L ${p7.x} ${p7.y}`, '#9CA3AF', 'f-arr');
+            let p8 = getPoint('f-human', 'bottom', wrap); let p9 = getPoint('f-pub', 'top', wrap);
+            createPath('svg-factory', `M ${p8.x} ${p8.y} L ${p9.x} ${p9.y}`, '#9CA3AF', 'f-arr');
+        }
+
+        function drawAll() { drawSber(); drawCopilot(); drawFactory(); }
+        window.addEventListener('load', () => { initPattern(); drawAll(); changeLang('en'); }); // Default EN
+        window.addEventListener('resize', drawAll);
+
+        // TRANSLATIONS
+        const translations = {
+            'en': {
+                'hero-h1': 'Complex Systems',
+                'hero-sub': 'We build intelligent systems where AI is just a part of them, and at the core lies a fault-tolerant architecture and strict business logic',
+                'hero-cta': 'Discuss Architecture', 'hero-cta2': 'Explore Cases',
+                'gap-title': 'Why GPT Wrappers Fail in Enterprise',
+                'gap-sub': 'Business needs processes, not chatbots. We bridge the gap between "Magic AI Demo" and "Production Reality".',
+                'p1-title': 'Legacy Data', 'p1-desc': 'Your data isn\'t in a Vector DB. It\'s in Oracle (2010), SAP, or 1C. We build the adapters to fetch it.',
+                'p2-title': 'Security & PII', 'p2-desc': 'You can\'t send customer names to OpenAI. We deploy On-premise LLMs inside your perimeter.',
+                'p3-title': 'Strict Logic', 'p3-desc': 'Neural networks hallucinate. We wrap them in code constraints (Guardrails) to ensure reliability.',
+                'sber-title': 'Sber Analytics Middleware',
+                'sber-desc': '<b>Challenge:</b> Deliver real-time data to AI risk models without crashing the monolithic banking core under 15k EPS load.<br><b>Solution:</b> Fault-tolerant Data Bus (CDC + Kafka) with complete core isolation.',
+                'avito-title': 'Design Copilot',
+                'avito-desc': '<b>Challenge:</b> Automate Design QA across 150+ designers.<br><b>Solution:</b> A hybrid engine (Computer Vision + Code AST) that checks Figma layouts against the Design System in real-time.',
+                'method-title': 'How we engage without SOW?', 'method-desc': 'Complex systems cannot be estimated "at a glance". We use a phased approach to reduce uncertainty.',
+                'method-link': 'Download Architecture Vision Template',
+                'step1-t': 'Discovery & Audit', 'step1-d': '2-3 weeks. We study legacy code, interview stakeholders, and draft the Architecture Vision. Output: Roadmap & Risk Assessment.',
+                'step2-t': 'PoC (Proof of Concept)', 'step2-d': '4-6 weeks. We build the "skeleton" on real data. Testing hypotheses (e.g., RAG quality). Output: Working Prototype.',
+                'step3-t': 'Production Engineering', 'step3-d': '3-6 months. Kubernetes, CI/CD, Tests, Monitoring. Output: Production System.',
+                'factory-title': 'Automated Content Factory', 'factory-desc': 'Example of internal process automation: GenAI Pipeline from trend watching to video publishing.',
+                'std-title': 'Enterprise Standards',
+                'std-1-t': 'IP Rights & NDA', 'std-1-d': 'We work under strict NDA. All IP rights for code and architecture are transferred to the client. No Vendor Lock-in.',
+                'std-2-t': 'Security (On-Premise)', 'std-2-d': 'Local LLM deployment. Data sanitization gateways. Your data never leaves your perimeter.',
+                'std-3-t': 'Scalability', 'std-3-d': 'Kubernetes-ready microservices. CI/CD pipelines. We build systems designed to grow.',
+                'form-h': 'Ready for a "Big" Project?', 'form-sub': 'Book a free 30-min architectural review. We will understand the task, assess risks, and draft a high-level Roadmap.',
+                'form-submit': 'Book Architecture Review', 'form-nda': 'By clicking, you agree to our Privacy Policy. We work under NDA.',
+                'footer-desc': 'Enterprise AI Integrator.',
+                'header-cta': 'Book Consultation'
+            },
+            'ru': {
+                'hero-h1': 'Сложные системы',
+                'hero-sub': 'Мы строим интеллектуальные системы, где AI лишь их часть, а в основе лежит отказоустойчивая архитектура и строгая бизнес логика',
+                'hero-cta': 'Обсудить архитектуру', 'hero-cta2': 'Смотреть кейсы',
+                'gap-title': 'Почему GPT-обертки не способны к мастшабированию',
+                'gap-sub': 'Бизнесу нужны процессы, а не чат-боты. Мы закрываем разрыв между «Магическим демо» и «Суровой реальностью продакшена».',
+                'p1-title': 'Legacy Данные', 'p1-desc': 'Ваши данные не в Векторной БД. Они в Oracle (2010), SAP или 1C. Мы пишем адаптеры.',
+                'p2-title': 'Безопасность', 'p2-desc': 'Нельзя слать данные клиентов в OpenAI. Мы разворачиваем On-premise LLM внутри контура.',
+                'p3-title': 'Жесткая Логика', 'p3-desc': 'Нейросети галлюцинируют. Мы оборачиваем их в жесткий код (Guardrails) для надежности.',
+                'sber-title': 'Sber Analytics Middleware',
+                'sber-desc': '<b>Задача:</b> Отдавать данные в AI-риск модели в реальном времени, не «уронив» банковский монолит при нагрузке 15k событий/сек.<br><b>Решение:</b> Отказоустойчивая шина (CDC + Kafka) с полной изоляцией ядра.',
+                'avito-title': 'Дизайн Копайлот',
+                'avito-desc': '<b>Задача:</b> Автоматизировать Design QA для 150+ дизайнеров.<br><b>Решение:</b> Гибридный движок (CV + Code AST), проверяющий макеты Figma на соответствие Дизайн-системе в реальном времени.',
+                'method-title': 'Как мы работаем без ТЗ?', 'method-desc': 'Сложные системы нельзя оценить «сходу». Мы используем поэтапный подход для снижения неопределенности.',
+                'method-link': 'Скачать шаблон Architecture Vision',
+                'step1-t': 'Discovery & Audit', 'step1-d': '2-3 недели. Изучаем Legacy, проводим интервью, формируем Architecture Vision. Результат: Roadmap и оценка рисков.',
+                'step2-t': 'PoC (Проверка гипотез)', 'step2-d': '4-6 недель. Собираем прототип на реальных данных. Проверяем качество RAG. Результат: Работающий прототип.',
+                'step3-t': 'Production Engineering', 'step3-d': '3-6 месяцев. Разработка микросервисов в Kubernetes, CI/CD, тесты, мониторинг. Результат: Система в продакшене.',
+                'factory-title': 'Фабрика Контента', 'factory-desc': 'Пример автоматизации внутреннего процесса: GenAI Pipeline от мониторинга трендов до постинга видео.',
+                'std-title': 'Стандарты Enterprise',
+                'std-1-t': 'IP Права и NDA', 'std-1-d': 'Строгий NDA. Исключительные права на код и архитектуру переходят клиенту. Никакого Vendor Lock-in.',
+                'std-2-t': 'Безопасность (On-Premise)', 'std-2-d': 'Локальные LLM. Шлюзы очистки данных. Ваши данные не покидают периметр.',
+                'std-3-t': 'Масштабируемость', 'std-3-d': 'Микросервисы в K8s. CI/CD пайплайны. Системы, готовые к росту.',
+                'form-h': 'Готовы к «Большому» проекту?', 'form-sub': 'Запишитесь на бесплатный архитектурный разбор (30 мин). Поймем задачу, оценим риски, наметим Roadmap.',
+                'form-submit': 'Записаться на разбор', 'form-nda': 'Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности. Мы работаем под NDA.',
+                'footer-desc': 'Интегратор ИИ решений.',
+                'header-cta': 'Заказать консультацию'
+            }
+        };
+
+        let currentLang = 'en';
+        function changeLang(lang) {
+            currentLang = lang;
+            const flag = lang === 'en' ? 'EN' : 'RU';
+            document.getElementById('current-lang-flag').textContent = flag;
+            const t = translations[lang];
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(t[key]) el.innerHTML = t[key];
+            });
+            document.getElementById('lang-menu').classList.remove('show');
+        }
+        function toggleMobileLang() {
+            const newLang = currentLang === 'en' ? 'ru' : 'en';
+            changeLang(newLang);
+        }
+
+        document.getElementById('lang-toggle').addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('lang-menu').classList.toggle('show'); });
+        document.addEventListener('click', () => { document.getElementById('lang-menu').classList.remove('show'); });
+        document.getElementById('mobile-menu-toggle').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxxXgZqiiBn1bDvqbDxJxqv12lvi5yekglH6sI9wMkD2mjqxm91wVIPxGpLY5ZoJYKv8Q/exec'
+    const form = document.forms['client-data']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            form.reset() // Очистить форму
+            setTimeout(function(){
+                msg.innerHTML = ""
+            }, 5000)
+        })
+        .catch(error => {
+            console.error('Error!', error.message)
+        })
+    })
+    </script>
+</body>
+</html>

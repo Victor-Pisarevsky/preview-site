@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Proposal Generator - Payment Checkout | DIVO</title>
-    
+
     <!-- Подключаем Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Шрифты из кастомного файла -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=KS+Bistra:wght@700;800;900&family=Inter:wght@300;400;700&display=swap"
+          rel="stylesheet">
+
     <!-- Стили из кастомного файла (переменные, шрифты, стили кнопок и т.д.) -->
     <style>
         /* Шрифты (из примера) */
@@ -300,571 +301,552 @@
         .footer-link:hover {
             color: white;
         }
+ /* 1. Настройки контейнера-скроллера */
+    .widget-scroller {
+        width: 100%;            /* Занимает всю доступную ширину на экране */
+        overflow-x: auto;       /* Включает горизонтальный скролл, если контент шире */
+        -webkit-overflow-scrolling: touch; /* Плавная инерционная прокрутка на iPhone/Android */
+        padding-bottom: 10px;   /* Небольшой отступ снизу для эстетики скроллбара */
 
-        /* Добавленные стили для мобильного виджета оплаты */
-        @media (max-width: 1024px) {
-            /* На планшете виджет просто становится частью потока */
-            .payment-widget {
-                position: relative;
-                top: 0;
-            }
+        /* Центрирование скроллера, если экран широкий (опционально) */
+        display: flex;
+        justify-content: center;
+        /* Важно: для работы скролла внутри flex-контейнера на узких экранах */
+        justify-content: flex-start;
+    }
+
+    /* Медиа-запрос: центрируем только если экран шире виджета */
+    @media (min-width: 780px) {
+        .widget-scroller {
+            justify-content: center;
         }
-        
-        @media (max-width: 768px) {
-            .payment-widget {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                border-radius: 12px 12px 0 0;
-                max-height: 90vh;
-                z-index: 100;
-                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease-out;
-            }
-            .payment-widget .widget-content {
-                display: none; /* Скрываем контент по умолчанию */
-            }
-            .payment-widget.open {
-                /* transform: translateY(0); /* Полностью виден */
-            }
-            .payment-widget.open .widget-content {
-                display: block; /* Показываем контент при .open */
-                max-height: 70vh;
-                overflow-y: auto;
-            }
-            .widget-toggle {
-                display: block;
-                width: 100%;
-                padding: 1rem;
-                background: transparent;
-                border: none;
-                color: var(--color-primary);
-                font-weight: 700;
-                cursor: pointer;
-                text-align: center;
-                font-size: 1rem;
-            }
-        }
-        @media (min-width: 769px) {
-            .widget-toggle {
-                display: none;
-            }
-            .payment-widget .widget-content {
-                display: block !important; /* Всегда виден на десктопе */
-            }
-        }
+    }
+
+    /* 2. Жесткая фиксация iframe */
+    .fixed-iframe {
+        /* !important нужен, чтобы перебить стили Tailwind/Bootstrap,
+           которые пытаются сделать max-width: 100% */
+        min-width: 780px !important;
+        width: 780px !important;
+
+        /* Убираем лишние отступы */
+        display: block;
+
+        /* Фикс для белого экрана (иногда помогает при рендеринге) */
+        background-color: transparent;
+    }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Шапка (Header) из кастом.html -->
-    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                
-                <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+<!-- Шапка (Header) из кастом.html -->
+<header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
 
-                <div class="hidden lg:flex items-center gap-6">
-                    <nav class="flex gap-8 items-center">
-                        <div class="relative group">
-                            <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions" aria-expanded="false" aria-controls="solutions-dropdown">
-                                Решения
-                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div id="solutions-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                <div class="py-2">
-                                    <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для Продаж</a>
-                                    <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для Дизайна</a>
-                                    <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-custom-dev">Кастомная разработка</a>
-                                </div>
+            <a href="/" class="header-logo flex-shrink-0" data-lang="logo">DIVO</a>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <nav class="flex gap-8 items-center">
+                    <div class="relative group">
+                        <button class="header-nav-link flex items-center gap-1" data-lang="nav-solutions"
+                                aria-expanded="false" aria-controls="solutions-dropdown">
+                            Решения
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                 stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="solutions-dropdown"
+                             class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="/for-sales" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-sales">Для
+                                    Продаж</a>
+                                <a href="/for-design" class="block px-4 py-2 hover:bg-gray-50" data-lang="nav-design">Для
+                                    Дизайна</a>
+                                <a href="/custom-development" class="block px-4 py-2 hover:bg-gray-50"
+                                   data-lang="nav-custom-dev">Кастомная разработка</a>
                             </div>
-                        </div>
-                        <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
-                        <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
-                    </nav>
-
-                    <div class="flex items-center gap-4">
-                        <div class="lang-switcher-inline">
-                            <button id="btn-en" class="" aria-pressed="false">RU</button>
-                            <button id="btn-ru" class="active" aria-pressed="true">EN</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:hidden flex items-center gap-2">
-                    <div class="lang-switcher-inline">
-                        <button id="btn-en-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
-                        <button id="btn-ru-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
-                    </div>
-                    <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div id="mobile-menu" class="hidden lg:hidden pb-4">
-                <nav class="flex flex-col gap-4">
-                    <div>
-                        <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
-                        <div class="pl-4 flex flex-col gap-2">
-                            <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
-                            <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
-                            <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная разработка</a>
                         </div>
                     </div>
                     <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
                     <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
                 </nav>
+
+                <div class="flex items-center gap-4">
+                    <div class="lang-switcher-inline">
+                        <button id="btn-ru" class="" aria-pressed="false">RU</button>
+                        <button id="btn-en" class="active" aria-pressed="true">EN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:hidden flex items-center gap-2">
+                <div class="lang-switcher-inline">
+                    <button id="btn-ru-mobile" class="text-xs px-2 py-1" aria-pressed="false">RU</button>
+                    <button id="btn-en-mobile" class="active text-xs px-2 py-1" aria-pressed="true">EN</button>
+                </div>
+                <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none" aria-expanded="false"
+                        aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </header>
 
-    <!-- Кнопка "Назад" (перестилизована) -->
-    <div class="container max-w-7xl mx-auto px-4 pt-6">
-        <button class="btn btn-secondary" id="backBtn" style="padding: 0.625rem 1.25rem; font-size: 0.9375rem;">
-            <span data-lang-key="back_button">← Back to Services</span>
-        </button>
+        <div id="mobile-menu" class="hidden lg:hidden pb-4">
+            <nav class="flex flex-col gap-4">
+                <div>
+                    <div class="font-semibold text-gray-800 mb-2" data-lang="nav-solutions">Решения</div>
+                    <div class="pl-4 flex flex-col gap-2">
+                        <a href="/for-sales" class="header-nav-link" data-lang="nav-sales">Для Продаж</a>
+                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Для Дизайна</a>
+                        <a href="/custom-development" class="header-nav-link" data-lang="nav-custom-dev">Кастомная
+                            разработка</a>
+                    </div>
+                </div>
+                <a href="/custom-development" class="header-nav-link" data-lang="nav-portfolio">Портфолио</a>
+                <a href="/about-us" class="header-nav-link" data-lang="nav-about">О нас</a>
+            </nav>
+        </div>
     </div>
+</header>
 
-    <!-- Основной контент (Адаптирован для продукта $99) -->
-    <div class="container max-w-7xl mx-auto px-4 pt-12 sm:pt-16 pb-16">
+<!-- Кнопка "Назад" (перестилизована) -->
+<div class="container max-w-7xl mx-auto px-4 pt-6">
+    <button class="btn btn-secondary" id="backBtn" style="padding: 0.625rem 1.25rem; font-size: 0.9375rem;">
+        <span data-lang-key="back_button">← Back to Services</span>
+    </button>
+</div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <!-- Левая колонка: Инфо о продукте -->
-            <div class="product-info">
-                <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4" data-lang-key="product_name">AI Proposal Generator</h1>
-                <div class="text-3xl font-heading font-bold text-primary mb-6" data-lang-key="product_price">$99 USD</div>
-                <p class="text-lg text-text-secondary mb-10" data-lang-key="product_description">
-                    Turn your online meeting recordings into client-ready commercial proposals.
-                </p>
+<!-- Основной контент (Адаптирован для продукта $99) -->
+<div class="container max-w-7xl mx-auto px-4 pt-12 sm:pt-16 pb-16">
 
-                <div class="mb-10">
-                    <h2 class="text-2xl font-heading font-bold mb-6" data-lang-key="whats_included">What's Included in the Package</h2>
-                    <ul class="space-y-4" id="featuresList">
-                    </ul>
-                </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Левая колонка: Инфо о продукте -->
+        <div class="product-info">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4" data-lang-key="product_name">AI Proposal
+                Generator</h1>
+            <div class="text-3xl font-heading font-bold text-primary mb-6" data-lang-key="product_price">$99 USD</div>
+            <p class="text-lg text-text-secondary mb-10" data-lang-key="product_description">
+                Turn your online meeting recordings into client-ready commercial proposals.
+            </p>
 
-                <div class="mb-10">
-                    <h2 class="text-2xl font-heading font-bold mb-6" data-lang-key="how_it_works_title">How It Works</h2>
-                    <ul class="space-y-4" id="howItWorksList">
-                        <!-- How It Works steps will be rendered here by JS -->
-                    </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-8 pt-6 border-t border-gray-200">
-                    <a href="#" class="text-sm text-text-secondary hover:text-primary transition" data-lang-key="tos_link">Terms of Service →</a>
-                    <a href="#" class="text-sm text-text-secondary hover:text-primary transition" data-lang-key="privacy_link">Privacy Policy →</a>
-                    <a href="#" class="text-sm text-text-secondary hover:text-primary transition" data-lang-key="return_link">Return Policy →</a>
-                </div>
+            <div class="mb-10">
+                <h2 class="text-2xl font-heading font-bold mb-6" data-lang-key="whats_included">What's Included in the
+                    Package</h2>
+                <ul class="space-y-4" id="featuresList">
+                </ul>
             </div>
 
-            <!-- Правая колонка: Виджет оплаты -->
-            <div class="payment-widget lg:sticky top-28 bg-white rounded-lg border border-gray-200 shadow-lg p-6 md:p-8">
-                
-                <div class="widget-content">
-                        <iframe src="https://nowpayments.io/embeds/payment-widget?iid=4906687542" width="410" height="696" frameborder="0" scrolling="no" style="overflow-y: hidden;">
-                            Can't load widget
-                        </iframe>
-                        
-                        <p class="text-sm text-center !text-text-secondary mt-4 mb-0">
+            <div class="mb-10">
+                <h2 class="text-2xl font-heading font-bold mb-6" data-lang-key="how_it_works_title">How It Works</h2>
+                <ul class="space-y-4" id="howItWorksList">
+                    <!-- How It Works steps will be rendered here by JS -->
+                </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-x-6 gap-y-2 mt-8 pt-6 border-t border-gray-200">
+                <a href="/terms-of-service" class="text-sm text-text-secondary hover:text-primary transition" data-lang-key="tos_link">Terms
+                    of Service →</a>
+                <a href="/privacy-policy" class="text-sm text-text-secondary hover:text-primary transition"
+                   data-lang-key="privacy_link">Privacy Policy →</a>
+                <a href="/user-agreements" class="text-sm text-text-secondary hover:text-primary transition"
+                   data-lang-key="return_link">Return Policy →</a>
+            </div>
+        </div>
+
+        <!-- Правая колонка: Виджет оплаты -->
+        <div class="payment-widget lg:sticky top-28 bg-white rounded-lg border border-gray-200 shadow-lg p-6 md:p-8">
+
+            <div class="widget-content">
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <iframe src="https://nowpayments.io/embeds/payment-widget?iid=4906687542"
+                            width="100%"
+                            height="696"
+                            frameborder="0"
+                            scrolling="no"
+                            style="overflow-y: hidden; max-width: 410px; min-width: 320px;">
+                        Can't load widget
+                    </iframe>
+                </div>
+
+
+                <p class="text-sm text-center !text-text-secondary mt-4 mb-0">
 
                           <span data-lang="form_note_p1">
                             By clicking the button, you agree to the
                           </span>
 
-                          <a href="/privacy-policy"
-                             data-lang="form_note_privacy_policy"
-                             class="!text-blue-600 !underline hover:!text-blue-800">
-                            Privacy Policy
-                          </a>
+                    <a href="/privacy-policy"
+                       data-lang="form_note_privacy_policy"
+                       class="!text-blue-600 !underline hover:!text-blue-800">
+                        Privacy Policy
+                    </a>
 
-                          <span data-lang="form_note_p2">
+                    <span data-lang="form_note_p2">
                             and
                           </span>
 
-                          <a href="/terms-of-service"
-                             data-lang="form_note_terms_of_service"
-                             class="!text-blue-600 !underline hover:!text-blue-800">
-                            Terms of Service
-                          </a>
+                    <a href="/terms-of-service"
+                       data-lang="form_note_terms_of_service"
+                       class="!text-blue-600 !underline hover:!text-blue-800">
+                        Terms of Service
+                    </a>
 
-                          <span data-lang="form_note_p3">
+                    <span data-lang="form_note_p3">
                             and
                           </span>
 
-                          <a href="/user-agreement"
-                             data-lang="form_note_user_agreement"
-                             class="!text-blue-600 !underline hover:!text-blue-800">
-                            User Agreement
-                          </a>
+                    <a href="/user-agreement"
+                       data-lang="form_note_user_agreement"
+                       class="!text-blue-600 !underline hover:!text-blue-800">
+                        User Agreement
+                    </a>
 
-                        </p>
+                </p>
 
-                    <div class="mt-6 pt-6 border-t border-gray-200 text-center">
-                        <div class="font-bold text-text-main" data-lang-key="secure_payment"> Secure payment</div>
-                        <div class="text-sm text-text-secondary mt-1" data-lang-key="trust_message">Your payment data is encrypted and secure</div>
+                <div class="mt-6 pt-6 border-t border-gray-200 text-center">
+                    <div class="font-bold text-text-main" data-lang-key="secure_payment"> Secure payment</div>
+                    <div class="text-sm text-text-secondary mt-1" data-lang-key="trust_message">Your payment data is
+                        encrypted and secure
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Подвал (Footer) из кастом.html -->
-    <footer class="footer pt-16 pb-8 md:pb-12">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
-                
-                <div>
-                    <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
-                    <p class="text-sm mb-2" data-lang="footer-mission">Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.</p>
-                </div>
+<!-- Подвал (Footer) из кастом.html -->
+<footer class="footer pt-16 pb-8 md:pb-12">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
 
-                <div>
-                    <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
-                        <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
-                        <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная разработка</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
-                        <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и Кейсы</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
-                    <ul class="space-y-2">
-                        <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
-                        <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517 6391</a></li>
-                        <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram: @darikamouse</a></li>
-                    </ul>
-                    <div class="mt-3">
-                        <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
-                        <ul class="space-y-2">
-                            <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика конфиденциальности</a></li>
-                            <li><a href="/terms-of-service" class="footer-link text-sm" data-lang="footer-terms">Условия использования</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div>
+                <a href="/" class="footer-logo" data-lang="logo">DIVO</a>
+                <p class="text-sm mb-2" data-lang="footer-mission">Ликвидируем разрыв между красивыми AI-демо и
+                    работающими enterprise-системами, которые приносят измеримую прибыль.</p>
             </div>
 
-            <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
-                <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+            <div>
+                <h4 class="footer-title" data-lang="footer-solutions-title">Решения</h4>
+                <ul class="space-y-2">
+                    <li><a href="/for-sales" class="footer-link" data-lang="nav-sales">Для Продаж</a></li>
+                    <li><a href="/for-design" class="footer-link" data-lang="nav-design">Для Дизайна</a></li>
+                    <li><a href="/custom-development" class="footer-link" data-lang="nav-custom-dev">Кастомная
+                        разработка</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-company-title">Компания</h4>
+                <ul class="space-y-2">
+                    <li><a href="/about-us" class="footer-link" data-lang="nav-about">О нас</a></li>
+                    <li><a href="/custom-development" class="footer-link" data-lang="footer-portfolio">Портфолио и
+                        Кейсы</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title" data-lang="footer-contact-title">Контакты</h4>
+                <ul class="space-y-2">
+                    <li><a href="mailto:info@divo.solutions" class="footer-link">info@divo.solutions</a></li>
+                    <li><a href="https://wa.me/79035176391" target="_blank" class="footer-link">WhatsApp: +7 903 517
+                        6391</a></li>
+                    <li><a href="https://t.me/darikamouse" target="_blank" class="footer-link">Telegram:
+                        @darikamouse</a></li>
+                </ul>
+                <div class="mt-3">
+                    <h5 class="text-sm font-semibold text-gray-300 mb-2" data-lang="footer-legal-title">Документы</h5>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy" class="footer-link text-sm" data-lang="footer-privacy">Политика
+                            конфиденциальности</a></li>
+                        <li><a href="/user-agreement" class="footer-link text-sm" data-lang="footer-user-agreement">Пользовательское
+                            соглашение</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </footer>
 
-    <!-- Объединенный JavaScript -->
-    <script>
-        // Data structure with bilingual content (Адаптировано для $99 Proposal Generator)
-        const data = {
-            product: {
-                en: {
-                    name: "AI Proposal Generator",
-                    price: "$99 USD",
-                    description: "Turn your online meeting recordings into client-ready commercial proposals. Deep analysis of the client, market, and pricing—delivered automatically in 2-4 hours."
-                },
-                ru: {
-                    name: "AI-генератор коммерческих предложений",
-                    price: "$99 USD",
-                    description: "Превратите записи ваших онлайн-встреч в готовые к отправке коммерческие предложения. Глубокий анализ клиента, рынка и ценообразование — автоматически за 2-4 часа."
-                }
+        <div class="border-t border-gray-700 mt-4 pt-3 text-center text-sm">
+            <p class="text-gray-300">© 2025 DIVO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Объединенный JavaScript -->
+<script>
+    // Data structure with bilingual content (Адаптировано для $99 Proposal Generator)
+    const data = {
+        product: {
+            en: {
+                name: "AI Proposal Generator",
+                price: "$99 USD",
+                description: "Turn your online meeting recordings into client-ready commercial proposals. Deep analysis of the client, market, and pricing—delivered automatically in 2-4 hours."
             },
-            features: [ // What's Included
-                {
-                    en: "5 complete commercial proposals, generated from your audio/video recordings or text transcripts.",
-                    ru: "5 полноценных коммерческих предложений, сгенерированных на основе ваших аудио/видео записей или текстовых транскриптов."
-                },
-                {
-                    en: "Automated Research: The AI agent will independently research your client's company, their competitors, and market niche to personalize the proposal.",
-                    ru: "Автоматизированный research: AI-агент самостоятельно изучит компанию вашего клиента, его конкурентов и рыночную нишу для персонализации предложения."
-                },
-                {
-                    en: "Price Justification: Recommendations for your service pricing based on project complexity and market data.",
-                    ru: "Обоснование цены: Рекомендации по стоимости ваших услуг на основе сложности проекта и рыночных данных."
-                },
-                {
-                    en: "Exclusive Discount: A 15% discount on the first payment for any subscription plan for the main service within 30 days.",
-                    ru: "Эксклюзивная скидка: 15% на первую оплату любого тарифа подписки на основной сервис в течение 30 дней."
+            ru: {
+                name: "AI-генератор коммерческих предложений",
+                price: "$99 USD",
+                description: "Превратите записи ваших онлайн-встреч в готовые к отправке коммерческие предложения. Глубокий анализ клиента, рынка и ценообразование — автоматически за 2-4 часа."
+            }
+        },
+        features: [ // What's Included
+            {
+                en: "5 complete commercial proposals, generated from your audio/video recordings or text transcripts.",
+                ru: "5 полноценных коммерческих предложений, сгенерированных на основе ваших аудио/видео записей или текстовых транскриптов."
+            },
+            {
+                en: "Automated Research: The AI agent will independently research your client's company, their competitors, and market niche to personalize the proposal.",
+                ru: "Автоматизированный research: AI-агент самостоятельно изучит компанию вашего клиента, его конкурентов и рыночную нишу для персонализации предложения."
+            },
+            {
+                en: "Price Justification: Recommendations for your service pricing based on project complexity and market data.",
+                ru: "Обоснование цены: Рекомендации по стоимости ваших услуг на основе сложности проекта и рыночных данных."
+            },
+            {
+                en: "Exclusive Discount: A 15% discount on the first payment for any subscription plan for the main service within 30 days.",
+                ru: "Эксклюзивная скидка: 15% на первую оплату любого тарифа подписки на основной сервис в течение 30 дней."
+            }
+        ],
+        howItWorks: [ // How It Works
+            {
+                en: "Purchase the Trial.",
+                ru: "Оплатите Триал."
+            },
+            {
+                en: "Send a meeting recording or its transcript to the dedicated email address you will receive after payment.",
+                ru: "Отправьте запись встречи или ее транскрипт на специальный email, который вы получите в письме после оплаты."
+            },
+            {
+                en: "Receive a ready-to-use commercial proposal in Google Docs format within 2-4 hours.",
+                ru: "Получите готовое коммерческое предложение в формате Google Docs в течение 2-4 часов."
+            }
+        ],
+        translations: {
+            en: {
+                back_button: "← Back to Services",
+                nav_solutions: "Solutions",
+                nav_about: "About",
+                nav_portfolio: "Portfolio",
+                product_name: "AI Proposal Generator",
+                product_price: "$99 USD",
+                product_description: "Turn your online meeting recordings into client-ready commercial proposals. Deep analysis of the client, market, and pricing—delivered automatically in 2-4 hours.",
+                whats_included: "What's Included in the Trial",
+                how_it_works_title: "How It Works",
+                order_summary: "Order Summary",
+                total_label: "Total",
+                select_method: "Select Payment Method",
+                email_label: "Email Address",
+                name_label: "Full Name",
+                agree_tos: "I agree with",
+                agree_privacy: "I have read",
+                button_text: "Get 5 AI Proposals for $99",
+                secure_payment: "Secure payment",
+                trust_message: "Your payment data is encrypted and secure",
+                tos_link: "Terms of Service →",
+                privacy_link: "Privacy Policy →",
+                return_link: "Return Policy →",
+                tos_link_short: "Terms of Service",
+                privacy_link_short: "Privacy Policy",
+                success_message: "Form submitted successfully! Check your email for next steps.",
+                error_message: "Please fill in all required fields and accept the terms.",
+                form_note_p1: "By clicking the button, you agree to the ",
+                form_note_p2: " and ",
+                form_note_p3: " and ",
+                form_note_privacy_policy: "Privacy Policy",
+                form_note_terms_of_service: "Terms of Service",
+                form_note_user_agreement: "User Agreement",
+                // Футер ключи (для полноты)
+                logo: 'DIVO',
+                'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
+                'footer-solutions-title': 'Solutions',
+                'footer-company-title': 'Company',
+                'footer-portfolio': 'Portfolio & Cases',
+                'footer-contact-title': 'Contact & Legal',
+                'footer-legal-title': 'Legal',
+                'footer-privacy': 'Privacy Policy',
+                'footer-user-agreement': 'User Agreement',
+                'nav-sales': 'For Sales',
+                'nav-design': 'For Design',
+                'nav-custom-dev': 'Custom Development',
+            },
+            ru: {
+                back_button: "← Вернуться к услугам",
+                nav_solutions: "Решения",
+                nav_about: "О нас",
+                nav_portfolio: "Портфолио",
+                product_name: "AI-генератор коммерческих предложений",
+                product_price: "$99 USD",
+                product_description: "Превратите записи ваших онлайн-встреч в готовые к отправке коммерческие предложения. Глубокий анализ клиента, рынка и ценообразование — автоматически за 2-4 часа.",
+                whats_included: "Что входит Триал",
+                how_it_works_title: "Процесс работы",
+                order_summary: "Сводка заказа",
+                total_label: "Итого",
+                select_method: "Выберите способ оплаты",
+                email_label: "Адрес электронной почты",
+                name_label: "Полное имя",
+                agree_tos: "Я согласен с",
+                agree_privacy: "Я ознакомлен с",
+                button_text: "Получить 5 AI-предложений за $99",
+                secure_payment: "Безопасная оплата",
+                trust_message: "Ваши платежные данные зашифрованы и защищены",
+                tos_link: "Условия обслуживания →",
+                privacy_link: "Политика конфиденциальности →",
+                return_link: "Политика возврата →",
+                tos_link_short: "Условиями обслуживания",
+                privacy_link_short: "Политикой конфиденциальности",
+                success_message: "Форма успешно отправлена! Проверьте email для следующих шагов.",
+                error_message: "Пожалуйста, заполните все обязательные поля и примите условия.",
+                form_note_p1: "Нажимая на эту кнопку вы соглашаетесь с ",
+                form_note_p2: " и ",
+                form_note_p3: " и ",
+                form_note_privacy_policy: "Политика Конфиденциальности",
+                form_note_terms_of_service: "Условия использования",
+                form_note_user_agreement: "Пользовательское соглашение",
+                // Футер ключи
+                logo: 'DIVO',
+                'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
+                'footer-solutions-title': 'Решения',
+                'footer-company-title': 'Компания',
+                'footer-portfolio': 'Портфолио и Кейсы',
+                'footer-contact-title': 'Контакты',
+                'footer-legal-title': 'Документы',
+                'footer-privacy': 'Политика конфиденциальности',
+                'footer-user-agreement': 'Пользовательское соглашение',
+                'nav-sales': 'Для Продаж',
+                'nav-design': 'Для Дизайна',
+                'nav-custom-dev': 'Кастомная разработка',
+            }
+        }
+    };
+
+    let currentLang = 'en'; // Начинаем с RU
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Логика для мобильного меню (из кастом.html) ---
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isExpanded = !mobileMenu.classList.contains('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+        }
+
+        // --- Логика перевода (Адаптирована) ---
+
+        // Render features (What's Included)
+        function renderFeatures() {
+            const featuresList = document.getElementById('featuresList');
+            if (!featuresList) return;
+            featuresList.innerHTML = data.features.map((feature, index) => `
+                <li class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold" style="background-color: var(--color-bg-1); color: var(--color-primary);">✓</span>
+                    <span class="feature-text text-text-secondary">${feature[currentLang]}</span>
+                </li>
+            `).join('');
+        }
+
+        // Render How It Works
+        function renderHowItWorks() {
+            const howItWorksList = document.getElementById('howItWorksList');
+            if (!howItWorksList) return;
+            howItWorksList.innerHTML = data.howItWorks.map((step, index) => `
+                <li class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold" style="background-color: var(--color-bg-1); color: var(--color-primary);">${index + 1}</span>
+                    <span class="feature-text text-text-secondary">${step[currentLang]}</span>
+                </li>
+            `).join('');
+        }
+
+        // Update all translations
+        function updateTranslations() {
+            // Устанавливаем язык на <html>
+            document.documentElement.lang = currentLang;
+
+            const elements = document.querySelectorAll('[data-lang-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (data.translations[currentLang][key]) {
+                    el.textContent = data.translations[currentLang][key];
                 }
-            ],
-            howItWorks: [ // How It Works
-                {
-                    en: "Purchase the Trial.",
-                    ru: "Оплатите Триал."
-                },
-                {
-                    en: "Send a meeting recording or its transcript to the dedicated email address you will receive after payment.",
-                    ru: "Отправьте запись встречи или ее транскрипт на специальный email, который вы получите в письме после оплаты."
-                },
-                {
-                    en: "Receive a ready-to-use commercial proposal in Google Docs format within 2-4 hours.",
-                    ru: "Получите готовое коммерческое предложение в формате Google Docs в течение 2-4 часов."
-                }
-            ],
-            translations: {
-                en: {
-                    back_button: "← Back to Services",
-                    nav_solutions: "Solutions",
-                    nav_about: "About",
-                    nav_portfolio: "Portfolio",
-                    product_name: "AI Proposal Generator",
-                    product_price: "$99 USD",
-                    product_description: "Turn your online meeting recordings into client-ready commercial proposals. Deep analysis of the client, market, and pricing—delivered automatically in 2-4 hours.",
-                    whats_included: "What's Included in the Trial",
-                    how_it_works_title: "How It Works",
-                    order_summary: "Order Summary",
-                    total_label: "Total",
-                    select_method: "Select Payment Method",
-                    email_label: "Email Address",
-                    name_label: "Full Name",
-                    agree_tos: "I agree with",
-                    agree_privacy: "I have read",
-                    button_text: "Get 5 AI Proposals for $99",
-                    secure_payment: "Secure payment",
-                    trust_message: "Your payment data is encrypted and secure",
-                    tos_link: "Terms of Service →",
-                    privacy_link: "Privacy Policy →",
-                    return_link: "Return Policy →",
-                    tos_link_short: "Terms of Service",
-                    privacy_link_short: "Privacy Policy",
-                    success_message: "Form submitted successfully! Check your email for next steps.",
-                    error_message: "Please fill in all required fields and accept the terms.",
-                    form_note_p1: "By clicking the button, you agree to the ",
-                    form_note_p2: " and ",
-                    form_note_p3: " and ",
-                    form_note_privacy_policy: "Privacy Policy",
-                    form_note_terms_of_service: "Terms of Service",
-                    form_note_user_agreement: "User Agreement",
-                    // Футер ключи (для полноты)
-                    logo: 'DIVO',
-                    'footer-mission': 'We bridge the gap between impressive AI demos and production-ready enterprise systems that deliver measurable profit.',
-                    'footer-solutions-title': 'Solutions',
-                    'footer-company-title': 'Company',
-                    'footer-portfolio': 'Portfolio & Cases',
-                    'footer-contact-title': 'Contact & Legal',
-                    'footer-legal-title': 'Legal',
-                    'footer-privacy': 'Privacy Policy',
-                    'footer-terms': 'Terms of Service',
-                    'nav-sales': 'For Sales',
-                    'nav-design': 'For Design',
-                    'nav-custom-dev': 'Custom Development',
-                },
-                ru: {
-                    back_button: "← Вернуться к услугам",
-                    nav_solutions: "Решения",
-                    nav_about: "О нас",
-                    nav_portfolio: "Портфолио",
-                    product_name: "AI-генератор коммерческих предложений",
-                    product_price: "$99 USD",
-                    product_description: "Превратите записи ваших онлайн-встреч в готовые к отправке коммерческие предложения. Глубокий анализ клиента, рынка и ценообразование — автоматически за 2-4 часа.",
-                    whats_included: "Что входит Триал",
-                    how_it_works_title: "Процесс работы",
-                    order_summary: "Сводка заказа",
-                    total_label: "Итого",
-                    select_method: "Выберите способ оплаты",
-                    email_label: "Адрес электронной почты",
-                    name_label: "Полное имя",
-                    agree_tos: "Я согласен с",
-                    agree_privacy: "Я ознакомлен с",
-                    button_text: "Получить 5 AI-предложений за $99",
-                    secure_payment: "Безопасная оплата",
-                    trust_message: "Ваши платежные данные зашифрованы и защищены",
-                    tos_link: "Условия обслуживания →",
-                    privacy_link: "Политика конфиденциальности →",
-                    return_link: "Политика возврата →",
-                    tos_link_short: "Условиями обслуживания",
-                    privacy_link_short: "Политикой конфиденциальности",
-                    success_message: "Форма успешно отправлена! Проверьте email для следующих шагов.",
-                    error_message: "Пожалуйста, заполните все обязательные поля и примите условия.",
-                    form_note_p1: "Нажимая на эту кнопку вы соглашаетесь с ",
-                    form_note_p2: " и ",
-                    form_note_p3: " и ",
-                    form_note_privacy_policy: "Политика Конфиденциальности",
-                    form_note_terms_of_service: "Условия использования",
-                    form_note_user_agreement: "Пользовательское соглашение",
-                    // Футер ключи
-                    logo: 'DIVO',
-                    'footer-mission': 'Ликвидируем разрыв между красивыми AI-демо и работающими enterprise-системами, которые приносят измеримую прибыль.',
-                    'footer-solutions-title': 'Решения',
-                    'footer-company-title': 'Компания',
-                    'footer-portfolio': 'Портфолио и Кейсы',
-                    'footer-contact-title': 'Контакты',
-                    'footer-legal-title': 'Документы',
-                    'footer-privacy': 'Политика конфиденциальности',
-                    'footer-terms': 'Условия использования',
-                    'nav-sales': 'Для Продаж',
-                    'nav-design': 'Для Дизайна',
-                    'nav-custom-dev': 'Кастомная разработка',
-                }
-            }
-        };
-
-        let currentLang = 'ru'; // Начинаем с RU
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- Логика для мобильного меню (из кастом.html) ---
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    const isExpanded = !mobileMenu.classList.contains('hidden');
-                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-                });
-            }
-
-            // --- Логика перевода (Адаптирована) ---
-
-            // Render features (What's Included)
-            function renderFeatures() {
-                const featuresList = document.getElementById('featuresList');
-                if (!featuresList) return;
-                featuresList.innerHTML = data.features.map((feature, index) => `
-                    <li class="flex items-start gap-4">
-                        <span class="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold" style="background-color: var(--color-bg-1); color: var(--color-primary);">✓</span>
-                        <span class="feature-text text-text-secondary">${feature[currentLang]}</span>
-                    </li>
-                `).join('');
-            }
-
-            // Render How It Works
-            function renderHowItWorks() {
-                const howItWorksList = document.getElementById('howItWorksList');
-                if (!howItWorksList) return;
-                howItWorksList.innerHTML = data.howItWorks.map((step, index) => `
-                    <li class="flex items-start gap-4">
-                        <span class="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold" style="background-color: var(--color-bg-1); color: var(--color-primary);">${index + 1}</span>
-                        <span class="feature-text text-text-secondary">${step[currentLang]}</span>
-                    </li>
-                `).join('');
-            }
-
-            // Update all translations
-            function updateTranslations() {
-                // Устанавливаем язык на <html>
-                document.documentElement.lang = currentLang;
-
-                const elements = document.querySelectorAll('[data-lang-key]');
-                elements.forEach(el => {
-                    const key = el.getAttribute('data-lang-key');
-                    if (data.translations[currentLang][key]) {
-                        el.textContent = data.translations[currentLang][key];
-                    }
-                });
-                
-                // Обновляем также элементы с data-lang (из шапки/подвала)
-                const elementsHeader = document.querySelectorAll('[data-lang]');
-                elementsHeader.forEach(el => {
-                    const key = el.getAttribute('data-lang');
-                     if (data.translations[currentLang][key]) {
-                        el.innerHTML = data.translations[currentLang][key];
-                    }
-                });
-
-                renderFeatures();
-                renderHowItWorks(); // Новая функция
-            }
-
-            // --- Новая логика переключения языка (для шапки из кастом.html) ---
-            const btnRuDesktop = document.getElementById('btn-ru');
-            const btnEnDesktop = document.getElementById('btn-en');
-            const btnRuMobile = document.getElementById('btn-ru-mobile');
-            const btnEnMobile = document.getElementById('btn-en-mobile');
-
-            function setLang(lang) {
-                currentLang = lang;
-                const isRu = lang === 'ru';
-                
-                // Update button active states
-                btnRuDesktop.classList.toggle('active', isRu);
-                btnEnDesktop.classList.toggle('active', !isRu);
-                btnRuMobile.classList.toggle('active', isRu);
-                btnEnMobile.classList.toggle('active', !isRu);
-
-                // Update translations
-                updateTranslations();
-            }
-
-            // Add listeners
-            btnRuDesktop.addEventListener('click', () => setLang('ru'));
-            btnEnDesktop.addEventListener('click', () => setLang('en'));
-            btnRuMobile.addEventListener('click', () => setLang('ru'));
-            btnEnMobile.addEventListener('click', () => setLang('en'));
-
-            // Back button
-            document.getElementById('backBtn').addEventListener('click', () => {
-                window.history.back();
             });
 
-            // --- Логика формы (Адаптирована) ---
-            const form = document.getElementById('paymentForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const messageContainer = document.getElementById('messageContainer');
-
-            function showMessage(text, type) {
-                messageContainer.innerHTML = `<div class="message ${type} show">${text}</div>`;
-                setTimeout(() => {
-                    const msg = messageContainer.querySelector('.message');
-                    if (msg) msg.classList.remove('show');
-                }, 5000);
-            }
-
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const paymentMethod = document.getElementById('paymentMethod').value;
-                const email = document.getElementById('email').value;
-                const fullName = document.getElementById('fullName').value;
-                const agreeToS = document.getElementById('agreeToS').checked;
-                const agreePrivacy = document.getElementById('agreePrivacy').checked;
-
-                if (!paymentMethod || !email || !fullName || !agreeToS || !agreePrivacy) {
-                    showMessage(data.translations[currentLang].error_message, 'error');
-                    return;
+            // Обновляем также элементы с data-lang (из шапки/подвала)
+            const elementsHeader = document.querySelectorAll('[data-lang]');
+            elementsHeader.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                 if (data.translations[currentLang][key]) {
+                    el.innerHTML = data.translations[currentLang][key];
                 }
-
-                // Success
-                showMessage(data.translations[currentLang].success_message, 'success');
-                
-                // Simulate redirect after 2 seconds
-                setTimeout(() => {
-                    console.log('Payment data:', {
-                        paymentMethod,
-                        email,
-                        fullName,
-                        service: 'AI Proposal Generator',
-                        amount: '$99 USD'
-                    });
-                    // In real app: window.location.href = '/thank-you-proposal-99';
-                }, 2000);
             });
 
-            // --- Обновленная логика для мобильного виджета ---
-            const widgetToggle = document.getElementById('widgetToggle');
-            const paymentWidget = document.querySelector('.payment-widget');
-            
-            if (widgetToggle) {
-                widgetToggle.addEventListener('click', () => {
-                    paymentWidget.classList.toggle('open');
-                });
-            }
+            renderFeatures();
+            renderHowItWorks(); // Новая функция
+        }
 
-            // --- Инициализация при загрузке ---
-            setLang(currentLang); // Устанавливаем 'ru' и переводим
+        // --- Новая логика переключения языка (для шапки из кастом.html) ---
+        const btnRuDesktop = document.getElementById('btn-ru');
+        const btnEnDesktop = document.getElementById('btn-en');
+        const btnRuMobile = document.getElementById('btn-ru-mobile');
+        const btnEnMobile = document.getElementById('btn-en-mobile');
+
+        function setLang(lang) {
+            currentLang = lang;
+            const isRu = lang === 'ru';
+
+            // Update button active states
+            btnRuDesktop.classList.toggle('active', isRu);
+            btnEnDesktop.classList.toggle('active', !isRu);
+            btnRuMobile.classList.toggle('active', isRu);
+            btnEnMobile.classList.toggle('active', !isRu);
+
+            // Update translations
+            updateTranslations();
+        }
+
+        // Add listeners
+        btnRuDesktop.addEventListener('click', () => setLang('ru'));
+        btnEnDesktop.addEventListener('click', () => setLang('en'));
+        btnRuMobile.addEventListener('click', () => setLang('ru'));
+        btnEnMobile.addEventListener('click', () => setLang('en'));
+
+        // Back button
+        document.getElementById('backBtn').addEventListener('click', () => {
+            window.history.back();
         });
-    </script>
+
+        // --- Логика формы (Адаптирована) ---
+        const form = document.getElementById('paymentForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const messageContainer = document.getElementById('messageContainer');
+
+        function showMessage(text, type) {
+            messageContainer.innerHTML = `<div class="message ${type} show">${text}</div>`;
+            setTimeout(() => {
+                const msg = messageContainer.querySelector('.message');
+                if (msg) msg.classList.remove('show');
+            }, 5000);
+        }
+
+        // --- Обновленная логика для мобильного виджета ---
+        const widgetToggle = document.getElementById('widgetToggle');
+        const paymentWidget = document.querySelector('.payment-widget');
+
+        if (widgetToggle) {
+            widgetToggle.addEventListener('click', () => {
+                paymentWidget.classList.toggle('open');
+            });
+        }
+
+        // --- Инициализация при загрузке ---
+        setLang(currentLang); // Устанавливаем 'ru' и переводим
+    });
+</script>
 </body>
 </html>

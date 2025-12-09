@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+
+    <title data-lang="meta-title">Daria Kamyshina — CEO & Co-Founder DIVO</title>
+    <meta name="description" data-lang="meta-description" content="Daria Kamyshina transforms AI technologies into scalable growth and measurable ROI.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CORE VARIABLES (MATCHING COPILOT.HTML) --- */
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-heading: 'Alumni Sans', sans-serif;
+
+            --color-primary: rgb(203, 2, 19);
+            --color-primary-dark: rgb(160, 2, 15);
+            --color-bg-light: #F9FAFB;
+            --color-text-main: rgb(17, 24, 39);
+            --color-text-secondary: rgb(75, 85, 99);
+            --color-card-bg: #ffffff;
+            --color-dark-bg: #0f0f0f;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            font-weight: 300;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Typography - Copilot Style */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-text-main);
+            line-height: 1.1;
+        }
+        h1 { font-family: var(--font-heading); font-weight: 800; }
+        h2 { font-family: var(--font-heading); font-weight: 700; }
+        h3, h4 { font-family: var(--font-heading); font-weight: 600; }
+
+        .header-logo {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            line-height: 1;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .header-nav-link {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--color-text-main);
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+        .header-nav-link:hover { color: var(--color-primary); }
+
+        /* Buttons - Copilot Style */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            border: 2px solid var(--color-primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            box-shadow: 0 4px 12px rgba(203, 2, 19, 0.2);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-main);
+            border: 2px solid #E5E7EB;
+        }
+        .btn-secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Cards - Copilot Style */
+        .card {
+            background-color: var(--color-card-bg);
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+            border-color: #D1D5DB;
+        }
+
+        /* Lang Switcher */
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 0.75rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .lang-menu { display: none; position: absolute; right: 0; top: 100%; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 50; border: 1px solid #E5E7EB; overflow: hidden; margin-top: 0.5rem; }
+        .lang-menu.show { display: block; }
+        .lang-option { padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: background 0.2s; font-size: 0.95rem; color: var(--color-text-main); width: 100%; text-align: left; border: none; background: transparent; }
+        .lang-option:hover { background-color: #F3F4F6; }
+
+        .footer-link { color: #9CA3AF; transition: color 0.2s; text-decoration: none; }
+        .footer-link:hover { color: white; }
+        .dark-bg-custom { background-color: var(--color-dark-bg); }
+
+        /* Custom Pattern (Static dots from Copilot) */
+        .custom-pattern-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23a1a1aa' /%3E%3C/svg%3E");
+            background-size: 24px 24px;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .profile-img {
+            object-fit: cover; border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .tech-tag {
+            display: inline-block; background-color: #F3F4F6; color: var(--color-text-secondary);
+            padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.95rem; font-weight: 500;
+            margin-right: 0.5rem; margin-bottom: 0.5rem; text-decoration: none; transition: all 0.2s; border: 1px solid transparent;
+        }
+        .tech-tag:hover { border-color: var(--color-primary); color: var(--color-primary); background-color: white; }
+    </style>
+</head>
+<body class="antialiased text-gray-900">
+
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
+
+                <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
+                    <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-md">
+                        <a href="#solutions" class="header-nav-link" data-lang="nav-solutions">Solutions</a>
+                        <a href="#experience" class="header-nav-link" data-lang="nav-experience">Experience</a>
+                        <a href="#topics" class="header-nav-link" data-lang="nav-topics">Speaking</a>
+                        <a href="#contact" class="header-nav-link" data-lang="nav-contact">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-6 relative z-10">
+                    <div class="lang-dropdown">
+                        <button id="lang-toggle" class="lang-btn" aria-label="Select Language">
+                            <span id="current-lang-flag">EN</span>
+                            <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="lang-menu" class="lang-menu">
+                            <button class="lang-option" onclick="changeLang('en')"><span>EN</span> English</button>
+                            <button class="lang-option" onclick="changeLang('ru')"><span>RU</span> Русский</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4 relative z-10">
+                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
+                    <button id="mobile-menu-toggle" class="text-gray-800 p-2 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2 border-t border-gray-100">
+                <nav class="flex flex-col gap-4 p-4">
+                    <a href="#solutions" class="header-nav-link text-lg" data-lang="nav-solutions">Solutions</a>
+                    <a href="#experience" class="header-nav-link text-lg" data-lang="nav-experience">Experience</a>
+                    <a href="#topics" class="header-nav-link text-lg" data-lang="nav-topics">Speaking</a>
+                    <a href="#contact" class="header-nav-link text-lg" data-lang="nav-contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative py-20 md:py-32 bg-white overflow-hidden" id="hero-section">
+            <div class="custom-pattern-bg"></div>
+
+            <div class="container max-w-7xl mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+                    <div class="order-2 md:order-1 text-center md:text-left">
+                        <h1 data-lang="hero-h1" class="text-5xl md:text-7xl mb-6 tracking-tight text-gray-900 leading-none">Daria Kamyshina</h1>
+                        <h2 data-lang="hero-sub" class="text-xl md:text-2xl text-primary mb-6 font-heading font-bold uppercase tracking-wide">CEO & Co-Founder, The 10x Growth Product Leader</h2>
+
+                        <p data-lang="hero-desc" class="text-xl text-gray-600 mb-10 leading-relaxed font-light">
+                            My mission is to find your key business problem and, together with the CTO, design an AI solution that integrates into your processes. I build the GTM strategy and am responsible for growth, turning technology into measurable ROI.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#topics" class="btn btn-primary shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all text-xl px-8 py-3" data-lang="hero-cta1">Book me as a speaker</a>
+                            <a href="https://www.linkedin.com/in/daria-kamyshina" target="_blank" class="btn btn-secondary text-xl px-8 py-3" data-lang="hero-cta2">Connect on LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <div class="relative w-full max-w-md aspect-square bg-white p-2 rounded-2xl shadow-xl border border-gray-100 transform">
+                            <img src="Daria.JPG" alt="Daria Kamyshina" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gray-50 border-y border-gray-200">
+            <div class="container max-w-4xl mx-auto px-4 text-center">
+                <h2 data-lang="philosophy-h2" class="text-4xl font-bold mb-8 font-heading">AI as a Tool for Growth and Freedom</h2>
+                <div class="relative p-10 bg-white rounded-xl shadow-sm border border-gray-200">
+                    <p data-lang="philosophy-quote" class="text-2xl text-gray-800 italic font-light leading-relaxed">
+                        "I love technology, but its true value lies in creating solutions that increase efficiency, help businesses scale, and free up teams for strategic and creative tasks."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 bg-white">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row gap-16 items-start">
+                    <div class="w-full md:w-1/2">
+                        <h2 data-lang="exp-h2" class="text-4xl md:text-5xl font-bold mb-6 font-heading">My Experience: From $5k to $50k MRR in 4 Months</h2>
+                        <div class="space-y-6 text-gray-600 text-lg leading-relaxed font-light">
+                            <p data-lang="exp-p1">I am responsible for product strategy and growth at DIVO. Before this, I led the GTM strategy for US market entry and have experience with Yandex's world-class product culture.</p>
+                            <p data-lang="exp-p2">At an EdTech startup, I grew revenue from $5,000 to $50,000 MRR in 4 months (a 10x growth). I managed teams of 150+ specialists and know how to operationally build a scalable business.</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 grid grid-cols-1 gap-6">
+                        <div class="p-8 bg-white/90 backdrop-blur rounded-xl shadow-sm border border-gray-100">
+                            <div class="text-5xl font-[900] text-primary font-heading mb-1">10x</div>
+                            <div data-lang="exp-m1" class="text-sm font-semibold uppercase text-gray-500 tracking-wider">MRR Growth in 4 months</div>
+                        </div>
+                        <div class="p-8 bg-white/90 backdrop-blur rounded-xl shadow-sm border border-gray-100">
+                            <div class="text-5xl font-[900] text-primary font-heading mb-1">150+</div>
+                            <div data-lang="exp-m2" class="text-sm font-semibold uppercase text-gray-500 tracking-wider">People managed</div>
+                        </div>
+                         <div class="p-8 bg-white/90 backdrop-blur rounded-xl shadow-sm border border-gray-100">
+                            <div class="text-4xl font-[900] text-gray-900 font-heading mb-1">GTM & Product</div>
+                            <div data-lang="exp-m3" class="text-sm font-semibold uppercase text-gray-500 tracking-wider">Strategies for US Market</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 data-lang="cases-h2" class="text-4xl md:text-5xl font-bold mb-4 font-heading">Flagship Solutions</h2>
+                    <p data-lang="cases-sub" class="text-xl text-gray-500">GTM strategies and product solutions that delivered 10x growth.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-primary h-full flex flex-col">
+                        <div class="mb-6 text-primary">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 data-lang="case1-title" class="text-2xl font-bold mb-3 font-heading">Leading E-commerce Platform</h3>
+                        <p data-lang="case1-desc" class="text-base text-gray-600 leading-relaxed"><strong>AI Art Director's Assistant.</strong> An AI product that checks mockups against 7 parameters, removing up to 80% of routine work from art directors.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-primary h-full flex flex-col">
+                        <div class="mb-6 text-primary">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H4v5M15 3h5v5M9 21H4v-5M15 21h5v-5M3 9h18v6H3V9zM9 9v0a3 3 0 003 3h0a3 3 0 003-3v0"></path></svg>
+                        </div>
+                        <h3 data-lang="case2-title" class="text-2xl font-bold mb-3 font-heading">Major Tech Corporation</h3>
+                        <p data-lang="case2-desc" class="text-base text-gray-600 leading-relaxed"><strong>AI Marketing Transformation.</strong> Conducted workshops on AI content generation (banners, videos), enabling teams to accelerate marketing cycles.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-primary h-full flex flex-col">
+                        <div class="mb-6 text-primary">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-7 0H3m3 0v-4M7 3v2M17 3v2M12 3v2M12 17v4M12 21h-4v-4h4v4zm0 0h4v-4h-4v4z"></path></svg>
+                        </div>
+                        <h3 data-lang="case3-title" class="text-2xl font-bold mb-3 font-heading">Major Banking & Fintech Group</h3>
+                        <p data-lang="case3-desc" class="text-base text-gray-600 leading-relaxed"><strong>Data pipeline for enterprise analytics.</strong> Designed a fault-tolerant microservice delivering data to BI tools for ROI measurement.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="/custom-development" class="btn btn-secondary text-lg px-8 py-3" data-lang="case-cta">See All Case Studies</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="topics" class="py-20 bg-white">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 data-lang="topics-h2" class="text-4xl md:text-5xl font-bold mb-4 font-heading">Speaking Topics</h2>
+                    <p data-lang="topics-sub" class="text-xl text-gray-500">Strategy, ROI, management, and business transformation.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-8 hover:shadow-xl hover:-translate-y-2 transition-all">
+                        <h4 data-lang="t1-title" class="text-2xl font-bold font-heading mb-4 text-gray-900">AI as a CEO's Partner</h4>
+                        <p data-lang="t1-desc" class="text-base text-gray-600 leading-relaxed">How to guide a company from the first risk-free "AI Sprint" to building an AI-first culture and measuring ROI.</p>
+                    </div>
+                    <div class="card p-8 hover:shadow-xl hover:-translate-y-2 transition-all">
+                        <h4 data-lang="t2-title" class="text-2xl font-bold font-heading mb-4 text-gray-900">Asymmetric Warfare for Enterprise</h4>
+                        <p data-lang="t2-desc" class="text-base text-gray-600 leading-relaxed">How a small team finds its place in a market dominated by giants. Competing for resources and growing during a crisis.</p>
+                    </div>
+                    <div class="card p-8 hover:shadow-xl hover:-translate-y-2 transition-all">
+                        <h4 data-lang="t3-title" class="text-2xl font-bold font-heading mb-4 text-gray-900">The Psychology of AI Adoption</h4>
+                        <p data-lang="t3-desc" class="text-base text-gray-600 leading-relaxed">How to properly "sell" AI internally to avoid sabotage and what the ideal "AI Manager's Assistant" should look like.</p>
+                    </div>
+                    <div class="card p-8 hover:shadow-xl hover:-translate-y-2 transition-all">
+                        <h4 data-lang="t4-title" class="text-2xl font-bold font-heading mb-4 text-gray-900">Managing an Orchestra-Team</h4>
+                        <p data-lang="t4-desc" class="text-base text-gray-600 leading-relaxed">Shifting focus from "execution" KPIs to "defining business tasks for AI," and what new skills are needed.</p>
+                    </div>
+                    <div class="card p-8 hover:shadow-xl hover:-translate-y-2 transition-all">
+                        <h4 data-lang="t5-title" class="text-2xl font-bold font-heading mb-4 text-gray-900">The Line of Reasonable Automation</h4>
+                        <p data-lang="t5-desc" class="text-base text-gray-600 leading-relaxed">The strategic balance between manual work and AI. Why total automation is a trap.</p>
+                    </div>
+                    <div class="card p-8 hover:shadow-xl hover:-translate-y-2 transition-all">
+                        <h4 data-lang="t6-title" class="text-2xl font-bold font-heading mb-4 text-gray-900">AI is Saving You Millions (Or Wasting Them)</h4>
+                        <p data-lang="t6-desc" class="text-base text-gray-600 leading-relaxed">A sober look at P&L. Where companies lose money and how to avoid uncontrolled spending on AI infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <a href="#contact" class="btn btn-primary text-lg px-10 py-4" data-lang="topics-cta">Book me as a speaker</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="container max-w-4xl mx-auto px-4">
+                <div class="card border-primary/20 shadow-xl bg-white text-center p-12 rounded-2xl">
+                    <h2 data-lang="contact-h2" class="text-4xl font-heading font-bold mb-6">Get in Touch</h2>
+                    <p data-lang="contact-p" class="text-xl text-gray-600 mb-10 font-light">Book now a free 40-minute consultation</p>
+
+                    <div class="mb-12">
+                        <a href="https://calendly.com/dkamysina/30min" target="_blank" class="btn btn-primary text-xl px-12 py-4 shadow-lg" data-lang="contact-btn">Get Consultation</a>
+                    </div>
+
+                    <p data-lang="contact-alt" class="text-gray-400 mb-6 text-xs uppercase tracking-widest font-bold">Or contact me directly</p>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="mailto:ceo@divo.solutions" class="tech-tag hover:bg-primary hover:text-white">ceo@divo.solutions</a>
+                        <a href="https://www.linkedin.com/in/daria-kamyshina" target="_blank" class="tech-tag hover:bg-blue-600 hover:text-white">LinkedIn</a>
+                        <a href="https://wa.me/79035176391" target="_blank" class="tech-tag hover:bg-green-500 hover:text-white">WhatsApp</a>
+                        <a href="https://t.me/darikamouse" target="_blank" class="tech-tag hover:bg-blue-400 hover:text-white">Telegram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dark-bg-custom text-gray-400 py-16 border-t border-gray-800">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="header-logo text-white mb-4 block">DIVO</a>
+                    <p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator. We bridge the gap between AI demos and production-ready systems.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col1">Products</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/for-design" class="footer-link">Design Copilot</a></li>
+                        <li><a href="/intelligent" class="footer-link">Intelligent Systems</a></li>
+                        <li><a href="/custom-development" class="footer-link">Automation</a></li>
+                        <li><a href="/secure" class="footer-link">Secure Infrastructure</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col2">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/portfolio" class="footer-link" data-lang="nav-portfolio">Portfolio</a></li>
+                        <li><a href="#" class="footer-link" data-lang="footer-team">Team</a></li>
+                        <li><a href="/privacy-policy" class="footer-link" data-lang="footer-privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col3">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>info@divo.solutions</li>
+                        <li><a href="https://t.me/darikamouse" class="footer-link">Telegram</a></li>
+                        <li><a href="https://wa.me/+79035176391" class="footer-link">WhatsApp</a></li>
+                        <li><a href="https://www.linkedin.com/company/divo-solutions" class="footer-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs">
+                <p>&copy; 2025 DIVO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'en': {
+                'meta-title': 'Daria Kamyshina — CEO & Co-Founder DIVO',
+                'meta-description': 'Daria Kamyshina transforms AI technologies into scalable growth and measurable ROI.',
+
+                'nav-solutions': 'Solutions', 'nav-experience': 'Experience', 'nav-topics': 'Speaking', 'nav-contact': 'Contact',
+                'nav-sales': 'For Sales', 'nav-design': 'For Design', 'nav-custom': 'Custom Development', 'nav-portfolio': 'Portfolio', 'nav-about': 'About Us',
+                'footer-col1': 'Products', 'footer-col2': 'Company', 'footer-col3': 'Contact',
+                'footer-desc': 'Enterprise AI Integrator. We bridge the gap between AI demos and production-ready systems.',
+                'footer-team': 'Team', 'footer-privacy': 'Privacy Policy',
+
+                'hero-h1': 'Daria Kamyshina', 'hero-sub': 'CEO & Co-Founder, The 10x Growth Product Leader',
+                'hero-desc': 'My mission is to find your key business problem and, together with the CTO, design an AI solution that integrates into your processes. I build the GTM strategy and am responsible for growth, turning technology into measurable ROI.',
+                'hero-cta1': 'Book me as a speaker', 'hero-cta2': 'Connect on LinkedIn',
+
+                'philosophy-h2': 'AI as a Tool for Growth and Freedom',
+                'philosophy-quote': '"I love technology, but its true value lies in creating solutions that increase efficiency, help businesses scale, and free up teams for strategic and creative tasks."',
+
+                'exp-h2': 'My Experience: From $5k to $50k MRR in 4 Months',
+                'exp-p1': 'I am responsible for product strategy and growth at DIVO. Before this, I led the GTM strategy for US market entry and have experience with Yandex\'s world-class product culture.',
+                'exp-p2': 'At an EdTech startup, I grew revenue from $5,000 to $50,000 MRR in 4 months (a 10x growth). I managed teams of 150+ specialists and know how to operationally build a scalable business.',
+                'exp-m1': 'MRR Growth in 4 months', 'exp-m2': 'People managed', 'exp-m3': 'Strategies for US Market',
+
+                'cases-h2': 'Flagship Solutions', 'cases-sub': 'Examples of GTM strategies and product solutions that delivered 10x growth.',
+                'case1-title': 'Leading E-commerce Platform', 'case1-desc': '<strong>AI Art Director\'s Assistant.</strong> An AI product that checks mockups against 7 parameters, removing up to 80% of routine work.',
+                'case2-title': 'Major Tech Corporation', 'case2-desc': '<strong>AI Marketing Transformation.</strong> Conducted workshops on AI content generation, enabling teams to accelerate marketing cycles.',
+                'case3-title': 'Major Banking & Fintech Group', 'case3-desc': '<strong>Data pipeline for enterprise analytics.</strong> Designed a fault-tolerant microservice delivering data to BI tools for ROI measurement.',
+                'case-cta': 'See All Case Studies',
+
+                'topics-h2': 'Speaking Topics', 'topics-sub': 'Focus: Strategy, ROI, management, and business transformation.',
+                't1-title': 'AI as a CEO\'s Partner', 't1-desc': 'How to guide a company from the first risk-free "AI Sprint" to building an AI-first culture and measuring ROI.',
+                't2-title': 'Asymmetric Warfare for Enterprise', 't2-desc': 'How a small team finds its place in a market dominated by giants. Competing for resources and growing during a crisis.',
+                't3-title': 'The Psychology of AI Adoption', 't3-desc': 'How to properly "sell" AI internally to avoid sabotage and what the ideal "AI Manager\'s Assistant" should look like.',
+                't4-title': 'Managing an Orchestra-Team', 't4-desc': 'Shifting focus from "execution" KPIs to "defining business tasks for AI," and what new skills are needed.',
+                't5-title': 'The Line of Reasonable Automation', 't5-desc': 'The strategic balance between manual work and AI. Why total automation is a trap.',
+                't6-title': 'AI is Saving You Millions (Or Wasting Them)', 't6-desc': 'A sober look at P&L. Where companies lose money and how to avoid uncontrolled spending on AI infrastructure.',
+                'topics-cta': 'Book me as a speaker',
+
+                'contact-h2': 'Get in Touch', 'contact-p': 'Book now a free 40-minute consultation',
+                'contact-btn': 'Get Consultation', 'contact-alt': 'Or contact me directly'
+            },
+            'ru': {
+                'meta-title': 'Дарья Камышина — CEO & Co-Founder DIVO',
+                'meta-description': 'Дарья Камышина превращает AI-технологии в масштабируемый рост и измеримый ROI.',
+
+                'nav-solutions': 'Решения', 'nav-experience': 'Опыт', 'nav-topics': 'Выступления', 'nav-contact': 'Контакты',
+                'nav-sales': 'Для Продаж', 'nav-design': 'Для Дизайна', 'nav-custom': 'Кастомные решения', 'nav-portfolio': 'Портфолио', 'nav-about': 'О нас',
+
+                'footer-col1': 'Продукты', 'footer-col2': 'Компания', 'footer-col3': 'Контакты',
+                'footer-desc': 'Enterprise AI Интегратор. Мы превращаем технологии в работающий бизнес.',
+                'footer-team': 'Команда', 'footer-privacy': 'Политика конфиденциальности',
+
+                'hero-h1': 'Дарья Камышина', 'hero-sub': 'CEO & Co-Founder, The 10x Growth Product Leader',
+                'hero-desc': 'Моя задача - найти вашу ключевую бизнес-проблему и, вместе с СТО, спроектировать AI-решение, которое встраивается в ваши процессы. Я выстраиваю GTM-стратегию и отвечаю за рост, превращая технологию в измеримый ROI.',
+                'hero-cta1': 'Пригласить спикером', 'hero-cta2': 'Связаться в LinkedIn',
+
+                'philosophy-h2': 'AI как инструмент роста и свободы',
+                'philosophy-quote': '"Я обожаю технологии, но их истинная ценность - в создании решений, которые растят эффективность, помогают бизнесу масштабироваться и освобождают команду для стратегических задач."',
+
+                'exp-h2': 'Мой опыт: От $5k до $50k MRR за 4 месяца',
+                'exp-p1': 'Я отвечаю за продуктовую стратегию и рост в DIVO. До этого я руководила GTM-стратегией для выхода на рынок США и имею опыт работы с продуктовой культурой мирового уровня в Yandex.',
+                'exp-p2': 'В EdTech-стартапе я вырастила выручку с $5,000 до $50,000 MRR за 4 месяца (10x рост). Я управляла командами из 150+ специалистов и знаю, как операционно выстроить масштабируемый бизнес.',
+                'exp-m1': 'Рост MRR за 4 месяца', 'exp-m2': 'Человек в управлении', 'exp-m3': 'Стратегии для рынка США',
+
+                'cases-h2': 'Флагманские решения', 'cases-sub': 'Примеры GTM-стратегий и продуктовых решений, которые принесли 10x рост.',
+                'case1-title': 'Ведущая E-commerce платформа', 'case1-desc': '<strong>AI-ассистент Арт-директора.</strong> AI-продукт, проверяющий макеты по 7 параметрам, который снял до 80% рутины с арт-директоров.',
+                'case2-title': 'Крупная технологическая корпорация', 'case2-desc': '<strong>Трансформация маркетинга через AI.</strong> Воркшопы по генерации контента, что позволило командам ускорить маркетинговые циклы.',
+                'case3-title': 'Крупнейший банк и финтех-группа', 'case3-desc': '<strong>Конвейер данных для Enterprise-аналитики.</strong> Проектирование отказоустойчивого микросервиса для доставки данных в BI.',
+                'case-cta': 'Смотреть все кейсы',
+
+                'topics-h2': 'Темы выступлений', 'topics-sub': 'Фокус: Стратегия, ROI, управление и трансформация бизнеса.',
+                't1-title': 'AI как партнер CEO', 't1-desc': 'Как провести компанию от пилотного проекта до полной трансформации. Построение AI-first культуры и измерение ROI.',
+                't2-title': 'Асимметричная война за enterprise', 't2-desc': 'Как малое AI-агентство находит выигрышную стратегию на рынке гигантов. Как расти в кризис.',
+                't3-title': 'Психология внедрения AI', 't3-desc': 'Как избежать саботажа и создать настоящего помощника. Как правильно «продавать» AI внутри компании.',
+                't4-title': 'Управление командой-оркестром', 't4-desc': 'Как изменить KPI и роли, когда у каждого есть AI-ассистент. Новые навыки и ритуалы для менеджеров.',
+                't5-title': 'Грань разумной автоматизации', 't5-desc': 'Стратегический баланс между ручным трудом и AI. Почему тотальное внедрение AI - это ловушка.',
+                't6-title': 'AI экономит вам миллионы (или тратит их)', 't6-desc': 'Трезвый взгляд на P&L. Где компании теряют деньги и как избежать неконтролируемых трат на инфраструктуру.',
+                'topics-cta': 'Пригласить спикером',
+
+                'contact-h2': 'Свяжитесь со мной', 'contact-p': 'Запишитесь на бесплатную 40-минутную консультацию',
+                'contact-btn': 'Получить консультацию', 'contact-alt': 'Или свяжитесь напрямую'
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const langToggle = document.getElementById('lang-toggle');
+            const langMenu = document.getElementById('lang-menu');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if(langToggle && langMenu) {
+                langToggle.addEventListener('click', (e) => { e.stopPropagation(); langMenu.classList.toggle('show'); });
+                document.addEventListener('click', () => { langMenu.classList.remove('show'); });
+            }
+            if(mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            }
+            changeLang('en');
+        });
+
+        let currentLang = 'en';
+        function changeLang(lang) {
+            currentLang = lang;
+            const flag = lang === 'en' ? 'EN' : 'RU';
+            document.getElementById('current-lang-flag').textContent = flag;
+            document.getElementById('mobile-lang-flag').textContent = flag;
+            const t = translations[lang];
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(t[key]) {
+                     if (key === 'meta-description') el.setAttribute('content', t[key]);
+                     else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {}
+                     else el.innerHTML = t[key];
+                }
+            });
+            const langMenu = document.getElementById('lang-menu');
+            if(langMenu) langMenu.classList.remove('show');
+        }
+        function toggleMobileLang() {
+            const newLang = currentLang === 'en' ? 'ru' : 'en';
+            changeLang(newLang);
+        }
+    </script>
+</body>
+</html>
