@@ -125,35 +125,36 @@
 <body class="antialiased flex flex-col min-h-screen">
 
     <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20 w-full relative">
 
-                <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
-                    <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-md">
-                        <a href="/for-design" class="header-nav-link" data-lang="nav-design">Design Copilot</a>
-                        <a href="/intelligent" class="header-nav-link text-primary font-bold" data-lang="nav-intelligent">Intelligent Systems</a>
-                        <a href="/custom-development" class="header-nav-link" data-lang="nav-automation">Automation</a>
-                        <a href="/secure" class="header-nav-link" data-lang="nav-secure">Secure Infrastructure</a>
-                    </nav>
-                </div>
+    <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO</a>
 
-                <div class="hidden lg:flex items-center gap-6 relative z-10">
-                    <div class="lang-dropdown">
-                        <button id="lang-toggle" class="lang-btn"><span id="current-lang-flag">EN</span> <svg class="w-3 h-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div id="lang-menu" class="lang-menu">
-                            <button class="lang-option" onclick="changeLang('en')">EN English</button>
-                            <button class="lang-option" onclick="changeLang('ru')">RU Русский</button>
-                        </div>
-                    </div>
-                    <a href="#contact" class="btn btn-primary text-sm px-5 py-2" data-lang="header-cta">Book Consultation</a>
-                </div>
+    <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
+        <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-md">
+            <a href="/for-design" class="header-nav-link whitespace-nowrap" data-lang="nav-design">Design Copilot</a>
+            <a href="/intelligent" class="header-nav-link text-primary font-bold whitespace-nowrap" data-lang="nav-intelligent">Intelligent Systems</a>
+            <a href="/custom-development" class="header-nav-link whitespace-nowrap" data-lang="nav-automation">Automation</a>
+            <a href="/secure" class="header-nav-link whitespace-nowrap" data-lang="nav-secure">Secure Infrastructure</a>
+        </nav>
+    </div>
 
-                <div class="lg:hidden flex items-center gap-4 relative z-10">
-                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
-                    <button id="mobile-menu-toggle" class="text-gray-800 p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
-                </div>
+    <div class="hidden lg:flex items-center gap-6 relative z-10 ml-auto flex-shrink-0">
+        <div class="lang-dropdown">
+            <button id="lang-toggle" class="lang-btn"><span id="current-lang-flag">EN</span> <svg class="w-3 h-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
+            <div id="lang-menu" class="lang-menu">
+                <button class="lang-option" onclick="changeLang('en')">EN English</button>
+                <button class="lang-option" onclick="changeLang('ru')">RU Русский</button>
             </div>
+        </div>
+        <a href="#contact" class="btn btn-primary text-sm px-5 py-2 whitespace-nowrap" data-lang="header-cta">Book Consultation</a>
+    </div>
+
+    <div class="lg:hidden flex items-center gap-4 relative z-10 ml-auto">
+         <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
+        <button id="mobile-menu-toggle" class="text-gray-800 p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+</div>
 
             <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2 border-t border-gray-100">
                 <nav class="flex flex-col gap-4 p-4">
@@ -568,7 +569,7 @@
                         <input type="text" placeholder="Your Name" name="name" class="form-input">
                         <input type="text" placeholder="Email or Telegram" name="email" class="form-input">
                         <button type="submit" class="btn btn-primary w-full justify-center text-lg py-4 shadow-none" data-lang="form-submit">Book Architecture Review</button>
-                        <span id="msg"></span>
+                        <div id="msg" class="text-center text-sm font-bold mt-4 min-h-[20px]"></div>
                     </form>
                     <p class="mt-6 text-xs text-gray-400" data-lang="form-nda">By clicking, you agree to our Privacy Policy. We work under NDA.</p>
                 </div>
@@ -591,10 +592,12 @@
                     Get our technical whitepaper on High-Load AI Systems (Legacy, Security, RAG patterns) delivered to your inbox.
                 </p>
             </div>
-            <form onsubmit="handleWhitepaperSubmit(event)" class="space-y-4">
+            <form class="space-y-4">
+                <input type="hidden" name="type" value="intelligent-1">
                 <div><input type="text" placeholder="Name" class="form-input" required></div>
                 <div><input type="email" placeholder="Work Email" class="form-input" required></div>
                 <button type="submit" class="btn btn-primary w-full justify-center">Send to Email</button>
+                <div id="msg-1" class="text-center text-sm font-bold mt-4 min-h-[20px]"></div>
             </form>
         </div>
     </div>
@@ -650,22 +653,6 @@
         }
         function closeModal() {
             document.getElementById('whitepaper-modal').classList.remove('open');
-        }
-        function handleWhitepaperSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'Sending...';
-            setTimeout(() => {
-                btn.innerText = 'Check your inbox!';
-                btn.classList.add('bg-green-600', 'border-green-600');
-                setTimeout(() => {
-                    closeModal();
-                    btn.innerText = originalText;
-                    btn.classList.remove('bg-green-600', 'border-green-600');
-                    e.target.reset();
-                }, 2000);
-            }, 1000);
         }
 
         // DRAW UTILS
@@ -758,12 +745,22 @@
         }
 
         function drawAll() { drawSber(); drawCopilot(); drawFactory(); }
-        window.addEventListener('load', () => { initPattern(); drawAll(); changeLang('en'); }); // Default EN
+        window.addEventListener('load', () => { initPattern();
+        drawAll();
+                // Проверяем сохраненный язык
+        let savedLang = localStorage.getItem('divo_language');
+        if (!savedLang) {
+            const userBrowserLang = navigator.language || navigator.userLanguage;
+            savedLang = userBrowserLang.startsWith('ru') ? 'ru' : 'en';
+        }
+        changeLang(savedLang);
+         }); // Default EN
         window.addEventListener('resize', drawAll);
 
         // TRANSLATIONS
         const translations = {
             'en': {
+                'nav-design': 'Design Copilot', 'nav-intelligent': 'Intelligent Systems', 'nav-automation': 'Automation', 'nav-secure': 'Secure Infrastructure',
                 'hero-h1': 'Complex Systems',
                 'hero-sub': 'We build intelligent systems where AI is just a part of them, and at the core lies a fault-tolerant architecture and strict business logic',
                 'hero-cta': 'Discuss Architecture', 'hero-cta2': 'Explore Cases',
@@ -789,9 +786,13 @@
                 'form-h': 'Ready for a "Big" Project?', 'form-sub': 'Book a free 30-min architectural review. We will understand the task, assess risks, and draft a high-level Roadmap.',
                 'form-submit': 'Book Architecture Review', 'form-nda': 'By clicking, you agree to our Privacy Policy. We work under NDA.',
                 'footer-desc': 'Enterprise AI Integrator.',
-                'header-cta': 'Book Consultation'
+                'header-cta': 'Book Consultation',
+            'msg-sending': 'Sending...',
+            'msg-success': 'Thank you! We will contact you soon.',
+            'msg-error': 'Error! Please check your connection.'
             },
             'ru': {
+                'nav-design': 'Design Copilot', 'nav-intelligent': 'Интеллектуальные системы', 'nav-automation': 'Автоматизация', 'nav-secure': 'Безопасная инфраструктура',
                 'hero-h1': 'Сложные системы',
                 'hero-sub': 'Мы строим интеллектуальные системы, где AI лишь их часть, а в основе лежит отказоустойчивая архитектура и строгая бизнес логика',
                 'hero-cta': 'Обсудить архитектуру', 'hero-cta2': 'Смотреть кейсы',
@@ -817,16 +818,20 @@
                 'form-h': 'Готовы к «Большому» проекту?', 'form-sub': 'Запишитесь на бесплатный архитектурный разбор (30 мин). Поймем задачу, оценим риски, наметим Roadmap.',
                 'form-submit': 'Записаться на разбор', 'form-nda': 'Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности. Мы работаем под NDA.',
                 'footer-desc': 'Интегратор ИИ решений.',
-                'header-cta': 'Заказать консультацию'
+                'header-cta': 'Заказать консультацию',
+            'msg-sending': 'Отправка...',
+            'msg-success': 'Спасибо! Мы свяжемся с вами скоро.',
+            'msg-error': 'Ошибка! Проверьте соединение.'
             }
         };
 
-        let currentLang = 'en';
         function changeLang(lang) {
+            localStorage.setItem('divo_language', lang); // Сохраняем выбор
             currentLang = lang;
             const flag = lang === 'en' ? 'EN' : 'RU';
             document.getElementById('current-lang-flag').textContent = flag;
             const t = translations[lang];
+            if (!t) return;
 
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const key = el.getAttribute('data-lang');
@@ -841,27 +846,77 @@
 
         document.getElementById('lang-toggle').addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('lang-menu').classList.toggle('show'); });
         document.addEventListener('click', () => { document.getElementById('lang-menu').classList.remove('show'); });
-        document.getElementById('mobile-menu-toggle').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        document.getElementById('mobile-menu-toggle').addEventListener('click', () => {
+        const newLang = localStorage.getItem('divo_language') || 'en';
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxxXgZqiiBn1bDvqbDxJxqv12lvi5yekglH6sI9wMkD2mjqxm91wVIPxGpLY5ZoJYKv8Q/exec'
-    const form = document.forms['client-data']
-    const msg = document.getElementById("msg")
+ const scriptURL = 'https://script.google.com/macros/s/AKfycbxxXgZqiiBn1bDvqbDxJxqv12lvi5yekglH6sI9wMkD2mjqxm91wVIPxGpLY5ZoJYKv8Q/exec';
+    const form = document.forms['client-data'];
+    const msg = document.getElementById("msg");
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
 
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            form.reset() // Очистить форму
-            setTimeout(function(){
-                msg.innerHTML = ""
-            }, 5000)
-        })
-        .catch(error => {
-            console.error('Error!', error.message)
-        })
-    })
+            const curLang = localStorage.getItem('divo_language') || 'en';
+            const t = translations[curLang] || translations['en'];
+
+            // 1. Статус "Отправка"
+            msg.innerHTML = t['msg-sending'] || "Processing...";
+            msg.className = "text-center text-sm font-bold mt-4 text-gray-500";
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    form.reset();
+                    // 2. УСПЕХ (Темно-серый)
+                    msg.innerHTML = t['msg-success'] || "Thank you!";
+                    msg.className = "text-center text-sm font-bold mt-4 text-gray-800";
+                    setTimeout(() => { msg.innerHTML = ""; }, 5000);
+                })
+                .catch(error => {
+                    // 3. ОШИБКА (Красный)
+                    msg.innerHTML = t['msg-error'] || "Error!";
+                    msg.className = "text-center text-sm font-bold mt-4 text-red-700";
+                    console.error('Error!', error.message);
+                });
+        });
+    }
+    </script>
+
+    <script>
+        const scriptURL_1 = 'https://script.google.com/macros/s/AKfycbxxXgZqiiBn1bDvqbDxJxqv12lvi5yekglH6sI9wMkD2mjqxm91wVIPxGpLY5ZoJYKv8Q/exec';
+    const form_1 = document.forms['client-data-1'];
+    const msg_1 = document.getElementById("msg-1");
+
+    if (form_1) {
+        form_1.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const curLang = localStorage.getItem('divo_language') || 'en';
+            const t = translations[curLang] || translations['en'];
+
+            // 1. Статус "Отправка"
+            msg.innerHTML = t['msg-sending'] || "Processing...";
+            msg.className = "text-center text-sm font-bold mt-4 text-gray-500";
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form_1)})
+                .then(response => {
+                    form_1.reset();
+                    // 2. УСПЕХ (Темно-серый)
+                    msg_1.innerHTML = t['msg-success'] || "Thank you!";
+                    msg_1.className = "text-center text-sm font-bold mt-4 text-gray-800";
+                    setTimeout(() => { msg_1.innerHTML = ""; }, 5000);
+                })
+                .catch(error => {
+                    // 3. ОШИБКА (Красный)
+                    msg_1.innerHTML = t['msg-error'] || "Error!";
+                    msg_1.className = "text-center text-sm font-bold mt-4 text-red-700";
+                    console.error('Error!', error.message);
+                });
+        });
+    }
     </script>
 </body>
 </html>

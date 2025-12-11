@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='rgb(203, 2, 19)'/%3E%3Ctext x='50' y='75' font-size='70' font-weight='800' fill='white' text-anchor='middle' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E">
 
-    <title data-lang="meta-title">Design Copilot by DIVO | Enterprise Design Copilot</title>
-    <meta name="description" data-lang="meta-description" content="AI Copilot for Design QA. Reads code, not just pixels. Scalable for teams of 150+ designers.">
+    <title data-lang="meta-title">Francoise by DIVO | AI Design QA Lead</title>
+    <meta name="description" data-lang="meta-description"
+          content="Automated design compliance for enterprise teams. From pixel hygiene to complex business logic validation.">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
         /* --- CORE VARIABLES --- */
@@ -91,7 +94,7 @@
             transform: translateY(-2px);
         }
         .btn-secondary {
-            background-color: transparent;
+            background-color: white;
             color: var(--color-text-main);
             border: 2px solid #E5E7EB;
         }
@@ -118,41 +121,9 @@
             border-color: #D1D5DB;
         }
 
-        /* Slider Styling */
-        input[type=range] {
-            -webkit-appearance: none;
-            width: 100%;
-            background: transparent;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 28px;
-            width: 28px;
-            border-radius: 50%;
-            background: var(--color-primary);
-            cursor: pointer;
-            margin-top: -12px;
-            box-shadow: 0 4px 10px rgba(203, 2, 19, 0.3);
-            border: 3px solid white;
-            transition: transform 0.1s;
-        }
-
-        input[type=range]::-webkit-slider-thumb:hover {
-            transform: scale(1.1);
-        }
-
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 6px;
-            cursor: pointer;
-            background: #E5E7EB;
-            border-radius: 3px;
-        }
-
         /* Language Switcher */
         .lang-dropdown { position: relative; display: inline-block; }
-        .lang-btn { background: none; border: none; cursor: pointer; font-size: 0.75rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; padding: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
         .lang-menu { display: none; position: absolute; right: 0; top: 100%; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 50; border: 1px solid #E5E7EB; overflow: hidden; margin-top: 0.5rem; }
         .lang-menu.show { display: block; }
         .lang-option { padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: background 0.2s; font-size: 0.95rem; color: var(--color-text-main); width: 100%; text-align: left; border: none; background: transparent; }
@@ -161,15 +132,25 @@
         .footer-link { color: #9CA3AF; transition: color 0.2s; }
         .footer-link:hover { color: white; }
 
-        .mockup-bg { background-color: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-weight: 500; background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M0 40L40 0H20L0 20M40 40V20L20 40"/%3E%3C/g%3E%3C/svg%3E'); }
+        .mockup-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+            border: 1px solid #E5E7EB;
+        }
+        .mockup-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
         /* FORM INPUT STYLES (Light Mode) */
         .form-input, .form-select, .form-textarea {
             width: 100%;
             padding: 0.75rem 1rem;
             background-color: white;
-            border: 1px solid #D1D5DB; /* gray-300 */
-            border-radius: 0.5rem; /* rounded-lg */
+            border: 1px solid #D1D5DB;
+            border-radius: 0.5rem;
             color: var(--color-text-main);
             font-family: var(--font-sans);
             font-size: 1rem;
@@ -191,49 +172,24 @@
             outline: none;
         }
 
-        .form-input::placeholder, .form-textarea::placeholder {
-            color: #9CA3AF;
-        }
-
-        /* Dynamic Visuals */
-        .dynamic-num {
-            transition: font-size 0.2s ease-out;
-            line-height: 0.9;
-        }
-
-        .dot-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2px;
-            align-content: flex-start;
-            height: 60px;
-            overflow: hidden;
-            opacity: 0.5;
-            transition: all 0.3s;
-        }
-        .card:hover .dot-container { opacity: 1; }
-
-        .dot {
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
         .feature-list-item {
             display: flex;
             gap: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--color-text-secondary);
+            align-items: flex-start;
         }
         .feature-check {
             color: var(--color-primary);
             font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
         /* --- THE TECH PATTERN (Figma Dots) --- */
         .custom-pattern-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            /* Neutral Gray Dots, 2px size */
             background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23a1a1aa' /%3E%3C/svg%3E");
             background-size: 24px 24px;
             pointer-events: none;
@@ -256,791 +212,935 @@
             background-color: var(--color-dark-bg);
         }
 
-        /* Figma Comment Styles */
-        .figma-comment {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid #E5E7EB;
-            border-radius: 8px 8px 8px 0;
-            position: relative;
-        }
-        .figma-pin {
-            position: absolute;
-            bottom: -16px;
-            left: -8px;
-            width: 32px;
-            height: 32px;
-            background-color: var(--color-primary);
-            border: 2px solid white;
-            border-radius: 50% 50% 0 50%;
-            transform: rotate(45deg);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            z-index: 10;
-        }
-
         /* Custom Icon Styling */
         .tech-icon {
             stroke-width: 1.5;
-            width: 32px;
-            height: 32px;
-            margin-bottom: 1rem;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        /* Process Steps */
+        .step-card {
+            position: relative;
+            padding: 2rem;
+            text-align: left;
+            border-left: 4px solid var(--color-primary);
+        }
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: #f3f4f6;
+            font-weight: 900;
+            line-height: 1;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            z-index: 0;
+        }
+        .step-content { position: relative; z-index: 1; }
+
+        /* TOGGLE SWITCH - CUSTOM STYLE */
+        .billing-toggle-bg {
+            background-color: #F3F4F6;
+            border-radius: 8px;
+            padding: 4px;
+            display: inline-flex;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid #E5E7EB;
+        }
+        .billing-toggle-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease-out;
+            z-index: 10;
+            text-align: center;
+            min-width: 100px;
+        }
+        .billing-toggle-active {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: var(--color-primary);
+            border: 1px solid #E5E7EB;
+        }
+        .billing-toggle-inactive {
+            color: #6B7280;
+            border: 1px solid transparent;
+        }
+        .billing-toggle-inactive:hover {
             color: var(--color-text-main);
-            opacity: 0.9;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO <span class="text-gray-400 font-normal text-lg ml-2">| Design Copilot</span></a>
+<!-- HEADER -->
+<header class="sticky top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+            <a href="/" class="header-logo flex-shrink-0 relative z-10">DIVO <span
+                    class="text-gray-400 font-normal text-lg ml-2">| Francoise</span></a>
 
-                <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
-                    <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-md">
-                        <a href="#capabilities" class="header-nav-link" data-lang="nav-capabilities">Capabilities</a>
-                        <a href="#how-it-works" class="header-nav-link" data-lang="nav-how">How it Works</a>
-                        <a href="#customization" class="header-nav-link" data-lang="nav-custom">Customization</a>
-                        <a href="#pricing" class="header-nav-link" data-lang="nav-pricing">Pricing</a>
-                    </nav>
-                </div>
-
-                <div class="hidden lg:flex items-center gap-6 relative z-10">
-                    <div class="lang-dropdown">
-                        <button id="lang-toggle" class="lang-btn" aria-label="Select Language">
-                            <span id="current-lang-flag">EN</span>
-                            <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div id="lang-menu" class="lang-menu">
-                            <button class="lang-option" onclick="changeLang('en')"><span>EN</span> English</button>
-                            <button class="lang-option" onclick="changeLang('ru')"><span>RU</span> Русский</button>
-                        </div>
-                    </div>
-                    <a href="#demo-form" class="btn btn-primary px-6 py-2" data-lang="header-cta">Book Free Demo</a>
-                </div>
-
-                <div class="lg:hidden flex items-center gap-4 relative z-10">
-                     <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
-                    <button id="mobile-menu-toggle" class="text-gray-800 p-2 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    </button>
-                </div>
-            </div>
-
-            <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2">
-                <nav class="flex flex-col gap-4 p-4">
-                    <a href="#capabilities" class="header-nav-link text-lg" data-lang="nav-capabilities">Capabilities</a>
-                    <a href="#how-it-works" class="header-nav-link text-lg" data-lang="nav-how">How it Works</a>
-                    <a href="#customization" class="header-nav-link text-lg" data-lang="nav-custom">Customization</a>
-                    <a href="#pricing" class="header-nav-link text-lg" data-lang="nav-pricing">Pricing</a>
-                    <a href="#demo-form" class="header-nav-link text-lg text-primary font-bold" data-lang="nav-demo">Book Demo</a>
+            <div class="hidden lg:flex absolute left-0 right-0 justify-center pointer-events-none">
+                <nav class="flex gap-8 pointer-events-auto bg-white/50 px-6 py-2 rounded-full backdrop-blur-md">
+                    <a href="#capabilities" class="header-nav-link" data-lang="nav-capabilities">Capabilities</a>
+                    <a href="#how-it-works" class="header-nav-link" data-lang="nav-how">How it Works</a>
+                    <a href="#pricing" class="header-nav-link" data-lang="nav-pricing">Pricing</a>
                 </nav>
             </div>
+
+            <div class="hidden lg:flex items-center gap-6 relative z-10">
+                <div class="lang-dropdown">
+                    <button id="lang-toggle" class="lang-btn" aria-label="Select Language">
+                        <span id="current-lang-flag">EN</span>
+                        <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="lang-menu" class="lang-menu">
+                        <button class="lang-option" onclick="changeLang('en')"><span>EN</span> English</button>
+                        <button class="lang-option" onclick="changeLang('ru')"><span>RU</span> Русский</button>
+                    </div>
+                </div>
+                <a href="#demo-form" class="btn btn-primary px-6 py-2" data-lang="header-cta">Start Pilot</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="lg:hidden flex items-center gap-4 relative z-10">
+                <button onclick="toggleMobileLang()" class="text-xl"><span id="mobile-lang-flag">EN</span></button>
+                <button id="mobile-menu-toggle" class="text-gray-800 p-2 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-    </header>
 
-    <main>
-        <section class="relative py-20 md:py-32 bg-white overflow-hidden hero-section">
-            <div class="custom-pattern-bg hero-pattern-static"></div>
-            <div class="custom-pattern-bg hero-pattern-glow" id="hero-glow"></div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white pb-6 pt-2">
+            <nav class="flex flex-col gap-4 p-4">
+                <a href="#capabilities" class="header-nav-link text-lg" data-lang="nav-capabilities">Capabilities</a>
+                <a href="#how-it-works" class="header-nav-link text-lg" data-lang="nav-how">How it Works</a>
+                <a href="#pricing" class="header-nav-link text-lg" data-lang="nav-pricing">Pricing</a>
+                <a href="#demo-form" class="header-nav-link text-lg text-primary font-bold" data-lang="nav-demo">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </div>
+</header>
 
-            <div class="container max-w-7xl mx-auto px-4 text-center relative z-10">
+<main>
+    <!-- HERO SECTION -->
+    <section class="relative py-20 md:py-28 bg-white overflow-hidden hero-section">
+        <div class="custom-pattern-bg hero-pattern-static"></div>
+        <div class="custom-pattern-bg hero-pattern-glow" id="hero-glow"></div>
 
-                <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-gray-200 rounded-full px-4 py-1.5 shadow-sm mb-8">
-                    <span class="text-sm font-semibold text-gray-600 tracking-wide uppercase" data-lang="hero-badge">Trusted by the largest E-commerce in CIS</span>
-                </div>
+        <div class="container max-w-7xl mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-                <h1 class="text-5xl md:text-7xl mb-6 tracking-tight text-gray-900" data-lang="hero-h1">
-                    The AI Design Copilot <br> <span class="text-primary">for Enterprise Teams</span>
-                </h1>
+                <!-- LEFT: Text Content -->
+                <div class="w-full lg:w-1/2 text-left">
+                    <h1 class="text-5xl md:text-7xl mb-6 tracking-tight text-gray-900 leading-tight"
+                        data-lang="hero-h1">
+                        Meet Francoise.<br> <span class="text-primary">Your AI Design QA Lead.</span>
+                    </h1>
 
-                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-lang="hero-sub">
-                    Ensure 100% design system compliance. Automate routine checks so your team can focus on product, not pixels.
-                </p>
+                    <p class="text-xl text-gray-600 mb-10 font-light leading-relaxed" data-lang="hero-sub">
+                        Automated design compliance for enterprise teams. From precise code-based hygiene to complex
+                        business logic validation.
+                    </p>
 
-                <div class="flex justify-center items-center mb-16">
-                    <a href="#demo-form" class="btn btn-primary text-xl px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all" data-lang="hero-cta">Book Free Demo</a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                    <div class="p-6 bg-white/90 backdrop-blur rounded-xl shadow-sm border border-gray-100">
-                        <div class="text-4xl font-[800] text-primary font-heading mb-1">2x</div>
-                        <div class="text-sm font-semibold uppercase text-gray-500 tracking-wider" data-lang="metric-1">Faster Time-to-Market</div>
-                    </div>
-                    <div class="p-6 bg-white/90 backdrop-blur rounded-xl shadow-sm border border-gray-100">
-                        <div class="text-4xl font-[800] text-primary font-heading mb-1">150-500</div>
-                        <div class="text-sm font-semibold uppercase text-gray-500 tracking-wider" data-lang="metric-2">Designers Scalability</div>
-                    </div>
-                    <div class="p-6 bg-white/90 backdrop-blur rounded-xl shadow-sm border border-gray-100">
-                        <div class="text-4xl font-[800] text-primary font-heading mb-1">100%</div>
-                        <div class="text-sm font-semibold uppercase text-gray-500 tracking-wider" data-lang="metric-3">Design System Compliance</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 bg-white">
-            <div class="container max-w-4xl mx-auto px-4">
-                <div class="text-center mb-10">
-                    <h2 class="text-4xl md:text-5xl font-bold font-heading text-gray-900" data-lang="video-title">
-                        See it in Action
-                    </h2>
-                </div>
-
-                <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-200 relative bg-gray-50">
-                    <video autoplay muted loop playsinline class="w-full h-auto block" width="100%">
-                        <source src="video.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </section>
-
-        <section id="use-cases" class="py-20 bg-gray-50 border-y border-gray-200">
-            <div class="container max-w-6xl mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4" data-lang="use-title">When Design Copilot is Essential</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-primary">
-                        <div class="mb-4 text-primary">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3" data-lang="use-case-1-title">Rebranding & Redesign</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed" data-lang="use-case-1-desc">
-                            Accelerate the adoption of new standards. Ensure legacy components don't leak into new designs and help the team adapt to new guidelines 2x faster.
-                        </p>
+                    <div class="flex flex-col sm:flex-row items-start gap-4">
+                        <a href="#demo-form"
+                           class="btn btn-primary text-xl px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
+                           data-lang="hero-cta-1">Start Calibration Pilot</a>
+                        <a href="#future-proof" class="btn btn-secondary text-xl px-8 py-3" data-lang="hero-cta-2">Why
+                            Now?</a>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-primary">
-                        <div class="mb-4 text-primary">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3" data-lang="use-case-2-title">Scaling Design Teams</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed" data-lang="use-case-2-desc">
-                            When you have 50+ designers, consistency becomes a nightmare. Design Copilot acts as a single source of truth, giving unified feedback based on one shared Design System.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-primary">
-                        <div class="mb-4 text-primary">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3" data-lang="use-case-3-title">Global Expansion</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed" data-lang="use-case-3-desc">
-                            Going global? We automate localization checks (like RTL for Arabic markets) and prepare pixel-perfect documentation for developers, reducing technical debt.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="capabilities" class="py-20 bg-white">
-            <div class="container max-w-7xl mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl mb-4" data-lang="cap-title">Enterprise-Grade Capabilities</h2>
-                    <p class="text-xl text-gray-500" data-lang="cap-sub">From pixel hygiene to global expansion</p>
-                </div>
-
-                <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
-                    <div class="w-full md:w-1/2">
-                        <h3 class="text-3xl md:text-4xl mb-4 font-bold" data-lang="feat1-title">Technical Precision</h3>
-                        <p class="text-lg text-gray-600 mb-6" data-lang="feat1-text">
-                            Design Copilot reads not only the image, but also the code. We analyze Figma JSON to ensure exact compliance with your Design System tokens.
-                        </p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat1-li1">Token usage verification</span></li>
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat1-li2">Grid snapping (4/8px)</span></li>
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat1-li3">Typography style matching</span></li>
-                        </ul>
-                    </div>
-                    <div class="w-full md:w-1/2">
-                        <div class="aspect-video shadow-lg rounded-xl overflow-hidden relative group">
-                            <img src="ExpIll.png" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24">
-                    <div class="w-full md:w-1/2">
-                        <h3 class="text-3xl md:text-4xl mb-4 font-bold" data-lang="feat2-title">Automated Art Direction</h3>
-                        <p class="text-lg text-gray-600 mb-6" data-lang="feat2-text">
-                            Scale your creative quality. The AI evaluates visual hierarchy, composition balance, and business logic for specific screen types.
-                        </p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat2-li1">Visual hierarchy analysis</span></li>
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat2-li2">Business logic validation</span></li>
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat2-li3">WCAG Accessibility checks</span></li>
-                        </ul>
-                    </div>
-                    <div class="w-full md:w-1/2">
-                        <div class="aspect-video shadow-lg rounded-xl overflow-hidden">
-                            <img src="BasicIll_v1.png" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="w-full md:w-1/2">
-                        <h3 class="text-3xl md:text-4xl mb-4 font-bold" data-lang="feat3-title">Global Scale & Handoff</h3>
-                        <p class="text-lg text-gray-600 mb-6" data-lang="feat3-text">
-                            Ready for international expansion? Design Copilot automatically validates RTL (Arabic/Hebrew) mirroring and generates clean documentation.
-                        </p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat3-li1">Auto RTL mirroring check</span></li>
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat3-li2">CSS/JSON Spec generation</span></li>
-                            <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat3-li3">Dev-ready handoff</span></li>
-                        </ul>
-                    </div>
-                    <div class="w-full md:w-1/2">
-                        <div class="aspect-video  shadow-lg rounded-xl overflow-hidden">
-                            <img src="EntIll_v1.png" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="how-it-works" class="py-20 bg-gray-50 border-y border-gray-200">
-            <div class="container max-w-5xl mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="w-full md:w-1/2">
-                        <h2 class="text-4xl font-bold mb-4" data-lang="how-title">Your AI Art Director inside Figma</h2>
-                        <p class="text-lg text-gray-600 mb-6 leading-relaxed" data-lang="how-desc">
-                            Design Copilot integrates seamlessly as a Figma plugin. She scans your layout and leaves feedback as Figma comments where the error occurs like a Art Director.
-                        </p>
-                    </div>
-                    <div class="w-full md:w-1/2 flex justify-center">
-                        <div class="relative w-full max-w-sm">
-                            <div class="figma-comment bg-white p-4 relative z-20">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-gray-900 flex items-center justify-center text-white font-bold text-xs">AI</div>
-                                    <div>
-                                        <div class="flex justify-between items-center mb-1">
-                                            <span class="font-bold text-sm text-gray-900">Design Copilot</span>
-                                            <span class="text-xs text-gray-400">Just now</span>
-                                        </div>
-                                        <p class="text-sm text-gray-700 leading-snug">
-                                            Incorrect color usage. This hex code <span class="bg-red-50 text-red-600 px-1 rounded border border-red-100 font-mono text-xs">#F3F3F3</span> is not in our Design System tokens. Please use <span class="font-mono text-xs text-primary font-bold">sys.neutral.100</span>.
-                                        </p>
-                                    </div>
-                                </div>
+                    <!-- SOCIAL PROOF -->
+                    <div class="mt-12 pt-8 border-t border-gray-100">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
+                           data-lang="trusted-by">Trusted by Industry Leaders</p>
+                        <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl font-black text-gray-900 tracking-tighter">Avito</span>
+                                <span class="bg-green-100 text-green-700 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase">Tech</span>
                             </div>
-                            <div class="absolute -bottom-4 left-0 w-8 h-8 bg-primary rounded-tr-full rounded-tl-full rounded-bl-full transform rotate-45 border-2 border-white shadow-md z-30"></div>
-
-                            <div class="absolute top-4 -right-4 w-full h-full border-2 border-dashed border-gray-300 rounded-xl z-10"></div>
+                            <div class="h-8 w-px bg-gray-200"></div>
+                            <div class="text-xs text-gray-500 font-medium leading-tight">
+                                <span data-lang="avito-stat-1">World’s #1 Classifieds App</span><br>
+                                <span class="text-gray-900 font-bold">150+ Designers</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- RIGHT: Video/Image -->
+<div class="w-full lg:w-1/2">
+    <div class="mockup-container bg-gray-50 relative group shadow-2xl transition-transform duration-500 w-full max-w-4xl mx-auto"
+         style="aspect-ratio: 16/9;">
+
+        <video id="myVideo" loop playsinline class="w-full h-full object-cover block" style="width: 100%; height: 100%;">
+            <source src="video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+
+        <button id="toggleBtn" onclick="toggleVideo()"
+                class="absolute inset-0 w-full h-full flex items-center justify-center bg-black/5 group-hover:bg-black/10 transition-colors cursor-pointer outline-none border-none z-10">
+
+            <div class="w-24 h-24 bg-white/90 rounded-full flex items-center justify-center shadow-lg backdrop-blur text-primary transition-transform group-hover:scale-110">
+
+                <svg id="iconPlay" class="w-10 h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+
+                <svg id="iconPause" class="w-10 h-10 hidden" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+
             </div>
-        </section>
+        </button>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
 
-        <section id="customization" class="relative py-24 bg-white overflow-hidden">
-            <div class="custom-pattern-bg opacity-30 absolute inset-0"></div>
+    <!-- CAPABILITIES -->
+    <section id="capabilities" class="py-24 bg-white">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl mb-4" data-lang="cap-title">Enterprise-Grade Capabilities</h2>
+                <p class="text-xl text-gray-500 max-w-2xl mx-auto" data-lang="cap-sub">Moving beyond simple linting to
+                    semantic understanding of your product.</p>
+            </div>
 
-            <div class="container max-w-6xl mx-auto px-4 relative z-10 text-gray-900">
+            <!-- Feature 1: Context Awareness -->
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-32">
+                <div class="w-full md:w-5/12 order-2 md:order-1">
+                    <h3 class="text-3xl md:text-4xl mb-4 font-bold" data-lang="feat1-title">Context-Aware
+                        Validation</h3>
+                    <p class="text-lg text-gray-600 mb-6" data-lang="feat1-text">
+                        We validate the <strong>semantics</strong>, not just the syntax. Francoise understands that a
+                        "Promo Banner" has different rules than a "Product Card". She ensures prices use the correct
+                        token hierarchy and components fit the business context.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat1-li1">Semantic token usage validation</span>
+                        </li>
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat1-li2">Business logic & Composition checks</span>
+                        </li>
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat1-li3">Content constraints verification</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-7/12 order-1 md:order-2">
+                    <div class="mockup-container shadow-2xl transition-transform duration-500">
+                        <img src="BasicIll_v1.png" alt="Context Aware Validation Example" class="mockup-img">
+                    </div>
+                </div>
+            </div>
 
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-gray-900 tracking-tight" data-lang="custom-h">Adapts to Your Design System</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed" data-lang="custom-p">
-                        We configure our algorithms and prompts to interpret YOUR specific Design System rules.
-                        Whether it's atomic, token-based, or just a sticker sheet in Figma —
-                        we guarantee the agent will check layouts exactly according to YOUR standards.
+            <!-- Feature 2: Actionable Guidance (UPDATED) -->
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-32">
+                <div class="w-full md:w-7/12">
+                    <div class="mockup-container shadow-2xl transition-transform duration-500">
+                        <img src="ExpIll.png" alt="Technical Precision Example" class="mockup-img">
+                    </div>
+                </div>
+                <div class="w-full md:w-5/12">
+                    <h3 class="text-3xl md:text-4xl mb-4 font-bold" data-lang="feat2-title">Actionable Guidance, Not
+                        Just Scores</h3>
+                    <p class="text-lg text-gray-600 mb-6" data-lang="feat2-text">
+                        Other tools give you a vague '52% compliance' score. Francoise pinpoints specific errors and
+                        tells you exactly <strong>how to fix them</strong>. It's like having a Senior Designer reviewing
+                        every pixel in real-time.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat2-li1">Detects hardcoded colors vs tokens</span>
+                        </li>
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat2-li2">Suggests precise fixes based on your variables</span>
+                        </li>
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat2-li3">Automated WCAG accessibility checks</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3: Global Scale -->
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-5/12 order-2 md:order-1">
+                    <h3 class="text-3xl md:text-4xl mb-4 font-bold" data-lang="feat3-title">Scale Globally without
+                        Chaos</h3>
+                    <p class="text-lg text-gray-600 mb-6" data-lang="feat3-text">
+                        Expanding to MENA? Francoise automatically validates Arabic layouts, ensuring correct text
+                        direction, padding mirroring, and UI adaptation. No more broken interfaces in new markets.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat3-li1">Auto RTL mirroring check (Arabic/Hebrew)</span>
+                        </li>
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat3-li2">CSS/JSON Spec generation for Devs</span>
+                        </li>
+                        <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat3-li3">Zero technical debt at launch</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-7/12 order-1 md:order-2">
+                    <div class="mockup-container shadow-2xl transition-transform duration-500">
+                        <img src="EntIll_v1.png" alt="RTL Support Example" class="mockup-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="how-it-works" class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="container max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" data-lang="process-title">Calibrated to YOUR DNA.</h2>
+                <p class="text-gray-500 max-w-3xl mx-auto" data-lang="process-sub">
+                    Design Leaders often ask: "How much effort is required from my team?" <br>The answer is: Minimal. We
+                    handle the logic mapping.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="step-card bg-white rounded-xl shadow-sm">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-bold mb-3" data-lang="step1-title">Ingest</h3>
+                        <p class="text-sm text-gray-600 mb-2" data-lang="step1-desc">
+                            <strong>Your Design System + Docs.</strong> <br>We upload your tokens and <em>all
+                            documentation</em> that explains the usage logic.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-card bg-white rounded-xl shadow-sm">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-bold mb-3" data-lang="step2-title">Alignment</h3>
+                        <p class="text-sm text-gray-600 mb-2" data-lang="step2-desc">
+                            <strong>Tribal Knowledge.</strong> <br>We meet with your team to capture the "unwritten
+                            rules" that exist in heads but not in documents.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-card bg-white rounded-xl shadow-sm">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="text-xl font-bold mb-3" data-lang="step3-title">Calibration</h3>
+                        <p class="text-sm text-gray-600 mb-2" data-lang="step3-desc">
+                            <strong>The Setup.</strong> <br>DIVO engineers configure Francoise to strictly enforce these
+                            rules. No more guessing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FUTURE PROOFING (Spacing reduced after) -->
+    <section id="future-proof" class="pt-24 pb-12 bg-white">
+        <div class="container max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" data-lang="future-title">Why Francoise is Essential alongside Figma
+                    AI</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto" data-lang="future-sub">Figma is evolving. Here is why DIVO
+                    remains your critical layer of governance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100">
+                    <h4 class="text-2xl font-bold mb-3 text-gray-900" data-lang="future-c1-t">Native Linter Check</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-lang="future-c1-d">
+                        <strong>Figma checks Syntax. We check Semantics.</strong><br>
+                        Figma will tell you if a token is attached. DIVO tells you if it's the <em>wrong</em> token for
+                        this specific business context (e.g., Paywall vs Profile).
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center border-t border-gray-200 pt-16">
-
-                    <div class="flex flex-col items-center">
-                        <svg class="tech-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
-                        <span class="text-lg font-bold mb-2 text-gray-900" data-lang="custom-t1">Structure Agnostic</span>
-                        <span class="text-sm text-gray-600 leading-relaxed" data-lang="custom-d1">Adapts to any DS format (Tokens / Variables / Styles)</span>
-                    </div>
-
-                    <div class="flex flex-col items-center relative">
-                        <div class="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
-                        <div class="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
-
-                        <svg class="tech-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
-                        <span class="text-lg font-bold mb-2 text-gray-900" data-lang="custom-t2">Prompt Engineering</span>
-                        <span class="text-sm text-gray-600 leading-relaxed" data-lang="custom-d2">Precise calibration of check logic for your business processes</span>
-                    </div>
-
-                    <div class="flex flex-col items-center">
-                        <svg class="tech-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        <span class="text-lg font-bold mb-2 text-gray-900" data-lang="custom-t3">Zero Hallucinations</span>
-                        <span class="text-sm text-gray-600 leading-relaxed" data-lang="custom-d3">Predictable and consistent output</span>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" class="py-20 bg-gray-50">
-            <div class="container max-w-6xl mx-auto px-4">
-
-                <div class="text-center mb-10">
-                    <h2 class="text-4xl mb-4" data-lang="price-title">Prices</h2>
-                    <p class="text-gray-500" data-lang="price-sub">Choose your scale</p>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100">
+                    <h4 class="text-2xl font-bold mb-3 text-gray-900" data-lang="future-c2-t">Generative AI</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-lang="future-c2-d">
+                        <strong>Figma creates. We restrict.</strong><br>
+                        GenAI helps you build faster but often hallucinates with tokens. You need
+                        <strong>Francoise</strong> to verify the creative output before it breaks production.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 items-stretch">
-                    <div class="card p-8 bg-white h-full relative overflow-hidden group">
-                        <div class="relative z-10 flex flex-col h-full">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Basic</h3>
-                            <p class="text-sm text-gray-500 mb-4" data-lang="price-basic-sub">Typography Autopilot</p>
-                            <div class="mb-6">
-                                <span class="block text-2xl font-bold text-gray-900">$6,000<span class="text-sm font-normal text-gray-400">/yr</span></span>
-                                <span class="block text-xs text-gray-400 font-medium uppercase mt-1" data-lang="price-setup">+ One-time Setup Fee</span>
-                            </div>
-
-                            <div class="mb-8">
-                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-lang="included-label">Included</p>
-                                <ul class="space-y-3">
-                                    <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat-fonts">Fonts & Typography</span></li>
-                                    <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat-spacing">Spacing</span></li>
-                                    <li class="feature-list-item"><span class="feature-check">✓</span> <span data-lang="feat-layout">Layout</span></li>
-                                </ul>
-                            </div>
-
-                            <div class="border-t border-gray-100 my-4"></div>
-
-                            <div class="mt-auto pt-4">
-                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1" data-lang="roi-total-save">Total Savings</p>
-                                <div class="dynamic-num text-gray-700 font-heading font-bold" id="val-basic" style="font-size: 2rem;">$300k<span class="text-lg text-gray-400 font-normal">/yr</span></div>
-                                <div id="dots-basic" class="dot-container mt-2"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card p-8 bg-gray-50 border border-gray-200 h-full relative overflow-hidden group shadow-lg">
-                        <div class="absolute top-0 right-0 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase">Popular</div>
-                        <div class="relative z-10 flex flex-col h-full">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Advanced</h3>
-                            <p class="text-sm text-gray-500 mb-4" data-lang="price-adv-sub">Complete Design QA</p>
-                            <div class="mb-6">
-                                <span class="block text-2xl font-bold text-gray-900">$10,000<span class="text-sm font-normal text-gray-400">/yr</span></span>
-                                <span class="block text-xs text-gray-400 font-medium uppercase mt-1" data-lang="price-setup">+ One-time Setup Fee</span>
-                            </div>
-
-                            <div class="mb-8">
-                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-lang="included-label">Included</p>
-                                <ul class="space-y-3">
-                                    <li class="feature-list-item"><span class="text-primary font-bold">✓</span> <span data-lang="feat-comp">Composition & Hierarchy</span></li>
-                                    <li class="feature-list-item"><span class="text-primary font-bold">✓</span> <span data-lang="feat-logic">Business Logic Checks</span></li>
-                                    <li class="feature-list-item"><span class="text-primary font-bold">✓</span> <span data-lang="feat-wcag">WCAG AA Colors</span></li>
-                                </ul>
-                            </div>
-
-                            <div class="border-t border-gray-200 my-4"></div>
-
-                            <div class="mt-auto pt-4">
-                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1" data-lang="roi-total-save">Total Savings</p>
-                                <div class="dynamic-num text-gray-800 font-heading font-bold" id="val-adv" style="font-size: 2rem;">$600k<span class="text-lg text-gray-400 font-normal">/yr</span></div>
-                                <div id="dots-adv" class="dot-container mt-2"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card p-8 bg-white border-2 border-gray-900 text-gray-900 h-full relative overflow-hidden group">
-                        <div class="relative z-10 flex flex-col h-full">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
-                            <p class="text-sm text-gray-500 mb-4" data-lang="price-ent-sub">Global Scale</p>
-                            <div class="mb-6">
-                                <span class="block text-2xl font-bold text-gray-900">$18,000<span class="text-sm font-normal text-gray-400">/yr</span></span>
-                                <span class="block text-xs text-gray-400 font-medium uppercase mt-1" data-lang="price-setup">+ One-time Setup Fee</span>
-                            </div>
-
-                            <div class="mb-8">
-                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-lang="included-label">Included</p>
-                                <ul class="space-y-3">
-                                    <li class="feature-list-item text-gray-600"><span class="text-primary font-bold">✓</span> <span data-lang="feat-rtl">RTL Mirroring Check</span></li>
-                                    <li class="feature-list-item text-gray-600"><span class="text-primary font-bold">✓</span> <span data-lang="feat-spec">Dev Spec Generation</span></li>
-                                    <li class="feature-list-item text-gray-600"><span class="text-primary font-bold">✓</span> <span data-lang="feat-cloud">Private Cloud / SLA</span></li>
-                                </ul>
-                            </div>
-
-                            <div class="border-t border-gray-200 my-4"></div>
-
-                            <div class="mt-auto pt-4">
-                                <p class="text-xs font-bold text-primary uppercase tracking-widest mb-1" data-lang="roi-total-save">Total Savings</p>
-                                <div class="dynamic-num text-primary font-heading font-bold" id="val-ent" style="font-size: 2rem;">$900k<span class="text-lg text-gray-500 font-normal">/yr</span></div>
-                                <div id="dots-ent" class="dot-container mt-2"></div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100">
+                    <h4 class="text-2xl font-bold mb-3 text-gray-900" data-lang="future-c3-t">Code Connect</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-lang="future-c3-d">
+                        <strong>We prepare you for the future.</strong><br>
+                        Figma's new code features fail if your design files are messy. <strong>Francoise</strong>
+                        removes legacy errors, enabling your migration to Code Connect.
+                    </p>
                 </div>
-
-                <div class="mb-12 max-w-2xl mx-auto text-center">
-                    <input type="range" id="team-slider" min="10" max="500" value="50" step="10" class="w-full mb-1">
-                    <div class="flex justify-between text-xs text-gray-400 mt-1 font-mono mb-2">
-                        <span>10 Designers</span>
-                        <span>500 Designers</span>
-                    </div>
-                    <label class="block text-xl font-bold text-gray-900 mb-2" data-lang="roi-slider-label">Design Team Size: <span id="team-size-val" class="text-primary text-3xl ml-2 font-heading">50</span></label>
-                    <p class="text-center text-xs text-gray-400 mb-4">*Savings calculated based on avg. Enterprise hourly rates and reduced time-to-market.</p>
-                </div>
-
-                </div>
-        </section>
-
-        <section id="demo-form" class="py-20 bg-white border-t border-gray-100">
-            <div class="container max-w-7xl mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                    <div class="w-full md:w-1/2">
-                        <h2 class="text-4xl md:text-5xl mb-6 font-bold text-gray-900" data-lang="form-main-h">Elevate Your Design Operations</h2>
-                        <p class="text-xl text-gray-500 mb-8" data-lang="form-main-p">Book a personalized demo to see how Francoise reduces your Time-to-Market by 50%.</p>
-
-                        <div class="flex flex-col gap-4 text-sm text-gray-600">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1</div>
-                                <span data-lang="form-step1">Brief discovery call (15 min)</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">2</div>
-                                <span data-lang="form-step2">Custom demo on YOUR layouts</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">3</div>
-                                <span data-lang="form-step3">ROI calculation & Pilot plan</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="w-full md:w-5/12 bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-lg">
-                        <form id="bottom-contact-form" class="space-y-4" name="client-data">
-                            <input type="hidden" name="type" value="design">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="form-name">Name</label>
-                                <input type="text" class="form-input" name="name" placeholder="John Doe">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="form-email">Work Email</label>
-                                <input type="email" class="form-input" name="contact" placeholder="john@company.com">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="form-size">Design Team Size</label>
-                                <select class="form-select" name="company">
-                                    <option>15-50 Designers</option>
-                                    <option>50-150 Designers</option>
-                                    <option>150-500 Designers</option>
-                                    <option>500+ Designers</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="form-context">Project Context (Optional)</label>
-                                <textarea class="form-textarea" rows="3" name="message" placeholder="Tell us about your current challenges..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-full py-3 rounded text-lg mt-4" data-lang="form-submit">Book Free Demo</button>
-                            <p class="text-xs text-center text-gray-400 mt-4">By booking, you agree to our <a href="/privacy-policy" class="underline">Privacy Policy</a>.</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="dark-bg-custom text-gray-400 py-16 border-t border-gray-800">
-        <div class="container max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div>
-                    <a href="/" class="header-logo text-white mb-4 block">DIVO</a>
-                    <p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col1">Products</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/for-design" class="footer-link">Design Copilot</a></li>
-                        <li><a href="/intelligent" class="footer-link">Intelligent Systems</a></li>
-                        <li><a href="/custom-development" class="footer-link">Automation</a></li>
-                        <li><a href="/secure" class="footer-link">Secure Infrastructure</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col2">Company</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/portfolio" class="footer-link" data-lang="footer-portfolio">Portfolio</a></li>
-                        <li><a href="/privacy-policy" class="footer-link" data-lang="footer-privacy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col3">Contact</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>info@divo.solutions</li>
-                        <li><a href="https://t.me/darikamouse" class="footer-link">Telegram</a></li>
-                        <li><a href="https://wa.me/+79035176391" class="footer-link">WhatsApp</a></li>
-                        <li><a href="https://www.linkedin.com/company/divo-solutions" class="footer-link">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs">
-                <p>&copy; 2025 DIVO. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // Interactive Mouse Glow Logic
-        document.addEventListener('mousemove', function(e) {
-            const glowHero = document.getElementById('hero-glow');
-            const sections = [
-                { el: document.querySelector('.hero-section'), glow: glowHero }
-            ];
+    <!-- PRICING: REFINED (Removed top border, tighter spacing) -->
+    <section id="pricing" class="pb-24 pt-0 bg-white">
+        <div class="container max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl mb-4" data-lang="price-title">Proven Value before Commitment</h2>
+                <p class="text-gray-500" data-lang="price-sub">We believe you should only pay for a system that works
+                    perfectly with YOUR rules.</p>
+            </div>
 
-            sections.forEach(sec => {
-                if (sec.el && sec.glow) {
-                    const rect = sec.el.getBoundingClientRect();
-                    if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        sec.glow.style.setProperty('--x', `${x}px`);
-                        sec.glow.style.setProperty('--y', `${y}px`);
-                    }
+            <div class="flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-10">
+
+                <!-- STEP 1: PILOT -->
+                <div class="w-full lg:w-5/12">
+                    <div class="card bg-gray-50 border-2 border-primary/20 h-full relative overflow-hidden hover:border-primary transition-colors">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+                        <div class="mb-6">
+                            <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2 block">Step 1: Calibration</span>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-2">The Pilot</h3>
+                            <p class="text-sm text-gray-500">Fixed cost. Guaranteed result.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <span class="block text-4xl font-bold text-gray-900">$5,000</span>
+                            <span class="block text-sm text-gray-500 font-medium mt-1">One-time fee • 3 Weeks</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="feature-list-item"><span class="feature-check">✓</span> <span
+                                    data-lang="pilot-li1">Deep Design System & Token Mapping</span></li>
+                            <li class="feature-list-item"><span class="feature-check">✓</span> <span
+                                    data-lang="pilot-li2">Custom Business Logic Configuration</span></li>
+                            <li class="feature-list-item"><span class="feature-check">✓</span> <span
+                                    data-lang="pilot-li3">Pilot Scan of 50-100 real screens</span></li>
+                            <li class="feature-list-item"><span class="feature-check">✓</span> <span
+                                    class="font-bold text-gray-900"
+                                    data-lang="pilot-li4">Detailed ROI & Audit Report</span></li>
+                        </ul>
+
+                        <a href="#demo-form" class="btn btn-primary w-full" data-lang="pilot-btn">Book Calibration
+                            Slot</a>
+                    </div>
+                </div>
+
+                <!-- ARROW DIVIDER (Desktop) -->
+                <div class="hidden lg:flex items-center justify-center">
+                    <svg class="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+
+                <!-- STEP 2: LICENSE -->
+                <div class="w-full lg:w-5/12">
+                    <div class="card bg-white border border-gray-200 h-full">
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+                            <div>
+                                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">Step 2: License</span>
+                                <h3 class="text-3xl font-bold text-gray-900">Subscription</h3>
+                            </div>
+
+                            <!-- Toggle Switch -->
+                            <div class="billing-toggle-bg" onclick="toggleBilling()">
+                                <div id="tier-standard" class="billing-toggle-btn billing-toggle-active"
+                                     data-lang="toggle-std">Standard
+                                </div>
+                                <div id="tier-enterprise" class="billing-toggle-btn billing-toggle-inactive"
+                                     data-lang="toggle-ent">Enterprise
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="flex items-baseline gap-1 mb-1">
+                                <span class="text-2xl font-bold text-gray-400 mr-1">$</span>
+                                <span id="price-val" class="text-5xl font-bold text-gray-900">45</span>
+                                <span class="text-sm font-normal text-gray-400">/ seat / month</span>
+                            </div>
+                            <p class="text-xs font-semibold text-primary mt-2 flex items-center gap-1">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span id="seat-min" data-lang="lic-min">Minimum 20 seats</span>
+                            </p>
+                            <p id="price-subtext" class="text-xs text-gray-400 mt-1 italic"></p>
+                        </div>
+
+                        <ul class="space-y-4 mb-8 flex-grow" id="feature-list">
+                            <li class="feature-list-item"><span class="feature-check">✓</span> <span
+                                    data-lang="lic-li1">200 Checks / month per seat</span></li>
+                            <li class="feature-list-item"><span class="feature-check">✓</span> <span
+                                    data-lang="lic-li2">Hourly Support for Logic Updates</span></li>
+                            <li class="feature-list-item"><span class="feature-check">✓</span> <span
+                                    data-lang="lic-li3">SaaS Deployment</span></li>
+                        </ul>
+
+                        <a href="#demo-form" class="btn btn-secondary w-full" data-lang="lic-btn">Book Licensing
+                            Call</a>
+                        <p class="text-[10px] text-center text-gray-400 mt-2">All licenses require a setup call to align
+                            with your security protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA / FORM -->
+    <section id="demo-form" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl mb-6 font-bold text-gray-900" data-lang="form-main-h">Make Flawless
+                        Design the Standard.</h2>
+                    <p class="text-xl text-gray-500 mb-8" data-lang="form-main-p">Francoise handles the routine checks,
+                        allowing designers to learn on the fly. Start a pilot to see quality metrics improve in just one
+                        week.</p>
+
+                    <div class="flex flex-col gap-4 text-sm text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                                1
+                            </div>
+                            <span data-lang="form-step1">Brief discovery call (15 min)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                                2
+                            </div>
+                            <span data-lang="form-step2">Audit of your Figma structure</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                                3
+                            </div>
+                            <span data-lang="form-step3">Personalized ROI Calculation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-5/12 bg-white p-8 rounded-2xl border border-gray-200 shadow-xl">
+                    <form id="bottom-contact-form" name="client-data"  class="space-y-4">
+                        <input type="hidden" name="type" value="francoise">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="form-name">Name</label>
+                            <input type="text" class="form-input" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="form-email">Work
+                                Email</label>
+                            <input type="email" class="form-input"  id="email" name="email" required placeholder="john@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-lang="form-context">Link to
+                                your DS / Website (Optional)</label>
+                            <input type="text" class="form-input" id="contact" name="contact" placeholder="figma.com/...">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full py-3 rounded text-lg mt-4"
+                                data-lang="form-submit">Book Calibration
+                        </button>
+                        <div id="msg" class="text-center text-sm font-bold mt-3 min-h-[20px]"></div>
+                        <p class="text-xs text-center text-gray-400 mt-4">No commitment required. <a href="/privacy-policy"
+                                                                                                     class="underline">Privacy
+                            Policy</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="dark-bg-custom text-gray-400 py-16 border-t border-gray-800">
+    <div class="container max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <a href="/" class="header-logo text-white mb-4 block">DIVO</a>
+                <p class="text-sm" data-lang="footer-desc">Enterprise AI Integrator.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col1">
+                    Products</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="footer-link">Design Copilot (Francoise)</a></li>
+                    <li><a href="#" class="footer-link">Intelligent Systems</a></li>
+                    <li><a href="#" class="footer-link">Automation</a></li>
+                    <li><a href="#" class="footer-link">Secure Infrastructure</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col2">
+                    Company</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="footer-link" data-lang="footer-portfolio">Portfolio</a></li>
+                    <li><a href="#" class="footer-link" data-lang="footer-team">Team</a></li>
+                    <li><a href="#" class="footer-link" data-lang="footer-privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" data-lang="footer-col3">
+                    Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>info@divo.solutions</li>
+                    <li><a href="https://t.me/darikamouse" class="footer-link">Telegram</a></li>
+                    <li><a href="https://wa.me/+79035176391" class="footer-link">WhatsApp</a></li>
+                    <li><a href="https://www.linkedin.com/company/divo-solutions" class="footer-link">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs">
+            <p>&copy; 2025 DIVO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Interactive Mouse Glow Logic
+    document.addEventListener('mousemove', function(e) {
+        const glowHero = document.getElementById('hero-glow');
+        const sections = [
+            { el: document.querySelector('.hero-section'), glow: glowHero }
+        ];
+
+        sections.forEach(sec => {
+            if (sec.el && sec.glow) {
+                const rect = sec.el.getBoundingClientRect();
+                if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    sec.glow.style.setProperty('--x', `${x}px`);
+                    sec.glow.style.setProperty('--y', `${y}px`);
                 }
-            });
+            }
         });
+    });
 
-        const translations = {
-            'en': {
-                'meta-title': 'Design Copilot by DIVO | Enterprise Design Copilot',
-                'meta-description': 'AI Copilot for Design QA. Reads code, not just pixels. Scalable for teams of 150+ designers.',
-                'nav-how': 'How it Works', 'nav-capabilities': 'Capabilities', 'nav-custom': 'Customization', 'nav-pricing': 'Pricing', 'nav-demo': 'Book Demo',
-                'header-cta': 'Book Free Demo',
-                'hero-badge': 'Trusted by the largest E-commerce in CIS',
-                'hero-h1': 'The AI Design Copilot <br> <span class="text-primary">for Enterprise Teams</span>',
-                'hero-sub': 'Ensure 100% design system compliance. Automate routine checks so your team can focus on product, not pixels.',
-                'hero-cta': 'Book Free Demo',
-                'metric-1': 'Faster Time-to-Market', 'metric-2': 'Designers Scalability', 'metric-3': 'Design System Compliance',
-                'video-title': 'See it in Action',
+    // PRICING TOGGLE LOGIC
+    let isEnterprise = false;
+    const priceVal = document.getElementById('price-val');
+    const seatMin = document.getElementById('seat-min');
+    const priceSubtext = document.getElementById('price-subtext');
+    const btnStandard = document.getElementById('tier-standard');
+    const btnEnterprise = document.getElementById('tier-enterprise');
+    const featureList = document.getElementById('feature-list');
 
-                // NEW SECTION: HOW IT WORKS
-                'how-title': 'Your AI Art Director inside Figma',
-                'how-desc': 'Design Copilot integrates seamlessly as a Figma plugin. She scans your layout and leaves feedback as Figma comments where the error occurs like a Art Director.',
+    function toggleBilling() {
+        isEnterprise = !isEnterprise;
 
-                'cap-title': 'Enterprise-Grade Capabilities', 'cap-sub': 'From pixel hygiene to global expansion',
-                'feat1-title': 'Technical Precision', 'feat1-text': 'Design Copilot reads not only the image, but also the code. We analyze Figma JSON to ensure exact compliance with your Design System tokens.',
-                'feat1-li1': 'Token usage verification', 'feat1-li2': 'Grid snapping (4/8px)', 'feat1-li3': 'Typography style matching',
-                'feat2-title': 'Automated Art Direction', 'feat2-text': 'Scale your creative quality. The AI evaluates visual hierarchy, composition balance, and business logic for specific screen types.',
-                'feat2-li1': 'Visual hierarchy analysis', 'feat2-li2': 'Business logic validation', 'feat2-li3': 'WCAG Accessibility checks',
-                'feat3-title': 'Global Scale & Handoff', 'feat3-text': 'Ready for international expansion? Design Copilot automatically validates RTL (Arabic/Hebrew) mirroring and generates clean documentation.',
-                'feat3-li1': 'Auto RTL mirroring check', 'feat3-li2': 'CSS/JSON Spec generation', 'feat3-li3': 'Dev-ready handoff',
+        if(isEnterprise) {
+            // Set to Enterprise
+            priceVal.textContent = '15';
+            seatMin.setAttribute('data-lang', 'lic-min-ent');
+            seatMin.textContent = 'Min. 50 seats, billed yearly'; // fallback
+            priceSubtext.setAttribute('data-lang', 'lic-ent-cond');
+            priceSubtext.textContent = ''; // Removed subtitle to avoid duplication
 
-                // NEW SECTION: WHEN TO USE
-                'use-title': 'When Design Copilot is Essential',
-                'use-case-1-title': 'Rebranding & Redesign',
-                'use-case-1-desc': 'Accelerate the adoption of new standards. Ensure legacy components don\'t leak into new designs and help the team adapt to new guidelines 2x faster.',
-                'use-case-2-title': 'Scaling Design Teams',
-                'use-case-2-desc': 'When you have 50+ designers, consistency becomes a nightmare. Design Copilot acts as a single source of truth, giving unified feedback based on one shared Design System.',
-                'use-case-3-title': 'Global Expansion',
-                'use-case-3-desc': 'Going global? We automate localization checks (like RTL for Arabic markets) and prepare pixel-perfect documentation for developers, reducing technical debt.',
+            // Update buttons look
+            btnEnterprise.classList.add('billing-toggle-active');
+            btnEnterprise.classList.remove('billing-toggle-inactive');
+            btnStandard.classList.remove('billing-toggle-active');
+            btnStandard.classList.add('billing-toggle-inactive');
 
-                'custom-h': 'Adapts to Your Design System',
-                'custom-p': 'We adapt our engine to your DNA. We configure the algorithms and prompts to interpret your specific Design System rules—whether it\'s variables, tokens, or a static style guide.',
-                'custom-t1': 'Structure Agnostic', 'custom-d1': 'Adapts to any DS format (Tokens / Variables / Styles)',
-                'custom-t2': 'Prompt Engineering', 'custom-d2': 'Precise calibration of check logic for your business processes',
-                'custom-t3': 'Zero Hallucinations', 'custom-d3': 'Predictable and consistent output',
+            // Update Features
+            updateFeatures('enterprise');
+        } else {
+            // Set to Standard
+            priceVal.textContent = '45';
+            seatMin.setAttribute('data-lang', 'lic-min');
+            seatMin.textContent = 'Minimum 20 seats';
+            priceSubtext.setAttribute('data-lang', 'lic-std-cond');
+            priceSubtext.textContent = '';
 
-                'price-title': 'Prices', 'price-sub': 'Choose your scale',
-                'roi-slider-label': 'Design Team Size:',
-                'price-basic-sub': 'Typography Autopilot', 'price-adv-sub': 'Complete Design QA', 'price-ent-sub': 'Global Scale',
-                'price-setup': '+ One-time Setup Fee',
-                'included-label': 'Included',
-                'roi-total-save': 'Total Savings',
+            // Update buttons look
+            btnStandard.classList.add('billing-toggle-active');
+            btnStandard.classList.remove('billing-toggle-inactive');
+            btnEnterprise.classList.remove('billing-toggle-active');
+            btnEnterprise.classList.add('billing-toggle-inactive');
 
-                'feat-fonts': 'Fonts & Typography', 'feat-spacing': 'Spacing', 'feat-layout': 'Layout',
-                'feat-comp': 'Composition & Hierarchy', 'feat-logic': 'Business Logic Checks', 'feat-wcag': 'WCAG AA Colors',
-                'feat-rtl': 'RTL Mirroring Check', 'feat-spec': 'Dev Spec Generation', 'feat-cloud': 'Private Cloud / SLA',
-                'btn-discuss': 'Discuss Implementation',
-
-                'form-main-h': 'Elevate Your Design Operations', 'form-main-p': 'Book a personalized demo to see how Francoise reduces your Time-to-Market by 50%.',
-                'form-step1': 'Brief discovery call (15 min)', 'form-step2': 'Custom demo on YOUR layouts', 'form-step3': 'ROI calculation & Pilot plan',
-                'form-name': 'Name', 'form-email': 'Work Email', 'form-size': 'Design Team Size', 'form-context': 'Project Context (Optional)', 'form-submit': 'Book Free Demo',
-                'footer-desc': 'We transform technology into a growth engine for your business.', 'footer-col1': 'Products', 'footer-col2': 'Company', 'footer-col3': 'Contact', 'footer-portfolio': 'Portfolio', 'footer-team': 'Team', 'footer-privacy': 'Privacy Policy'
-            },
-            'ru': {
-                'meta-title': 'Design Copilot by DIVO | Enterprise Design Copilot',
-                'meta-description': 'AI Copilot для Дизайн QA. Читает код, а не только картинку. Масштабируется на команды 150+ дизайнеров.',
-                'nav-how': 'Как это работает', 'nav-capabilities': 'Возможности', 'nav-custom': 'Кастомизация', 'nav-pricing': 'Тарифы', 'nav-demo': 'Заказать Демо',
-                'header-cta': 'Заказать демо',
-                'hero-badge': 'Используется крупнейшим E-commerce в СНГ',
-                'hero-h1': 'AI Design Copilot <br> <span class="text-primary">для Enterprise команд</span>',
-                'hero-sub': 'Обеспечьте 100% соответствие дизайн-системе. Автоматизируйте рутину, чтобы команда занималась продуктом, а не пикселями.',
-                'hero-cta': 'Записаться на бесплатное демо',
-                'metric-1': 'Снижение Time-to-Market', 'metric-2': 'Масштабируемость (дизайнеров)', 'metric-3': 'Соответствие Дизайн-Системе',
-
-                'video-title': 'Как это работает',
-
-                // NEW SECTION: HOW IT WORKS
-                'how-title': 'Ваш AI Арт-директор внутри Figma',
-                'how-desc': 'Design Copilot интегрируется как плагин Figma. Она сканирует макет и оставляет фидбек в виде комментариев в месте ошибки — так же, как это сделал бы Арт-директор.',
-
-                'cap-title': 'Возможности уровня Enterprise', 'cap-sub': 'От гигиены макетов до международной экспансии',
-                'feat1-title': 'Техническая точность', 'feat1-text': 'Design Copilot читает не только картинку, но и код. Мы анализируем JSON Фигмы для 100% соответствия токенам вашей ДС.',
-                'feat1-li1': 'Проверка использования токенов', 'feat1-li2': 'Привязка к сетке (4/8px)', 'feat1-li3': 'Соответствие стилей текста',
-                'feat2-title': 'Авто-Артдирекшн', 'feat2-text': 'Масштабируйте качество креатива. AI оценивает визуальную иерархию, баланс композиции и бизнес-логику для конкретных экранов.',
-                'feat2-li1': 'Анализ визуальной иерархии', 'feat2-li2': 'Валидация бизнес-логики', 'feat2-li3': 'Проверка доступности (WCAG)',
-                'feat3-title': 'Глобальный масштаб и Handoff', 'feat3-text': 'Выходите на международные рынки? Design Copilot автоматически проверяет RTL зеркалирование (для арабских стран) и генерирует чистую документацию.',
-                'feat3-li1': 'Автопроверка RTL зеркалирования', 'feat3-li2': 'Генерация CSS/JSON спецификаций', 'feat3-li3': 'Идеальный Handoff в разработку',
-
-                // NEW SECTION: WHEN TO USE
-                'use-title': 'Когда Design Copilot незаменим',
-                'use-case-1-title': 'Ребрендинг и Редизайн',
-                'use-case-1-desc': 'Ускорьте привыкание к новым стандартам. Инструмент помогает команде не пропускать детали и не тащить «старые» паттерны в новые макеты, ускоряя адаптацию в 2 раза.',
-                'use-case-2-title': 'Масштабирование команд',
-                'use-case-2-desc': 'Когда команда большая, сложно поддерживать консистентность. Благодаря копайлоту все дизайнеры получают фидбек, основанный на едином подходе и дизайн-системе.',
-                'use-case-3-title': 'Выход на новые рынки',
-                'use-case-3-desc': 'Планируете экспансию? Копайлот помогает в локализации интерфейсов (RTL) и подготовке документации для разработчиков, повышая эффективность команды в критический момент.',
-
-                'custom-h': 'Адаптация под вашу Дизайн-Систему',
-                'custom-p': 'Мы калибруем внутренние алгоритмы и промты специально под правила ВАШЕЙ дизайн-системы. Будь то токены или просто набор компонентов — проверка будет точной.',
-                'custom-t1': 'Адаптация под любую ДС', 'custom-d1': 'Работает с токенами, переменными или стилями',
-                'custom-t2': 'Тонкая настройка', 'custom-d2': 'Калибровка логики проверок под особенности ваших процессов',
-                'custom-t3': 'Гарантия точности', 'custom-d3': 'Предсказуемый и стабильный результат',
-
-                'price-title': 'Тарифы', 'price-sub': 'Выберите масштаб',
-                'roi-slider-label': 'Размер дизайн-команды:',
-                'price-basic-sub': 'Автопилот типографики', 'price-adv-sub': 'Полный Design QA', 'price-ent-sub': 'Глобальный масштаб',
-                'price-setup': '+ Единоразовая плата за внедрение',
-                'included-label': 'Что включено',
-                'roi-total-save': 'Общая выгода',
-
-                'feat-fonts': 'Шрифты и Типографика', 'feat-spacing': 'Отступы',  'feat-layout': 'Верстка',
-                'feat-comp': 'Композиция и Иерархия', 'feat-logic': 'Проверка бизнес-логики', 'feat-wcag': 'Контрастность (WCAG AA)',
-                'feat-rtl': 'RTL Зеркалирование', 'feat-spec': 'Генерация спецификаций', 'feat-cloud': 'Private Cloud / SLA',
-                'btn-discuss': 'Обсудить внедрение',
-
-                'form-main-h': 'Новый уровень дизайн-процессов', 'form-main-p': 'Запишитесь на демо и узнайте, как снизить Time-to-Market в 2 раза.',
-                'form-step1': 'Короткий звонок-знакомство (15 мин)', 'form-step2': 'Персонализированное демо на ВАШИХ макетах', 'form-step3': 'Расчет ROI и план пилота',
-                'form-name': 'Имя', 'form-email': 'Рабочий Email', 'form-size': 'Размер дизайн-команды', 'form-context': 'О проекте (необязательно)', 'form-submit': 'Записаться на бесплатное демо',
-                'footer-desc': 'Мы превращаем технологии в двигатель роста вашего бизнеса.', 'footer-col1': 'Продукты', 'footer-col2': 'Компания', 'footer-col3': 'Связь', 'footer-portfolio': 'Портфолио', 'footer-team': 'Команда', 'footer-privacy': 'Политика конфиденциальности'
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const langToggle = document.getElementById('lang-toggle');
-            const langMenu = document.getElementById('lang-menu');
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if(langToggle && langMenu) {
-                langToggle.addEventListener('click', (e) => { e.stopPropagation(); langMenu.classList.toggle('show'); });
-                document.addEventListener('click', () => { langMenu.classList.remove('show'); });
-            }
-            if(mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-            }
-
-            // --- DOTS & SLIDER LOGIC ---
-            const slider = document.getElementById('team-slider');
-            const sizeVal = document.getElementById('team-size-val');
-
-            const valBasic = document.getElementById('val-basic');
-            const valAdv = document.getElementById('val-adv');
-            const valEnt = document.getElementById('val-ent');
-
-            const dotsBasic = document.getElementById('dots-basic');
-            const dotsAdv = document.getElementById('dots-adv');
-            const dotsEnt = document.getElementById('dots-ent');
-
-            function createDots(container, count, colorClass, sizeClass) {
-                container.innerHTML = '';
-                // Cap dots visually to avoid DOM overload, represent ratio
-                const visualCount = Math.min(count, 150);
-                for(let i=0; i<visualCount; i++) {
-                    const d = document.createElement('div');
-                    d.className = `dot ${colorClass} ${sizeClass}`;
-                    // Random small offset for organic look
-                    d.style.marginRight = '2px';
-                    d.style.marginBottom = '2px';
-                    container.appendChild(d);
-                }
-            }
-
-            function updateUI() {
-                const designers = parseInt(slider.value);
-                sizeVal.textContent = designers;
-
-                // Savings
-                const sBasic = designers * 6000;
-                const sAdv = designers * 12000;
-                const sEnt = designers * 18000;
-
-                const format = (num) => {
-                    if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + '<span class="text-lg font-normal text-gray-400">M/yr</span>';
-                    return '$' + (num / 1000).toFixed(0) + '<span class="text-lg font-normal text-gray-400">k/yr</span>';
-                };
-
-                valBasic.innerHTML = format(sBasic);
-                valAdv.innerHTML = format(sAdv);
-                valEnt.innerHTML = format(sEnt);
-
-                // Scale Font
-                const baseScale = 2; // rem
-                const scaleFactor = (designers / 500) * 1.5;
-                valBasic.style.fontSize = (baseScale + scaleFactor * 0.5) + 'rem';
-                valAdv.style.fontSize = (baseScale + 0.2 + scaleFactor * 0.7) + 'rem';
-                valEnt.style.fontSize = (baseScale + 0.4 + scaleFactor) + 'rem';
-
-                // Update Dots
-                // Basic: Gray, Small (w-1 h-1)
-                createDots(dotsBasic, designers, 'bg-gray-300', 'w-1 h-1');
-                // Adv: Slate (formerly Blue), Medium
-                createDots(dotsAdv, designers, 'bg-gray-500', 'w-1.5 h-1.5');
-                // Ent: Red, Large (w-2 h-2)
-                createDots(dotsEnt, designers, 'bg-red-500', 'w-2 h-2');
-            }
-
-            slider.addEventListener('input', updateUI);
-            updateUI(); // init
-
-            changeLang('en');
-        });
-
-        function changeLang(lang) {
-            const flag = lang === 'en' ? 'EN' : 'RU';
-            document.getElementById('current-lang-flag').textContent = flag;
-            document.getElementById('mobile-lang-flag').textContent = flag;
-            const t = translations[lang];
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                const key = el.getAttribute('data-lang');
-                if(t[key]) {
-                     if (key === 'meta-description') el.setAttribute('content', t[key]);
-                     else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = t[key];
-                     else el.innerHTML = t[key];
-                }
-            });
-            const langMenu = document.getElementById('lang-menu');
-            if(langMenu) langMenu.classList.remove('show');
+            // Update Features
+            updateFeatures('standard');
         }
 
-        function toggleMobileLang() {
-            const newLang = document.getElementById('current-lang-flag').textContent === 'EN' ? 'ru' : 'en';
-            changeLang(newLang);
+        // Re-apply language to new elements
+        const currentLang = document.getElementById('current-lang-flag').textContent === 'EN' ? 'en' : 'ru';
+        changeLang(currentLang);
+    }
+
+    function updateFeatures(tier) {
+        featureList.innerHTML = '';
+        const feats = tier === 'enterprise' ? [
+            { key: 'lic-li-ent1', text: '1,000 Checks / month per seat' },
+            { key: 'lic-li-ent2', text: 'Private Cloud Deployment' },
+            { key: 'lic-li-ent3', text: 'Priority Logic Updates' }
+        ] : [
+            { key: 'lic-li1', text: '200 Checks / month per seat' },
+            { key: 'lic-li2', text: 'Hourly Support for Logic Updates' },
+            { key: 'lic-li3', text: 'SaaS Deployment' }
+        ];
+
+        feats.forEach(f => {
+            const li = document.createElement('li');
+            li.className = 'feature-list-item';
+            li.innerHTML = `<span class="feature-check">✓</span> <span data-lang="${f.key}">${f.text}</span>`;
+            featureList.appendChild(li);
+        });
+    }
+
+    const translations = {
+        'en': {
+            'meta-title': 'Francoise by DIVO | AI Design QA Lead',
+            'meta-description': 'Automated design compliance for enterprise teams. From pixel hygiene to complex business logic validation.',
+            'nav-how': 'How it Works', 'nav-capabilities': 'Capabilities', 'nav-pricing': 'Pricing', 'nav-demo': 'Start Pilot',
+            'header-cta': 'Start Pilot',
+            'hero-h1': 'Meet Francoise.<br> <span class="text-primary">Your AI Design QA Lead.</span>',
+            'hero-sub': 'Automated design compliance for enterprise teams. From precise code-based hygiene to complex business logic validation.',
+            'hero-cta-1': 'Start Calibration Pilot', 'hero-cta-2': 'Why Now?',
+            'trusted-by': 'Trusted by Industry Leaders',
+            'avito-stat-1': 'The World’s #1 Classifieds App',
+
+            'cap-title': 'Enterprise-Grade Capabilities', 'cap-sub': 'Moving beyond simple linting to semantic understanding of your product.',
+            'feat1-title': 'Context-Aware Validation', 'feat1-text': 'We validate the <strong>semantics</strong>, not just the syntax. Francoise understands that a "Promo Banner" has different rules than a "Product Card". She ensures prices use the correct token hierarchy and components fit the business context.',
+            'feat1-li1': 'Semantic token usage validation', 'feat1-li2': 'Business logic & Composition checks', 'feat1-li3': 'Content constraints verification',
+
+            'feat2-title': 'Actionable Guidance, Not Just Scores', 'feat2-text': 'Other tools give you a vague \'52% compliance\' score. Francoise pinpoints specific errors and tells you exactly <strong>how to fix them</strong>. It\'s like having a Senior Designer reviewing every pixel in real-time.',
+            'feat2-li1': 'Detects hardcoded colors vs tokens', 'feat2-li2': 'Suggests precise fixes based on your variables', 'feat2-li3': 'Automated WCAG accessibility checks',
+
+            'feat3-title': 'Scale Globally without Chaos', 'feat3-text': 'Expanding to MENA? Francoise automatically validates Arabic layouts, ensuring correct text direction, padding mirroring, and UI adaptation. No more broken interfaces in new markets.',
+            'feat3-li1': 'Auto RTL mirroring check (Arabic/Hebrew)', 'feat3-li2': 'CSS/JSON Spec generation for Devs', 'feat3-li3': 'Zero technical debt at launch',
+
+            'process-title': 'Calibrated to YOUR DNA.', 'process-sub': 'Design Leaders often ask: "How much effort is required from my team?" <br>The answer is: Minimal. We handle the logic mapping.',
+            'step1-title': 'Ingest', 'step1-desc': '<strong>Your Design System + Docs.</strong> <br>We upload your tokens and <em>all documentation</em> that explains the usage logic.',
+            'step2-title': 'Alignment', 'step2-desc': '<strong>Tribal Knowledge.</strong> <br>We meet with your team to capture the "unwritten rules" that exist in heads but not in documents.',
+            'step3-title': 'Calibration', 'step3-desc': '<strong>The Setup.</strong> <br>DIVO engineers configure Francoise to strictly enforce these rules. No more guessing.',
+
+            'future-title': 'Why Francoise is Essential alongside Figma AI', 'future-sub': 'Figma is evolving. Here is why DIVO remains your critical layer of governance.',
+            'future-c1-t': 'Native Linter Check', 'future-c1-d': '<strong>Figma checks Syntax. We check Semantics.</strong><br>Figma will tell you if a token is attached. DIVO tells you if it\'s the <em>wrong</em> token for this specific business context (e.g., Paywall vs Profile).',
+            'future-c2-t': 'Generative AI', 'future-c2-d': '<strong>Figma creates. We restrict.</strong><br>GenAI helps you build faster but often hallucinates with tokens. You need <strong>Francoise</strong> to verify the creative output before it breaks production.',
+            'future-c3-t': 'Code Connect', 'future-c3-d': '<strong>We prepare you for the future.</strong><br>Figma\'s new code features fail if your design files are messy. <strong>Francoise</strong> removes legacy errors, enabling your migration to Code Connect.',
+
+            'price-title': 'Proven Value before Commitment', 'price-sub': 'We believe you should only pay for a system that works perfectly with YOUR rules.',
+            'pilot-li1': 'Deep Design System & Token Mapping', 'pilot-li2': 'Custom Business Logic Configuration', 'pilot-li3': 'Pilot Scan of 50-100 real screens', 'pilot-li4': 'Detailed ROI & Audit Report', 'pilot-btn': 'Book Calibration Slot',
+
+            'lic-btn': 'Book Licensing Call',
+            'toggle-std': 'Standard',
+            'toggle-ent': 'Enterprise',
+
+            // STANDARD
+            'lic-min': 'Minimum 20 seats',
+            'lic-std-cond': '',
+            'lic-li1': '200 Checks / month per seat',
+            'lic-li2': 'Hourly Support for Logic Updates',
+            'lic-li3': 'SaaS Deployment',
+
+            // ENTERPRISE
+            'lic-min-ent': 'Min. 50 seats, billed yearly',
+            'lic-ent-cond': '',
+            'lic-li-ent1': '1,000 Checks / month per seat',
+            'lic-li-ent2': 'Private Cloud Deployment',
+            'lic-li-ent3': 'Priority Logic Updates',
+
+            'form-main-h': 'Make Flawless Design the Standard.', 'form-main-p': 'Francoise handles the routine checks, allowing designers to learn on the fly. Start a pilot to see quality metrics improve in just one week.',
+            'form-step1': 'Brief discovery call (15 min)', 'form-step2': 'Audit of your Figma structure', 'form-step3': 'Personalized ROI Calculation',
+            'form-name': 'Name', 'form-email': 'Work Email', 'form-context': 'Link to your DS / Website (Optional)', 'form-submit': 'Book Calibration',
+            'footer-desc': 'We transform technology into a growth engine for your business.', 'footer-col1': 'Products', 'footer-col2': 'Company', 'footer-col3': 'Contact', 'footer-portfolio': 'Portfolio', 'footer-team': 'Team', 'footer-privacy': 'Privacy Policy'
+        },
+        'ru': {
+            'meta-title': 'Francoise by DIVO | AI Руководитель Design QA',
+            'meta-description': 'Автоматический контроль качества дизайна для Enterprise. От гигиены пикселей до валидации бизнес-логики.',
+            'nav-how': 'Как это работает', 'nav-capabilities': 'Возможности', 'nav-pricing': 'Цены', 'nav-demo': 'Запустить Пилот',
+            'header-cta': 'Запустить Пилот',
+            'hero-h1': 'Встречайте Франсуазу.<br> <span class="text-primary">Ваш AI Лид по качеству.</span>',
+            'hero-sub': 'Автоматический аудит дизайн-систем для крупных команд. Точные рекомендации по коду и проверка сложной бизнес-логики.',
+            'hero-cta-1': 'Запустить Пилот', 'hero-cta-2': 'Почему сейчас?',
+            'trusted-by': 'Нам доверяют лидеры рынка',
+            'avito-stat-1': 'Крупнейший классифайд в мире',
+
+            'cap-title': 'Возможности уровня Enterprise', 'cap-sub': 'Глубокое семантическое понимание вашего продукта.',
+            'feat1-title': 'Контекстная Валидация', 'feat1-text': 'Мы проверяем <strong>смыслы</strong>, а не только синтаксис. Франсуаза понимает, что "Промо-баннер" отличается от "Карточки товара". Она гарантирует, что цены используют верные токены, а компоненты соответствуют бизнес-контексту.',
+            'feat1-li1': 'Проверка семантики токенов', 'feat1-li2': 'Валидация бизнес-логики и композиции', 'feat1-li3': 'Контроль контентных ограничений',
+
+            'feat2-title': 'Пошаговые инструкции', 'feat2-text': 'Другие инструменты просто говорят: «Соответствие 52%». Франсуаза показывает конкретные ошибки и тут же подсказывает, <strong>как их исправить</strong>. Исправлять макеты становится проще, чем создавать их.',
+            'feat2-li1': 'Детекция хардкода vs токенов', 'feat2-li2': 'Предлагает точные фиксы на основе переменных', 'feat2-li3': 'Автопроверка доступности (WCAG)',
+
+            'feat3-title': 'Глобальное масштабирование', 'feat3-text': 'Выходите на рынок MENA? Франсуаза автоматически проверяет арабские макеты (RTL), контролируя направление текста, отзеркаливание отступов и адаптацию UI.',
+            'feat3-li1': 'Автопроверка RTL (Арабский/Иврит)', 'feat3-li2': 'Генерация спецификаций для разработки', 'feat3-li3': 'Готовые к верстке макеты',
+
+            'process-title': 'Откалибровано под ВАШ ДНК.', 'process-sub': 'Дизайн-директора часто спрашивают: "Сколько усилий нужно от моей команды?" <br>Ответ: Минимум. Всю настройку логики мы берем на себя.',
+            'step1-title': 'Загрузка (Ingest)', 'step1-desc': '<strong>ДС + Документация.</strong> <br>Мы забираем не только Figma-файлы, но и <strong>всю документацию</strong>, описывающую логику работы компонентов.',
+            'step2-title': 'Встреча (Alignment)', 'step2-desc': '<strong>Племенные Знания.</strong> <br>Мы проводим сессию с командой, чтобы собрать «негласные правила», которые живут в головах, но не записаны.',
+            'step3-title': 'Калибровка', 'step3-desc': '<strong>Настройка.</strong> <br>Инженеры DIVO настраивают логику Франсуазы специально под ваш продукт на основе всех собранных данных.',
+
+            'future-title': 'Зачем DIVO, если есть Figma AI?', 'future-sub': 'Фигма развивается. Вот почему Франсуаза остается вашим критически важным слоем контроля.',
+            'future-c1-t': 'Нативный Линтер', 'future-c1-d': '<strong>Figma проверяет Синтаксис. Мы - Семантику.</strong><br>Figma скажет, привязан ли токен. DIVO скажет, что это <em>неверный</em> токен для данного бизнес-контекста (например, Пейвол vs Профиль).',
+            'future-c2-t': 'Генеративный AI', 'future-c2-d': '<strong>Figma создает. Мы ограничиваем.</strong><br>GenAI помогает строить быстрее, но часто галлюцинирует с токенами. Вам нужна <strong>Франсуаза</strong>, чтобы проверить творчество ИИ перед продакшеном.',
+            'future-c3-t': 'Code Connect', 'future-c3-d': '<strong>Мы готовим вас к будущему.</strong><br>Новые фичи Figma не работают, если в файлах бардак. <strong>Франсуаза</strong> убирает легаси-ошибки, позволяя вам переехать на Code Connect.',
+
+            'price-title': 'Доказанная ценность до покупки', 'price-sub': 'Платите только за систему, которая идеально работает с ВАШИМИ правилами.',
+            'pilot-li1': 'Глубокий маппинг токенов и ДС', 'pilot-li2': 'Настройка кастомной бизнес-логики', 'pilot-li3': 'Пилотный скан 50-100 реальных экранов', 'pilot-li4': 'Детальный отчет по ошибкам и ROI', 'pilot-btn': 'Забронировать слот на калибровку',
+
+            'lic-btn': 'Обсудить лицензирование',
+            'toggle-std': 'Standard',
+            'toggle-ent': 'Enterprise',
+
+            // STANDARD
+            'lic-min': 'Минимальный пакет: 20 мест',
+            'lic-std-cond': '',
+            'lic-li1': '200 проверок в месяц на место',
+            'lic-li2': 'Почасовая поддержка обновлений логики',
+            'lic-li3': 'SaaS развертывание',
+
+            // ENTERPRISE
+            'lic-min-ent': 'От 50 мест, оплата за год',
+            'lic-ent-cond': '',
+            'lic-li-ent1': '1,000 проверок в месяц на место',
+            'lic-li-ent2': 'Развертывание в Private Cloud',
+            'lic-li-ent3': 'Приоритетные обновления логики',
+
+            'form-main-h': 'Сделайте безупречный дизайн стандартом.', 'form-main-p': 'Франсуаза берет на себя рутину проверки, позволяя дизайнерам учиться на лету. Запустите пилот, чтобы увидеть рост качества уже через неделю.',
+            'form-step1': 'Звонок-знакомство (15 мин)', 'form-step2': 'Аудит структуры Figma', 'form-step3': 'Персональный расчет ROI',
+            'form-name': 'Имя', 'form-email': 'Рабочий Email', 'form-context': 'Ссылка на сайт / ДС (необязательно)', 'form-submit': 'Забронировать Калибровку',
+            'footer-desc': 'Мы превращаем технологии в двигатель роста вашего бизнеса.', 'footer-col1': 'Продукты', 'footer-col2': 'Компания', 'footer-col3': 'Связь', 'footer-portfolio': 'Портфолио', 'footer-team': 'Команда', 'footer-privacy': 'Политика конфиденциальности'
         }
-    </script>
+    };
+
+ document.addEventListener('DOMContentLoaded', () => {
+        const langToggle = document.getElementById('lang-toggle');
+        const langMenu = document.getElementById('lang-menu');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Логика меню (без изменений)
+        if(langToggle && langMenu) {
+            langToggle.addEventListener('click', (e) => { e.stopPropagation(); langMenu.classList.toggle('show'); });
+            document.addEventListener('click', () => { langMenu.classList.remove('show'); });
+        }
+        if(mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        }
+
+        // --- НОВАЯ ЛОГИКА ЗАГРУЗКИ ЯЗЫКА ---
+
+        // 1. Проверяем, есть ли сохраненный язык в localStorage
+        let savedLang = localStorage.getItem('divo_language');
+
+        // 2. Если нет, пытаемся угадать язык браузера пользователя
+        if (!savedLang) {
+            const userBrowserLang = navigator.language || navigator.userLanguage;
+            // Если язык браузера начинается на 'ru' (ru-RU, ru-KZ), ставим русский, иначе английский
+            savedLang = userBrowserLang.startsWith('ru') ? 'ru' : 'en';
+        }
+
+        // 3. Применяем язык
+        changeLang(savedLang);
+    });
+
+    function changeLang(lang) {
+        // --- СОХРАНЕНИЕ ВЫБОРА ---
+        // Записываем выбор пользователя в память, чтобы он сохранился на других страницах
+        localStorage.setItem('divo_language', lang);
+
+        const flag = lang === 'en' ? 'EN' : 'RU';
+        const currentLangFlag = document.getElementById('current-lang-flag');
+        const mobileLangFlag = document.getElementById('mobile-lang-flag');
+
+        // Проверка на null нужна, чтобы скрипт не падал на страницах, где нет хедера (если такие будут)
+        if (currentLangFlag) currentLangFlag.textContent = flag;
+        if (mobileLangFlag) mobileLangFlag.textContent = flag;
+
+        const t = translations[lang];
+
+        // Защита: если перевода нет, не ломаем сайт
+        if (!t) return;
+
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            const key = el.getAttribute('data-lang');
+            if(t[key]) {
+                 if (key === 'meta-description') el.setAttribute('content', t[key]);
+                 else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = t[key];
+                 else el.innerHTML = t[key];
+            }
+        });
+
+        const langMenu = document.getElementById('lang-menu');
+        if(langMenu) langMenu.classList.remove('show');
+    }
+
+    function toggleMobileLang() {
+        // Читаем текущий активный язык из localStorage или DOM
+        const currentLang = localStorage.getItem('divo_language') || 'en';
+        const newLang = currentLang === 'en' ? 'ru' : 'en';
+        changeLang(newLang);
+    }
+</script>
+<script>
+    function toggleVideo() {
+    const video = document.getElementById('myVideo');
+    const btnOverlay = document.getElementById('toggleBtn'); // ID самой кнопки-обертки
+
+    if (video.paused) {
+        video.play();
+        // Делаем кнопку полностью прозрачной, когда видео играет
+        btnOverlay.classList.add('opacity-0', 'pointer-events-none');
+        // pointer-events-none нужен, чтобы клик проходил сквозь кнопку (например, для паузы кликом по видео)
+        // Но тогда вы не сможете поставить на паузу, кликнув по центру.
+
+        // Лучше просто opacity-0, но оставить кликабельной:
+        btnOverlay.classList.remove('bg-black/5'); // Убираем затемнение
+        btnOverlay.querySelector('div').classList.add('opacity-0'); // Скрываем кружок с иконкой
+    } else {
+        video.pause();
+        btnOverlay.classList.add('bg-black/5');
+        btnOverlay.querySelector('div').classList.remove('opacity-0');
+    }
+}
+</script>
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxxXgZqiiBn1bDvqbDxJxqv12lvi5yekglH6sI9wMkD2mjqxm91wVIPxGpLY5ZoJYKv8Q/exec'
-const form = document.forms['client-data']
-const msg = document.getElementById("msg")
+    const form = document.forms['client-data']
+    const msg = document.getElementById("msg")
 
-form.addEventListener('submit', e => {
-  e.preventDefault()
+    form.addEventListener('submit', e => {
+        e.preventDefault()
 
-  // Показываем пользователю, что процесс идет
-  msg.innerHTML = "Отправка..."
+        // 1. Статус отправки (Светло-серый)
+        msg.innerHTML = "Processing..."
+        msg.className = "text-center text-sm font-bold mt-3 text-gray-500"
 
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {
-        msg.innerHTML = "Спасибо! Заявка отправлена."
-        form.reset() // Очистить форму
-        setTimeout(function(){
-            msg.innerHTML = ""
-        }, 5000)
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                form.reset()
+
+                // 2. УСПЕХ: Темно-серый (нейтральный, профессиональный)
+                msg.innerHTML = "Thank you! We will contact you soon."
+                // Используем text-gray-800 (почти черный) вместо зеленого
+                msg.className = "text-center text-sm font-bold mt-3 text-gray-800"
+
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+            })
+            .catch(error => {
+                // 3. ОШИБКА: Красный (так как это реально ошибка)
+                msg.innerHTML = "Error! Please check your connection."
+                // Можно использовать text-primary, если этот класс определен в tailwind конфиге,
+                // или просто text-red-700, что вписывается в гамму
+                msg.className = "text-center text-sm font-bold mt-3 text-red-700"
+                console.error('Error!', error.message)
+            })
     })
-    .catch(error => {
-        console.error('Error!', error.message)
-        msg.innerHTML = "Ошибка отправки."
-    })
-})
 </script>
 </body>
 </html>
